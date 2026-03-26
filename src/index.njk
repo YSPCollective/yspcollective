@@ -278,7 +278,9 @@ canonical: "https://yspcollective.com/"
     <a href="#categories" class="featured-link">View all →</a>
   </div>
   <div class="products-grid">
-    {% for product in collections.fragrances %}
+    {% set featuredFragrances = collections.fragrances | selectattr("data.featured") | list %}
+    {% set displayFragrances = featuredFragrances if featuredFragrances.length else collections.fragrances %}
+    {% for product in displayFragrances | limit(4) %}
     <a href="/products/{{ product.data.slug }}.html" class="product-card reveal">
       <div class="product-card-image">
         <img src="{{ product.data.image_main }}" alt="{{ product.data.name }}" loading="lazy">
@@ -308,7 +310,9 @@ canonical: "https://yspcollective.com/"
     <a href="#categories" class="featured-link">View all →</a>
   </div>
   <div class="products-grid">
-    {% for product in collections.beauty %}
+    {% set featuredBeauty = collections.beauty | selectattr("data.featured") | list %}
+    {% set displayBeauty = featuredBeauty if featuredBeauty.length else collections.beauty %}
+    {% for product in displayBeauty | limit(4) %}
     <a href="/products/{{ product.data.slug }}.html" class="product-card reveal">
       <div class="product-card-image">
         <img src="{{ product.data.image_main }}" alt="{{ product.data.name }}" loading="lazy">
@@ -592,9 +596,12 @@ const ALL_PRODUCTS = {{ collections.allProducts | jsonify | safe }};
       document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
       chip.classList.add('active');
       activeFilter = chip.dataset.filter;
-      if (activeFilter === 'all' && !searchInput.value.trim()) {
+      const query = searchInput.value.trim();
+      if (activeFilter === 'all' && !query) {
         searchResults.classList.remove('visible');
+        resultsGrid.innerHTML = '';
       } else {
+        searchResults.classList.add('visible');
         runSearch();
       }
     });

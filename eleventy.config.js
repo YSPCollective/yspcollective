@@ -1,14 +1,11 @@
 module.exports = function(eleventyConfig) {
 
-  // Pass through static assets from src/
+  // Pass through static assets
+  eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPassthroughCopy("src/_redirects");
   eleventyConfig.addPassthroughCopy("src/ysp-chat.js");
   eleventyConfig.addPassthroughCopy("src/ysp-config.js");
-
-  // Pass through root-level asset folders directly to _site
-  eleventyConfig.addPassthroughCopy({ "images": "images" });
-  eleventyConfig.addPassthroughCopy({ "products": "products" });
 
   const PRODUCT_FIELDS = ['name','slug','badge','custom_badge','price','rrp','brand','gender',
     'category','image_main','gallery','description_short','description_full','ysp_thoughts',
@@ -49,6 +46,15 @@ module.exports = function(eleventyConfig) {
   // Filters
   eleventyConfig.addFilter("jsonify", value => JSON.stringify(value));
   eleventyConfig.addFilter("limit", (arr, n) => arr.slice(0, n));
+  eleventyConfig.addFilter("selectattr", (arr, attr) => {
+    // Usage: collection | selectattr("data.featured")
+    const keys = attr.split('.');
+    return arr.filter(item => {
+      let val = item;
+      for (const k of keys) val = val ? val[k] : undefined;
+      return !!val;
+    });
+  });
 
   eleventyConfig.addFilter("relatedProducts", function(allProducts, currentSlug, currentType, currentAccords) {
     const sameType = allProducts.filter(p => p.type === currentType && p.slug !== currentSlug);
