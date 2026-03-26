@@ -25,9 +25,8 @@ longevity: 7-12+
 origin: UAE
 launched: "2025"
 vegan: false
-image_main: /images/uploads/sap_cities-enigma-of-taif-box_1_jpg_e269beec-901a-49f4-ae86-76ae93c08257.jpeg
-gallery:
-  - /images/uploads/eot-box-front_1c63ab56-7210-41aa-a134-17edb6bdc0dc_460x.png
+image_main: /images/uploads/eot-02_f756c14f-b476-4ec2-8205-92cc9b485379.jpeg
+gallery: []
 description_short: A warm, rosy oriental from one of Dubai's most respected
   fragrance houses. Enigma of Taif captures the legendary Taif rose of Saudi
   Arabia — rich, velvety, and deeply complex. Long-lasting and distinctly
