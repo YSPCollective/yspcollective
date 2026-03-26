@@ -1,7 +1,9 @@
 module.exports = function(eleventyConfig) {
 
   // Pass through static assets
-  eleventyConfig.addPassthroughCopy("src/images");
+  // Pass through root-level asset folders
+  eleventyConfig.addPassthroughCopy({ "images": "images" });
+  eleventyConfig.addPassthroughCopy({ "products": "products" });
   eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPassthroughCopy("src/_redirects");
   eleventyConfig.addPassthroughCopy("src/ysp-chat.js");

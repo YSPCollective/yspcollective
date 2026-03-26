@@ -57,10 +57,12 @@ canonical: "https://yspcollective.com/"
   .filter-chip:hover, .filter-chip.active { background: var(--accent); border-color: var(--accent); color: var(--white); }
   #search-results { margin-top: 2rem; display: none; }
   #search-results.visible { display: block; }
-  .search-results-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; margin-top: 1.5rem; max-height: 900px; overflow-y: auto; padding-right: 0.5rem; }
-  .search-results-grid::-webkit-scrollbar { width: 4px; }
-  .search-results-grid::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
-  .search-results-grid::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+  .search-results-wrapper { overflow-x: auto; padding-bottom: 1rem; margin-top: 1.5rem; }
+  .search-results-wrapper::-webkit-scrollbar { height: 4px; }
+  .search-results-wrapper::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+  .search-results-wrapper::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+  .search-results-grid { display: flex; gap: 1.5rem; width: max-content; }
+  .search-results-grid .search-product-card { width: 220px; flex-shrink: 0; }
   .search-result-count { font-size: 0.75rem; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 1rem; }
   .no-results { color: rgba(255,255,255,0.4); font-size: 0.9rem; padding: 2rem; }
 
@@ -267,7 +269,7 @@ canonical: "https://yspcollective.com/"
     </div>
     <div id="search-results">
       <p class="no-results" id="no-results" style="display:none">No products found — try a different search.</p>
-      <div class="search-results-grid" id="search-results-grid"></div>
+      <div class="search-results-wrapper"><div class="search-results-grid" id="search-results-grid"></div></div>
     </div>
   </div>
 </section>
