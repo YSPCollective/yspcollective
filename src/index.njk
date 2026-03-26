@@ -565,7 +565,10 @@ const ALL_PRODUCTS = {{ collections.allProducts | jsonify | safe }};
 
   function runSearch() {
     const query = searchInput.value.toLowerCase().trim();
-    if (!query && activeFilter === 'all') { searchResults.classList.remove('visible'); return; }
+    if (!query && activeFilter === 'all') {
+      searchResults.classList.remove('visible');
+      return;
+    }
     searchResults.classList.add('visible');
     let filtered = ALL_PRODUCTS;
     if (activeFilter !== 'all') {
@@ -589,8 +592,11 @@ const ALL_PRODUCTS = {{ collections.allProducts | jsonify | safe }};
       document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
       chip.classList.add('active');
       activeFilter = chip.dataset.filter;
-      if (activeFilter !== 'all') { searchResults.classList.add('visible'); }
-      runSearch();
+      if (activeFilter === 'all' && !searchInput.value.trim()) {
+        searchResults.classList.remove('visible');
+      } else {
+        runSearch();
+      }
     });
   });
 </script>
