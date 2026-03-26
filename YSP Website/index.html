@@ -1234,7 +1234,7 @@
    <!-- ── Anua PDRN Hyaluronic Acid Capsule 100 Serum ── -->
 <a href="products/anua-pdrn-hyaluronic-acid-capsule-100-serum.html" class="product-card reveal">
   <div class="product-card-image">
-    <img src="products/anua/anua-pdrn-hyaluronic-acid-100- Serum/anua-pdrn-image-main.jpeg" alt="Anua PDRN Hyaluronic Acid Capsule 100 Serum" loading="lazy">
+    <img src="products/anua/anua-pdrn-hyaluronic-acid-100-Serum/anua-pdrn-image-main.jpeg" alt="Anua PDRN Hyaluronic Acid Capsule 100 Serum" loading="lazy">
     <span class="product-badge">Curated</span>
   </div>
   <div class="product-card-cat">Skincare · Serum</div>
@@ -1671,7 +1671,25 @@
     // Auto-rotate testimonials
     setInterval(() => showTestimonial((currentTestimonial + 1) % testimonials.length), 8000);
 
+    
     /* ── Contact form — submits to Netlify Forms ── */
+    // Auto-fill subject from product enquiry
+window.addEventListener('DOMContentLoaded', () => {
+  const subject = sessionStorage.getItem('enquiry_subject');
+  if (subject) {
+    const inputs = document.querySelectorAll('#contact input[type="text"]');
+    inputs.forEach(input => {
+      if (input.placeholder && input.placeholder.toLowerCase().includes('enquiry')) {
+        input.value = subject;
+      }
+    });
+    // Fallback: fill the 3rd text input (Subject field)
+    const allInputs = document.querySelectorAll('#contact .form-input');
+    if (allInputs[2] && !allInputs[2].value) allInputs[2].value = subject;
+    sessionStorage.removeItem('enquiry_subject');
+  }
+});
+```
     function handleSubmit(e) {
       e.preventDefault();
       const form = e.target;
