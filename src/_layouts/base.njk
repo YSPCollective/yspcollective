@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="{{ lang or 'en' }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{ title }} — YSP Collective</title>
+  <meta name="description" content="{{ description or 'Curated beauty, fragrance and lifestyle products. Sourced with care, delivered across Europe from Portugal.' }}">
+  {% if canonical %}<link rel="canonical" href="{{ canonical }}">{% endif %}
+  {% if schema %}<script type="application/ld+json">{{ schema | safe }}</script>{% endif %}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #1a1916;
+      --white: #faf8f5;
+      --cream: #f3efe8;
+      --sand: #e6dfd4;
+      --grey: #8a847a;
+      --grey-light: #b5afa5;
+      --accent: #9c7b56;
+      --accent-light: #c8a87a;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Outfit', -apple-system, sans-serif;
+      --nav-height: 80px;
+      --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--sans); font-weight: 300; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 3.5rem; height: var(--nav-height);
+      background: rgba(250,248,245,0.94); backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      transition: height 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    }
+    nav.scrolled { height: 64px; box-shadow: 0 1px 20px rgba(0,0,0,0.04); }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 0.6rem; }
+    .nav-logo-text { font-family: var(--serif); font-size: 1.6rem; font-weight: 300; letter-spacing: 0.06em; color: var(--black); transition: font-size 0.4s var(--ease); }
+    nav.scrolled .nav-logo-text { font-size: 1.3rem; }
+    .nav-logo-sub { font-family: var(--sans); font-size: 0.55rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--grey); display: block; margin-top: -2px; }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; align-items: center; }
+    .nav-links a { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.25s; font-weight: 400; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta { padding: 0.55rem 1.5rem; background: var(--accent); color: var(--white) !important; font-size: 0.7rem !important; transition: background 0.25s, transform 0.25s; }
+    .nav-cta:hover { background: var(--black) !important; transform: translateY(-1px); }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; width: 28px; height: 20px; position: relative; }
+    .nav-toggle span { display: block; width: 100%; height: 1.5px; background: var(--black); position: absolute; left: 0; transition: all 0.3s; }
+    .nav-toggle span:nth-child(1) { top: 0; }
+    .nav-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+    .nav-toggle span:nth-child(3) { bottom: 0; }
+    .nav-toggle.open span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
+
+    /* FOOTER */
+    footer { padding: 4rem 3.5rem 2rem; background: var(--black); color: rgba(255,255,255,0.4); }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-brand .footer-logo-text { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; color: var(--white); letter-spacing: 0.06em; }
+    .footer-brand .footer-logo-sub { font-size: 0.55rem; letter-spacing: 0.35em; text-transform: uppercase; color: rgba(255,255,255,0.3); display: block; }
+    .footer-brand p { font-size: 0.85rem; line-height: 1.7; margin-top: 1rem; color: rgba(255,255,255,0.35); }
+    .footer-col h4 { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 1.2rem; font-weight: 400; }
+    .footer-col a { display: block; font-size: 0.85rem; color: rgba(255,255,255,0.35); text-decoration: none; margin-bottom: 0.6rem; transition: color 0.25s; }
+    .footer-col a:hover { color: var(--accent-light); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.5rem; display: flex; justify-content: space-between; font-size: 0.72rem; }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* SECTION UTILS */
+    .section-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; font-weight: 400; }
+    .section-title { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.5rem; }
+    .section-desc { font-size: 0.95rem; line-height: 1.8; color: var(--grey); max-width: 520px; }
+
+    /* PRODUCT CARDS */
+    .product-card { text-decoration: none; color: inherit; display: block; position: relative; transition: transform 0.4s var(--ease); }
+    .product-card:hover { transform: translateY(-4px); }
+    .product-card-image { aspect-ratio: 3/4; background: var(--cream); overflow: hidden; position: relative; margin-bottom: 1.2rem; }
+    .product-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
+    .product-card:hover .product-card-image img { transform: scale(1.04); }
+    .product-badge { position: absolute; top: 0.8rem; left: 0.8rem; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.3rem 0.7rem; background: var(--accent); color: var(--white); font-weight: 400; }
+    .product-badge.badge-popular { background: var(--grey); }
+    .product-badge.badge-curated { background: var(--black); }
+    .product-badge.badge-new { background: #6a9a6a; }
+    .product-badge.badge-premium { background: #8b6914; }
+    .product-badge.badge-limited { background: #8b3a3a; }
+    .product-card-cat { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--grey-light); margin-bottom: 0.35rem; }
+    .product-card-name { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; line-height: 1.35; margin-bottom: 0.4rem; }
+    .product-card-price { font-size: 0.95rem; font-weight: 400; color: var(--accent); }
+    .product-card-rrp { font-size: 0.78rem; color: var(--grey-light); text-decoration: line-through; margin-left: 0.4rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links { display: none; position: fixed; top: var(--nav-height); left: 0; right: 0; background: var(--white); flex-direction: column; padding: 2rem 1.5rem; gap: 1.5rem; border-bottom: 1px solid var(--sand); }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      footer { padding: 3rem 1.5rem 1.5rem; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; }
+    }
+  </style>
+
+  {{ head_extra | safe }}
+</head>
+<body>
+
+  <nav id="main-nav">
+    <a href="/" class="nav-logo">
+      <div>
+        <span class="nav-logo-text">YSP</span>
+        <span class="nav-logo-sub">Collective</span>
+      </div>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('open');">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/#featured-fragrances">Fragrances</a></li>
+      <li><a href="/#featured-beauty">Beauty</a></li>
+      <li><a href="/#brands">Brands</a></li>
+      <li><a href="/#philosophy">About</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="/#contact">Contact</a></li>
+      <li><a href="/#contact" class="nav-cta">Enquire</a></li>
+    </ul>
+  </nav>
+
+  {{ content | safe }}
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div>
+          <span class="footer-logo-text">YSP</span>
+          <span class="footer-logo-sub">Collective</span>
+        </div>
+        <p>Curated beauty, fragrance and lifestyle products. Sourced from authorised distributors, delivered across Europe.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="/#featured-fragrances">Fragrances</a>
+        <a href="/#featured-beauty">Beauty &amp; Skincare</a>
+        <a href="/#brands">Our Brands</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/#philosophy">About Us</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Also Find Us</h4>
+        <a href="https://www.amazon.co.uk/s?me=A3M7XDMHQD6V9L" target="_blank" rel="noopener">Amazon EU</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 YSP Collective. All rights reserved.</span>
+      <span>Portugal, European Union</span>
+    </div>
+  </footer>
+
+  <script src="/ysp-config.js"></script>
+  <script src="/ysp-chat.js"></script>
+
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          ro.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => ro.observe(el));
+
+    // Enquiry prefill from sessionStorage
+    window.addEventListener('DOMContentLoaded', () => {
+      const subject = sessionStorage.getItem('enquiry_subject');
+      if (subject) {
+        const input = document.querySelector('#contact input[name="subject"]');
+        if (input) input.value = subject;
+        sessionStorage.removeItem('enquiry_subject');
+      }
+    });
+  </script>
+
+  {{ body_extra | safe }}
+</body>
+</html>

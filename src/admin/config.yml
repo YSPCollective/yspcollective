@@ -1,0 +1,138 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/yspcollective
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  # ─── FRAGRANCE PRODUCTS ───────────────────────────────────────────
+  - name: "fragrances"
+    label: "Fragrances"
+    folder: "_products/fragrances"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: name
+    fields:
+      - { label: "Product Name", name: "name", widget: "string", hint: "e.g. Lattafa Yara 100ml" }
+      - { label: "URL Slug", name: "slug", widget: "string", hint: "e.g. lattafa-yara-100ml (used in page URL)" }
+      - label: "Badge"
+        name: "badge"
+        widget: "select"
+        options: ["Bestseller", "Popular", "Curated", "New", "Limited", ""]
+        default: ""
+        required: false
+      - { label: "Custom Badge Label", name: "custom_badge", widget: "string", required: false, hint: "Overrides badge above if filled in" }
+      - { label: "Price (€)", name: "price", widget: "string", hint: "e.g. 29.55" }
+      - { label: "RRP / Was Price (€)", name: "rrp", widget: "string", required: false, hint: "Optional crossed-out price" }
+      - label: "Brand"
+        name: "brand"
+        widget: "select"
+        options: ["Lattafa", "Armaf", "Arabiyat Prestige", "Swiss Arabian", "Maison Alhambra", "Other"]
+      - label: "Gender"
+        name: "gender"
+        widget: "select"
+        options: ["Women", "Men", "Unisex"]
+      - { label: "Size", name: "size", widget: "string", hint: "e.g. 100ml" }
+      - label: "Concentration"
+        name: "concentration"
+        widget: "select"
+        options: ["Eau de Parfum (EDP)", "Eau de Toilette (EDT)", "Parfum", "Oil", "Other"]
+      - { label: "Fragrance Family", name: "fragrance_family", widget: "string", hint: "e.g. Oriental Vanilla / Amber Floral" }
+      - { label: "Top Notes", name: "top_notes", widget: "string", hint: "e.g. Orchid, Heliotrope, Tangerine" }
+      - { label: "Heart Notes", name: "heart_notes", widget: "string", required: false }
+      - { label: "Base Notes", name: "base_notes", widget: "string", required: false }
+      - label: "Main Accords (for AI selector)"
+        name: "accords"
+        widget: "list"
+        hint: "Add each accord separately — e.g. vanilla, oud, musk, amber, floral, woody"
+        field: { label: "Accord", name: "accord", widget: "string" }
+      - { label: "Longevity", name: "longevity", widget: "string", required: false, hint: "e.g. 4–6 hours" }
+      - { label: "Projection", name: "projection", widget: "string", required: false, hint: "e.g. Moderate" }
+      - { label: "Best For", name: "best_for", widget: "string", required: false, hint: "e.g. Daytime wear, spring/summer" }
+      - { label: "Origin", name: "origin", widget: "string", default: "UAE" }
+      - { label: "Launched", name: "launched", widget: "string", required: false, hint: "e.g. 2020" }
+      - { label: "Vegan & Cruelty-Free", name: "vegan", widget: "boolean", default: false }
+      - label: "Main Product Image"
+        name: "image_main"
+        widget: "image"
+      - label: "Gallery Images"
+        name: "gallery"
+        widget: "list"
+        required: false
+        field: { label: "Image", name: "image", widget: "image" }
+      - { label: "Short Description", name: "description_short", widget: "text", hint: "Used on product cards on the homepage" }
+      - { label: "Full Description", name: "description_full", widget: "markdown", hint: "Full product page description" }
+      - { label: "YSP Thoughts (Why We Carry This)", name: "ysp_thoughts", widget: "markdown" }
+      - label: "Amazon Link"
+        name: "amazon_url"
+        widget: "string"
+        required: false
+      - label: "eBay Link"
+        name: "ebay_url"
+        widget: "string"
+        required: false
+      - { label: "Published", name: "published", widget: "boolean", default: true }
+
+  # ─── SKINCARE / BEAUTY PRODUCTS ───────────────────────────────────
+  - name: "beauty"
+    label: "Beauty & Skincare"
+    folder: "_products/beauty"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: name
+    fields:
+      - { label: "Product Name", name: "name", widget: "string" }
+      - { label: "URL Slug", name: "slug", widget: "string", hint: "e.g. beauty-of-joseon-relief-sun-spf50" }
+      - label: "Badge"
+        name: "badge"
+        widget: "select"
+        options: ["Bestseller", "Popular", "Curated", "New", "Limited", ""]
+        default: ""
+        required: false
+      - { label: "Custom Badge Label", name: "custom_badge", widget: "string", required: false }
+      - { label: "Price (€)", name: "price", widget: "string" }
+      - { label: "RRP / Was Price (€)", name: "rrp", widget: "string", required: false }
+      - label: "Brand"
+        name: "brand"
+        widget: "select"
+        options: ["Beauty of Joseon", "ANUA", "COSRX", "Skin1004", "Mixsoon", "Round Lab", "Other"]
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["SPF / Sunscreen", "Moisturiser", "Serum", "Cleanser", "Toner", "Eye Cream", "Mask", "Oil", "Other"]
+      - { label: "Size", name: "size", widget: "string", hint: "e.g. 50ml" }
+      - { label: "Skin Type", name: "skin_type", widget: "string", hint: "e.g. All skin types, including sensitive" }
+      - { label: "Key Ingredients", name: "key_ingredients", widget: "string" }
+      - { label: "Free From", name: "free_from", widget: "string", required: false, hint: "e.g. Fragrance-free, essential oil-free" }
+      - { label: "SPF Rating", name: "spf_rating", widget: "string", required: false, hint: "e.g. SPF50+ PA++++" }
+      - { label: "Vegan & Cruelty-Free", name: "vegan", widget: "boolean", default: false }
+      - label: "Main Product Image"
+        name: "image_main"
+        widget: "image"
+      - label: "Gallery Images"
+        name: "gallery"
+        widget: "list"
+        required: false
+        field: { label: "Image", name: "image", widget: "image" }
+      - { label: "Short Description", name: "description_short", widget: "text" }
+      - { label: "Full Description", name: "description_full", widget: "markdown" }
+      - { label: "YSP Thoughts (Why We Carry This)", name: "ysp_thoughts", widget: "markdown" }
+      - { label: "Amazon Link", name: "amazon_url", widget: "string", required: false }
+      - { label: "eBay Link", name: "ebay_url", widget: "string", required: false }
+      - { label: "Published", name: "published", widget: "boolean", default: true }
+
+  # ─── SITE SETTINGS ────────────────────────────────────────────────
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "General Settings"
+        name: "general"
+        file: "_data/settings.yml"
+        fields:
+          - { label: "Site Tagline", name: "tagline", widget: "string" }
+          - { label: "Contact Email", name: "email", widget: "string" }
+          - { label: "Amazon Store URL", name: "amazon_url", widget: "string" }
+          - { label: "eBay Store URL", name: "ebay_url", widget: "string" }
+          - { label: "Instagram URL", name: "instagram_url", widget: "string", required: false }
