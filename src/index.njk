@@ -57,7 +57,11 @@ canonical: "https://yspcollective.com/"
   .filter-chip:hover, .filter-chip.active { background: var(--accent); border-color: var(--accent); color: var(--white); }
   #search-results { margin-top: 2rem; display: none; }
   #search-results.visible { display: block; }
-  .search-results-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; margin-top: 1.5rem; }
+  .search-results-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; margin-top: 1.5rem; max-height: 900px; overflow-y: auto; padding-right: 0.5rem; }
+  .search-results-grid::-webkit-scrollbar { width: 4px; }
+  .search-results-grid::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+  .search-results-grid::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+  .search-result-count { font-size: 0.75rem; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 1rem; }
   .no-results { color: rgba(255,255,255,0.4); font-size: 0.9rem; padding: 2rem; }
 
   /* FEATURED SECTIONS */
@@ -549,6 +553,15 @@ const ALL_PRODUCTS = {{ collections.allProducts | jsonify | safe }};
     resultsGrid.innerHTML = '';
     if (!products.length) { noResults.style.display='block'; return; }
     noResults.style.display = 'none';
+    // Show count
+    let countEl = document.getElementById('search-result-count');
+    if (!countEl) {
+      countEl = document.createElement('p');
+      countEl.id = 'search-result-count';
+      countEl.className = 'search-result-count';
+      searchResults.insertBefore(countEl, resultsGrid);
+    }
+    countEl.textContent = products.length + ' product' + (products.length !== 1 ? 's' : '') + ' found';
     products.forEach(p => {
       const a = document.createElement('a');
       a.className = 'search-product-card';
@@ -569,10 +582,6 @@ const ALL_PRODUCTS = {{ collections.allProducts | jsonify | safe }};
 
   function runSearch() {
     const query = searchInput.value.toLowerCase().trim();
-    if (!query && activeFilter === 'all') {
-      searchResults.classList.remove('visible');
-      return;
-    }
     searchResults.classList.add('visible');
     let filtered = ALL_PRODUCTS;
     if (activeFilter !== 'all') {
@@ -596,14 +605,8 @@ const ALL_PRODUCTS = {{ collections.allProducts | jsonify | safe }};
       document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
       chip.classList.add('active');
       activeFilter = chip.dataset.filter;
-      const query = searchInput.value.trim();
-      if (activeFilter === 'all' && !query) {
-        searchResults.classList.remove('visible');
-        resultsGrid.innerHTML = '';
-      } else {
-        searchResults.classList.add('visible');
-        runSearch();
-      }
+      searchResults.classList.add('visible');
+      runSearch();
     });
   });
 </script>
