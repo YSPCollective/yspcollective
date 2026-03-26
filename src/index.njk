@@ -561,7 +561,7 @@ const ALL_PRODUCTS = {{ collections.allProducts | jsonify | safe }};
       countEl = document.createElement('p');
       countEl.id = 'search-result-count';
       countEl.className = 'search-result-count';
-      searchResults.insertBefore(countEl, resultsGrid);
+      searchResults.insertBefore(countEl, searchResults.firstChild);
     }
     countEl.textContent = products.length + ' product' + (products.length !== 1 ? 's' : '') + ' found';
     products.forEach(p => {
