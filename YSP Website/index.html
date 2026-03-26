@@ -1234,7 +1234,7 @@
    <!-- ── Anua PDRN Hyaluronic Acid Capsule 100 Serum ── -->
 <a href="products/anua-pdrn-hyaluronic-acid-capsule-100-serum.html" class="product-card reveal">
   <div class="product-card-image">
-    <img src="products/anua/anua-pdrn-hyaluronic-acid-100-Serum/anua-pdrn-image-main.jpeg" alt="Anua PDRN Hyaluronic Acid Capsule 100 Serum" loading="lazy">
+    <img src="products/anua/anua-pdrn-hyaluronic-acid-100- Serum/anua-pdrn-image-main.jpeg" alt="Anua PDRN Hyaluronic Acid Capsule 100 Serum" loading="lazy">
     <span class="product-badge">Curated</span>
   </div>
   <div class="product-card-cat">Skincare · Serum</div>
@@ -1499,7 +1499,7 @@
       <div class="contact-detail">
         <div class="contact-line">
           <span class="contact-line-icon">✉</span>
-          <span><a href="mailto:info@yspcollective.com" style="text-decoration:none;color:inherit;">info@yspcollective.com</a></span>
+          <span><a href="/cdn-cgi/l/email-protection#fe97909891be878d8e9d9192929b9d8a97889bd09d9193" style="text-decoration:none;color:inherit;"><span class="__cf_email__" data-cfemail="523b3c343d122b2122313d3e3e3731263b24377c313d3f">[email&#160;protected]</span></a></span>
         </div>
         <div class="contact-line">
           <span class="contact-line-icon">◎</span>
@@ -1572,7 +1572,7 @@
   </footer>
 
   <!-- ══════════════════════════════ SCRIPTS ══════════════════════════════ -->
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     /* Cloudflare email decode - only works on live site */
     try { document.querySelectorAll('.__cf_email__').forEach(function(){}); } catch(e) {}
   </script>
@@ -1671,25 +1671,7 @@
     // Auto-rotate testimonials
     setInterval(() => showTestimonial((currentTestimonial + 1) % testimonials.length), 8000);
 
-    
     /* ── Contact form — submits to Netlify Forms ── */
-    // Auto-fill subject from product enquiry
-window.addEventListener('DOMContentLoaded', () => {
-  const subject = sessionStorage.getItem('enquiry_subject');
-  if (subject) {
-    const inputs = document.querySelectorAll('#contact input[type="text"]');
-    inputs.forEach(input => {
-      if (input.placeholder && input.placeholder.toLowerCase().includes('enquiry')) {
-        input.value = subject;
-      }
-    });
-    // Fallback: fill the 3rd text input (Subject field)
-    const allInputs = document.querySelectorAll('#contact .form-input');
-    if (allInputs[2] && !allInputs[2].value) allInputs[2].value = subject;
-    sessionStorage.removeItem('enquiry_subject');
-  }
-});
-```
     function handleSubmit(e) {
       e.preventDefault();
       const form = e.target;
@@ -1740,11 +1722,23 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     // Check URL params for prefilled subject (from product detail pages)
-    const urlParams = new URLSearchParams(window.location.search);
-    const preSubject = urlParams.get('subject');
-    if (preSubject) {
-      window.addEventListener('DOMContentLoaded', () => prefillEnquiry(decodeURIComponent(preSubject)));
+    const urlParams = new URL(window.location.href);
+    const subjectParam = urlParams.searchParams.get('subject');
+    if (subjectParam) {
+      const subjectInput = document.querySelector('#contact input[name="subject"]');
+      if (subjectInput) subjectInput.value = decodeURIComponent(subjectParam);
     }
+
+    // Check sessionStorage for enquiry subject (from product pages)
+    window.addEventListener('DOMContentLoaded', () => {
+      const subject = sessionStorage.getItem('enquiry_subject');
+      if (subject) {
+        const subjectInput = document.querySelector('#contact input[name="subject"]');
+        if (subjectInput) subjectInput.value = subject;
+        sessionStorage.removeItem('enquiry_subject');
+      }
+    });
+
   </script>
 
 </body>
