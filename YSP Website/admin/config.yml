@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: johndoe/yspcollective
+  repo: YSPCollective/yspcollective
   branch: main
 
 media_folder: "images/uploads"
