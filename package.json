@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "YSP Collective website",
   "scripts": {
-    "build": "eleventy",
-    "start": "eleventy --serve",
-    "dev": "eleventy --serve --watch"
+    "build": "eleventy --config=eleventy.config.js",
+    "start": "eleventy --serve --config=eleventy.config.js",
+    "dev": "eleventy --serve --watch --config=eleventy.config.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1"
