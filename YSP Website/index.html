@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YSP Collective — Beauty, Fragrance &amp; Curated Lifestyle</title>
+  <meta name="description" content="YSP Collective — Curated beauty, skincare, fragrance and premium lifestyle products. Sourced with care, delivered across Europe from Portugal.">
+  <meta name="keywords" content="beauty products Europe, K-beauty EU, skincare Portugal, premium fragrance, curated lifestyle, YSP Collective">
+  <meta property="og:title" content="YSP Collective — Beauty, Fragrance & Curated Lifestyle">
+  <meta property="og:description" content="Curated beauty, skincare, fragrance and premium lifestyle products. Sourced with care, delivered across Europe.">
+  <meta property="og:type" content="website">
+  <!-- Replace with your actual OG image -->
+  <meta property="og:image" content="images/og-image.jpg">
+  <link rel="canonical" href="https://yspcollective.com/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #1a1916;
+      --white: #faf8f5;
+      --cream: #f3efe8;
+      --sand: #e6dfd4;
+      --grey: #8a847a;
+      --grey-light: #b5afa5;
+      --accent: #9c7b56;
+      --accent-light: #c8a87a;
+      --accent-soft: rgba(156, 123, 86, 0.08);
+      --rose: #c09a8a;
+      --sage: #8a9a7a;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Outfit', -apple-system, sans-serif;
+      --nav-height: 80px;
+      --transition: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: var(--sans);
+      font-weight: 300;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 3.5rem;
+      height: var(--nav-height);
+      background: rgba(250, 248, 245, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      transition: height 0.4s var(--transition), box-shadow 0.4s var(--transition);
+    }
+
+    nav.scrolled {
+      height: 64px;
+      box-shadow: 0 1px 20px rgba(0,0,0,0.04);
+    }
+
+    .nav-logo {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .nav-logo-text {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: var(--black);
+      transition: font-size 0.4s var(--transition);
+    }
+
+    nav.scrolled .nav-logo-text { font-size: 1.3rem; }
+
+    .nav-logo-sub {
+      font-family: var(--sans);
+      font-size: 0.55rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--grey);
+      display: block;
+      margin-top: -2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey);
+      text-decoration: none;
+      transition: color 0.25s;
+      font-weight: 400;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-cta {
+      padding: 0.55rem 1.5rem;
+      background: var(--accent);
+      color: var(--white) !important;
+      font-size: 0.7rem !important;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.25s;
+    }
+
+    .nav-cta:hover { background: var(--black); transform: translateY(-1px); }
+
+    /* Mobile menu toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 28px;
+      height: 20px;
+      position: relative;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 100%;
+      height: 1.5px;
+      background: var(--black);
+      position: absolute;
+      left: 0;
+      transition: all 0.3s;
+    }
+
+    .nav-toggle span:nth-child(1) { top: 0; }
+    .nav-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+    .nav-toggle span:nth-child(3) { bottom: 0; }
+
+    .nav-toggle.open span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
+
+    /* ─── HERO CAROUSEL ─── */
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1.2s var(--transition);
+      z-index: 1;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+      z-index: 2;
+    }
+
+    .hero-slide-bg {
+      position: absolute;
+      inset: 0;
+      /* REPLACE: Set your hero images here */
+      background: var(--sand);
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.05);
+      transition: transform 8s ease-out;
+    }
+
+    .hero-slide.active .hero-slide-bg {
+      transform: scale(1);
+    }
+
+    /* ── Hero image placeholders ── 
+       Replace background-color with background-image for each slide:
+       background: url('images/hero-1.jpg') center/cover;
+    */
+    .hero-slide:nth-child(1) .hero-slide-bg { background: linear-gradient(135deg, #e6dfd4 0%, #d4c9b8 100%); }
+    .hero-slide:nth-child(2) .hero-slide-bg { background: linear-gradient(135deg, #d4c4b0 0%, #c8b8a4 100%); }
+    .hero-slide:nth-child(3) .hero-slide-bg { background: linear-gradient(135deg, #c8bfb2 0%, #bab0a0 100%); }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(26, 25, 22, 0.55) 0%,
+        rgba(26, 25, 22, 0.2) 50%,
+        transparent 100%
+      );
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 5rem;
+      padding-top: var(--nav-height);
+    }
+
+    .hero-tag {
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 0.8s 0.3s var(--transition);
+    }
+
+    .hero-slide.active .hero-tag {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 300;
+      line-height: 1.12;
+      color: var(--white);
+      max-width: 620px;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: all 0.8s 0.5s var(--transition);
+    }
+
+    .hero-slide.active .hero-title {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent-light);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.7);
+      max-width: 420px;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s 0.7s var(--transition);
+    }
+
+    .hero-slide.active .hero-sub {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 1rem;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 0.8s 0.9s var(--transition);
+    }
+
+    .hero-slide.active .hero-cta-group {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .btn-hero {
+      display: inline-block;
+      padding: 0.85rem 2rem;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn-hero-primary {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .btn-hero-primary:hover { background: var(--white); color: var(--black); }
+
+    .btn-hero-secondary {
+      border: 1px solid rgba(255,255,255,0.4);
+      color: var(--white);
+    }
+
+    .btn-hero-secondary:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
+
+    /* Carousel controls */
+    .hero-indicators {
+      position: absolute;
+      bottom: 3rem;
+      left: 5rem;
+      z-index: 10;
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .hero-dot {
+      width: 32px;
+      height: 2px;
+      background: rgba(255,255,255,0.3);
+      border: none;
+      cursor: pointer;
+      transition: all 0.4s;
+      padding: 0;
+    }
+
+    .hero-dot.active {
+      background: var(--white);
+      width: 48px;
+    }
+
+    .hero-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      background: var(--accent-light);
+      z-index: 10;
+      transition: width 0.1s linear;
+    }
+
+    /* ─── INTRO BAND ─── */
+    #intro-band {
+      padding: 5rem 3.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+      border-bottom: 1px solid var(--sand);
+      flex-wrap: wrap;
+    }
+
+    .intro-stat {
+      text-align: center;
+    }
+
+    .intro-stat .num {
+      font-family: var(--serif);
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .intro-stat .label {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+
+    .intro-divider {
+      width: 1px;
+      height: 48px;
+      background: var(--sand);
+    }
+
+    /* ─── SECTION UTILITIES ─── */
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+      font-weight: 400;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-desc {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--grey);
+      max-width: 520px;
+    }
+
+    /* ─── FEATURED PRODUCTS ─── */
+    #featured {
+      padding: 7rem 3.5rem;
+    }
+
+    .featured-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3.5rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .featured-link {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: gap 0.3s;
+    }
+
+    .featured-link:hover { gap: 0.8rem; }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.8rem;
+    }
+
+    .product-card {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      position: relative;
+      transition: transform 0.4s var(--transition);
+    }
+
+    .product-card:hover { transform: translateY(-4px); }
+
+    .product-card-image {
+      aspect-ratio: 3/4;
+      background: var(--cream);
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 1.2rem;
+    }
+
+    /* REPLACE: Product images go here as background-image or <img> tags */
+    .product-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--transition);
+    }
+
+    .product-card:hover .product-card-image img {
+      transform: scale(1.04);
+    }
+
+    .product-card-image .placeholder-icon {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: var(--grey-light);
+      opacity: 0.4;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 0.8rem;
+      left: 0.8rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      background: var(--accent);
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    .product-badge.badge-new { background: var(--black); }
+    .product-badge.badge-bestseller { background: var(--rose); }
+
+    .product-card-cat {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--grey-light);
+      margin-bottom: 0.35rem;
+    }
+
+    .product-card-name {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      line-height: 1.35;
+      margin-bottom: 0.4rem;
+    }
+
+    .product-card-price {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--accent);
+    }
+
+    .product-card-price .from { font-size: 0.75rem; color: var(--grey); font-weight: 300; }
+
+    /* ─── PHILOSOPHY / ABOUT ─── */
+    #philosophy {
+      padding: 7rem 3.5rem;
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .philosophy-image {
+      aspect-ratio: 4/5;
+      background: var(--sand);
+      /* REPLACE: Add your lifestyle/brand image */
+      position: relative;
+      overflow: hidden;
+    }
+
+    .philosophy-image .placeholder-icon {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: var(--grey-light);
+      opacity: 0.3;
+    }
+
+    .philosophy-text p {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--grey);
+      margin-bottom: 1.2rem;
+    }
+
+    .philosophy-values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .pv-item {
+      padding: 1.5rem;
+      border: 1px solid var(--sand);
+      background: var(--white);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .pv-item:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .pv-num {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      color: var(--accent);
+      font-weight: 300;
+      margin-bottom: 0.4rem;
+    }
+
+    .pv-title {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+    }
+
+    .pv-desc {
+      font-size: 0.82rem;
+      color: var(--grey);
+      line-height: 1.6;
+    }
+
+    /* ─── CATEGORIES ─── */
+    #categories {
+      padding: 7rem 3.5rem;
+    }
+
+    .categories-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .categories-header .section-desc {
+      margin: 0 auto;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .category-card {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: var(--cream);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .category-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26,25,22,0.65) 0%, transparent 60%);
+      z-index: 1;
+      transition: background 0.4s;
+    }
+
+    .category-card:hover .category-card-overlay {
+      background: linear-gradient(to top, rgba(26,25,22,0.75) 0%, rgba(26,25,22,0.1) 60%);
+    }
+
+    .category-card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem;
+      z-index: 2;
+    }
+
+    .category-card-name {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+
+    .category-card-count {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .category-card .placeholder-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      color: var(--grey-light);
+      opacity: 0.25;
+      z-index: 0;
+    }
+
+    /* ─── ELECTRONICS BANNER ─── */
+    #electronics-banner {
+      padding: 5rem 3.5rem;
+      background: var(--black);
+      color: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .eb-text .section-label { color: var(--accent-light); }
+    .eb-text .section-title { color: var(--white); }
+
+    .eb-text .section-desc { color: rgba(255,255,255,0.55); }
+
+    .eb-text .btn-outline {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 1.8rem;
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--white);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .eb-text .btn-outline:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .eb-products {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .eb-card {
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      text-decoration: none;
+      color: var(--white);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .eb-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .eb-card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .eb-card-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .eb-card-price {
+      font-size: 0.85rem;
+      color: var(--accent-light);
+    }
+
+    /* ─── TESTIMONIALS ─── */
+    #testimonials {
+      padding: 7rem 3.5rem;
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .testimonials-header { margin-bottom: 3.5rem; }
+
+    .testimonial-track {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .testimonial-item {
+      display: none;
+    }
+
+    .testimonial-item.active { display: block; }
+
+    .testimonial-quote {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--black);
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-author {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+
+    .testimonial-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 1px solid var(--grey-light);
+      background: transparent;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.3s;
+    }
+
+    .testimonial-dot.active {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* ─── FAQ ─── */
+    #faq {
+      padding: 7rem 3.5rem;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .faq-header { text-align: center; margin-bottom: 3rem; }
+
+    .faq-item {
+      border-top: 1px solid var(--sand);
+      padding: 1.5rem 0;
+    }
+
+    .faq-item:last-child { border-bottom: 1px solid var(--sand); }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 400;
+      user-select: none;
+      transition: color 0.25s;
+    }
+
+    .faq-question:hover { color: var(--accent); }
+
+    .faq-icon {
+      font-size: 1.2rem;
+      color: var(--accent);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+
+    .faq-answer {
+      font-size: 0.88rem;
+      color: var(--grey);
+      line-height: 1.8;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+      padding-top: 1rem;
+    }
+
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      padding: 7rem 3.5rem;
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-info p {
+      font-size: 0.95rem;
+      color: var(--grey);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-line {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--grey);
+    }
+
+    .contact-line-icon {
+      color: var(--accent);
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      width: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+    .form-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--grey);
+      font-weight: 400;
+    }
+
+    .form-input, .form-textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--sand);
+      padding: 0.75rem 0;
+      color: var(--black);
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 300;
+      transition: border-color 0.3s;
+      outline: none;
+      resize: none;
+    }
+
+    .form-input:focus, .form-textarea:focus { border-color: var(--accent); }
+    .form-textarea { min-height: 100px; }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--grey-light); }
+
+    .btn-submit {
+      margin-top: 0.5rem;
+      padding: 0.9rem 2.2rem;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background 0.25s, transform 0.25s;
+    }
+
+    .btn-submit:hover { background: var(--black); transform: translateY(-1px); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 4rem 3.5rem 2rem;
+      background: var(--black);
+      color: rgba(255,255,255,0.4);
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand .nav-logo-text { color: var(--white); font-size: 1.4rem; }
+    .footer-brand .nav-logo-sub { color: rgba(255,255,255,0.3); }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      margin-top: 1rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer-col h4 {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.2rem;
+      font-weight: 400;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      margin-bottom: 0.6rem;
+      transition: color 0.25s;
+    }
+
+    .footer-col a:hover { color: var(--accent-light); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+    }
+
+    /* ─── REVEAL ANIMATIONS ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      #philosophy { grid-template-columns: 1fr; }
+      .philosophy-image { max-height: 400px; }
+      #electronics-banner { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid var(--sand);
+      }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+
+      .hero-content { padding: 0 1.5rem; padding-top: var(--nav-height); }
+      .hero-indicators { left: 1.5rem; }
+
+      #intro-band { padding: 3rem 1.5rem; gap: 2rem; }
+      .intro-divider { display: none; }
+
+      #featured, #categories, #faq { padding: 5rem 1.5rem; }
+      .products-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .categories-grid { grid-template-columns: 1fr; }
+
+      #philosophy { padding: 5rem 1.5rem; gap: 3rem; }
+      .philosophy-values { grid-template-columns: 1fr; }
+
+      #electronics-banner { padding: 5rem 1.5rem; }
+      .eb-products { grid-template-columns: 1fr; }
+
+      #testimonials { padding: 5rem 1.5rem; }
+      .testimonial-quote { font-size: 1.2rem; }
+
+      #contact { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 1.5rem; }
+
+      footer { padding: 3rem 1.5rem 1.5rem; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .products-grid { grid-template-columns: 1fr; }
+      .hero-title { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════ NAV ══════════════════════════════ -->
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">
+      <div>
+        <span class="nav-logo-text">YSP</span>
+        <span class="nav-logo-sub">Collective</span>
+      </div>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('open');">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#featured">Products</a></li>
+      <li><a href="#brands">Brands</a></li>
+      <li><a href="#philosophy">About</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Enquire</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══════════════════════════════ HERO CAROUSEL ══════════════════════════════ -->
+  <!-- 
+    TO ADD YOUR IMAGES: 
+    For each .hero-slide-bg, add an inline style:
+    style="background: url('images/hero-1.jpg') center/cover no-repeat;"
+    Recommended image size: 1920×1080px minimum
+  -->
+  <section id="hero">
+    <!-- Slide 1 -->
+    <div class="hero-slide active">
+  <div class="hero-slide-bg" style="background: url('images/hero-1.jpg') center/cover no-repeat;"></div>
+          <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-tag">Beauty · Skincare · Fragrance</p>
+        <h1 class="hero-title">Curated beauty,<br><em>elevated</em> living.</h1>
+        <p class="hero-sub">Premium skincare, fragrance and beauty products — sourced from trusted brands, delivered across Europe.</p>
+        <div class="hero-cta-group">
+          <a href="#featured" class="btn-hero btn-hero-primary">Shop Beauty</a>
+          <a href="#philosophy" class="btn-hero btn-hero-secondary">Our Story</a>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="hero-slide">
+      <div class="hero-slide-bg" style="background: url('images/hero-2.png') center/cover no-repeat;"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-tag">K-Beauty · SPF · Clean Skincare</p>
+        <h1 class="hero-title">The products<br>we <em>actually</em> use.</h1>
+        <p class="hero-sub">Every item in our range is something we'd recommend to someone we know. No filler, no grey market — just products that work.</p>
+        <div class="hero-cta-group">
+          <a href="#featured" class="btn-hero btn-hero-primary">Explore Range</a>
+          <a href="#contact" class="btn-hero btn-hero-secondary">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="hero-slide">
+      <div class="hero-slide-bg" style="background: url('images/hero-3.jpg') center/cover no-repeat;"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-tag">Fragrance · Arabian Perfume · Niche Scents</p>
+        <h1 class="hero-title">Discover Arabian<br><em>fragrance.</em></h1>
+        <p class="hero-sub">From Lattafa to Armaf — experience the scents taking Europe by storm. Rich, long-lasting compositions at a fraction of designer prices.</p>
+        <div class="hero-cta-group">
+          <a href="#featured" class="btn-hero btn-hero-primary">Shop Fragrances</a>
+          <a href="#contact" class="btn-hero btn-hero-secondary">Wholesale</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel indicators -->
+    <div class="hero-indicators">
+      <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
+      <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+      <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="hero-progress"></div>
+  </section>
+
+  <!-- ══════════════════════════════ INTRO STATS ══════════════════════════════ -->
+  <div id="intro-band">
+    <div class="intro-stat reveal">
+      <span class="num">500+</span>
+      <span class="label">Products Delivered</span>
+    </div>
+    <div class="intro-divider"></div>
+    <div class="intro-stat reveal">
+      <span class="num">98%</span>
+      <span class="label">Customer Satisfaction</span>
+    </div>
+    <div class="intro-divider"></div>
+    <div class="intro-stat reveal">
+      <span class="num">EU</span>
+      <span class="label">Based &amp; Authorised</span>
+    </div>
+    <div class="intro-divider"></div>
+    <div class="intro-stat reveal">
+      <span class="num">24h</span>
+      <span class="label">Average Dispatch</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════ FEATURED PRODUCTS ══════════════════════════════ -->
+  <!-- 
+    PRODUCT CARDS: Each card links to its own detail page in /products/ 
+    To add a product image: place an <img> tag inside .product-card-image
+    and remove the .placeholder-icon <span>.
+    Example: <img src="images/products/joseon-spf.jpg" alt="Beauty of Joseon SPF" loading="lazy">
+  -->
+  <section id="featured">
+    <div class="featured-header reveal">
+      <div>
+        <p class="section-label">Featured Products</p>
+        <h2 class="section-title">Our current favourites</h2>
+      </div>
+      <a href="#categories" class="featured-link">View all categories →</a>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- — Product 1 — -->
+<!-- ── Beauty of Joseon Relief Sun SPF50 + ── -->
+<a href="products/beauty-of-joseon-relief-sun-spf50.html" class="product-card reveal">
+  <div class="product-card-image">
+    <img src="products/beauty-of-joseon/relief-sunscreen/relief-sunscreen-1-front.jpeg" alt="Beauty of Joseon Relief Sun SPF50 +" loading="lazy">
+    <span class="product-badge badge-bestseller">Bestseller</span>
+  </div>
+  <div class="product-card-cat">Skincare · SPF</div>
+  <div class="product-card-name">Beauty of Joseon Relief Sun SPF50 +</div>
+  <div class="product-card-price">€16</div>
+</a>
+
+      <!-- ── Product 2 ── -->
+     <!-- ── Heartleaf 70 Intense Calming Cream  ── -->
+<a href="products/heartleaf-70-intense-calming-cream.html" class="product-card reveal">
+  <div class="product-card-image">
+    <img src="products/anua/heartleaf-70-intense-moisturizer/heartleaf-70-intense-calming-cream-image-main.png" alt="Heartleaf 70 Intense Calming Cream " loading="lazy">
+    <span class="product-badge badge-bestseller">Bestseller</span>
+  </div>
+  <div class="product-card-cat">Skincare · Moisturiser</div>
+  <div class="product-card-name">Heartleaf 70 Intense Calming Cream </div>
+  <div class="product-card-price">€26</div>
+</a>
+      <!-- ── Product 3 ── -->
+   <!-- ── Anua PDRN Hyaluronic Acid Capsule 100 Serum ── -->
+<a href="products/anua-pdrn-hyaluronic-acid-capsule-100-serum.html" class="product-card reveal">
+  <div class="product-card-image">
+    <img src="products/anua/anua-pdrn-hyaluronic-acid-100- Serum/anua-pdrn-image-main.jpeg" alt="Anua PDRN Hyaluronic Acid Capsule 100 Serum" loading="lazy">
+    <span class="product-badge">Curated</span>
+  </div>
+  <div class="product-card-cat">Skincare · Serum</div>
+  <div class="product-card-name">Anua PDRN Hyaluronic Acid Capsule 100 Serum</div>
+  <div class="product-card-price">€27.50</div>
+</a>
+    <!-- ── Anua Heartleaf control cleansing oil ── -->
+<a href="products/anua-heartleaf-control-cleansing-oil.html" class="product-card reveal">
+  <div class="product-card-image">
+    <img src="products/anua/heartleaf-pore-control-cleansing-oil/heartleaf-pore-control-cleansing-oil-image-main.png" alt="Anua Heartleaf control cleansing oil" loading="lazy">
+    <span class="product-badge">Popular</span>
+  </div>
+  <div class="product-card-cat">Skincare · Oil</div>
+  <div class="product-card-name">Anua Heartleaf control cleansing oil</div>
+  <div class="product-card-price">€18.30</div>
+</a>
+     <!-- ── Lattafa Yara 100ml ── -->
+<a href="products/lattafa-yara-100ml.html" class="product-card reveal">
+  <div class="product-card-image">
+    <img src="products/lattafa/yara/1-78.jpeg" alt="Lattafa Yara 100ml" loading="lazy">
+    <span class="product-badge badge-bestseller">Bestseller</span>
+  </div>
+  <div class="product-card-cat">Fragrance · Women · Fragrance</div>
+  <div class="product-card-name">Lattafa Yara 100ml</div>
+  <div class="product-card-price">€29.55</div>
+</a>
+
+    <!-- ── Armaf Club de Nuit intense 105ml ── -->
+<a href="products/armaf-club-de-nuit-intense-105ml.html" class="product-card reveal">
+  <div class="product-card-image">
+    <img src="products/armaf/club-de-nuit-intense-man/club-de-nuit-image-1.jpeg" alt="Armaf Club de Nuit intense 105ml" loading="lazy">
+    <span class="product-badge">Popular</span>
+  </div>
+  <div class="product-card-cat">Fragrance · Men · Oil</div>
+  <div class="product-card-name">Armaf Club de Nuit intense 105ml</div>
+  <div class="product-card-price">€29.55</div>
+</a>
+
+     <!-- ── Arabiyat Prestige - Nyla - 80ml - Eau De Parfum - Unisex Perfume ── -->
+<a href="products/arabiyat-prestige-nyla-80ml-eau-de-parfum-unisex-perfume.html" class="product-card reveal">
+  <div class="product-card-image">
+    <img src="products/arabiyat-prestige-nyla/arabiyat-1.jpeg" alt="Arabiyat Prestige - Nyla - 80ml - Eau De Parfum - Unisex Perfume" loading="lazy">
+  </div>
+  <div class="product-card-cat">Fragrance · Unisex · Fragrance</div>
+  <div class="product-card-name">Arabiyat Prestige - Nyla - 80ml - Eau De Parfum - Unisex Perfume</div>
+  <div class="product-card-price">€30</div>
+</a>
+
+      <!-- ── Lattafa EDP Khamrah Qahwa Unisex Perfume 100ml  ── -->
+<a href="products/lattafa-edp-khamrah-qahwa-unisex-perfume-100ml.html" class="product-card reveal">
+  <div class="product-card-image">
+    <img src="products/lattafa/khamrah-qahwa/1-79.jpeg" alt="Lattafa EDP Khamrah Qahwa Unisex Perfume 100ml " loading="lazy">
+    <span class="product-badge">Curated</span>
+  </div>
+  <div class="product-card-cat">Fragrance · Unisex · Fragrance</div>
+  <div class="product-card-name">Lattafa EDP Khamrah Qahwa Unisex Perfume 100ml </div>
+  <div class="product-card-price">€34</div>
+</a>
+
+     <!-- ── Lattafa Khamrah Eau De Parfum 100ml Unisex Fragrance ── -->
+<a href="products/lattafa-khamrah-eau-de-parfum-100ml-unisex-fragrance.html" class="product-card reveal">
+  <div class="product-card-image">
+    <img src="products/lattafa/khamrah/1-60.jpeg" alt="Lattafa Khamrah Eau De Parfum 100ml Unisex Fragrance" loading="lazy">
+    <span class="product-badge">Curated</span>
+  </div>
+  <div class="product-card-cat">Fragrance · Unisex · Fragrance</div>
+  <div class="product-card-name">Lattafa Khamrah Eau De Parfum 100ml Unisex Fragrance</div>
+  <div class="product-card-price">€34</div>
+</a>
+
+   
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ PHILOSOPHY / ABOUT ══════════════════════════════ -->
+  <section id="philosophy">
+    <div class="philosophy-image reveal">
+      <span class="placeholder-icon">◎</span>
+       <img src="images/home-lower.jpg" alt="YSP Collective" style="width:100%;height:100%;object-fit:cover;"> 
+    </div>
+    <div class="philosophy-text reveal">
+      <p class="section-label">Our Philosophy</p>
+      <h2 class="section-title">Three lines. One standard.</h2>
+      <p>YSP Collective is a curated beauty and fragrance brand based in Portugal, bringing together premium skincare, sought-after Arabian perfumes and trusted beauty products under one roof. We started with a simple principle: only carry products we'd genuinely recommend.</p>
+      <p>Whether it's a K-beauty SPF that actually works, a viral Lattafa fragrance, or a niche scent you won't find on the high street — everything here is chosen for quality, described accurately, and backed by real support.</p>
+      <div class="philosophy-values">
+        <div class="pv-item">
+          <div class="pv-num">01</div>
+          <div class="pv-title">Carefully Sourced</div>
+          <div class="pv-desc">Every product from trusted suppliers and authorised EU distributors.</div>
+        </div>
+        <div class="pv-item">
+          <div class="pv-num">02</div>
+          <div class="pv-title">Honestly Described</div>
+          <div class="pv-desc">Accurate condition, spec and provenance. No surprises.</div>
+        </div>
+        <div class="pv-item">
+          <div class="pv-num">03</div>
+          <div class="pv-title">EU Based</div>
+          <div class="pv-desc">Fast shipping across Europe from Portugal. No hidden import costs.</div>
+        </div>
+        <div class="pv-item">
+          <div class="pv-num">04</div>
+          <div class="pv-title">Real Support</div>
+          <div class="pv-desc">Prompt responses and we stand behind every sale.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ CATEGORIES ══════════════════════════════ -->
+  <!-- 
+    CATEGORY IMAGES: Add background-image via inline style on .category-card
+    or place an <img> tag inside.
+    Recommended: 800×1066px (3:4 ratio)
+  -->
+  <section id="categories">
+    <div class="categories-header reveal">
+      <p class="section-label">Shop by Category</p>
+      <h2 class="section-title">Find what you're looking for</h2>
+      <p class="section-desc">From daily skincare essentials to premium Arabian fragrance — browse our curated categories.</p>
+    </div>
+    <div class="categories-grid reveal">
+      <a href="#featured" class="category-card">
+        <img src="images/categories-beauty.jpg" alt="Category Description" class="category-img">
+        <div class="category-card-overlay"></div>
+        <div class="category-card-content">
+          <div class="category-card-name">Beauty &amp; Skincare</div>
+          <div class="category-card-count">Explore Collection →</div>
+        </div>
+      </a>
+      <a href="#featured" class="category-card">
+        <img src="images/categories-fragrance.jpg" alt="Category Description" class="category-img">
+        <div class="category-card-overlay"></div>
+        <div class="category-card-content">
+          <div class="category-card-name">Fragrance</div>
+          <div class="category-card-count">Explore Collection →</div>
+        </div>
+      </a>
+      <a href="#featured" class="category-card">
+        <img src="images/categories-arabian.jpg" alt="Category Description" class="category-img">
+        <div class="category-card-overlay"></div>
+        <div class="category-card-content">
+          <div class="category-card-name">Arabian Fragrance</div>
+          <div class="category-card-count">Explore Collection →</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ BRANDS ══════════════════════════════ -->
+  <section id="brands" style="padding:5rem 3.5rem; background:var(--black); color:var(--white); text-align:center;">
+    <div class="reveal">
+      <p class="section-label" style="color:var(--accent-light);">Our Brands</p>
+      <h2 class="section-title" style="color:var(--white); margin-bottom:1rem;">Carefully selected partners</h2>
+      <p class="section-desc" style="color:rgba(255,255,255,0.5); margin:0 auto 3rem;">Sourced through authorised EU distribution channels. Every product guaranteed authentic.</p>
+    </div>
+    <div class="reveal" style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap;">
+      <div style="border:1px solid rgba(255,255,255,0.08); padding:2rem 2.5rem; min-width:160px; transition:border-color 0.3s, transform 0.3s;" onmouseover="this.style.borderColor='var(--accent)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform=''">
+        <div style="font-family:var(--serif); font-size:1.4rem; font-weight:400; color:var(--white); margin-bottom:0.3rem;">Lattafa</div>
+        <div style="font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.35);">Dubai, UAE</div>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.08); padding:2rem 2.5rem; min-width:160px; transition:border-color 0.3s, transform 0.3s;" onmouseover="this.style.borderColor='var(--accent)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform=''">
+        <div style="font-family:var(--serif); font-size:1.4rem; font-weight:400; color:var(--white); margin-bottom:0.3rem;">Armaf</div>
+        <div style="font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.35);">Dubai, UAE</div>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.08); padding:2rem 2.5rem; min-width:160px; transition:border-color 0.3s, transform 0.3s;" onmouseover="this.style.borderColor='var(--accent)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform=''">
+        <div style="font-family:var(--serif); font-size:1.4rem; font-weight:400; color:var(--white); margin-bottom:0.3rem;">Arabiyat Prestige</div>
+        <div style="font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.35);">Dubai, UAE</div>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.08); padding:2rem 2.5rem; min-width:160px; transition:border-color 0.3s, transform 0.3s;" onmouseover="this.style.borderColor='var(--accent)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform=''">
+        <div style="font-family:var(--serif); font-size:1.4rem; font-weight:400; color:var(--white); margin-bottom:0.3rem;">Swiss Arabian</div>
+        <div style="font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.35);">Dubai, UAE</div>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.08); padding:2rem 2.5rem; min-width:160px; transition:border-color 0.3s, transform 0.3s;" onmouseover="this.style.borderColor='var(--accent)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform=''">
+        <div style="font-family:var(--serif); font-size:1.4rem; font-weight:400; color:var(--white); margin-bottom:0.3rem;">Maison Alhambra</div>
+        <div style="font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.35);">Dubai, UAE</div>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.08); padding:2rem 2.5rem; min-width:160px; transition:border-color 0.3s, transform 0.3s;" onmouseover="this.style.borderColor='var(--accent)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform=''">
+        <div style="font-family:var(--serif); font-size:1.4rem; font-weight:400; color:var(--white); margin-bottom:0.3rem;">Beauty of Joseon</div>
+        <div style="font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.35);">Seoul, Korea</div>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.08); padding:2rem 2.5rem; min-width:160px; transition:border-color 0.3s, transform 0.3s;" onmouseover="this.style.borderColor='var(--accent)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)';this.style.transform=''">
+        <div style="font-family:var(--serif); font-size:1.4rem; font-weight:400; color:var(--white); margin-bottom:0.3rem;">ANUA</div>
+        <div style="font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.35);">Seoul, Korea</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ TESTIMONIALS ══════════════════════════════ -->
+  <section id="testimonials">
+    <div class="testimonials-header reveal">
+      <p class="section-label">What People Say</p>
+      <h2 class="section-title">Trusted by our customers</h2>
+    </div>
+    <div class="testimonial-track reveal">
+      <!-- EDIT: Replace with your real customer testimonials -->
+      <div class="testimonial-item active">
+        <p class="testimonial-quote">"Ordered the Beauty of Joseon SPF and it arrived within 3 days. Genuine product, beautifully packaged. Will definitely order again."</p>
+        <p class="testimonial-author">Sofia M. — Lisbon, PT</p>
+      </div>
+      <div class="testimonial-item">
+        <p class="testimonial-quote">"The skincare bundle was excellent value. Everything sealed, within date, and exactly as described. Really impressed with the selection."</p>
+        <p class="testimonial-author">Anna K. — Berlin, DE</p>
+      </div>
+      <div class="testimonial-item">
+        <p class="testimonial-quote">"The Lattafa Khamrah is incredible — lasts all day and I get compliments every time I wear it. Authentic product, fast shipping from Portugal. Already ordered two more."</p>
+        <p class="testimonial-author">Marco L. — Milan, IT</p>
+      </div>
+    </div>
+    <div class="testimonial-dots reveal">
+      <button class="testimonial-dot active" data-index="0" aria-label="Testimonial 1"></button>
+      <button class="testimonial-dot" data-index="1" aria-label="Testimonial 2"></button>
+      <button class="testimonial-dot" data-index="2" aria-label="Testimonial 3"></button>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ FAQ ══════════════════════════════ -->
+  <section id="faq">
+    <div class="faq-header reveal">
+      <p class="section-label">Common Questions</p>
+      <h2 class="section-title">Everything you need to know</h2>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-question">What condition are your beauty products in?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">All beauty, skincare and fragrance products are brand new, sealed, and within date. We source exclusively from authorised EU distributors — no grey market stock. Every fragrance comes with full batch traceability.</div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-question">Where do you ship to?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">We ship across Europe from our base in Portugal. Most orders dispatch within 24 hours. Delivery is typically 2–5 business days depending on destination. No hidden import costs within the EU.</div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-question">Are your K-beauty products authentic?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">100%. We source from authorised distributors who import directly and legally into the EU. Every product is genuine, correctly labelled for the EU market, and within its stated shelf life. We stake our reputation on authenticity.</div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-question">Why Arabian fragrances?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Arabian fragrance houses like Lattafa and Armaf create rich, long-lasting compositions that rival designer fragrances at a fraction of the price. These aren't imitations — they're original, expertly crafted scents with 8-12+ hour longevity that have built a massive global following. We source through official EU distributors so every bottle is guaranteed authentic.</div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-question">Do you offer returns?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Yes. If there's any issue with your order, get in touch within 14 days and we'll arrange a return or replacement. We stand behind everything we sell.</div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-question">Can I buy in bulk or wholesale?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Absolutely — we welcome trade and bulk enquiries across all product lines. Contact us with your requirements and we'll come back with availability and pricing.</div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-question">Where can I find you on Amazon?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Our products are available across Amazon EU marketplaces under the seller name "YSP Collective". You can also find us on eBay or purchase directly through this site.</div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ CONTACT ══════════════════════════════ -->
+  <section id="contact">
+    <div class="contact-info reveal">
+      <p class="section-label">Get in Touch</p>
+      <h2 class="section-title">Let's talk.</h2>
+      <p>Whether you have a question about a product, want to discuss a bulk order, or just want to know more about what we carry — we'd love to hear from you.</p>
+      <div class="contact-detail">
+        <div class="contact-line">
+          <span class="contact-line-icon">✉</span>
+          <span><a href="mailto:info@yspcollective.com" style="text-decoration:none;color:inherit;">info@yspcollective.com</a></span>
+        </div>
+        <div class="contact-line">
+          <span class="contact-line-icon">◎</span>
+          <span>Portugal, European Union</span>
+        </div>
+        <div class="contact-line">
+          <span class="contact-line-icon">↗</span>
+          <span>Mon – Fri, 9am – 6pm WET</span>
+        </div>
+      </div>
+    </div>
+    <form class="contact-form reveal" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+      <input type="hidden" name="form-name" value="contact">
+      <!-- Honeypot field — hidden from real users, catches bots -->
+      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div class="form-group">
+        <label class="form-label">Your Name</label>
+        <input type="text" class="form-input" name="name" placeholder="Your full name" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" name="email" placeholder="you@example.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Subject</label>
+        <input type="text" class="form-input" name="subject" placeholder="Product enquiry / Bulk order / Other">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea class="form-textarea" name="message" placeholder="Tell us what you're looking for..."></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Send Message</button>
+      <p class="form-status" style="display:none; font-size:0.82rem; margin-top:0.5rem;"></p>
+    </form>
+  </section>
+
+  <!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div>
+          <span class="nav-logo-text">YSP</span>
+          <span class="nav-logo-sub">Collective</span>
+        </div>
+        <p>Curated beauty, fragrance and lifestyle products. Sourced from authorised distributors, delivered across Europe.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="#featured">Beauty &amp; Skincare</a>
+        <a href="#featured">Fragrance</a>
+        <a href="#brands">Our Brands</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#philosophy">About Us</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Also Find Us</h4>
+        <a href="#">Amazon EU</a>
+        <a href="#">eBay</a>
+        <!-- Add social links here -->
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 YSP Collective. All rights reserved.</span>
+      <span>Portugal, European Union</span>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════ SCRIPTS ══════════════════════════════ -->
+  <script>
+    /* Cloudflare email decode - only works on live site */
+    try { document.querySelectorAll('.__cf_email__').forEach(function(){}); } catch(e) {}
+  </script>
+  <script>
+    /* ── Hero Carousel ── */
+    const slides = document.querySelectorAll('.hero-slide');
+    const heroDots = document.querySelectorAll('.hero-dot');
+    const progressBar = document.querySelector('.hero-progress');
+    let currentSlide = 0;
+    const slideInterval = 6000; // ms per slide
+    let slideTimer;
+    let progressTimer;
+    let progressWidth = 0;
+
+    function goToSlide(index) {
+      slides[currentSlide].classList.remove('active');
+      heroDots[currentSlide].classList.remove('active');
+      currentSlide = index;
+      slides[currentSlide].classList.add('active');
+      heroDots[currentSlide].classList.add('active');
+      progressWidth = 0;
+    }
+
+    function nextSlide() {
+      goToSlide((currentSlide + 1) % slides.length);
+    }
+
+    function startCarousel() {
+      clearInterval(slideTimer);
+      clearInterval(progressTimer);
+      progressWidth = 0;
+      progressTimer = setInterval(() => {
+        progressWidth += 100 / (slideInterval / 50);
+        progressBar.style.width = Math.min(progressWidth, 100) + '%';
+      }, 50);
+      slideTimer = setInterval(() => {
+        nextSlide();
+        progressWidth = 0;
+      }, slideInterval);
+    }
+
+    heroDots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        goToSlide(parseInt(dot.dataset.slide));
+        startCarousel();
+      });
+    });
+
+    startCarousel();
+
+    /* ── Nav scroll ── */
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    /* ── Scroll reveal ── */
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => revealObserver.observe(el));
+
+    /* ── FAQ accordion ── */
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    /* ── Testimonials ── */
+    const testimonials = document.querySelectorAll('.testimonial-item');
+    const tDots = document.querySelectorAll('.testimonial-dot');
+    let currentTestimonial = 0;
+
+    function showTestimonial(index) {
+      testimonials[currentTestimonial].classList.remove('active');
+      tDots[currentTestimonial].classList.remove('active');
+      currentTestimonial = index;
+      testimonials[currentTestimonial].classList.add('active');
+      tDots[currentTestimonial].classList.add('active');
+    }
+
+    tDots.forEach(dot => {
+      dot.addEventListener('click', () => showTestimonial(parseInt(dot.dataset.index)));
+    });
+
+    // Auto-rotate testimonials
+    setInterval(() => showTestimonial((currentTestimonial + 1) % testimonials.length), 8000);
+
+    /* ── Contact form — submits to Netlify Forms ── */
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('.btn-submit');
+      const status = form.querySelector('.form-status');
+      
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      status.style.display = 'none';
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      })
+      .then(response => {
+        if (response.ok) {
+          btn.textContent = 'Message Sent ✓';
+          btn.style.background = '#7a9a6a';
+          status.textContent = 'Thank you — we\'ll be in touch shortly.';
+          status.style.color = '#7a9a6a';
+          status.style.display = 'block';
+          setTimeout(() => {
+            btn.textContent = 'Send Message';
+            btn.style.background = '';
+            btn.disabled = false;
+            status.style.display = 'none';
+            form.reset();
+          }, 4000);
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(() => {
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+        status.textContent = 'Something went wrong — please email us directly at info@yspcollective.com';
+        status.style.color = '#b5564e';
+        status.style.display = 'block';
+      });
+    }
+
+    /* ── Prefill enquiry (used from product pages) ── */
+    function prefillEnquiry(subject) {
+      const subjectInput = document.querySelector('#contact input[name="subject"]');
+      if (subjectInput) subjectInput.value = subject;
+      document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Check URL params for prefilled subject (from product detail pages)
+    const urlParams = new URLSearchParams(window.location.search);
+    const preSubject = urlParams.get('subject');
+    if (preSubject) {
+      window.addEventListener('DOMContentLoaded', () => prefillEnquiry(decodeURIComponent(preSubject)));
+    }
+  </script>
+
+</body>
+</html>
