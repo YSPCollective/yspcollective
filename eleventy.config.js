@@ -1,11 +1,14 @@
 module.exports = function(eleventyConfig) {
 
-  // Pass through static assets
-  eleventyConfig.addPassthroughCopy("src/images");
+  // Pass through static assets from src/
   eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPassthroughCopy("src/_redirects");
   eleventyConfig.addPassthroughCopy("src/ysp-chat.js");
   eleventyConfig.addPassthroughCopy("src/ysp-config.js");
+
+  // Pass through root-level asset folders directly to _site
+  eleventyConfig.addPassthroughCopy({ "images": "images" });
+  eleventyConfig.addPassthroughCopy({ "products": "products" });
 
   const PRODUCT_FIELDS = ['name','slug','badge','custom_badge','price','rrp','brand','gender',
     'category','image_main','gallery','description_short','description_full','ysp_thoughts',
