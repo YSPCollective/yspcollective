@@ -60,6 +60,6 @@ ysp_thoughts: >-
 
 
   It sits in that rare sweet spot where it's fresh enough to wear casually but rich enough to feel like a proper evening fragrance. We stocked this because we'd wear it ourselves — and that's always the starting point for what ends up on our shelves.
-featured: true
+featured: false
 published: true
 ---
