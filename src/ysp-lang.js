@@ -109,6 +109,16 @@
     init();
   }
 
+  // Re-apply on slide change (carousel may reset content)
+  document.addEventListener('ysp:slidechange', () => {
+    applyTranslations(getLang());
+  });
+
+  // Also re-apply after a short delay to catch any late renders
+  window.addEventListener('load', () => {
+    setTimeout(() => applyTranslations(getLang()), 300);
+  });
+
   // Expose globally
   window.YSP_LANG = { get: getLang, set: setLang, t };
 
