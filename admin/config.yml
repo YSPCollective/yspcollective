@@ -10,7 +10,7 @@ collections:
   # ─── FRAGRANCE PRODUCTS ───────────────────────────────────────────
   - name: "fragrances"
     label: "Fragrances"
-    folder: "_products/fragrances"
+    folder: "src/_products/fragrances"
     create: true
     slug: "{{slug}}"
     identifier_field: name
@@ -78,7 +78,7 @@ collections:
   # ─── SKINCARE / BEAUTY PRODUCTS ───────────────────────────────────
   - name: "beauty"
     label: "Beauty & Skincare"
-    folder: "_products/beauty"
+    folder: "src/_products/beauty"
     create: true
     slug: "{{slug}}"
     identifier_field: name
