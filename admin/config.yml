@@ -30,7 +30,7 @@ collections:
       - label: "Brand"
         name: "brand"
         widget: "select"
-        options: ["Lattafa", "Armaf", "Arabiyat Prestige", "Swiss Arabian", "Maison Alhambra", "Other"]
+        options: ["Lattafa", "Armaf", "Arabiyat Prestige", "Swiss Arabian", "Maison Alhambra", "Al Haramain", "Other"]
       - label: "Gender"
         name: "gender"
         widget: "select"
@@ -39,7 +39,7 @@ collections:
       - label: "Concentration"
         name: "concentration"
         widget: "select"
-        options: ["Eau de Parfum (EDP)", "Eau de Toilette (EDT)", "Extrait de Parfum (EdP) "Parfum", "Oil", "Other"]
+        options: ["Eau de Parfum (EDP)", "Eau de Toilette (EDT)", "Extrait de Parfum (EdP), "Parfum", "Oil", "Other"]
       - { label: "Fragrance Family", name: "fragrance_family", widget: "string", hint: "e.g. Oriental Vanilla / Amber Floral" }
       - { label: "Top Notes", name: "top_notes", widget: "string", hint: "e.g. Orchid, Heliotrope, Tangerine" }
       - { label: "Heart Notes", name: "heart_notes", widget: "string", required: false }
