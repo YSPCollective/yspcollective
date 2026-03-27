@@ -1,6 +1,6 @@
 ---
 name: Swiss Arabian Enigma of Taif Extrait de Parfum
-slug: swiss-arabian-enigma-of-taif
+slug: swiss-arabian-enigma-of-taif.html
 badge: ""
 custom_badge: Premium
 price: "69.95"
