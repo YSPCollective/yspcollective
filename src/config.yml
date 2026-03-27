@@ -74,6 +74,33 @@ collections:
         name: "ebay_url"
         widget: "string"
         required: false
+
+      # ─── PORTUGUESE TRANSLATIONS ───────────────────────────────────
+      - label: "🇵🇹 Portuguese Translation"
+        name: "pt"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "Optional — leave blank to show English version"
+        fields:
+          - { label: "Name (PT)", name: "name_pt", widget: "string", required: false }
+          - { label: "Short Description (PT)", name: "description_short_pt", widget: "text", required: false }
+          - { label: "Full Description (PT)", name: "description_full_pt", widget: "markdown", required: false }
+          - { label: "YSP Thoughts (PT)", name: "ysp_thoughts_pt", widget: "markdown", required: false }
+
+      # ─── SPANISH TRANSLATIONS ──────────────────────────────────────
+      - label: "🇪🇸 Spanish Translation"
+        name: "es"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "Optional — leave blank to show English version"
+        fields:
+          - { label: "Name (ES)", name: "name_es", widget: "string", required: false }
+          - { label: "Short Description (ES)", name: "description_short_es", widget: "text", required: false }
+          - { label: "Full Description (ES)", name: "description_full_es", widget: "markdown", required: false }
+          - { label: "YSP Thoughts (ES)", name: "ysp_thoughts_es", widget: "markdown", required: false }
+
       - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, hint: "Show this product in the Featured Fragrances section on the homepage" }
       - { label: "Published", name: "published", widget: "boolean", default: true }
 
@@ -124,6 +151,33 @@ collections:
       - { label: "YSP Thoughts (Why We Carry This)", name: "ysp_thoughts", widget: "markdown" }
       - { label: "Amazon Link", name: "amazon_url", widget: "string", required: false }
       - { label: "eBay Link", name: "ebay_url", widget: "string", required: false }
+
+      # ─── PORTUGUESE TRANSLATIONS ───────────────────────────────────
+      - label: "🇵🇹 Portuguese Translation"
+        name: "pt"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "Optional — leave blank to show English version"
+        fields:
+          - { label: "Name (PT)", name: "name_pt", widget: "string", required: false }
+          - { label: "Short Description (PT)", name: "description_short_pt", widget: "text", required: false }
+          - { label: "Full Description (PT)", name: "description_full_pt", widget: "markdown", required: false }
+          - { label: "YSP Thoughts (PT)", name: "ysp_thoughts_pt", widget: "markdown", required: false }
+
+      # ─── SPANISH TRANSLATIONS ──────────────────────────────────────
+      - label: "🇪🇸 Spanish Translation"
+        name: "es"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "Optional — leave blank to show English version"
+        fields:
+          - { label: "Name (ES)", name: "name_es", widget: "string", required: false }
+          - { label: "Short Description (ES)", name: "description_short_es", widget: "text", required: false }
+          - { label: "Full Description (ES)", name: "description_full_es", widget: "markdown", required: false }
+          - { label: "YSP Thoughts (ES)", name: "ysp_thoughts_es", widget: "markdown", required: false }
+
       - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, hint: "Show this product in the Featured Beauty section on the homepage" }
       - { label: "Published", name: "published", widget: "boolean", default: true }
 
