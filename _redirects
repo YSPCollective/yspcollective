@@ -1,4 +1,0 @@
-# Cloudflare Pages redirect rules
-# Admin panel access
-/admin     /admin/index.html     200
-/admin/    /admin/index.html     200
