@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ lang or 'en' }}">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -51,6 +51,37 @@
     .nav-links a:hover { color: var(--accent); }
     .nav-cta { padding: 0.55rem 1.5rem; background: var(--accent); color: var(--white) !important; font-size: 0.7rem !important; transition: background 0.25s, transform 0.25s; }
     .nav-cta:hover { background: var(--black) !important; transform: translateY(-1px); }
+
+    /* LANGUAGE SWITCHER */
+    #ysp-lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      margin-left: 1rem;
+      border-left: 1px solid var(--sand);
+      padding-left: 1rem;
+    }
+    .lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.3rem 0.5rem;
+      background: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--grey);
+      transition: all 0.2s;
+      border-radius: 2px;
+    }
+    .lang-btn:hover { color: var(--accent); border-color: var(--sand); }
+    .lang-btn.active { color: var(--black); border-color: var(--accent); background: rgba(156,123,86,0.06); }
+    .lang-flag { font-size: 0.85rem; line-height: 1; }
+    .lang-code { font-size: 0.65rem; letter-spacing: 0.1em; }
+
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; width: 28px; height: 20px; position: relative; }
     .nav-toggle span { display: block; width: 100%; height: 1.5px; background: var(--black); position: absolute; left: 0; transition: all 0.3s; }
     .nav-toggle span:nth-child(1) { top: 0; }
@@ -103,6 +134,7 @@
       .nav-links { display: none; position: fixed; top: var(--nav-height); left: 0; right: 0; background: var(--white); flex-direction: column; padding: 2rem 1.5rem; gap: 1.5rem; border-bottom: 1px solid var(--sand); }
       .nav-links.open { display: flex; }
       .nav-toggle { display: block; }
+      #ysp-lang-switcher { border-left: none; padding-left: 0; margin-left: 0; }
       footer { padding: 3rem 1.5rem 1.5rem; }
       .footer-top { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; gap: 0.5rem; }
@@ -124,13 +156,14 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="/#featured-fragrances">Fragrances</a></li>
-      <li><a href="/#featured-beauty">Beauty</a></li>
-      <li><a href="/#brands">Brands</a></li>
-      <li><a href="/#philosophy">About</a></li>
-      <li><a href="/#faq">FAQ</a></li>
-      <li><a href="/#contact">Contact</a></li>
-      <li><a href="/#contact" class="nav-cta">Enquire</a></li>
+      <li><a href="/#featured-fragrances" data-i18n="nav_fragrances">Fragrances</a></li>
+      <li><a href="/#featured-beauty" data-i18n="nav_beauty">Beauty</a></li>
+      <li><a href="/#brands" data-i18n="nav_brands">Brands</a></li>
+      <li><a href="/#philosophy" data-i18n="nav_about">About</a></li>
+      <li><a href="/#faq" data-i18n="nav_faq">FAQ</a></li>
+      <li><a href="/#contact" data-i18n="nav_contact">Contact</a></li>
+      <li><a href="/#contact" class="nav-cta" data-i18n="nav_enquire">Enquire</a></li>
+      <li id="ysp-lang-switcher"></li>
     </ul>
   </nav>
 
@@ -143,42 +176,42 @@
           <span class="footer-logo-text">YSP</span>
           <span class="footer-logo-sub">Collective</span>
         </div>
-        <p>Curated beauty, fragrance and lifestyle products. Sourced from authorised distributors, delivered across Europe.</p>
+        <p data-i18n="footer_desc">Curated beauty, fragrance and lifestyle products. Sourced from authorised distributors, delivered across Europe.</p>
       </div>
       <div class="footer-col">
-        <h4>Shop</h4>
-        <a href="/#featured-fragrances">Fragrances</a>
-        <a href="/#featured-beauty">Beauty &amp; Skincare</a>
-        <a href="/#brands">Our Brands</a>
+        <h4 data-i18n="footer_shop">Shop</h4>
+        <a href="/#featured-fragrances" data-i18n="nav_fragrances">Fragrances</a>
+        <a href="/#featured-beauty" data-i18n="nav_beauty">Beauty &amp; Skincare</a>
+        <a href="/#brands" data-i18n="nav_brands">Our Brands</a>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
-        <a href="/#philosophy">About Us</a>
-        <a href="/#faq">FAQ</a>
-        <a href="/#contact">Contact</a>
+        <h4 data-i18n="footer_company">Company</h4>
+        <a href="/#philosophy" data-i18n="footer_about">About Us</a>
+        <a href="/#faq" data-i18n="nav_faq">FAQ</a>
+        <a href="/#contact" data-i18n="nav_contact">Contact</a>
       </div>
       <div class="footer-col">
-        <h4>Also Find Us</h4>
+        <h4 data-i18n="footer_find">Also Find Us</h4>
         <a href="https://www.amazon.co.uk/s?me=A3M7XDMHQD6V9L" target="_blank" rel="noopener">Amazon EU</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 YSP Collective. All rights reserved.</span>
+      <span>© 2026 YSP Collective. <span data-i18n="footer_rights">All rights reserved.</span></span>
       <span>Portugal, European Union</span>
     </div>
   </footer>
 
+  <script src="/ysp-translations.js"></script>
+  <script src="/ysp-lang.js"></script>
   <script src="/ysp-config.js"></script>
   <script src="/ysp-chat.js"></script>
 
   <script>
-    // Nav scroll
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
 
-    // Reveal
     const reveals = document.querySelectorAll('.reveal');
     const ro = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
@@ -190,7 +223,6 @@
     }, { threshold: 0.08 });
     reveals.forEach(el => ro.observe(el));
 
-    // Enquiry prefill from sessionStorage
     window.addEventListener('DOMContentLoaded', () => {
       const subject = sessionStorage.getItem('enquiry_subject');
       if (subject) {

@@ -1,0 +1,530 @@
+const YSP_TRANSLATIONS = {
+  en: {
+    // Nav
+    nav_fragrances: "Fragrances",
+    nav_beauty: "Beauty",
+    nav_brands: "Brands",
+    nav_about: "About",
+    nav_faq: "FAQ",
+    nav_contact: "Contact",
+    nav_enquire: "Enquire",
+
+    // Hero 1
+    hero_1_tag: "Beauty · Skincare · Fragrance",
+    hero_1_title: "Curated beauty, <em>elevated</em> living.",
+    hero_1_sub: "Premium skincare, fragrance and beauty products — sourced from trusted brands, delivered across Europe.",
+    hero_1_cta1: "Shop Fragrances",
+    hero_1_cta2: "Our Story",
+
+    // Hero 2
+    hero_2_tag: "K-Beauty · SPF · Clean Skincare",
+    hero_2_title: "The products we <em>actually</em> use.",
+    hero_2_sub: "Every item in our range is something we'd recommend to someone we know. No filler, no grey market — just products that work.",
+    hero_2_cta1: "Shop Beauty",
+    hero_2_cta2: "Get in Touch",
+
+    // Hero 3
+    hero_3_tag: "Fragrance · Arabian Perfume · Niche Scents",
+    hero_3_title: "Discover Arabian <em>fragrance.</em>",
+    hero_3_sub: "From Lattafa to Armaf — experience the scents taking Europe by storm. Rich, long-lasting compositions at a fraction of designer prices.",
+    hero_3_cta1: "Explore Range",
+    hero_3_cta2: "Wholesale",
+
+    // Stats
+    stat_products: "Products Delivered",
+    stat_satisfaction: "Customer Satisfaction",
+    stat_based: "Based & Authorised",
+    stat_dispatch: "Average Dispatch",
+
+    // Search
+    search_label: "Find Your Scent or Skincare",
+    search_title: "Search our range",
+    search_placeholder: "Search by name, brand, accord, or ingredient...",
+    filter_all: "All",
+    filter_fragrance: "Fragrance",
+    filter_beauty: "Beauty",
+    filter_vanilla: "Vanilla",
+    filter_oud: "Oud",
+    filter_floral: "Floral",
+    filter_fresh: "Fresh",
+    filter_spicy: "Spicy",
+    filter_gourmand: "Gourmand",
+    filter_woody: "Woody",
+    results_found: "products found",
+    result_singular: "product found",
+    no_results: "No products found — try a different search.",
+
+    // Featured
+    frag_label: "Arabian & Niche Fragrance",
+    frag_title: "Featured fragrances",
+    beauty_label: "K-Beauty & Skincare",
+    beauty_title: "Featured beauty",
+
+    // Philosophy
+    phil_label: "Our Philosophy",
+    phil_title: "Three lines. One standard.",
+    phil_p1: "YSP Collective is a curated beauty and fragrance brand based in Portugal, bringing together premium skincare, sought-after Arabian perfumes and trusted beauty products under one roof. We started with a simple principle: only carry products we'd genuinely recommend.",
+    phil_p2: "Whether it's a K-beauty SPF that actually works, a viral Lattafa fragrance, or a niche scent you won't find on the high street — everything here is chosen for quality, described accurately, and backed by real support.",
+    val_1_title: "Carefully Sourced",
+    val_1_desc: "Every product from trusted suppliers and authorised EU distributors.",
+    val_2_title: "Honestly Described",
+    val_2_desc: "Accurate condition, spec and provenance. No surprises.",
+    val_3_title: "EU Based",
+    val_3_desc: "Fast shipping across Europe from Portugal. No hidden import costs.",
+    val_4_title: "Real Support",
+    val_4_desc: "Prompt responses and we stand behind every sale.",
+
+    // Categories
+    cat_label: "Shop by Category",
+    cat_title: "Find what you're looking for",
+    cat_desc: "From daily skincare essentials to premium Arabian fragrance — browse our curated categories.",
+    cat_beauty: "Beauty & Skincare",
+    cat_fragrance: "Fragrance",
+    cat_arabian: "Arabian Fragrance",
+    cat_explore: "Explore Collection →",
+
+    // Brands
+    brands_label: "Our Brands",
+    brands_title: "Carefully selected partners",
+    brands_desc: "Sourced through authorised EU distribution channels. Every product guaranteed authentic.",
+
+    // Testimonials
+    test_label: "What People Say",
+    test_title: "Trusted by our customers",
+    test_1_quote: "Ordered the Beauty of Joseon SPF and it arrived within 3 days. Genuine product, beautifully packaged. Will definitely order again.",
+    test_1_author: "Sofia M. — Lisbon, PT",
+    test_2_quote: "The skincare bundle was excellent value. Everything sealed, within date, and exactly as described. Really impressed with the selection.",
+    test_2_author: "Anna K. — Berlin, DE",
+    test_3_quote: "The Lattafa Khamrah is incredible — lasts all day and I get compliments every time I wear it. Authentic product, fast shipping from Portugal.",
+    test_3_author: "Marco L. — Milan, IT",
+
+    // FAQ
+    faq_label: "Common Questions",
+    faq_title: "Everything you need to know",
+    faq_1_q: "What condition are your beauty products in?",
+    faq_1_a: "All beauty, skincare and fragrance products are brand new, sealed, and within date. We source exclusively from authorised EU distributors — no grey market stock.",
+    faq_2_q: "Where do you ship to?",
+    faq_2_a: "We ship across Europe from our base in Portugal. Most orders dispatch within 24 hours. Delivery is typically 2–5 business days. No hidden import costs within the EU.",
+    faq_3_q: "Are your K-beauty products authentic?",
+    faq_3_a: "100%. We source from authorised distributors who import directly and legally into the EU. Every product is genuine, correctly labelled, and within its stated shelf life.",
+    faq_4_q: "Why Arabian fragrances?",
+    faq_4_a: "Arabian fragrance houses like Lattafa and Armaf create rich, long-lasting compositions that rival designer fragrances at a fraction of the price. Original, expertly crafted scents sourced through official EU distributors — every bottle guaranteed authentic.",
+    faq_5_q: "Do you offer returns?",
+    faq_5_a: "Yes. If there's any issue with your order, get in touch within 14 days and we'll arrange a return or replacement. We stand behind everything we sell.",
+    faq_6_q: "Can I buy in bulk or wholesale?",
+    faq_6_a: "Absolutely — we welcome trade and bulk enquiries across all product lines. Contact us with your requirements and we'll come back with availability and pricing.",
+
+    // Contact
+    contact_label: "Get in Touch",
+    contact_title: "Let's talk.",
+    contact_p: "Whether you have a question about a product, want to discuss a bulk order, or just want to know more about what we carry — we'd love to hear from you.",
+    contact_hours: "Mon – Fri, 9am – 6pm WET",
+    form_name: "Your Name",
+    form_name_ph: "Your full name",
+    form_email: "Email Address",
+    form_email_ph: "you@example.com",
+    form_subject: "Subject",
+    form_subject_ph: "Product enquiry / Bulk order / Other",
+    form_message: "Message",
+    form_message_ph: "Tell us what you're looking for...",
+    form_submit: "Send Message",
+    form_success: "Thank you — we'll be in touch shortly.",
+    form_error: "Something went wrong — please email info@yspcollective.com",
+
+    // Footer
+    footer_desc: "Curated beauty, fragrance and lifestyle products. Sourced from authorised distributors, delivered across Europe.",
+    footer_shop: "Shop",
+    footer_company: "Company",
+    footer_find: "Also Find Us",
+    footer_about: "About Us",
+    footer_rights: "All rights reserved.",
+
+    // Product page
+    pdp_enquire: "Enquire About This Product",
+    pdp_amazon: "Buy on Amazon",
+    pdp_trust_1: "EU Authorised Stock",
+    pdp_trust_2: "Authentic & Sealed",
+    pdp_trust_3: "Fast EU Shipping",
+    pdp_trust_4: "90-Day Guarantee",
+    pdp_tab_desc: "Full Description",
+    pdp_tab_details: "Details & Specs",
+    pdp_tab_thoughts: "YSP Thoughts",
+    pdp_tab_shipping: "Shipping & Returns",
+    pdp_thoughts_label: "Why We Carry This",
+    pdp_related_label: "You May Also Like",
+    pdp_related_title: "Similar products",
+    pdp_shipping_p1: "We ship across Europe from our base in Portugal. Most orders dispatch within 24 hours. Delivery is typically 2–5 business days depending on destination. No hidden import costs within the EU.",
+    pdp_shipping_p2: "All products are new, sealed, and sourced from authorised EU distributors. If there's any issue with your order, contact us within 14 days and we'll arrange a return or replacement promptly.",
+    pdp_shipping_p3: "For questions before or after purchase, email info@yspcollective.com — we respond within 24 hours Monday to Friday.",
+    pdp_accords: "Main Accords",
+    pdp_home: "Home",
+    pdp_back_frag: "Fragrance",
+    pdp_back_beauty: "Skincare",
+
+    // Chat widget
+    chat_header: "YSP Advisor",
+    chat_subheader: "Fragrance & Beauty",
+    chat_welcome: "Hello! I'm your YSP fragrance and beauty advisor. I can help you find your perfect scent, answer questions about our skincare range, or help with anything else — delivery, ordering, you name it. What can I help you with today?",
+    chat_placeholder: "Ask me anything...",
+    chat_suggest_1: "Find me a fragrance",
+    chat_suggest_2: "What's popular?",
+    chat_suggest_3: "Skincare advice",
+    chat_suggest_4: "Shipping info",
+    chat_error: "I'm having a little trouble connecting right now. For immediate help, please email info@yspcollective.com and we'll get back to you within 24 hours.",
+    chat_footer: "Powered by YSP Collective · info@yspcollective.com"
+  },
+
+  pt: {
+    // Nav
+    nav_fragrances: "Fragrâncias",
+    nav_beauty: "Beleza",
+    nav_brands: "Marcas",
+    nav_about: "Sobre",
+    nav_faq: "FAQ",
+    nav_contact: "Contacto",
+    nav_enquire: "Saber Mais",
+
+    // Hero 1
+    hero_1_tag: "Beleza · Skincare · Fragrância",
+    hero_1_title: "Beleza selecionada, <em>vida elevada.</em>",
+    hero_1_sub: "Produtos de skincare, fragrância e beleza premium — de marcas de confiança, entregues em toda a Europa.",
+    hero_1_cta1: "Ver Fragrâncias",
+    hero_1_cta2: "A Nossa História",
+
+    // Hero 2
+    hero_2_tag: "K-Beauty · SPF · Skincare Natural",
+    hero_2_title: "Os produtos que <em>realmente</em> usamos.",
+    hero_2_sub: "Cada produto na nossa gama é algo que recomendaríamos a alguém próximo. Sem enganos, sem mercado paralelo — apenas produtos que funcionam.",
+    hero_2_cta1: "Ver Beleza",
+    hero_2_cta2: "Fale Connosco",
+
+    // Hero 3
+    hero_3_tag: "Fragrância · Perfume Árabe · Nicho",
+    hero_3_title: "Descubra a fragrância <em>árabe.</em>",
+    hero_3_sub: "De Lattafa a Armaf — experiencie os perfumes que conquistam a Europa. Composições ricas e duradouras a uma fração do preço das marcas de luxo.",
+    hero_3_cta1: "Ver Gama",
+    hero_3_cta2: "Grossista",
+
+    // Stats
+    stat_products: "Produtos Entregues",
+    stat_satisfaction: "Satisfação dos Clientes",
+    stat_based: "Baseados na UE & Autorizados",
+    stat_dispatch: "Expedição Média",
+
+    // Search
+    search_label: "Encontre o Seu Perfume ou Skincare",
+    search_title: "Pesquise na nossa gama",
+    search_placeholder: "Pesquise por nome, marca, acorde ou ingrediente...",
+    filter_all: "Todos",
+    filter_fragrance: "Fragrância",
+    filter_beauty: "Beleza",
+    filter_vanilla: "Baunilha",
+    filter_oud: "Oud",
+    filter_floral: "Floral",
+    filter_fresh: "Fresco",
+    filter_spicy: "Especiado",
+    filter_gourmand: "Gourmand",
+    filter_woody: "Amadeirado",
+    results_found: "produtos encontrados",
+    result_singular: "produto encontrado",
+    no_results: "Nenhum produto encontrado — tente uma pesquisa diferente.",
+
+    // Featured
+    frag_label: "Fragrância Árabe & Nicho",
+    frag_title: "Fragrâncias em destaque",
+    beauty_label: "K-Beauty & Skincare",
+    beauty_title: "Beleza em destaque",
+
+    // Philosophy
+    phil_label: "A Nossa Filosofia",
+    phil_title: "Três linhas. Um padrão.",
+    phil_p1: "A YSP Collective é uma marca de beleza e fragrância curada, baseada em Portugal, que reúne skincare premium, perfumes árabes e produtos de beleza de confiança sob o mesmo teto. Começámos com um princípio simples: apenas comercializar produtos que recomendaríamos genuinamente.",
+    phil_p2: "Seja um SPF de K-beauty que realmente funciona, uma fragrância Lattafa viral, ou um perfume de nicho que não encontrará nas lojas tradicionais — tudo aqui é escolhido pela qualidade, descrito com rigor e apoiado por suporte real.",
+    val_1_title: "Cuidadosamente Selecionado",
+    val_1_desc: "Todos os produtos de fornecedores de confiança e distribuidores autorizados na UE.",
+    val_2_title: "Descrito com Honestidade",
+    val_2_desc: "Condição, especificações e proveniência rigorosas. Sem surpresas.",
+    val_3_title: "Baseados na UE",
+    val_3_desc: "Envio rápido para toda a Europa a partir de Portugal. Sem custos de importação ocultos.",
+    val_4_title: "Apoio Real",
+    val_4_desc: "Respostas rápidas e garantia em cada venda.",
+
+    // Categories
+    cat_label: "Comprar por Categoria",
+    cat_title: "Encontre o que procura",
+    cat_desc: "Desde essenciais de skincare diário a fragrâncias árabes premium — explore as nossas categorias.",
+    cat_beauty: "Beleza & Skincare",
+    cat_fragrance: "Fragrância",
+    cat_arabian: "Fragrância Árabe",
+    cat_explore: "Explorar Coleção →",
+
+    // Brands
+    brands_label: "As Nossas Marcas",
+    brands_title: "Parceiros cuidadosamente selecionados",
+    brands_desc: "Fornecidos através de canais de distribuição autorizados na UE. Todos os produtos garantidamente autênticos.",
+
+    // Testimonials
+    test_label: "O Que Dizem",
+    test_title: "A confiança dos nossos clientes",
+    test_1_quote: "Encomendei o SPF da Beauty of Joseon e chegou em 3 dias. Produto genuíno, embalado com cuidado. Vou certamente repetir.",
+    test_1_author: "Sofia M. — Lisboa, PT",
+    test_2_quote: "O conjunto de skincare tinha uma relação qualidade-preço excelente. Tudo selado, dentro do prazo e exatamente como descrito. Muito impressionada.",
+    test_2_author: "Anna K. — Berlim, DE",
+    test_3_quote: "O Lattafa Khamrah é incrível — dura o dia todo e recebo elogios sempre que o uso. Produto autêntico, envio rápido de Portugal.",
+    test_3_author: "Marco L. — Milão, IT",
+
+    // FAQ
+    faq_label: "Perguntas Frequentes",
+    faq_title: "Tudo o que precisa de saber",
+    faq_1_q: "Em que estado estão os seus produtos de beleza?",
+    faq_1_a: "Todos os produtos de beleza, skincare e fragrância são novos, selados e dentro do prazo de validade. Fornecemos exclusivamente através de distribuidores autorizados na UE — sem mercado paralelo.",
+    faq_2_q: "Para onde fazem entregas?",
+    faq_2_a: "Enviamos para toda a Europa a partir da nossa base em Portugal. A maioria das encomendas é expedida em 24 horas. A entrega demora normalmente 2 a 5 dias úteis. Sem custos de importação ocultos na UE.",
+    faq_3_q: "Os produtos K-beauty são autênticos?",
+    faq_3_a: "100%. Fornecemos através de distribuidores autorizados que importam direta e legalmente para a UE. Todos os produtos são genuínos, corretamente rotulados e dentro do prazo de validade.",
+    faq_4_q: "Porquê fragrâncias árabes?",
+    faq_4_a: "As casas de fragrâncias árabes como a Lattafa e a Armaf criam composições ricas e duradouras que rivalizam com as fragrâncias de designer a uma fração do preço. Perfumes originais e especializados, fornecidos através de distribuidores oficiais na UE — cada frasco garantidamente autêntico.",
+    faq_5_q: "Oferecem devoluções?",
+    faq_5_a: "Sim. Se houver qualquer problema com a sua encomenda, contacte-nos em 14 dias e trataremos de uma devolução ou substituição. Garantimos tudo o que vendemos.",
+    faq_6_q: "Posso comprar a granel ou por grosso?",
+    faq_6_a: "Absolutamente — aceitamos consultas de comércio e compras a granel em todas as linhas de produtos. Contacte-nos com os seus requisitos e respondemos com disponibilidade e preços.",
+
+    // Contact
+    contact_label: "Fale Connosco",
+    contact_title: "Vamos conversar.",
+    contact_p: "Seja para uma questão sobre um produto, discutir uma encomenda a granel, ou simplesmente saber mais sobre o que comercializamos — teremos todo o gosto em ouvir.",
+    contact_hours: "Seg – Sex, 9h – 18h WET",
+    form_name: "O Seu Nome",
+    form_name_ph: "O seu nome completo",
+    form_email: "Endereço de Email",
+    form_email_ph: "voce@exemplo.com",
+    form_subject: "Assunto",
+    form_subject_ph: "Consulta de produto / Encomenda a granel / Outro",
+    form_message: "Mensagem",
+    form_message_ph: "Diga-nos o que procura...",
+    form_submit: "Enviar Mensagem",
+    form_success: "Obrigado — entraremos em contacto brevemente.",
+    form_error: "Algo correu mal — por favor envie email para info@yspcollective.com",
+
+    // Footer
+    footer_desc: "Produtos de beleza, fragrância e lifestyle curados. Fornecidos por distribuidores autorizados, entregues em toda a Europa.",
+    footer_shop: "Loja",
+    footer_company: "Empresa",
+    footer_find: "Encontre-nos também",
+    footer_about: "Sobre Nós",
+    footer_rights: "Todos os direitos reservados.",
+
+    // Product page
+    pdp_enquire: "Solicitar Informação",
+    pdp_amazon: "Comprar na Amazon",
+    pdp_trust_1: "Stock Autorizado na UE",
+    pdp_trust_2: "Autêntico & Selado",
+    pdp_trust_3: "Envio Rápido na UE",
+    pdp_trust_4: "Garantia de 90 Dias",
+    pdp_tab_desc: "Descrição Completa",
+    pdp_tab_details: "Detalhes & Especificações",
+    pdp_tab_thoughts: "A Nossa Opinião",
+    pdp_tab_shipping: "Envio & Devoluções",
+    pdp_thoughts_label: "Porque Comercializamos Este Produto",
+    pdp_related_label: "Poderá Também Gostar",
+    pdp_related_title: "Produtos similares",
+    pdp_shipping_p1: "Enviamos para toda a Europa a partir da nossa base em Portugal. A maioria das encomendas é expedida em 24 horas. A entrega demora normalmente 2 a 5 dias úteis. Sem custos de importação ocultos na UE.",
+    pdp_shipping_p2: "Todos os produtos são novos, selados e fornecidos por distribuidores autorizados na UE. Se houver qualquer problema com a sua encomenda, contacte-nos em 14 dias e trataremos de uma devolução ou substituição.",
+    pdp_shipping_p3: "Para questões antes ou após a compra, envie email para info@yspcollective.com — respondemos em 24 horas de segunda a sexta.",
+    pdp_accords: "Acordes Principais",
+    pdp_home: "Início",
+    pdp_back_frag: "Fragrância",
+    pdp_back_beauty: "Skincare",
+
+    // Chat
+    chat_header: "Conselheiro YSP",
+    chat_subheader: "Fragrância & Beleza",
+    chat_welcome: "Olá! Sou o seu conselheiro de fragrâncias e beleza YSP. Posso ajudá-lo a encontrar o perfume perfeito, responder a questões sobre a nossa gama de skincare, ou ajudar com qualquer outra coisa. Em que posso ajudar hoje?",
+    chat_placeholder: "Pergunte-me qualquer coisa...",
+    chat_suggest_1: "Encontrar uma fragrância",
+    chat_suggest_2: "O que é popular?",
+    chat_suggest_3: "Conselhos de skincare",
+    chat_suggest_4: "Informação de envio",
+    chat_error: "Estou com dificuldades de ligação. Para ajuda imediata, envie email para info@yspcollective.com e responderemos em 24 horas.",
+    chat_footer: "Powered by YSP Collective · info@yspcollective.com"
+  },
+
+  es: {
+    // Nav
+    nav_fragrances: "Fragancias",
+    nav_beauty: "Belleza",
+    nav_brands: "Marcas",
+    nav_about: "Nosotros",
+    nav_faq: "FAQ",
+    nav_contact: "Contacto",
+    nav_enquire: "Consultar",
+
+    // Hero 1
+    hero_1_tag: "Belleza · Skincare · Fragancia",
+    hero_1_title: "Belleza seleccionada, <em>vida elevada.</em>",
+    hero_1_sub: "Productos premium de skincare, fragancia y belleza — de marcas de confianza, entregados en toda Europa.",
+    hero_1_cta1: "Ver Fragancias",
+    hero_1_cta2: "Nuestra Historia",
+
+    // Hero 2
+    hero_2_tag: "K-Beauty · SPF · Skincare Limpio",
+    hero_2_title: "Los productos que <em>realmente</em> usamos.",
+    hero_2_sub: "Cada artículo de nuestra gama es algo que recomendaríamos a alguien cercano. Sin relleno, sin mercado gris — solo productos que funcionan.",
+    hero_2_cta1: "Ver Belleza",
+    hero_2_cta2: "Contáctanos",
+
+    // Hero 3
+    hero_3_tag: "Fragancia · Perfume Árabe · Nicho",
+    hero_3_title: "Descubre la fragancia <em>árabe.</em>",
+    hero_3_sub: "De Lattafa a Armaf — experimenta los aromas que conquistan Europa. Composiciones ricas y duraderas a una fracción del precio de las marcas de lujo.",
+    hero_3_cta1: "Ver Gama",
+    hero_3_cta2: "Mayorista",
+
+    // Stats
+    stat_products: "Productos Entregados",
+    stat_satisfaction: "Satisfacción del Cliente",
+    stat_based: "Basados en UE & Autorizados",
+    stat_dispatch: "Envío Promedio",
+
+    // Search
+    search_label: "Encuentra Tu Perfume o Skincare",
+    search_title: "Busca en nuestra gama",
+    search_placeholder: "Busca por nombre, marca, acorde o ingrediente...",
+    filter_all: "Todos",
+    filter_fragrance: "Fragancia",
+    filter_beauty: "Belleza",
+    filter_vanilla: "Vainilla",
+    filter_oud: "Oud",
+    filter_floral: "Floral",
+    filter_fresh: "Fresco",
+    filter_spicy: "Especiado",
+    filter_gourmand: "Gourmand",
+    filter_woody: "Amaderado",
+    results_found: "productos encontrados",
+    result_singular: "producto encontrado",
+    no_results: "No se encontraron productos — prueba con otra búsqueda.",
+
+    // Featured
+    frag_label: "Fragancia Árabe & Nicho",
+    frag_title: "Fragancias destacadas",
+    beauty_label: "K-Beauty & Skincare",
+    beauty_title: "Belleza destacada",
+
+    // Philosophy
+    phil_label: "Nuestra Filosofía",
+    phil_title: "Tres líneas. Un estándar.",
+    phil_p1: "YSP Collective es una marca de belleza y fragancia curada con base en Portugal, que reúne skincare premium, perfumes árabes y productos de belleza de confianza bajo un mismo techo. Empezamos con un principio simple: solo comercializar productos que recomendaríamos genuinamente.",
+    phil_p2: "Ya sea un SPF de K-beauty que realmente funciona, una fragancia Lattafa viral, o un perfume de nicho que no encontrarás en las tiendas habituales — todo aquí se elige por calidad, se describe con precisión y está respaldado por soporte real.",
+    val_1_title: "Cuidadosamente Seleccionado",
+    val_1_desc: "Todos los productos de proveedores de confianza y distribuidores autorizados en la UE.",
+    val_2_title: "Descrito con Honestidad",
+    val_2_desc: "Condición, especificaciones y procedencia precisas. Sin sorpresas.",
+    val_3_title: "Basados en la UE",
+    val_3_desc: "Envío rápido a toda Europa desde Portugal. Sin costes de importación ocultos.",
+    val_4_title: "Soporte Real",
+    val_4_desc: "Respuestas rápidas y respaldo en cada venta.",
+
+    // Categories
+    cat_label: "Comprar por Categoría",
+    cat_title: "Encuentra lo que buscas",
+    cat_desc: "Desde esenciales de skincare diario hasta fragancias árabes premium — explora nuestras categorías.",
+    cat_beauty: "Belleza & Skincare",
+    cat_fragrance: "Fragancia",
+    cat_arabian: "Fragancia Árabe",
+    cat_explore: "Explorar Colección →",
+
+    // Brands
+    brands_label: "Nuestras Marcas",
+    brands_title: "Socios cuidadosamente seleccionados",
+    brands_desc: "Suministrados a través de canales de distribución autorizados en la UE. Todos los productos garantizados como auténticos.",
+
+    // Testimonials
+    test_label: "Lo Que Dicen",
+    test_title: "La confianza de nuestros clientes",
+    test_1_quote: "Pedí el SPF de Beauty of Joseon y llegó en 3 días. Producto genuino, empaquetado con cuidado. Definitivamente repetiré.",
+    test_1_author: "Sofia M. — Lisboa, PT",
+    test_2_quote: "El set de skincare tenía una relación calidad-precio excelente. Todo sellado, dentro de fecha y exactamente como se describía. Muy impresionada.",
+    test_2_author: "Anna K. — Berlín, DE",
+    test_3_quote: "El Lattafa Khamrah es increíble — dura todo el día y recibo cumplidos cada vez que lo uso. Producto auténtico, envío rápido desde Portugal.",
+    test_3_author: "Marco L. — Milán, IT",
+
+    // FAQ
+    faq_label: "Preguntas Frecuentes",
+    faq_title: "Todo lo que necesitas saber",
+    faq_1_q: "¿En qué estado están sus productos de belleza?",
+    faq_1_a: "Todos los productos de belleza, skincare y fragancia son nuevos, sellados y dentro de fecha. Suministramos exclusivamente a través de distribuidores autorizados en la UE — sin mercado gris.",
+    faq_2_q: "¿A dónde realizan envíos?",
+    faq_2_a: "Enviamos a toda Europa desde nuestra base en Portugal. La mayoría de pedidos se envían en 24 horas. La entrega tarda normalmente 2–5 días hábiles. Sin costes de importación ocultos en la UE.",
+    faq_3_q: "¿Los productos K-beauty son auténticos?",
+    faq_3_a: "100%. Suministramos a través de distribuidores autorizados que importan directa y legalmente a la UE. Todos los productos son genuinos, correctamente etiquetados y dentro de su fecha de caducidad.",
+    faq_4_q: "¿Por qué fragancias árabes?",
+    faq_4_a: "Las casas de fragancias árabes como Lattafa y Armaf crean composiciones ricas y duraderas que rivalizan con fragancias de diseñador a una fracción del precio. Perfumes originales y artesanales, suministrados a través de distribuidores oficiales en la UE — cada botella garantizada como auténtica.",
+    faq_5_q: "¿Ofrecen devoluciones?",
+    faq_5_a: "Sí. Si hay algún problema con tu pedido, contáctanos en 14 días y gestionaremos una devolución o sustitución. Respaldamos todo lo que vendemos.",
+    faq_6_q: "¿Puedo comprar al por mayor?",
+    faq_6_a: "Absolutamente — aceptamos consultas de comercio y compras al por mayor en todas las líneas de productos. Contáctanos con tus requisitos y te responderemos con disponibilidad y precios.",
+
+    // Contact
+    contact_label: "Contáctanos",
+    contact_title: "Hablemos.",
+    contact_p: "Ya sea para una pregunta sobre un producto, hablar de un pedido al por mayor, o simplemente saber más sobre lo que comercializamos — nos encantaría saber de ti.",
+    contact_hours: "Lun – Vie, 9h – 18h WET",
+    form_name: "Tu Nombre",
+    form_name_ph: "Tu nombre completo",
+    form_email: "Correo Electrónico",
+    form_email_ph: "tu@ejemplo.com",
+    form_subject: "Asunto",
+    form_subject_ph: "Consulta de producto / Pedido al por mayor / Otro",
+    form_message: "Mensaje",
+    form_message_ph: "Cuéntanos lo que buscas...",
+    form_submit: "Enviar Mensaje",
+    form_success: "Gracias — nos pondremos en contacto pronto.",
+    form_error: "Algo salió mal — por favor envía un email a info@yspcollective.com",
+
+    // Footer
+    footer_desc: "Productos de belleza, fragancia y lifestyle curados. Suministrados por distribuidores autorizados, entregados en toda Europa.",
+    footer_shop: "Tienda",
+    footer_company: "Empresa",
+    footer_find: "Encuéntranos también en",
+    footer_about: "Sobre Nosotros",
+    footer_rights: "Todos los derechos reservados.",
+
+    // Product page
+    pdp_enquire: "Solicitar Información",
+    pdp_amazon: "Comprar en Amazon",
+    pdp_trust_1: "Stock Autorizado en UE",
+    pdp_trust_2: "Auténtico & Sellado",
+    pdp_trust_3: "Envío Rápido en UE",
+    pdp_trust_4: "Garantía de 90 Días",
+    pdp_tab_desc: "Descripción Completa",
+    pdp_tab_details: "Detalles & Especificaciones",
+    pdp_tab_thoughts: "Nuestra Opinión",
+    pdp_tab_shipping: "Envío & Devoluciones",
+    pdp_thoughts_label: "Por Qué Comercializamos Este Producto",
+    pdp_related_label: "También Te Puede Gustar",
+    pdp_related_title: "Productos similares",
+    pdp_shipping_p1: "Enviamos a toda Europa desde nuestra base en Portugal. La mayoría de pedidos se envían en 24 horas. La entrega tarda normalmente 2–5 días hábiles. Sin costes de importación ocultos en la UE.",
+    pdp_shipping_p2: "Todos los productos son nuevos, sellados y suministrados por distribuidores autorizados en la UE. Si hay algún problema con tu pedido, contáctanos en 14 días y gestionaremos una devolución o sustitución.",
+    pdp_shipping_p3: "Para preguntas antes o después de la compra, envía un email a info@yspcollective.com — respondemos en 24 horas de lunes a viernes.",
+    pdp_accords: "Acordes Principales",
+    pdp_home: "Inicio",
+    pdp_back_frag: "Fragancia",
+    pdp_back_beauty: "Skincare",
+
+    // Chat
+    chat_header: "Asesor YSP",
+    chat_subheader: "Fragancia & Belleza",
+    chat_welcome: "¡Hola! Soy tu asesor de fragancias y belleza YSP. Puedo ayudarte a encontrar tu perfume perfecto, responder preguntas sobre nuestra gama de skincare, o ayudarte con cualquier otra cosa. ¿En qué puedo ayudarte hoy?",
+    chat_placeholder: "Pregúntame lo que quieras...",
+    chat_suggest_1: "Encontrar una fragancia",
+    chat_suggest_2: "¿Qué es popular?",
+    chat_suggest_3: "Consejos de skincare",
+    chat_suggest_4: "Info de envío",
+    chat_error: "Tengo problemas de conexión. Para ayuda inmediata, envía un email a info@yspcollective.com y te responderemos en 24 horas.",
+    chat_footer: "Powered by YSP Collective · info@yspcollective.com"
+  }
+};
+
+// Make available globally
+if (typeof window !== 'undefined') window.YSP_TRANSLATIONS = YSP_TRANSLATIONS;
+if (typeof module !== 'undefined') module.exports = YSP_TRANSLATIONS;

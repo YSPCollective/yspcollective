@@ -7,6 +7,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPassthroughCopy("src/ysp-chat.js");
   eleventyConfig.addPassthroughCopy("src/ysp-config.js");
+  eleventyConfig.addPassthroughCopy("src/ysp-translations.js");
+  eleventyConfig.addPassthroughCopy("src/ysp-lang.js");
 
   const PRODUCT_FIELDS = ['name','slug','badge','custom_badge','price','rrp','brand','gender',
     'category','image_main','gallery','description_short','description_full','ysp_thoughts',
