@@ -1,6 +1,6 @@
 ---
 name: Swiss Arabian Enigma of Taif Extrait de Parfum
-slug: Swiss-Arabian-Enigma-of-Taif
+slug: swiss-arabian-enigma-of-taif
 badge: ""
 custom_badge: Premium
 price: "69.95"
@@ -10,17 +10,16 @@ gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
 fragrance_family: Floral Oriental
-top_notes: A vibrant, spicy-fruity opening of Cardamom, Black Pepper, Pink
-  Pepper, Elemi, and Plum
+top_notes: Cardamom, Black Pepper, Pink Pepper, Elemi, Plum
 heart_notes: Taif Rose elevated by Saffron, Violet, Osmanthus, and Olibanum (Frankincense).
 base_notes: It settles into a warm, smoky trail of Oakwood, Molasses, Vetiver,
   Amber, and Labdanum
 accords:
-  - Amber
-  - Woody
-  - Rose
-  - Aromatic
-  - Warm spicy
+  - amber
+  - woody
+  - rose
+  - aromatic
+  - warm spicy
 longevity: 7-12+
 origin: UAE
 launched: "2025"
