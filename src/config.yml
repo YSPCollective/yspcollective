@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/yspcollective
+  repo: YSPCollective/yspcollective
   branch: main
 
 media_folder: "images/uploads"
@@ -10,13 +10,14 @@ collections:
   # ─── FRAGRANCE PRODUCTS ───────────────────────────────────────────
   - name: "fragrances"
     label: "Fragrances"
-    folder: "_products/fragrances"
+    folder: "src/_products/fragrances"
     create: true
     slug: "{{slug}}"
     identifier_field: name
+    summary: "{{name}} — €{{price}}"
     fields:
       - { label: "Product Name", name: "name", widget: "string", hint: "e.g. Lattafa Yara 100ml" }
-      - { label: "URL Slug", name: "slug", widget: "string", hint: "e.g. lattafa-yara-100ml (used in page URL)" }
+      - { label: "URL Slug", name: "slug", widget: "string", hint: "IMPORTANT: Use only lowercase letters and hyphens. e.g. swiss-arabian-enigma-of-taif" }
       - label: "Badge"
         name: "badge"
         widget: "select"
@@ -79,10 +80,11 @@ collections:
   # ─── SKINCARE / BEAUTY PRODUCTS ───────────────────────────────────
   - name: "beauty"
     label: "Beauty & Skincare"
-    folder: "_products/beauty"
+    folder: "src/_products/beauty"
     create: true
     slug: "{{slug}}"
     identifier_field: name
+    summary: "{{name}} — €{{price}}"
     fields:
       - { label: "Product Name", name: "name", widget: "string" }
       - { label: "URL Slug", name: "slug", widget: "string", hint: "e.g. beauty-of-joseon-relief-sun-spf50" }
