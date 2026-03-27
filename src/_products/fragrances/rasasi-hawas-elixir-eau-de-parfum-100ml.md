@@ -3,7 +3,7 @@ name: Rasasi Hawas Elixir Eau de Parfum 100ml
 slug: rasasi-hawas-elixir
 badge: Curated
 price: "37.90"
-brand: Other
+brand: Rasasi
 gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
