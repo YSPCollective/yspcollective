@@ -1,7 +1,7 @@
 ---
 name: Swiss Arabian Enigma of Taif Extrait de Parfum
 slug: swiss-arabian-enigma-of-taif
-badge: ""
+badge: null
 custom_badge: Premium
 price: "69.95"
 rrp: "122.00"
@@ -21,11 +21,18 @@ accords:
   - aromatic
   - warm spicy
 longevity: 7-12+
+projection: Strong
+best_for: Day or night, All seasons
 origin: UAE
 launched: "2025"
 vegan: false
-image_main: /images/uploads/eot-02_f756c14f-b476-4ec2-8205-92cc9b485379.jpeg
-gallery: []
+image_main: /images/uploads/sap_cities-enigma-of-taif-box_1_jpg_e269beec-901a-49f4-ae86-76ae93c08257.jpeg
+gallery:
+  - /images/uploads/eot-02_f756c14f-b476-4ec2-8205-92cc9b485379.jpeg
+  - /images/uploads/whatsapp_image_2025-10-29_at_6.41.04_pm_1.jpeg
+  - /images/uploads/whatsapp_image_2025-10-29_at_6.41.06_pm.jpeg
+  - /images/uploads/whatsapp_image_2025-11-13_at_9.09.08_am.jpeg
+  - /images/uploads/whatsapp_image_2025-11-13_at_9.09.09_am_1.jpeg
 description_short: A warm, rosy oriental from one of Dubai's most respected
   fragrance houses. Enigma of Taif captures the legendary Taif rose of Saudi
   Arabia — rich, velvety, and deeply complex. Long-lasting and distinctly
@@ -36,5 +43,6 @@ description_full: >-
 ysp_thoughts: >-
   
   Taif rose is to Arabian perfumery what Grasse is to French — it's the benchmark. Swiss Arabian has been crafting in Dubai since 1974 and this is one of their most refined expressions. If you're curious about true Arabian rose perfumery without paying niche European prices, this is the one to start with. We chose it because it converts — customers who smell it, buy it.
+featured: true
 published: true
 ---
