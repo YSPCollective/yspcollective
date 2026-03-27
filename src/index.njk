@@ -70,8 +70,6 @@ canonical: "https://yspcollective.com/"
   .featured-section { padding: 6rem 3.5rem; }
   .featured-section.bg-cream { background: var(--cream); }
   .featured-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
-  .featured-link { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: gap 0.3s; }
-  .featured-link:hover { gap: 0.8rem; }
   .products-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.8rem; }
 
   /* PHILOSOPHY */
@@ -281,7 +279,6 @@ canonical: "https://yspcollective.com/"
       <p class="section-label">Arabian &amp; Niche Fragrance</p>
       <h2 class="section-title">Featured fragrances</h2>
     </div>
-    <a href="#categories" class="featured-link">View all →</a>
   </div>
   <div class="products-grid">
     {% set featuredFragrances = collections.fragrances | selectattr("data.featured") | list %}
@@ -313,7 +310,6 @@ canonical: "https://yspcollective.com/"
       <p class="section-label">K-Beauty &amp; Skincare</p>
       <h2 class="section-title">Featured beauty</h2>
     </div>
-    <a href="#categories" class="featured-link">View all →</a>
   </div>
   <div class="products-grid">
     {% set featuredBeauty = collections.beauty | selectattr("data.featured") | list %}
