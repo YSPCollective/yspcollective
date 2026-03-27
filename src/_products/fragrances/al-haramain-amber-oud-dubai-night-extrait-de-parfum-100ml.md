@@ -4,10 +4,10 @@ slug: al-haramain-amber-oud-dubai-night
 badge: Curated
 price: "49.99"
 rrp: "69.99"
-brand: Other
+brand: Al Haramain
 gender: Men
 size: 100ml
-concentration: Other
+concentration: Extrait de Parfum (EdP)
 fragrance_family: Woody Oriental Oud
 top_notes: Saffron, Bergamot, Elemi
 heart_notes: Agarwood, Bulgarian Rose, Lily of the Valley
