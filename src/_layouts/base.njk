@@ -8,6 +8,18 @@
   {% if canonical %}<link rel="canonical" href="{{ canonical }}">{% endif %}
   {% if schema %}<script type="application/ld+json">{{ schema | safe }}</script>{% endif %}
 
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SPR047XTDH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SPR047XTDH', { 'anonymize_ip': true });
+  </script>
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#1a1916">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
@@ -187,6 +199,7 @@
       .footer-top { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; gap: 0.5rem; }
     }
+
     /* MAILING LIST POPUP */
     #ysp-popup-overlay {
       position: fixed; inset: 0; background: rgba(26,25,22,0.7);
@@ -229,8 +242,6 @@
   </style>
 
   {{ head_extra | safe }}
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#1a1916">
 
 </head>
 <body>
@@ -404,8 +415,8 @@
   </script>
 
   {{ body_extra | safe }}
-<script src="/ysp-cart.js"></script>
-<script src="/ysp-image-fix.js"></script>
+  <script src="/ysp-cart.js"></script>
+  <script src="/ysp-image-fix.js"></script>
 
 </body>
 </html>
