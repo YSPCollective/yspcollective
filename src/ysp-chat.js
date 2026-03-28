@@ -8,146 +8,13 @@
   'use strict';
 
   // ─── PRODUCT CATALOGUE ─────────────────────────────────────────────────────
-  // Keep this in sync as you add new products via the CMS
-  const PRODUCTS = [
-    {
-      name: "Lattafa Yara 100ml",
-      url: "/products/lattafa-yara-100ml.html",
-      price: "€29.55",
-      brand: "Lattafa",
-      gender: "Women",
-      type: "fragrance",
-      concentration: "EDP",
-      size: "100ml",
-      family: "Oriental Vanilla / Amber Floral",
-      top: "Orchid, Heliotrope, Tangerine",
-      heart: "Gourmand Accord, Tropical Fruits",
-      base: "Vanilla, Musk, Sandalwood",
-      accords: ["vanilla", "floral", "fruity", "gourmand", "musk", "powdery"],
-      longevity: "4–6 hours",
-      projection: "Moderate",
-      best_for: "Daytime, spring/summer, casual",
-      summary: "Sweet, creamy and feminine. Fruity-floral with a soft vanilla gourmand dry-down. Gets consistent compliments."
-    },
-    {
-      name: "Armaf Club de Nuit Intense 105ml",
-      url: "/products/armaf-club-de-nuit-intense-105ml.html",
-      price: "€29.55",
-      brand: "Armaf",
-      gender: "Men",
-      type: "fragrance",
-      concentration: "EDT",
-      size: "105ml",
-      family: "Woody Spicy",
-      top: "Lemon, Pineapple, Bergamot, Black Currant, Apple",
-      heart: "Rose, Birch, Jasmine",
-      base: "Musk, Ambergris, Patchouli, Vanilla",
-      accords: ["woody", "spicy", "citrus", "fruity", "musk", "smoky", "amber"],
-      longevity: "8–12 hours",
-      projection: "Strong",
-      best_for: "Evening, cooler seasons, formal occasions",
-      summary: "Bold citrus-fruit opening, exceptional smoky-woody dry-down. One of the best value men's fragrances available."
-    },
-    {
-      name: "Arabiyat Prestige Nyla 80ml",
-      url: "/products/arabiyat-prestige-nyla-80ml-eau-de-parfum-unisex-perfume.html",
-      price: "€28.95",
-      brand: "Arabiyat Prestige",
-      gender: "Unisex",
-      type: "fragrance",
-      concentration: "EDP",
-      size: "80ml",
-      family: "Fruity Floral",
-      top: "Coconut, Peach, Bergamot, Mandarin",
-      heart: "Tiare, Jasmine, Rose, White Flowers",
-      base: "White Musk, Patchouli",
-      accords: ["floral", "fruity", "coconut", "musk", "fresh", "tropical"],
-      longevity: "4–6 hours",
-      projection: "Moderate",
-      best_for: "Daytime, spring/summer, casual",
-      summary: "Sun-drenched tropical floral with a creamy musk base. Genuinely unisex and effortlessly wearable."
-    },
-    {
-      name: "Lattafa Khamrah Qahwa 100ml",
-      url: "/products/lattafa-edp-khamrah-qahwa-unisex-perfume-100ml.html",
-      price: "€34",
-      brand: "Lattafa",
-      gender: "Unisex",
-      type: "fragrance",
-      concentration: "EDP",
-      size: "100ml",
-      family: "Oriental Gourmand",
-      top: "Cinnamon, Cardamom, Ginger",
-      heart: "Praline, Candied Fruits, White Flowers",
-      base: "Coffee, Vanilla, Tonka Bean, Benzoin, Musk",
-      accords: ["coffee", "gourmand", "spicy", "vanilla", "sweet", "woody", "amber"],
-      longevity: "12–15 hours",
-      projection: "Strong",
-      best_for: "Evening, autumn/winter, special occasions",
-      summary: "Spiced coffee gourmand with extraordinary longevity. Fragrantica Readers' Choice 2024. Use 1–2 sprays only."
-    },
-    {
-      name: "Lattafa Khamrah 100ml",
-      url: "/products/lattafa-khamrah-eau-de-parfum-100ml-unisex-fragrance.html",
-      price: "€34",
-      brand: "Lattafa",
-      gender: "Unisex",
-      type: "fragrance",
-      concentration: "EDP",
-      size: "100ml",
-      family: "Oriental Spicy / Gourmand",
-      top: "Cinnamon, Nutmeg, Bergamot",
-      heart: "Dates, Praline, Tuberose",
-      base: "Vanilla, Tonka Bean, Benzoin, Myrrh, Amberwood",
-      accords: ["spicy", "gourmand", "amber", "woody", "vanilla", "resinous", "smoky"],
-      longevity: "8–12+ hours",
-      projection: "Strong",
-      best_for: "Evening, autumn/winter, special occasions",
-      summary: "Rich, spiced and deeply indulgent. Cinnamon-dates opening over a stunning resinous amber base. Use 1–2 sprays."
-    },
-    {
-      name: "Beauty of Joseon Relief Sun SPF50+",
-      url: "/products/beauty-of-joseon-relief-sun-spf50.html",
-      price: "€16",
-      brand: "Beauty of Joseon",
-      type: "beauty",
-      category: "SPF / Sunscreen",
-      size: "50ml",
-      summary: "The K-beauty SPF that broke the internet. Lightweight, no white cast, dewy finish. Fragrance-free, all skin types."
-    },
-    {
-      name: "Anua PDRN Hyaluronic Acid Serum",
-      url: "/products/anua-pdrn-hyaluronic-acid-capsule-100-serum.html",
-      price: "€27.50",
-      brand: "ANUA",
-      type: "beauty",
-      category: "Serum",
-      size: "30ml",
-      summary: "Clinical-grade PDRN serum with 11 types of hyaluronic acid. Dewy glass-skin finish. Works as serum or sleeping mask."
-    },
-    {
-      name: "Anua Heartleaf Pore Control Cleansing Oil",
-      url: "/products/anua-heartleaf-control-cleansing-oil.html",
-      price: "€18.30",
-      brand: "ANUA",
-      type: "beauty",
-      category: "Cleanser",
-      size: "200ml",
-      summary: "Plant-based cleansing oil that emulsifies with water. Removes makeup and SPF cleanly without stripping skin."
-    },
-    {
-      name: "Anua Heartleaf 70% Intense Calming Cream",
-      url: "/products/heartleaf-70-intense-calming-cream.html",
-      price: "€26",
-      brand: "ANUA",
-      type: "beauty",
-      category: "Moisturiser",
-      size: "50ml",
-      summary: "70% heartleaf extract moisturiser for sensitive skin. Rich but absorbs cleanly. Fragrance-free, barrier-repairing."
-    }
-  ];
+  // Auto-loaded from ysp-products-data.js which is generated at build time
+  // Never edit this manually — add products via the CMS admin instead
+  function getProducts() {
+    return window.YSP_PRODUCTS_DATA || [];
+  }
 
-  // ─── SYSTEM PROMPT ─────────────────────────────────────────────────────────
+    // ─── SYSTEM PROMPT ─────────────────────────────────────────────────────────
   const SYSTEM_PROMPT = `You are the YSP Collective fragrance and beauty advisor — a warm, knowledgeable assistant for a curated lifestyle brand based in Portugal. You have the personality of an expert friend who genuinely loves fragrance and skincare: enthusiastic, honest, and never pushy.
 
 YSP Collective sells:
@@ -155,7 +22,7 @@ YSP Collective sells:
 - K-beauty skincare: Beauty of Joseon, ANUA
 
 CURRENT PRODUCT CATALOGUE:
-${JSON.stringify(PRODUCTS, null, 2)}
+${JSON.stringify(getProducts(), null, 2)}
 
 YOUR ROLE:
 1. Help customers find the perfect fragrance through friendly conversation
@@ -670,7 +537,7 @@ If asked something you don't know (e.g. very specific stock levels, exact delive
       addMessage('assistant', reply);
 
       // Check if reply mentions any products and show cards
-      const mentioned = PRODUCTS.filter(p =>
+      const mentioned = getProducts().filter(p =>
         reply.toLowerCase().includes(p.name.toLowerCase().split(' ').slice(0,3).join(' ').toLowerCase())
       );
       mentioned.slice(0, 2).forEach(p => addProductCard(p));
