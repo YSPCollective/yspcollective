@@ -3,7 +3,7 @@ name: Gulf Orchid Mango Ice Eau de Parfum 100ml
 slug: gulf-orchid-mango-ice
 badge: New
 price: "39.99"
-brand: Gulf Orchard
+brand: Gulf Orchid
 gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
@@ -51,6 +51,7 @@ ysp_thoughts: >-
 
 
   This does exactly that. We were drawn to it because it fills a gap in an Arabian fragrance lineup that can lean heavy and resinous — this is the palate cleanser, the warm weather option, the one that surprises people who assume Arabian perfumery is all oud and amber. It earns its place on the shelf by being genuinely different.
+stock_status: in_stock
 featured: false
 published: true
 ---
