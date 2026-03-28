@@ -39,7 +39,7 @@ collections:
       - label: "Concentration"
         name: "concentration"
         widget: "select"
-        options: ["Eau de Parfum (EDP)", "Eau de Toilette (EDT)", "Parfum", "Oil", "Other"]
+        options: ["Eau de Parfum (EDP)", "Eau de Toilette (EDT)", "Parfum", "Extrait de Parfum", "Oil", "Other"]
       - { label: "Fragrance Family", name: "fragrance_family", widget: "string", hint: "e.g. Oriental Vanilla / Amber Floral" }
       - { label: "Top Notes", name: "top_notes", widget: "string", hint: "e.g. Orchid, Heliotrope, Tangerine" }
       - { label: "Heart Notes", name: "heart_notes", widget: "string", required: false }
@@ -66,14 +66,8 @@ collections:
       - { label: "Short Description", name: "description_short", widget: "text", hint: "Used on product cards on the homepage" }
       - { label: "Full Description", name: "description_full", widget: "markdown", hint: "Full product page description" }
       - { label: "YSP Thoughts (Why We Carry This)", name: "ysp_thoughts", widget: "markdown" }
-      - label: "Amazon Link"
-        name: "amazon_url"
-        widget: "string"
-        required: false
-      - label: "eBay Link"
-        name: "ebay_url"
-        widget: "string"
-        required: false
+      - { label: "Amazon Link", name: "amazon_url", widget: "string", required: false }
+      - { label: "eBay Link", name: "ebay_url", widget: "string", required: false }
 
       # ─── PORTUGUESE TRANSLATIONS ───────────────────────────────────
       - label: "🇵🇹 Portuguese Translation"
@@ -108,8 +102,12 @@ collections:
         options:
           - { label: "✅ In Stock", value: "in_stock" }
           - { label: "⚠️ Low Stock", value: "low_stock" }
+          - { label: "🔴 Last One", value: "last_one" }
           - { label: "❌ Sold Out", value: "sold_out" }
+          - { label: "📦 On Order", value: "on_order" }
+          - { label: "📅 Pre-Order", value: "pre_order" }
           - { label: "🔜 Coming Soon", value: "coming_soon" }
+      - { label: "Expected Date", name: "expected_date", widget: "string", required: false, hint: "e.g. April 2026 — shown when status is On Order or Pre-Order" }
       - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, hint: "Show this product in the Featured Fragrances section on the homepage" }
       - { label: "Published", name: "published", widget: "boolean", default: true }
 
@@ -194,8 +192,12 @@ collections:
         options:
           - { label: "✅ In Stock", value: "in_stock" }
           - { label: "⚠️ Low Stock", value: "low_stock" }
+          - { label: "🔴 Last One", value: "last_one" }
           - { label: "❌ Sold Out", value: "sold_out" }
+          - { label: "📦 On Order", value: "on_order" }
+          - { label: "📅 Pre-Order", value: "pre_order" }
           - { label: "🔜 Coming Soon", value: "coming_soon" }
+      - { label: "Expected Date", name: "expected_date", widget: "string", required: false, hint: "e.g. April 2026 — shown when status is On Order or Pre-Order" }
       - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, hint: "Show this product in the Featured Beauty section on the homepage" }
       - { label: "Published", name: "published", widget: "boolean", default: true }
 
