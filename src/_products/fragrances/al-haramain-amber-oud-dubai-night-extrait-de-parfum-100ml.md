@@ -7,7 +7,7 @@ rrp: "69.99"
 brand: Al Haramain
 gender: Men
 size: 100ml
-concentration: Extrait de Parfum (EdP)
+concentration: Extrait de Parfum
 fragrance_family: Woody Oriental Oud
 top_notes: Saffron, Bergamot, Elemi
 heart_notes: Agarwood, Bulgarian Rose, Lily of the Valley
@@ -55,6 +55,7 @@ ysp_thoughts: >-
 
 
   If you have clients who find designer fragrances too light or too fleeting, this is the answer. Strong salon performer.
+stock_status: in_stock
 featured: true
 published: true
 ---
