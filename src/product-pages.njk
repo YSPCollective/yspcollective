@@ -1,0 +1,440 @@
+---
+layout: base.njk
+pagination:
+  data: collections.allProducts
+  size: 1
+  alias: product
+permalink: "products/{{ product.slug }}.html"
+---
+
+{% set badgeText = product.custom_badge or product.badge %}
+{% set isFragrance = product.concentration %}
+{% set allProducts = collections.allProducts %}
+
+{% set schemaData %}
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ product.name }}",
+  "image": "https://yspcollective.com{{ product.image_main }}",
+  "description": "{{ product.description_short }}",
+  "brand": { "@type": "Brand", "name": "{{ product.brand }}" },
+  "offers": {
+    "@type": "Offer",
+    "price": "{{ product.price }}",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "seller": { "@type": "Organization", "name": "YSP Collective" }
+  }
+}
+{% endset %}
+
+{% block head_extra %}
+<style>
+  .breadcrumb { padding: 7rem 4rem 0; font-size: 0.75rem; letter-spacing: 0.1em; color: var(--grey); }
+  .breadcrumb a { color: var(--grey); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .breadcrumb span { margin: 0 0.5rem; }
+
+  .product-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; padding: 2.5rem 4rem 6rem; max-width: 1400px; margin: 0 auto; }
+
+  .gallery-main { aspect-ratio: 1; overflow: hidden; background: var(--cream); position: relative; }
+  .gallery-main img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease; }
+  .gallery-thumbs { display: flex; gap: 0.6rem; margin-top: 0.8rem; flex-wrap: wrap; }
+  .gallery-thumb { width: 72px; height: 72px; overflow: hidden; background: var(--cream); cursor: pointer; border: 2px solid transparent; transition: border-color 0.2s; flex-shrink: 0; }
+  .gallery-thumb.active { border-color: var(--accent); }
+  .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+  .product-info { padding-top: 0.5rem; }
+  .product-badge-wrap { margin-bottom: 1.2rem; }
+  .pdp-badge { display: inline-block; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--white); background: var(--accent); padding: 0.25rem 0.7rem; }
+  .pdp-badge.badge-popular { background: var(--grey); }
+  .pdp-badge.badge-curated { background: var(--black); }
+  .pdp-badge.badge-new { background: #6a9a6a; }
+  .pdp-badge.badge-premium { background: #8b6914; }
+  .pdp-badge.badge-limited { background: #8b3a3a; }
+  .product-brand { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
+  .product-name { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.15; margin-bottom: 0.6rem; }
+  .product-meta { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey); margin-bottom: 1.8rem; }
+  .product-price-wrap { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 2rem; }
+  .product-price { font-family: var(--serif); font-size: 2.4rem; font-weight: 400; color: var(--black); }
+  .product-rrp { font-family: var(--serif); font-size: 1.4rem; color: var(--grey-light); text-decoration: line-through; }
+  .product-desc { font-size: 0.92rem; line-height: 1.85; color: var(--grey); margin-bottom: 2rem; border-left: 2px solid var(--accent); padding-left: 1.2rem; }
+
+  .quick-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 2rem; }
+  .spec-item { padding: 0.8rem 1rem; background: var(--cream); }
+  .spec-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey); margin-bottom: 0.2rem; }
+  .spec-value { font-size: 0.88rem; color: var(--black); }
+
+  .accords-wrap { margin-bottom: 2rem; }
+  .accords-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey); margin-bottom: 0.6rem; }
+  .accords-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .accord-tag { padding: 0.3rem 0.8rem; border: 1px solid var(--sand); font-size: 0.75rem; color: var(--grey); letter-spacing: 0.08em; }
+
+  .product-cta { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .btn-buy-now {
+    padding: 1rem 2.5rem; background: var(--accent); color: var(--white);
+    font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.14em;
+    text-transform: uppercase; border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.2s; display: inline-block;
+  }
+  .btn-buy-now:hover { background: var(--black); transform: translateY(-1px); }
+  .btn-buy-now:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .btn-sold-out { background: var(--grey) !important; }
+  .btn-coming-soon { background: var(--black) !important; }
+  .low-stock-notice { font-size: 0.75rem; color: #b85c38; letter-spacing: 0.06em; align-self: center; }
+  .btn-enquire { padding: 1rem 2.5rem; background: var(--black); color: var(--white); font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.2s; cursor: pointer; border: none; display: inline-block; }
+  .btn-enquire:hover { background: var(--accent); transform: translateY(-1px); }
+  .btn-shop { padding: 1rem 2rem; border: 1px solid var(--sand); color: var(--black); font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
+  .btn-shop:hover { border-color: var(--accent); color: var(--accent); }
+
+  .trust-badges { display: flex; gap: 1.5rem; flex-wrap: wrap; padding: 1.2rem 0; border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); margin-bottom: 2rem; }
+  .trust-badge { font-size: 0.72rem; color: var(--grey); display: flex; align-items: center; gap: 0.4rem; }
+  .trust-badge-icon { color: var(--accent); }
+
+  .tabs-wrap { padding: 0 4rem 5rem; max-width: 1400px; margin: 0 auto; }
+  .tab-nav { display: flex; border-bottom: 1px solid var(--sand); margin-bottom: 2rem; overflow-x: auto; }
+  .tab-btn { padding: 0.8rem 1.5rem; font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; white-space: nowrap; transition: all 0.2s; }
+  .tab-btn.active { color: var(--black); border-bottom-color: var(--accent); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+  .tab-panel p { font-size: 0.9rem; line-height: 1.85; color: var(--grey); margin-bottom: 1rem; }
+  .details-table { width: 100%; border-collapse: collapse; }
+  .details-table tr { border-bottom: 1px solid var(--sand); }
+  .details-table td { padding: 0.7rem 0; font-size: 0.88rem; vertical-align: top; }
+  .details-table td:first-child { color: var(--grey); width: 42%; font-size: 0.78rem; letter-spacing: 0.06em; padding-right: 1rem; }
+  .ysp-thoughts { background: var(--cream); padding: 2rem; border-left: 3px solid var(--accent); }
+  .ysp-thoughts-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
+  .ysp-thoughts p { font-size: 0.9rem; line-height: 1.85; color: var(--grey); margin-bottom: 0.8rem; }
+
+  .related-section { padding: 5rem 4rem; border-top: 1px solid var(--sand); background: var(--cream); }
+  .related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2rem; }
+  .related-card { background: var(--white); border: 1px solid var(--sand); text-decoration: none; color: inherit; transition: border-color 0.3s, transform 0.3s; display: block; }
+  .related-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .related-card-img { aspect-ratio: 1; overflow: hidden; background: var(--cream); }
+  .related-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+  .related-card:hover .related-card-img img { transform: scale(1.04); }
+  .related-card-body { padding: 1.2rem; }
+  .related-card-badge { font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--white); background: var(--accent); padding: 0.2rem 0.5rem; display: inline-block; margin-bottom: 0.5rem; }
+  .related-card-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 300; margin-bottom: 0.3rem; line-height: 1.3; }
+  .related-card-meta { font-size: 0.72rem; color: var(--grey); margin-bottom: 0.6rem; }
+  .related-card-price { font-family: var(--serif); font-size: 1.3rem; color: var(--black); }
+
+  @media (max-width: 900px) {
+    .breadcrumb { padding: 6rem 1.5rem 0; }
+    .product-wrap { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem 4rem; }
+    .quick-specs { grid-template-columns: 1fr; }
+    .related-section { padding: 3rem 1.5rem; }
+    .related-grid { grid-template-columns: 1fr 1fr; }
+    .tabs-wrap { padding: 0 1.5rem 3rem; }
+  }
+  @media (max-width: 500px) { .related-grid { grid-template-columns: 1fr; } }
+</style>
+{% endblock %}
+
+<div class="breadcrumb">
+  <a href="/">Home</a><span>›</span>
+  <a href="/#{{ 'featured-fragrances' if isFragrance else 'featured-beauty' }}">{{ 'Fragrance' if isFragrance else 'Skincare' }}</a><span>›</span>
+  <span>{{ product.name }}</span>
+</div>
+
+<div class="product-wrap">
+  <div class="gallery-col">
+    <div class="gallery-main">
+      <img id="main-img" src="{{ product.image_main }}" alt="{{ product.name }}" />
+    </div>
+    <div class="gallery-thumbs" id="gallery-thumbs">
+      {% for img in product.gallery %}
+      <div class="gallery-thumb {% if loop.first %}active{% endif %}" data-src="{{ img }}">
+        <img src="{{ img }}" alt="{{ product.name }} {{ loop.index }}" loading="lazy">
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="product-info">
+    {% if badgeText %}
+    <div class="product-badge-wrap">
+      <span class="pdp-badge {{ badgeText | badgeClass }}">{{ badgeText }}</span>
+    </div>
+    {% endif %}
+    <div class="product-brand">{{ product.brand }}</div>
+    <h1 class="product-name">{{ product.name }}</h1>
+    <div class="product-meta">
+      {% if isFragrance %}{{ product.gender }} · Fragrance{% else %}{{ product.category }}{% endif %}
+    </div>
+    <div class="product-price-wrap">
+      <div class="product-price">€{{ product.price }}</div>
+      {% if product.rrp %}<div class="product-rrp">€{{ product.rrp }}</div>{% endif %}
+    </div>
+    <div class="product-desc" id="pdp-desc-short">{{ product.description_short }}</div>
+
+    {% if isFragrance %}
+    <div class="quick-specs">
+      <div class="spec-item"><div class="spec-label">Concentration</div><div class="spec-value">{{ product.concentration }}</div></div>
+      <div class="spec-item"><div class="spec-label">Size</div><div class="spec-value">{{ product.size }}</div></div>
+      <div class="spec-item"><div class="spec-label">Longevity</div><div class="spec-value">{{ product.longevity or '—' }}</div></div>
+      <div class="spec-item"><div class="spec-label">Projection</div><div class="spec-value">{{ product.projection or '—' }}</div></div>
+    </div>
+    {% if product.accords %}
+    <div class="accords-wrap">
+      <div class="accords-label" data-i18n="pdp_accords">Main Accords</div>
+      <div class="accords-list">
+        {% for accord in product.accords %}<span class="accord-tag">{{ accord }}</span>{% endfor %}
+      </div>
+    </div>
+    {% endif %}
+    {% endif %}
+
+    {% set stockStatus = product.stock_status or "in_stock" %}
+
+    <div class="product-cta">
+      {% if stockStatus == "sold_out" %}
+        <button class="btn-buy-now btn-sold-out" disabled>Sold Out</button>
+      {% elif stockStatus == "coming_soon" %}
+        <button class="btn-buy-now btn-coming-soon" id="btn-notify">Notify Me When Available</button>
+      {% else %}
+        <button class="btn-buy-now" id="btn-buy-now"
+          data-name="{{ product.name }}"
+          data-price="{{ product.price }}"
+          data-image="{{ product.image_main }}"
+          data-slug="{{ product.slug }}">
+          Buy Now — €{{ product.price }}
+        </button>
+      {% endif %}
+      {% if stockStatus == "low_stock" %}
+        <span class="low-stock-notice">⚠️ Only a few left</span>
+      {% endif %}
+      <button class="btn-enquire" id="btn-enquire" data-i18n="pdp_enquire">Enquire</button>
+      {% if product.amazon_url %}
+      <a href="{{ product.amazon_url }}" class="btn-shop" target="_blank" rel="noopener" data-i18n="pdp_amazon">📦 Buy on Amazon</a>
+      {% endif %}
+    </div>
+
+    <!-- Notify Me popup -->
+    <div id="notify-popup" style="display:none;margin-top:1rem">
+      <div style="display:flex;gap:0;max-width:400px">
+        <input type="email" id="notify-email" placeholder="your@email.com" style="flex:1;padding:0.75rem 1rem;border:1px solid var(--sand);background:var(--white);font-family:var(--sans);font-size:0.85rem;outline:none">
+        <button onclick="submitNotify()" style="padding:0.75rem 1.2rem;background:var(--black);color:var(--white);border:none;font-family:var(--sans);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer">Notify Me</button>
+      </div>
+      <p id="notify-success" style="display:none;font-size:0.82rem;color:var(--accent);margin-top:0.5rem">✓ We'll let you know when this is back in stock.</p>
+    </div>
+
+    <div class="trust-badges">
+      <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_1">EU Authorised Stock</span></div>
+      <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_2">Authentic &amp; Sealed</span></div>
+      <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_3">Fast EU Shipping</span></div>
+      <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_4">90-Day Guarantee</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tab-nav">
+    <button class="tab-btn active" data-tab="description" data-i18n="pdp_tab_desc">Full Description</button>
+    <button class="tab-btn" data-tab="details" data-i18n="pdp_tab_details">Details &amp; Specs</button>
+    <button class="tab-btn" data-tab="thoughts" data-i18n="pdp_tab_thoughts">YSP Thoughts</button>
+    <button class="tab-btn" data-tab="shipping" data-i18n="pdp_tab_shipping">Shipping &amp; Returns</button>
+  </div>
+
+  <div class="tab-panel active" id="tab-description">
+    <div id="pdp-desc-full">{{ product.description_full | safe }}</div>
+  </div>
+
+  <div class="tab-panel" id="tab-details">
+    <table class="details-table">
+      <tbody id="details-tbody"></tbody>
+    </table>
+  </div>
+
+  <div class="tab-panel" id="tab-thoughts">
+    <div class="ysp-thoughts">
+      <div class="ysp-thoughts-label" data-i18n="pdp_thoughts_label">Why We Carry This</div>
+      <div id="pdp-thoughts">{{ product.ysp_thoughts | safe }}</div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="tab-shipping">
+    <p data-i18n="pdp_shipping_p1">We ship across Europe from our base in Portugal. Most orders dispatch within 24 hours. Delivery is typically 2–5 business days depending on destination. No hidden import costs within the EU.</p>
+    <p data-i18n="pdp_shipping_p2">All products are new, sealed, and sourced from authorised EU distributors. If there's any issue with your order, contact us within 14 days and we'll arrange a return or replacement promptly.</p>
+    <p>For questions before or after purchase, email <a href="mailto:info@yspcollective.com" style="color:var(--accent)">info@yspcollective.com</a> — we respond within 24 hours Monday to Friday.</p>
+  </div>
+</div>
+
+{% set related = collections.allProducts | relatedProducts(product.slug, product.type, product.accords) %}
+{% if related.length %}
+<section class="related-section">
+  <p class="section-label" data-i18n="pdp_related_label">You May Also Like</p>
+  <h2 class="section-title" data-i18n="pdp_related_title">Similar products</h2>
+  <div class="related-grid">
+    {% for p in related %}
+    <a href="/products/{{ p.slug }}.html" class="related-card">
+      <div class="related-card-img">
+        <img src="{{ p.image_main }}" alt="{{ p.name }}" loading="lazy">
+      </div>
+      <div class="related-card-body">
+        {% set relBadge = p.custom_badge or p.badge %}
+        {% if relBadge %}<span class="related-card-badge">{{ relBadge }}</span>{% endif %}
+        <div class="related-card-name">{{ p.name }}</div>
+        <div class="related-card-meta">{% if p.concentration %}{{ p.gender }} · Fragrance{% else %}{{ p.category }}{% endif %}</div>
+        <div class="related-card-price">€{{ p.price }}</div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<script>
+  // Gallery
+  const mainImg = document.getElementById('main-img');
+  document.querySelectorAll('.gallery-thumb').forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      mainImg.src = thumb.dataset.src;
+      document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    });
+  });
+  document.addEventListener('keydown', e => {
+    const thumbs = [...document.querySelectorAll('.gallery-thumb')];
+    const idx = thumbs.findIndex(t => t.classList.contains('active'));
+    if (e.key === 'ArrowRight' && idx < thumbs.length - 1) thumbs[idx + 1].click();
+    if (e.key === 'ArrowLeft' && idx > 0) thumbs[idx - 1].click();
+  });
+
+  // Tabs
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  // Details table
+  const detailsData = {{ product | detailsJson | safe }};
+  const tbody = document.getElementById('details-tbody');
+  if (tbody && detailsData) {
+    detailsData.forEach(row => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${row.label}</td><td>${row.value}</td>`;
+      tbody.appendChild(tr);
+    });
+  }
+
+  // Language-aware product content
+  (function() {
+    const lang = localStorage.getItem('ysp_lang') || 'en';
+    if (lang === 'en') return;
+
+    const productData = {
+      name_pt: {{ (product.pt.name_pt or '') | jsonify | safe }},
+      description_short_pt: {{ (product.pt.description_short_pt or '') | jsonify | safe }},
+      description_full_pt: {{ (product.pt.description_full_pt or '') | jsonify | safe }},
+      ysp_thoughts_pt: {{ (product.pt.ysp_thoughts_pt or '') | jsonify | safe }},
+      name_es: {{ (product.es.name_es or '') | jsonify | safe }},
+      description_short_es: {{ (product.es.description_short_es or '') | jsonify | safe }},
+      description_full_es: {{ (product.es.description_full_es or '') | jsonify | safe }},
+      ysp_thoughts_es: {{ (product.es.ysp_thoughts_es or '') | jsonify | safe }}
+    };
+
+    const suffix = lang === 'pt' ? '_pt' : '_es';
+    const descShort = productData['description_short' + suffix];
+    if (descShort) { const el = document.getElementById('pdp-desc-short'); if (el) el.textContent = descShort; }
+    const descFull = productData['description_full' + suffix];
+    if (descFull) { const el = document.getElementById('pdp-desc-full'); if (el) el.innerHTML = descFull; }
+    const thoughts = productData['ysp_thoughts' + suffix];
+    if (thoughts) { const el = document.getElementById('pdp-thoughts'); if (el) el.innerHTML = thoughts; }
+
+    document.addEventListener('ysp:langchange', (e) => {
+      const newLang = e.detail.lang;
+      const newSuffix = newLang === 'pt' ? '_pt' : newLang === 'es' ? '_es' : null;
+      const shortEl = document.getElementById('pdp-desc-short');
+      const fullEl = document.getElementById('pdp-desc-full');
+      const thoughtsEl = document.getElementById('pdp-thoughts');
+      if (!newSuffix) {
+        if (shortEl) shortEl.textContent = {{ product.description_short | jsonify | safe }};
+        if (fullEl) fullEl.innerHTML = {{ product.description_full | jsonify | safe }};
+        if (thoughtsEl) thoughtsEl.innerHTML = {{ product.ysp_thoughts | jsonify | safe }};
+      } else {
+        if (shortEl) shortEl.textContent = productData['description_short' + newSuffix] || {{ product.description_short | jsonify | safe }};
+        if (fullEl) fullEl.innerHTML = productData['description_full' + newSuffix] || {{ product.description_full | jsonify | safe }};
+        if (thoughtsEl) thoughtsEl.innerHTML = productData['ysp_thoughts' + newSuffix] || {{ product.ysp_thoughts | jsonify | safe }};
+      }
+    });
+  })();
+
+  // Notify Me button
+  const notifyBtn = document.getElementById('btn-notify');
+  if (notifyBtn) {
+    notifyBtn.addEventListener('click', () => {
+      document.getElementById('notify-popup').style.display = 'block';
+      document.getElementById('notify-email').focus();
+    });
+  }
+
+  async function submitNotify() {
+    const email = document.getElementById('notify-email').value;
+    if (!email || !email.includes('@')) return;
+    try {
+      await fetch('https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email,
+          lang: window.YSP_LANG ? window.YSP_LANG.get() : 'en',
+          product: '{{ product.name }}'
+        })
+      });
+      document.getElementById('notify-success').style.display = 'block';
+      document.getElementById('notify-email').style.display = 'none';
+      document.querySelector('#notify-popup button').style.display = 'none';
+    } catch(e) {}
+  }
+
+  // Buy Now button
+  const buyBtn = document.getElementById('btn-buy-now');
+  if (buyBtn) {
+    buyBtn.addEventListener('click', async () => {
+      buyBtn.textContent = 'Loading...';
+      buyBtn.disabled = true;
+      try {
+        const image = buyBtn.dataset.image || '';
+        const imageUrl = image.startsWith('http') ? image : 'https://yspcollective.com' + image;
+        const res = await fetch('https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/checkout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            items: [{
+              id: buyBtn.dataset.slug,
+              name: buyBtn.dataset.name,
+              price: parseFloat(buyBtn.dataset.price),
+              image: imageUrl,
+              quantity: 1
+            }],
+            success_url: 'https://yspcollective.com/checkout-success.html',
+            cancel_url: window.location.href
+          })
+        });
+        const data = await res.json();
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          throw new Error(data.error || 'Checkout failed');
+        }
+      } catch(err) {
+        buyBtn.textContent = 'Buy Now — €{{ product.price }}';
+        buyBtn.disabled = false;
+        alert('Something went wrong. Please try again or use the enquiry form.');
+      }
+    });
+  }
+
+  // Enquire button
+  document.getElementById('btn-enquire').addEventListener('click', e => {
+    e.preventDefault();
+    sessionStorage.setItem('enquiry_subject', 'Product Enquiry — {{ product.name }}');
+    window.location.href = '/#contact';
+  });
+</script>
