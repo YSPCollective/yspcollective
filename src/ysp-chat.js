@@ -520,10 +520,10 @@ If asked something you don't know (e.g. very specific stock levels, exact delive
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-          system: SYSTEM_PROMPT,
-          messages: messages
-        })
+       body: JSON.stringify({
+  system: SYSTEM_PROMPT,
+  messages: messages.slice(-10)
+})
       });
 
       const data = await response.json();
