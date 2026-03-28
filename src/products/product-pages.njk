@@ -194,12 +194,20 @@ permalink: "products/{{ product.slug }}.html"
       {% elif stockStatus == "coming_soon" %}
         <button class="btn-buy-now btn-coming-soon" id="btn-notify">Notify Me When Available</button>
       {% else %}
+        <button class="btn-buy-now" id="btn-add-to-cart"
+          data-id="{{ product.slug }}"
+          data-name="{{ product.name }}"
+          data-price="{{ product.price }}"
+          data-image="{{ product.image_main }}">
+          Add to Cart
+        </button>
         <button class="btn-buy-now" id="btn-buy-now"
           data-name="{{ product.name }}"
           data-price="{{ product.price }}"
           data-image="{{ product.image_main }}"
-          data-slug="{{ product.slug }}">
-          Buy Now — €{{ product.price }}
+          data-slug="{{ product.slug }}"
+          style="background:var(--black);">
+          Buy Now
         </button>
       {% endif %}
       {% if stockStatus == "low_stock" %}
@@ -391,6 +399,22 @@ permalink: "products/{{ product.slug }}.html"
       document.getElementById('notify-email').style.display = 'none';
       document.querySelector('#notify-popup button').style.display = 'none';
     } catch(e) {}
+  }
+
+  // Add to Cart button
+  const addToCartBtn = document.getElementById('btn-add-to-cart');
+  if (addToCartBtn) {
+    addToCartBtn.addEventListener('click', () => {
+      if (window.YSPCart) {
+        YSPCart.add({
+          id: addToCartBtn.dataset.id,
+          name: addToCartBtn.dataset.name,
+          price: parseFloat(addToCartBtn.dataset.price),
+          image: addToCartBtn.dataset.image,
+          quantity: 1
+        });
+      }
+    });
   }
 
   // Buy Now button
