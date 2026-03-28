@@ -187,7 +187,28 @@ If asked something you don't know (e.g. very specific stock levels, exact delive
   // ─── STATE ─────────────────────────────────────────────────────────────────
   let isOpen = false;
   let isTyping = false;
-  let messages = [];
+  const SESSION_KEY = 'ysp_chat_history';
+
+  function saveMessages(msgs) {
+    try { sessionStorage.setItem(SESSION_KEY, JSON.stringify(msgs)); } catch(e) {}
+  }
+
+  function loadMessages() {
+    try {
+      const saved = sessionStorage.getItem(SESSION_KEY);
+      return saved ? JSON.parse(saved) : [];
+    } catch(e) { return []; }
+  }
+
+  function saveChatOpen(open) {
+    try { sessionStorage.setItem('ysp_chat_open', open ? '1' : '0'); } catch(e) {}
+  }
+
+  function wasChatOpen() {
+    try { return sessionStorage.getItem('ysp_chat_open') === '1'; } catch(e) { return false; }
+  }
+
+  let messages = loadMessages();
 
   // ─── BUILD UI ──────────────────────────────────────────────────────────────
   function buildWidget() {
@@ -520,16 +541,26 @@ If asked something you don't know (e.g. very specific stock levels, exact delive
       if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
     });
 
-    // Welcome message + suggestions
-    setTimeout(() => {
-      addMessage('assistant', "Hello! I'm your YSP fragrance and beauty advisor. I can help you find your perfect scent, answer questions about our skincare range, or help with anything else — delivery, ordering, you name it. What can I help you with today?");
-      showSuggestions([
-        "Find me a fragrance",
-        "What's popular?",
-        "Skincare advice",
-        "Shipping info"
-      ]);
-    }, 400);
+    // Restore previous chat or show welcome
+    if (messages.length > 0) {
+      // Restore previous conversation
+      messages.forEach(msg => addMessage(msg.role, msg.content));
+      // Re-open if was open
+      if (wasChatOpen()) {
+        setTimeout(() => toggleChat(), 300);
+      }
+    } else {
+      // Fresh welcome
+      setTimeout(() => {
+        addMessage('assistant', "Hello! I'm your YSP fragrance and beauty advisor. I can help you find your perfect scent, answer questions about our skincare range, or help with anything else — delivery, ordering, you name it. What can I help you with today?");
+        showSuggestions([
+          "Find me a fragrance",
+          "What's popular?",
+          "Skincare advice",
+          "Shipping info"
+        ]);
+      }, 400);
+    }
   }
 
   // ─── TOGGLE ────────────────────────────────────────────────────────────────
@@ -537,6 +568,7 @@ If asked something you don't know (e.g. very specific stock levels, exact delive
     isOpen = !isOpen;
     document.getElementById('ysp-chat-btn').classList.toggle('open', isOpen);
     document.getElementById('ysp-chat-window').classList.toggle('open', isOpen);
+    saveChatOpen(isOpen);
     if (isOpen) {
       setTimeout(() => document.getElementById('ysp-chat-input').focus(), 300);
     }
@@ -634,6 +666,7 @@ If asked something you don't know (e.g. very specific stock levels, exact delive
 
       const reply = data.content[0].text;
       messages.push({ role: 'assistant', content: reply });
+      saveMessages(messages);
       addMessage('assistant', reply);
 
       // Check if reply mentions any products and show cards
