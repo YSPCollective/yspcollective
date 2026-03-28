@@ -440,14 +440,6 @@ permalink: "products/{{ product.slug }}.html"
   }
 
   // Notify Me button
-  const notifyBtnEl = document.getElementById('btn-notify');
-  if (notifyBtn) {
-    notifyBtn.addEventListener('click', () => {
-      document.getElementById('notify-popup').style.display = 'block';
-      document.getElementById('notify-email').focus();
-    });
-  }
-
   async function submitNotify() {
     const email = document.getElementById('notify-email').value;
     if (!email || !email.includes('@')) return;
