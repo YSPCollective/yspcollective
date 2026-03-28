@@ -12,7 +12,6 @@ eleventyExcludeFromCollections: true
   {%- for product in collections.fragrances %}
   <url>
     <loc>https://yspcollective.com{{ product.url }}</loc>
-    <lastmod>{{ product.date | date: "%Y-%m-%d" }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -20,7 +19,6 @@ eleventyExcludeFromCollections: true
   {%- for product in collections.beauty %}
   <url>
     <loc>https://yspcollective.com{{ product.url }}</loc>
-    <lastmod>{{ product.date | date: "%Y-%m-%d" }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
