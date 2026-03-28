@@ -82,7 +82,13 @@ permalink: "products/{{ product.slug }}.html"
   .btn-buy-now:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
   .btn-sold-out { background: var(--grey) !important; }
   .btn-coming-soon { background: var(--black) !important; }
-  .low-stock-notice { font-size: 0.75rem; color: #b85c38; letter-spacing: 0.06em; align-self: center; }
+  .low-stock-notice { font-size: 0.75rem; letter-spacing: 0.06em; align-self: center; font-weight: 400; }
+  .stock-low { color: #b85c38; }
+  .stock-last { color: #c03a3a; }
+  .stock-onorder { color: #4a7fa5; }
+  .stock-preorder { color: #7a6a9a; }
+  .btn-preorder { background: #7a6a9a !important; }
+  .btn-preorder:hover { background: var(--black) !important; }
   .btn-enquire { padding: 1rem 2.5rem; background: var(--black); color: var(--white); font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.2s; cursor: pointer; border: none; display: inline-block; }
   .btn-enquire:hover { background: var(--accent); transform: translateY(-1px); }
   .btn-shop { padding: 1rem 2rem; border: 1px solid var(--sand); color: var(--black); font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
@@ -193,6 +199,14 @@ permalink: "products/{{ product.slug }}.html"
         <button class="btn-buy-now btn-sold-out" disabled>Sold Out</button>
       {% elif stockStatus == "coming_soon" %}
         <button class="btn-buy-now btn-coming-soon" id="btn-notify">Notify Me When Available</button>
+      {% elif stockStatus == "pre_order" %}
+        <button class="btn-buy-now btn-preorder" id="btn-buy-now"
+          data-name="{{ product.name }}"
+          data-price="{{ product.price }}"
+          data-image="{{ product.image_main }}"
+          data-slug="{{ product.slug }}">
+          Pre-Order Now — €{{ product.price }}
+        </button>
       {% else %}
         <button class="btn-buy-now" id="btn-add-to-cart"
           data-id="{{ product.slug }}"
@@ -210,9 +224,17 @@ permalink: "products/{{ product.slug }}.html"
           Buy Now
         </button>
       {% endif %}
+
       {% if stockStatus == "low_stock" %}
-        <span class="low-stock-notice">⚠️ Only a few left</span>
+        <span class="low-stock-notice stock-low">⚠ Only a few left</span>
+      {% elif stockStatus == "last_one" %}
+        <span class="low-stock-notice stock-last">🔴 Last one in stock!</span>
+      {% elif stockStatus == "on_order" %}
+        <span class="low-stock-notice stock-onorder">📦 More stock arriving soon{% if product.expected_date %} — {{ product.expected_date }}{% endif %}</span>
+      {% elif stockStatus == "pre_order" %}
+        <span class="low-stock-notice stock-preorder">📅 Pre-order{% if product.expected_date %} — dispatches {{ product.expected_date }}{% endif %}</span>
       {% endif %}
+
       <button class="btn-enquire" id="btn-enquire" data-i18n="pdp_enquire">Enquire</button>
       {% if product.amazon_url %}
       <a href="{{ product.amazon_url }}" class="btn-shop" target="_blank" rel="noopener" data-i18n="pdp_amazon">📦 Buy on Amazon</a>
