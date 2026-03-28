@@ -97,7 +97,7 @@
           items: cart.map(item => ({
             id: item.id,
             name: item.name,
-            price: Math.round(item.price * 100), // cents
+            price: item.price,
             image: item.image,
             quantity: item.quantity
           })),
