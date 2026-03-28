@@ -20,7 +20,7 @@
 (function () {
   'use strict';
 
-  const WORKER_URL = 'https://rapid-shadow-439d.workers.dev/checkout';
+  const WORKER_URL = 'https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/checkout';
   const STORAGE_KEY = 'ysp_cart_v2';
 
   /* ─── STATE ─────────────────────────────────────────────────────────── */
