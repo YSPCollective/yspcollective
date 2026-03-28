@@ -182,11 +182,12 @@ permalink: "products/{{ product.slug }}.html"
       <div class="spec-item"><div class="spec-label">Longevity</div><div class="spec-value">{{ product.longevity or '—' }}</div></div>
       <div class="spec-item"><div class="spec-label">Projection</div><div class="spec-value">{{ product.projection or '—' }}</div></div>
     </div>
-    {% if product.accords %}
+    {% set accordsList = product | parseAccords %}
+    {% if accordsList.length %}
     <div class="accords-wrap">
       <div class="accords-label" data-i18n="pdp_accords">Main Accords</div>
       <div class="accords-list">
-        {% for accord in product.accords %}<span class="accord-tag">{{ accord }}</span>{% endfor %}
+        {% for accord in accordsList %}<span class="accord-tag">{{ accord }}</span>{% endfor %}
       </div>
     </div>
     {% endif %}
@@ -291,7 +292,8 @@ permalink: "products/{{ product.slug }}.html"
   </div>
 </div>
 
-{% set related = collections.allProducts | relatedProducts(product.slug, product.type, product.accords) %}
+{% set productAccords = product | parseAccords %}
+{% set related = collections.allProducts | relatedProducts(product.slug, product.type, productAccords) %}
 {% if related.length %}
 <section class="related-section">
   <p class="section-label" data-i18n="pdp_related_label">You May Also Like</p>

@@ -11,29 +11,42 @@ module.exports = function(eleventyConfig) {
     }
   });
 
-
   // Pass through static assets
-  // Pass through root-level asset folders
   eleventyConfig.addPassthroughCopy({ "admin": "admin" });
   eleventyConfig.addPassthroughCopy({ "images": "images" });
   eleventyConfig.addPassthroughCopy({ "products": "products" });
-  eleventyConfig.addPassthroughCopy("src/ysp-chat.js");
-  eleventyConfig.addPassthroughCopy("src/ysp-config.js");
-  eleventyConfig.addPassthroughCopy("src/ysp-translations.js");
   eleventyConfig.addPassthroughCopy("src/*.js");
-  eleventyConfig.addPassthroughCopy("src/ysp-lang.js");
 
-  const PRODUCT_FIELDS = ['name','slug','badge','custom_badge','price','rrp','brand','gender',
+  const PRODUCT_FIELDS = [
+    'name','slug','badge','custom_badge','price','rrp','brand','gender',
     'category','image_main','gallery','description_short','description_full','ysp_thoughts',
     'concentration','size','fragrance_family','top_notes','heart_notes','base_notes',
-    'accords','longevity','projection','best_for','origin','launched','vegan',
-    'skin_type','key_ingredients','free_from','spf_rating','amazon_url','published'];
+    'accords','accords_text','longevity','projection','best_for','origin','launched','vegan',
+    'skin_type','key_ingredients','free_from','spf_rating','amazon_url','published',
+    'stock_status','expected_date','featured',
+    'pt','es'
+  ];
 
   function extractProduct(item, type) {
     const d = { type };
     PRODUCT_FIELDS.forEach(f => { if (item.data[f] !== undefined) d[f] = item.data[f]; });
     d.url = `/products/${item.data.slug}.html`;
+
+    // Normalise accords — support both old list format and new comma-separated string
+    d.accords = parseAccords(item.data);
+
     return d;
+  }
+
+  // Handles both old `accords` list and new `accords_text` string
+  function parseAccords(data) {
+    if (data.accords_text && typeof data.accords_text === 'string') {
+      return data.accords_text.split(',').map(a => a.trim().toLowerCase()).filter(Boolean);
+    }
+    if (Array.isArray(data.accords)) {
+      return data.accords.map(a => (typeof a === 'object' ? a.accord : a)).filter(Boolean);
+    }
+    return [];
   }
 
   // Collections
@@ -62,8 +75,8 @@ module.exports = function(eleventyConfig) {
   // Filters
   eleventyConfig.addFilter("jsonify", value => JSON.stringify(value));
   eleventyConfig.addFilter("limit", (arr, n) => arr.slice(0, n));
+
   eleventyConfig.addFilter("selectattr", (arr, attr) => {
-    // Usage: collection | selectattr("data.featured")
     const keys = attr.split('.');
     return arr.filter(item => {
       let val = item;
@@ -72,12 +85,24 @@ module.exports = function(eleventyConfig) {
     });
   });
 
+  // Parse accords from either format for use in templates
+  eleventyConfig.addFilter("parseAccords", function(data) {
+    return parseAccords(data);
+  });
+
   eleventyConfig.addFilter("relatedProducts", function(allProducts, currentSlug, currentType, currentAccords) {
     const sameType = allProducts.filter(p => p.type === currentType && p.slug !== currentSlug);
-    if (currentType === 'fragrance' && currentAccords && currentAccords.length) {
+    // currentAccords may be a list or string — normalise
+    let accordsList = [];
+    if (Array.isArray(currentAccords)) {
+      accordsList = currentAccords;
+    } else if (typeof currentAccords === 'string') {
+      accordsList = currentAccords.split(',').map(a => a.trim().toLowerCase()).filter(Boolean);
+    }
+    if (currentType === 'fragrance' && accordsList.length) {
       return sameType.map(p => ({
         ...p,
-        score: (p.accords||[]).filter(a => currentAccords.includes(a)).length
+        score: (p.accords||[]).filter(a => accordsList.includes(a)).length
       })).sort((a,b) => b.score - a.score).slice(0,4);
     }
     return sameType.slice(0,4);
