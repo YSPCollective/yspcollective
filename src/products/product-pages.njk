@@ -80,6 +80,9 @@ permalink: "products/{{ product.slug }}.html"
   }
   .btn-buy-now:hover { background: var(--black); transform: translateY(-1px); }
   .btn-buy-now:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .btn-sold-out { background: var(--grey) !important; }
+  .btn-coming-soon { background: var(--black) !important; }
+  .low-stock-notice { font-size: 0.75rem; color: #b85c38; letter-spacing: 0.06em; align-self: center; }
   .btn-enquire { padding: 1rem 2.5rem; background: var(--black); color: var(--white); font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.2s; cursor: pointer; border: none; display: inline-block; }
   .btn-enquire:hover { background: var(--accent); transform: translateY(-1px); }
   .btn-shop { padding: 1rem 2rem; border: 1px solid var(--sand); color: var(--black); font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
@@ -183,11 +186,35 @@ permalink: "products/{{ product.slug }}.html"
     {% endif %}
     {% endif %}
 
+    {% set stripeData = stripe_prices[product.slug] %}
+    {% set stockStatus = product.stock_status or "in_stock" %}
+
     <div class="product-cta">
-      <a href="/#contact" class="btn-enquire" id="btn-enquire" data-i18n="pdp_enquire">Enquire About This Product</a>
+      {% if stockStatus == "sold_out" %}
+        <button class="btn-buy-now btn-sold-out" disabled>Sold Out</button>
+      {% elif stockStatus == "coming_soon" %}
+        <button class="btn-buy-now btn-coming-soon" id="btn-notify">Notify Me When Available</button>
+      {% elif stripeData and stripeData.priceId %}
+        <button class="btn-buy-now" id="btn-buy-now" data-price-id="{{ stripeData.priceId }}" data-product-name="{{ product.name }}">
+          Buy Now — €{{ product.price }}
+        </button>
+      {% endif %}
+      {% if stockStatus == "low_stock" %}
+        <span class="low-stock-notice">⚠️ Only a few left</span>
+      {% endif %}
+      <a href="/#contact" class="btn-enquire" id="btn-enquire" data-i18n="pdp_enquire">Enquire</a>
       {% if product.amazon_url %}
       <a href="{{ product.amazon_url }}" class="btn-shop" target="_blank" rel="noopener" data-i18n="pdp_amazon">📦 Buy on Amazon</a>
       {% endif %}
+    </div>
+
+    <!-- Notify Me popup -->
+    <div id="notify-popup" style="display:none;margin-top:1rem">
+      <div style="display:flex;gap:0;max-width:400px">
+        <input type="email" id="notify-email" placeholder="your@email.com" style="flex:1;padding:0.75rem 1rem;border:1px solid var(--sand);background:var(--white);font-family:var(--sans);font-size:0.85rem;outline:none">
+        <button onclick="submitNotify()" style="padding:0.75rem 1.2rem;background:var(--black);color:var(--white);border:none;font-family:var(--sans);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer">Notify Me</button>
+      </div>
+      <p id="notify-success" style="display:none;font-size:0.82rem;color:var(--accent);margin-top:0.5rem">✓ We'll let you know when this is back in stock.</p>
     </div>
 
     <div class="trust-badges">
@@ -353,6 +380,34 @@ permalink: "products/{{ product.slug }}.html"
     });
   })();
 
+  // Notify Me button
+  const notifyBtn = document.getElementById('btn-notify');
+  if (notifyBtn) {
+    notifyBtn.addEventListener('click', () => {
+      document.getElementById('notify-popup').style.display = 'block';
+      document.getElementById('notify-email').focus();
+    });
+  }
+
+  async function submitNotify() {
+    const email = document.getElementById('notify-email').value;
+    if (!email || !email.includes('@')) return;
+    try {
+      await fetch('https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          email,
+          lang: window.YSP_LANG ? window.YSP_LANG.get() : 'en',
+          product: '{{ product.name }}'
+        })
+      });
+      document.getElementById('notify-success').style.display = 'block';
+      document.getElementById('notify-email').style.display = 'none';
+      document.querySelector('#notify-popup button').style.display = 'none';
+    } catch(e) {}
+  }
+
   // Buy Now button
   const buyBtn = document.getElementById('btn-buy-now');
   if (buyBtn) {
@@ -378,6 +433,65 @@ permalink: "products/{{ product.slug }}.html"
         }
       } catch(err) {
         buyBtn.textContent = 'Buy Now — €{{ product.price }}';
+        buyBtn.disabled = false;
+        alert('Something went wrong. Please try again or use the enquiry form.');
+      }
+    });
+  }
+
+  // Notify Me button
+  const notifyBtn = document.getElementById('btn-notify');
+  if (notifyBtn) {
+    notifyBtn.addEventListener('click', () => {
+      document.getElementById('notify-popup').style.display = 'block';
+      document.getElementById('notify-email').focus();
+    });
+  }
+
+  async function submitNotify() {
+    const email = document.getElementById('notify-email').value;
+    if (!email || !email.includes('@')) return;
+    try {
+      await fetch('https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          email,
+          lang: window.YSP_LANG ? window.YSP_LANG.get() : 'en',
+          product: '{{ product.name }}'
+        })
+      });
+      document.getElementById('notify-success').style.display = 'block';
+      document.getElementById('notify-email').style.display = 'none';
+      document.querySelector('#notify-popup button').style.display = 'none';
+    } catch(e) {}
+  }
+
+  // Buy Now button
+  const buyBtn = document.getElementById('btn-buy-now');
+  if (buyBtn) {
+    buyBtn.addEventListener('click', async () => {
+      buyBtn.textContent = 'Loading...';
+      buyBtn.disabled = true;
+      try {
+        const res = await fetch('https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/checkout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            priceId: buyBtn.dataset.priceId,
+            productName: buyBtn.dataset.productName,
+            successUrl: 'https://yspcollective.com/?order=success',
+            cancelUrl: window.location.href
+          })
+        });
+        const data = await res.json();
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          throw new Error(data.error || 'Checkout failed');
+        }
+      } catch(err) {
+        buyBtn.textContent = 'Buy Now';
         buyBtn.disabled = false;
         alert('Something went wrong. Please try again or use the enquiry form.');
       }

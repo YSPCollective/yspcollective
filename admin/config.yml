@@ -21,7 +21,7 @@ collections:
       - label: "Badge"
         name: "badge"
         widget: "select"
-        options: ["Bestseller", "Popular", "Curated", "New", "Limited", "Premium"]
+        options: ["Bestseller", "Popular", "Curated", "New", "Limited", ""]
         default: ""
         required: false
       - { label: "Custom Badge Label", name: "custom_badge", widget: "string", required: false, hint: "Overrides badge above if filled in" }
@@ -30,7 +30,7 @@ collections:
       - label: "Brand"
         name: "brand"
         widget: "select"
-        options: ["Lattafa", "Armaf", "Arabiyat Prestige", "Swiss Arabian", "Maison Alhambra", "Al Haramain", "Rasasi", "Gulf Orchid", "Zimaya", "Ministry of Gourmand", "Lattafa Pride", "Other"]
+        options: ["Lattafa", "Armaf", "Arabiyat Prestige", "Swiss Arabian", "Maison Alhambra", "Other"]
       - label: "Gender"
         name: "gender"
         widget: "select"
@@ -39,7 +39,7 @@ collections:
       - label: "Concentration"
         name: "concentration"
         widget: "select"
-        options: ["Eau de Parfum (EDP)", "Eau de Toilette (EDT)", "Extrait de Parfum (EdP)", "Parfum", "Oil", "Other"]
+        options: ["Eau de Parfum (EDP)", "Eau de Toilette (EDT)", "Parfum", "Oil", "Other"]
       - { label: "Fragrance Family", name: "fragrance_family", widget: "string", hint: "e.g. Oriental Vanilla / Amber Floral" }
       - { label: "Top Notes", name: "top_notes", widget: "string", hint: "e.g. Orchid, Heliotrope, Tangerine" }
       - { label: "Heart Notes", name: "heart_notes", widget: "string", required: false }
@@ -101,6 +101,15 @@ collections:
           - { label: "Full Description (ES)", name: "description_full_es", widget: "markdown", required: false }
           - { label: "YSP Thoughts (ES)", name: "ysp_thoughts_es", widget: "markdown", required: false }
 
+      - label: "Stock Status"
+        name: "stock_status"
+        widget: "select"
+        default: "in_stock"
+        options:
+          - { label: "✅ In Stock", value: "in_stock" }
+          - { label: "⚠️ Low Stock", value: "low_stock" }
+          - { label: "❌ Sold Out", value: "sold_out" }
+          - { label: "🔜 Coming Soon", value: "coming_soon" }
       - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, hint: "Show this product in the Featured Fragrances section on the homepage" }
       - { label: "Published", name: "published", widget: "boolean", default: true }
 
@@ -178,6 +187,15 @@ collections:
           - { label: "Full Description (ES)", name: "description_full_es", widget: "markdown", required: false }
           - { label: "YSP Thoughts (ES)", name: "ysp_thoughts_es", widget: "markdown", required: false }
 
+      - label: "Stock Status"
+        name: "stock_status"
+        widget: "select"
+        default: "in_stock"
+        options:
+          - { label: "✅ In Stock", value: "in_stock" }
+          - { label: "⚠️ Low Stock", value: "low_stock" }
+          - { label: "❌ Sold Out", value: "sold_out" }
+          - { label: "🔜 Coming Soon", value: "coming_soon" }
       - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, hint: "Show this product in the Featured Beauty section on the homepage" }
       - { label: "Published", name: "published", widget: "boolean", default: true }
 
