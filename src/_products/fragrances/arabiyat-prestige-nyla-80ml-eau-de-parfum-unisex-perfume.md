@@ -1,28 +1,21 @@
 ---
 name: Arabiyat Prestige Nyla 80ml
 slug: arabiyat-prestige-nyla-80ml-eau-de-parfum-unisex-perfume
-badge: Curated
-custom_badge: ""
 price: "28.95"
 rrp: ""
 brand: Arabiyat Prestige
 gender: Unisex
 size: 80ml
 concentration: Eau de Parfum (EDP)
+badge: Curated
+custom_badge: ""
+featured: true
+published: true
 fragrance_family: Fruity Floral
 heart_notes: Tiare, Jasmine, Rose, White Flowers
-base_notes: White Musk, Patchouli
-accords:
-  - floral
-  - fruity
-  - coconut
-  - musk
-  - fresh
-  - tropical
 longevity: 4-6 hours
 projection: Moderate
 best_for: Daytime wear, spring/summer, casual and smart-casual occasions
-origin: UAE
 launched: "2024"
 vegan: false
 gallery:
@@ -51,15 +44,22 @@ ysp_thoughts: >
 
 
   A solid warm-weather fragrance that earns its place in the lineup.
-amazon_url: ""
 ebay_url: ""
-featured: true
-published: true
+origin: UAE
+accords:
+  - floral
+  - fruity
+  - coconut
+  - musk
+  - fresh
+  - tropical
+base_notes: White Musk, Patchouli
+amazon_url: ""
 gender_label: Unisex
+stock_status: low_stock
 top_notes: Coconut, Peach, Bergamot, Mandarin
 image_main: /products/arabiyat-prestige-nyla/arabiyat-1.jpeg
 description_short: Sun-drenched, floral and quietly addictive. Tropical-floral
   unisex fragrance with a creamy musk dry-down. Easy daily wear for spring and
   summer.
-stock_status: in_stock
 ---
