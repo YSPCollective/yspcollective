@@ -460,36 +460,6 @@ permalink: "products/{{ product.slug }}.html"
   }
 
   // Buy Now button
-  const buyBtn = document.getElementById('btn-buy-now');
-  if (buyBtn) {
-    buyBtn.addEventListener('click', async () => {
-      buyBtn.textContent = 'Loading...';
-      buyBtn.disabled = true;
-      try {
-        const res = await fetch('https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/checkout', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            priceId: buyBtn.dataset.priceId,
-            productName: buyBtn.dataset.productName,
-            successUrl: 'https://yspcollective.com/?order=success',
-            cancelUrl: window.location.href
-          })
-        });
-        const data = await res.json();
-        if (data.url) {
-          window.location.href = data.url;
-        } else {
-          throw new Error(data.error || 'Checkout failed');
-        }
-      } catch(err) {
-        buyBtn.textContent = 'Buy Now';
-        buyBtn.disabled = false;
-        alert('Something went wrong. Please try again or use the enquiry form.');
-      }
-    });
-  }
-
   // Enquire button
   document.getElementById('btn-enquire').addEventListener('click', e => {
     e.preventDefault();
