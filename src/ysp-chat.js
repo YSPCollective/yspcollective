@@ -616,19 +616,12 @@ If asked something you don't know (e.g. very specific stock levels, exact delive
     showTyping();
 
     try {
-      const apiKey = window.YSP_API_KEY;
-      if (!apiKey) throw new Error('API key not configured');
-
-      const response = await fetch('https://api.anthropic.com/v1/messages', {
+      const response = await fetch('https://ysp-ai-proxy.rapid-shadow-439d.workers.dev', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': apiKey,
-          'anthropic-version': '2023-06-01'
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1000,
           system: SYSTEM_PROMPT,
           messages: messages
         })
