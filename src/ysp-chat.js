@@ -274,11 +274,21 @@ If you don't know something specific, direct to info@yspcollective.com`;
     try {
       const response = await fetch('https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/chat', {
         method: 'POST',
+<<<<<<< HEAD
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           system: SYSTEM_PROMPT,
           messages: messages.slice(-6)
         })
+=======
+        headers: {
+          'Content-Type': 'application/json'
+        },
+       body: JSON.stringify({
+  system: SYSTEM_PROMPT,
+  messages: messages.slice(-10)
+})
+>>>>>>> 8dfcf507e2daaeb81ccb4ce1bfa1606c5a3175aa
       });
 
       const data = await response.json();
