@@ -3,7 +3,7 @@ name: Gulf Orchid Creamy Pistachio Eau de Parfum 100ml
 slug: gulf-orchid-creamy-pistachio
 badge: Limited
 price: "33.50"
-brand: Gulf Orchard
+brand: Gulf Orchid
 gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
@@ -58,6 +58,7 @@ ysp_thoughts: >-
 
 
   We picked it because it stands out in a lineup without being weird about it. If you're the kind of person who's bored with smelling like everyone else, Creamy Pistachio is a quiet statement that does the job perfectly.
+stock_status: in_stock
 featured: false
 published: true
 ---
