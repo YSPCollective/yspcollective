@@ -30,7 +30,7 @@ collections:
       - label: "Brand"
         name: "brand"
         widget: "select"
-        options: ["Lattafa", "Armaf", "Arabiyat Prestige", "Swiss Arabian", "Maison Alhambra", "Other"]
+        options: ["Lattafa", "Armaf", "Arabiyat Prestige", "Swiss Arabian", "Maison Alhambra", "Rasasi", "Gulf Orchid", "Ministry of Gourmand", "Zimaya", "Al Haramain", "YSL", "Dior", "Creed", "Roja", "Other"]
       - label: "Gender"
         name: "gender"
         widget: "select"
