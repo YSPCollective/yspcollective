@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmed — YSP Collective</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;1,300&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #1a1916; --white: #faf8f5; --cream: #f3efe8;
+      --accent: #9c7b56; --grey: #8a847a; --sand: #e6dfd4;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Outfit', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--cream); color: var(--black);
+      font-family: var(--sans); font-weight: 300;
+      min-height: 100vh; display: flex; align-items: center;
+      justify-content: center; padding: 2rem;
+    }
+    .card {
+      background: var(--white); max-width: 520px; width: 100%;
+      padding: 3.5rem; text-align: center;
+      border-top: 3px solid var(--accent);
+    }
+    .icon { font-size: 3rem; margin-bottom: 1.5rem; }
+    h1 {
+      font-family: var(--serif); font-size: 2rem;
+      font-weight: 300; margin-bottom: 1rem; color: var(--black);
+    }
+    p { font-size: 0.95rem; line-height: 1.8; color: var(--grey); margin-bottom: 1rem; }
+    .ref {
+      font-size: 0.75rem; letter-spacing: 0.1em;
+      color: var(--grey); margin: 1.5rem 0;
+      padding: 1rem; background: var(--cream); border: 1px solid var(--sand);
+    }
+    .ref span { display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 0.3rem; }
+    a.btn {
+      display: inline-block; margin-top: 1.5rem;
+      padding: 0.85rem 2rem; background: var(--black); color: var(--white);
+      text-decoration: none; font-size: 0.72rem; letter-spacing: 0.14em;
+      text-transform: uppercase; transition: background 0.25s;
+    }
+    a.btn:hover { background: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">✦</div>
+    <h1>Order confirmed.</h1>
+    <p>Thank you for your purchase. You'll receive a confirmation email shortly with your order details and tracking information.</p>
+    <p>If you have any questions, reach us at <a href="mailto:info@yspcollective.com" style="color:var(--accent)">info@yspcollective.com</a></p>
+    <div class="ref" id="order-ref" style="display:none;">
+      <span>Order Reference</span>
+      <span id="order-id">—</span>
+    </div>
+    <a href="/" class="btn">Continue Shopping</a>
+  </div>
+  <script>
+    // Clear cart on success
+    localStorage.removeItem('ysp_cart_v2');
+    // Show Stripe session ID if present
+    const params = new URLSearchParams(window.location.search);
+    const sessionId = params.get('session_id');
+    if (sessionId) {
+      document.getElementById('order-ref').style.display = 'block';
+      document.getElementById('order-id').textContent = sessionId.slice(-12).toUpperCase();
+    }
+  </script>
+</body>
+</html>

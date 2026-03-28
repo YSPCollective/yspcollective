@@ -1,0 +1,28 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://yspcollective.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  {%- for product in collections.fragrances %}
+  <url>
+    <loc>https://yspcollective.com{{ product.url }}</loc>
+    <lastmod>{{ product.date | date: "%Y-%m-%d" }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  {%- endfor %}
+  {%- for product in collections.beauty %}
+  <url>
+    <loc>https://yspcollective.com{{ product.url }}</loc>
+    <lastmod>{{ product.date | date: "%Y-%m-%d" }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  {%- endfor %}
+</urlset>
