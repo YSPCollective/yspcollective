@@ -27,6 +27,7 @@ longevity: 10+ hours
 projection: Strong +
 best_for: Night time wear, Winter/Spring/Autumn
 origin: UAE
+launched: "2024"
 vegan: false
 image_main: /images/uploads/ahp1485_.jpeg
 gallery:
