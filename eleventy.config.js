@@ -1,4 +1,16 @@
+const { syncAllProducts } = require('./stripe-sync.js');
+
 module.exports = function(eleventyConfig) {
+
+  // Sync products to Stripe on every build
+  eleventyConfig.on('eleventy.before', async () => {
+    try {
+      await syncAllProducts();
+    } catch(e) {
+      console.warn('Stripe sync skipped:', e.message);
+    }
+  });
+
 
   // Pass through static assets
   // Pass through root-level asset folders
