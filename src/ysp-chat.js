@@ -204,9 +204,11 @@ If you don't know something specific, direct to info@yspcollective.com`;
     win.querySelector('.ysp-chat-close').addEventListener('click', toggleChat);
 
     // Restore or welcome
-    if (messages.length > 0) {
-      messages.forEach(msg => addMessage(msg.role, msg.content));
-      if (wasChatOpen()) setTimeout(() => toggleChat(), 300);
+  if (messages.length > 0) {
+  messages.forEach(msg => addMessage(msg.role, msg.content));
+  if (wasChatOpen()) setTimeout(() => toggleChat(), 300);
+  showSuggestions(["Find me a fragrance", "What's popular?", "Skincare advice", "Shipping info"]);
+}
     } else {
       setTimeout(() => {
         addMessage('assistant', "Hello! I'm your YSP fragrance and beauty advisor. Tap a topic below to get started, or ask me anything about our fragrances and skincare.");
