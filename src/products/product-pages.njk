@@ -190,15 +190,19 @@ permalink: "products/{{ product.slug }}.html"
     {% set stockStatus = product.stock_status or "in_stock" %}
 
     <div class="product-cta">
-      {% if stockStatus == "sold_out" %}
-        <button class="btn-buy-now btn-sold-out" disabled>Sold Out</button>
-      {% elif stockStatus == "coming_soon" %}
-        <button class="btn-buy-now btn-coming-soon" id="btn-notify">Notify Me When Available</button>
-      {% elif stripeData and stripeData.priceId %}
-        <button class="btn-buy-now" id="btn-buy-now" data-price-id="{{ stripeData.priceId }}" data-product-name="{{ product.name }}">
-          Buy Now — €{{ product.price }}
-        </button>
-      {% endif %}
+     {% if stockStatus == "sold_out" %}
+  <button class="btn-buy-now btn-sold-out" disabled>Sold Out</button>
+{% elif stockStatus == "coming_soon" %}
+  <button class="btn-buy-now btn-coming-soon" id="btn-notify">Notify Me When Available</button>
+{% else %}
+  <button class="btn-buy-now" id="btn-buy-now"
+    data-name="{{ product.name }}"
+    data-price="{{ product.price }}"
+    data-image="{{ product.image_main }}"
+    data-slug="{{ product.slug }}">
+    Buy Now — €{{ product.price }}
+  </button>
+{% endif %}
       {% if stockStatus == "low_stock" %}
         <span class="low-stock-notice">⚠️ Only a few left</span>
       {% endif %}
@@ -409,35 +413,42 @@ permalink: "products/{{ product.slug }}.html"
   }
 
   // Buy Now button
-  const buyBtn = document.getElementById('btn-buy-now');
-  if (buyBtn) {
-    buyBtn.addEventListener('click', async () => {
-      buyBtn.textContent = 'Loading...';
-      buyBtn.disabled = true;
-      try {
-        const res = await fetch('https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/checkout', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            priceId: buyBtn.dataset.priceId,
-            productName: buyBtn.dataset.productName,
-            successUrl: 'https://yspcollective.com/?order=success',
-            cancelUrl: window.location.href
-          })
-        });
-        const data = await res.json();
-        if (data.url) {
-          window.location.href = data.url;
-        } else {
-          throw new Error(data.error || 'Checkout failed');
-        }
-      } catch(err) {
-        buyBtn.textContent = 'Buy Now — €{{ product.price }}';
-        buyBtn.disabled = false;
-        alert('Something went wrong. Please try again or use the enquiry form.');
+const buyBtn = document.getElementById('btn-buy-now');
+if (buyBtn) {
+  buyBtn.addEventListener('click', async () => {
+    buyBtn.textContent = 'Loading...';
+    buyBtn.disabled = true;
+    try {
+      const image = buyBtn.dataset.image || '';
+      const imageUrl = image.startsWith('http') ? image : 'https://yspcollective.com' + image;
+      const res = await fetch('https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: [{
+            id: buyBtn.dataset.slug,
+            name: buyBtn.dataset.name,
+            price: parseFloat(buyBtn.dataset.price),
+            image: imageUrl,
+            quantity: 1
+          }],
+          success_url: 'https://yspcollective.com/checkout-success.html',
+          cancel_url: window.location.href
+        })
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        throw new Error(data.error || 'Checkout failed');
       }
-    });
-  }
+    } catch(err) {
+      buyBtn.textContent = 'Buy Now — €{{ product.price }}';
+      buyBtn.disabled = false;
+      alert('Something went wrong. Please try again or use the enquiry form.');
+    }
+  });
+}
 
   // Notify Me button
   async function submitNotify() {
