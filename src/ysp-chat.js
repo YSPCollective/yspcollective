@@ -515,7 +515,7 @@ If asked something you don't know (e.g. very specific stock levels, exact delive
     showTyping();
 
     try {
-      const response = await fetch('https://ysp-ai-proxy.rapid-shadow-439d.workers.dev', {
+      const response = await fetch('https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
