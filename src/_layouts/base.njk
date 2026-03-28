@@ -26,15 +26,53 @@
       --serif: 'Playfair Display', Georgia, serif;
       --sans: 'Outfit', -apple-system, sans-serif;
       --nav-height: 80px;
+      --banner-height: 40px;
       --ease: cubic-bezier(0.4, 0, 0.2, 1);
     }
     html { scroll-behavior: smooth; }
     body { background: var(--white); color: var(--black); font-family: var(--sans); font-weight: 300; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
     a { color: inherit; }
 
+    /* BANNER */
+    #shipping-banner {
+      background: var(--black);
+      color: rgba(255,255,255,0.8);
+      text-align: center;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0;
+      height: var(--banner-height);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1001;
+    }
+    .banner-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0 3rem;
+      width: 100%;
+    }
+    .banner-text { flex: 1; text-align: center; }
+    .banner-close {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.4);
+      cursor: pointer;
+      font-size: 0.8rem;
+      padding: 0.2rem;
+      position: absolute;
+      right: 1rem;
+      transition: color 0.2s;
+    }
+    .banner-close:hover { color: var(--white); }
+
     /* NAV */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      position: fixed; top: var(--banner-height); left: 0; right: 0; z-index: 1000;
       display: flex; justify-content: space-between; align-items: center;
       padding: 0 3.5rem; height: var(--nav-height);
       background: rgba(250,248,245,0.94); backdrop-filter: blur(16px);
@@ -51,6 +89,16 @@
     .nav-links a:hover { color: var(--accent); }
     .nav-cta { padding: 0.55rem 1.5rem; background: var(--accent); color: var(--white) !important; font-size: 0.7rem !important; transition: background 0.25s, transform 0.25s; }
     .nav-cta:hover { background: var(--black) !important; transform: translateY(-1px); }
+
+    /* WHATSAPP */
+    .nav-whatsapp {
+      display: flex;
+      align-items: center;
+      color: #25D366;
+      transition: transform 0.2s, color 0.2s;
+      text-decoration: none;
+    }
+    .nav-whatsapp:hover { transform: scale(1.15); color: #1da851; }
 
     /* LANGUAGE SWITCHER */
     #ysp-lang-switcher {
@@ -139,11 +187,58 @@
       .footer-top { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; gap: 0.5rem; }
     }
+    /* MAILING LIST POPUP */
+    #ysp-popup-overlay {
+      position: fixed; inset: 0; background: rgba(26,25,22,0.7);
+      z-index: 9990; display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.4s ease; pointer-events: none;
+    }
+    #ysp-popup-overlay.visible { opacity: 1; pointer-events: all; }
+    #ysp-popup {
+      background: var(--white); max-width: 480px; width: calc(100% - 3rem);
+      padding: 3rem; position: relative; text-align: center;
+      transform: translateY(20px); transition: transform 0.4s ease;
+    }
+    #ysp-popup-overlay.visible #ysp-popup { transform: translateY(0); }
+    .popup-close {
+      position: absolute; top: 1rem; right: 1rem;
+      background: none; border: none; font-size: 1.2rem;
+      color: var(--grey); cursor: pointer; transition: color 0.2s;
+    }
+    .popup-close:hover { color: var(--black); }
+    .popup-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
+    .popup-title { font-family: var(--serif); font-size: 2rem; font-weight: 300; margin-bottom: 0.8rem; line-height: 1.2; }
+    .popup-sub { font-size: 0.88rem; color: var(--grey); line-height: 1.7; margin-bottom: 1.8rem; }
+    .popup-discount { font-family: var(--serif); font-size: 3rem; font-weight: 300; color: var(--accent); margin-bottom: 0.5rem; line-height: 1; }
+    .popup-form { display: flex; gap: 0; margin-bottom: 0.8rem; }
+    .popup-input {
+      flex: 1; padding: 0.85rem 1rem; border: 1px solid var(--sand);
+      background: var(--white); font-family: var(--sans); font-size: 0.88rem;
+      color: var(--black); outline: none; transition: border-color 0.2s;
+    }
+    .popup-input:focus { border-color: var(--accent); }
+    .popup-btn {
+      padding: 0.85rem 1.5rem; background: var(--black); color: var(--white);
+      border: none; font-family: var(--sans); font-size: 0.72rem;
+      letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer;
+      transition: background 0.2s; white-space: nowrap;
+    }
+    .popup-btn:hover { background: var(--accent); }
+    .popup-terms { font-size: 0.68rem; color: var(--grey-light); }
+    .popup-success { font-size: 0.9rem; color: var(--accent); padding: 1rem 0; display: none; }
   </style>
 
   {{ head_extra | safe }}
 </head>
 <body>
+
+  <!-- FREE SHIPPING BANNER -->
+  <div id="shipping-banner">
+    <div class="banner-inner">
+      <span class="banner-text">🚚 Free shipping on orders over €50 across Europe &nbsp;·&nbsp; 📍 Free next-day delivery in Loulé</span>
+      <button class="banner-close" onclick="this.parentElement.parentElement.style.display='none'" aria-label="Close">✕</button>
+    </div>
+  </div>
 
   <nav id="main-nav">
     <a href="/" class="nav-logo">
@@ -163,6 +258,9 @@
       <li><a href="/#faq" data-i18n="nav_faq">FAQ</a></li>
       <li><a href="/#contact" data-i18n="nav_contact">Contact</a></li>
       <li><a href="/#contact" class="nav-cta" data-i18n="nav_enquire">Enquire</a></li>
+      <li><a href="https://wa.me/351960384348" class="nav-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a></li>
       <li id="ysp-lang-switcher"></li>
     </ul>
   </nav>
@@ -198,8 +296,26 @@
     <div class="footer-bottom">
       <span>© 2026 YSP Collective. <span data-i18n="footer_rights">All rights reserved.</span></span>
       <span>Portugal, European Union</span>
+      <a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.3);font-size:0.72rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.6)'" onmouseout="this.style.color='rgba(255,255,255,0.3)'">📋 Livro de Reclamações</a>
     </div>
   </footer>
+
+  <!-- MAILING LIST POPUP -->
+  <div id="ysp-popup-overlay">
+    <div id="ysp-popup">
+      <button class="popup-close" onclick="closePopup()" aria-label="Close">✕</button>
+      <div class="popup-label">Welcome to YSP Collective</div>
+      <div class="popup-discount">10% OFF</div>
+      <h2 class="popup-title">Your first order</h2>
+      <p class="popup-sub">Join our list for exclusive offers, new arrivals and fragrance recommendations. Get 10% off your first order.</p>
+      <div class="popup-form">
+        <input type="email" class="popup-input" id="popup-email" placeholder="your@email.com" onkeydown="if(event.key==='Enter')submitPopup()">
+        <button class="popup-btn" onclick="submitPopup()">Get 10% Off</button>
+      </div>
+      <p class="popup-success" id="popup-success">✓ Thank you! Check your email for your discount code.</p>
+      <p class="popup-terms">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
 
   <script src="/ysp-translations.js"></script>
   <script src="/ysp-lang.js"></script>
@@ -222,6 +338,56 @@
       });
     }, { threshold: 0.08 });
     reveals.forEach(el => ro.observe(el));
+
+    // Mailing list popup
+    function closePopup() {
+      document.getElementById('ysp-popup-overlay').classList.remove('visible');
+      try { localStorage.setItem('ysp_popup_seen', '1'); } catch(e) {}
+    }
+
+    async function submitPopup() {
+      const email = document.getElementById('popup-email').value;
+      if (!email || !email.includes('@')) return;
+      const btn = document.querySelector('.popup-btn');
+      btn.textContent = '...';
+      btn.disabled = true;
+      try {
+        const lang = window.YSP_LANG ? window.YSP_LANG.get() : 'en';
+        const res = await fetch('https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, lang })
+        });
+        const data = await res.json();
+        if (data.success) {
+          document.getElementById('popup-success').style.display = 'block';
+          document.querySelector('.popup-form').style.display = 'none';
+          try { localStorage.setItem('ysp_popup_seen', '1'); } catch(e) {}
+          setTimeout(() => closePopup(), 3000);
+        } else {
+          btn.textContent = 'Get 10% Off';
+          btn.disabled = false;
+          alert('Something went wrong — please try again.');
+        }
+      } catch(e) {
+        btn.textContent = 'Get 10% Off';
+        btn.disabled = false;
+      }
+    }
+
+    // Show popup after 8 seconds if not seen before
+    try {
+      if (!localStorage.getItem('ysp_popup_seen')) {
+        setTimeout(() => {
+          document.getElementById('ysp-popup-overlay').classList.add('visible');
+        }, 8000);
+      }
+    } catch(e) {}
+
+    // Close on overlay click
+    document.getElementById('ysp-popup-overlay').addEventListener('click', function(e) {
+      if (e.target === this) closePopup();
+    });
 
     window.addEventListener('DOMContentLoaded', () => {
       const subject = sessionStorage.getItem('enquiry_subject');
