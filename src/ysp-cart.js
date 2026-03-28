@@ -1,7 +1,7 @@
 /**
  * YSP Collective — Shopping Cart
  * Multi-item slide-out drawer → Stripe Checkout
- * Worker endpoint: https://rapid-shadow-439d.workers.dev/checkout
+ * Worker endpoint: https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/checkout
  *
  * Usage:
  *   YSPCart.add({ id, name, price, image, quantity })
