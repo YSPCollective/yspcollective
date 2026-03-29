@@ -1,14 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- Background -->
-  <rect width="32" height="32" fill="#1a1916"/>
-  <!-- YSP text -->
-  <text x="16" y="22" 
+  <text x="16" y="23" 
     font-family="Georgia, 'Times New Roman', serif" 
-    font-size="16" 
-    font-weight="300"
-    fill="#c8a87a" 
+    font-size="17" 
+    font-weight="400"
+    fill="#1a1916" 
     text-anchor="middle" 
-    letter-spacing="0.5">YSP</text>
-  <!-- Decorative line -->
-  <line x1="8" y1="26" x2="24" y2="26" stroke="#9c7b56" stroke-width="0.8"/>
+    letter-spacing="1">YSP</text>
+  <line x1="7" y1="27" x2="25" y2="27" stroke="#9c7b56" stroke-width="0.9"/>
 </svg>
