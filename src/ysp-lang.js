@@ -1,125 +1,196 @@
 /**
  * YSP Collective — Language Switcher
- * Handles EN / PT / ES translation across all pages
+ * Clean minimal dropdown, no flags, site colours only.
  */
-
 (function() {
   'use strict';
 
-  const SUPPORTED = ['en', 'pt', 'es'];
-  const DEFAULT = 'en';
+  const LANGS = [
+    { code: 'en', label: 'EN', full: 'English' },
+    { code: 'pt', label: 'PT', full: 'Português' },
+    { code: 'es', label: 'ES', full: 'Español' }
+  ];
+
   const STORAGE_KEY = 'ysp_lang';
 
-  // ── Get current language ──────────────────────────────────────────
   function getLang() {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored && SUPPORTED.includes(stored)) return stored;
-    // Auto-detect from browser
-    const browser = (navigator.language || '').toLowerCase().slice(0, 2);
-    if (browser === 'pt') return 'pt';
-    if (browser === 'es') return 'es';
-    return DEFAULT;
+    try { return localStorage.getItem(STORAGE_KEY) || 'en'; } catch(e) { return 'en'; }
   }
 
-  function setLang(lang) {
-    localStorage.setItem(STORAGE_KEY, lang);
-    applyTranslations(lang);
-    updateSwitcher(lang);
-    document.documentElement.lang = lang;
+  function setLang(code) {
+    try { localStorage.setItem(STORAGE_KEY, code); } catch(e) {}
   }
 
-  // ── Get translation string ────────────────────────────────────────
-  function t(key, lang) {
-    const translations = window.YSP_TRANSLATIONS;
-    if (!translations) return '';
-    const langObj = translations[lang] || translations[DEFAULT];
-    const fallback = translations[DEFAULT];
-    return langObj[key] || fallback[key] || key;
-  }
-
-  // ── Apply all translations to page ───────────────────────────────
   function applyTranslations(lang) {
-    // Find all elements with data-i18n attribute
+    if (!window.YSP_TRANSLATIONS) return;
+    const t = window.YSP_TRANSLATIONS[lang] || window.YSP_TRANSLATIONS['en'];
+    if (!t) return;
+
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
-      const val = t(key, lang);
-      if (el.getAttribute('data-i18n-html') === 'true') {
-        el.innerHTML = val;
-      } else {
-        el.textContent = val;
+      if (t[key]) {
+        if (el.getAttribute('data-i18n-html') === 'true') {
+          el.innerHTML = t[key];
+        } else {
+          el.textContent = t[key];
+        }
       }
     });
 
-    // Placeholders
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
       const key = el.getAttribute('data-i18n-placeholder');
-      el.placeholder = t(key, lang);
+      if (t[key]) el.placeholder = t[key];
     });
 
-    // Dispatch event so other scripts can react
-    document.dispatchEvent(new CustomEvent('ysp:langchange', { detail: { lang } }));
-  }
-
-  // ── Build the language switcher UI ───────────────────────────────
-  function buildSwitcher() {
-    const switcher = document.getElementById('ysp-lang-switcher');
-    if (!switcher) return;
-
-    const langs = [
-      { code: 'en', flag: '🇬🇧', label: 'EN' },
-      { code: 'pt', flag: '🇵🇹', label: 'PT' },
-      { code: 'es', flag: '🇪🇸', label: 'ES' }
-    ];
-
-    switcher.innerHTML = '';
-    langs.forEach(l => {
-      const btn = document.createElement('button');
-      btn.className = 'lang-btn';
-      btn.setAttribute('data-lang', l.code);
-      btn.setAttribute('aria-label', `Switch to ${l.label}`);
-      btn.innerHTML = `<span class="lang-flag">${l.flag}</span><span class="lang-code">${l.label}</span>`;
-      btn.addEventListener('click', () => setLang(l.code));
-      switcher.appendChild(btn);
-    });
-  }
-
-  function updateSwitcher(lang) {
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-    });
-  }
-
-  // ── Init ──────────────────────────────────────────────────────────
-  function init() {
-    if (!window.YSP_TRANSLATIONS) {
-      console.warn('YSP: Translations not loaded');
-      return;
+    // Update announcement bar language
+    const annPt = document.querySelector('.ann-pt');
+    const annEn = document.querySelector('.ann-en');
+    if (annPt && annEn) {
+      annPt.style.display = lang === 'pt' ? '' : 'none';
+      annEn.style.display = lang === 'pt' ? 'none' : '';
     }
-    buildSwitcher();
-    const lang = getLang();
-    applyTranslations(lang);
-    updateSwitcher(lang);
+
     document.documentElement.lang = lang;
   }
 
-  // Wait for translations to load
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
+  function buildSwitcher() {
+    const container = document.getElementById('ysp-lang-switcher');
+    if (!container) return;
+
+    const currentLang = getLang();
+    const current = LANGS.find(l => l.code === currentLang) || LANGS[0];
+
+    // Inject styles
+    const style = document.createElement('style');
+    style.textContent = `
+      .ysp-lang-wrap {
+        position: relative;
+      }
+      .ysp-lang-trigger {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: var(--sans);
+        font-size: 0.75rem;
+        font-weight: 400;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--grey);
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        padding: 0.3rem 0;
+        transition: color 0.25s;
+        white-space: nowrap;
+      }
+      .ysp-lang-trigger:hover { color: var(--accent); }
+      .ysp-lang-trigger .ysp-lang-chevron {
+        font-size: 0.55rem;
+        opacity: 0.6;
+        transition: transform 0.2s;
+        display: inline-block;
+      }
+      .ysp-lang-wrap.open .ysp-lang-chevron { transform: rotate(180deg); }
+      .ysp-lang-dropdown {
+        display: none;
+        position: absolute;
+        top: calc(100% + 0.6rem);
+        right: 0;
+        background: var(--white);
+        border: 1px solid var(--sand);
+        min-width: 120px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        z-index: 2000;
+      }
+      .ysp-lang-wrap.open .ysp-lang-dropdown { display: block; }
+      .ysp-lang-option {
+        display: block;
+        width: 100%;
+        padding: 0.65rem 1rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: var(--sans);
+        font-size: 0.72rem;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--grey);
+        text-align: left;
+        transition: color 0.2s, background 0.2s;
+        border-bottom: 1px solid var(--sand);
+      }
+      .ysp-lang-option:last-child { border-bottom: none; }
+      .ysp-lang-option:hover { color: var(--black); background: var(--cream); }
+      .ysp-lang-option.active { color: var(--accent); }
+    `;
+    document.head.appendChild(style);
+
+    // Build HTML
+    container.innerHTML = `
+      <div class="ysp-lang-wrap" id="ysp-lang-wrap">
+        <button class="ysp-lang-trigger" id="ysp-lang-trigger" aria-haspopup="true" aria-expanded="false">
+          <span id="ysp-lang-current">${current.label}</span>
+          <span class="ysp-lang-chevron">▾</span>
+        </button>
+        <div class="ysp-lang-dropdown" role="menu">
+          ${LANGS.map(l => `
+            <button class="ysp-lang-option${l.code === currentLang ? ' active' : ''}" data-lang="${l.code}" role="menuitem">
+              ${l.label} <span style="opacity:0.5;font-size:0.65rem;margin-left:0.3rem">${l.full}</span>
+            </button>
+          `).join('')}
+        </div>
+      </div>
+    `;
+
+    const wrap = document.getElementById('ysp-lang-wrap');
+    const trigger = document.getElementById('ysp-lang-trigger');
+    const currentLabel = document.getElementById('ysp-lang-current');
+
+    // Toggle dropdown
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = wrap.classList.contains('open');
+      wrap.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', !isOpen);
+    });
+
+    // Close on outside click
+    document.addEventListener('click', () => {
+      wrap.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
+    });
+
+    // Language selection
+    container.querySelectorAll('.ysp-lang-option').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const lang = btn.dataset.lang;
+        setLang(lang);
+        applyTranslations(lang);
+        currentLabel.textContent = LANGS.find(l => l.code === lang).label;
+        container.querySelectorAll('.ysp-lang-option').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        wrap.classList.remove('open');
+        trigger.setAttribute('aria-expanded', 'false');
+      });
+    });
   }
 
-  // Re-apply on slide change (carousel may reset content)
-  document.addEventListener('ysp:slidechange', () => {
+  // Init
+  document.addEventListener('DOMContentLoaded', () => {
+    buildSwitcher();
     applyTranslations(getLang());
   });
 
-  // Also re-apply after a short delay to catch any late renders
-  window.addEventListener('load', () => {
-    setTimeout(() => applyTranslations(getLang()), 300);
-  });
-
-  // Expose globally
-  window.YSP_LANG = { get: getLang, set: setLang, t };
+  // Expose for external use
+  window.YSP_LANG = {
+    get: getLang,
+    set: (code) => { setLang(code); applyTranslations(code); },
+    t: (key, lang) => {
+      const l = lang || getLang();
+      return (window.YSP_TRANSLATIONS && window.YSP_TRANSLATIONS[l] && window.YSP_TRANSLATIONS[l][key]) || key;
+    }
+  };
 
 })();
