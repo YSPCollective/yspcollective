@@ -17,6 +17,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "products": "products" });
   eleventyConfig.addPassthroughCopy("src/*.js");
 
+  // Favicon files (root → _site root)
+  eleventyConfig.addPassthroughCopy({ "favicon.ico": "favicon.ico" });
+  eleventyConfig.addPassthroughCopy({ "favicon.svg": "favicon.svg" });
+  eleventyConfig.addPassthroughCopy({ "favicon-16.png": "favicon-16.png" });
+  eleventyConfig.addPassthroughCopy({ "favicon-32.png": "favicon-32.png" });
+  eleventyConfig.addPassthroughCopy({ "favicon-180.png": "favicon-180.png" });
+  eleventyConfig.addPassthroughCopy({ "favicon-192.png": "favicon-192.png" });
+
   const PRODUCT_FIELDS = [
     'name','slug','badge','custom_badge','price','rrp','brand','gender',
     'category','image_main','gallery','description_short','description_full','ysp_thoughts',
@@ -31,14 +39,10 @@ module.exports = function(eleventyConfig) {
     const d = { type };
     PRODUCT_FIELDS.forEach(f => { if (item.data[f] !== undefined) d[f] = item.data[f]; });
     d.url = `/products/${item.data.slug}.html`;
-
-    // Normalise accords — support both old list format and new comma-separated string
     d.accords = parseAccords(item.data);
-
     return d;
   }
 
-  // Handles both old `accords` list and new `accords_text` string
   function parseAccords(data) {
     if (data.accords_text && typeof data.accords_text === 'string') {
       return data.accords_text.split(',').map(a => a.trim().toLowerCase()).filter(Boolean);
@@ -85,14 +89,12 @@ module.exports = function(eleventyConfig) {
     });
   });
 
-  // Parse accords from either format for use in templates
   eleventyConfig.addFilter("parseAccords", function(data) {
     return parseAccords(data);
   });
 
   eleventyConfig.addFilter("relatedProducts", function(allProducts, currentSlug, currentType, currentAccords) {
     const sameType = allProducts.filter(p => p.type === currentType && p.slug !== currentSlug);
-    // currentAccords may be a list or string — normalise
     let accordsList = [];
     if (Array.isArray(currentAccords)) {
       accordsList = currentAccords;
