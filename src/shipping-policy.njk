@@ -1,0 +1,274 @@
+---
+layout: base.njk
+title: "Política de Envios | Shipping Policy — YSP Collective"
+description: "Informações sobre envios, prazos de entrega e custos. Enviamos para toda a Europa."
+canonical: "https://yspcollective.com/shipping-policy.html"
+---
+
+<style>
+  .policy-hero {
+    padding: 8rem 3.5rem 4rem;
+    background: var(--cream);
+    border-bottom: 1px solid var(--sand);
+  }
+  .policy-hero .lang-toggle {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  .lang-btn {
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--sand);
+    background: transparent;
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--grey);
+    transition: all 0.2s;
+  }
+  .lang-btn.active {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+  }
+  .policy-hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+  .policy-meta {
+    font-size: 0.78rem;
+    color: var(--grey);
+    letter-spacing: 0.08em;
+  }
+  .policy-body {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 5rem 3.5rem 7rem;
+  }
+  .policy-lang { display: none; }
+  .policy-lang.active { display: block; }
+  .policy-body h2 {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 3rem 0 1rem;
+    color: var(--black);
+    padding-top: 2rem;
+    border-top: 1px solid var(--sand);
+  }
+  .policy-body h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+  .policy-body p { font-size: 0.92rem; line-height: 1.85; color: var(--grey); margin-bottom: 1rem; }
+  .policy-body ul { margin: 0.5rem 0 1rem 1.5rem; }
+  .policy-body ul li { font-size: 0.92rem; line-height: 1.85; color: var(--grey); margin-bottom: 0.4rem; }
+  .policy-body strong { color: var(--black); font-weight: 400; }
+  .policy-body a { color: var(--accent); text-decoration: none; }
+  .policy-body a:hover { text-decoration: underline; }
+  .shipping-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.88rem;
+  }
+  .shipping-table th {
+    text-align: left;
+    padding: 0.8rem 1rem;
+    background: var(--black);
+    color: var(--white);
+    font-weight: 400;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .shipping-table td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--sand);
+    color: var(--grey);
+  }
+  .shipping-table tr:last-child td { border-bottom: none; }
+  .shipping-table tr:nth-child(even) td { background: var(--cream); }
+  .highlight-box {
+    background: var(--cream);
+    border-left: 3px solid var(--accent);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+  }
+  .highlight-box p { margin: 0; color: var(--black); }
+  .policy-contact-box {
+    background: var(--cream);
+    border: 1px solid var(--sand);
+    padding: 2rem;
+    margin-top: 3rem;
+  }
+  .policy-contact-box p { margin: 0; }
+  @media (max-width: 768px) {
+    .policy-hero { padding: 7rem 1.5rem 3rem; }
+    .policy-body { padding: 3rem 1.5rem 5rem; }
+    .shipping-table { font-size: 0.82rem; }
+    .shipping-table th, .shipping-table td { padding: 0.6rem 0.7rem; }
+  }
+</style>
+
+<div class="policy-hero">
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="showLang('pt')">🇵🇹 Português</button>
+    <button class="lang-btn" onclick="showLang('en')">🇬🇧 English</button>
+  </div>
+  <p style="font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;">Legal</p>
+  <h1 id="policy-title">Política de Envios</h1>
+  <p class="policy-meta">Última actualização: Março 2026</p>
+</div>
+
+<div class="policy-body">
+
+  <!-- PORTUGUESE -->
+  <div class="policy-lang active" id="lang-pt">
+
+    <div class="highlight-box">
+      <p>Expedimos todas as encomendas em <strong>24 horas úteis</strong> a partir de Portugal. A entrega na maioria dos países europeus demora entre <strong>2 a 5 dias úteis</strong>.</p>
+    </div>
+
+    <h2>1. Prazo de Expedição</h2>
+    <p>As encomendas são processadas e expedidas em <strong>1 dia útil</strong> após confirmação do pagamento (de segunda a sexta-feira, excluindo feriados nacionais portugueses). Encomendas recebidas após as 14h00 (hora de Lisboa) poderão ser expedidas no dia útil seguinte.</p>
+    <p>Após expedição, receberá um e-mail de confirmação com o número de seguimento.</p>
+
+    <h2>2. Prazos e Custos de Entrega</h2>
+    <table class="shipping-table">
+      <thead>
+        <tr>
+          <th>Destino</th>
+          <th>Prazo Estimado</th>
+          <th>Custo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Portugal Continental</td>
+          <td>1–2 dias úteis</td>
+          <td>Calculado no checkout</td>
+        </tr>
+        <tr>
+          <td>Espanha</td>
+          <td>2–3 dias úteis</td>
+          <td>Calculado no checkout</td>
+        </tr>
+        <tr>
+          <td>França, Alemanha, Itália, Países Baixos, Bélgica</td>
+          <td>3–5 dias úteis</td>
+          <td>Calculado no checkout</td>
+        </tr>
+        <tr>
+          <td>Restantes países da UE</td>
+          <td>4–7 dias úteis</td>
+          <td>Calculado no checkout</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Os prazos indicados são estimativas e podem variar em função do transportador, da época do ano e de circunstâncias alheias ao nosso controlo (greves, condições meteorológicas, etc.).</p>
+
+    <h2>3. Sem Custos Adicionais de Importação</h2>
+    <p>Operamos a partir de Portugal, dentro da União Europeia. As encomendas expedidas para outros países da UE <strong>não estão sujeitas a direitos aduaneiros nem a taxas de importação</strong> adicionais. O preço que paga é o preço final.</p>
+
+    <h2>4. Seguimento da Encomenda</h2>
+    <p>Após expedição, receberá por e-mail um número de seguimento que lhe permitirá acompanhar a entrega em tempo real no website do transportador.</p>
+
+    <h2>5. Entrega Falhada</h2>
+    <p>Caso a entrega não seja possível por ausência do destinatário, o transportador deixará um aviso e efectuará uma nova tentativa ou disponibilizará a encomenda para levantamento num ponto de recolha próximo. Se a encomenda for devolvida ao remetente por falha na entrega, entraremos em contacto para reagendar.</p>
+
+    <h2>6. Encomenda Danificada ou Extraviada</h2>
+    <p>Se a sua encomenda chegar danificada ou não chegar no prazo previsto, contacte-nos em <a href="mailto:info@yspcollective.com">info@yspcollective.com</a>. Investigaremos junto do transportador e resolveremos a situação com envio de substituição ou reembolso total, conforme aplicável.</p>
+
+    <h2>7. Embalagem</h2>
+    <p>Todos os produtos são embalados com cuidado para garantir que chegam em perfeitas condições. Fragrâncias e cosméticos são embalados em conformidade com as normas de transporte aéreo e terrestre aplicáveis.</p>
+
+    <div class="policy-contact-box">
+      <p><strong>Questões sobre envios:</strong><br>
+      YSP Collective · Portugal, União Europeia<br>
+      <a href="mailto:info@yspcollective.com">info@yspcollective.com</a><br>
+      Resposta em até 2 dias úteis.</p>
+    </div>
+
+  </div>
+
+  <!-- ENGLISH -->
+  <div class="policy-lang" id="lang-en">
+
+    <div class="highlight-box">
+      <p>We dispatch all orders within <strong>24 business hours</strong> from Portugal. Delivery across most of Europe takes <strong>2 to 5 business days</strong>.</p>
+    </div>
+
+    <h2>1. Dispatch Time</h2>
+    <p>Orders are processed and dispatched within <strong>1 business day</strong> of payment confirmation (Monday to Friday, excluding Portuguese public holidays). Orders placed after 2:00 PM (Lisbon time) may be dispatched the following business day.</p>
+    <p>Once dispatched, you will receive a confirmation email with your tracking number.</p>
+
+    <h2>2. Delivery Times and Costs</h2>
+    <table class="shipping-table">
+      <thead>
+        <tr>
+          <th>Destination</th>
+          <th>Estimated Time</th>
+          <th>Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Portugal (mainland)</td>
+          <td>1–2 business days</td>
+          <td>Calculated at checkout</td>
+        </tr>
+        <tr>
+          <td>Spain</td>
+          <td>2–3 business days</td>
+          <td>Calculated at checkout</td>
+        </tr>
+        <tr>
+          <td>France, Germany, Italy, Netherlands, Belgium</td>
+          <td>3–5 business days</td>
+          <td>Calculated at checkout</td>
+        </tr>
+        <tr>
+          <td>Other EU countries</td>
+          <td>4–7 business days</td>
+          <td>Calculated at checkout</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Times shown are estimates and may vary depending on the carrier, time of year and circumstances beyond our control (strikes, weather conditions, etc.).</p>
+
+    <h2>3. No Import Duties or Hidden Charges</h2>
+    <p>We operate from Portugal, within the European Union. Orders dispatched to other EU countries are <strong>not subject to customs duties or additional import charges</strong>. The price you pay is the final price.</p>
+
+    <h2>4. Order Tracking</h2>
+    <p>Once your order is dispatched, you will receive a tracking number by email allowing you to follow your delivery in real time on the carrier's website.</p>
+
+    <h2>5. Failed Delivery</h2>
+    <p>If delivery is unsuccessful due to the recipient being absent, the carrier will leave a notice and make a further attempt or make the parcel available for collection at a nearby pickup point. If an order is returned to us due to failed delivery, we will contact you to rearrange.</p>
+
+    <h2>6. Damaged or Lost Orders</h2>
+    <p>If your order arrives damaged or does not arrive within the expected timeframe, please contact us at <a href="mailto:info@yspcollective.com">info@yspcollective.com</a>. We will investigate with the carrier and resolve the situation with a replacement shipment or full refund as applicable.</p>
+
+    <h2>7. Packaging</h2>
+    <p>All products are carefully packaged to ensure they arrive in perfect condition. Fragrances and cosmetics are packed in compliance with applicable air and ground transport regulations.</p>
+
+    <div class="policy-contact-box">
+      <p><strong>Shipping enquiries:</strong><br>
+      YSP Collective · Portugal, European Union<br>
+      <a href="mailto:info@yspcollective.com">info@yspcollective.com</a><br>
+      Response within 2 business days.</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function showLang(lang) {
+  document.querySelectorAll('.policy-lang').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('lang-' + lang).classList.add('active');
+  event.target.classList.add('active');
+  document.getElementById('policy-title').textContent = lang === 'pt' ? 'Política de Envios' : 'Shipping Policy';
+}
+</script>
