@@ -3,22 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>{{ title }} — YSP Collective</title>
-  <meta name="description" content="{{ description or 'Curated beauty, fragrance and lifestyle products. Sourced with care, delivered across Europe from Portugal.' }}">
-  {% if canonical %}<link rel="canonical" href="{{ canonical }}">{% endif %}
-  {% if schema %}<script type="application/ld+json">{{ schema | safe }}</script>{% endif %}
-
-  <!-- Google Analytics GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SPR047XTDH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SPR047XTDH', { 'anonymize_ip': true });
-  </script>
-
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#1a1916">
+  <title>{{ title or 'YSP Collective — Beauty, Fragrance & Curated Lifestyle' }}</title>
+  <meta name="description" content="{{ description or 'YSP Collective — Curated beauty, skincare, fragrance and premium lifestyle products. Sourced with care, delivered across Europe from Portugal.' }}">
+  <link rel="canonical" href="{{ canonical or 'https://yspcollective.com/' }}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +13,7 @@
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
       --black: #1a1916;
       --white: #faf8f5;
@@ -38,109 +26,47 @@
       --serif: 'Playfair Display', Georgia, serif;
       --sans: 'Outfit', -apple-system, sans-serif;
       --nav-height: 80px;
-      --banner-height: 40px;
-      --ease: cubic-bezier(0.4, 0, 0.2, 1);
+      --transition: cubic-bezier(0.4, 0, 0.2, 1);
     }
+
     html { scroll-behavior: smooth; }
     body { background: var(--white); color: var(--black); font-family: var(--sans); font-weight: 300; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
     a { color: inherit; }
 
-    /* BANNER */
-    #shipping-banner {
-      background: var(--black);
-      color: rgba(255,255,255,0.8);
-      text-align: center;
-      font-size: 0.72rem;
-      letter-spacing: 0.06em;
-      padding: 0;
-      height: var(--banner-height);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      z-index: 1001;
-    }
-    .banner-inner {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      padding: 0 3rem;
-      width: 100%;
-    }
-    .banner-text { flex: 1; text-align: center; }
-    .banner-close {
-      background: none;
-      border: none;
-      color: rgba(255,255,255,0.4);
-      cursor: pointer;
-      font-size: 0.8rem;
-      padding: 0.2rem;
-      position: absolute;
-      right: 1rem;
-      transition: color 0.2s;
-    }
-    .banner-close:hover { color: var(--white); }
-
-    /* NAV */
+    /* ── NAV ── */
     nav {
-      position: fixed; top: var(--banner-height); left: 0; right: 0; z-index: 1000;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       display: flex; justify-content: space-between; align-items: center;
       padding: 0 3.5rem; height: var(--nav-height);
-      background: rgba(250,248,245,0.94); backdrop-filter: blur(16px);
+      background: rgba(250, 248, 245, 0.94);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(0,0,0,0.04);
-      transition: height 0.4s var(--ease), box-shadow 0.4s var(--ease);
+      transition: height 0.4s var(--transition), box-shadow 0.4s var(--transition);
     }
-    nav.scrolled { height: 64px; box-shadow: 0 1px 20px rgba(0,0,0,0.04); }
-    .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 0.6rem; }
-    .nav-logo-text { font-family: var(--serif); font-size: 1.6rem; font-weight: 300; letter-spacing: 0.06em; color: var(--black); transition: font-size 0.4s var(--ease); }
+    nav.scrolled { height: 64px; box-shadow: 0 1px 20px rgba(0,0,0,0.05); }
+
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-logo-text { font-family: var(--serif); font-size: 1.6rem; font-weight: 300; letter-spacing: 0.06em; color: var(--black); transition: font-size 0.4s var(--transition); }
     nav.scrolled .nav-logo-text { font-size: 1.3rem; }
     .nav-logo-sub { font-family: var(--sans); font-size: 0.55rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--grey); display: block; margin-top: -2px; }
-    .nav-links { display: flex; gap: 2.2rem; list-style: none; align-items: center; }
+
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
     .nav-links a { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.25s; font-weight: 400; }
     .nav-links a:hover { color: var(--accent); }
-    .nav-cta { padding: 0.55rem 1.5rem; background: var(--accent); color: var(--white) !important; font-size: 0.7rem !important; transition: background 0.25s, transform 0.25s; }
+
+    .nav-cta { padding: 0.55rem 1.5rem; background: var(--accent); color: var(--white) !important; font-size: 0.7rem !important; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: background 0.25s, transform 0.25s; }
     .nav-cta:hover { background: var(--black) !important; transform: translateY(-1px); }
 
-    /* WHATSAPP */
-    .nav-whatsapp {
-      display: flex;
-      align-items: center;
-      color: #25D366;
-      transition: transform 0.2s, color 0.2s;
-      text-decoration: none;
-    }
-    .nav-whatsapp:hover { transform: scale(1.15); color: #1da851; }
+    /* Social icons in nav */
+    .nav-social { display: flex; gap: 0.8rem; align-items: center; }
+    .nav-social a { display: flex; align-items: center; justify-content: center; color: var(--grey); transition: color 0.25s; }
+    .nav-social a:hover { color: var(--accent); }
+    .nav-social svg { width: 17px; height: 17px; fill: currentColor; }
 
-    /* LANGUAGE SWITCHER */
-    #ysp-lang-switcher {
-      display: flex;
-      align-items: center;
-      gap: 0.2rem;
-      margin-left: 1rem;
-      border-left: 1px solid var(--sand);
-      padding-left: 1rem;
-    }
-    .lang-btn {
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      padding: 0.3rem 0.5rem;
-      background: none;
-      border: 1px solid transparent;
-      cursor: pointer;
-      font-family: var(--sans);
-      font-size: 0.65rem;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      color: var(--grey);
-      transition: all 0.2s;
-      border-radius: 2px;
-    }
-    .lang-btn:hover { color: var(--accent); border-color: var(--sand); }
-    .lang-btn.active { color: var(--black); border-color: var(--accent); background: rgba(156,123,86,0.06); }
-    .lang-flag { font-size: 0.85rem; line-height: 1; }
-    .lang-code { font-size: 0.65rem; letter-spacing: 0.1em; }
+    /* WhatsApp */
+    .nav-whatsapp { display: flex; align-items: center; color: var(--grey); transition: color 0.25s; }
+    .nav-whatsapp:hover { color: #25d366 !important; }
+    .nav-whatsapp svg { width: 18px; height: 18px; fill: currentColor; }
 
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; width: 28px; height: 20px; position: relative; }
     .nav-toggle span { display: block; width: 100%; height: 1.5px; background: var(--black); position: absolute; left: 0; transition: all 0.3s; }
@@ -151,108 +77,57 @@
     .nav-toggle.open span:nth-child(2) { opacity: 0; }
     .nav-toggle.open span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
 
-    /* FOOTER */
+    /* ── FOOTER ── */
     footer { padding: 4rem 3.5rem 2rem; background: var(--black); color: rgba(255,255,255,0.4); }
+
     .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
-    .footer-brand .footer-logo-text { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; color: var(--white); letter-spacing: 0.06em; }
-    .footer-brand .footer-logo-sub { font-size: 0.55rem; letter-spacing: 0.35em; text-transform: uppercase; color: rgba(255,255,255,0.3); display: block; }
+
+    .footer-brand .nav-logo-text { color: var(--white); font-size: 1.4rem; }
+    .footer-brand .nav-logo-sub { color: rgba(255,255,255,0.3); }
     .footer-brand p { font-size: 0.85rem; line-height: 1.7; margin-top: 1rem; color: rgba(255,255,255,0.35); }
+
+    .footer-social { display: flex; gap: 0.8rem; margin-top: 1.5rem; align-items: center; }
+    .footer-social a { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.4); transition: all 0.25s; }
+    .footer-social a:hover { border-color: var(--accent-light); color: var(--accent-light); transform: translateY(-2px); }
+    .footer-social svg { width: 15px; height: 15px; fill: currentColor; }
+
     .footer-col h4 { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 1.2rem; font-weight: 400; }
     .footer-col a { display: block; font-size: 0.85rem; color: rgba(255,255,255,0.35); text-decoration: none; margin-bottom: 0.6rem; transition: color 0.25s; }
     .footer-col a:hover { color: var(--accent-light); }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.5rem; display: flex; justify-content: space-between; font-size: 0.72rem; }
 
-    /* REVEAL */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; flex-wrap: wrap; gap: 0.5rem; }
+    .footer-bottom-links { display: flex; gap: 1.5rem; }
+    .footer-bottom-links a { color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.25s; }
+    .footer-bottom-links a:hover { color: var(--accent-light); }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s var(--transition), transform 0.8s var(--transition); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* SECTION UTILS */
-    .section-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; font-weight: 400; }
-    .section-title { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.5rem; }
-    .section-desc { font-size: 0.95rem; line-height: 1.8; color: var(--grey); max-width: 520px; }
-
-    /* PRODUCT CARDS */
-    .product-card { text-decoration: none; color: inherit; display: block; position: relative; transition: transform 0.4s var(--ease); }
-    .product-card:hover { transform: translateY(-4px); }
-    .product-card-image { aspect-ratio: 3/4; background: var(--cream); overflow: hidden; position: relative; margin-bottom: 1.2rem; }
-    .product-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
-    .product-card:hover .product-card-image img { transform: scale(1.04); }
-    .product-badge { position: absolute; top: 0.8rem; left: 0.8rem; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.3rem 0.7rem; background: var(--accent); color: var(--white); font-weight: 400; }
-    .product-badge.badge-popular { background: var(--grey); }
-    .product-badge.badge-curated { background: var(--black); }
-    .product-badge.badge-new { background: #6a9a6a; }
-    .product-badge.badge-premium { background: #8b6914; }
-    .product-badge.badge-limited { background: #8b3a3a; }
-    .product-card-cat { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--grey-light); margin-bottom: 0.35rem; }
-    .product-card-name { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; line-height: 1.35; margin-bottom: 0.4rem; }
-    .product-card-price { font-size: 0.95rem; font-weight: 400; color: var(--accent); }
-    .product-card-rrp { font-size: 0.78rem; color: var(--grey-light); text-decoration: line-through; margin-left: 0.4rem; }
-
-    /* RESPONSIVE */
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
     @media (max-width: 768px) {
       nav { padding: 0 1.5rem; }
-      .nav-links { display: none; position: fixed; top: var(--nav-height); left: 0; right: 0; background: var(--white); flex-direction: column; padding: 2rem 1.5rem; gap: 1.5rem; border-bottom: 1px solid var(--sand); }
+      .nav-links {
+        display: none; position: fixed; top: var(--nav-height); left: 0; right: 0;
+        background: var(--white); flex-direction: column; padding: 2rem 1.5rem; gap: 1.5rem;
+        border-bottom: 1px solid var(--sand); z-index: 999;
+      }
       .nav-links.open { display: flex; }
       .nav-toggle { display: block; }
-      #ysp-lang-switcher { border-left: none; padding-left: 0; margin-left: 0; }
+      .nav-social { display: none; }
       footer { padding: 3rem 1.5rem 1.5rem; }
       .footer-top { grid-template-columns: 1fr; gap: 2rem; }
-      .footer-bottom { flex-direction: column; gap: 0.5rem; }
+      .footer-bottom { flex-direction: column; gap: 0.8rem; }
+      .footer-bottom-links { flex-wrap: wrap; gap: 1rem; }
     }
-
-    /* MAILING LIST POPUP */
-    #ysp-popup-overlay {
-      position: fixed; inset: 0; background: rgba(26,25,22,0.7);
-      z-index: 9990; display: flex; align-items: center; justify-content: center;
-      opacity: 0; transition: opacity 0.4s ease; pointer-events: none;
-    }
-    #ysp-popup-overlay.visible { opacity: 1; pointer-events: all; }
-    #ysp-popup {
-      background: var(--white); max-width: 480px; width: calc(100% - 3rem);
-      padding: 3rem; position: relative; text-align: center;
-      transform: translateY(20px); transition: transform 0.4s ease;
-    }
-    #ysp-popup-overlay.visible #ysp-popup { transform: translateY(0); }
-    .popup-close {
-      position: absolute; top: 1rem; right: 1rem;
-      background: none; border: none; font-size: 1.2rem;
-      color: var(--grey); cursor: pointer; transition: color 0.2s;
-    }
-    .popup-close:hover { color: var(--black); }
-    .popup-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
-    .popup-title { font-family: var(--serif); font-size: 2rem; font-weight: 300; margin-bottom: 0.8rem; line-height: 1.2; }
-    .popup-sub { font-size: 0.88rem; color: var(--grey); line-height: 1.7; margin-bottom: 1.8rem; }
-    .popup-discount { font-family: var(--serif); font-size: 3rem; font-weight: 300; color: var(--accent); margin-bottom: 0.5rem; line-height: 1; }
-    .popup-form { display: flex; gap: 0; margin-bottom: 0.8rem; }
-    .popup-input {
-      flex: 1; padding: 0.85rem 1rem; border: 1px solid var(--sand);
-      background: var(--white); font-family: var(--sans); font-size: 0.88rem;
-      color: var(--black); outline: none; transition: border-color 0.2s;
-    }
-    .popup-input:focus { border-color: var(--accent); }
-    .popup-btn {
-      padding: 0.85rem 1.5rem; background: var(--black); color: var(--white);
-      border: none; font-family: var(--sans); font-size: 0.72rem;
-      letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer;
-      transition: background 0.2s; white-space: nowrap;
-    }
-    .popup-btn:hover { background: var(--accent); }
-    .popup-terms { font-size: 0.68rem; color: var(--grey-light); }
-    .popup-success { font-size: 0.9rem; color: var(--accent); padding: 1rem 0; display: none; }
   </style>
 
   {{ head_extra | safe }}
-
 </head>
 <body>
-
-  <!-- FREE SHIPPING BANNER -->
-  <div id="shipping-banner">
-    <div class="banner-inner">
-      <span class="banner-text">🚚 Free shipping on orders over €50 across Europe &nbsp;·&nbsp; 📍 Free next-day delivery in Loulé</span>
-      <button class="banner-close" onclick="this.parentElement.parentElement.style.display='none'" aria-label="Close">✕</button>
-    </div>
-  </div>
 
   <nav id="main-nav">
     <a href="/" class="nav-logo">
@@ -272,9 +147,22 @@
       <li><a href="/#faq" data-i18n="nav_faq">FAQ</a></li>
       <li><a href="/#contact" data-i18n="nav_contact">Contact</a></li>
       <li><a href="/#contact" class="nav-cta" data-i18n="nav_enquire">Enquire</a></li>
-      <li><a href="https://wa.me/351960384348" class="nav-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      </a></li>
+      <li>
+        <a href="https://wa.me/351000000000" class="nav-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </li>
+      <li class="nav-social">
+        <a href="https://www.instagram.com/ysp_collective" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@ysp_collective" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.67a8.18 8.18 0 004.78 1.52V6.71a4.85 4.85 0 01-1.01-.02z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/yspcollective" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </li>
       <li id="ysp-lang-switcher"></li>
     </ul>
   </nav>
@@ -285,10 +173,21 @@
     <div class="footer-top">
       <div class="footer-brand">
         <div>
-          <span class="footer-logo-text">YSP</span>
-          <span class="footer-logo-sub">Collective</span>
+          <span class="nav-logo-text">YSP</span>
+          <span class="nav-logo-sub">Collective</span>
         </div>
         <p data-i18n="footer_desc">Curated beauty, fragrance and lifestyle products. Sourced from authorised distributors, delivered across Europe.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/ysp_collective" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@ysp_collective" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.67a8.18 8.18 0 004.78 1.52V6.71a4.85 4.85 0 01-1.01-.02z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/yspcollective" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
       </div>
       <div class="footer-col">
         <h4 data-i18n="footer_shop">Shop</h4>
@@ -301,48 +200,41 @@
         <a href="/#philosophy" data-i18n="footer_about">About Us</a>
         <a href="/#faq" data-i18n="nav_faq">FAQ</a>
         <a href="/#contact" data-i18n="nav_contact">Contact</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/returns-policy.html">Returns Policy</a>
+        <a href="/shipping-policy.html">Shipping Policy</a>
       </div>
       <div class="footer-col">
         <h4 data-i18n="footer_find">Also Find Us</h4>
         <a href="https://www.amazon.co.uk/s?me=A3M7XDMHQD6V9L" target="_blank" rel="noopener">Amazon EU</a>
+        <a href="https://www.instagram.com/ysp_collective" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@ysp_collective" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.facebook.com/yspcollective" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://wa.me/351000000000" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 YSP Collective. <span data-i18n="footer_rights">All rights reserved.</span></span>
-      <span>Portugal, European Union</span>
-      <a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.3);font-size:0.72rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.6)'" onmouseout="this.style.color='rgba(255,255,255,0.3)'">📋 Livro de Reclamações</a>
+      <span>© 2026 YSP Collective. All rights reserved. Portugal, EU.</span>
+      <div class="footer-bottom-links">
+        <a href="https://livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações</a>
+        <a href="/privacy-policy.html">Privacy</a>
+        <a href="/returns-policy.html">Returns</a>
+        <a href="/shipping-policy.html">Shipping</a>
+      </div>
     </div>
   </footer>
 
-  <!-- MAILING LIST POPUP -->
-  <div id="ysp-popup-overlay">
-    <div id="ysp-popup">
-      <button class="popup-close" onclick="closePopup()" aria-label="Close">✕</button>
-      <div class="popup-label">Welcome to YSP Collective</div>
-      <div class="popup-discount">10% OFF</div>
-      <h2 class="popup-title">Your first order</h2>
-      <p class="popup-sub">Join our list for exclusive offers, new arrivals and fragrance recommendations. Get 10% off your first order.</p>
-      <div class="popup-form">
-        <input type="email" class="popup-input" id="popup-email" placeholder="your@email.com" onkeydown="if(event.key==='Enter')submitPopup()">
-        <button class="popup-btn" onclick="submitPopup()">Get 10% Off</button>
-      </div>
-      <p class="popup-success" id="popup-success">✓ Thank you! Check your email for your discount code.</p>
-      <p class="popup-terms">No spam. Unsubscribe anytime.</p>
-    </div>
-  </div>
-
-  <script src="/ysp-translations.js"></script>
-  <script src="/ysp-lang.js"></script>
-  <script src="/ysp-products-data.js"></script>
   <script src="/ysp-config.js"></script>
   <script src="/ysp-chat.js"></script>
 
   <script>
+    // Nav scroll
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
 
+    // Reveal
     const reveals = document.querySelectorAll('.reveal');
     const ro = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
@@ -354,56 +246,7 @@
     }, { threshold: 0.08 });
     reveals.forEach(el => ro.observe(el));
 
-    // Mailing list popup
-    function closePopup() {
-      document.getElementById('ysp-popup-overlay').classList.remove('visible');
-      try { localStorage.setItem('ysp_popup_seen', '1'); } catch(e) {}
-    }
-
-    async function submitPopup() {
-      const email = document.getElementById('popup-email').value;
-      if (!email || !email.includes('@')) return;
-      const btn = document.querySelector('.popup-btn');
-      btn.textContent = '...';
-      btn.disabled = true;
-      try {
-        const lang = window.YSP_LANG ? window.YSP_LANG.get() : 'en';
-        const res = await fetch('https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/subscribe', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, lang })
-        });
-        const data = await res.json();
-        if (data.success) {
-          document.getElementById('popup-success').style.display = 'block';
-          document.querySelector('.popup-form').style.display = 'none';
-          try { localStorage.setItem('ysp_popup_seen', '1'); } catch(e) {}
-          setTimeout(() => closePopup(), 3000);
-        } else {
-          btn.textContent = 'Get 10% Off';
-          btn.disabled = false;
-          alert('Something went wrong — please try again.');
-        }
-      } catch(e) {
-        btn.textContent = 'Get 10% Off';
-        btn.disabled = false;
-      }
-    }
-
-    // Show popup after 8 seconds if not seen before
-    try {
-      if (!localStorage.getItem('ysp_popup_seen')) {
-        setTimeout(() => {
-          document.getElementById('ysp-popup-overlay').classList.add('visible');
-        }, 8000);
-      }
-    } catch(e) {}
-
-    // Close on overlay click
-    document.getElementById('ysp-popup-overlay').addEventListener('click', function(e) {
-      if (e.target === this) closePopup();
-    });
-
+    // Enquiry prefill from sessionStorage
     window.addEventListener('DOMContentLoaded', () => {
       const subject = sessionStorage.getItem('enquiry_subject');
       if (subject) {
@@ -415,8 +258,5 @@
   </script>
 
   {{ body_extra | safe }}
-  <script src="/ysp-cart.js"></script>
-  
-
 </body>
 </html>
