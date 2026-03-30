@@ -57,12 +57,35 @@ canonical: "https://yspcollective.com/"
   .filter-chip:hover, .filter-chip.active { background: var(--accent); border-color: var(--accent); color: var(--white); }
   #search-results { margin-top: 2rem; display: none; }
   #search-results.visible { display: block; }
-  .search-results-wrapper { overflow-x: auto; padding-bottom: 1rem; margin-top: 1.5rem; }
+  .search-results-wrapper-outer { position: relative; margin-top: 1.5rem; }
+  .search-results-wrapper { overflow-x: auto; padding-bottom: 1rem; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
   .search-results-wrapper::-webkit-scrollbar { height: 4px; }
   .search-results-wrapper::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
   .search-results-wrapper::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
   .search-results-grid { display: flex; gap: 1.5rem; width: max-content; }
   .search-results-grid .search-product-card { width: 220px; flex-shrink: 0; }
+  .search-scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-60%);
+    width: 36px;
+    height: 36px;
+    background: var(--white);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--black);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    z-index: 2;
+    transition: background 0.2s, opacity 0.2s;
+    opacity: 0.9;
+  }
+  .search-scroll-btn:hover { background: var(--accent); color: var(--white); opacity: 1; }
+  .search-scroll-btn.scroll-prev { left: 0; }
+  .search-scroll-btn.scroll-next { right: 0; }
+  .search-scroll-btn.hidden { display: none; }
   .search-result-count { font-size: 0.75rem; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 1rem; }
   .no-results { color: rgba(255,255,255,0.4); font-size: 0.9rem; padding: 2rem; }
 
@@ -284,7 +307,11 @@ canonical: "https://yspcollective.com/"
     </div>
     <div id="search-results">
       <p class="no-results" id="no-results" data-i18n="no_results" style="display:none">No products found — try a different search.</p>
-      <div class="search-results-wrapper"><div class="search-results-grid" id="search-results-grid"></div></div>
+      <div class="search-results-wrapper-outer">
+        <button class="search-scroll-btn scroll-prev hidden" id="search-prev" aria-label="Scroll left">&#8592;</button>
+        <div class="search-results-wrapper" id="search-results-wrapper"><div class="search-results-grid" id="search-results-grid"></div></div>
+        <button class="search-scroll-btn scroll-next hidden" id="search-next" aria-label="Scroll right">&#8594;</button>
+      </div>
     </div>
   </div>
 </section>
@@ -647,4 +674,28 @@ const ALL_PRODUCTS = {{ collections.allProducts | jsonify | safe }};
       runSearch();
     });
   });
+
+  /* Search scroll arrows */
+  const searchWrapper = document.getElementById('search-results-wrapper');
+  const searchPrev = document.getElementById('search-prev');
+  const searchNext = document.getElementById('search-next');
+
+  function updateSearchArrows() {
+    if (!searchWrapper) return;
+    const atStart = searchWrapper.scrollLeft <= 10;
+    const atEnd = searchWrapper.scrollLeft >= searchWrapper.scrollWidth - searchWrapper.clientWidth - 10;
+    searchPrev.classList.toggle('hidden', atStart);
+    searchNext.classList.toggle('hidden', atEnd || searchWrapper.scrollWidth <= searchWrapper.clientWidth);
+  }
+
+  if (searchPrev) searchPrev.addEventListener('click', () => { searchWrapper.scrollBy({ left: -260, behavior: 'smooth' }); });
+  if (searchNext) searchNext.addEventListener('click', () => { searchWrapper.scrollBy({ left: 260, behavior: 'smooth' }); });
+  if (searchWrapper) searchWrapper.addEventListener('scroll', updateSearchArrows, { passive: true });
+
+  /* Show arrows after search renders */
+  const origRender = renderSearchResults;
+  function renderSearchResults(products) {
+    origRender(products);
+    setTimeout(updateSearchArrows, 50);
+  }
 </script>

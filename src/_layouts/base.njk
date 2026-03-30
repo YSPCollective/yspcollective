@@ -299,7 +299,7 @@
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
-    <ul class="nav-links" id="nav-links">
+    <ul class="nav-links" id="nav-links" style="display:none">
       <!-- Fragrances dropdown -->
       <li class="nav-dropdown-wrap" id="dd-fragrances">
         <button class="nav-dropdown-trigger" aria-expanded="false">
@@ -455,16 +455,35 @@
     // ── Hamburger toggle ──
     const navToggle = document.getElementById('nav-toggle');
     const navLinks = document.getElementById('nav-links');
+    const isMobileNav = () => window.innerWidth <= 768;
+
+    function openNav() {
+      navToggle.classList.add('open');
+      navLinks.style.display = 'flex';
+    }
+    function closeNav() {
+      navToggle.classList.remove('open');
+      navLinks.style.display = isMobileNav() ? 'none' : '';
+      document.querySelectorAll('.nav-dropdown-wrap').forEach(w => w.classList.remove('open'));
+    }
+
     navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('open');
-      navLinks.classList.toggle('open');
+      if (navToggle.classList.contains('open')) { closeNav(); } else { openNav(); }
     });
-    // Close menu when a non-dropdown link is clicked
+
+    // Close menu when a non-dropdown link is clicked on mobile
     navLinks.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
-        navToggle.classList.remove('open');
-        navLinks.classList.remove('open');
+        if (isMobileNav()) closeNav();
       });
+    });
+
+    // On resize to desktop, remove inline style so CSS takes over
+    window.addEventListener('resize', () => {
+      if (!isMobileNav()) {
+        navLinks.style.display = '';
+        navToggle.classList.remove('open');
+      }
     });
 
     // ── Dropdown logic ──
