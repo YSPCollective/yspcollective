@@ -40,7 +40,7 @@ collections:
       - label: "Badge"
         name: "badge"
         widget: "select"
-        options: ["Bestseller", "Popular", "Curated", "New", "Limited", ""]
+        options: ["Bestseller", "Popular", "Curated", "New", "Limited", "Premium", ""]
         default: ""
         required: false
       - { label: "Custom Badge", name: "custom_badge", widget: "string", required: false, hint: "Overrides Badge above if filled in" }
