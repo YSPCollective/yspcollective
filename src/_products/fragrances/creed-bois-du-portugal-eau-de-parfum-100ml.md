@@ -21,7 +21,7 @@ projection: Strong
 origin: France
 launched: "1987"
 vegan: false
-image_main: /images/uploads/1105030.png
+image_main: /images/uploads/1110030-100ml-millesime-bois-du-portugal.png
 gallery:
   - /images/uploads/1110030-2.png
   - /images/uploads/1110030-3.png
