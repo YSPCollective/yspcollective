@@ -643,6 +643,7 @@ const ALL_PRODUCTS = {{ collections.allProducts | jsonify | safe }};
       `;
       resultsGrid.appendChild(a);
     });
+    setTimeout(updateSearchArrows, 50);
   }
 
   function runSearch() {
@@ -692,10 +693,5 @@ const ALL_PRODUCTS = {{ collections.allProducts | jsonify | safe }};
   if (searchNext) searchNext.addEventListener('click', () => { searchWrapper.scrollBy({ left: 260, behavior: 'smooth' }); });
   if (searchWrapper) searchWrapper.addEventListener('scroll', updateSearchArrows, { passive: true });
 
-  /* Show arrows after search renders */
-  const origRender = renderSearchResults;
-  function renderSearchResults(products) {
-    origRender(products);
-    setTimeout(updateSearchArrows, 50);
-  }
+  /* Arrows update on scroll event */
 </script>
