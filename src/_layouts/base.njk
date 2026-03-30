@@ -191,6 +191,134 @@
     .section-desc { font-size: 0.95rem; line-height: 1.8; color: var(--grey); max-width: 520px; }
 
     /* ── RESPONSIVE ── */
+
+    /* ── MOBILE MENU OVERLAY (separate from nav) ── */
+    #mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--white);
+      z-index: 99999;
+      flex-direction: column;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    #mobile-menu.open { display: flex; }
+
+    .mobile-menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 1.5rem;
+      border-bottom: 2px solid var(--sand);
+      flex-shrink: 0;
+      position: sticky;
+      top: 0;
+      background: var(--white);
+      z-index: 2;
+    }
+    .mobile-menu-logo {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--black);
+    }
+    #mobile-menu-close {
+      background: none;
+      border: 1px solid var(--sand);
+      width: 36px;
+      height: 36px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      color: var(--grey);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    #mobile-menu-close:hover { background: var(--black); color: var(--white); border-color: var(--black); }
+
+    .mobile-menu-links {
+      list-style: none;
+      flex: 1;
+      padding: 0;
+    }
+    .mobile-menu-links > li {
+      border-bottom: 1px solid var(--sand);
+    }
+    .mobile-menu-links > li > a {
+      display: block;
+      padding: 1rem 1.5rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+      font-weight: 400;
+    }
+    .mobile-dd-trigger {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--sans);
+      font-weight: 400;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+    }
+    .mobile-chevron { font-size: 0.6rem; opacity: 0.5; transition: transform 0.25s; }
+    .mobile-dd-wrap.open .mobile-chevron { transform: rotate(180deg); }
+
+    .mobile-dd-panel {
+      display: none;
+      background: var(--cream);
+      padding: 0.5rem 1.5rem 1rem;
+      border-top: 1px solid var(--sand);
+    }
+    .mobile-dd-wrap.open .mobile-dd-panel { display: block; }
+
+    .mobile-dd-section { margin-bottom: 0.8rem; }
+    .mobile-dd-section h4 {
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 400;
+      padding: 0.6rem 0 0.4rem;
+      border-bottom: 1px solid var(--sand);
+      margin-bottom: 0.3rem;
+    }
+    .mobile-dd-section a {
+      display: block;
+      padding: 0.45rem 0;
+      font-size: 0.88rem;
+      color: var(--grey);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .mobile-dd-section a:hover { color: var(--accent); }
+
+    .mobile-cta {
+      display: block;
+      margin: 1rem 1.5rem;
+      padding: 0.9rem;
+      background: var(--accent);
+      color: var(--white) !important;
+      text-align: center;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 400;
+    }
+
     @media (min-width: 769px) {
       .nav-links { display: flex; gap: 2rem; align-items: center; }
     }
@@ -202,141 +330,7 @@
     @media (max-width: 768px) {
       nav { padding: 0 1.5rem; }
       .nav-toggle { display: block; }
-
-      /* ── MOBILE FULL-SCREEN MENU ── */
-      .nav-links {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: var(--white);
-        flex-direction: column;
-        z-index: 9999;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        padding: 0;
-        gap: 0;
-        align-items: stretch;
-      }
-      .nav-links.open { display: flex; }
-
-      /* Close button injected by JS at top */
-      .mobile-nav-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.2rem 1.5rem;
-        border-bottom: 1px solid var(--sand);
-        flex-shrink: 0;
-      }
-      .mobile-nav-logo {
-        font-family: var(--serif);
-        font-size: 1.4rem;
-        font-weight: 300;
-        color: var(--black);
-        letter-spacing: 0.06em;
-      }
-      .mobile-nav-close {
-        background: none;
-        border: none;
-        font-size: 1.6rem;
-        cursor: pointer;
-        color: var(--grey);
-        padding: 0.2rem;
-        line-height: 1;
-      }
-
-      /* Nav items */
-      .nav-links > li {
-        width: 100%;
-        border-bottom: 1px solid var(--sand);
-      }
-      .nav-links > li:last-child { border-bottom: none; }
-      .nav-links > li > a {
-        display: block;
-        padding: 1.1rem 1.5rem;
-        font-size: 0.9rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--black) !important;
-        text-decoration: none;
-        font-weight: 400;
-      }
-
-      /* Dropdown trigger */
-      .nav-dropdown-trigger {
-        width: 100%;
-        padding: 1.1rem 1.5rem;
-        font-size: 0.9rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--black) !important;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-family: var(--sans);
-        font-weight: 400;
-      }
-      .nav-dropdown-wrap.open .nav-chevron { transform: rotate(180deg); }
-
-      /* Inline dropdown on mobile */
-      .nav-dropdown {
-        position: static !important;
-        transform: none !important;
-        box-shadow: none !important;
-        border: none !important;
-        border-top: 1px solid var(--sand) !important;
-        min-width: 100% !important;
-        padding: 0 !important;
-        background: var(--cream);
-        display: none;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-      }
-      .nav-dropdown-wrap.open .nav-dropdown {
-        display: block;
-        max-height: 600px;
-      }
-      .nav-dropdown-inner {
-        grid-template-columns: 1fr !important;
-        padding: 0.8rem 1.5rem 1.2rem !important;
-        gap: 0 !important;
-        display: block !important;
-      }
-      .nav-dropdown-col {
-        margin-bottom: 0.8rem;
-      }
-      .nav-dropdown-col h4 {
-        font-size: 0.6rem;
-        letter-spacing: 0.2em;
-        color: var(--accent);
-        margin-bottom: 0.4rem;
-        margin-top: 0.6rem;
-        padding-bottom: 0.3rem;
-        border-bottom: 1px solid var(--sand);
-      }
-      .nav-dropdown-col a {
-        padding: 0.45rem 0;
-        font-size: 0.85rem;
-        color: var(--grey) !important;
-        display: block;
-        text-decoration: none;
-      }
-
-      /* CTA and lang */
-      .nav-cta {
-        margin: 0.5rem 1.5rem !important;
-        text-align: center !important;
-        display: block !important;
-        padding: 0.9rem !important;
-        background: var(--accent) !important;
-        color: var(--white) !important;
-      }
-      #ysp-lang-switcher { padding: 0.8rem 1.5rem; }
-
+      .nav-links { display: none !important; } /* Hidden on mobile — use #mobile-menu instead */
       #announcement-bar { padding: 0.6rem 2.5rem 0.6rem 1rem; font-size: 0.68rem; }
       footer { padding: 3rem 1.5rem 1.5rem; }
       .footer-top { grid-template-columns: 1fr; gap: 2rem; }
@@ -358,6 +352,74 @@
       </span>
       <button class="announcement-close" onclick="document.getElementById('announcement-bar').style.display='none';adjustNavTop();" aria-label="Close">✕</button>
     </div>
+  </div>
+
+  <!-- Mobile menu overlay — OUTSIDE nav so not clipped by nav height -->
+  <div id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-header">
+      <span class="mobile-menu-logo">YSP <span style="font-size:0.55rem;letter-spacing:0.35em;text-transform:uppercase;font-family:var(--sans);font-weight:300;opacity:0.6">Collective</span></span>
+      <button id="mobile-menu-close" aria-label="Close menu">✕</button>
+    </div>
+    <ul class="mobile-menu-links">
+      <li class="mobile-dd-wrap">
+        <button class="mobile-dd-trigger">Fragrances <span class="mobile-chevron">▾</span></button>
+        <div class="mobile-dd-panel">
+          <div class="mobile-dd-section">
+            <h4>By Gender</h4>
+            <a href="/#featured-fragrances">All Fragrances</a>
+            <a href="/#featured-fragrances">Men</a>
+            <a href="/#featured-fragrances">Women</a>
+            <a href="/#featured-fragrances">Unisex</a>
+          </div>
+          <div class="mobile-dd-section">
+            <h4>Arabian</h4>
+            <a href="/brands/al-haramain.html">Al Haramain</a>
+            <a href="/brands/arabiyat-prestige.html">Arabiyat Prestige</a>
+            <a href="/brands/armaf.html">Armaf</a>
+            <a href="/brands/gulf-orchid.html">Gulf Orchid</a>
+            <a href="/brands/lattafa.html">Lattafa</a>
+            <a href="/brands/maison-alhambra.html">Maison Alhambra</a>
+            <a href="/brands/ministry-of-gourmand.html">Ministry of Gourmand</a>
+            <a href="/brands/rasasi.html">Rasasi</a>
+            <a href="/brands/swiss-arabian.html">Swiss Arabian</a>
+            <a href="/brands/zimaya.html">Zimaya</a>
+          </div>
+          <div class="mobile-dd-section">
+            <h4>European</h4>
+            <a href="/brands/creed.html">Creed</a>
+            <a href="/brands/dior.html">Dior</a>
+            <a href="/brands/roja-parfums.html">Roja Parfums</a>
+            <a href="/brands/tom-ford.html">Tom Ford</a>
+            <a href="/brands/ysl.html">Yves Saint Laurent</a>
+          </div>
+        </div>
+      </li>
+      <li class="mobile-dd-wrap">
+        <button class="mobile-dd-trigger">Beauty <span class="mobile-chevron">▾</span></button>
+        <div class="mobile-dd-panel">
+          <div class="mobile-dd-section">
+            <h4>By Category</h4>
+            <a href="/#featured-beauty">All Beauty</a>
+            <a href="/#featured-beauty">SPF &amp; Sunscreen</a>
+            <a href="/#featured-beauty">Serums</a>
+            <a href="/#featured-beauty">Moisturisers</a>
+            <a href="/#featured-beauty">Cleansers</a>
+          </div>
+          <div class="mobile-dd-section">
+            <h4>By Brand</h4>
+            <a href="/#featured-beauty">ANUA</a>
+            <a href="/#featured-beauty">Beauty of Joseon</a>
+            <a href="/#featured-beauty">COSRX</a>
+            <a href="/#featured-beauty">Round Lab</a>
+            <a href="/#featured-beauty">Skin1004</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="/#philosophy">About</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="/#contact">Contact</a></li>
+      <li><a href="/#contact" class="mobile-cta">Enquire</a></li>
+    </ul>
   </div>
 
   <nav id="main-nav">
@@ -523,50 +585,55 @@
       nav.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
 
-    // ── Hamburger toggle ──
+    // ── Mobile menu (separate overlay) ──
     const navToggle = document.getElementById('nav-toggle');
-    const navLinks = document.getElementById('nav-links');
-    const isMobileNav = () => window.innerWidth <= 768;
+    const mobileMenu = document.getElementById('mobile-menu');
 
-    // Inject mobile nav header (logo + close button) as first child
-    const mobileHeader = document.createElement('li');
-    mobileHeader.className = 'mobile-nav-header';
-    mobileHeader.innerHTML = '<span class="mobile-nav-logo">YSP Collective</span><button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">✕</button>';
-    navLinks.insertBefore(mobileHeader, navLinks.firstChild);
-
-    function openNav() {
+    function openMobileMenu() {
+      mobileMenu.classList.add('open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
       navToggle.classList.add('open');
-      navLinks.style.display = 'flex';
-      document.body.style.overflow = 'hidden'; // prevent background scroll
+      document.body.style.overflow = 'hidden';
     }
-    function closeNav() {
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
       navToggle.classList.remove('open');
-      navLinks.style.display = isMobileNav() ? 'none' : '';
       document.body.style.overflow = '';
-      document.querySelectorAll('.nav-dropdown-wrap').forEach(w => w.classList.remove('open'));
+      document.querySelectorAll('.mobile-dd-wrap').forEach(w => w.classList.remove('open'));
     }
 
     navToggle.addEventListener('click', () => {
-      if (navToggle.classList.contains('open')) { closeNav(); } else { openNav(); }
+      mobileMenu.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
     });
 
-    document.getElementById('mobile-nav-close').addEventListener('click', closeNav);
+    document.getElementById('mobile-menu-close').addEventListener('click', closeMobileMenu);
 
-    // Close menu when a regular link is clicked on mobile
-    navLinks.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        if (isMobileNav()) closeNav();
+    // Mobile dropdown toggles
+    document.querySelectorAll('.mobile-dd-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const wrap = trigger.parentElement;
+        const isOpen = wrap.classList.contains('open');
+        document.querySelectorAll('.mobile-dd-wrap').forEach(w => w.classList.remove('open'));
+        if (!isOpen) wrap.classList.add('open');
       });
     });
 
-    // On resize to desktop, reset
+    // Close on link tap
+    document.querySelectorAll('#mobile-menu a').forEach(a => {
+      a.addEventListener('click', closeMobileMenu);
+    });
+
+    // Reset on resize to desktop
     window.addEventListener('resize', () => {
-      if (!isMobileNav()) {
-        navLinks.style.display = '';
-        navToggle.classList.remove('open');
+      if (window.innerWidth > 768) {
+        closeMobileMenu();
         document.body.style.overflow = '';
       }
     });
+
+    // ── Desktop nav-links show/hide ──
+    const navLinks = document.getElementById('nav-links');
 
     // ── Dropdown logic ──
     document.querySelectorAll('.nav-dropdown-wrap').forEach(wrap => {
