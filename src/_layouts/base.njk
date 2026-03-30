@@ -118,11 +118,13 @@
       opacity: 0.6;
       transition: transform 0.2s;
     }
+    .nav-dropdown-wrap.open > a::after,
     .nav-dropdown-wrap:hover > a::after { transform: rotate(180deg); }
+
     .nav-dropdown {
       display: none;
       position: absolute;
-      top: calc(100% + 1rem);
+      top: 100%;
       left: 50%;
       transform: translateX(-50%);
       background: var(--white);
@@ -130,9 +132,18 @@
       box-shadow: 0 12px 40px rgba(0,0,0,0.1);
       z-index: 2000;
       min-width: 580px;
-      padding: 2rem;
+      padding: 0 2rem 2rem;
     }
-    .nav-dropdown-wrap:hover .nav-dropdown { display: block; }
+    /* Bridge gap between trigger and dropdown — prevents menu closing on mouse travel */
+    .nav-dropdown::before {
+      content: '';
+      display: block;
+      height: 1.2rem;
+      margin: 0 -2rem;
+    }
+    .nav-dropdown-wrap:hover .nav-dropdown,
+    .nav-dropdown-wrap.open .nav-dropdown { display: block; }
+
     .nav-dropdown-inner {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -475,6 +486,18 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
+
+    // Nav dropdowns — JS hover with delay to prevent flicker
+    document.querySelectorAll('.nav-dropdown-wrap').forEach(wrap => {
+      let closeTimer;
+      wrap.addEventListener('mouseenter', () => {
+        clearTimeout(closeTimer);
+        wrap.classList.add('open');
+      });
+      wrap.addEventListener('mouseleave', () => {
+        closeTimer = setTimeout(() => wrap.classList.remove('open'), 120);
+      });
+    });
 
     // Reveal
     const reveals = document.querySelectorAll('.reveal');
