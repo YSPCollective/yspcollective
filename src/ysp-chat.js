@@ -37,11 +37,7 @@
     'Find me a fragrance',
     'Best fragrance for men',
     'Best fragrance for women',
-    'Recommend a K-beauty SPF',
-    'Long-lasting fragrances',
-    'Best gift ideas',
-    'Tell me about Lattafa Khamrah',
-    'Tell me about Armaf Club de Nuit',
+    'K-beauty skincare',
     'Shipping info',
   ];
 
@@ -173,19 +169,19 @@
     }
 
     #ysp-chat-suggestions {
-      padding: 0.6rem 1.2rem 0.7rem;
+      padding: 0.4rem 1.2rem 0.5rem;
       display: flex;
-      gap: 0.4rem;
+      gap: 0.35rem;
       flex-wrap: wrap;
       flex-shrink: 0;
       border-top: 1px solid #f0ede8;
     }
     .ysp-suggestion {
-      padding: 0.3rem 0.75rem;
+      padding: 0.25rem 0.65rem;
       border: 1px solid #e0ddd8;
       background: #faf8f5;
       font-family: inherit;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       color: #7a7672;
       cursor: pointer;
       transition: all 0.2s;
@@ -357,6 +353,9 @@
     isLoading = true;
     sendBtn.disabled = true;
 
+    // Hide suggestions once user starts typing
+    suggestionsEl.style.display = 'none';
+
     // Load and append to history
     const messages = loadMessages();
     messages.push({ role: 'user', content: text });
@@ -432,9 +431,8 @@
       appendMessage('assistant', "Welcome to YSP Collective ✦ I'm your personal fragrance and beauty advisor. Ask me anything — about our fragrances, skincare, or just tell me what you're looking for and I'll find you the perfect match.");
       renderSuggestions();
     } else {
-      // Replay history
+      // Replay history — no suggestions if conversation already started
       msgs.forEach(m => appendMessage(m.role, m.content));
-      renderSuggestions();
     }
 
     setTimeout(() => inputEl.focus(), 300);
