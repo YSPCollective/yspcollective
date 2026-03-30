@@ -201,7 +201,7 @@
 
       /* Mobile nav menu */
       .nav-links {
-        display: none;
+        display: none !important;
         position: fixed;
         top: 0;
         left: 0;
@@ -215,7 +215,7 @@
         overflow-y: auto;
         align-items: flex-start;
       }
-      .nav-links.open { display: flex; }
+      .nav-links.open { display: flex !important; }
       .nav-links li { width: 100%; border-bottom: 1px solid var(--sand); }
       .nav-links li:last-child { border-bottom: none; }
 
@@ -225,9 +225,10 @@
         display: block;
         width: 100%;
         padding: 1rem 0;
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         color: var(--black) !important;
         text-align: left;
+        letter-spacing: 0.08em;
       }
       .nav-dropdown-trigger {
         display: flex;
