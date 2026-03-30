@@ -157,16 +157,9 @@ module.exports = function(eleventyConfig) {
     return products.filter(p => p.brand === brandName);
   });
 
-  // Brand data passthrough
-  eleventyConfig.addPassthroughCopy({ "src/_data/brands.js": "_data/brands.js" });
-
 
   // Brands data collection
-  eleventyConfig.addCollection("brands", function() {
-    return require('./src/_data/brands.json');
-  });
-
-  // Filter products by brand name
+// Filter products by brand name
   eleventyConfig.addFilter("selectByBrand", function(allProducts, brandName) {
     return allProducts.filter(p => p.brand === brandName);
   });

@@ -5,52 +5,48 @@ pagination:
   size: 1
   alias: brand
 permalink: "brands/{{ brand.slug }}.html"
+eleventyComputed:
+  title: "{{ brand.name }} Fragrances — YSP Collective"
+  description: "{{ brand.tagline }}"
 ---
 
 {% block head_extra %}
 <style>
-  /* BRAND HERO */
   .brand-hero {
     position: relative;
     height: 60vh;
     min-height: 420px;
     overflow: hidden;
-    background: var(--sand);
+    background: var(--black);
     display: flex;
     align-items: flex-end;
-    padding-top: var(--nav-height);
   }
-  .brand-hero-img {
+  .brand-hero-bg {
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.55;
-  }
-  .brand-hero-placeholder {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, var(--black) 0%, #3a3530 100%);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.45;
+    transition: transform 8s ease-out;
   }
   .brand-hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(26,25,22,0.85) 0%, rgba(26,25,22,0.2) 60%, transparent 100%);
-    z-index: 1;
+    background: linear-gradient(to top, rgba(26,25,22,0.9) 0%, rgba(26,25,22,0.3) 60%, transparent 100%);
   }
   .brand-hero-content {
     position: relative;
     z-index: 2;
-    padding: 3rem 3.5rem;
-    width: 100%;
+    padding: 0 4rem 4rem;
+    max-width: 700px;
   }
   .brand-origin-tag {
     font-size: 0.68rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--accent-light);
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
+    display: block;
   }
   .brand-hero-name {
     font-family: var(--serif);
@@ -58,98 +54,98 @@ permalink: "brands/{{ brand.slug }}.html"
     font-weight: 300;
     color: var(--white);
     line-height: 1;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.01em;
   }
   .brand-hero-tagline {
     font-size: 1rem;
-    color: rgba(255,255,255,0.6);
-    font-style: italic;
-    font-family: var(--serif);
+    line-height: 1.7;
+    color: rgba(255,255,255,0.65);
+    max-width: 520px;
   }
 
-  /* BRAND BODY */
   .brand-body {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 5rem 3.5rem;
+    padding: 5rem 4rem;
+  }
+
+  .brand-intro {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1.8fr;
     gap: 5rem;
     align-items: start;
-  }
-  .brand-meta {
-    position: sticky;
-    top: 100px;
-  }
-  .brand-meta-item {
-    padding: 1rem 0;
+    margin-bottom: 5rem;
+    padding-bottom: 5rem;
     border-bottom: 1px solid var(--sand);
   }
-  .brand-meta-item:first-child { border-top: 1px solid var(--sand); }
-  .brand-meta-label {
-    font-size: 0.62rem;
-    letter-spacing: 0.2em;
+
+  .brand-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .brand-stat-item {}
+  .brand-stat-num {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+  .brand-stat-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--grey);
-    margin-bottom: 0.3rem;
   }
-  .brand-meta-value {
-    font-size: 0.9rem;
-    color: var(--black);
-  }
-  .brand-text h2 {
+
+  .brand-story h2 {
     font-family: var(--serif);
     font-size: 1.8rem;
     font-weight: 300;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
     color: var(--black);
   }
-  .brand-text p {
+  .brand-story p {
     font-size: 0.95rem;
     line-height: 1.85;
     color: var(--grey);
     margin-bottom: 1.2rem;
   }
-  .brand-ysp-take {
+  .brand-story .ysp-take {
+    margin-top: 2rem;
+    padding: 1.8rem 2rem;
     background: var(--cream);
     border-left: 3px solid var(--accent);
-    padding: 1.8rem 2rem;
-    margin: 2.5rem 0;
   }
-  .brand-ysp-take-label {
-    font-size: 0.62rem;
-    letter-spacing: 0.25em;
+  .brand-story .ysp-take-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--accent);
     margin-bottom: 0.8rem;
   }
-  .brand-ysp-take p {
-    font-size: 0.95rem;
-    line-height: 1.85;
-    color: var(--grey);
+  .brand-story .ysp-take p {
     margin: 0;
     font-style: italic;
   }
 
-  /* PRODUCTS GRID */
-  .brand-products {
-    padding: 0 3.5rem 6rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .brand-products h2 {
+  .brand-products-section h2 {
     font-family: var(--serif);
     font-size: 2rem;
     font-weight: 300;
     margin-bottom: 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--sand);
+    color: var(--black);
   }
+
   .brand-products-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.8rem;
   }
+
   .brand-product-card {
     text-decoration: none;
     color: inherit;
@@ -173,117 +169,132 @@ permalink: "brands/{{ brand.slug }}.html"
     transition: transform 0.5s;
   }
   .brand-product-card:hover .brand-product-img img { transform: scale(1.04); }
-  .brand-product-cat { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey-light); margin-bottom: 0.3rem; }
-  .brand-product-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; line-height: 1.3; margin-bottom: 0.3rem; }
-  .brand-product-price { font-size: 0.95rem; color: var(--accent); }
-
-  .brand-empty {
-    padding: 4rem;
-    text-align: center;
-    background: var(--cream);
-    color: var(--grey);
-    font-size: 0.9rem;
-  }
-
-  /* BACK LINK */
-  .brand-back {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.72rem;
+  .brand-product-badge {
+    position: absolute;
+    top: 0.7rem;
+    left: 0.7rem;
+    font-size: 0.6rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--grey);
-    text-decoration: none;
-    padding: 1.5rem 3.5rem 0;
-    display: block;
-    transition: color 0.2s;
-    padding-top: calc(var(--nav-height) + 1.5rem);
+    padding: 0.25rem 0.6rem;
+    background: var(--accent);
+    color: var(--white);
+    z-index: 1;
   }
-  .brand-back:hover { color: var(--accent); }
+  .brand-product-cat {
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--grey-light);
+    margin-bottom: 0.3rem;
+  }
+  .brand-product-name {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 0.3rem;
+  }
+  .brand-product-price {
+    font-size: 0.95rem;
+    color: var(--accent);
+    font-weight: 400;
+  }
 
-  @media (max-width: 900px) {
-    .brand-hero-content { padding: 2rem 1.5rem; }
-    .brand-body { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem; }
-    .brand-meta { position: static; }
-    .brand-products { padding: 0 1.5rem 4rem; }
-    .brand-products-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    .brand-back { padding: calc(var(--nav-height) + 1rem) 1.5rem 0; }
+  .brand-no-products {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--grey);
+    border: 1px solid var(--sand);
+    grid-column: 1 / -1;
   }
-  @media (max-width: 500px) {
-    .brand-products-grid { grid-template-columns: 1fr; }
+  .brand-no-products p { font-size: 0.9rem; line-height: 1.7; }
+
+  @media (max-width: 1024px) {
+    .brand-products-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .brand-hero-content { padding: 0 1.5rem 3rem; }
+    .brand-body { padding: 3rem 1.5rem; }
+    .brand-intro { grid-template-columns: 1fr; gap: 3rem; }
+    .brand-stats { flex-direction: row; flex-wrap: wrap; gap: 1.5rem; }
+    .brand-products-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  }
+  @media (max-width: 480px) {
+    .brand-products-grid { grid-template-columns: 1fr 1fr; }
   }
 </style>
 {% endblock %}
 
-<a href="/" class="brand-back">← Back to home</a>
-
 <!-- HERO -->
-<div class="brand-hero">
-  {% if brand.has_image %}
-    <img class="brand-hero-img" src="/images/brands/{{ brand.slug }}.jpg" alt="{{ brand.name }}">
-  {% else %}
-    <div class="brand-hero-placeholder"></div>
-  {% endif %}
+<section class="brand-hero">
+  <div class="brand-hero-bg" style="background-image: url('{{ brand.hero_image or '/images/brands/' + brand.slug + '-hero.jpg' }}');"></div>
   <div class="brand-hero-overlay"></div>
   <div class="brand-hero-content">
-    <p class="brand-origin-tag">{{ brand.origin }} · Est. {{ brand.founded }}</p>
+    <span class="brand-origin-tag">{{ brand.origin }}</span>
     <h1 class="brand-hero-name">{{ brand.name }}</h1>
     <p class="brand-hero-tagline">{{ brand.tagline }}</p>
   </div>
-</div>
+</section>
 
-<!-- BRAND INFO -->
+<!-- BODY -->
 <div class="brand-body">
-  <div class="brand-meta">
-    <div class="brand-meta-item">
-      <div class="brand-meta-label">Origin</div>
-      <div class="brand-meta-value">{{ brand.origin }}</div>
-    </div>
-    <div class="brand-meta-item">
-      <div class="brand-meta-label">Founded</div>
-      <div class="brand-meta-value">{{ brand.founded }}</div>
-    </div>
-    <div class="brand-meta-item">
-      <div class="brand-meta-label">Heritage</div>
-      <div class="brand-meta-value">{{ brand.region | capitalize }} Fragrance</div>
-    </div>
-    <div class="brand-meta-item">
-      <div class="brand-meta-label">Available at</div>
-      <div class="brand-meta-value">YSP Collective · Portugal</div>
-    </div>
-  </div>
-
-  <div class="brand-text">
-    <h2>About {{ brand.name }}</h2>
-    <p>{{ brand.hero_desc }}</p>
-    <div class="brand-ysp-take">
-      <div class="brand-ysp-take-label">✦ Why we carry this</div>
-      <p>{{ brand.ysp_take }}</p>
-    </div>
-  </div>
-</div>
-
-<!-- PRODUCTS -->
-{% set brandProducts = collections.allProducts | selectByBrand(brand.name) %}
-<div class="brand-products">
-  <h2>Shop {{ brand.name }}</h2>
-  {% if brandProducts.length %}
-  <div class="brand-products-grid">
-    {% for p in brandProducts %}
-    <a href="/products/{{ p.slug }}.html" class="brand-product-card">
-      <div class="brand-product-img">
-        <img src="{{ p.image_main }}" alt="{{ p.name }}" loading="lazy">
+  <div class="brand-intro">
+    <div class="brand-stats">
+      {% if brand.founded %}
+      <div class="brand-stat-item">
+        <span class="brand-stat-num">{{ brand.founded }}</span>
+        <span class="brand-stat-label">Founded</span>
       </div>
-      <div class="brand-product-cat">{{ p.brand }} · {{ p.gender or p.category }}</div>
-      <div class="brand-product-name">{{ p.name }}</div>
-      <div class="brand-product-price">€{{ p.price }}</div>
-    </a>
-    {% endfor %}
+      {% endif %}
+      {% if brand.origin_city %}
+      <div class="brand-stat-item">
+        <span class="brand-stat-num" style="font-size:1.4rem">{{ brand.origin_city }}</span>
+        <span class="brand-stat-label">Origin</span>
+      </div>
+      {% endif %}
+      {% if brand.stat_label %}
+      <div class="brand-stat-item">
+        <span class="brand-stat-num" style="font-size:1.4rem">{{ brand.stat_value }}</span>
+        <span class="brand-stat-label">{{ brand.stat_label }}</span>
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="brand-story">
+      <h2>{{ brand.story_heading }}</h2>
+      {{ brand.story | safe }}
+      <div class="ysp-take">
+        <div class="ysp-take-label">✦ Why We Carry This Brand</div>
+        <p>{{ brand.ysp_take }}</p>
+      </div>
+    </div>
   </div>
-  {% else %}
-  <div class="brand-empty">
-    <p>New {{ brand.name }} products coming soon. <a href="/#contact" style="color:var(--accent)">Get in touch</a> to be notified.</p>
+
+  <!-- PRODUCTS -->
+  <div class="brand-products-section">
+    <h2>Shop {{ brand.name }}</h2>
+    <div class="brand-products-grid">
+      {% set brandProducts = collections.allProducts | selectBrand(brand.name) %}
+      {% if brandProducts.length %}
+        {% for p in brandProducts %}
+        <a href="/products/{{ p.slug }}.html" class="brand-product-card">
+          <div class="brand-product-img">
+            <img src="{{ p.image_main }}" alt="{{ p.name }}" loading="lazy">
+            {% set b = p.custom_badge or p.badge %}
+            {% if b %}<span class="brand-product-badge">{{ b }}</span>{% endif %}
+          </div>
+          <div class="brand-product-cat">{{ p.gender or p.category }} · {{ p.concentration or p.type }}</div>
+          <div class="brand-product-name">{{ p.name }}</div>
+          <div class="brand-product-price">€{{ p.price }}</div>
+        </a>
+        {% endfor %}
+      {% else %}
+        <div class="brand-no-products">
+          <p>New {{ brand.name }} products coming soon.<br>
+          <a href="mailto:info@yspcollective.com" style="color:var(--accent)">Contact us</a> if you're looking for something specific.</p>
+        </div>
+      {% endif %}
+    </div>
   </div>
-  {% endif %}
 </div>
