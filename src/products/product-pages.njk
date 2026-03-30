@@ -38,8 +38,40 @@ permalink: "products/{{ product.slug }}.html"
 
   .product-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; padding: 2.5rem 4rem 6rem; max-width: 1400px; margin: 0 auto; }
 
-  .gallery-main { aspect-ratio: 1; overflow: hidden; background: var(--cream); position: relative; }
+  /* GALLERY */
+  .gallery-main {
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: var(--cream);
+    position: relative;
+  }
   .gallery-main img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease; }
+
+  /* Arrow buttons */
+  .gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid var(--sand);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: background 0.2s, opacity 0.2s;
+    opacity: 0;
+    font-size: 0.9rem;
+    color: var(--black);
+  }
+  .gallery-main:hover .gallery-arrow { opacity: 1; }
+  .gallery-arrow:hover { background: var(--white); }
+  .gallery-arrow.prev { left: 0.6rem; }
+  .gallery-arrow.next { right: 0.6rem; }
+  .gallery-arrow.hidden { display: none; }
+
   .gallery-thumbs { display: flex; gap: 0.6rem; margin-top: 0.8rem; flex-wrap: wrap; }
   .gallery-thumb { width: 72px; height: 72px; overflow: hidden; background: var(--cream); cursor: pointer; border: 2px solid transparent; transition: border-color 0.2s; flex-shrink: 0; }
   .gallery-thumb.active { border-color: var(--accent); }
@@ -72,12 +104,7 @@ permalink: "products/{{ product.slug }}.html"
   .accord-tag { padding: 0.3rem 0.8rem; border: 1px solid var(--sand); font-size: 0.75rem; color: var(--grey); letter-spacing: 0.08em; }
 
   .product-cta { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
-  .btn-buy-now {
-    padding: 1rem 2.5rem; background: var(--accent); color: var(--white);
-    font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.14em;
-    text-transform: uppercase; border: none; cursor: pointer;
-    transition: background 0.2s, transform 0.2s; display: inline-block;
-  }
+  .btn-buy-now { padding: 1rem 2.5rem; background: var(--accent); color: var(--white); font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; border: none; cursor: pointer; transition: background 0.2s, transform 0.2s; display: inline-block; }
   .btn-buy-now:hover { background: var(--black); transform: translateY(-1px); }
   .btn-buy-now:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
   .btn-sold-out { background: var(--grey) !important; }
@@ -133,6 +160,7 @@ permalink: "products/{{ product.slug }}.html"
     .related-section { padding: 3rem 1.5rem; }
     .related-grid { grid-template-columns: 1fr 1fr; }
     .tabs-wrap { padding: 0 1.5rem 3rem; }
+    .gallery-arrow { opacity: 1; width: 32px; height: 32px; }
   }
   @media (max-width: 500px) { .related-grid { grid-template-columns: 1fr; } }
 </style>
@@ -146,12 +174,14 @@ permalink: "products/{{ product.slug }}.html"
 
 <div class="product-wrap">
   <div class="gallery-col">
-    <div class="gallery-main">
+    <div class="gallery-main" id="gallery-main">
       <img id="main-img" src="{{ product.image_main }}" alt="{{ product.name }}" />
+      <button class="gallery-arrow prev hidden" id="gallery-prev" aria-label="Previous image">&#8592;</button>
+      <button class="gallery-arrow next hidden" id="gallery-next" aria-label="Next image">&#8594;</button>
     </div>
     <div class="gallery-thumbs" id="gallery-thumbs">
       {% for img in product.gallery %}
-      <div class="gallery-thumb {% if loop.first %}active{% endif %}" data-src="{{ img }}">
+      <div class="gallery-thumb {% if loop.first %}active{% endif %}" data-src="{{ img }}" data-index="{{ loop.index0 }}">
         <img src="{{ img }}" alt="{{ product.name }} {{ loop.index }}" loading="lazy">
       </div>
       {% endfor %}
@@ -286,7 +316,7 @@ permalink: "products/{{ product.slug }}.html"
   </div>
 
   <div class="tab-panel" id="tab-shipping">
-    <p data-i18n="pdp_shipping_p1">We ship across Europe from our base in Portugal. Most orders dispatch within 24 hours. Delivery is typically 2–5 business days depending on destination. No hidden import costs within the EU.</p>
+    <p data-i18n="pdp_shipping_p1">We ship to Portugal and Spain from our base in Portugal. Orders dispatch within 24 hours. Delivery is typically 1–3 business days. Free shipping on orders over €50.</p>
     <p data-i18n="pdp_shipping_p2">All products are new, sealed, and sourced from authorised EU distributors. If there's any issue with your order, contact us within 14 days and we'll arrange a return or replacement promptly.</p>
     <p>For questions before or after purchase, email <a href="mailto:info@yspcollective.com" style="color:var(--accent)">info@yspcollective.com</a> — we respond within 24 hours Monday to Friday.</p>
   </div>
@@ -318,23 +348,58 @@ permalink: "products/{{ product.slug }}.html"
 {% endif %}
 
 <script>
-  // Gallery
+  // ── GALLERY WITH ARROWS ──────────────────────────────────────────────────
   const mainImg = document.getElementById('main-img');
-  document.querySelectorAll('.gallery-thumb').forEach(thumb => {
-    thumb.addEventListener('click', () => {
-      mainImg.src = thumb.dataset.src;
-      document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
-      thumb.classList.add('active');
-    });
-  });
-  document.addEventListener('keydown', e => {
-    const thumbs = [...document.querySelectorAll('.gallery-thumb')];
-    const idx = thumbs.findIndex(t => t.classList.contains('active'));
-    if (e.key === 'ArrowRight' && idx < thumbs.length - 1) thumbs[idx + 1].click();
-    if (e.key === 'ArrowLeft' && idx > 0) thumbs[idx - 1].click();
+  const prevBtn = document.getElementById('gallery-prev');
+  const nextBtn = document.getElementById('gallery-next');
+  const thumbs = [...document.querySelectorAll('.gallery-thumb')];
+  let currentIndex = 0;
+
+  function goToImage(index) {
+    if (index < 0 || index >= thumbs.length) return;
+    currentIndex = index;
+    mainImg.style.opacity = '0';
+    setTimeout(() => {
+      mainImg.src = thumbs[index].dataset.src;
+      mainImg.style.opacity = '1';
+    }, 150);
+    thumbs.forEach(t => t.classList.remove('active'));
+    thumbs[index].classList.add('active');
+    // Show/hide arrows
+    prevBtn.classList.toggle('hidden', index === 0);
+    nextBtn.classList.toggle('hidden', index === thumbs.length - 1);
+  }
+
+  // Init arrows visibility
+  if (thumbs.length > 1) {
+    nextBtn.classList.remove('hidden');
+  }
+
+  thumbs.forEach((thumb, i) => {
+    thumb.addEventListener('click', () => goToImage(i));
   });
 
-  // Tabs
+  prevBtn.addEventListener('click', () => goToImage(currentIndex - 1));
+  nextBtn.addEventListener('click', () => goToImage(currentIndex + 1));
+
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') goToImage(currentIndex + 1);
+    if (e.key === 'ArrowLeft') goToImage(currentIndex - 1);
+  });
+
+  // Swipe support for mobile
+  let touchStartX = 0;
+  mainImg.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  mainImg.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) goToImage(currentIndex + 1);
+      else goToImage(currentIndex - 1);
+    }
+  });
+
+  // ── TABS ────────────────────────────────────────────────────────────────
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -344,7 +409,7 @@ permalink: "products/{{ product.slug }}.html"
     });
   });
 
-  // Details table
+  // ── DETAILS TABLE ────────────────────────────────────────────────────────
   const detailsData = {{ product | detailsJson | safe }};
   const tbody = document.getElementById('details-tbody');
   if (tbody && detailsData) {
@@ -355,11 +420,10 @@ permalink: "products/{{ product.slug }}.html"
     });
   }
 
-  // Language-aware product content
+  // ── LANGUAGE ─────────────────────────────────────────────────────────────
   (function() {
     const lang = localStorage.getItem('ysp_lang') || 'en';
     if (lang === 'en') return;
-
     const productData = {
       name_pt: {{ (product.pt.name_pt or '') | jsonify | safe }},
       description_short_pt: {{ (product.pt.description_short_pt or '') | jsonify | safe }},
@@ -370,7 +434,6 @@ permalink: "products/{{ product.slug }}.html"
       description_full_es: {{ (product.es.description_full_es or '') | jsonify | safe }},
       ysp_thoughts_es: {{ (product.es.ysp_thoughts_es or '') | jsonify | safe }}
     };
-
     const suffix = lang === 'pt' ? '_pt' : '_es';
     const descShort = productData['description_short' + suffix];
     if (descShort) { const el = document.getElementById('pdp-desc-short'); if (el) el.textContent = descShort; }
@@ -378,7 +441,6 @@ permalink: "products/{{ product.slug }}.html"
     if (descFull) { const el = document.getElementById('pdp-desc-full'); if (el) el.innerHTML = descFull; }
     const thoughts = productData['ysp_thoughts' + suffix];
     if (thoughts) { const el = document.getElementById('pdp-thoughts'); if (el) el.innerHTML = thoughts; }
-
     document.addEventListener('ysp:langchange', (e) => {
       const newLang = e.detail.lang;
       const newSuffix = newLang === 'pt' ? '_pt' : newLang === 'es' ? '_es' : null;
@@ -397,7 +459,7 @@ permalink: "products/{{ product.slug }}.html"
     });
   })();
 
-  // Notify Me button
+  // ── NOTIFY ME ────────────────────────────────────────────────────────────
   const notifyBtn = document.getElementById('btn-notify');
   if (notifyBtn) {
     notifyBtn.addEventListener('click', () => {
@@ -405,7 +467,6 @@ permalink: "products/{{ product.slug }}.html"
       document.getElementById('notify-email').focus();
     });
   }
-
   async function submitNotify() {
     const email = document.getElementById('notify-email').value;
     if (!email || !email.includes('@')) return;
@@ -413,11 +474,7 @@ permalink: "products/{{ product.slug }}.html"
       await fetch('https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email,
-          lang: window.YSP_LANG ? window.YSP_LANG.get() : 'en',
-          product: '{{ product.name }}'
-        })
+        body: JSON.stringify({ email, lang: window.YSP_LANG ? window.YSP_LANG.get() : 'en', product: '{{ product.name }}' })
       });
       document.getElementById('notify-success').style.display = 'block';
       document.getElementById('notify-email').style.display = 'none';
@@ -425,7 +482,7 @@ permalink: "products/{{ product.slug }}.html"
     } catch(e) {}
   }
 
-  // Add to Cart button
+  // ── ADD TO CART ──────────────────────────────────────────────────────────
   const addToCartBtn = document.getElementById('btn-add-to-cart');
   if (addToCartBtn) {
     addToCartBtn.addEventListener('click', () => {
@@ -441,7 +498,7 @@ permalink: "products/{{ product.slug }}.html"
     });
   }
 
-  // Buy Now button
+  // ── BUY NOW ──────────────────────────────────────────────────────────────
   const buyBtn = document.getElementById('btn-buy-now');
   if (buyBtn) {
     buyBtn.addEventListener('click', async () => {
@@ -454,23 +511,14 @@ permalink: "products/{{ product.slug }}.html"
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            items: [{
-              id: buyBtn.dataset.slug,
-              name: buyBtn.dataset.name,
-              price: parseFloat(buyBtn.dataset.price),
-              image: imageUrl,
-              quantity: 1
-            }],
+            items: [{ id: buyBtn.dataset.slug, name: buyBtn.dataset.name, price: parseFloat(buyBtn.dataset.price), image: imageUrl, quantity: 1 }],
             success_url: 'https://yspcollective.com/checkout-success.html',
             cancel_url: window.location.href
           })
         });
         const data = await res.json();
-        if (data.url) {
-          window.location.href = data.url;
-        } else {
-          throw new Error(data.error || 'Checkout failed');
-        }
+        if (data.url) { window.location.href = data.url; }
+        else { throw new Error(data.error || 'Checkout failed'); }
       } catch(err) {
         buyBtn.textContent = 'Buy Now — €{{ product.price }}';
         buyBtn.disabled = false;
@@ -479,7 +527,7 @@ permalink: "products/{{ product.slug }}.html"
     });
   }
 
-  // Enquire button
+  // ── ENQUIRE ──────────────────────────────────────────────────────────────
   document.getElementById('btn-enquire').addEventListener('click', e => {
     e.preventDefault();
     sessionStorage.setItem('enquiry_subject', 'Product Enquiry — {{ product.name }}');
