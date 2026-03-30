@@ -102,6 +102,69 @@
     .nav-cta:hover { background: var(--black) !important; transform: translateY(-1px); }
 
 
+
+    /* ── NAV DROPDOWNS ── */
+    .nav-dropdown-wrap {
+      position: relative;
+    }
+    .nav-dropdown-wrap > a {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .nav-dropdown-wrap > a::after {
+      content: '▾';
+      font-size: 0.55rem;
+      opacity: 0.6;
+      transition: transform 0.2s;
+    }
+    .nav-dropdown-wrap:hover > a::after { transform: rotate(180deg); }
+    .nav-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 1rem);
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--white);
+      border: 1px solid var(--sand);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+      z-index: 2000;
+      min-width: 580px;
+      padding: 2rem;
+    }
+    .nav-dropdown-wrap:hover .nav-dropdown { display: block; }
+    .nav-dropdown-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+    }
+    .nav-dropdown-col h4 {
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--sand);
+    }
+    .nav-dropdown-col a {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: none !important;
+      color: var(--grey) !important;
+      text-decoration: none;
+      padding: 0.3rem 0;
+      transition: color 0.2s;
+      font-weight: 300;
+    }
+    .nav-dropdown-col a:hover { color: var(--accent) !important; }
+
+    /* Beauty dropdown narrower */
+    .nav-dropdown.beauty-dropdown { min-width: 380px; }
+    .nav-dropdown.beauty-dropdown .nav-dropdown-inner { grid-template-columns: 1fr 1fr; }
+
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; width: 28px; height: 20px; position: relative; }
     .nav-toggle span { display: block; width: 100%; height: 1.5px; background: var(--black); position: absolute; left: 0; transition: all 0.3s; }
     .nav-toggle span:nth-child(1) { top: 0; }
@@ -110,6 +173,75 @@
     .nav-toggle.open span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
     .nav-toggle.open span:nth-child(2) { opacity: 0; }
     .nav-toggle.open span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
+
+
+    /* ── NAV DROPDOWNS ── */
+    .nav-dropdown-wrap { position: relative; }
+    .nav-dropdown-trigger {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey);
+      text-decoration: none;
+      transition: color 0.25s;
+      font-weight: 400;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--sans);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0;
+    }
+    .nav-dropdown-trigger:hover { color: var(--accent); }
+    .nav-dropdown-chevron { font-size: 0.5rem; opacity: 0.6; transition: transform 0.2s; display: inline-block; }
+    .nav-dropdown-wrap.open .nav-dropdown-chevron { transform: rotate(180deg); }
+    .nav-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 1rem);
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--white);
+      border: 1px solid var(--sand);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+      z-index: 2000;
+      min-width: 520px;
+      padding: 1.8rem 2rem;
+    }
+    .nav-dropdown-wrap.open .nav-dropdown { display: flex; gap: 2.5rem; }
+    .nav-dropdown-col h4 {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+    .nav-dropdown-col a {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--grey);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      padding: 0.3rem 0;
+      transition: color 0.2s;
+      white-space: nowrap;
+      text-transform: none;
+    }
+    .nav-dropdown-col a:hover { color: var(--accent); }
+    .nav-dropdown-divider { width: 1px; background: var(--sand); flex-shrink: 0; }
+    /* Beauty dropdown is smaller */
+    .nav-dropdown.beauty-dropdown { min-width: 280px; }
+    @media (max-width: 768px) {
+      .nav-dropdown-wrap { width: 100%; }
+      .nav-dropdown-trigger { width: 100%; }
+      .nav-dropdown { position: static; transform: none; box-shadow: none; border: none; border-top: 1px solid var(--sand); padding: 1rem 0 0.5rem 1rem; min-width: unset; background: var(--cream); }
+      .nav-dropdown-wrap.open .nav-dropdown { flex-direction: column; gap: 1rem; }
+      .nav-dropdown-divider { display: none; }
+    }
 
     /* ── FOOTER ── */
     footer { padding: 4rem 3.5rem 2rem; background: var(--black); color: rgba(255,255,255,0.4); }
@@ -151,6 +283,8 @@
       }
       .nav-links.open { display: flex; }
       .nav-toggle { display: block; }
+      .nav-dropdown { display: none !important; }
+      .nav-dropdown-wrap > a::after { display: none; }
       footer { padding: 3rem 1.5rem 1.5rem; }
       .footer-top { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; gap: 0.8rem; }
@@ -184,8 +318,71 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="/#featured-fragrances" data-i18n="nav_fragrances">Fragrances</a></li>
-      <li><a href="/#featured-beauty" data-i18n="nav_beauty">Beauty</a></li>
+
+      <!-- Fragrances dropdown -->
+      <li class="nav-dropdown-wrap" id="nav-fragrances-wrap">
+        <button class="nav-dropdown-trigger" onclick="toggleDropdown('nav-fragrances-wrap')" aria-haspopup="true">
+          Fragrances <span class="nav-dropdown-chevron">▾</span>
+        </button>
+        <div class="nav-dropdown">
+          <div class="nav-dropdown-col">
+            <h4>By Gender</h4>
+            <a href="/#featured-fragrances">All Fragrances</a>
+            <a href="/#featured-fragrances">Men</a>
+            <a href="/#featured-fragrances">Women</a>
+            <a href="/#featured-fragrances">Unisex</a>
+          </div>
+          <div class="nav-dropdown-divider"></div>
+          <div class="nav-dropdown-col">
+            <h4>Arabian</h4>
+            <a href="/brands/armaf.html">Armaf</a>
+            <a href="/brands/arabiyat-prestige.html">Arabiyat Prestige</a>
+            <a href="/brands/al-haramain.html">Al Haramain</a>
+            <a href="/brands/gulf-orchid.html">Gulf Orchid</a>
+            <a href="/brands/lattafa.html">Lattafa</a>
+            <a href="/brands/maison-alhambra.html">Maison Alhambra</a>
+            <a href="/brands/ministry-of-gourmand.html">Ministry of Gourmand</a>
+            <a href="/brands/rasasi.html">Rasasi</a>
+            <a href="/brands/swiss-arabian.html">Swiss Arabian</a>
+            <a href="/brands/zimaya.html">Zimaya</a>
+          </div>
+          <div class="nav-dropdown-divider"></div>
+          <div class="nav-dropdown-col">
+            <h4>European</h4>
+            <a href="/brands/creed.html">Creed</a>
+            <a href="/brands/dior.html">Dior</a>
+            <a href="/brands/roja-parfums.html">Roja Parfums</a>
+            <a href="/brands/tom-ford.html">Tom Ford</a>
+            <a href="/brands/ysl.html">Yves Saint Laurent</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Beauty dropdown -->
+      <li class="nav-dropdown-wrap" id="nav-beauty-wrap">
+        <button class="nav-dropdown-trigger" onclick="toggleDropdown('nav-beauty-wrap')" aria-haspopup="true">
+          Beauty <span class="nav-dropdown-chevron">▾</span>
+        </button>
+        <div class="nav-dropdown beauty-dropdown">
+          <div class="nav-dropdown-col">
+            <h4>By Category</h4>
+            <a href="/#featured-beauty">All Beauty</a>
+            <a href="/#featured-beauty">SPF &amp; Sunscreen</a>
+            <a href="/#featured-beauty">Serums</a>
+            <a href="/#featured-beauty">Moisturisers</a>
+            <a href="/#featured-beauty">Cleansers</a>
+          </div>
+          <div class="nav-dropdown-divider"></div>
+          <div class="nav-dropdown-col">
+            <h4>By Brand</h4>
+            <a href="/#featured-beauty">ANUA</a>
+            <a href="/#featured-beauty">Beauty of Joseon</a>
+            <a href="/#featured-beauty">COSRX</a>
+            <a href="/#featured-beauty">Skin1004</a>
+          </div>
+        </div>
+      </li>
+
       <li><a href="/#brands" data-i18n="nav_brands">Brands</a></li>
       <li><a href="/#philosophy" data-i18n="nav_about">About</a></li>
       <li><a href="/#faq" data-i18n="nav_faq">FAQ</a></li>
@@ -290,6 +487,22 @@
       });
     }, { threshold: 0.08 });
     reveals.forEach(el => ro.observe(el));
+
+
+    // Nav dropdowns
+    function toggleDropdown(id) {
+      const wrap = document.getElementById(id);
+      const isOpen = wrap.classList.contains('open');
+      // Close all dropdowns first
+      document.querySelectorAll('.nav-dropdown-wrap').forEach(w => w.classList.remove('open'));
+      if (!isOpen) wrap.classList.add('open');
+    }
+    // Close dropdowns on outside click
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-dropdown-wrap')) {
+        document.querySelectorAll('.nav-dropdown-wrap').forEach(w => w.classList.remove('open'));
+      }
+    });
 
     // Enquiry prefill from sessionStorage
     window.addEventListener('DOMContentLoaded', () => {

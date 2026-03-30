@@ -1,0 +1,289 @@
+---
+layout: base.njk
+pagination:
+  data: brands
+  size: 1
+  alias: brand
+permalink: "brands/{{ brand.slug }}.html"
+---
+
+{% block head_extra %}
+<style>
+  /* BRAND HERO */
+  .brand-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 420px;
+    overflow: hidden;
+    background: var(--sand);
+    display: flex;
+    align-items: flex-end;
+    padding-top: var(--nav-height);
+  }
+  .brand-hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.55;
+  }
+  .brand-hero-placeholder {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--black) 0%, #3a3530 100%);
+  }
+  .brand-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26,25,22,0.85) 0%, rgba(26,25,22,0.2) 60%, transparent 100%);
+    z-index: 1;
+  }
+  .brand-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 3rem 3.5rem;
+    width: 100%;
+  }
+  .brand-origin-tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 0.8rem;
+  }
+  .brand-hero-name {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 0.8rem;
+  }
+  .brand-hero-tagline {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.6);
+    font-style: italic;
+    font-family: var(--serif);
+  }
+
+  /* BRAND BODY */
+  .brand-body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 3.5rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .brand-meta {
+    position: sticky;
+    top: 100px;
+  }
+  .brand-meta-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--sand);
+  }
+  .brand-meta-item:first-child { border-top: 1px solid var(--sand); }
+  .brand-meta-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-bottom: 0.3rem;
+  }
+  .brand-meta-value {
+    font-size: 0.9rem;
+    color: var(--black);
+  }
+  .brand-text h2 {
+    font-family: var(--serif);
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+    color: var(--black);
+  }
+  .brand-text p {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: var(--grey);
+    margin-bottom: 1.2rem;
+  }
+  .brand-ysp-take {
+    background: var(--cream);
+    border-left: 3px solid var(--accent);
+    padding: 1.8rem 2rem;
+    margin: 2.5rem 0;
+  }
+  .brand-ysp-take-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+  }
+  .brand-ysp-take p {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: var(--grey);
+    margin: 0;
+    font-style: italic;
+  }
+
+  /* PRODUCTS GRID */
+  .brand-products {
+    padding: 0 3.5rem 6rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .brand-products h2 {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--sand);
+  }
+  .brand-products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.8rem;
+  }
+  .brand-product-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s;
+  }
+  .brand-product-card:hover { transform: translateY(-4px); }
+  .brand-product-img {
+    aspect-ratio: 3/4;
+    background: var(--cream);
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  .brand-product-img img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  .brand-product-card:hover .brand-product-img img { transform: scale(1.04); }
+  .brand-product-cat { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey-light); margin-bottom: 0.3rem; }
+  .brand-product-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; line-height: 1.3; margin-bottom: 0.3rem; }
+  .brand-product-price { font-size: 0.95rem; color: var(--accent); }
+
+  .brand-empty {
+    padding: 4rem;
+    text-align: center;
+    background: var(--cream);
+    color: var(--grey);
+    font-size: 0.9rem;
+  }
+
+  /* BACK LINK */
+  .brand-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--grey);
+    text-decoration: none;
+    padding: 1.5rem 3.5rem 0;
+    display: block;
+    transition: color 0.2s;
+    padding-top: calc(var(--nav-height) + 1.5rem);
+  }
+  .brand-back:hover { color: var(--accent); }
+
+  @media (max-width: 900px) {
+    .brand-hero-content { padding: 2rem 1.5rem; }
+    .brand-body { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem; }
+    .brand-meta { position: static; }
+    .brand-products { padding: 0 1.5rem 4rem; }
+    .brand-products-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .brand-back { padding: calc(var(--nav-height) + 1rem) 1.5rem 0; }
+  }
+  @media (max-width: 500px) {
+    .brand-products-grid { grid-template-columns: 1fr; }
+  }
+</style>
+{% endblock %}
+
+<a href="/" class="brand-back">← Back to home</a>
+
+<!-- HERO -->
+<div class="brand-hero">
+  {% if brand.has_image %}
+    <img class="brand-hero-img" src="/images/brands/{{ brand.slug }}.jpg" alt="{{ brand.name }}">
+  {% else %}
+    <div class="brand-hero-placeholder"></div>
+  {% endif %}
+  <div class="brand-hero-overlay"></div>
+  <div class="brand-hero-content">
+    <p class="brand-origin-tag">{{ brand.origin }} · Est. {{ brand.founded }}</p>
+    <h1 class="brand-hero-name">{{ brand.name }}</h1>
+    <p class="brand-hero-tagline">{{ brand.tagline }}</p>
+  </div>
+</div>
+
+<!-- BRAND INFO -->
+<div class="brand-body">
+  <div class="brand-meta">
+    <div class="brand-meta-item">
+      <div class="brand-meta-label">Origin</div>
+      <div class="brand-meta-value">{{ brand.origin }}</div>
+    </div>
+    <div class="brand-meta-item">
+      <div class="brand-meta-label">Founded</div>
+      <div class="brand-meta-value">{{ brand.founded }}</div>
+    </div>
+    <div class="brand-meta-item">
+      <div class="brand-meta-label">Heritage</div>
+      <div class="brand-meta-value">{{ brand.region | capitalize }} Fragrance</div>
+    </div>
+    <div class="brand-meta-item">
+      <div class="brand-meta-label">Available at</div>
+      <div class="brand-meta-value">YSP Collective · Portugal</div>
+    </div>
+  </div>
+
+  <div class="brand-text">
+    <h2>About {{ brand.name }}</h2>
+    <p>{{ brand.hero_desc }}</p>
+    <div class="brand-ysp-take">
+      <div class="brand-ysp-take-label">✦ Why we carry this</div>
+      <p>{{ brand.ysp_take }}</p>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+{% set brandProducts = collections.allProducts | selectByBrand(brand.name) %}
+<div class="brand-products">
+  <h2>Shop {{ brand.name }}</h2>
+  {% if brandProducts.length %}
+  <div class="brand-products-grid">
+    {% for p in brandProducts %}
+    <a href="/products/{{ p.slug }}.html" class="brand-product-card">
+      <div class="brand-product-img">
+        <img src="{{ p.image_main }}" alt="{{ p.name }}" loading="lazy">
+      </div>
+      <div class="brand-product-cat">{{ p.brand }} · {{ p.gender or p.category }}</div>
+      <div class="brand-product-name">{{ p.name }}</div>
+      <div class="brand-product-price">€{{ p.price }}</div>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="brand-empty">
+    <p>New {{ brand.name }} products coming soon. <a href="/#contact" style="color:var(--accent)">Get in touch</a> to be notified.</p>
+  </div>
+  {% endif %}
+</div>
