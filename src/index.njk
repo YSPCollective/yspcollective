@@ -117,7 +117,7 @@ canonical: "https://yspcollective.com/"
   /* BRANDS */
   #brands { padding: 5rem 3.5rem; background: var(--black); color: var(--white); text-align: center; }
   .brands-grid { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 3rem; }
-  .brand-item { border: 1px solid rgba(255,255,255,0.08); padding: 1.8rem 2.2rem; min-width: 140px; transition: border-color 0.3s, transform 0.3s; cursor: default; }
+  .brand-item { border: 1px solid rgba(255,255,255,0.08); padding: 1.8rem 2.2rem; min-width: 140px; transition: border-color 0.3s, transform 0.3s; cursor: pointer; text-decoration: none; display: block; }
   .brand-item:hover { border-color: var(--accent); transform: translateY(-2px); }
   .brand-name { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; color: var(--white); margin-bottom: 0.3rem; }
   .brand-origin { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
@@ -412,14 +412,38 @@ canonical: "https://yspcollective.com/"
     <h2 class="section-title" style="color:var(--white);margin-bottom:0.5rem" data-i18n="brands_title">Carefully selected partners</h2>
     <p style="font-size:0.9rem;color:rgba(255,255,255,0.4);max-width:480px;margin:0 auto" data-i18n="brands_desc">Sourced through authorised EU distribution channels. Every product guaranteed authentic.</p>
   </div>
+  <div style="margin-top:2rem;margin-bottom:0.8rem;reveal">
+    <p style="font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.3);text-align:center;margin-bottom:1.2rem">Arabian Fragrance</p>
+  </div>
   <div class="brands-grid reveal">
-    <div class="brand-item"><div class="brand-name">Lattafa</div><div class="brand-origin">Dubai, UAE</div></div>
-    <div class="brand-item"><div class="brand-name">Armaf</div><div class="brand-origin">Dubai, UAE</div></div>
-    <div class="brand-item"><div class="brand-name">Arabiyat Prestige</div><div class="brand-origin">Dubai, UAE</div></div>
-    <div class="brand-item"><div class="brand-name">Swiss Arabian</div><div class="brand-origin">Dubai, UAE</div></div>
-    <div class="brand-item"><div class="brand-name">Maison Alhambra</div><div class="brand-origin">Dubai, UAE</div></div>
-    <div class="brand-item"><div class="brand-name">Beauty of Joseon</div><div class="brand-origin">Seoul, Korea</div></div>
-    <div class="brand-item"><div class="brand-name">ANUA</div><div class="brand-origin">Seoul, Korea</div></div>
+    <a href="/brands/al-haramain.html" class="brand-item"><div class="brand-name">Al Haramain</div><div class="brand-origin">UAE · KSA</div></a>
+    <a href="/brands/arabiyat-prestige.html" class="brand-item"><div class="brand-name">Arabiyat Prestige</div><div class="brand-origin">Dubai, UAE</div></a>
+    <a href="/brands/armaf.html" class="brand-item"><div class="brand-name">Armaf</div><div class="brand-origin">Dubai, UAE</div></a>
+    <a href="/brands/gulf-orchid.html" class="brand-item"><div class="brand-name">Gulf Orchid</div><div class="brand-origin">Dubai, UAE</div></a>
+    <a href="/brands/lattafa.html" class="brand-item"><div class="brand-name">Lattafa</div><div class="brand-origin">Dubai, UAE</div></a>
+    <a href="/brands/maison-alhambra.html" class="brand-item"><div class="brand-name">Maison Alhambra</div><div class="brand-origin">Dubai, UAE</div></a>
+    <a href="/brands/ministry-of-gourmand.html" class="brand-item"><div class="brand-name">Ministry of Gourmand</div><div class="brand-origin">Dubai, UAE</div></a>
+    <a href="/brands/rasasi.html" class="brand-item"><div class="brand-name">Rasasi</div><div class="brand-origin">Dubai, UAE</div></a>
+    <a href="/brands/swiss-arabian.html" class="brand-item"><div class="brand-name">Swiss Arabian</div><div class="brand-origin">Dubai, UAE</div></a>
+    <a href="/brands/zimaya.html" class="brand-item"><div class="brand-name">Zimaya</div><div class="brand-origin">Dubai, UAE</div></a>
+  </div>
+  <div style="margin-top:2.5rem;margin-bottom:0.8rem">
+    <p style="font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.3);text-align:center;margin-bottom:1.2rem">European Fragrance</p>
+  </div>
+  <div class="brands-grid reveal">
+    <a href="/brands/creed.html" class="brand-item"><div class="brand-name">Creed</div><div class="brand-origin">London, UK</div></a>
+    <a href="/brands/dior.html" class="brand-item"><div class="brand-name">Dior</div><div class="brand-origin">Paris, France</div></a>
+    <a href="/brands/roja-parfums.html" class="brand-item"><div class="brand-name">Roja Parfums</div><div class="brand-origin">London, UK</div></a>
+    <a href="/brands/tom-ford.html" class="brand-item"><div class="brand-name">Tom Ford</div><div class="brand-origin">New York · Milan</div></a>
+    <a href="/brands/ysl.html" class="brand-item"><div class="brand-name">Yves Saint Laurent</div><div class="brand-origin">Paris, France</div></a>
+  </div>
+  <div style="margin-top:2.5rem;margin-bottom:0.8rem">
+    <p style="font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.3);text-align:center;margin-bottom:1.2rem">K-Beauty</p>
+  </div>
+  <div class="brands-grid reveal">
+    <a href="/#featured-beauty" class="brand-item"><div class="brand-name">ANUA</div><div class="brand-origin">Seoul, Korea</div></a>
+    <a href="/#featured-beauty" class="brand-item"><div class="brand-name">Beauty of Joseon</div><div class="brand-origin">Seoul, Korea</div></a>
+    <a href="/#featured-beauty" class="brand-item"><div class="brand-name">COSRX</div><div class="brand-origin">Seoul, Korea</div></a>
   </div>
 </section>
 
