@@ -6,7 +6,7 @@ pagination:
   alias: brand
 permalink: "brands/{{ brand.slug }}.html"
 eleventyComputed:
-  title: "{{ brand.name }} Fragrances — YSP Collective"
+  title: "{{ brand.name }} {% if brand.type === 'beauty' %}Skincare{% else %}Fragrances{% endif %} — YSP Collective"
   description: "{{ brand.tagline }}"
 ---
 
@@ -26,13 +26,15 @@ eleventyComputed:
     inset: 0;
     background-size: cover;
     background-position: center;
-    opacity: 0.45;
+    opacity: 0.65;
     transition: transform 8s ease-out;
   }
   .brand-hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(26,25,22,0.9) 0%, rgba(26,25,22,0.3) 60%, transparent 100%);
+    background:
+      linear-gradient(to right, rgba(26,25,22,0.85) 0%, rgba(26,25,22,0.2) 60%, transparent 100%),
+      linear-gradient(to top, rgba(26,25,22,0.7) 0%, transparent 50%);
   }
   .brand-hero-content {
     position: relative;
@@ -130,6 +132,23 @@ eleventyComputed:
   .brand-story .ysp-take p {
     margin: 0;
     font-style: italic;
+  }
+
+  /* Brand badges (beauty only) */
+  .brand-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  .brand-badge-pill {
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--sand);
+    color: var(--grey);
+    background: var(--cream);
   }
 
   .brand-products-section h2 {
@@ -257,6 +276,13 @@ eleventyComputed:
       <div class="brand-stat-item">
         <span class="brand-stat-num" style="font-size:1.4rem">{{ brand.stat_value }}</span>
         <span class="brand-stat-label">{{ brand.stat_label }}</span>
+      </div>
+      {% endif %}
+      {% if brand.badges and brand.badges.length %}
+      <div class="brand-badges">
+        {% for pill in brand.badges %}
+        <span class="brand-badge-pill">{{ pill }}</span>
+        {% endfor %}
       </div>
       {% endif %}
     </div>
