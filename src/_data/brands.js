@@ -4,6 +4,7 @@ module.exports = [
   {
     slug: "lattafa",
     name: "Lattafa",
+    type: "fragrance",
     origin: "Arabian Fragrance · Dubai, UAE",
     origin_city: "Dubai",
     founded: "2005",
@@ -20,6 +21,7 @@ module.exports = [
   {
     slug: "armaf",
     name: "Armaf",
+    type: "fragrance",
     origin: "Arabian Fragrance · Dubai, UAE",
     origin_city: "Dubai",
     founded: "2014",
@@ -36,6 +38,7 @@ module.exports = [
   {
     slug: "arabiyat-prestige",
     name: "Arabiyat Prestige",
+    type: "fragrance",
     origin: "Arabian Fragrance · Dubai, UAE",
     origin_city: "Dubai",
     founded: "2010",
@@ -52,6 +55,7 @@ module.exports = [
   {
     slug: "swiss-arabian",
     name: "Swiss Arabian",
+    type: "fragrance",
     origin: "Arabian Fragrance · Dubai, UAE",
     origin_city: "Dubai",
     founded: "1974",
@@ -68,6 +72,7 @@ module.exports = [
   {
     slug: "maison-alhambra",
     name: "Maison Alhambra",
+    type: "fragrance",
     origin: "Arabian Fragrance · Dubai, UAE",
     origin_city: "Dubai",
     founded: "2018",
@@ -84,6 +89,7 @@ module.exports = [
   {
     slug: "rasasi",
     name: "Rasasi",
+    type: "fragrance",
     origin: "Arabian Fragrance · Dubai, UAE",
     origin_city: "Dubai",
     founded: "1979",
@@ -100,6 +106,7 @@ module.exports = [
   {
     slug: "al-haramain",
     name: "Al Haramain",
+    type: "fragrance",
     origin: "Arabian Fragrance · UAE / Saudi Arabia",
     origin_city: "UAE · KSA",
     founded: "1970",
@@ -116,6 +123,7 @@ module.exports = [
   {
     slug: "gulf-orchid",
     name: "Gulf Orchid",
+    type: "fragrance",
     origin: "Arabian Fragrance · Dubai, UAE",
     origin_city: "Dubai",
     founded: "1990",
@@ -132,6 +140,7 @@ module.exports = [
   {
     slug: "zimaya",
     name: "Zimaya",
+    type: "fragrance",
     origin: "Arabian Fragrance · Dubai, UAE",
     origin_city: "Dubai",
     founded: "2018",
@@ -148,6 +157,7 @@ module.exports = [
   {
     slug: "ministry-of-gourmand",
     name: "Ministry of Gourmand",
+    type: "fragrance",
     origin: "Arabian Fragrance · Dubai, UAE",
     origin_city: "Dubai",
     founded: "2020",
@@ -166,6 +176,7 @@ module.exports = [
   {
     slug: "creed",
     name: "Creed",
+    type: "fragrance",
     origin: "European Fragrance · London / Paris",
     origin_city: "London · Paris",
     founded: "1760",
@@ -182,6 +193,7 @@ module.exports = [
   {
     slug: "dior",
     name: "Dior",
+    type: "fragrance",
     origin: "European Fragrance · Paris, France",
     origin_city: "Paris",
     founded: "1947",
@@ -198,6 +210,7 @@ module.exports = [
   {
     slug: "roja-parfums",
     name: "Roja Parfums",
+    type: "fragrance",
     origin: "European Fragrance · London, England",
     origin_city: "London",
     founded: "2011",
@@ -214,6 +227,7 @@ module.exports = [
   {
     slug: "tom-ford",
     name: "Tom Ford",
+    type: "fragrance",
     origin: "European Fragrance · New York / London / Milan",
     origin_city: "New York · Milan",
     founded: "2006",
@@ -230,6 +244,7 @@ module.exports = [
   {
     slug: "ysl",
     name: "Yves Saint Laurent",
+    type: "fragrance",
     origin: "European Fragrance · Paris, France",
     origin_city: "Paris",
     founded: "1962",
@@ -241,5 +256,98 @@ module.exports = [
 <p>Today, YSL fragrance is one of the most successful in the world. Black Opium — a coffee-forward gourmand oriental launched in 2014 — has consistently ranked among the best-selling women's fragrances globally. Y and Libre have defined a new generation of YSL fans who discovered the house through social media.</p>
 <p>What unites all YSL fragrances across decades is their fearlessness. These are not safe, inoffensive scents designed to please everyone. They have a point of view, an attitude, a personality. That's what makes them memorable and why they've endured.</p>`,
     ysp_take: "YSL fragrances have attitude. From Black Opium to Libre, they're designed to be noticed and remembered. For customers who want fragrance with genuine personality, YSL consistently delivers."
+  },
+
+  // ── BEAUTY BRANDS ────────────────────────────────────────────────────────
+
+  {
+    slug: "anua",
+    name: "ANUA",
+    type: "beauty",
+    origin: "K-Beauty · Seoul, South Korea",
+    origin_city: "Seoul",
+    founded: "2019",
+    tagline: "Minimal ingredients. Maximum calm.",
+    stat_value: "Heartleaf",
+    stat_label: "Hero Ingredient",
+    badges: ["Vegan", "Cruelty-Free", "Dermatologist Tested"],
+    story_heading: "Skincare stripped back to what actually works.",
+    story: `<p>ANUA was built on a single conviction: that skin performs best when you stop overwhelming it. Founded in 2019 in Seoul, the brand set out to challenge the K-beauty tradition of layering dozens of actives, instead focusing on a handful of rigorously chosen ingredients — led by heartleaf, a plant long used in Korean herbal medicine for its potent anti-inflammatory and sebum-regulating properties.</p>
+<p>The brand's Heartleaf Quercetinol Pore Deep Cleansing Foam became a viral phenomenon almost overnight, and its Heartleaf 77% Soothing Toner followed. ANUA doesn't chase trends — it builds slow, considered routines around formulas that genuinely calm reactive, congested, and sensitive skin.</p>
+<p>Every product is vegan, cruelty-free, and free from the most common irritants. It's a brand that understands restraint is its own kind of sophistication.</p>`,
+    ysp_take: "ANUA is the brand I'd recommend to anyone whose skin is overwhelmed — by products, by stress, by the environment. The heartleaf range is genuinely effective, and the price point makes it easy to commit to a full routine. It was the first K-beauty brand we stocked, and it remains the one I reach for first."
+  },
+
+  {
+    slug: "beauty-of-joseon",
+    name: "Beauty of Joseon",
+    type: "beauty",
+    origin: "K-Beauty · Seoul, South Korea",
+    origin_city: "Seoul",
+    founded: "2019",
+    tagline: "Ancient Korean beauty wisdom, modern formulation.",
+    stat_value: "Hanbang",
+    stat_label: "Signature Ingredient",
+    badges: ["Vegan", "Cruelty-Free", "Heritage Formulas"],
+    story_heading: "Five centuries of Korean skincare, distilled.",
+    story: `<p>Beauty of Joseon takes its name from the Joseon Dynasty — the era of Korean history synonymous with classical beauty rituals, fermented ingredients, and botanical extracts that predate modern cosmetics by centuries. The brand was founded to bridge that heritage with contemporary formulation science, producing products that feel timeless rather than trend-driven.</p>
+<p>Its Relief Sun: Rice + Probiotics SPF50+ became one of the most talked-about sunscreens in K-beauty — genuinely invisible, non-sticky, and suitable for sensitive skin. The Dynasty Cream and Glow Serum followed, each rooted in traditional hanbang (Korean herbal medicine) ingredients like rice, ginseng, and honey.</p>
+<p>Beauty of Joseon occupies a rare space: genuinely premium formulations at accessible prices, with an aesthetic that's both deeply Korean and universally appealing.</p>`,
+    ysp_take: "The Relief Sun alone would be enough reason to stock this brand. It's the sunscreen that converts people who've always hated wearing SPF — lightweight, no white cast, genuinely wearable every day. The rest of the range lives up to the same standard. This is a brand I trust completely."
+  },
+
+  {
+    slug: "dr-althea",
+    name: "Dr. Althea",
+    type: "beauty",
+    origin: "K-Beauty · Seoul, South Korea",
+    origin_city: "Seoul",
+    founded: "2015",
+    tagline: "Clinic-grade skincare without the clinic price.",
+    stat_value: "Derma",
+    stat_label: "Approach",
+    badges: ["Dermatologist Developed", "Clinically Tested"],
+    story_heading: "The gap between skincare and skincare that actually works.",
+    story: `<p>Dr. Althea was founded in 2015 with a clear purpose: to make the kind of results-driven skincare that dermatologists recommend accessible outside the clinic. The brand works directly with Korean dermatologists to develop its formulas, with clinical testing underpinning every product before it reaches market.</p>
+<p>Its focus is on skin barrier repair and targeted treatment — areas where many mainstream brands fall short. The Pro Retinol 1% Cream and the Retinol Rescue Serum have built a loyal following among those looking for genuine anti-aging performance. The brand also produces some of the most effective hydrating toners in the K-beauty category.</p>
+<p>Dr. Althea sits at the intersection of medical credibility and accessible luxury — a positioning that resonates strongly with educated beauty consumers who read ingredient lists before they read brand copy.</p>`,
+    ysp_take: "Dr. Althea is for the customer who's done the research. They know what retinol does, they understand actives, and they want a brand they can trust to formulate correctly. The clinic-adjacent positioning is earned — this isn't marketing language, the products genuinely perform. A smart addition to any serious skincare shelf."
+  },
+
+  {
+    slug: "cosrx",
+    name: "COSRX",
+    type: "beauty",
+    origin: "K-Beauty · Seoul, South Korea",
+    origin_city: "Seoul",
+    founded: "2013",
+    tagline: "Prescription-strength thinking. Everyday skincare prices.",
+    stat_value: "Snail Mucin",
+    stat_label: "Hero Ingredient",
+    badges: ["Cruelty-Free", "Dermatologist Tested", "Amazon #1"],
+    story_heading: "The K-beauty brand that changed how the world thinks about snails.",
+    story: `<p>COSRX — Cosmetics + RX — was founded in 2013 on the idea that skincare should work like a prescription: identify the concern, apply the right ingredient, see results. The brand built its reputation on clean, minimal formulations that let hero ingredients do the work without unnecessary filler.</p>
+<p>The Advanced Snail 96 Mucin Power Essence became one of the most reviewed skincare products on the internet, holding the number one spot on Amazon's ampoule rankings in 2024. Its 96% snail secretion filtrate formula repairs the skin barrier, fades post-acne marks, and delivers deep hydration — in a bottle that costs a fraction of luxury alternatives.</p>
+<p>COSRX's revenue grew 138% year-on-year as global demand for ingredient-led K-beauty exploded. Today it's one of the most recognised skincare brands on the planet, stocked in Nordstrom, Ulta, and across European retail. The cult following is entirely earned.</p>`,
+    ysp_take: "COSRX is the brand people discover when they stop buying marketing and start buying ingredients. The Snail Mucin Essence is one of the few products I'd call genuinely irreplaceable — I've seen it transform congested, post-acne skin in a matter of weeks. It's the gateway drug to serious K-beauty, and once someone tries it, they come back."
+  },
+
+  {
+    slug: "medicube",
+    name: "Medicube",
+    type: "beauty",
+    origin: "K-Beauty · Seoul, South Korea",
+    origin_city: "Seoul",
+    founded: "2014",
+    tagline: "Clinical innovation. Glass skin results.",
+    stat_value: "PDRN",
+    stat_label: "Key Technology",
+    badges: ["Dermatologist Tested", "Clinically Proven", "Cosmopolitan Award 2025"],
+    story_heading: "The brand that brought the Seoul clinic home.",
+    story: `<p>Medicube launched in 2014 with a mission that felt almost too ambitious: deliver dermatologist-grade skin results through products you use at home. Over a decade later, it's done exactly that — becoming Amazon's number one bestselling skincare brand in 2025 and winning Best K-Beauty Brand at the Cosmopolitan Readers' Choice Awards the same year.</p>
+<p>The brand's innovation centres on advanced ingredients like PDRN (polydeoxyribonucleotide) and its proprietary beauty devices, which use electroporation, RF, and EMS technologies to dramatically boost active ingredient absorption. The Zero Pore Pads, Collagen Lifting Mask, and Age-R Booster Pro have all achieved viral status — not through influencer hype alone, but because they deliver visible results fast.</p>
+<p>Hailey Bieber and Kylie Jenner have endorsed the brand on their own channels. The celebrity attention is real, but the science is what keeps customers returning.</p>
+<p><em>Note: not all Medicube products are vegan — some contain hydrolyzed collagen. Check individual product pages for certified vegan options.</em></p>`,
+    ysp_take: "Medicube is where K-beauty meets beauty tech, and the results are hard to argue with. The Collagen Lifting Mask is genuinely one of the most impressive overnight treatments I've tried — the kind of product that makes you do a double-take in the mirror the next morning. If your customer is serious about their skin and willing to invest slightly more, this is the brand to point them towards."
   }
 ];
