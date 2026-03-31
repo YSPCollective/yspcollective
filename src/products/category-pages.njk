@@ -222,19 +222,24 @@ eleventyComputed:
 </div>
 
 <script>
-  // Translate category title based on active language
   (function() {
-    const titles = {
-      "{{ cat.slug }}": {
-        en: "{{ cat.title_en }}",
-        pt: "{{ cat.title_pt }}",
-        es: "{{ cat.title_es }}"
-      }
+    var titles = {
+      en: "{{ cat.title_en }}",
+      pt: "{{ cat.title_pt }}",
+      es: "{{ cat.title_es }}"
     };
-    const lang = localStorage.getItem('ysp_lang') || 'pt';
-    const el = document.querySelector('[data-i18n-cat-title="{{ cat.slug }}"]');
-    if (el && titles["{{ cat.slug }}"][lang]) {
-      el.textContent = titles["{{ cat.slug }}"][lang];
+    function applyTitle() {
+      var lang = (window.YSP_LANG && window.YSP_LANG.get()) ||
+                 (function(){ try { return localStorage.getItem('ysp_lang'); } catch(e){ return null; } })() ||
+                 'en';
+      var el = document.querySelector('.cat-hero-title');
+      if (el && titles[lang]) el.textContent = titles[lang];
+    }
+    // Run after DOM + lang system ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() { setTimeout(applyTitle, 50); });
+    } else {
+      setTimeout(applyTitle, 50);
     }
   })();
 </script>

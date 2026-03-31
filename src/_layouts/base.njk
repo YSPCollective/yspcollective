@@ -419,6 +419,13 @@
       <li><a href="/#faq">FAQ</a></li>
       <li><a href="/#contact">Contact</a></li>
       <li><a href="/#contact" class="mobile-cta">Enquire</a></li>
+      <li id="mobile-lang-switcher">
+        <div style="display:flex;gap:0;border-top:1px solid var(--sand);">
+          <button onclick="window.YSP_LANG&&(window.YSP_LANG.set('en'),updateMobileLang('en'))" id="mlang-en" style="flex:1;padding:0.9rem;background:none;border:none;border-right:1px solid var(--sand);font-family:var(--sans);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;color:var(--grey);transition:color 0.2s,background 0.2s;">EN</button>
+          <button onclick="window.YSP_LANG&&(window.YSP_LANG.set('pt'),updateMobileLang('pt'))" id="mlang-pt" style="flex:1;padding:0.9rem;background:none;border:none;border-right:1px solid var(--sand);font-family:var(--sans);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;color:var(--grey);transition:color 0.2s,background 0.2s;">PT</button>
+          <button onclick="window.YSP_LANG&&(window.YSP_LANG.set('es'),updateMobileLang('es'))" id="mlang-es" style="flex:1;padding:0.9rem;background:none;border:none;font-family:var(--sans);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;color:var(--grey);transition:color 0.2s,background 0.2s;">ES</button>
+        </div>
+      </li>
     </ul>
   </div>
 
@@ -568,6 +575,20 @@
   <script src="/ysp-chat.js"></script>
 
   <script>
+    // ── Mobile language switcher ──
+    function updateMobileLang(active) {
+      ['en','pt','es'].forEach(code => {
+        const btn = document.getElementById('mlang-' + code);
+        if (!btn) return;
+        btn.style.color = code === active ? 'var(--accent)' : 'var(--grey)';
+        btn.style.fontWeight = code === active ? '400' : '300';
+      });
+    }
+    // Init mobile lang highlight on load
+    document.addEventListener('DOMContentLoaded', () => {
+      try { updateMobileLang(localStorage.getItem('ysp_lang') || 'en'); } catch(e) {}
+    });
+
     // ── Announcement bar & nav offset ──
     function adjustNavTop() {
       const bar = document.getElementById('announcement-bar');

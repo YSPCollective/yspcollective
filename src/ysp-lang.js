@@ -14,7 +14,16 @@
   const STORAGE_KEY = 'ysp_lang';
 
   function getLang() {
-    try { return localStorage.getItem(STORAGE_KEY) || 'en'; } catch(e) { return 'en'; }
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) return stored;
+      // First visit — detect browser language
+      const browser = (navigator.language || navigator.userLanguage || 'en').toLowerCase().substring(0, 2);
+      const supported = ['en', 'pt', 'es'];
+      const detected = supported.includes(browser) ? browser : 'en';
+      localStorage.setItem(STORAGE_KEY, detected);
+      return detected;
+    } catch(e) { return 'en'; }
   }
 
   function setLang(code) {
