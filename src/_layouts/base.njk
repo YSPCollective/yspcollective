@@ -618,7 +618,8 @@
         nav.style.top = (bar.style.display === 'none' ? 0 : bar.offsetHeight) + 'px';
       }
     }
-    adjustNavTop();
+   adjustNavTop();
+window.addEventListener('load', adjustNavTop);
 
     // ── Nav scroll ──
     const nav = document.getElementById('main-nav');
