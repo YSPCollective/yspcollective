@@ -692,15 +692,25 @@ window.YSPAccount = (function () {
   // ── Favourite heart button helper ─────────────────────────────────────────
   function initFavouriteButtons() {
     document.querySelectorAll('[data-fav-slug]').forEach(btn => {
-      btn.addEventListener('click', async e => {
+      // Remove any existing listeners by cloning
+      const newBtn = btn.cloneNode(true);
+      btn.parentNode.replaceChild(newBtn, btn);
+      
+      newBtn.addEventListener('click', async e => {
         e.preventDefault();
         e.stopPropagation();
-        const slug = btn.dataset.favSlug;
-        const name = btn.dataset.favName;
-        const price = btn.dataset.favPrice;
-        const image = btn.dataset.favImage;
-        const type = btn.dataset.favType;
-        await toggleFavourite({ slug, name, price, image, type });
+        e.stopImmediatePropagation();
+        const slug = newBtn.dataset.favSlug;
+        const name = newBtn.dataset.favName;
+        const price = newBtn.dataset.favPrice;
+        const image = newBtn.dataset.favImage;
+        const type = newBtn.dataset.favType;
+        const result = await toggleFavourite({ slug, name, price, image, type });
+        if (result) {
+          const added = result.action === 'added';
+          newBtn.textContent = added ? '♥' : '♡';
+          newBtn.classList.toggle('is-favourite', added);
+        }
       });
     });
   }
