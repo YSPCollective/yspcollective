@@ -185,6 +185,21 @@ canonical: "https://yspcollective.com/"
   .btn-submit:hover { background: var(--black); transform: translateY(-1px); }
   .form-status { font-size: 0.82rem; margin-top: 0.5rem; display: none; }
 
+  /* FAVOURITE HEART BUTTON */
+.btn-favourite {
+  position: absolute; top: 0.8rem; right: 0.8rem;
+  width: 34px; height: 34px;
+  background: rgba(255,255,255,0.9);
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; z-index: 2;
+  transition: all 0.2s;
+  color: var(--grey);
+}
+.btn-favourite:hover { background: var(--white); color: var(--accent); }
+.btn-favourite.is-favourite { color: var(--accent); }
+
+
   /* SEARCH RESULT CARDS */
   .search-product-card { text-decoration: none; color: var(--white); display: block; transition: transform 0.3s; }
   .search-product-card:hover { transform: translateY(-3px); }
@@ -334,6 +349,14 @@ canonical: "https://yspcollective.com/"
         {% set badgeText = product.data.custom_badge or product.data.badge %}
         {% if badgeText %}
         <span class="product-badge {{ badgeText | badgeClass }}">{{ badgeText }}</span>
+<button class="btn-favourite"
+      data-fav-slug="{{ product.data.slug }}"
+      data-fav-name="{{ product.data.name }}"
+      data-fav-price="{{ product.data.price }}"
+      data-fav-image="{{ product.data.image_main }}"
+      data-fav-type="{{ 'fragrance' if product.data.concentration else 'beauty' }}"
+      aria-label="Add to favourites"
+      onclick="event.preventDefault()">♡</button>
         {% endif %}
       </div>
       <div class="product-card-cat">{{ product.data.brand }} · {{ product.data.gender }}</div>
@@ -365,6 +388,14 @@ canonical: "https://yspcollective.com/"
         {% set badgeText = product.data.custom_badge or product.data.badge %}
         {% if badgeText %}
         <span class="product-badge {{ badgeText | badgeClass }}">{{ badgeText }}</span>
+<button class="btn-favourite"
+      data-fav-slug="{{ product.data.slug }}"
+      data-fav-name="{{ product.data.name }}"
+      data-fav-price="{{ product.data.price }}"
+      data-fav-image="{{ product.data.image_main }}"
+      data-fav-type="{{ 'fragrance' if product.data.concentration else 'beauty' }}"
+      aria-label="Add to favourites"
+      onclick="event.preventDefault()">♡</button>
         {% endif %}
       </div>
       <div class="product-card-cat">{{ product.data.brand }} · {{ product.data.category }}</div>
