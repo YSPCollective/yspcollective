@@ -64,24 +64,7 @@ canonical: "https://yspcollective.com/"
   .search-results-wrapper::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
   .search-results-grid { display: flex; gap: 1.5rem; width: max-content; }
   .search-results-grid .search-product-card { width: 220px; flex-shrink: 0; }
-  .search-scroll-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-60%);
-    width: 36px;
-    height: 36px;
-    background: var(--white);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: var(--black);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    z-index: 2;
-    transition: background 0.2s, opacity 0.2s;
-    opacity: 0.9;
-  }
+  .search-scroll-btn { position: absolute; top: 50%; transform: translateY(-60%); width: 36px; height: 36px; background: var(--white); border: 1px solid rgba(255,255,255,0.2); color: var(--black); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1rem; z-index: 2; transition: background 0.2s, opacity 0.2s; opacity: 0.9; }
   .search-scroll-btn:hover { background: var(--accent); color: var(--white); opacity: 1; }
   .search-scroll-btn.scroll-prev { left: 0; }
   .search-scroll-btn.scroll-next { right: 0; }
@@ -95,7 +78,7 @@ canonical: "https://yspcollective.com/"
   .featured-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
   .products-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.8rem; }
 
-  /* PRODUCT CARD IMAGES — fixes oversized images */
+  /* PRODUCT CARDS */
   .product-card { text-decoration: none; color: inherit; display: block; position: relative; transition: transform 0.4s ease; }
   .product-card:hover { transform: translateY(-4px); }
   .product-card-image { aspect-ratio: 3/4; background: var(--cream); overflow: hidden; position: relative; margin-bottom: 1.2rem; }
@@ -111,6 +94,22 @@ canonical: "https://yspcollective.com/"
   .product-card-rrp { font-size: 0.78rem; color: var(--grey-light); text-decoration: line-through; margin-left: 0.4rem; }
   .featured-link { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); text-decoration: none; }
   .featured-link:hover { opacity: 0.7; }
+
+  /* FAVOURITE HEART BUTTON */
+  .btn-favourite {
+    position: absolute; bottom: 0.8rem; right: 0.8rem;
+    width: 44px; height: 44px;
+    background: var(--white);
+    border: 1px solid var(--sand);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; z-index: 10;
+    transition: all 0.2s;
+    color: var(--grey-light);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .btn-favourite:hover { color: var(--accent); border-color: var(--accent); transform: scale(1.08); }
+  .btn-favourite.is-favourite { color: var(--accent); border-color: var(--accent); }
 
   /* PHILOSOPHY */
   #philosophy { padding: 7rem 3.5rem; background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
@@ -184,21 +183,6 @@ canonical: "https://yspcollective.com/"
   .btn-submit { margin-top: 0.5rem; padding: 0.9rem 2.2rem; background: var(--accent); color: var(--white); border: none; font-family: var(--sans); font-size: 0.72rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; align-self: flex-start; transition: background 0.25s, transform 0.25s; }
   .btn-submit:hover { background: var(--black); transform: translateY(-1px); }
   .form-status { font-size: 0.82rem; margin-top: 0.5rem; display: none; }
-
-  /* FAVOURITE HEART BUTTON */
-.btn-favourite {
-  position: absolute; top: 0.8rem; right: 0.8rem;
-  width: 34px; height: 34px;
-  background: rgba(255,255,255,0.9);
-  border: none; cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1rem; z-index: 2;
-  transition: all 0.2s;
-  color: var(--grey);
-}
-.btn-favourite:hover { background: var(--white); color: var(--accent); }
-.btn-favourite.is-favourite { color: var(--accent); }
-
 
   /* SEARCH RESULT CARDS */
   .search-product-card { text-decoration: none; color: var(--white); display: block; transition: transform 0.3s; }
@@ -350,13 +334,13 @@ canonical: "https://yspcollective.com/"
         {% if badgeText %}
         <span class="product-badge {{ badgeText | badgeClass }}">{{ badgeText }}</span>
         {% endif %}
-<button class="btn-favourite"
+        <button class="btn-favourite"
           data-fav-slug="{{ product.data.slug }}"
           data-fav-name="{{ product.data.name }}"
           data-fav-price="{{ product.data.price }}"
           data-fav-image="{{ product.data.image_main }}"
           data-fav-type="fragrance"
-          aria-label="Save to favourites">♡</button>
+          aria-label="Save to favourites">&#9825;</button>
       </div>
       <div class="product-card-cat">{{ product.data.brand }} · {{ product.data.gender }}</div>
       <div class="product-card-name">{{ product.data.name }}</div>
@@ -388,13 +372,13 @@ canonical: "https://yspcollective.com/"
         {% if badgeText %}
         <span class="product-badge {{ badgeText | badgeClass }}">{{ badgeText }}</span>
         {% endif %}
-<button class="btn-favourite"
+        <button class="btn-favourite"
           data-fav-slug="{{ product.data.slug }}"
           data-fav-name="{{ product.data.name }}"
           data-fav-price="{{ product.data.price }}"
           data-fav-image="{{ product.data.image_main }}"
           data-fav-type="beauty"
-          aria-label="Save to favourites">♡</button>
+          aria-label="Save to favourites">&#9825;</button>
       </div>
       <div class="product-card-cat">{{ product.data.brand }} · {{ product.data.category }}</div>
       <div class="product-card-name">{{ product.data.name }}</div>
@@ -468,7 +452,7 @@ canonical: "https://yspcollective.com/"
     <h2 class="section-title" style="color:var(--white);margin-bottom:0.5rem" data-i18n="brands_title">Carefully selected partners</h2>
     <p style="font-size:0.9rem;color:rgba(255,255,255,0.4);max-width:480px;margin:0 auto" data-i18n="brands_desc">Sourced through authorised EU distribution channels. Every product guaranteed authentic.</p>
   </div>
-  <div style="margin-top:2rem;margin-bottom:0.8rem;reveal">
+  <div style="margin-top:2rem;margin-bottom:0.8rem">
     <p style="font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.3);text-align:center;margin-bottom:1.2rem">Arabian Fragrance</p>
   </div>
   <div class="brands-grid reveal">
@@ -721,6 +705,4 @@ const ALL_PRODUCTS = {{ collections.allProducts | jsonify | safe }};
   if (searchPrev) searchPrev.addEventListener('click', () => { searchWrapper.scrollBy({ left: -260, behavior: 'smooth' }); });
   if (searchNext) searchNext.addEventListener('click', () => { searchWrapper.scrollBy({ left: 260, behavior: 'smooth' }); });
   if (searchWrapper) searchWrapper.addEventListener('scroll', updateSearchArrows, { passive: true });
-
-  /* Arrows update on scroll event */
 </script>
