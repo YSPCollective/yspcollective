@@ -113,7 +113,7 @@ window.YSPAccount = (function () {
   function updateNavState() {
     const user = getUser();
     const accountLinks = document.querySelectorAll('.ysp-account-link');
-    const loginButtons = document.querySelectorAll('.ysp-login-btn');
+    const loginButtons = document.querySelectorAll('.ysp-login-btn, [data-action="login"]');
     const accountNameEls = document.querySelectorAll('.ysp-account-name');
 
     if (user) {

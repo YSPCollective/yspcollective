@@ -483,7 +483,7 @@
         renderAccount(cachedUser);
         document.getElementById('account-loading').style.display = 'none';
         document.getElementById('account-app').classList.add('ready');
-        await Promise.all([loadFavourites(), loadRecommendations(cachedUser)]);
+        await Promise.all([loadFavourites(), loadRecommendations(cachedUser), loadFullProfile(cachedUser)]);
       }
 
       // Verify session in background — redirect if invalid
@@ -498,7 +498,7 @@
       if (!cachedUser) {
         currentUser = verified;
         renderAccount(verified);
-        await Promise.all([loadFavourites(), loadRecommendations(verified)]);
+        await Promise.all([loadFavourites(), loadRecommendations(verified), loadFullProfile(verified)]);
         document.getElementById('account-loading').style.display = 'none';
         document.getElementById('account-app').classList.add('ready');
       }
@@ -613,7 +613,7 @@
     function addAIMessage(role, text) {
       const el = document.createElement('div');
       el.className = `acc-ai-msg ${role}`;
-      el.textContent = text;
+      el.textContent = text.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\*([^*]+)\*/g, '$1').trim();
       document.getElementById('acc-ai-messages').appendChild(el);
       el.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }
@@ -644,7 +644,17 @@
       if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendChatMessage(); }
     });
 
-    // ── Favourites ────────────────────────────────────────────────────────────
+    // ── Full Profile ─────────────────────────────────────────────────────────
+    async function loadFullProfile(user) {
+      if (!user.profileComplete) return;
+      const data = await YSPAccount.getProfile();
+      if (data.error) return;
+      const enriched = { ...user, ...data };
+      document.getElementById('prf-interests').textContent = enriched.interests || '—';
+      renderPrefDetails(enriched);
+    }
+
+        // ── Favourites ────────────────────────────────────────────────────────────
     async function loadFavourites() {
       const data = await YSPAccount.getFavourites();
       const favs = data.favourites || [];
