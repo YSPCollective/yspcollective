@@ -374,49 +374,56 @@ permalink: /account.html
     .recs-product-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1.2rem; margin-bottom: 2.5rem;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
     }
     .recs-product-card {
-      border: 1px solid var(--sand); background: var(--white);
+      border: 1px solid var(--sand);
+      background: var(--white);
+      text-decoration: none;
+      color: inherit;
+      display: block;
       transition: box-shadow 0.2s, transform 0.2s;
-      text-decoration: none; color: inherit;
-      display: flex; flex-direction: column;
     }
     .recs-product-card:hover {
       box-shadow: 0 6px 24px rgba(0,0,0,0.08);
       transform: translateY(-2px);
     }
+    .recs-product-brand-top {
+      display: block;
+      font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--accent); padding: 0.7rem 0.8rem 0; line-height: 1;
+    }
     .recs-product-img {
+      display: block;
       width: 100%; aspect-ratio: 1;
       background: var(--cream); overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
+      position: relative;
     }
     .recs-product-img img {
-      width: 100%; height: 100%; object-fit: contain;
-      padding: 1rem; transition: transform 0.3s;
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: contain; padding: 0.8rem;
+      transition: transform 0.3s;
     }
     .recs-product-card:hover .recs-product-img img { transform: scale(1.04); }
-    .recs-product-info {
-      padding: 0.8rem 0.9rem 0.6rem;
-      flex: 1; display: flex; flex-direction: column; gap: 0.2rem;
-    }
-    .recs-product-brand {
-      font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--accent);
-    }
     .recs-product-name {
-      font-size: 0.82rem; font-weight: 400; line-height: 1.3;
-      color: var(--black); flex: 1;
+      display: block;
+      font-size: 0.82rem; font-weight: 400; line-height: 1.35;
+      color: var(--black); padding: 0.5rem 0.8rem 0.3rem;
     }
-    .recs-product-price { font-size: 0.82rem; color: var(--grey); margin-top: 0.2rem; }
+    .recs-product-price {
+      display: block;
+      font-size: 0.8rem; color: var(--grey);
+      padding: 0 0.8rem 0.7rem;
+    }
     .recs-product-cta {
       display: block; width: 100%; padding: 0.55rem;
       border: none; border-top: 1px solid var(--sand);
       background: none; cursor: pointer; font-family: var(--sans);
       font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
       color: var(--grey); text-align: center;
-      transition: all 0.2s; text-decoration: none; flex-shrink: 0;
+      transition: all 0.2s; text-decoration: none;
     }
     .recs-product-cta:hover { background: var(--accent); color: var(--white); border-color: var(--accent); }
 
@@ -424,8 +431,7 @@ permalink: /account.html
       .recs-product-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 480px) {
-      .recs-product-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
-      .recs-product-name { font-size: 0.78rem; }
+      .recs-product-grid { grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
     }
 
     /* ── CHAT SECTION ── */
@@ -784,18 +790,16 @@ permalink: /account.html
         card.className = 'recs-product-card';
         card.href = url;
         card.innerHTML = `
+          <span class="recs-product-brand-top">${p.brand || ''}</span>
           <div class="recs-product-img">
             ${image
               ? `<img src="${image}" alt="${p.name}" loading="lazy"
-                  onerror="this.style.display='none';this.parentElement.innerHTML='<span style=font-size:2rem>🧴</span>'>`
-              : '<span style="font-size:2rem">🧴</span>'
+                  onerror="this.style.display='none';this.parentElement.innerHTML='<span style=font-size:2.5rem;display:flex;align-items:center;justify-content:center;height:100%>🧴</span>'>`
+              : '<span style="font-size:2.5rem;display:flex;align-items:center;justify-content:center;height:100%">🧴</span>'
             }
           </div>
-          <div class="recs-product-info">
-            <p class="recs-product-brand">${p.brand || ''}</p>
-            <p class="recs-product-name">${p.name}</p>
-            <p class="recs-product-price">${price}</p>
-          </div>
+          <span class="recs-product-name">${p.name}</span>
+          <span class="recs-product-price">${price}</span>
           <span class="recs-product-cta">View Product →</span>
         `;
         grid.appendChild(card);
