@@ -95,23 +95,20 @@ permalink: "products/{{ product.slug }}.html"
 
   /* Favourite button — product page version */
   .btn-fav-pdp {
-    padding: 0.9rem 1.8rem;
+    width: 54px; height: 54px;
     background: var(--cream);
     border: 1px solid var(--sand);
     cursor: pointer;
-    font-family: var(--sans);
-    font-size: 1rem;
-    color: var(--grey);
+    font-size: 1.6rem;
+    color: var(--grey-light);
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
+    justify-content: center;
     transition: all 0.2s;
-    white-space: nowrap;
+    flex-shrink: 0;
   }
   .btn-fav-pdp:hover { border-color: var(--accent); color: var(--accent); background: var(--white); }
   .btn-fav-pdp.is-favourite { color: var(--accent); border-color: var(--accent); background: var(--white); }
-  .btn-fav-pdp .fav-heart { font-size: 1.2rem; }
-  .btn-fav-pdp .fav-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; }
 
   .trust-badges { display: flex; gap: 1.5rem; flex-wrap: wrap; padding: 1.2rem 0; border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); margin-bottom: 2rem; }
   .trust-badge { font-size: 0.72rem; color: var(--grey); display: flex; align-items: center; gap: 0.4rem; }
@@ -267,8 +264,7 @@ permalink: "products/{{ product.slug }}.html"
         data-fav-type="{{ 'fragrance' if product.concentration else 'beauty' }}"
         aria-label="Save to favourites"
         id="btn-fav-pdp">
-        <span class="fav-heart">♡</span>
-        <span class="fav-label">Favourite</span>
+        ♡
       </button>
     </div>
 
@@ -522,8 +518,7 @@ permalink: "products/{{ product.slug }}.html"
         const isFav = (data.favourites || []).some(f => f.slug === favBtn.dataset.favSlug);
         if (isFav) {
           favBtn.classList.add('is-favourite');
-          favBtn.querySelector('.fav-heart').textContent = '♥';
-          favBtn.querySelector('.fav-label').textContent = 'Saved';
+          favBtn.textContent = '♥';
         }
       });
     }
@@ -545,8 +540,7 @@ permalink: "products/{{ product.slug }}.html"
       if (result) {
         const added = result.action === 'added';
         favBtn.classList.toggle('is-favourite', added);
-        favBtn.querySelector('.fav-heart').textContent = added ? '♥' : '♡';
-        favBtn.querySelector('.fav-label').textContent = added ? 'Saved' : 'Favourite';
+        favBtn.textContent = added ? '♥' : '♡';
       }
     });
   });
