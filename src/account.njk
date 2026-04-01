@@ -793,19 +793,17 @@ permalink: /account.html
         const card = document.createElement('a');
         card.className = 'recs-product-card';
         card.href = url;
-        card.innerHTML = `
-          <span class="recs-product-brand-top">${p.brand || ''}</span>
-          <div class="recs-product-img">
-            ${image
-              ? `<img src="${image}" alt="${p.name}" loading="lazy"
-                  onerror="this.style.display='none';this.parentElement.innerHTML='<span style=font-size:2.5rem;display:flex;align-items:center;justify-content:center;height:100%>🧴</span>'>`
-              : '<span style="font-size:2.5rem;display:flex;align-items:center;justify-content:center;height:100%">🧴</span>'
-            }
-          </div>
-          <span class="recs-product-name">${p.name}</span>
-          <span class="recs-product-price">${price}</span>
-          <span class="recs-product-cta">View Product →</span>
-        `;
+       card.innerHTML = `
+  <div class="recs-product-img">
+    ${image ? `<img src="${image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">` : ''}
+  </div>
+  <div class="recs-product-info">
+    <span class="recs-product-brand-top">${p.brand || ''}</span>
+    <span class="recs-product-name">${p.name}</span>
+    <span class="recs-product-price">${price}</span>
+  </div>
+  <span class="recs-product-cta">View Product →</span>
+`;
         grid.appendChild(card);
       });
     }
