@@ -1,3 +1,7 @@
+---
+layout: null
+permalink: /account.html
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -678,18 +682,7 @@
 
     // ── Recommendations ───────────────────────────────────────────────────────
     // Product catalogue for card rendering (matches worker)
-    const PRODUCT_CATALOGUE = [
-      { slug: 'lattafa-yara-100ml', name: 'Lattafa Yara 100ml', brand: 'Lattafa', price: '€19.55', image: '/products/lattafa/yara/1-78.jpeg', type: 'fragrance', accords: ['vanilla','floral','fruity','gourmand','musk'] },
-      { slug: 'lattafa-edp-khamrah-qahwa-unisex-perfume-100ml', name: 'Lattafa Khamrah Qahwa 100ml', brand: 'Lattafa', price: '€34', image: '/images/uploads/fakhar-lattafa-platin-copy-2-scaled.jpg', type: 'fragrance', accords: ['coffee','oriental','amber','spicy','smoky'] },
-      { slug: 'lattafa-khamrah-eau-de-parfum-100ml-unisex-fragrance', name: 'Lattafa Khamrah 100ml', brand: 'Lattafa', price: '€34', image: '/products/lattafa/khamrah/1-60.jpeg', type: 'fragrance', accords: ['spicy','gourmand','amber','woody','vanilla','resinous'] },
-      { slug: 'armaf-club-de-nuit-intense-105ml', name: 'Armaf Club de Nuit Intense 105ml', brand: 'Armaf', price: '€29.55', image: '/products/armaf/club-de-nuit-intense-man/club-de-nuit-image-1.jpeg', type: 'fragrance', accords: ['woody','spicy','citrus','fruity','smoky'] },
-      { slug: 'arabiyat-prestige-nyla-80ml-eau-de-parfum-unisex-perfume', name: 'Arabiyat Prestige Nyla 80ml', brand: 'Arabiyat Prestige', price: '€28.95', image: '/products/arabiyat-prestige-nyla/arabiyat-1.jpeg', type: 'fragrance', accords: ['floral','fruity','coconut','musk','tropical'] },
-      { slug: 'creed-aventus-eau-de-parfum', name: 'Creed Aventus 100ml', brand: 'Creed', price: '€310', image: '/images/uploads/12852836-4705318355680121.webp', type: 'fragrance', accords: ['fruity','woody','smoky','citrus','musky'] },
-      { slug: 'beauty-of-joseon-relief-sun-spf50', name: 'Beauty of Joseon Relief Sun SPF50+', brand: 'Beauty of Joseon', price: '€16', image: '/images/uploads/b0f8v55pxx.pt01.jpg', type: 'beauty' },
-      { slug: 'anua-pdrn-hyaluronic-acid-capsule-100-serum', name: 'Anua PDRN Serum', brand: 'ANUA', price: '€27.50', image: '/images/uploads/1110030-2.jpg', type: 'beauty' },
-      { slug: 'anua-heartleaf-control-cleansing-oil', name: 'Anua Heartleaf Cleansing Oil', brand: 'ANUA', price: '€18.30', image: '/images/uploads/1110030-3.jpg', type: 'beauty' },
-      { slug: 'heartleaf-70-intense-calming-cream', name: 'Anua Heartleaf Calming Cream', brand: 'ANUA', price: '€26', image: '/images/uploads/1110096.jpg', type: 'beauty' },
-    ];
+    const PRODUCT_CATALOGUE = {{ collections.allProducts | jsonify }};
 
     async function loadRecommendations(user) {
       if (!user.profileComplete) {
@@ -730,15 +723,16 @@
       const introEl = document.getElementById('recs-frag-intro');
       introEl.textContent = reply;
 
-      // Show matched products
+      // Score fragrance products by accord match against user scent prefs
       const scents = fp.scents || [];
       const products = PRODUCT_CATALOGUE.filter(p => p.type === 'fragrance');
-      // Score by accord match
-      const scored = products.map(p => ({
-        ...p,
-        score: (p.accords || []).filter(a => scents.some(s => a.includes(s.split('-')[0]))).length
-      })).sort((a, b) => b.score - a.score).slice(0, 3);
-      
+      const scored = products.map(p => {
+        const accords = p.accords || [];
+        const score = accords.filter(a =>
+          scents.some(s => a.toLowerCase().includes(s.replace('-',' ').split(' ')[0]))
+        ).length;
+        return { ...p, score };
+      }).sort((a, b) => b.score - a.score);
       renderProductCards('recs-frag-grid', scored);
     }
 
@@ -750,27 +744,33 @@
       const introEl = document.getElementById('recs-beauty-intro');
       introEl.textContent = reply;
 
-      // Show all beauty products (small range)
-      const products = PRODUCT_CATALOGUE.filter(p => p.type === 'beauty');
-      renderProductCards('recs-beauty-grid', products);
+      const beautyProducts = PRODUCT_CATALOGUE.filter(p => p.type === 'beauty');
+      renderProductCards('recs-beauty-grid', beautyProducts);
     }
 
     function renderProductCards(gridId, products) {
       const grid = document.getElementById(gridId);
       grid.innerHTML = '';
-      products.forEach(p => {
+      products.slice(0, 4).forEach(p => {
+        // Support both allProducts format (image_main, price as number) and legacy
+        const image = p.image_main || p.image || '';
+        const price = p.price ? (String(p.price).startsWith('€') ? p.price : '€' + p.price) : '';
+        const url = p.url || ('/products/' + p.slug + '.html');
         const card = document.createElement('a');
         card.className = 'recs-product-card';
-        card.href = `/products/${p.slug}.html`;
+        card.href = url;
         card.innerHTML = `
           <div class="recs-product-img">
-            <img src="${p.image}" alt="${p.name}" loading="lazy"
-              onerror="this.style.display='none';this.parentElement.innerHTML='<span style=font-size:2rem>🧴</span>'">
+            ${image
+              ? `<img src="${image}" alt="${p.name}" loading="lazy"
+                  onerror="this.style.display='none';this.parentElement.innerHTML='<span style=font-size:2rem>🧴</span>'>`
+              : '<span style="font-size:2rem">🧴</span>'
+            }
           </div>
           <div class="recs-product-info">
-            <p class="recs-product-brand">${p.brand}</p>
+            <p class="recs-product-brand">${p.brand || ''}</p>
             <p class="recs-product-name">${p.name}</p>
-            <p class="recs-product-price">${p.price}</p>
+            <p class="recs-product-price">${price}</p>
           </div>
           <span class="recs-product-cta">View Product →</span>
         `;
