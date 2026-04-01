@@ -349,15 +349,14 @@ canonical: "https://yspcollective.com/"
         {% set badgeText = product.data.custom_badge or product.data.badge %}
         {% if badgeText %}
         <span class="product-badge {{ badgeText | badgeClass }}">{{ badgeText }}</span>
-<button class="btn-favourite"
-      data-fav-slug="{{ product.data.slug }}"
-      data-fav-name="{{ product.data.name }}"
-      data-fav-price="{{ product.data.price }}"
-      data-fav-image="{{ product.data.image_main }}"
-      data-fav-type="{{ 'fragrance' if product.data.concentration else 'beauty' }}"
-      aria-label="Add to favourites"
-      onclick="event.preventDefault()">♡</button>
         {% endif %}
+<button class="btn-favourite"
+          data-fav-slug="{{ product.data.slug }}"
+          data-fav-name="{{ product.data.name }}"
+          data-fav-price="{{ product.data.price }}"
+          data-fav-image="{{ product.data.image_main }}"
+          data-fav-type="fragrance"
+          aria-label="Save to favourites">♡</button>
       </div>
       <div class="product-card-cat">{{ product.data.brand }} · {{ product.data.gender }}</div>
       <div class="product-card-name">{{ product.data.name }}</div>
@@ -388,15 +387,14 @@ canonical: "https://yspcollective.com/"
         {% set badgeText = product.data.custom_badge or product.data.badge %}
         {% if badgeText %}
         <span class="product-badge {{ badgeText | badgeClass }}">{{ badgeText }}</span>
-<button class="btn-favourite"
-      data-fav-slug="{{ product.data.slug }}"
-      data-fav-name="{{ product.data.name }}"
-      data-fav-price="{{ product.data.price }}"
-      data-fav-image="{{ product.data.image_main }}"
-      data-fav-type="{{ 'fragrance' if product.data.concentration else 'beauty' }}"
-      aria-label="Add to favourites"
-      onclick="event.preventDefault()">♡</button>
         {% endif %}
+<button class="btn-favourite"
+          data-fav-slug="{{ product.data.slug }}"
+          data-fav-name="{{ product.data.name }}"
+          data-fav-price="{{ product.data.price }}"
+          data-fav-image="{{ product.data.image_main }}"
+          data-fav-type="beauty"
+          aria-label="Save to favourites">♡</button>
       </div>
       <div class="product-card-cat">{{ product.data.brand }} · {{ product.data.category }}</div>
       <div class="product-card-name">{{ product.data.name }}</div>
