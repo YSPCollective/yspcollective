@@ -682,7 +682,7 @@ permalink: /account.html
 
     // ── Recommendations ───────────────────────────────────────────────────────
     // Product catalogue for card rendering (matches worker)
-    const PRODUCT_CATALOGUE = {{ collections.allProducts | jsonify }};
+    const PRODUCT_CATALOGUE = {{ collections.allProducts | jsonify | safe }};
 
     async function loadRecommendations(user) {
       if (!user.profileComplete) {
