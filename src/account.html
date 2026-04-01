@@ -325,6 +325,99 @@
       .acc-topbar-actions { gap: 1rem; }
       .acc-topbar-actions a { display: none; }
     }
+
+    /* ── RECS SUB-TABS ── */
+    .recs-subtabs {
+      display: flex; gap: 0; border-bottom: 1px solid var(--sand);
+      margin-bottom: 2rem;
+    }
+    .recs-subtab {
+      background: none; border: none; border-bottom: 2px solid transparent;
+      cursor: pointer; font-family: var(--sans);
+      font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--grey); padding: 0.8rem 1.8rem;
+      margin-bottom: -1px; transition: all 0.2s;
+    }
+    .recs-subtab:hover { color: var(--black); }
+    .recs-subtab.active { color: var(--black); border-bottom-color: var(--accent); }
+
+    .recs-section { display: none; }
+    .recs-section.active { display: block; }
+
+    /* ── AI INTRO BLOCK ── */
+    .recs-ai-intro {
+      background: var(--cream); border-left: 2px solid var(--accent);
+      padding: 1.2rem 1.5rem; margin-bottom: 2rem;
+      font-size: 0.9rem; line-height: 1.8; color: var(--black);
+      min-height: 60px;
+    }
+    .recs-ai-thinking {
+      display: flex; gap: 5px; align-items: center; padding: 0.3rem 0;
+    }
+    .recs-ai-thinking span {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); opacity: 0.4;
+      animation: recsPulse 1.2s ease-in-out infinite;
+    }
+    .recs-ai-thinking span:nth-child(2) { animation-delay: 0.2s; }
+    .recs-ai-thinking span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes recsPulse {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+
+    /* ── PRODUCT GRID ── */
+    .recs-product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.2rem; margin-bottom: 3rem;
+    }
+    .recs-product-card {
+      border: 1px solid var(--sand); background: var(--white);
+      transition: box-shadow 0.2s, transform 0.2s;
+      text-decoration: none; color: inherit; display: block;
+    }
+    .recs-product-card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+    .recs-product-img {
+      width: 100%; aspect-ratio: 1;
+      background: var(--cream); overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .recs-product-img img {
+      width: 100%; height: 100%; object-fit: contain;
+      padding: 1rem; transition: transform 0.3s;
+    }
+    .recs-product-card:hover .recs-product-img img { transform: scale(1.04); }
+    .recs-product-info { padding: 0.9rem 1rem 1rem; }
+    .recs-product-brand {
+      font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 0.3rem;
+    }
+    .recs-product-name { font-size: 0.85rem; font-weight: 400; margin-bottom: 0.4rem; line-height: 1.3; }
+    .recs-product-price { font-size: 0.82rem; color: var(--grey); }
+    .recs-product-cta {
+      display: block; width: 100%; padding: 0.6rem;
+      border: none; border-top: 1px solid var(--sand);
+      background: none; cursor: pointer; font-family: var(--sans);
+      font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--grey); text-align: center;
+      transition: all 0.2s; text-decoration: none;
+    }
+    .recs-product-cta:hover { background: var(--accent); color: var(--white); border-color: var(--accent); }
+
+    /* ── CHAT SECTION ── */
+    .recs-chat-wrap { margin-top: 1rem; }
+    .recs-chat-label {
+      font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .recs-product-grid { grid-template-columns: repeat(2, 1fr); }
+    }
   </style>
 </head>
 <body>
@@ -374,8 +467,8 @@
 
       <!-- Recommendations Panel -->
       <div class="acc-panel active" id="panel-recommendations">
-        <p class="acc-section-label">Personalised for you</p>
 
+        <!-- No profile state -->
         <div id="recs-no-profile" style="display:none">
           <div class="acc-recs-intro">
             <div class="acc-recs-icon">✦</div>
@@ -387,16 +480,45 @@
           </div>
         </div>
 
+        <!-- Recommendations area -->
         <div id="recs-chat-area">
-          <div class="acc-ai-chat-box">
-            <div class="acc-ai-messages" id="acc-ai-messages"></div>
-            <div class="acc-ai-thinking" id="acc-ai-thinking">Thinking…</div>
-            <div class="acc-ai-input-row">
-              <input type="text" class="acc-ai-input" id="acc-ai-input"
-                placeholder="Ask anything — fragrances, skincare, recommendations…">
-              <button class="acc-ai-send" id="acc-ai-send">Send</button>
+
+          <!-- Fragrance / Beauty sub-tabs -->
+          <div class="recs-subtabs" id="recs-subtabs">
+            <button class="recs-subtab active" data-rec="fragrance" id="subtab-fragrance">Fragrance</button>
+            <button class="recs-subtab" data-rec="beauty" id="subtab-beauty">Beauty</button>
+          </div>
+
+          <!-- Fragrance recommendations -->
+          <div class="recs-section active" id="recs-fragrance">
+            <div class="recs-ai-intro" id="recs-frag-intro">
+              <div class="recs-ai-thinking"><span></span><span></span><span></span></div>
+            </div>
+            <div class="recs-product-grid" id="recs-frag-grid"></div>
+          </div>
+
+          <!-- Beauty recommendations -->
+          <div class="recs-section" id="recs-beauty">
+            <div class="recs-ai-intro" id="recs-beauty-intro">
+              <div class="recs-ai-thinking"><span></span><span></span><span></span></div>
+            </div>
+            <div class="recs-product-grid" id="recs-beauty-grid"></div>
+          </div>
+
+          <!-- Chat -->
+          <div class="recs-chat-wrap">
+            <p class="recs-chat-label">Ask our advisor anything</p>
+            <div class="acc-ai-chat-box">
+              <div class="acc-ai-messages" id="acc-ai-messages"></div>
+              <div class="acc-ai-thinking" id="acc-ai-thinking">Thinking…</div>
+              <div class="acc-ai-input-row">
+                <input type="text" class="acc-ai-input" id="acc-ai-input"
+                  placeholder="Ask about a specific scent, ingredient, occasion…">
+                <button class="acc-ai-send" id="acc-ai-send">Send</button>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
 
@@ -554,43 +676,119 @@
       }
     }
 
-    // ── Recommendations / Chat ────────────────────────────────────────────────
-    async function loadRecommendations(user) {
-      const messagesEl = document.getElementById('acc-ai-messages');
+    // ── Recommendations ───────────────────────────────────────────────────────
+    // Product catalogue for card rendering (matches worker)
+    const PRODUCT_CATALOGUE = [
+      { slug: 'lattafa-yara-100ml', name: 'Lattafa Yara 100ml', brand: 'Lattafa', price: '€19.55', image: '/products/lattafa/yara/1-78.jpeg', type: 'fragrance', accords: ['vanilla','floral','fruity','gourmand','musk'] },
+      { slug: 'lattafa-edp-khamrah-qahwa-unisex-perfume-100ml', name: 'Lattafa Khamrah Qahwa 100ml', brand: 'Lattafa', price: '€34', image: '/images/uploads/fakhar-lattafa-platin-copy-2-scaled.jpg', type: 'fragrance', accords: ['coffee','oriental','amber','spicy','smoky'] },
+      { slug: 'lattafa-khamrah-eau-de-parfum-100ml-unisex-fragrance', name: 'Lattafa Khamrah 100ml', brand: 'Lattafa', price: '€34', image: '/products/lattafa/khamrah/1-60.jpeg', type: 'fragrance', accords: ['spicy','gourmand','amber','woody','vanilla','resinous'] },
+      { slug: 'armaf-club-de-nuit-intense-105ml', name: 'Armaf Club de Nuit Intense 105ml', brand: 'Armaf', price: '€29.55', image: '/products/armaf/club-de-nuit-intense-man/club-de-nuit-image-1.jpeg', type: 'fragrance', accords: ['woody','spicy','citrus','fruity','smoky'] },
+      { slug: 'arabiyat-prestige-nyla-80ml-eau-de-parfum-unisex-perfume', name: 'Arabiyat Prestige Nyla 80ml', brand: 'Arabiyat Prestige', price: '€28.95', image: '/products/arabiyat-prestige-nyla/arabiyat-1.jpeg', type: 'fragrance', accords: ['floral','fruity','coconut','musk','tropical'] },
+      { slug: 'creed-aventus-eau-de-parfum', name: 'Creed Aventus 100ml', brand: 'Creed', price: '€310', image: '/images/uploads/12852836-4705318355680121.webp', type: 'fragrance', accords: ['fruity','woody','smoky','citrus','musky'] },
+      { slug: 'beauty-of-joseon-relief-sun-spf50', name: 'Beauty of Joseon Relief Sun SPF50+', brand: 'Beauty of Joseon', price: '€16', image: '/images/uploads/b0f8v55pxx.pt01.jpg', type: 'beauty' },
+      { slug: 'anua-pdrn-hyaluronic-acid-capsule-100-serum', name: 'Anua PDRN Serum', brand: 'ANUA', price: '€27.50', image: '/images/uploads/1110030-2.jpg', type: 'beauty' },
+      { slug: 'anua-heartleaf-control-cleansing-oil', name: 'Anua Heartleaf Cleansing Oil', brand: 'ANUA', price: '€18.30', image: '/images/uploads/1110030-3.jpg', type: 'beauty' },
+      { slug: 'heartleaf-70-intense-calming-cream', name: 'Anua Heartleaf Calming Cream', brand: 'ANUA', price: '€26', image: '/images/uploads/1110096.jpg', type: 'beauty' },
+    ];
 
+    async function loadRecommendations(user) {
       if (!user.profileComplete) {
         document.getElementById('recs-no-profile').style.display = 'block';
         document.getElementById('recs-chat-area').style.display = 'none';
         return;
       }
 
-      // Build personalised first message
-      const intro = buildPersonalisedIntro(user);
-      addAIMessage('assistant', '…');
+      const interests = user.interests || 'both';
+      const showFrag = interests === 'fragrance' || interests === 'both';
+      const showBeauty = interests === 'beauty' || interests === 'both';
 
-      const response = await callAI([{ role: 'user', content: intro }]);
-      chatMessages = [
-        { role: 'user', content: intro },
-        { role: 'assistant', content: response }
-      ];
+      // Hide tabs if only one interest
+      const subtabs = document.getElementById('recs-subtabs');
+      if (!showFrag || !showBeauty) subtabs.style.display = 'none';
+      if (!showFrag) {
+        document.getElementById('subtab-fragrance').style.display = 'none';
+        document.getElementById('recs-fragrance').classList.remove('active');
+        document.getElementById('recs-beauty').classList.add('active');
+        document.getElementById('subtab-beauty').classList.add('active');
+      }
+      if (!showBeauty) {
+        document.getElementById('subtab-beauty').style.display = 'none';
+      }
 
-      // Replace placeholder
-      messagesEl.innerHTML = '';
-      addAIMessage('assistant', response);
+      // Load both in parallel
+      const tasks = [];
+      if (showFrag) tasks.push(loadFragranceRecs(user));
+      if (showBeauty) tasks.push(loadBeautyRecs(user));
+      await Promise.all(tasks);
+    }
+
+    async function loadFragranceRecs(user) {
+      const fp = user.fragrancePrefs || {};
+      const prompt = `I need concise fragrance recommendations for ${user.firstName}. Their profile: scent preferences: ${(fp.scents||[]).join(', ')}, occasions: ${(fp.occasions||[]).join(', ')}, gender preference: ${fp.gender || 'any'}, budget: ${fp.budget || 'flexible'}. In 2-3 sentences max, tell them which 2-3 products from your range suit them best and why. Be specific, mention product names and prices.`;
+      
+      const reply = await callAI([{ role: 'user', content: prompt }]);
+      const introEl = document.getElementById('recs-frag-intro');
+      introEl.textContent = reply;
+
+      // Show matched products
+      const scents = fp.scents || [];
+      const products = PRODUCT_CATALOGUE.filter(p => p.type === 'fragrance');
+      // Score by accord match
+      const scored = products.map(p => ({
+        ...p,
+        score: (p.accords || []).filter(a => scents.some(s => a.includes(s.split('-')[0]))).length
+      })).sort((a, b) => b.score - a.score).slice(0, 3);
+      
+      renderProductCards('recs-frag-grid', scored);
+    }
+
+    async function loadBeautyRecs(user) {
+      const bp = user.beautyPrefs || {};
+      const prompt = `I need concise beauty/skincare recommendations for ${user.firstName}. Their profile: skin type: ${(bp.skinType||[]).join(', ')}, concerns: ${(bp.concerns||[]).join(', ')}, budget: ${bp.budget || 'flexible'}. In 2-3 sentences max, tell them which products from your range suit them best and why. Be specific, mention product names and prices.`;
+      
+      const reply = await callAI([{ role: 'user', content: prompt }]);
+      const introEl = document.getElementById('recs-beauty-intro');
+      introEl.textContent = reply;
+
+      // Show all beauty products (small range)
+      const products = PRODUCT_CATALOGUE.filter(p => p.type === 'beauty');
+      renderProductCards('recs-beauty-grid', products);
+    }
+
+    function renderProductCards(gridId, products) {
+      const grid = document.getElementById(gridId);
+      grid.innerHTML = '';
+      products.forEach(p => {
+        const card = document.createElement('a');
+        card.className = 'recs-product-card';
+        card.href = `/products/${p.slug}.html`;
+        card.innerHTML = `
+          <div class="recs-product-img">
+            <img src="${p.image}" alt="${p.name}" loading="lazy"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<span style=font-size:2rem>🧴</span>'">
+          </div>
+          <div class="recs-product-info">
+            <p class="recs-product-brand">${p.brand}</p>
+            <p class="recs-product-name">${p.name}</p>
+            <p class="recs-product-price">${p.price}</p>
+          </div>
+          <span class="recs-product-cta">View Product →</span>
+        `;
+        grid.appendChild(card);
+      });
     }
 
     function buildPersonalisedIntro(user) {
       const fp = user.fragrancePrefs;
       const bp = user.beautyPrefs;
       const name = user.firstName;
-
       if (user.interests === 'fragrance' && fp) {
-        return `Hi, I'm ${name}. I'm looking for fragrance recommendations. I like ${fp.scents?.join(', ')} scents, wear fragrance mainly for ${fp.occasions?.join(', ')}, prefer ${fp.gender} fragrances, and my budget is ${fp.budget} per bottle. What do you recommend from your current range?`;
+        return `Hi, I'm ${name}. I like ${fp.scents?.join(', ')} scents, wear fragrance for ${fp.occasions?.join(', ')}, prefer ${fp.gender}, budget ${fp.budget}. What do you recommend?`;
       }
       if (user.interests === 'beauty' && bp) {
-        return `Hi, I'm ${name}. I'm looking for skincare recommendations. I have ${bp.skinType?.join(', ')} skin and my main concerns are ${bp.concerns?.join(', ')}. My budget is ${bp.budget} per product. What do you have that would suit me?`;
+        return `Hi, I'm ${name}. I have ${bp.skinType?.join(', ')} skin, concerns: ${bp.concerns?.join(', ')}, budget ${bp.budget}. What skincare do you recommend?`;
       }
-      return `Hi, I'm ${name}. I'm interested in both fragrance and beauty. Based on my profile, what do you recommend?`;
+      return `Hi, I'm ${name}. I'm interested in both fragrance and beauty. What do you recommend based on my profile?`;
     }
 
     async function callAI(messages) {
@@ -714,6 +912,15 @@
         document.querySelectorAll('.acc-tab, .acc-panel').forEach(el => el.classList.remove('active'));
         tab.classList.add('active');
         document.getElementById(`panel-${tab.dataset.panel}`).classList.add('active');
+      });
+    });
+
+    // ── Recs sub-tabs ─────────────────────────────────────────────────────────
+    document.querySelectorAll('.recs-subtab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.recs-subtab, .recs-section').forEach(el => el.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('recs-' + tab.dataset.rec).classList.add('active');
       });
     });
 
