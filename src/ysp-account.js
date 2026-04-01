@@ -696,6 +696,10 @@ window.YSPAccount = (function () {
       const newBtn = btn.cloneNode(true);
       btn.parentNode.replaceChild(newBtn, btn);
       
+      newBtn.addEventListener('mousedown', e => {
+        e.preventDefault();
+        e.stopPropagation();
+      });
       newBtn.addEventListener('click', async e => {
         e.preventDefault();
         e.stopPropagation();
