@@ -513,13 +513,13 @@ permalink: "products/{{ product.slug }}.html"
   }
 
   // ── FAVOURITE BUTTON (product page) ─────────────────────────────────────
-  const favBtn = document.getElementById('btn-fav-pdp');
-  if (favBtn) {
-    // Check if already favourited
-    const slug = favBtn.dataset.favSlug;
-    if (window.YSPAccount && YSPAccount.isLoggedIn()) {
+  window.addEventListener('load', function() {
+    const favBtn = document.getElementById('btn-fav-pdp');
+    if (!favBtn || !window.YSPAccount) return;
+
+    if (YSPAccount.isLoggedIn()) {
       YSPAccount.getFavourites().then(data => {
-        const isFav = (data.favourites || []).some(f => f.slug === slug);
+        const isFav = (data.favourites || []).some(f => f.slug === favBtn.dataset.favSlug);
         if (isFav) {
           favBtn.classList.add('is-favourite');
           favBtn.querySelector('.fav-heart').textContent = '♥';
@@ -527,8 +527,11 @@ permalink: "products/{{ product.slug }}.html"
         }
       });
     }
-    favBtn.addEventListener('click', async () => {
-      if (!window.YSPAccount || !YSPAccount.isLoggedIn()) {
+
+    favBtn.addEventListener('click', async e => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (!YSPAccount.isLoggedIn()) {
         YSPAccount.showAuthModal('login', 'Sign in to save favourites');
         return;
       }
@@ -543,8 +546,8 @@ permalink: "products/{{ product.slug }}.html"
         const added = result.action === 'added';
         favBtn.classList.toggle('is-favourite', added);
         favBtn.querySelector('.fav-heart').textContent = added ? '♥' : '♡';
-        favBtn.querySelector('.fav-label').textContent = added ? 'Saved' : 'Save';
+        favBtn.querySelector('.fav-label').textContent = added ? 'Saved' : 'Favourite';
       }
     });
-  }
+  });
 </script>
