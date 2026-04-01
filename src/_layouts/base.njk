@@ -435,6 +435,12 @@
       <li><a href="/#faq">FAQ</a></li>
       <li><a href="/#contact">Contact</a></li>
       <li><a href="/#contact" class="mobile-cta">Enquire</a></li>
+      <li>
+        <button data-action="login" style="width:100%;padding:1rem 1.5rem;background:none;border:none;border-bottom:1px solid var(--sand);font-family:var(--sans);font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--black);cursor:pointer;text-align:left;">Sign In</button>
+      </li>
+      <li class="ysp-account-link" style="display:none">
+        <a href="/account.html" style="display:block;padding:1rem 1.5rem;font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--sand);">My Account — <span class="ysp-account-name" style="color:var(--accent)"></span></a>
+      </li>
       <li id="mobile-lang-switcher">
         <div style="display:flex;gap:0;border-top:1px solid var(--sand);">
           <button onclick="window.YSP_LANG&&(window.YSP_LANG.set('en'),updateMobileLang('en'))" id="mlang-en" style="flex:1;padding:0.9rem;background:none;border:none;border-right:1px solid var(--sand);font-family:var(--sans);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;color:var(--grey);transition:color 0.2s,background 0.2s;">EN</button>
@@ -524,6 +530,10 @@
       <li><a href="/#faq" data-i18n="nav_faq">FAQ</a></li>
       <li><a href="/#contact" data-i18n="nav_contact">Contact</a></li>
       <li><a href="/#contact" class="nav-cta" data-i18n="nav_enquire">Enquire</a></li>
+      <li id="nav-account-item">
+        <button class="nav-cta" data-action="login" style="cursor:pointer;border:none;background:var(--accent);color:var(--white);padding:0.55rem 1.5rem;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;font-family:var(--sans);transition:background 0.25s;">Sign In</button>
+        <a href="/account.html" class="ysp-account-link" style="display:none;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey);text-decoration:none;">My Account <span class="ysp-account-name" style="color:var(--accent)"></span></a>
+      </li>
       <li id="ysp-lang-switcher"></li>
     </ul>
   </nav>
