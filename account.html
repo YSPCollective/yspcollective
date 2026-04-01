@@ -466,22 +466,42 @@
 
     // ── Boot ──────────────────────────────────────────────────────────────────
     async function boot() {
-      // Check session
-      const user = await YSPAccount.verifySession();
-      if (!user) {
-        // Not logged in — redirect to home and show login modal
+      // Use cached user first to avoid redirect flash
+      const cachedUser = YSPAccount.getUser();
+      const token = YSPAccount.getToken();
+
+      if (!token) {
+        // Definitely not logged in
         sessionStorage.setItem('ysp_redirect_account', '1');
         window.location.href = '/';
         return;
       }
-      currentUser = user;
-      renderAccount(user);
 
-      // Load data
-      await Promise.all([loadFavourites(), loadRecommendations(user)]);
+      // Show page immediately with cached data while we verify
+      if (cachedUser) {
+        currentUser = cachedUser;
+        renderAccount(cachedUser);
+        document.getElementById('account-loading').style.display = 'none';
+        document.getElementById('account-app').classList.add('ready');
+        await Promise.all([loadFavourites(), loadRecommendations(cachedUser)]);
+      }
 
-      document.getElementById('account-loading').style.display = 'none';
-      document.getElementById('account-app').classList.add('ready');
+      // Verify session in background — redirect if invalid
+      const verified = await YSPAccount.verifySession();
+      if (!verified) {
+        sessionStorage.setItem('ysp_redirect_account', '1');
+        window.location.href = '/';
+        return;
+      }
+
+      // If not already rendered (no cache), render now
+      if (!cachedUser) {
+        currentUser = verified;
+        renderAccount(verified);
+        await Promise.all([loadFavourites(), loadRecommendations(verified)]);
+        document.getElementById('account-loading').style.display = 'none';
+        document.getElementById('account-app').classList.add('ready');
+      }
     }
 
     function renderAccount(user) {

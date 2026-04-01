@@ -459,8 +459,10 @@ window.YSPAccount = (function () {
       const order = getStepOrder();
       const key = order[step];
       saveStepData(key);
+      // If this was the welcome step, interests is now set — recalculate order
+      const newOrder = getStepOrder();
       step++;
-      if (step >= order.length) {
+      if (step >= newOrder.length) {
         await finishQA();
       } else {
         renderStep();
