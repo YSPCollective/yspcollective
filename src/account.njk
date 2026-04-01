@@ -373,13 +373,14 @@ permalink: /account.html
     /* ── PRODUCT GRID ── */
     .recs-product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1.2rem; margin-bottom: 3rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem; margin-bottom: 2.5rem;
     }
     .recs-product-card {
       border: 1px solid var(--sand); background: var(--white);
       transition: box-shadow 0.2s, transform 0.2s;
-      text-decoration: none; color: inherit; display: block;
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
     }
     .recs-product-card:hover {
       box-shadow: 0 6px 24px rgba(0,0,0,0.08);
@@ -389,28 +390,43 @@ permalink: /account.html
       width: 100%; aspect-ratio: 1;
       background: var(--cream); overflow: hidden;
       display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
     }
     .recs-product-img img {
       width: 100%; height: 100%; object-fit: contain;
       padding: 1rem; transition: transform 0.3s;
     }
     .recs-product-card:hover .recs-product-img img { transform: scale(1.04); }
-    .recs-product-info { padding: 0.9rem 1rem 1rem; }
-    .recs-product-brand {
-      font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 0.3rem;
+    .recs-product-info {
+      padding: 0.8rem 0.9rem 0.6rem;
+      flex: 1; display: flex; flex-direction: column; gap: 0.2rem;
     }
-    .recs-product-name { font-size: 0.85rem; font-weight: 400; margin-bottom: 0.4rem; line-height: 1.3; }
-    .recs-product-price { font-size: 0.82rem; color: var(--grey); }
+    .recs-product-brand {
+      font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent);
+    }
+    .recs-product-name {
+      font-size: 0.82rem; font-weight: 400; line-height: 1.3;
+      color: var(--black); flex: 1;
+    }
+    .recs-product-price { font-size: 0.82rem; color: var(--grey); margin-top: 0.2rem; }
     .recs-product-cta {
-      display: block; width: 100%; padding: 0.6rem;
+      display: block; width: 100%; padding: 0.55rem;
       border: none; border-top: 1px solid var(--sand);
       background: none; cursor: pointer; font-family: var(--sans);
-      font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+      font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
       color: var(--grey); text-align: center;
-      transition: all 0.2s; text-decoration: none;
+      transition: all 0.2s; text-decoration: none; flex-shrink: 0;
     }
     .recs-product-cta:hover { background: var(--accent); color: var(--white); border-color: var(--accent); }
+
+    @media (max-width: 900px) {
+      .recs-product-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .recs-product-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+      .recs-product-name { font-size: 0.78rem; }
+    }
 
     /* ── CHAT SECTION ── */
     .recs-chat-wrap { margin-top: 1rem; }
@@ -715,13 +731,21 @@ permalink: /account.html
       await Promise.all(tasks);
     }
 
+    function stripMarkdown(text) {
+      return text
+        .replace(/\*\*([^*]+)\*\*/g, '$1')
+        .replace(/\*([^*]+)\*/g, '$1')
+        .replace(/#+\s/g, '')
+        .trim();
+    }
+
     async function loadFragranceRecs(user) {
       const fp = user.fragrancePrefs || {};
       const prompt = `I need concise fragrance recommendations for ${user.firstName}. Their profile: scent preferences: ${(fp.scents||[]).join(', ')}, occasions: ${(fp.occasions||[]).join(', ')}, gender preference: ${fp.gender || 'any'}, budget: ${fp.budget || 'flexible'}. In 2-3 sentences max, tell them which 2-3 products from your range suit them best and why. Be specific, mention product names and prices.`;
       
       const reply = await callAI([{ role: 'user', content: prompt }]);
       const introEl = document.getElementById('recs-frag-intro');
-      introEl.textContent = reply;
+      introEl.textContent = stripMarkdown(reply);
 
       // Score fragrance products by accord match against user scent prefs
       const scents = fp.scents || [];
@@ -742,7 +766,7 @@ permalink: /account.html
       
       const reply = await callAI([{ role: 'user', content: prompt }]);
       const introEl = document.getElementById('recs-beauty-intro');
-      introEl.textContent = reply;
+      introEl.textContent = stripMarkdown(reply);
 
       const beautyProducts = PRODUCT_CATALOGUE.filter(p => p.type === 'beauty');
       renderProductCards('recs-beauty-grid', beautyProducts);
@@ -811,7 +835,7 @@ permalink: /account.html
     function addAIMessage(role, text) {
       const el = document.createElement('div');
       el.className = `acc-ai-msg ${role}`;
-      el.textContent = text.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\*([^*]+)\*/g, '$1').trim();
+      el.textContent = stripMarkdown(text);
       document.getElementById('acc-ai-messages').appendChild(el);
       el.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }
