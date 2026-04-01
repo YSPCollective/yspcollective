@@ -691,32 +691,27 @@ window.YSPAccount = (function () {
 
   // ── Favourite heart button helper ─────────────────────────────────────────
   function initFavouriteButtons() {
-    document.querySelectorAll('[data-fav-slug]').forEach(btn => {
-      // Remove any existing listeners by cloning
-      const newBtn = btn.cloneNode(true);
-      btn.parentNode.replaceChild(newBtn, btn);
-      
-      newBtn.addEventListener('mousedown', e => {
-        e.preventDefault();
-        e.stopPropagation();
-      });
-      newBtn.addEventListener('click', async e => {
-        e.preventDefault();
-        e.stopPropagation();
-        e.stopImmediatePropagation();
-        const slug = newBtn.dataset.favSlug;
-        const name = newBtn.dataset.favName;
-        const price = newBtn.dataset.favPrice;
-        const image = newBtn.dataset.favImage;
-        const type = newBtn.dataset.favType;
-        const result = await toggleFavourite({ slug, name, price, image, type });
-        if (result) {
-          const added = result.action === 'added';
-          newBtn.textContent = added ? '♥' : '♡';
-          newBtn.classList.toggle('is-favourite', added);
-        }
-      });
-    });
+    // Use capture phase at document level to intercept before <a> navigation
+    document.addEventListener('click', async function(e) {
+      const btn = e.target.closest('[data-fav-slug]');
+      if (!btn) return;
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+
+      const slug = btn.dataset.favSlug;
+      const name = btn.dataset.favName;
+      const price = btn.dataset.favPrice;
+      const image = btn.dataset.favImage;
+      const type = btn.dataset.favType;
+
+      const result = await toggleFavourite({ slug, name, price, image, type });
+      if (result) {
+        const added = result.action === 'added';
+        btn.textContent = added ? '♥' : '♡';
+        btn.classList.toggle('is-favourite', added);
+      }
+    }, true); // true = capture phase, fires before bubbling
   }
 
   // ── Init ──────────────────────────────────────────────────────────────────

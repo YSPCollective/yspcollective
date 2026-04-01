@@ -90,29 +90,28 @@ permalink: "products/{{ product.slug }}.html"
   .stock-preorder { color: #7a6a9a; }
   .btn-preorder { background: #7a6a9a !important; }
   .btn-preorder:hover { background: var(--black) !important; }
-  .btn-enquire { padding: 1rem 2.5rem; background: var(--black); color: var(--white); font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.2s; cursor: pointer; border: none; display: inline-block; }
-  .btn-enquire:hover { background: var(--accent); transform: translateY(-1px); }
   .btn-shop { padding: 1rem 2rem; border: 1px solid var(--sand); color: var(--black); font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
   .btn-shop:hover { border-color: var(--accent); color: var(--accent); }
 
-  /* Favourite button — product page version (inline, not absolute) */
+  /* Favourite button — product page version */
   .btn-fav-pdp {
-    padding: 0.9rem 1.2rem;
+    padding: 0.9rem 1.8rem;
     background: var(--cream);
     border: 1px solid var(--sand);
     cursor: pointer;
     font-family: var(--sans);
-    font-size: 0.88rem;
-    color: var(--grey-light);
+    font-size: 1rem;
+    color: var(--grey);
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.6rem;
     transition: all 0.2s;
     white-space: nowrap;
   }
-  .btn-fav-pdp:hover { border-color: var(--accent); color: var(--accent); }
-  .btn-fav-pdp.is-favourite { color: var(--accent); border-color: var(--accent); }
-  .btn-fav-pdp .fav-label { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .btn-fav-pdp:hover { border-color: var(--accent); color: var(--accent); background: var(--white); }
+  .btn-fav-pdp.is-favourite { color: var(--accent); border-color: var(--accent); background: var(--white); }
+  .btn-fav-pdp .fav-heart { font-size: 1.2rem; }
+  .btn-fav-pdp .fav-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; }
 
   .trust-badges { display: flex; gap: 1.5rem; flex-wrap: wrap; padding: 1.2rem 0; border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); margin-bottom: 2rem; }
   .trust-badge { font-size: 0.72rem; color: var(--grey); display: flex; align-items: center; gap: 0.4rem; }
@@ -259,8 +258,8 @@ permalink: "products/{{ product.slug }}.html"
         <span class="low-stock-notice stock-preorder">📅 Pre-order{% if product.expected_date %} — dispatches {{ product.expected_date }}{% endif %}</span>
       {% endif %}
 
-      <button class="btn-enquire" id="btn-enquire" data-i18n="pdp_enquire">Enquire</button>
-
+    </div>
+    <div style="margin-top:0.8rem;">
       <!-- Favourite button -->
       <button class="btn-fav-pdp"
         data-fav-slug="{{ product.slug }}"
@@ -271,10 +270,11 @@ permalink: "products/{{ product.slug }}.html"
         aria-label="Save to favourites"
         id="btn-fav-pdp">
         <span class="fav-heart">♡</span>
-        <span class="fav-label">Save</span>
+        <span class="fav-label">Favourite</span>
       </button>
+    </div>
 
-      {% if product.amazon_url %}
+    {% if product.amazon_url %}
       <a href="{{ product.amazon_url }}" class="btn-shop" target="_blank" rel="noopener" data-i18n="pdp_amazon">📦 Buy on Amazon</a>
       {% endif %}
     </div>
@@ -513,13 +513,6 @@ permalink: "products/{{ product.slug }}.html"
       }
     });
   }
-
-  // ── ENQUIRE ──────────────────────────────────────────────────────────────
-  document.getElementById('btn-enquire').addEventListener('click', e => {
-    e.preventDefault();
-    sessionStorage.setItem('enquiry_subject', 'Product Enquiry — {{ product.name }}');
-    window.location.href = '/#contact';
-  });
 
   // ── FAVOURITE BUTTON (product page) ─────────────────────────────────────
   const favBtn = document.getElementById('btn-fav-pdp');
