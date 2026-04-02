@@ -378,6 +378,7 @@ permalink: /account.html
       grid-template-columns: repeat(4, 1fr);
       gap: 1.2rem;
       margin-bottom: 2.5rem;
+      align-items: stretch;
     }
     .recs-product-card {
       border: 1px solid var(--sand);
@@ -796,6 +797,7 @@ permalink: /account.html
         const card = document.createElement('a');
         card.className = 'recs-product-card';
         card.href = url;
+        card.style.cssText = 'display:flex;flex-direction:column;height:100%;';
         card.innerHTML = `
           <div class="recs-product-img">
             ${image
@@ -804,10 +806,10 @@ permalink: /account.html
               : ''
             }
           </div>
-          <div class="recs-product-info">
+          <div class="recs-product-info" style="flex:1;display:flex;flex-direction:column;">
             <span class="recs-product-brand-top">${p.brand || ''}</span>
             <span class="recs-product-name">${p.name}</span>
-            <span class="recs-product-price">${price}</span>
+            <span class="recs-product-price" style="margin-top:auto;">${price}</span>
           </div>
           <span class="recs-product-cta">View Product →</span>
         `;
