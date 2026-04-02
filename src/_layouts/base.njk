@@ -353,6 +353,41 @@
     .btn-favourite:hover { color: var(--accent); border-color: var(--accent); transform: scale(1.1); }
     .btn-favourite.is-favourite { color: var(--accent); border-color: var(--accent); }
   
+
+    /* ── MAILING LIST POPUP ── */
+    #ysp-popup-overlay {
+      position: fixed; inset: 0; z-index: 99998;
+      background: rgba(26,25,22,0.6); backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 1rem;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    #ysp-popup-overlay.visible { opacity: 1; pointer-events: all; }
+    #ysp-popup {
+      background: var(--white); max-width: 480px; width: 100%;
+      padding: 3rem 2.5rem; position: relative;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.18);
+      animation: yspModalIn 0.3s ease;
+    }
+    .popup-close {
+      position: absolute; top: 1rem; right: 1rem;
+      background: none; border: none; cursor: pointer;
+      color: var(--grey); font-size: 1rem; transition: color 0.2s;
+    }
+    .popup-close:hover { color: var(--black); }
+    .popup-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
+    .popup-discount { font-family: var(--serif); font-size: 3rem; font-weight: 300; color: var(--accent); margin-bottom: 0.5rem; line-height: 1; }
+    .popup-title { font-family: var(--serif); font-size: 2rem; font-weight: 300; margin-bottom: 0.8rem; line-height: 1.2; }
+    .popup-sub { font-size: 0.88rem; color: var(--grey); line-height: 1.7; margin-bottom: 1.8rem; }
+    .popup-form { display: flex; gap: 0; margin-bottom: 0.8rem; }
+    .popup-input { flex: 1; padding: 0.85rem 1rem; border: 1px solid var(--sand); background: var(--white); font-family: var(--sans); font-size: 0.88rem; color: var(--black); outline: none; transition: border-color 0.2s; }
+    .popup-input:focus { border-color: var(--accent); }
+    .popup-btn { padding: 0.85rem 1.5rem; background: var(--black); color: var(--white); border: none; font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
+    .popup-btn:hover { background: var(--accent); }
+    .popup-terms { font-size: 0.68rem; color: var(--grey-light); }
+    .popup-success { font-size: 0.9rem; color: var(--accent); padding: 1rem 0; display: none; }
+    @media (max-width: 480px) { #ysp-popup { padding: 2rem 1.5rem; } .popup-discount { font-size: 2.2rem; } }
   </style>
 
   {{ head_extra | safe }}
@@ -761,6 +796,63 @@
         sessionStorage.removeItem('enquiry_subject');
       }
     });
+  </script>
+
+
+  <!-- MAILING LIST POPUP -->
+  <div id="ysp-popup-overlay">
+    <div id="ysp-popup">
+      <button class="popup-close" onclick="closePopup()" aria-label="Close">✕</button>
+      <div class="popup-label">Welcome to YSP Collective</div>
+      <div class="popup-discount">10% OFF</div>
+      <h2 class="popup-title">Your first order</h2>
+      <p class="popup-sub">Join our list for exclusive offers, new arrivals and fragrance recommendations. Get 10% off your first order with code <strong>WELCOME10</strong>.</p>
+      <div class="popup-form">
+        <input type="email" class="popup-input" id="popup-email" placeholder="your@email.com" onkeydown="if(event.key==='Enter')submitPopup()">
+        <button class="popup-btn" onclick="submitPopup()">Get 10% Off</button>
+      </div>
+      <p class="popup-success" id="popup-success">✓ Your code is <strong>WELCOME10</strong> — check your email too!</p>
+      <p class="popup-terms">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+
+  <script>
+    // ── Mailing list popup ──
+    (function() {
+      try { if (localStorage.getItem('ysp_popup_seen')) return; } catch(e) {}
+      setTimeout(() => {
+        const overlay = document.getElementById('ysp-popup-overlay');
+        if (overlay) overlay.classList.add('visible');
+      }, 4000);
+    })();
+
+    function closePopup() {
+      document.getElementById('ysp-popup-overlay').classList.remove('visible');
+      try { localStorage.setItem('ysp_popup_seen', '1'); } catch(e) {}
+    }
+
+    async function submitPopup() {
+      const email = document.getElementById('popup-email').value;
+      if (!email || !email.includes('@')) return;
+      const btn = document.querySelector('.popup-btn');
+      btn.textContent = '...';
+      btn.disabled = true;
+      try {
+        const lang = window.YSP_LANG ? window.YSP_LANG.get() : 'en';
+        const res = await fetch('https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, lang })
+        });
+        document.getElementById('popup-success').style.display = 'block';
+        document.querySelector('.popup-form').style.display = 'none';
+        try { localStorage.setItem('ysp_popup_seen', '1'); } catch(e) {}
+        setTimeout(() => closePopup(), 4000);
+      } catch(e) {
+        btn.textContent = 'Get 10% Off';
+        btn.disabled = false;
+      }
+    }
   </script>
 
   {{ body_extra | safe }}
