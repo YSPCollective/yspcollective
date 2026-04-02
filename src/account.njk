@@ -229,9 +229,10 @@ permalink: /account.html
     .acc-fav-card {
       border: 1px solid var(--sand); background: var(--white);
       transition: box-shadow 0.2s;
+      display: flex; flex-direction: column;
     }
     .acc-fav-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
-    .acc-fav-card a { text-decoration: none; color: inherit; }
+    .acc-fav-card a { text-decoration: none; color: inherit; flex: 1; display: flex; flex-direction: column; }
     .acc-fav-img {
       width: 100%; aspect-ratio: 1;
       background: var(--cream);
@@ -240,7 +241,7 @@ permalink: /account.html
       font-size: 2.5rem;
     }
     .acc-fav-img img { width: 100%; height: 100%; object-fit: contain; }
-    .acc-fav-info { padding: 0.9rem 1rem; }
+    .acc-fav-info { padding: 0.9rem 1rem; flex: 1; }
     .acc-fav-name { font-size: 0.85rem; font-weight: 400; margin-bottom: 0.2rem; }
     .acc-fav-price { font-size: 0.82rem; color: var(--accent); }
     .acc-fav-remove {
@@ -250,7 +251,7 @@ permalink: /account.html
       font-family: var(--sans); font-size: 0.68rem;
       letter-spacing: 0.14em; text-transform: uppercase;
       color: var(--grey); transition: all 0.2s;
-      text-align: center;
+      text-align: center; margin-top: auto; flex-shrink: 0;
     }
     .acc-fav-remove:hover { background: var(--black); color: var(--white); }
     .acc-empty {
@@ -406,6 +407,7 @@ permalink: /account.html
     .recs-product-info {
       padding: 0.7rem 0.8rem 0.5rem;
       border-top: 1px solid var(--sand);
+      flex: 1;
     }
     .recs-product-brand-top {
       display: block;
@@ -422,12 +424,13 @@ permalink: /account.html
       display: block; font-size: 0.8rem; color: var(--grey);
     }
     .recs-product-cta {
-      display: block; width: 100%; padding: 0.55rem;
+      display: block; width: 100%; padding: 0.65rem;
       border: none; border-top: 1px solid var(--sand);
       background: none; cursor: pointer; font-family: var(--sans);
       font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
       color: var(--grey); text-align: center;
       transition: all 0.2s; text-decoration: none;
+      margin-top: auto;
     }
     .recs-product-cta:hover { background: var(--accent); color: var(--white); border-color: var(--accent); }
 
