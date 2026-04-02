@@ -1,0 +1,74 @@
+---
+permalink: /feed/google-shopping.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>YSP Collective</title>
+    <link>https://yspcollective.com</link>
+    <description>Beleza, fragrâncias e lifestyle curados. Enviamos para Portugal e Espanha.</description>
+    {% for product in collections.allProducts %}
+    {% set productUrl %}https://yspcollective.com/products/{{ product.slug }}.html{% endset %}
+    {% set imageUrl %}https://yspcollective.com{{ product.image_main }}{% endset %}
+    {% set stockStatus = product.stock_status or "in_stock" %}
+    {% if stockStatus != "sold_out" and stockStatus != "coming_soon" and not product.exclude_from_feed %}
+    <item>
+      <g:id>{{ product.slug }}</g:id>
+      <g:title>{{ product.name }}</g:title>
+      <g:description>{{ product.description_short | striptags | truncate(5000) }}</g:description>
+      <g:link>{{ productUrl }}</g:link>
+      <g:image_link>{{ imageUrl }}</g:image_link>
+      <g:price>{{ product.price }} EUR</g:price>
+      {% if product.rrp %}
+      <g:sale_price>{{ product.price }} EUR</g:sale_price>
+      <g:original_price>{{ product.rrp }} EUR</g:original_price>
+      {% endif %}
+      <g:availability>{% if stockStatus == "pre_order" %}preorder{% else %}in_stock{% endif %}</g:availability>
+      <g:condition>new</g:condition>
+      <g:brand>{{ product.brand }}</g:brand>
+      {% if product.gtin %}
+      <g:gtin>{{ product.gtin }}</g:gtin>
+      {% endif %}
+      {% if product.google_product_category %}
+      <g:google_product_category>{{ product.google_product_category }}</g:google_product_category>
+      {% elif product.type == "fragrance" %}
+      <g:google_product_category>Health &amp; Beauty > Personal Care > Cosmetics > Fragrance</g:google_product_category>
+      {% else %}
+      <g:google_product_category>Health &amp; Beauty > Personal Care > Cosmetics > Skin Care</g:google_product_category>
+      {% endif %}
+      {% if product.type == "fragrance" %}
+      <g:product_type>Fragrâncias > {{ product.brand }}</g:product_type>
+      {% else %}
+      <g:product_type>Beleza e Skincare > {{ product.brand }}</g:product_type>
+      {% endif %}
+      <g:identifier_exists>{% if product.gtin %}yes{% else %}no{% endif %}</g:identifier_exists>
+      <g:shipping>
+        <g:country>PT</g:country>
+        <g:service>CTT Expresso / Correos Express</g:service>
+        <g:price>5.00 EUR</g:price>
+      </g:shipping>
+      <g:shipping>
+        <g:country>ES</g:country>
+        <g:service>Correos Express</g:service>
+        <g:price>5.00 EUR</g:price>
+      </g:shipping>
+      <g:tax>
+        <g:country>PT</g:country>
+        <g:rate>0</g:rate>
+        <g:tax_ship>no</g:tax_ship>
+      </g:tax>
+      <g:tax>
+        <g:country>ES</g:country>
+        <g:rate>0</g:rate>
+        <g:tax_ship>no</g:tax_ship>
+      </g:tax>
+      <g:adult>no</g:adult>
+      {% if product.size %}
+      <g:item_group_id>{{ product.slug | replace("-" + product.size | lower | replace("ml","") | replace(" ",""), "") }}</g:item_group_id>
+      {% endif %}
+    </item>
+    {% endif %}
+    {% endfor %}
+  </channel>
+</rss>
