@@ -1,29 +1,21 @@
 ---
 name: Armaf Club de Nuit Intense 105ml
 slug: armaf-club-de-nuit-intense-105ml
-badge: Popular
-custom_badge: ""
 price: "29.55"
 rrp: ""
 brand: Armaf
 gender: Men
 size: 105ml
 concentration: Eau de Toilette (EDT)
+badge: Popular
+custom_badge: ""
+featured: false
+published: true
 fragrance_family: Woody Spicy
 heart_notes: Rose, Birch, Jasmine
-base_notes: Musk, Ambergris, Patchouli, Vanilla
-accords:
-  - woody
-  - spicy
-  - citrus
-  - fruity
-  - musk
-  - smoky
-  - amber
 longevity: 8–12 hours
 projection: Strong
 best_for: Evening wear, cooler seasons, formal and smart-casual occasions
-origin: UAE
 launched: "2015"
 vegan: false
 gallery:
@@ -58,15 +50,23 @@ ysp_thoughts: >
 
 
   We tried it ourselves before listing it. It now gets worn regularly. That's usually all we need to know.
-amazon_url: ""
 ebay_url: ""
-featured: true
-published: true
+origin: UAE
+accords:
+  - woody
+  - spicy
+  - citrus
+  - fruity
+  - musk
+  - smoky
+  - amber
+base_notes: Musk, Ambergris, Patchouli, Vanilla
+amazon_url: ""
 gender_label: Men
+stock_status: sold_out
 top_notes: Lemon, Pineapple, Bergamot, Black Currant, Apple
 image_main: /products/armaf/club-de-nuit-intense-man/club-de-nuit-image-1.jpeg
 description_short: One of the most celebrated value fragrances in men's
   perfumery. Bold citrus-fruit opening, exceptional dry-down, 8–12 hour
   longevity.
-stock_status: sold_out
 ---
