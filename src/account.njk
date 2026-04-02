@@ -176,49 +176,116 @@ permalink: /account.html
       font-family: var(--sans); text-decoration: none; transition: background 0.2s;
     }
     .acc-recs-intro .acc-btn:hover { background: var(--black); }
+    /* ── Account AI Chat Box ── */
     .acc-ai-chat-box {
       border: 1px solid var(--sand); background: var(--white);
-      min-height: 320px; display: flex; flex-direction: column;
+      min-height: 340px; max-height: 520px; display: flex; flex-direction: column;
     }
     .acc-ai-messages {
-      flex: 1; padding: 1.5rem; overflow-y: auto;
-      display: flex; flex-direction: column; gap: 1rem;
+      flex: 1; padding: 1.4rem 1.5rem; overflow-y: auto;
+      display: flex; flex-direction: column; gap: 0.9rem;
+      scroll-behavior: smooth;
     }
+    .acc-ai-messages::-webkit-scrollbar { width: 4px; }
+    .acc-ai-messages::-webkit-scrollbar-track { background: transparent; }
+    .acc-ai-messages::-webkit-scrollbar-thumb { background: var(--sand); border-radius: 2px; }
+
     .acc-ai-msg {
-      max-width: 80%; font-size: 0.88rem; line-height: 1.7;
-      padding: 0.8rem 1rem;
+      max-width: 82%; font-size: 0.88rem; line-height: 1.72;
+      padding: 0.75rem 1rem;
     }
     .acc-ai-msg.assistant {
       background: var(--cream); align-self: flex-start;
-      border-left: 2px solid var(--accent);
+      border-left: 2px solid var(--accent); border-radius: 0 8px 8px 0;
+    }
+    .acc-ai-msg.assistant strong { font-weight: 500; }
+    .acc-ai-msg.assistant em { font-style: italic; color: var(--accent); }
+    /* Product blocks inside assistant messages */
+    .acc-ai-msg.assistant .acc-rec-item {
+      display: block; margin-top: 0.6rem;
+      padding: 0.55rem 0.8rem;
+      background: var(--white);
+      border: 1px solid var(--sand);
+      border-left: 2px solid var(--accent-light);
+      font-size: 0.84rem; line-height: 1.5;
+    }
+    .acc-ai-msg.assistant .acc-rec-item-name {
+      display: block; font-weight: 500; color: var(--black); margin-bottom: 0.15rem;
+    }
+    .acc-ai-msg.assistant .acc-rec-item-detail {
+      display: block; font-size: 0.78rem; color: var(--grey);
     }
     .acc-ai-msg.user {
       background: var(--black); color: var(--white);
       align-self: flex-end;
+      border-radius: 8px 0 0 8px;
+      font-size: 0.86rem;
     }
+
+    /* Typing dots */
+    .acc-ai-typing {
+      display: none; align-items: center; gap: 5px;
+      padding: 0.65rem 1rem;
+      align-self: flex-start;
+      background: var(--cream);
+      border-left: 2px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+    }
+    .acc-ai-typing.visible { display: flex; }
+    .acc-ai-typing span {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); opacity: 0.4;
+      animation: accDotPulse 1.3s ease-in-out infinite;
+    }
+    .acc-ai-typing span:nth-child(2) { animation-delay: 0.2s; }
+    .acc-ai-typing span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes accDotPulse {
+      0%, 80%, 100% { transform: scale(0.7); opacity: 0.3; }
+      40% { transform: scale(1.1); opacity: 1; }
+    }
+
+    /* Suggestion chips */
+    .acc-ai-chips {
+      padding: 0.6rem 1.2rem 0.3rem;
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      border-top: 1px solid var(--sand);
+      flex-shrink: 0;
+    }
+    .acc-ai-chip {
+      padding: 0.3rem 0.85rem;
+      border: 1px solid var(--sand);
+      background: var(--white);
+      font-family: var(--sans); font-size: 0.72rem;
+      color: var(--grey); cursor: pointer;
+      border-radius: 20px; white-space: nowrap;
+      transition: all 0.2s; letter-spacing: 0.02em;
+    }
+    .acc-ai-chip:hover { border-color: var(--accent); color: var(--black); background: var(--cream); }
+
+    /* Input row */
     .acc-ai-input-row {
       border-top: 1px solid var(--sand);
-      display: flex;
+      display: flex; align-items: center; gap: 0; padding: 0;
     }
     .acc-ai-input {
-      flex: 1; padding: 0.9rem 1.2rem;
+      flex: 1; padding: 0.85rem 1.2rem;
       border: none; background: none;
-      font-family: var(--sans); font-size: 0.88rem;
+      font-family: var(--sans); font-size: 0.88rem; font-weight: 300;
       color: var(--black); outline: none;
     }
+    .acc-ai-input::placeholder { color: var(--grey-light); }
     .acc-ai-send {
-      padding: 0.9rem 1.5rem; background: var(--accent);
+      padding: 0.85rem 1.4rem; background: var(--accent);
       border: none; cursor: pointer; color: var(--white);
-      font-family: var(--sans); font-size: 0.72rem;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      transition: background 0.2s;
+      font-family: var(--sans); font-size: 0.7rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      transition: background 0.2s; flex-shrink: 0;
+      border-left: 1px solid rgba(0,0,0,0.06);
     }
     .acc-ai-send:hover { background: var(--black); }
-    .acc-ai-thinking {
-      padding: 0.8rem 1rem; font-size: 0.82rem;
-      color: var(--grey); font-style: italic;
-      display: none;
-    }
+    .acc-ai-send:disabled { opacity: 0.4; cursor: not-allowed; }
+    /* Hide old thinking text element */
+    .acc-ai-thinking { display: none !important; }
 
     /* ── FAVOURITES ── */
     .acc-favs-grid {
@@ -544,11 +611,13 @@ permalink: /account.html
             <p class="recs-chat-label">Ask our advisor anything</p>
             <div class="acc-ai-chat-box">
               <div class="acc-ai-messages" id="acc-ai-messages"></div>
-              <div class="acc-ai-thinking" id="acc-ai-thinking">Thinking…</div>
+              <div class="acc-ai-typing" id="acc-ai-typing"><span></span><span></span><span></span></div>
+              <div class="acc-ai-chips" id="acc-ai-chips"></div>
+              <div id="acc-ai-thinking" class="acc-ai-thinking"></div>
               <div class="acc-ai-input-row">
                 <input type="text" class="acc-ai-input" id="acc-ai-input"
-                  placeholder="Ask about a specific scent, ingredient, occasion…">
-                <button class="acc-ai-send" id="acc-ai-send">Send</button>
+                  placeholder="Ask about a scent, ingredient, occasion…">
+                <button class="acc-ai-send" id="acc-ai-send">Send →</button>
               </div>
             </div>
           </div>
@@ -847,39 +916,99 @@ permalink: /account.html
       }
     }
 
+    function renderAccBotHtml(text) {
+      let html = text
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+
+      const lines = html.split('\n');
+      const out = [];
+      let inItem = false;
+      lines.forEach(line => {
+        const stripped = line.trim();
+        if (/^[-•\d+\.]\s/.test(stripped)) {
+          if (!inItem) { out.push('<span class="acc-rec-item">'); inItem = true; }
+          else { out.push('</span><span class="acc-rec-item">'); }
+          out.push(`<span class="acc-rec-item-name">${stripped.replace(/^[-•\d+\.]\s/, '')}</span>`);
+        } else {
+          if (inItem) { out.push('</span>'); inItem = false; }
+          if (stripped) out.push(`<p style="margin:0 0 0.3rem">${stripped}</p>`);
+        }
+      });
+      if (inItem) out.push('</span>');
+      return out.join('');
+    }
+
     function addAIMessage(role, text) {
       const el = document.createElement('div');
       el.className = `acc-ai-msg ${role}`;
-      el.textContent = stripMarkdown(text);
+      if (role === 'assistant') {
+        el.innerHTML = renderAccBotHtml(text);
+      } else {
+        el.textContent = text;
+      }
       document.getElementById('acc-ai-messages').appendChild(el);
       el.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }
 
+    const ACC_CHIPS = [
+      'Best fragrance for evenings',
+      'Recommend a K-beauty SPF',
+      'What pairs with Lattafa Yara?',
+      'Best gift under €35',
+      'Long-lasting fragrances',
+    ];
+
+    function renderAccChips() {
+      const el = document.getElementById('acc-ai-chips');
+      if (!el) return;
+      el.innerHTML = '';
+      ACC_CHIPS.forEach(label => {
+        const btn = document.createElement('button');
+        btn.className = 'acc-ai-chip';
+        btn.textContent = label;
+        btn.addEventListener('click', () => {
+          el.style.display = 'none';
+          sendChatMessage(label);
+        });
+        el.appendChild(btn);
+      });
+    }
+
     // Chat input
-    async function sendChatMessage() {
+    async function sendChatMessage(forcedText) {
       const input = document.getElementById('acc-ai-input');
-      const msg = input.value.trim();
+      const msg = forcedText || input.value.trim();
       if (!msg) return;
-      input.value = '';
+      if (!forcedText) input.value = '';
+
+      // Hide chips after first use
+      const chipsEl = document.getElementById('acc-ai-chips');
+      if (chipsEl) chipsEl.style.display = 'none';
 
       addAIMessage('user', msg);
       chatMessages.push({ role: 'user', content: msg });
 
-      document.getElementById('acc-ai-thinking').style.display = 'block';
+      const typingEl = document.getElementById('acc-ai-typing');
+      if (typingEl) { typingEl.classList.add('visible'); typingEl.scrollIntoView({ behavior: 'smooth', block: 'end' }); }
       document.getElementById('acc-ai-send').disabled = true;
 
       const response = await callAI(chatMessages);
       chatMessages.push({ role: 'assistant', content: response });
 
-      document.getElementById('acc-ai-thinking').style.display = 'none';
+      if (typingEl) typingEl.classList.remove('visible');
       document.getElementById('acc-ai-send').disabled = false;
       addAIMessage('assistant', response);
     }
 
-    document.getElementById('acc-ai-send').addEventListener('click', sendChatMessage);
+    document.getElementById('acc-ai-send').addEventListener('click', () => sendChatMessage());
     document.getElementById('acc-ai-input').addEventListener('keydown', e => {
       if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendChatMessage(); }
     });
+
+    // Render suggestion chips once panel loads
+    renderAccChips();
 
     // ── Full Profile ─────────────────────────────────────────────────────────
     async function loadFullProfile(user) {
