@@ -1,27 +1,16 @@
 ---
 name: Ministry of Gourmand	Coconut Lagoon 100ml
 slug: ministry-of-gourman-coconut-lagoon
-badge: Curated
 price: "39.50"
 brand: Ministry of Gourmand
 gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
-fragrance_family: Gourmand Tropical Floral
-top_notes: Lemon, Mandarin, Apple
+badge: Curated
+stock_status: in_stock
+featured: false
+published: true
 heart_notes: Watermelon, Caramel
-base_notes: Coconut, Vanilla
-accords:
-  - citrus
-  - coconut
-  - vanilla
-  - sweet
-  - ozonic
-  - aquatic
-  - caramel
-  - fruity
-  - fresh
-  - lactonic
 longevity: 7-9 hours
 projection: Moderate
 best_for: Daytime wear
@@ -50,6 +39,20 @@ ysp_thoughts: >-
 
 
   We picked it because it fills a very specific brief that not many fragrances do well — genuinely tropical without smelling like sunscreen, genuinely sweet without being cloying. It's joyful, and sometimes that's exactly what a fragrance should be.
-featured: false
-published: true
+accords:
+  - citrus
+  - coconut
+  - vanilla
+  - sweet
+  - ozonic
+  - aquatic
+  - caramel
+  - fruity
+  - fresh
+  - lactonic
+fragrance_family: Gourmand Tropical Floral
+top_notes: Lemon, Mandarin, Apple
+base_notes: Coconut, Vanilla
+accords_text: citrus, coconut, vanilla, sweet, ozonic, aquatic, caramel, fruity,
+  fresh, lactonic
 ---
