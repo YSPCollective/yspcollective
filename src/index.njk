@@ -36,6 +36,11 @@ canonical: "https://yspcollective.com/"
   .hero-dot.active { background: var(--white); width: 48px; }
   .hero-progress { position: absolute; bottom: 0; left: 0; height: 3px; background: var(--accent-light); z-index: 10; transition: width 0.1s linear; }
 
+  @media (max-width: 768px) {
+    .hero-content { justify-content: flex-end; padding-bottom: 5.5rem; }
+    .hero-indicators { bottom: 1.8rem; left: 1.5rem; }
+  }
+
   /* STATS */
   #intro-band { padding: 4rem 3.5rem; display: flex; justify-content: center; align-items: center; gap: 4rem; border-bottom: 1px solid var(--sand); flex-wrap: wrap; }
   .intro-stat { text-align: center; }
@@ -207,7 +212,6 @@ canonical: "https://yspcollective.com/"
   }
   @media (max-width: 768px) {
     .hero-content { padding: 0 1.5rem; padding-top: var(--nav-height); }
-    .hero-indicators { left: 1.5rem; }
     #intro-band { padding: 3rem 1.5rem; gap: 2rem; }
     .intro-divider { display: none; }
     #product-search { padding: 4rem 1.5rem; }
