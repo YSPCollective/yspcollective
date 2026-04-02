@@ -838,22 +838,36 @@ permalink: /account.html
      * Splits on double newlines or ". " boundaries if the AI returns a wall of text.
      */
     /**
+     * Normalise smart/curly quotes and apostrophes to their plain ASCII equivalents.
+     * Needed because the AI often returns "Bade'e" (right single quote U+2019)
+     * while catalogue data uses a straight apostrophe "Bade'e".
+     */
+    function normaliseQuotes(str) {
+      return str
+        .replace(/[\u2018\u2019\u02BC\u02B9\uFF07]/g, "'")  // curly/modifier apostrophes → '
+        .replace(/[\u201C\u201D\u00AB\u00BB]/g, '"')         // curly double quotes → "
+        .replace(/\u2013|\u2014/g, '-');                      // en/em dash → hyphen
+    }
+
+    /**
      * Bold any catalogue product names found in text, then render as paragraphs.
      */
     function renderIntroText(el, text, catalogueProducts) {
-      // Strip markdown bold/italic/headers first (AI sometimes ignores instructions)
-      let clean = text
+      // Normalise quotes in the reply before any processing
+      let clean = normaliseQuotes(text)
         .replace(/\*\*([^*]+)\*\*/g, '$1')
         .replace(/\*([^*]+)\*/g, '$1')
         .replace(/#+\s/g, '')
         .trim();
 
-      // Bold catalogue product names wherever they appear in the text
+      // Bold catalogue product names wherever they appear
       if (catalogueProducts && catalogueProducts.length) {
-        // Sort longest names first so "Lattafa Khamrah Qahwa 100ml" matches before "Lattafa Khamrah"
+        // Sort longest names first so longer names match before shorter subsets
         const sorted = [...catalogueProducts].sort((a, b) => b.name.length - a.name.length);
         sorted.forEach(p => {
-          const escaped = p.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          const normName = normaliseQuotes(p.name);
+          const escaped = normName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          // Case-insensitive match
           const re = new RegExp(`(${escaped})`, 'gi');
           clean = clean.replace(re, '<strong>$1</strong>');
         });
@@ -862,9 +876,8 @@ permalink: /account.html
       // Split into paragraphs — honour \n\n first
       let paras = clean.split(/\n\n+/).map(s => s.replace(/\n/g, ' ').trim()).filter(Boolean);
 
-      // If AI returned a single blob, try to split at ". [Capital]" boundaries
+      // If single blob, split at ". [Capital]" boundaries
       if (paras.length === 1 && clean.replace(/<[^>]+>/g, '').length > 200) {
-        // Split on period followed by space and capital, but not inside HTML tags
         const parts = clean.split(/(?<=\.)\s+(?=[A-Z])/).map(s => s.trim()).filter(Boolean);
         const merged = [];
         for (let i = 0; i < parts.length; i += 2) {
@@ -878,33 +891,33 @@ permalink: /account.html
 
     /**
      * Extract the 1–2 products the AI specifically recommended.
-     * Uses exact substring matching (longest name first) rather than fuzzy word overlap
-     * to avoid false positives like "Khamrah Qahwa" matching when only "Khamrah" was mentioned.
+     * Uses exact substring matching (longest name first) with quote normalisation
+     * to handle curly apostrophes like "Bade'e" vs "Bade'e".
      */
     function extractMentionedProducts(replyText, catalogueProducts) {
-      const lower = replyText.toLowerCase();
+      // Normalise both the reply and product names before comparison
+      const normReply = normaliseQuotes(replyText).toLowerCase();
 
-      // Sort longest name first — ensures "Lattafa Khamrah Qahwa 100ml" is tested before "Lattafa Khamrah 100ml"
+      // Sort longest name first — prevents shorter names matching inside longer ones
       const sorted = [...catalogueProducts].sort((a, b) => b.name.length - a.name.length);
 
-      // Track which character spans are already "consumed" by a longer match
       const matched = [];
-      const usedSpans = []; // [{start, end}]
+      const usedSpans = [];
 
       sorted.forEach(p => {
-        const nameLower = p.name.toLowerCase();
-        const idx = lower.indexOf(nameLower);
+        const normName = normaliseQuotes(p.name).toLowerCase();
+        const idx = normReply.indexOf(normName);
         if (idx === -1) return;
 
-        // Check this span isn't already covered by a longer match
-        const overlaps = usedSpans.some(s => idx < s.end && (idx + nameLower.length) > s.start);
+        // Skip if this span is already consumed by a longer match
+        const overlaps = usedSpans.some(s => idx < s.end && (idx + normName.length) > s.start);
         if (!overlaps) {
           matched.push({ product: p, idx });
-          usedSpans.push({ start: idx, end: idx + nameLower.length });
+          usedSpans.push({ start: idx, end: idx + normName.length });
         }
       });
 
-      // Return in order of appearance in the text, capped at 2 (top pick + alternative)
+      // Return in order of appearance, capped at 2
       return matched
         .sort((a, b) => a.idx - b.idx)
         .map(m => m.product)
