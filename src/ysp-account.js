@@ -497,12 +497,26 @@ window.YSPAccount = (function () {
       const user = getUser();
       if (user) { user.profileComplete = true; setUser(user); }
 
-      modal.remove();
+      // Show success state with clear next steps
+      const box = modal.querySelector('.ysp-modal-box');
+      const onAccountPage = window.location.pathname.includes('/account');
 
-      // Open chat with personalised first message
-      if (window.YSPChat) {
-        const intro = buildChatIntro(interests, fragrancePrefs, beautyPrefs, firstName);
-        window.YSPChat.openWithMessage(intro);
+      box.innerHTML = `
+        <div style="text-align:center;padding:1rem 0;">
+          <div style="font-size:2.5rem;margin-bottom:1rem;">✦</div>
+          <p style="font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent,#9c7b56);margin-bottom:0.8rem;">All set, ${firstName}!</p>
+          <h3 style="font-family:var(--serif,serif);font-size:1.6rem;font-weight:300;margin-bottom:0.8rem;line-height:1.3;">Your recommendations<br>are ready</h3>
+          <p style="font-size:0.88rem;color:var(--grey,#8a847a);line-height:1.6;margin-bottom:2rem;">We've matched products to your preferences. Head to your account to see them.</p>
+          <div style="display:flex;flex-direction:column;gap:0.8rem;">
+            <a href="/account.html" style="display:block;padding:0.9rem 2rem;background:var(--accent,#9c7b56);color:#fff;text-decoration:none;font-family:var(--sans,sans-serif);font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;text-align:center;transition:background 0.2s;" onmouseover="this.style.background='#1a1916'" onmouseout="this.style.background='var(--accent,#9c7b56)'">View My Recommendations →</a>
+            <button onclick="document.getElementById('ysp-qa-modal').remove()" style="display:block;width:100%;padding:0.75rem;background:none;border:1px solid var(--sand,#e6dfd4);cursor:pointer;font-family:var(--sans,sans-serif);font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey,#8a847a);transition:all 0.2s;" onmouseover="this.style.borderColor='var(--black,#1a1916)';this.style.color='var(--black,#1a1916)'" onmouseout="this.style.borderColor='var(--sand,#e6dfd4)';this.style.color='var(--grey,#8a847a)'">Continue Shopping</button>
+          </div>
+        </div>
+      `;
+
+      // If already on account page, just close and reload
+      if (onAccountPage) {
+        setTimeout(() => { modal.remove(); window.location.reload(); }, 300);
       }
     }
   }
