@@ -9,7 +9,7 @@ size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Curated
 custom_badge: ""
-featured: true
+featured: false
 published: true
 fragrance_family: Oriental Vanilla / Gourmand
 heart_notes: Praline, Candied Fruits, White Flowers
