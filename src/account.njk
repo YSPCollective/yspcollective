@@ -447,10 +447,11 @@ permalink: /account.html
     /* ── PRODUCT GRID ── */
     .recs-product-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.2rem;
       margin-bottom: 2.5rem;
       align-items: stretch;
+      max-width: 640px;
     }
     .recs-product-card {
       border: 1px solid var(--sand);
@@ -507,8 +508,13 @@ permalink: /account.html
     }
     .recs-product-cta:hover { background: var(--accent); color: var(--white); border-color: var(--accent); }
 
+    .recs-ai-intro strong {
+      font-weight: 500;
+      color: var(--black);
+    }
+
     @media (max-width: 900px) {
-      .recs-product-grid { grid-template-columns: repeat(2, 1fr); }
+      .recs-product-grid { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
     }
     @media (max-width: 480px) {
       .recs-product-grid { grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
@@ -831,101 +837,117 @@ permalink: /account.html
      * Render the AI intro text with paragraph formatting.
      * Splits on double newlines or ". " boundaries if the AI returns a wall of text.
      */
-    function renderIntroText(el, text) {
-      // Strip markdown symbols but keep sentence content
-      const clean = text
+    /**
+     * Bold any catalogue product names found in text, then render as paragraphs.
+     */
+    function renderIntroText(el, text, catalogueProducts) {
+      // Strip markdown bold/italic/headers first (AI sometimes ignores instructions)
+      let clean = text
         .replace(/\*\*([^*]+)\*\*/g, '$1')
         .replace(/\*([^*]+)\*/g, '$1')
         .replace(/#+\s/g, '')
         .trim();
 
-      // Split into paragraphs — honour \n\n first, else split long text at sentence boundaries
-      let paras = clean.split(/\n\n+/).map(s => s.replace(/\n/g, ' ').trim()).filter(Boolean);
-
-      // If AI returned a single blob, split at sentence ends before product names (capitalised words after ". ")
-      if (paras.length === 1 && clean.length > 200) {
-        paras = clean.split(/(?<=\.)\s+(?=[A-Z])/).map(s => s.trim()).filter(Boolean);
-        // Merge into groups of ~2 sentences for readability
-        const merged = [];
-        for (let i = 0; i < paras.length; i += 2) {
-          merged.push([paras[i], paras[i+1]].filter(Boolean).join(' '));
-        }
-        paras = merged;
+      // Bold catalogue product names wherever they appear in the text
+      if (catalogueProducts && catalogueProducts.length) {
+        // Sort longest names first so "Lattafa Khamrah Qahwa 100ml" matches before "Lattafa Khamrah"
+        const sorted = [...catalogueProducts].sort((a, b) => b.name.length - a.name.length);
+        sorted.forEach(p => {
+          const escaped = p.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          const re = new RegExp(`(${escaped})`, 'gi');
+          clean = clean.replace(re, '<strong>$1</strong>');
+        });
       }
 
-      el.innerHTML = paras.map(p => `<p style="margin:0 0 0.75rem;last-child:margin-bottom:0">${p}</p>`).join('');
+      // Split into paragraphs — honour \n\n first
+      let paras = clean.split(/\n\n+/).map(s => s.replace(/\n/g, ' ').trim()).filter(Boolean);
+
+      // If AI returned a single blob, try to split at ". [Capital]" boundaries
+      if (paras.length === 1 && clean.replace(/<[^>]+>/g, '').length > 200) {
+        // Split on period followed by space and capital, but not inside HTML tags
+        const parts = clean.split(/(?<=\.)\s+(?=[A-Z])/).map(s => s.trim()).filter(Boolean);
+        const merged = [];
+        for (let i = 0; i < parts.length; i += 2) {
+          merged.push([parts[i], parts[i+1]].filter(Boolean).join(' '));
+        }
+        paras = merged.length > 1 ? merged : paras;
+      }
+
+      el.innerHTML = paras.map(p => `<p>${p}</p>`).join('');
     }
 
     /**
-     * Extract product matches from AI reply text.
-     * Looks for catalogue product names mentioned in the reply (fuzzy, word-overlap).
-     * Returns matched products in mention order, deduped.
+     * Extract the 1–2 products the AI specifically recommended.
+     * Uses exact substring matching (longest name first) rather than fuzzy word overlap
+     * to avoid false positives like "Khamrah Qahwa" matching when only "Khamrah" was mentioned.
      */
     function extractMentionedProducts(replyText, catalogueProducts) {
       const lower = replyText.toLowerCase();
-      const scored = catalogueProducts.map(p => {
-        // Score by how many significant words from the product name appear in the reply
-        const words = p.name.toLowerCase()
-          .split(/\s+/)
-          .filter(w => w.length > 3 && !['with','from','that','this','for','and','the'].includes(w));
-        const hits = words.filter(w => lower.includes(w)).length;
-        // Bonus if the full name substring appears (partial match)
-        const nameWords = p.name.toLowerCase().split(/\s+/).slice(0, 3).join(' ');
-        const bonus = lower.includes(nameWords) ? 3 : 0;
-        return { product: p, hits: hits + bonus };
-      }).filter(m => m.hits >= 2) // must match at least 2 significant words
-        .sort((a, b) => b.hits - a.hits);
 
-      // Dedupe by slug
-      const seen = new Set();
-      return scored.filter(m => {
-        if (seen.has(m.product.slug)) return false;
-        seen.add(m.product.slug);
-        return true;
-      }).map(m => m.product);
+      // Sort longest name first — ensures "Lattafa Khamrah Qahwa 100ml" is tested before "Lattafa Khamrah 100ml"
+      const sorted = [...catalogueProducts].sort((a, b) => b.name.length - a.name.length);
+
+      // Track which character spans are already "consumed" by a longer match
+      const matched = [];
+      const usedSpans = []; // [{start, end}]
+
+      sorted.forEach(p => {
+        const nameLower = p.name.toLowerCase();
+        const idx = lower.indexOf(nameLower);
+        if (idx === -1) return;
+
+        // Check this span isn't already covered by a longer match
+        const overlaps = usedSpans.some(s => idx < s.end && (idx + nameLower.length) > s.start);
+        if (!overlaps) {
+          matched.push({ product: p, idx });
+          usedSpans.push({ start: idx, end: idx + nameLower.length });
+        }
+      });
+
+      // Return in order of appearance in the text, capped at 2 (top pick + alternative)
+      return matched
+        .sort((a, b) => a.idx - b.idx)
+        .map(m => m.product)
+        .slice(0, 2);
     }
 
     async function loadFragranceRecs(user) {
       const fp = user.fragrancePrefs || {};
-      const catalogueNames = PRODUCT_CATALOGUE
-        .filter(p => p.type === 'fragrance')
-        .map(p => `${p.name} (€${p.price})`)
-        .join(', ');
+      const fragranceProducts = PRODUCT_CATALOGUE.filter(p => p.type === 'fragrance');
+      const catalogueNames = fragranceProducts.map(p => `${p.name} (€${p.price})`).join(', ');
 
       const prompt = `You are recommending fragrances to ${user.firstName} from the YSP Collective range. ` +
         `Their profile — scent preferences: ${(fp.scents||[]).join(', ') || 'no preference'}; ` +
         `occasions: ${(fp.occasions||[]).join(', ') || 'everyday'}; ` +
         `gender preference: ${fp.gender || 'any'}; budget: ${fp.budget || 'flexible'}. ` +
-        `Write 2 short paragraphs (3–4 sentences total). First paragraph: your top pick and why it suits them personally. ` +
-        `Second paragraph: one alternative pick for a different occasion or mood. ` +
+        `Write exactly 2 short paragraphs. First paragraph: one top pick and why it suits them personally. ` +
+        `Second paragraph: one alternative for a different occasion or mood. ` +
+        `Recommend exactly 2 different products total. ` +
         `Only recommend products from this list: ${catalogueNames}. ` +
-        `Use the exact product names as they appear. Do not use markdown bullets or headers.`;
+        `Use the exact product names as they appear in the list. Do not use markdown bullets, headers, or asterisks.`;
 
       const reply = await callAI([{ role: 'user', content: prompt }]);
       const introEl = document.getElementById('recs-frag-intro');
-      renderIntroText(introEl, reply);
+      renderIntroText(introEl, reply, fragranceProducts);
 
-      // Try to match AI-mentioned products to catalogue — fall back to accord scoring
-      const fragranceProducts = PRODUCT_CATALOGUE.filter(p => p.type === 'fragrance');
+      // Match exactly what the AI mentioned (strict, capped at 2)
       let toShow = extractMentionedProducts(reply, fragranceProducts);
 
       if (toShow.length < 2) {
-        // Fallback: accord scoring
+        // Fallback: accord scoring for any missing slots, no dupes
         const scents = fp.scents || [];
-        const scored = fragranceProducts.map(p => {
-          const accords = p.accords || [];
-          const score = accords.filter(a =>
-            scents.some(s => a.toLowerCase().includes(s.replace('-',' ').split(' ')[0]))
-          ).length;
-          return { ...p, score };
-        }).sort((a, b) => b.score - a.score);
-
-        // Merge: mentioned first, then fill with scored (no dupes)
         const mentionedSlugs = new Set(toShow.map(p => p.slug));
-        const fill = scored.filter(p => !mentionedSlugs.has(p.slug));
-        toShow = [...toShow, ...fill].slice(0, 4);
-      } else {
-        toShow = toShow.slice(0, 4);
+        const scored = fragranceProducts
+          .filter(p => !mentionedSlugs.has(p.slug))
+          .map(p => {
+            const accords = p.accords || [];
+            const score = accords.filter(a =>
+              scents.some(s => a.toLowerCase().includes(s.replace('-',' ').split(' ')[0]))
+            ).length;
+            return { ...p, score };
+          })
+          .sort((a, b) => b.score - a.score);
+        toShow = [...toShow, ...scored].slice(0, 2);
       }
 
       renderProductCards('recs-frag-grid', toShow);
@@ -933,30 +955,28 @@ permalink: /account.html
 
     async function loadBeautyRecs(user) {
       const bp = user.beautyPrefs || {};
-      const catalogueNames = PRODUCT_CATALOGUE
-        .filter(p => p.type === 'beauty')
-        .map(p => `${p.name} (€${p.price})`)
-        .join(', ');
+      const beautyProducts = PRODUCT_CATALOGUE.filter(p => p.type === 'beauty');
+      const catalogueNames = beautyProducts.map(p => `${p.name} (€${p.price})`).join(', ');
 
       const prompt = `You are recommending skincare to ${user.firstName} from the YSP Collective range. ` +
         `Their profile — skin type: ${(bp.skinType||[]).join(', ') || 'normal'}; ` +
         `concerns: ${(bp.concerns||[]).join(', ') || 'general care'}; budget: ${bp.budget || 'flexible'}. ` +
-        `Write 2 short paragraphs (3–4 sentences total). First paragraph: your top pick and why it suits their skin. ` +
+        `Write exactly 2 short paragraphs. First paragraph: one top pick and why it suits their skin. ` +
         `Second paragraph: one complementary product. ` +
+        `Recommend exactly 2 different products total. ` +
         `Only recommend products from this list: ${catalogueNames}. ` +
-        `Use the exact product names as they appear. Do not use markdown bullets or headers.`;
+        `Use the exact product names as they appear in the list. Do not use markdown bullets, headers, or asterisks.`;
 
       const reply = await callAI([{ role: 'user', content: prompt }]);
       const introEl = document.getElementById('recs-beauty-intro');
-      renderIntroText(introEl, reply);
+      renderIntroText(introEl, reply, beautyProducts);
 
-      const beautyProducts = PRODUCT_CATALOGUE.filter(p => p.type === 'beauty');
       let toShow = extractMentionedProducts(reply, beautyProducts);
 
       if (toShow.length < 2) {
-        toShow = [...toShow, ...beautyProducts.filter(p => !toShow.find(m => m.slug === p.slug))].slice(0, 4);
-      } else {
-        toShow = toShow.slice(0, 4);
+        const mentionedSlugs = new Set(toShow.map(p => p.slug));
+        const fill = beautyProducts.filter(p => !mentionedSlugs.has(p.slug));
+        toShow = [...toShow, ...fill].slice(0, 2);
       }
 
       renderProductCards('recs-beauty-grid', toShow);
