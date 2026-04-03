@@ -62,4 +62,5 @@ ysp_thoughts: >-
   The incense and rose combination gives it something that sits between Western niche perfumery and Arabian tradition, which is probably why it appeals to me alongside the rest of what we carry.
 
    We stock it because it's genuinely exceptional and because personal favourites earn their place here as much as anything else does.
+exclude_from_feed: true
 ---
