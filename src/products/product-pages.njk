@@ -72,10 +72,25 @@ permalink: "products/{{ product.slug }}.html"
   .spec-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey); margin-bottom: 0.2rem; }
   .spec-value { font-size: 0.88rem; color: var(--black); }
 
+  /* ── Accords section ── */
   .accords-wrap { margin-bottom: 2rem; }
   .accords-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey); margin-bottom: 0.6rem; }
-  .accords-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .accord-tag { padding: 0.3rem 0.8rem; border: 1px solid var(--sand); font-size: 0.75rem; color: var(--grey); letter-spacing: 0.08em; }
+  .accords-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .accord-tag {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    padding: 0.32rem 0.75rem;
+    border: 1px solid var(--sand);
+    font-size: 0.72rem; letter-spacing: 0.08em;
+    cursor: pointer; color: var(--grey); background: transparent;
+    transition: border-color 0.25s, color 0.25s, background 0.25s;
+    user-select: none;
+  }
+  .accord-tag:hover { border-color: var(--accent); color: var(--accent); background: rgba(156,123,86,0.05); }
+  .accord-q {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 13px; height: 13px; border-radius: 50%; border: 1px solid currentColor;
+    font-size: 0.58rem; font-weight: 500; opacity: 0.6; flex-shrink: 0;
+  }
 
   .product-cta { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; align-items: center; }
   .btn-buy-now { padding: 1rem 2.5rem; background: var(--accent); color: var(--white); font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; border: none; cursor: pointer; transition: background 0.2s, transform 0.2s; display: inline-block; }
@@ -142,6 +157,44 @@ permalink: "products/{{ product.slug }}.html"
   .related-card-meta { font-size: 0.72rem; color: var(--grey); margin-bottom: 0.6rem; }
   .related-card-price { font-family: var(--serif); font-size: 1.3rem; color: var(--black); }
 
+  /* ── Note drawer ── */
+  .nd-backdrop {
+    position: fixed; inset: 0; background: rgba(26,25,22,0.5);
+    z-index: 9000; opacity: 0; pointer-events: none;
+    transition: opacity 0.35s; backdrop-filter: blur(2px);
+  }
+  .nd-backdrop.nd-open { opacity: 1; pointer-events: all; }
+  .nd-drawer {
+    position: fixed; top: 0; right: 0; bottom: 0; width: min(440px, 94vw);
+    background: #faf8f5; z-index: 9001;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+    display: flex; flex-direction: column; overflow: hidden;
+    box-shadow: -20px 0 60px rgba(0,0,0,0.12);
+  }
+  .nd-drawer.nd-open { transform: translateX(0); }
+  .nd-header { padding: 1.4rem 1.8rem; border-bottom: 1px solid #e6dfd4; display: flex; justify-content: space-between; align-items: flex-start; flex-shrink: 0; }
+  .nd-eyebrow { font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase; color: #9c7b56; margin-bottom: 0.2rem; }
+  .nd-name { font-family: var(--serif); font-size: 1.55rem; font-weight: 300; color: #1a1916; line-height: 1.2; }
+  .nd-close { background: none; border: 1px solid #e6dfd4; width: 34px; height: 34px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: #8a847a; transition: all 0.25s; flex-shrink: 0; margin-left: 1rem; }
+  .nd-close:hover { border-color: #9c7b56; color: #9c7b56; }
+  .nd-body { flex: 1; overflow-y: auto; overscroll-behavior: contain; }
+  .nd-image { display: flex; align-items: center; justify-content: center; height: 180px; }
+  .nd-content { padding: 1.6rem 1.8rem; }
+  .nd-family-pill { display: inline-block; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.28rem 0.75rem; border-radius: 100px; margin-bottom: 1rem; font-weight: 400; }
+  .nd-desc { font-size: 0.875rem; line-height: 1.85; color: #8a847a; margin-bottom: 1.4rem; }
+  .nd-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: #b5afa5; margin-bottom: 0.55rem; }
+  .nd-pairings { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.4rem; }
+  .nd-pair-tag { padding: 0.28rem 0.65rem; border: 1px solid #e6dfd4; font-size: 0.7rem; color: #8a847a; }
+  .nd-intensity-row { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.6rem; }
+  .nd-intensity-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: #b5afa5; white-space: nowrap; }
+  .nd-intensity-track { flex: 1; height: 3px; background: #e6dfd4; position: relative; border-radius: 2px; }
+  .nd-intensity-fill { position: absolute; left: 0; top: 0; bottom: 0; background: #9c7b56; transition: width 0.6s 0.15s cubic-bezier(0.4,0,0.2,1); border-radius: 2px; }
+  .nd-intensity-value { font-size: 0.7rem; color: #9c7b56; white-space: nowrap; }
+  .nd-footer { padding: 0 1.8rem 1.8rem; flex-shrink: 0; }
+  .nd-cta { display: block; text-align: center; padding: 0.8rem; background: #1a1916; color: #faf8f5; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: background 0.25s; }
+  .nd-cta:hover { background: #9c7b56; }
+
   @media (max-width: 900px) {
     .breadcrumb { padding: 6rem 1.5rem 0; }
     .product-wrap { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem 4rem; }
@@ -201,12 +254,25 @@ permalink: "products/{{ product.slug }}.html"
       <div class="spec-item"><div class="spec-label">Longevity</div><div class="spec-value">{{ product.longevity or '—' }}</div></div>
       <div class="spec-item"><div class="spec-label">Projection</div><div class="spec-value">{{ product.projection or '—' }}</div></div>
     </div>
+
     {% set accordsList = product | parseAccords %}
     {% if accordsList.length %}
     <div class="accords-wrap">
       <div class="accords-label" data-i18n="pdp_accords">Main Accords</div>
       <div class="accords-list">
-        {% for accord in accordsList %}<span class="accord-tag">{{ accord }}</span>{% endfor %}
+        {% for accord in accordsList %}
+          {% set accordTrimmed = accord | trim %}
+          {# Normalise the accord name to a drawer key: lowercase, remove spaces and special chars #}
+          {% set key = accordTrimmed | lower | replace(" ", "") | replace("(", "") | replace(")", "") | replace("/", "") | replace("-", "") %}
+          {# Map known multi-word keys that need camelCase #}
+          {% if key == "greentea" %}{% set key = "greenTea" %}{% endif %}
+          {% if key == "tonkabean" %}{% set key = "tonkaBean" %}{% endif %}
+          {% if key == "frankincense" %}{% set key = "incense" %}{% endif %}
+          {% if key == "oudagarwood" %}{% set key = "oud" %}{% endif %}
+          <span class="accord-tag" onclick="openNoteDrawer('{{ key }}')">
+            {{ accordTrimmed }} <span class="accord-q">?</span>
+          </span>
+        {% endfor %}
       </div>
     </div>
     {% endif %}
@@ -270,23 +336,22 @@ permalink: "products/{{ product.slug }}.html"
 
     {% if product.amazon_url %}
       <a href="{{ product.amazon_url }}" class="btn-shop" target="_blank" rel="noopener" data-i18n="pdp_amazon">📦 Buy on Amazon</a>
-      {% endif %}
-    </div>
+    {% endif %}
+  </div>
 
-    <div id="notify-popup" style="display:none;margin-top:1rem">
-      <div style="display:flex;gap:0;max-width:400px">
-        <input type="email" id="notify-email" placeholder="your@email.com" style="flex:1;padding:0.75rem 1rem;border:1px solid var(--sand);background:var(--white);font-family:var(--sans);font-size:0.85rem;outline:none">
-        <button onclick="submitNotify()" style="padding:0.75rem 1.2rem;background:var(--black);color:var(--white);border:none;font-family:var(--sans);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer">Notify Me</button>
-      </div>
-      <p id="notify-success" style="display:none;font-size:0.82rem;color:var(--accent);margin-top:0.5rem">✓ We'll let you know when this is back in stock.</p>
+  <div id="notify-popup" style="display:none;margin-top:1rem">
+    <div style="display:flex;gap:0;max-width:400px">
+      <input type="email" id="notify-email" placeholder="your@email.com" style="flex:1;padding:0.75rem 1rem;border:1px solid var(--sand);background:var(--white);font-family:var(--sans);font-size:0.85rem;outline:none">
+      <button onclick="submitNotify()" style="padding:0.75rem 1.2rem;background:var(--black);color:var(--white);border:none;font-family:var(--sans);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer">Notify Me</button>
     </div>
+    <p id="notify-success" style="display:none;font-size:0.82rem;color:var(--accent);margin-top:0.5rem">✓ We'll let you know when this is back in stock.</p>
+  </div>
 
-    <div class="trust-badges">
-      <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_1">EU Authorised Stock</span></div>
-      <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_2">Authentic &amp; Sealed</span></div>
-      <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_3">Fast EU Shipping</span></div>
-      <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_4">90-Day Guarantee</span></div>
-    </div>
+  <div class="trust-badges">
+    <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_1">EU Authorised Stock</span></div>
+    <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_2">Authentic &amp; Sealed</span></div>
+    <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_3">Fast EU Shipping</span></div>
+    <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_4">90-Day Guarantee</span></div>
   </div>
 </div>
 
@@ -346,6 +411,37 @@ permalink: "products/{{ product.slug }}.html"
   </div>
 </section>
 {% endif %}
+
+<!-- ═══════════ NOTE DRAWER ═══════════ -->
+<div class="nd-backdrop" id="ndBackdrop"></div>
+<div class="nd-drawer" id="ndDrawer" role="dialog" aria-modal="true" aria-labelledby="ndName">
+  <div class="nd-header">
+    <div>
+      <div class="nd-eyebrow" id="ndFamily">Family</div>
+      <div class="nd-name" id="ndName">Note Name</div>
+    </div>
+    <button class="nd-close" id="ndClose" aria-label="Close">✕</button>
+  </div>
+  <div class="nd-body">
+    <div class="nd-image" id="ndImage"></div>
+    <div class="nd-content">
+      <div id="ndFamilyPill"></div>
+      <p class="nd-desc" id="ndDesc"></p>
+      <div class="nd-label">Pairs well with</div>
+      <div class="nd-pairings" id="ndPairings"></div>
+      <div class="nd-intensity-row">
+        <span class="nd-intensity-label">Intensity</span>
+        <div class="nd-intensity-track">
+          <div class="nd-intensity-fill" id="ndIntensityFill"></div>
+        </div>
+        <span class="nd-intensity-value" id="ndIntensityValue"></span>
+      </div>
+    </div>
+  </div>
+  <div class="nd-footer">
+    <a href="/fragrance-notes.html" class="nd-cta">Explore all fragrance notes →</a>
+  </div>
+</div>
 
 <script>
   // ── GALLERY ──────────────────────────────────────────────────────────────
@@ -546,4 +642,97 @@ permalink: "products/{{ product.slug }}.html"
       }
     });
   });
+
+  // ── NOTE DRAWER ──────────────────────────────────────────────────────────
+  (function() {
+    'use strict';
+
+    const NOTES = {
+      bergamot:   { name:'Bergamot',            family:'Citrus',   fc:'#e8a84a', icon:'citrus',   strength:30, desc:'The most refined citrus in perfumery — bergamot has a uniquely floral, slightly spicy character beneath its brightness. The defining note in Earl Grey tea, it bridges citrus and floral families and opens some of the world\'s most celebrated fragrances.', pairings:['Cedar','Lavender','Rose','Musk','Amber'] },
+      lemon:      { name:'Lemon',               family:'Citrus',   fc:'#f0d060', icon:'citrus',   strength:25, desc:'Sharp, clean and instantly recognisable. Lemon adds a bright, fizzy luminosity to fragrances — the most transparent citrus note, used in fresh and aquatic compositions as an energising, uncomplicated opener.', pairings:['Marine','White Musk','Vetiver','Cedar','Ginger'] },
+      grapefruit: { name:'Grapefruit',           family:'Citrus',   fc:'#f0a080', icon:'citrus',   strength:28, desc:'Juicy, slightly bitter and wonderfully uplifting. Grapefruit has a natural effervescence and a slight green, herbal edge. Popular in fresh and sport fragrances, it works beautifully against warm woody and musky bases.', pairings:['White Musk','Vetiver','Cedar','Jasmine','Amber'] },
+      mandarin:   { name:'Mandarin',             family:'Citrus',   fc:'#e87030', icon:'citrus',   strength:35, desc:'Sweeter and rounder than other citrus notes, with a jammy, almost red-fruited quality that bridges citrus and gourmand families. Warmer and more sensual than lemon or bergamot.', pairings:['Rose','Sandalwood','Amber','Vanilla','Jasmine'] },
+      rose:       { name:'Rose',                family:'Floral',   fc:'#c06070', icon:'floral',   strength:55, desc:'The queen of flowers and the most used note in perfumery. Rose ranges from fresh and dewy to rich and jam-like. Central to Arabian perfumery — particularly in celebrated oud-rose combinations.', pairings:['Oud','Sandalwood','Amber','Musk','Bergamot'] },
+      jasmine:    { name:'Jasmine',             family:'Floral',   fc:'#e8e0c8', icon:'floral',   strength:60, desc:'Intoxicating, rich and slightly animalic. Jasmine contains over 200 aromatic compounds and has an almost skin-like quality that makes it extraordinarily seductive — used in both feminine and masculine fragrances worldwide.', pairings:['Musk','Sandalwood','Amber','Rose','Vanilla'] },
+      lavender:   { name:'Lavender',            family:'Floral',   fc:'#9080b0', icon:'floral',   strength:40, desc:'Aromatic, herbal and endlessly calming. Lavender straddles floral and aromatic families and underpins the classic fougère accord — the foundation of most traditional masculine fragrances.', pairings:['Oakmoss','Coumarin','Musk','Cedar','Bergamot'] },
+      iris:       { name:'Iris',                family:'Floral',   fc:'#8070a0', icon:'floral',   strength:50, desc:'One of the rarest materials in perfumery, from orris root aged for several years. Iris has a powdery, violet-like quality with a clean metallic edge — associated with refinement and Parisian haute parfumerie.', pairings:['Violet','Cedar','Musk','Sandalwood','Rose'] },
+      oud:        { name:'Oud (Agarwood)',       family:'Woody',    fc:'#5a3010', icon:'woody',    strength:90, desc:'The most precious material in all perfumery — sometimes called liquid gold. Oud comes from agarwood infected with a specific mould, producing a smoky, deep, extraordinarily complex scent. The defining note of Middle Eastern perfumery.', pairings:['Rose','Amber','Saffron','Sandalwood','Musk'] },
+      sandalwood: { name:'Sandalwood',           family:'Woody',    fc:'#c0906a', icon:'woody',    strength:65, desc:'Creamy, milky and deeply sensual. Sandalwood blends seamlessly with almost any ingredient, smoothing rough edges and adding warm, skin-like depth. A cornerstone of both Arabian and European perfumery traditions.', pairings:['Rose','Jasmine','Vanilla','Musk','Amber'] },
+      cedarwood:  { name:'Cedarwood',            family:'Woody',    fc:'#8a6040', icon:'woody',    strength:50, desc:'Clean, dry and pencil-shaving dry. Cedar provides woody structure without overwhelming other notes — at home in fresh aquatics, classic masculines and rich orientals alike.', pairings:['Bergamot','Vetiver','Musk','Amber','Lavender'] },
+      vetiver:    { name:'Vetiver',              family:'Woody',    fc:'#706040', icon:'woody',    strength:70, desc:'Earthy, smoky, rooty and profoundly grounding. Extracted from roots of a grass native to India and Haiti. Adds gravitas, depth and a wonderful dry quality to woody and aromatic compositions.', pairings:['Bergamot','Cedar','Oakmoss','Amber','Grapefruit'] },
+      amber:      { name:'Amber',               family:'Oriental', fc:'#b08030', icon:'oriental', strength:75, desc:'Warm, honeyed, powdery and deeply comforting. Amber is an accord combining labdanum, benzoin, vanilla and sandalwood — the most iconic accord in Arabian perfumery, adding opulence and longevity.', pairings:['Oud','Musk','Rose','Vanilla','Sandalwood'] },
+      musk:       { name:'Musk',                family:'Oriental', fc:'#7a6060', icon:'oriental', strength:45, desc:'The most intimate of all fragrance materials. Musks range from clean and soapy to animalic and earthy to warm and skin-like. Musk gives fragrances their second-skin quality — making them feel personal.', pairings:['Amber','Vanilla','Sandalwood','Rose','Bergamot'] },
+      saffron:    { name:'Saffron',             family:'Oriental', fc:'#c06810', icon:'oriental', strength:80, desc:'Intensely spicy, leathery and metallic. Simultaneously sharp and sweet, with a leather-like facet that adds incredible depth. A signature note in Arabian luxury perfumery — particularly in premium oud compositions.', pairings:['Oud','Rose','Amber','Sandalwood','Musk'] },
+      incense:    { name:'Incense / Frankincense', family:'Oriental', fc:'#806030', icon:'oriental', strength:70, desc:'Smoky, resinous, ceremonial and profound. Frankincense has a crystalline, slightly lemony quality beneath the resin. A cornerstone of Arabic bakhoor tradition — adds a timeless, sacred quality to oriental fragrances.', pairings:['Oud','Amber','Rose','Sandalwood','Musk'] },
+      marine:     { name:'Marine / Aquatic',     family:'Fresh',    fc:'#4080a0', icon:'fresh',    strength:35, desc:'Clean, airy and oceanic. Marine notes are largely synthetic, evoking sea air, ozone and wet stone. They add a sense of openness and freedom to compositions — fresh and effortless.', pairings:['Citrus','Musk','Cedar','Lavender','Grapefruit'] },
+      greenTea:   { name:'Green Tea',            family:'Fresh',    fc:'#70a060', icon:'fresh',    strength:30, desc:'Delicately vegetal, subtly bitter and wonderfully clean. Green tea notes capture freshly steeped sencha — grassy, slightly smoky and refreshingly simple. A staple of K-beauty fragrances.', pairings:['Bergamot','White Musk','Cedar','Jasmine','Lemon'] },
+      mint:       { name:'Mint',                family:'Fresh',    fc:'#50b070', icon:'fresh',    strength:40, desc:'Cool, sharp and immediately invigorating. Used sparingly to add a burst of coolness and contrast — works well in aromatic fougères and as a counterpoint to warm oriental bases.', pairings:['Lavender','Bergamot','Vetiver','Musk','Cedar'] },
+      vanilla:    { name:'Vanilla',             family:'Gourmand', fc:'#c0902a', icon:'gourmand', strength:60, desc:'Warm, creamy and universally comforting. Vanilla adds warmth, sweetness and skin-like softness that makes compositions feel intimate. It underpins the oriental drydown that makes Arabian fragrances so addictive.', pairings:['Amber','Musk','Sandalwood','Rose','Oud'] },
+      caramel:    { name:'Caramel',             family:'Gourmand', fc:'#a06020', icon:'gourmand', strength:55, desc:'Rich, buttery and deeply sweet. Caramel notes add a warm, enveloping sweetness — popular in evening and winter fragrances, sitting comfortably alongside amber, vanilla and warm musks.', pairings:['Vanilla','Amber','Musk','Tonka Bean','Sandalwood'] },
+      coffee:     { name:'Coffee',              family:'Gourmand', fc:'#604020', icon:'gourmand', strength:65, desc:'Dark, roasted, intensely aromatic. Coffee adds incredible depth and a modern character — particularly prominent in fragrances like Lattafa Khamrah Qahwa where it forms the centrepiece.', pairings:['Vanilla','Tobacco','Amber','Musk','Cedar'] },
+      tonkaBean:  { name:'Tonka Bean',          family:'Gourmand', fc:'#906838', icon:'gourmand', strength:50, desc:'Almondine, sweet and warmly powdery. Tonka bean bridges gourmand and oriental families, adding soft comforting sweetness without cloying weight. Essential for softening spicy and woody notes.', pairings:['Vanilla','Lavender','Musk','Amber','Cedarwood'] }
+    };
+
+    function getIllustration(icon, color) {
+      const c = color;
+      const s = 90;
+      const shapes = {
+        citrus:   `<circle cx="${s/2}" cy="${s/2}" r="${s*0.38}" fill="${c}" opacity="0.15"/><circle cx="${s/2}" cy="${s/2}" r="${s*0.28}" fill="${c}" opacity="0.25"/><circle cx="${s/2}" cy="${s/2}" r="${s*0.18}" fill="${c}" opacity="0.5"/><line x1="${s/2}" y1="${s*0.12}" x2="${s/2}" y2="${s*0.88}" stroke="${c}" stroke-width="0.8" opacity="0.35"/><line x1="${s*0.12}" y1="${s/2}" x2="${s*0.88}" y2="${s/2}" stroke="${c}" stroke-width="0.8" opacity="0.35"/><line x1="${s*0.23}" y1="${s*0.23}" x2="${s*0.77}" y2="${s*0.77}" stroke="${c}" stroke-width="0.6" opacity="0.25"/><line x1="${s*0.77}" y1="${s*0.23}" x2="${s*0.23}" y2="${s*0.77}" stroke="${c}" stroke-width="0.6" opacity="0.25"/><circle cx="${s/2}" cy="${s/2}" r="${s*0.05}" fill="${c}" opacity="0.9"/><path d="M${s/2} ${s*0.22} Q${s*0.55} ${s*0.14} ${s/2} ${s*0.1} Q${s*0.45} ${s*0.14} ${s/2} ${s*0.22}" fill="${c}" opacity="0.7"/>`,
+        floral:   `<ellipse cx="${s/2}" cy="${s*0.3}" rx="${s*0.1}" ry="${s*0.18}" fill="${c}" opacity="0.5"/><ellipse cx="${s*0.7}" cy="${s*0.4}" rx="${s*0.1}" ry="${s*0.18}" fill="${c}" opacity="0.5" transform="rotate(60 ${s/2} ${s/2})"/><ellipse cx="${s*0.7}" cy="${s*0.6}" rx="${s*0.1}" ry="${s*0.18}" fill="${c}" opacity="0.5" transform="rotate(120 ${s/2} ${s/2})"/><ellipse cx="${s/2}" cy="${s*0.7}" rx="${s*0.1}" ry="${s*0.18}" fill="${c}" opacity="0.5" transform="rotate(180 ${s/2} ${s/2})"/><ellipse cx="${s*0.3}" cy="${s*0.6}" rx="${s*0.1}" ry="${s*0.18}" fill="${c}" opacity="0.5" transform="rotate(240 ${s/2} ${s/2})"/><ellipse cx="${s*0.3}" cy="${s*0.4}" rx="${s*0.1}" ry="${s*0.18}" fill="${c}" opacity="0.5" transform="rotate(300 ${s/2} ${s/2})"/><circle cx="${s/2}" cy="${s/2}" r="${s*0.12}" fill="${c}" opacity="0.9"/><circle cx="${s/2}" cy="${s/2}" r="${s*0.06}" fill="white" opacity="0.4"/>`,
+        woody:    `<rect x="${s*0.44}" y="${s*0.14}" width="${s*0.12}" height="${s*0.64}" rx="2" fill="${c}" opacity="0.55"/><path d="M${s/2} ${s*0.35} L${s*0.26} ${s*0.56} L${s*0.36} ${s*0.56} L${s*0.36} ${s*0.72} L${s*0.64} ${s*0.72} L${s*0.64} ${s*0.56} L${s*0.74} ${s*0.56} Z" fill="${c}" opacity="0.38"/><path d="M${s/2} ${s*0.24} L${s*0.3} ${s*0.44} L${s*0.4} ${s*0.44} L${s*0.4} ${s*0.58} L${s*0.6} ${s*0.58} L${s*0.6} ${s*0.44} L${s*0.7} ${s*0.44} Z" fill="${c}" opacity="0.5"/><path d="M${s/2} ${s*0.14} L${s*0.35} ${s*0.3} L${s*0.43} ${s*0.3} L${s*0.43} ${s*0.43} L${s*0.57} ${s*0.43} L${s*0.57} ${s*0.3} L${s*0.65} ${s*0.3} Z" fill="${c}" opacity="0.65"/><circle cx="${s/2}" cy="${s*0.13}" r="${s*0.04}" fill="${c}" opacity="0.8"/>`,
+        oriental: `<polygon points="${s/2},${s*0.1} ${s*0.58},${s*0.35} ${s*0.84},${s*0.35} ${s*0.63},${s*0.51} ${s*0.71},${s*0.76} ${s/2},${s*0.62} ${s*0.29},${s*0.76} ${s*0.37},${s*0.51} ${s*0.16},${s*0.35} ${s*0.42},${s*0.35}" fill="${c}" opacity="0.18"/><polygon points="${s/2},${s*0.18} ${s*0.56},${s*0.34} ${s*0.74},${s*0.34} ${s*0.6},${s*0.46} ${s*0.65},${s*0.62} ${s/2},${s*0.53} ${s*0.35},${s*0.62} ${s*0.4},${s*0.46} ${s*0.26},${s*0.34} ${s*0.44},${s*0.34}" fill="${c}" opacity="0.35"/><polygon points="${s/2},${s*0.26} ${s*0.54},${s*0.38} ${s*0.66},${s*0.38} ${s*0.57},${s*0.46} ${s*0.61},${s*0.59} ${s/2},${s*0.52} ${s*0.39},${s*0.59} ${s*0.43},${s*0.46} ${s*0.34},${s*0.38} ${s*0.46},${s*0.38}" fill="${c}" opacity="0.6"/><circle cx="${s/2}" cy="${s/2}" r="${s*0.075}" fill="${c}" opacity="0.9"/>`,
+        fresh:    `<path d="M${s*0.2} ${s*0.57} Q${s*0.32} ${s*0.32} ${s/2} ${s*0.38} Q${s*0.68} ${s*0.32} ${s*0.8} ${s*0.57} Q${s*0.68} ${s*0.76} ${s/2} ${s*0.71} Q${s*0.32} ${s*0.76} ${s*0.2} ${s*0.57}Z" fill="${c}" opacity="0.15"/><path d="M${s*0.26} ${s*0.56} Q${s*0.35} ${s*0.38} ${s/2} ${s*0.43} Q${s*0.65} ${s*0.38} ${s*0.74} ${s*0.56} Q${s*0.65} ${s*0.72} ${s/2} ${s*0.67} Q${s*0.35} ${s*0.72} ${s*0.26} ${s*0.56}Z" fill="${c}" opacity="0.32"/><path d="M${s*0.33} ${s*0.55} Q${s*0.4} ${s*0.44} ${s/2} ${s*0.48} Q${s*0.6} ${s*0.44} ${s*0.67} ${s*0.55} Q${s*0.6} ${s*0.65} ${s/2} ${s*0.61} Q${s*0.4} ${s*0.65} ${s*0.33} ${s*0.55}Z" fill="${c}" opacity="0.55"/><circle cx="${s/2}" cy="${s*0.53}" r="${s*0.06}" fill="${c}" opacity="0.88"/>`,
+        gourmand: `<circle cx="${s/2}" cy="${s/2}" r="${s*0.38}" fill="${c}" opacity="0.13"/><circle cx="${s/2}" cy="${s/2}" r="${s*0.28}" fill="${c}" opacity="0.28"/><circle cx="${s/2}" cy="${s/2}" r="${s*0.18}" fill="${c}" opacity="0.58"/><circle cx="${s/2}" cy="${s/2}" r="${s*0.09}" fill="${c}" opacity="0.85"/><path d="M${s*0.42} ${s*0.44} Q${s/2} ${s*0.39} ${s*0.58} ${s*0.44}" stroke="white" stroke-width="1.2" fill="none" opacity="0.38"/>`
+      };
+      return `<svg width="${s}" height="${s}" viewBox="0 0 ${s} ${s}" xmlns="http://www.w3.org/2000/svg">${shapes[icon] || shapes.oriental}</svg>`;
+    }
+
+    const pillStyle = {
+      Citrus:   'background:rgba(232,168,74,0.12);color:#c8822a;border:1px solid rgba(232,168,74,0.3)',
+      Floral:   'background:rgba(201,122,138,0.1);color:#b05a6a;border:1px solid rgba(201,122,138,0.25)',
+      Woody:    'background:rgba(122,92,58,0.1);color:#7a5c3a;border:1px solid rgba(122,92,58,0.25)',
+      Oriental: 'background:rgba(106,74,122,0.1);color:#6a4a7a;border:1px solid rgba(106,74,122,0.25)',
+      Fresh:    'background:rgba(74,138,122,0.1);color:#4a8a7a;border:1px solid rgba(74,138,122,0.25)',
+      Gourmand: 'background:rgba(154,90,74,0.1);color:#9a5a4a;border:1px solid rgba(154,90,74,0.25)'
+    };
+
+    const intensityLabel = v => v <= 30 ? 'Light' : v <= 50 ? 'Moderate' : v <= 70 ? 'Strong' : 'Very Strong';
+
+    window.openNoteDrawer = function(key) {
+      const n = NOTES[key];
+      if (!n) return; // unknown key — drawer stays closed, no error shown to user
+
+      document.getElementById('ndFamily').textContent = n.family + ' Family';
+      document.getElementById('ndName').textContent = n.name;
+
+      const img = document.getElementById('ndImage');
+      img.innerHTML = getIllustration(n.icon, n.fc);
+      img.style.background = n.fc + '18';
+
+      document.getElementById('ndFamilyPill').innerHTML =
+        `<span class="nd-family-pill" style="${pillStyle[n.family]||''};border-radius:100px;">${n.family}</span>`;
+      document.getElementById('ndDesc').textContent = n.desc;
+      document.getElementById('ndPairings').innerHTML =
+        n.pairings.map(p => `<span class="nd-pair-tag">${p}</span>`).join('');
+
+      const fill = document.getElementById('ndIntensityFill');
+      fill.style.width = '0%';
+      setTimeout(() => { fill.style.width = n.strength + '%'; }, 40);
+      document.getElementById('ndIntensityValue').textContent = intensityLabel(n.strength);
+
+      document.getElementById('ndBackdrop').classList.add('nd-open');
+      document.getElementById('ndDrawer').classList.add('nd-open');
+      document.body.style.overflow = 'hidden';
+    };
+
+    function closeNoteDrawer() {
+      document.getElementById('ndBackdrop').classList.remove('nd-open');
+      document.getElementById('ndDrawer').classList.remove('nd-open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('ndClose').addEventListener('click', closeNoteDrawer);
+    document.getElementById('ndBackdrop').addEventListener('click', closeNoteDrawer);
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeNoteDrawer(); });
+  })();
 </script>
