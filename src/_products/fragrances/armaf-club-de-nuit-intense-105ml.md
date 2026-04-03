@@ -8,16 +8,15 @@ gender: Men
 size: 105ml
 concentration: Eau de Toilette (EDT)
 badge: Popular
-custom_badge: ""
 featured: false
 published: true
-fragrance_family: Woody Spicy
 heart_notes: Rose, Birch, Jasmine
 longevity: 8–12 hours
 projection: Strong
 best_for: Evening wear, cooler seasons, formal and smart-casual occasions
 launched: "2015"
 vegan: false
+image_main: /products/armaf/club-de-nuit-intense-man/club-de-nuit-image-1.jpeg
 gallery:
   - /products/armaf/club-de-nuit-intense-man/club-de-nuit-image-1.jpeg
   - /products/armaf/club-de-nuit-intense-man/club-de-nuit-image-2.jpeg
@@ -52,6 +51,7 @@ ysp_thoughts: >
   We tried it ourselves before listing it. It now gets worn regularly. That's usually all we need to know.
 ebay_url: ""
 origin: UAE
+exclude_from_feed: true
 accords:
   - woody
   - spicy
@@ -60,12 +60,13 @@ accords:
   - musk
   - smoky
   - amber
+custom_badge: ""
+fragrance_family: Woody Spicy
 base_notes: Musk, Ambergris, Patchouli, Vanilla
 amazon_url: ""
 gender_label: Men
 stock_status: sold_out
 top_notes: Lemon, Pineapple, Bergamot, Black Currant, Apple
-image_main: /products/armaf/club-de-nuit-intense-man/club-de-nuit-image-1.jpeg
 description_short: One of the most celebrated value fragrances in men's
   perfumery. Bold citrus-fruit opening, exceptional dry-down, 8–12 hour
   longevity.
