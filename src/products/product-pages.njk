@@ -488,13 +488,15 @@ permalink: "products/{{ product.slug }}.html"
       try {
         const image = buyBtn.dataset.image || '';
         const imageUrl = image.startsWith('http') ? image : 'https://yspcollective.com' + image;
+        const lang = window.YSP_LANG ? window.YSP_LANG.get() : 'en';
         const res = await fetch('https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/checkout', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             items: [{ id: buyBtn.dataset.slug, name: buyBtn.dataset.name, price: parseFloat(buyBtn.dataset.price), image: imageUrl, quantity: 1 }],
             success_url: 'https://yspcollective.com/checkout-success.html',
-            cancel_url: window.location.href
+            cancel_url: window.location.href,
+            lang,
           })
         });
         const data = await res.json();
