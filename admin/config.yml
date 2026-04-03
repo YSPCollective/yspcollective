@@ -120,6 +120,7 @@ collections:
           - { label: "YSP Thoughts (ES)", name: "ysp_thoughts_es", widget: "markdown", required: false }
 
   # ─── SKINCARE / BEAUTY PRODUCTS ───────────────────────────────────
+  - name: "beauty"
     label: "Beauty & Skincare"
     folder: "src/_products/beauty"
     create: true
