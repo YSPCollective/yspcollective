@@ -14,11 +14,35 @@ collections:
     create: true
     slug: "{{slug}}"
     identifier_field: name
-    summary: "{{name}} — €{{price}}"
+    summary: "{{name}} — €{{price}} · {{stock_status}} · {{badge}}"
+    view_filters:
+      - label: "In Stock"
+        field: stock_status
+        pattern: "in_stock"
+      - label: "Low Stock"
+        field: stock_status
+        pattern: "low_stock"
+      - label: "Sold Out"
+        field: stock_status
+        pattern: "sold_out"
+      - label: "On Order"
+        field: stock_status
+        pattern: "on_order"
+      - label: "Coming Soon"
+        field: stock_status
+        pattern: "coming_soon"
+      - label: "Featured"
+        field: featured
+        pattern: true
+      - label: "Excluded from Feed"
+        field: exclude_from_feed
+        pattern: true
+    view_groups:
+      - label: "By Stock Status"
+        field: stock_status
+      - label: "By Brand"
+        field: brand
     fields:
-
-      # ── 1. CORE INFO ──────────────────────────────────────────────
-      - { label: "Product Name", name: "name", widget: "string", hint: "e.g. Lattafa Yara 100ml" }
       - { label: "URL Slug", name: "slug", widget: "string", hint: "Lowercase letters and hyphens only. e.g. lattafa-yara-100ml" }
 
       # ── 2. PRICING & CLASSIFICATION ──────────────────────────────
@@ -126,12 +150,32 @@ collections:
     create: true
     slug: "{{slug}}"
     identifier_field: name
-    summary: "{{name}} — €{{price}}"
+    summary: "{{name}} — €{{price}} · {{stock_status}} · {{badge}}"
+    view_filters:
+      - label: "In Stock"
+        field: stock_status
+        pattern: "in_stock"
+      - label: "Low Stock"
+        field: stock_status
+        pattern: "low_stock"
+      - label: "Sold Out"
+        field: stock_status
+        pattern: "sold_out"
+      - label: "On Order"
+        field: stock_status
+        pattern: "on_order"
+      - label: "Featured"
+        field: featured
+        pattern: true
+      - label: "Excluded from Feed"
+        field: exclude_from_feed
+        pattern: true
+    view_groups:
+      - label: "By Stock Status"
+        field: stock_status
+      - label: "By Brand"
+        field: brand
     fields:
-
-      # ── 1. CORE INFO ──────────────────────────────────────────────
-      - { label: "Product Name", name: "name", widget: "string" }
-      - { label: "URL Slug", name: "slug", widget: "string", hint: "e.g. beauty-of-joseon-relief-sun-spf50" }
 
       # ── 2. PRICING & CLASSIFICATION ──────────────────────────────
       - { label: "Price (€)", name: "price", widget: "string" }

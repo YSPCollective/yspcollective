@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Edit — YSP Collective Admin</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #1a1916;
+      --white: #faf8f5;
+      --cream: #f3efe8;
+      --sand: #e6dfd4;
+      --grey: #8a847a;
+      --grey-light: #b5afa5;
+      --accent: #9c7b56;
+      --accent-light: #c8a87a;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Outfit', -apple-system, sans-serif;
+      --green: #5a8a5a;
+      --red: #a05050;
+      --amber: #a08040;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: var(--sans);
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    .qe-header {
+      background: var(--black);
+      padding: 1rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .qe-header-left { display: flex; align-items: center; gap: 1.5rem; }
+    .qe-logo {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+    .qe-logo span {
+      font-family: var(--sans);
+      font-size: 0.5rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      display: block;
+      margin-top: -2px;
+    }
+    .qe-header-title {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      padding-left: 1.5rem;
+      border-left: 1px solid rgba(255,255,255,0.1);
+    }
+    .qe-header-right { display: flex; align-items: center; gap: 1rem; }
+    .qe-back-link {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .qe-back-link:hover { color: var(--accent-light); }
+    .qe-save-all-btn {
+      padding: 0.5rem 1.2rem;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .qe-save-all-btn:hover { background: var(--accent-light); }
+    .qe-save-all-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    /* ── TOOLBAR ── */
+    .qe-toolbar {
+      padding: 1rem 2.5rem;
+      background: var(--cream);
+      border-bottom: 1px solid var(--sand);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .qe-search {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.55rem 1rem;
+      border: 1px solid var(--sand);
+      background: var(--white);
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--black);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .qe-search:focus { border-color: var(--accent); }
+    .qe-search::placeholder { color: var(--grey-light); }
+    .qe-filters { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .qe-filter-btn {
+      padding: 0.4rem 0.9rem;
+      border: 1px solid var(--sand);
+      background: transparent;
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grey);
+      cursor: pointer;
+      transition: all 0.2s;
+      border-radius: 20px;
+    }
+    .qe-filter-btn:hover { border-color: var(--accent); color: var(--black); }
+    .qe-filter-btn.active { background: var(--black); color: var(--white); border-color: var(--black); }
+    .qe-stats {
+      font-size: 0.7rem;
+      color: var(--grey);
+      letter-spacing: 0.06em;
+      margin-left: auto;
+    }
+
+    /* ── PENDING BANNER ── */
+    #pending-banner {
+      display: none;
+      background: var(--accent);
+      color: var(--white);
+      padding: 0.6rem 2.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      align-items: center;
+      justify-content: space-between;
+    }
+    #pending-banner.visible { display: flex; }
+
+    /* ── TABLE ── */
+    .qe-table-wrap {
+      padding: 1.5rem 2.5rem 4rem;
+      overflow-x: auto;
+    }
+    .qe-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 800px;
+    }
+    .qe-table thead tr {
+      border-bottom: 2px solid var(--black);
+    }
+    .qe-table th {
+      text-align: left;
+      padding: 0.7rem 0.8rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--grey);
+      font-weight: 400;
+      white-space: nowrap;
+    }
+    .qe-table th:first-child { padding-left: 0; }
+    .qe-table tbody tr {
+      border-bottom: 1px solid var(--sand);
+      transition: background 0.15s;
+    }
+    .qe-table tbody tr:hover { background: var(--cream); }
+    .qe-table tbody tr.modified { background: #fdf8f0; }
+    .qe-table td {
+      padding: 0.7rem 0.8rem;
+      vertical-align: middle;
+    }
+    .qe-table td:first-child { padding-left: 0; }
+
+    /* Product name cell */
+    .qe-product-name {
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: var(--black);
+      line-height: 1.3;
+      max-width: 240px;
+    }
+    .qe-product-brand {
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 0.1rem;
+    }
+    .qe-product-type {
+      font-size: 0.62rem;
+      color: var(--grey-light);
+      margin-top: 0.1rem;
+    }
+
+    /* Inline edit inputs */
+    .qe-input {
+      width: 90px;
+      padding: 0.35rem 0.6rem;
+      border: 1px solid var(--sand);
+      background: var(--white);
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--black);
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .qe-input:focus { border-color: var(--accent); }
+    .qe-input.changed { border-color: var(--accent); background: #fdf8f0; }
+
+    .qe-select {
+      padding: 0.35rem 0.5rem;
+      border: 1px solid var(--sand);
+      background: var(--white);
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--black);
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      max-width: 140px;
+    }
+    .qe-select:focus { border-color: var(--accent); }
+    .qe-select.changed { border-color: var(--accent); background: #fdf8f0; }
+
+    /* Stock badge */
+    .stock-pill {
+      display: inline-block;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      font-weight: 400;
+    }
+    .stock-in_stock { background: #e8f2e8; color: var(--green); }
+    .stock-low_stock { background: #f5f0e0; color: var(--amber); }
+    .stock-last_one { background: #f5e8e8; color: var(--red); }
+    .stock-sold_out { background: #ececec; color: var(--grey); }
+    .stock-on_order { background: #e8eef5; color: #4a7fa5; }
+    .stock-pre_order { background: #ede8f5; color: #7a6a9a; }
+    .stock-coming_soon { background: #ececec; color: var(--grey); }
+
+    /* Feed toggle */
+    .qe-toggle {
+      position: relative;
+      width: 36px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+    .qe-toggle input { opacity: 0; width: 0; height: 0; position: absolute; }
+    .qe-toggle-track {
+      position: absolute;
+      inset: 0;
+      background: var(--sand);
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .qe-toggle input:checked + .qe-toggle-track { background: var(--red); }
+    .qe-toggle-track::after {
+      content: '';
+      position: absolute;
+      left: 3px;
+      top: 3px;
+      width: 14px;
+      height: 14px;
+      background: var(--white);
+      border-radius: 50%;
+      transition: transform 0.2s;
+    }
+    .qe-toggle input:checked + .qe-toggle-track::after { transform: translateX(16px); }
+
+    /* Row actions */
+    .qe-row-save {
+      padding: 0.3rem 0.8rem;
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.2s, background 0.2s;
+    }
+    tr.modified .qe-row-save { opacity: 1; }
+    .qe-row-save:hover { background: var(--accent); }
+    .qe-row-save.saving { background: var(--grey); cursor: not-allowed; }
+    .qe-row-save.saved { background: var(--green); }
+
+    /* Full edit link */
+    .qe-full-edit {
+      font-size: 0.62rem;
+      color: var(--grey-light);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .qe-full-edit:hover { color: var(--accent); }
+
+    /* ── LOADING / EMPTY STATES ── */
+    .qe-loading {
+      text-align: center;
+      padding: 5rem 2rem;
+      color: var(--grey);
+    }
+    .qe-spinner {
+      width: 28px;
+      height: 28px;
+      border: 2px solid var(--sand);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 1rem;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .qe-empty { text-align: center; padding: 3rem; color: var(--grey); font-size: 0.9rem; }
+
+    /* ── TOAST ── */
+    #qe-toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      padding: 0.8rem 1.5rem;
+      background: var(--black);
+      color: var(--white);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      z-index: 9999;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all 0.3s;
+      pointer-events: none;
+    }
+    #qe-toast.visible { opacity: 1; transform: translateY(0); }
+    #qe-toast.success { background: var(--green); }
+    #qe-toast.error { background: var(--red); }
+
+    /* ── AUTH SCREEN ── */
+    #auth-screen {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1.5rem;
+      background: var(--black);
+    }
+    .auth-logo {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--white);
+      letter-spacing: 0.06em;
+      text-align: center;
+    }
+    .auth-logo span {
+      display: block;
+      font-family: var(--sans);
+      font-size: 0.55rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-top: 0.2rem;
+    }
+    .auth-title {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+    }
+    .auth-btn {
+      padding: 0.8rem 2rem;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .auth-btn:hover { background: var(--accent-light); }
+    .auth-error { font-size: 0.8rem; color: #e08080; }
+
+    @media (max-width: 768px) {
+      .qe-header { padding: 0.8rem 1.2rem; }
+      .qe-toolbar { padding: 0.8rem 1.2rem; }
+      .qe-table-wrap { padding: 1rem 1.2rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Auth screen (shown if not logged in) -->
+<div id="auth-screen" style="display:none">
+  <div class="auth-logo">YSP <span>Collective</span></div>
+  <div class="auth-title">Product Quick Edit</div>
+  <p style="font-size:0.82rem;color:rgba(255,255,255,0.35);text-align:center;max-width:280px">Sign in with GitHub to access the admin dashboard.</p>
+  <button class="auth-btn" id="auth-github-btn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+    Sign in with GitHub
+  </button>
+  <p class="auth-error" id="auth-error" style="display:none"></p>
+</div>
+
+<!-- Main app -->
+<div id="main-app" style="display:none">
+
+  <header class="qe-header">
+    <div class="qe-header-left">
+      <a href="/" class="qe-logo">YSP <span>Collective</span></a>
+      <div class="qe-header-title">Product Quick Edit</div>
+    </div>
+    <div class="qe-header-right">
+      <a href="/admin/" class="qe-back-link">← Full CMS</a>
+      <button class="qe-save-all-btn" id="save-all-btn" disabled>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+        Save All Changes
+      </button>
+    </div>
+  </header>
+
+  <div id="pending-banner">
+    <span id="pending-text"></span>
+    <button onclick="saveAll()" style="background:rgba(255,255,255,0.2);border:none;color:#fff;padding:0.3rem 0.8rem;font-family:var(--sans);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;">Save Now</button>
+  </div>
+
+  <div class="qe-toolbar">
+    <input type="text" class="qe-search" id="search-input" placeholder="Search products…">
+    <div class="qe-filters">
+      <button class="qe-filter-btn active" data-filter="all">All</button>
+      <button class="qe-filter-btn" data-filter="fragrance">Fragrances</button>
+      <button class="qe-filter-btn" data-filter="beauty">Beauty</button>
+      <button class="qe-filter-btn" data-filter="in_stock">In Stock</button>
+      <button class="qe-filter-btn" data-filter="sold_out">Sold Out</button>
+      <button class="qe-filter-btn" data-filter="on_order">On Order</button>
+      <button class="qe-filter-btn" data-filter="excluded">Feed Excluded</button>
+    </div>
+    <div class="qe-stats" id="product-stats"></div>
+  </div>
+
+  <div class="qe-table-wrap">
+    <div id="loading-state" class="qe-loading">
+      <div class="qe-spinner"></div>
+      <p style="font-size:0.82rem">Loading products…</p>
+    </div>
+    <table class="qe-table" id="product-table" style="display:none">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price (€)</th>
+          <th>Stock Status</th>
+          <th>Badge</th>
+          <th>Excl. Feed</th>
+          <th>Changes</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="product-tbody"></tbody>
+    </table>
+    <div class="qe-empty" id="empty-state" style="display:none">No products match your search.</div>
+  </div>
+
+</div>
+
+<div id="qe-toast"></div>
+
+<script>
+  // ── CONFIG ────────────────────────────────────────────────────────
+  const GITHUB_OWNER = 'YSPCollective';
+  const GITHUB_REPO  = 'yspcollective';
+  const GITHUB_BRANCH = 'main';
+  const FRAGRANCE_PATH = 'src/_products/fragrances';
+  const BEAUTY_PATH    = 'src/_products/beauty';
+  const CLIENT_ID = 'Ov23lidTfpQFhyL7KKFE'; // Decap's GitHub OAuth app
+
+  // ── STATE ─────────────────────────────────────────────────────────
+  let allProducts = [];
+  let pendingChanges = {}; // slug -> { field: newValue }
+  let githubToken = null;
+  let activeFilter = 'all';
+  let searchQuery = '';
+
+  // ── AUTH ──────────────────────────────────────────────────────────
+  function getToken() {
+    try { return localStorage.getItem('ysp_gh_token'); } catch(e) { return null; }
+  }
+  function setToken(t) {
+    try { localStorage.setItem('ysp_gh_token', t); } catch(e) {}
+  }
+
+  async function verifyToken(token) {
+    const res = await fetch('https://api.github.com/user', {
+      headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github.v3+json' }
+    });
+    return res.ok;
+  }
+
+  async function init() {
+    // Check for OAuth callback code
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    if (code) {
+      // Exchange code via Netlify CMS proxy (same one Decap uses)
+      try {
+        const res = await fetch(`https://api.netlify.com/auth/done?code=${code}`);
+        // Decap stores the token in localStorage under 'netlify-cms-user'
+        // We'll check that after redirect
+      } catch(e) {}
+      // Clean URL
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+
+    // Try Decap's stored token first
+    try {
+      const decapUser = localStorage.getItem('netlify-cms-user');
+      if (decapUser) {
+        const parsed = JSON.parse(decapUser);
+        if (parsed.token) {
+          const valid = await verifyToken(parsed.token);
+          if (valid) {
+            githubToken = parsed.token;
+            showApp();
+            return;
+          }
+        }
+      }
+    } catch(e) {}
+
+    // Try our own stored token
+    const stored = getToken();
+    if (stored) {
+      const valid = await verifyToken(stored);
+      if (valid) {
+        githubToken = stored;
+        showApp();
+        return;
+      }
+    }
+
+    // Not authenticated
+    showAuthScreen();
+  }
+
+  function showAuthScreen() {
+    document.getElementById('auth-screen').style.display = 'flex';
+    document.getElementById('main-app').style.display = 'none';
+    document.getElementById('auth-github-btn').addEventListener('click', () => {
+      // Use Decap's OAuth flow — same app so token will be stored in netlify-cms-user
+      window.location.href = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&scope=repo&state=quick-edit`;
+    });
+  }
+
+  function showApp() {
+    document.getElementById('auth-screen').style.display = 'none';
+    document.getElementById('main-app').style.display = 'block';
+    loadProducts();
+  }
+
+  // ── LOAD PRODUCTS ─────────────────────────────────────────────────
+  async function fetchDir(path) {
+    const res = await fetch(
+      `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}?ref=${GITHUB_BRANCH}`,
+      { headers: { Authorization: `Bearer ${githubToken}`, Accept: 'application/vnd.github.v3+json' } }
+    );
+    if (!res.ok) throw new Error(`Failed to fetch ${path}`);
+    return res.json();
+  }
+
+  async function fetchFile(path) {
+    const res = await fetch(
+      `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}?ref=${GITHUB_BRANCH}`,
+      { headers: { Authorization: `Bearer ${githubToken}`, Accept: 'application/vnd.github.v3+json' } }
+    );
+    if (!res.ok) throw new Error(`Failed to fetch ${path}`);
+    return res.json();
+  }
+
+  function parseFrontmatter(content) {
+    const match = content.match(/^---\n([\s\S]*?)\n---/);
+    if (!match) return {};
+    const fm = {};
+    const lines = match[1].split('\n');
+    lines.forEach(line => {
+      const colonIdx = line.indexOf(':');
+      if (colonIdx === -1) return;
+      const key = line.slice(0, colonIdx).trim();
+      let val = line.slice(colonIdx + 1).trim();
+      // Remove quotes
+      if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+        val = val.slice(1, -1);
+      }
+      // Booleans
+      if (val === 'true') val = true;
+      else if (val === 'false') val = false;
+      fm[key] = val;
+    });
+    return fm;
+  }
+
+  function stringifyFrontmatter(original, updates) {
+    // Parse original content
+    const match = original.match(/^---\n([\s\S]*?)\n---/);
+    if (!match) return original;
+    const body = original.slice(match[0].length);
+    const fmLines = match[1].split('\n');
+
+    // Update specific fields
+    const updatedLines = fmLines.map(line => {
+      const colonIdx = line.indexOf(':');
+      if (colonIdx === -1) return line;
+      const key = line.slice(0, colonIdx).trim();
+      if (key in updates) {
+        const val = updates[key];
+        if (typeof val === 'boolean') return `${key}: ${val}`;
+        // Quote strings with special chars
+        const needsQuotes = /[:#\[\]{},&*!|>'"%@`]/.test(String(val));
+        return `${key}: ${needsQuotes ? `"${val}"` : val}`;
+      }
+      return line;
+    });
+
+    return `---\n${updatedLines.join('\n')}\n---${body}`;
+  }
+
+  async function loadProducts() {
+    try {
+      const [fragFiles, beautyFiles] = await Promise.all([
+        fetchDir(FRAGRANCE_PATH),
+        fetchDir(BEAUTY_PATH)
+      ]);
+
+      const mdFiles = [
+        ...fragFiles.filter(f => f.name.endsWith('.md')).map(f => ({ ...f, productType: 'fragrance' })),
+        ...beautyFiles.filter(f => f.name.endsWith('.md')).map(f => ({ ...f, productType: 'beauty' }))
+      ];
+
+      // Fetch all file contents in parallel (batched to avoid rate limits)
+      const batchSize = 10;
+      const products = [];
+      for (let i = 0; i < mdFiles.length; i += batchSize) {
+        const batch = mdFiles.slice(i, i + batchSize);
+        const results = await Promise.all(batch.map(async f => {
+          const fileData = await fetchFile(f.path);
+          const content = atob(fileData.content.replace(/\n/g, ''));
+          const fm = parseFrontmatter(content);
+          return {
+            ...fm,
+            _path: f.path,
+            _sha: fileData.sha,
+            _rawContent: content,
+            _productType: f.productType,
+            type: f.productType
+          };
+        }));
+        products.push(...results);
+      }
+
+      allProducts = products.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+      document.getElementById('loading-state').style.display = 'none';
+      document.getElementById('product-table').style.display = 'table';
+      renderTable();
+    } catch(err) {
+      console.error(err);
+      document.getElementById('loading-state').innerHTML = `
+        <p style="color:#a05050;font-size:0.9rem">Failed to load products. ${err.message}</p>
+        <p style="font-size:0.8rem;color:var(--grey);margin-top:0.5rem">Check your GitHub token has repo access.</p>
+      `;
+    }
+  }
+
+  // ── RENDER ────────────────────────────────────────────────────────
+  const STOCK_OPTIONS = [
+    { value: 'in_stock',    label: '✅ In Stock' },
+    { value: 'low_stock',   label: '⚠️ Low Stock' },
+    { value: 'last_one',    label: '🔴 Last One' },
+    { value: 'sold_out',    label: '❌ Sold Out' },
+    { value: 'on_order',    label: '📦 On Order' },
+    { value: 'pre_order',   label: '📅 Pre-Order' },
+    { value: 'coming_soon', label: '🔜 Coming Soon' },
+  ];
+
+  const BADGE_OPTIONS = ['', 'Bestseller', 'Popular', 'Curated', 'New', 'Limited', 'Premium'];
+
+  function getCurrentValue(product, field) {
+    const slug = product.slug;
+    if (pendingChanges[slug] && field in pendingChanges[slug]) {
+      return pendingChanges[slug][field];
+    }
+    return product[field];
+  }
+
+  function renderTable() {
+    const tbody = document.getElementById('product-tbody');
+    const filtered = getFiltered();
+
+    document.getElementById('product-stats').textContent =
+      `${filtered.length} of ${allProducts.length} products`;
+
+    if (filtered.length === 0) {
+      document.getElementById('product-table').style.display = 'none';
+      document.getElementById('empty-state').style.display = 'block';
+      return;
+    }
+
+    document.getElementById('product-table').style.display = 'table';
+    document.getElementById('empty-state').style.display = 'none';
+
+    tbody.innerHTML = '';
+    filtered.forEach(product => {
+      const slug = product.slug || product._path.replace(/.*\//, '').replace('.md', '');
+      const hasChanges = pendingChanges[slug] && Object.keys(pendingChanges[slug]).length > 0;
+      const stockStatus = getCurrentValue(product, 'stock_status') || 'in_stock';
+      const badge = getCurrentValue(product, 'badge') || '';
+      const excluded = getCurrentValue(product, 'exclude_from_feed') || false;
+      const price = getCurrentValue(product, 'price') || '';
+
+      const tr = document.createElement('tr');
+      if (hasChanges) tr.classList.add('modified');
+      tr.dataset.slug = slug;
+
+      // CMS edit link
+      const cmsSection = product._productType === 'fragrance' ? 'fragrances' : 'beauty';
+      const cmsLink = `/admin/#/collections/${cmsSection}/entries/${slug}`;
+
+      tr.innerHTML = `
+        <td>
+          <div class="qe-product-name">${product.name || slug}</div>
+          <div class="qe-product-brand">${product.brand || ''}</div>
+          <div class="qe-product-type">${product._productType}</div>
+        </td>
+        <td>
+          <input
+            type="text"
+            class="qe-input ${hasChanges && 'price' in (pendingChanges[slug]||{}) ? 'changed' : ''}"
+            value="${price}"
+            data-slug="${slug}"
+            data-field="price"
+            inputmode="decimal"
+          >
+        </td>
+        <td>
+          <select class="qe-select ${hasChanges && 'stock_status' in (pendingChanges[slug]||{}) ? 'changed' : ''}" data-slug="${slug}" data-field="stock_status">
+            ${STOCK_OPTIONS.map(o => `<option value="${o.value}" ${stockStatus === o.value ? 'selected' : ''}>${o.label}</option>`).join('')}
+          </select>
+        </td>
+        <td>
+          <select class="qe-select ${hasChanges && 'badge' in (pendingChanges[slug]||{}) ? 'changed' : ''}" data-slug="${slug}" data-field="badge">
+            ${BADGE_OPTIONS.map(o => `<option value="${o}" ${badge === o ? 'selected' : ''}>${o || '— None —'}</option>`).join('')}
+          </select>
+        </td>
+        <td>
+          <label class="qe-toggle" title="${excluded ? 'Excluded from feed' : 'Included in feed'}">
+            <input type="checkbox" data-slug="${slug}" data-field="exclude_from_feed" ${excluded ? 'checked' : ''}>
+            <div class="qe-toggle-track"></div>
+          </label>
+        </td>
+        <td>
+          <button class="qe-row-save" data-slug="${slug}">Save</button>
+        </td>
+        <td>
+          <a href="${cmsLink}" class="qe-full-edit" target="_blank">Full edit →</a>
+        </td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    // Bind events
+    tbody.querySelectorAll('.qe-input, .qe-select').forEach(el => {
+      el.addEventListener('change', onFieldChange);
+      if (el.tagName === 'INPUT') el.addEventListener('input', onFieldChange);
+    });
+    tbody.querySelectorAll('input[type="checkbox"]').forEach(el => {
+      el.addEventListener('change', onFieldChange);
+    });
+    tbody.querySelectorAll('.qe-row-save').forEach(btn => {
+      btn.addEventListener('click', () => saveRow(btn.dataset.slug));
+    });
+  }
+
+  function getFiltered() {
+    return allProducts.filter(p => {
+      const slug = p.slug || p._path.replace(/.*\//, '').replace('.md', '');
+      const stock = getCurrentValue(p, 'stock_status') || 'in_stock';
+      const excluded = getCurrentValue(p, 'exclude_from_feed') || false;
+
+      if (activeFilter === 'fragrance' && p._productType !== 'fragrance') return false;
+      if (activeFilter === 'beauty' && p._productType !== 'beauty') return false;
+      if (activeFilter === 'in_stock' && stock !== 'in_stock') return false;
+      if (activeFilter === 'sold_out' && stock !== 'sold_out') return false;
+      if (activeFilter === 'on_order' && stock !== 'on_order') return false;
+      if (activeFilter === 'excluded' && !excluded) return false;
+
+      if (searchQuery) {
+        const q = searchQuery.toLowerCase();
+        const searchable = [p.name, p.brand, slug].filter(Boolean).join(' ').toLowerCase();
+        if (!searchable.includes(q)) return false;
+      }
+      return true;
+    });
+  }
+
+  function onFieldChange(e) {
+    const { slug, field } = e.target.dataset;
+    if (!slug || !field) return;
+
+    let value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+
+    if (!pendingChanges[slug]) pendingChanges[slug] = {};
+    pendingChanges[slug][field] = value;
+
+    // Mark row as modified
+    const row = document.querySelector(`tr[data-slug="${slug}"]`);
+    if (row) {
+      row.classList.add('modified');
+      e.target.classList.add('changed');
+    }
+
+    updatePendingBanner();
+  }
+
+  function updatePendingBanner() {
+    const count = Object.keys(pendingChanges).length;
+    const banner = document.getElementById('pending-banner');
+    const saveAllBtn = document.getElementById('save-all-btn');
+
+    if (count > 0) {
+      banner.classList.add('visible');
+      document.getElementById('pending-text').textContent =
+        `${count} product${count > 1 ? 's' : ''} with unsaved changes`;
+      saveAllBtn.disabled = false;
+    } else {
+      banner.classList.remove('visible');
+      saveAllBtn.disabled = true;
+    }
+  }
+
+  // ── SAVE ──────────────────────────────────────────────────────────
+  async function saveRow(slug) {
+    const changes = pendingChanges[slug];
+    if (!changes || Object.keys(changes).length === 0) return;
+
+    const btn = document.querySelector(`.qe-row-save[data-slug="${slug}"]`);
+    if (btn) { btn.textContent = '…'; btn.classList.add('saving'); }
+
+    const product = allProducts.find(p => (p.slug || p._path.replace(/.*\//, '').replace('.md', '')) === slug);
+    if (!product) return;
+
+    try {
+      const newContent = stringifyFrontmatter(product._rawContent, changes);
+      const encoded = btoa(unescape(encodeURIComponent(newContent)));
+
+      const res = await fetch(
+        `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${product._path}`,
+        {
+          method: 'PUT',
+          headers: {
+            Authorization: `Bearer ${githubToken}`,
+            Accept: 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            message: `Quick edit: ${product.name || slug}`,
+            content: encoded,
+            sha: product._sha,
+            branch: GITHUB_BRANCH
+          })
+        }
+      );
+
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.message || `GitHub API error ${res.status}`);
+      }
+
+      const data = await res.json();
+
+      // Update local state
+      Object.assign(product, changes);
+      product._sha = data.content.sha;
+      product._rawContent = newContent;
+      delete pendingChanges[slug];
+
+      if (btn) { btn.textContent = '✓ Saved'; btn.classList.remove('saving'); btn.classList.add('saved'); }
+      const row = document.querySelector(`tr[data-slug="${slug}"]`);
+      if (row) row.classList.remove('modified');
+
+      showToast(`${product.name || slug} saved`, 'success');
+      updatePendingBanner();
+
+      setTimeout(() => {
+        if (btn) { btn.textContent = 'Save'; btn.classList.remove('saved'); btn.style.opacity = '0'; }
+      }, 2000);
+
+    } catch(err) {
+      console.error(err);
+      if (btn) { btn.textContent = 'Error'; btn.classList.remove('saving'); }
+      showToast(`Save failed: ${err.message}`, 'error');
+      setTimeout(() => { if (btn) { btn.textContent = 'Save'; btn.classList.remove('saved'); } }, 3000);
+    }
+  }
+
+  async function saveAll() {
+    const slugs = Object.keys(pendingChanges);
+    for (const slug of slugs) {
+      await saveRow(slug);
+    }
+  }
+
+  // ── FILTERS & SEARCH ──────────────────────────────────────────────
+  document.querySelectorAll('.qe-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.qe-filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      renderTable();
+    });
+  });
+
+  document.getElementById('search-input').addEventListener('input', e => {
+    searchQuery = e.target.value.trim();
+    renderTable();
+  });
+
+  document.getElementById('save-all-btn').addEventListener('click', saveAll);
+
+  // ── TOAST ─────────────────────────────────────────────────────────
+  function showToast(msg, type = '') {
+    const t = document.getElementById('qe-toast');
+    t.textContent = msg;
+    t.className = `visible ${type}`;
+    clearTimeout(t._timer);
+    t._timer = setTimeout(() => t.className = '', 3000);
+  }
+
+  // ── BOOT ──────────────────────────────────────────────────────────
+  init();
+</script>
+</body>
+</html>
