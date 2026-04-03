@@ -56,4 +56,5 @@ ysp_thoughts: >-
 
 
   A fragrance we're proud to carry for reasons that go beyond commerce.
+exclude_from_feed: true
 ---

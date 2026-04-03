@@ -51,4 +51,5 @@ ysp_thoughts: >-
 
 
   We carry it because a curated fragrance shelf needs at least one fragrance that needs no explanation — the one you hand to someone who says they don't really wear perfume, and watch them change their mind.
+exclude_from_feed: true
 ---

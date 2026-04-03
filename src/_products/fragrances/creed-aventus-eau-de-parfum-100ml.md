@@ -6,8 +6,8 @@ brand: Creed
 gender: Men
 size: 100ml
 concentration: Eau de Parfum (EDP)
-badge: null
-custom_badge: Premium
+badge: Premium
+custom_badge: ""
 stock_status: low_stock
 featured: false
 published: true
@@ -52,4 +52,5 @@ ysp_thoughts: >-
 
 
   We carry it because any serious fragrance shelf should have it, and because personal favourites earn their place here as much as commercial ones do.
+exclude_from_feed: true
 ---

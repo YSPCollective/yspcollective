@@ -45,4 +45,5 @@ ysp_thoughts: Roja Parfums sits in a different league price-wise and Danger
   because it represents the ceiling of what masculine perfumery can be, and
   having that reference point on the shelf matters. When someone asks us what
   the best is, this is part of that answer.
+exclude_from_feed: true
 ---

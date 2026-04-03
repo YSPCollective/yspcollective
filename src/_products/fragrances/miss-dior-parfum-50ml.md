@@ -50,4 +50,5 @@ ysp_thoughts: >-
    There's a quality and depth here that feels genuinely different from the EDP — less about projection, more about presence. 
 
   We chose the Parfum over the EDP deliberately because it's the version that does the name justice. The kind of fragrance you save for days when you want to feel like yourself at your best.
+exclude_from_feed: true
 ---
