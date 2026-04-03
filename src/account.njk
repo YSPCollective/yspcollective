@@ -338,7 +338,9 @@ permalink: /account.html
     .acc-empty a:hover { background: var(--black); }
 
     /* ── PROFILE ── */
-    .acc-profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .acc-profile-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
+    @media (max-width: 900px) { .acc-profile-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .acc-profile-grid { grid-template-columns: 1fr; } }
     .acc-profile-card {
       border: 1px solid var(--sand); padding: 1.8rem;
     }
@@ -360,6 +362,32 @@ permalink: /account.html
       font-size: 0.75rem; color: var(--grey);
     }
     .acc-profile-actions { margin-top: 2rem; display: flex; gap: 1rem; }
+
+    /* ── EMAIL TOGGLE ── */
+    .acc-email-toggle {
+      position: relative; width: 42px; height: 24px; flex-shrink: 0; cursor: pointer;
+    }
+    .acc-email-toggle input { opacity: 0; width: 0; height: 0; position: absolute; }
+    .acc-toggle-track {
+      position: absolute; inset: 0;
+      background: var(--sand); border-radius: 24px;
+      transition: background 0.25s;
+    }
+    .acc-email-toggle input:checked + .acc-toggle-track { background: var(--accent); }
+    .acc-toggle-track::after {
+      content: ''; position: absolute;
+      left: 3px; top: 3px;
+      width: 18px; height: 18px;
+      background: var(--white); border-radius: 50%;
+      transition: transform 0.25s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+    }
+    .acc-email-toggle input:checked + .acc-toggle-track::after { transform: translateX(18px); }
+    .acc-email-pref-note {
+      font-size: 0.75rem; color: var(--accent);
+      margin-top: 0.8rem; min-height: 1rem;
+      transition: opacity 0.3s;
+    }
     .acc-btn-outline {
       padding: 0.65rem 1.5rem; border: 1px solid var(--sand);
       background: none; cursor: pointer; font-family: var(--sans);
@@ -672,6 +700,17 @@ permalink: /account.html
             <div id="prf-frag-wrap"></div>
             <div id="prf-beauty-wrap"></div>
           </div>
+          <div class="acc-profile-card">
+            <h3>Email Preferences</h3>
+            <div class="acc-profile-row" style="align-items:center;">
+              <span style="line-height:1.4">Offers &amp; recommendations<br><span style="font-size:0.78rem;color:var(--grey-light)">New arrivals, personal picks, exclusive discounts</span></span>
+              <label class="acc-email-toggle" id="email-toggle-wrap" title="Toggle marketing emails">
+                <input type="checkbox" id="email-marketing-toggle">
+                <span class="acc-toggle-track"></span>
+              </label>
+            </div>
+            <p class="acc-email-pref-note" id="email-pref-note"></p>
+          </div>
         </div>
         <div class="acc-profile-actions">
           <button class="acc-btn-outline" id="edit-prefs-btn">Update preferences</button>
@@ -745,6 +784,17 @@ permalink: /account.html
       document.getElementById('acc-user-email').textContent = user.email;
       document.getElementById('prf-name').textContent = `${user.firstName} ${user.lastName}`.trim();
       document.getElementById('prf-email').textContent = user.email;
+
+      // Member since — format createdAt
+      const sinceEl = document.getElementById('prf-since');
+      if (user.createdAt) {
+        try {
+          const d = new Date(user.createdAt);
+          sinceEl.textContent = d.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+        } catch(_) { sinceEl.textContent = '—'; }
+      } else {
+        sinceEl.textContent = '—';
+      }
 
       // Profile status
       const statusEl = document.getElementById('acc-profile-status');
@@ -1148,6 +1198,49 @@ permalink: /account.html
 
     // Render suggestion chips once panel loads
     renderAccChips();
+
+    // ── Email preferences toggle ──────────────────────────────────────────────
+    (function initEmailToggle() {
+      const toggle = document.getElementById('email-marketing-toggle');
+      const note   = document.getElementById('email-pref-note');
+      if (!toggle) return;
+
+      // Read stored preference (default: subscribed)
+      let subscribed = true;
+      try {
+        const stored = localStorage.getItem('ysp_email_pref');
+        if (stored !== null) subscribed = stored === '1';
+      } catch(_) {}
+
+      toggle.checked = subscribed;
+
+      toggle.addEventListener('change', async () => {
+        const isSubscribed = toggle.checked;
+        note.textContent = isSubscribed ? 'Saving…' : 'Saving…';
+
+        try {
+          localStorage.setItem('ysp_email_pref', isSubscribed ? '1' : '0');
+          const user = currentUser;
+          if (user && user.email) {
+            const lang = window.YSP_LANG ? window.YSP_LANG.get() : 'en';
+            await fetch(PROXY + '/subscribe', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                email: user.email,
+                lang,
+                unsubscribe: !isSubscribed,
+              })
+            });
+          }
+          note.textContent = isSubscribed ? '✓ You\'re subscribed to offers and recommendations.' : '✓ Unsubscribed — you won\'t receive marketing emails.';
+        } catch(_) {
+          note.textContent = 'Something went wrong. Please try again.';
+        }
+
+        setTimeout(() => { note.textContent = ''; }, 4000);
+      });
+    })();
 
     // ── Full Profile ─────────────────────────────────────────────────────────
     async function loadFullProfile(user) {
