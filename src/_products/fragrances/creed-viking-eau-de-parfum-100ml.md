@@ -1,16 +1,11 @@
 ---
-name: Creed Viking Eau de Parfum 100ml
-slug: creed-viking-eau-de-parfum
 price: "310"
 brand: Creed
 gender: Men
 size: 100ml
-concentration: Eau de Parfum (EDP)
-badge: ""
-custom_badge: Premium
+badge: Premium
+custom_badge: ""
 stock_status: low_stock
-featured: false
-published: true
 fragrance_family: Aromatic Spicy Woody
 top_notes: Bergamot, Orange, Absinthe, Pink Pepper, Peppermint, Lemon
 heart_notes: Clove, Allspice, Jasmine, Orris Root, Bulgarian Rose, Lavender
@@ -49,4 +44,10 @@ ysp_thoughts: >-
 
 
   There's an energy to Viking that makes you stand differently when you wear it. We carry it because it represents a side of Creed that doesn't get enough attention, and because the people who discover it tend to become devoted to it.
+name: Creed Viking Eau de Parfum 100ml
+slug: creed-viking-eau-de-parfum
+concentration: Eau de Parfum (EDP)
+featured: false
+published: true
+exclude_from_feed: true
 ---
