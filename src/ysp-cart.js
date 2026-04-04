@@ -260,7 +260,7 @@
       #ysp-cart-footer {
         padding: 1.4rem 1.6rem;
         border-top: 1px solid #e6dfd4;
-        background: #f3efe8;
+        background: #f7f7f7;
         flex-shrink: 0;
       }
       #ysp-cart-total-row {
