@@ -302,6 +302,12 @@ collections:
       - { label: "Author", name: "author", widget: "string", default: "YSP Collective", required: false }
       - { label: "Read Time (minutes)", name: "read_time", widget: "number", default: 5, required: false }
       - { label: "Hero Image", name: "image", widget: "image", required: false, hint: "Recommended 1200x630px" }
+      - label: "Post Images (Gallery)"
+        name: "gallery"
+        widget: "list"
+        required: false
+        hint: "Upload images here, then place them in your article body using: {% image \"filename.jpg\", \"Alt text\", \"size\" %} — Size options: full (full width), wide (wider than text), half (50% centred), left (floats left, text wraps right), right (floats right, text wraps left). Use just the filename e.g. lattafa-bottle.jpg — not the full path."
+        field: { label: "Image", name: "image", widget: "image" }
       - label: "Tags"
         name: "tags"
         widget: "list"

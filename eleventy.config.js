@@ -71,6 +71,25 @@ module.exports = function(eleventyConfig) {
       .sort((a, b) => b.date - a.date);
   });
 
+  // Blog post image shortcode
+  // Usage: {% image "filename.jpg", "Alt text", "size" %}
+  // Sizes: full | wide | half | left | right
+  eleventyConfig.addShortcode("image", function(src, alt, size) {
+    const altText = alt || '';
+    const sizeClass = size || 'full';
+    const sizeStyles = {
+      full:  'width:100%;margin:2rem 0;',
+      wide:  'width:110%;margin-left:-5%;margin:2rem -5%;',
+      half:  'width:50%;margin:1.5rem auto;display:block;',
+      left:  'width:45%;float:left;margin:0.5rem 1.5rem 1rem 0;',
+      right: 'width:45%;float:right;margin:0.5rem 0 1rem 1.5rem;'
+    };
+    const style = sizeStyles[sizeClass] || sizeStyles.full;
+    // If src starts with / or http use as-is, otherwise prefix with /images/uploads/
+    const imgSrc = (src.startsWith('/') || src.startsWith('http')) ? src : `/images/uploads/${src}`;
+    return `<figure style="${style}"><img src="${imgSrc}" alt="${altText}" loading="lazy" style="width:100%;height:auto;display:block;"><figcaption style="font-size:0.75rem;color:#8a847a;text-align:center;margin-top:0.4rem;font-style:italic;">${altText}</figcaption></figure>`;
+  });
+
   eleventyConfig.addCollection("allProducts", function(col) {
     const fragrances = col.getFilteredByGlob("src/_products/fragrances/*.md")
       .filter(i => i.data.published !== false)
