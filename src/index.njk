@@ -52,9 +52,13 @@ canonical: "https://yspcollective.com/"
   #search-input { flex: 1; padding: 1rem 1.5rem; border: none; background: rgba(255,255,255,0.08); color: var(--white); font-family: var(--sans); font-size: 0.9rem; font-weight: 300; outline: none; transition: background 0.3s; }
   #search-input::placeholder { color: rgba(255,255,255,0.3); }
   #search-input:focus { background: rgba(255,255,255,0.12); }
-  .search-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
+  .search-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; align-items: center; }
   .filter-chip { padding: 0.4rem 1rem; border: 1px solid rgba(255,255,255,0.15); background: transparent; color: rgba(255,255,255,0.5); font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; }
   .filter-chip:hover, .filter-chip.active { background: var(--accent); border-color: var(--accent); color: var(--white); }
+  .filter-chip.type-chip.active { background: var(--white); border-color: var(--white); color: var(--black); }
+  .filter-divider { width: 1px; height: 20px; background: rgba(255,255,255,0.15); margin: 0 0.25rem; flex-shrink: 0; }
+  .accord-chips { display: flex; gap: 0.5rem; flex-wrap: nowrap; align-items: center; transition: opacity 0.2s; }
+  .accord-chips.hidden { opacity: 0.25; pointer-events: none; }
   #search-results { margin-top: 2rem; display: none; }
   #search-results.visible { display: block; }
   .search-results-wrapper-outer { position: relative; margin-top: 1.5rem; }
@@ -311,16 +315,19 @@ canonical: "https://yspcollective.com/"
       <input type="text" id="search-input" data-i18n-placeholder="search_placeholder" placeholder="Search by name, brand, accord, or ingredient...">
     </div>
     <div class="search-filters">
-      <button class="filter-chip active" data-filter="all" data-i18n="filter_all">All</button>
-      <button class="filter-chip" data-filter="fragrance" data-i18n="filter_fragrance">Fragrance</button>
-      <button class="filter-chip" data-filter="beauty" data-i18n="filter_beauty">Beauty</button>
-      <button class="filter-chip" data-filter="vanilla" data-i18n="filter_vanilla">Vanilla</button>
-      <button class="filter-chip" data-filter="oud" data-i18n="filter_oud">Oud</button>
-      <button class="filter-chip" data-filter="floral" data-i18n="filter_floral">Floral</button>
-      <button class="filter-chip" data-filter="fresh" data-i18n="filter_fresh">Fresh</button>
-      <button class="filter-chip" data-filter="spicy" data-i18n="filter_spicy">Spicy</button>
-      <button class="filter-chip" data-filter="gourmand" data-i18n="filter_gourmand">Gourmand</button>
-      <button class="filter-chip" data-filter="woody" data-i18n="filter_woody">Woody</button>
+      <button class="filter-chip type-chip active" data-filter="all" data-i18n="filter_all">All</button>
+      <button class="filter-chip type-chip" data-filter="fragrance" data-i18n="filter_fragrance">Fragrance</button>
+      <button class="filter-chip type-chip" data-filter="beauty" data-i18n="filter_beauty">Beauty</button>
+      <div class="filter-divider" id="filter-divider"></div>
+      <div class="accord-chips" id="accord-chips">
+        <button class="filter-chip" data-filter="oud" data-i18n="filter_oud">Oud</button>
+        <button class="filter-chip" data-filter="floral" data-i18n="filter_floral">Floral</button>
+        <button class="filter-chip" data-filter="vanilla" data-i18n="filter_vanilla">Vanilla</button>
+        <button class="filter-chip" data-filter="woody" data-i18n="filter_woody">Woody</button>
+        <button class="filter-chip" data-filter="fresh" data-i18n="filter_fresh">Fresh</button>
+        <button class="filter-chip" data-filter="gourmand" data-i18n="filter_gourmand">Gourmand</button>
+        <button class="filter-chip" data-filter="spicy" data-i18n="filter_spicy">Spicy</button>
+      </div>
     </div>
     <div id="search-results">
       <p class="no-results" id="no-results" data-i18n="no_results" style="display:none">No products found — try a different search.</p>
@@ -684,7 +691,7 @@ const ALL_PRODUCTS = {{ collections.allProducts | jsonify | safe }};
     if (activeFilter !== 'all') {
       if (activeFilter === 'fragrance') filtered = filtered.filter(p => p.type === 'fragrance');
       else if (activeFilter === 'beauty') filtered = filtered.filter(p => p.type === 'beauty');
-      else filtered = filtered.filter(p => (p.accords || []).includes(activeFilter) || (p.category || '').toLowerCase().includes(activeFilter));
+      else filtered = filtered.filter(p => p.type === 'fragrance' && ((p.accords || []).includes(activeFilter) || (p.category || '').toLowerCase().includes(activeFilter)));
     }
     if (query) {
       filtered = filtered.filter(p => {
@@ -697,11 +704,35 @@ const ALL_PRODUCTS = {{ collections.allProducts | jsonify | safe }};
 
   searchInput.addEventListener('input', runSearch);
 
+  const accordChips = document.getElementById('accord-chips');
+  const filterDivider = document.getElementById('filter-divider');
+
   document.querySelectorAll('.filter-chip').forEach(chip => {
     chip.addEventListener('click', () => {
-      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-      activeFilter = chip.dataset.filter;
+      const filter = chip.dataset.filter;
+      const isTypeChip = chip.classList.contains('type-chip');
+      const isAccordChip = !isTypeChip;
+
+      // If clicking an accord chip, ensure type resets to 'fragrance' visually
+      if (isAccordChip) {
+        document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        activeFilter = filter;
+        // Show accord chips, hide beauty state
+        accordChips.classList.remove('hidden');
+      } else {
+        // Type chip clicked
+        document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        activeFilter = filter;
+        // Hide/show accord chips based on type
+        if (filter === 'beauty') {
+          accordChips.classList.add('hidden');
+        } else {
+          accordChips.classList.remove('hidden');
+        }
+      }
+
       searchResults.classList.add('visible');
       runSearch();
     });
