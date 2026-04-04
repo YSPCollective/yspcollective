@@ -1,0 +1,273 @@
+---
+layout: base.njk
+title: "Blog — Fragrance & Beauty | YSP Collective"
+description: "Fragrance guides, K-beauty skincare tips, brand spotlights and expert advice from YSP Collective. Curated from Portugal for Europe."
+permalink: /blog.html
+---
+
+<style>
+  .blog-hero {
+    padding: calc(var(--nav-height, 80px) + 4rem) 3.5rem 4rem;
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+  }
+  .blog-hero::after {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 1px; height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(200,168,122,0.25), transparent);
+  }
+  .blog-hero-eyebrow {
+    font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--accent-light, #c8a87a); margin-bottom: 1rem;
+  }
+  .blog-hero-title {
+    font-family: var(--serif); font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 300; color: var(--white); line-height: 1.1;
+    margin-bottom: 1rem; letter-spacing: -0.01em;
+  }
+  .blog-hero-title em { font-style: italic; color: var(--accent-light, #c8a87a); }
+  .blog-hero-desc {
+    font-size: 0.95rem; color: rgba(255,255,255,0.45); max-width: 520px; line-height: 1.8;
+  }
+
+  .blog-main { padding: 5rem 3.5rem; max-width: 1400px; margin: 0 auto; }
+
+  .blog-filters {
+    display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 3.5rem;
+  }
+  .blog-filter-btn {
+    padding: 0.4rem 1rem; border: 1px solid var(--sand); background: transparent;
+    font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.1em;
+    text-transform: uppercase; cursor: pointer; color: var(--grey);
+    transition: all 0.2s;
+  }
+  .blog-filter-btn:hover, .blog-filter-btn.active {
+    background: var(--black); color: var(--white); border-color: var(--black);
+  }
+
+  .blog-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+  }
+
+  .blog-card {
+    text-decoration: none; color: inherit; display: block;
+    border: 1px solid var(--sand); transition: border-color 0.3s, transform 0.3s;
+  }
+  .blog-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+
+  .blog-card-img {
+    aspect-ratio: 16/9; background: var(--cream); overflow: hidden; position: relative;
+  }
+  .blog-card-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.5s;
+  }
+  .blog-card:hover .blog-card-img img { transform: scale(1.04); }
+
+  .blog-card-img-placeholder {
+    width: 100%; height: 100%; display: flex; align-items: center;
+    justify-content: center; font-size: 2.5rem; opacity: 0.2; color: var(--grey);
+  }
+
+  .blog-card-cat {
+    position: absolute; top: 1rem; left: 1rem;
+    font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 0.25rem 0.65rem; background: var(--accent); color: var(--white); font-weight: 400;
+  }
+
+  .blog-card-body { padding: 1.5rem; }
+
+  .blog-card-meta {
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--grey-light); margin-bottom: 0.6rem;
+    display: flex; gap: 1rem; align-items: center;
+  }
+
+  .blog-card-title {
+    font-family: var(--serif); font-size: 1.2rem; font-weight: 400;
+    line-height: 1.35; margin-bottom: 0.6rem; color: var(--black);
+  }
+
+  .blog-card-excerpt {
+    font-size: 0.82rem; color: var(--grey); line-height: 1.65; margin-bottom: 1rem;
+  }
+
+  .blog-card-read {
+    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); display: flex; align-items: center; gap: 0.4rem;
+    transition: gap 0.25s;
+  }
+  .blog-card:hover .blog-card-read { gap: 0.7rem; }
+
+  /* Featured post */
+  .blog-featured {
+    grid-column: 1 / -1;
+    display: grid; grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--sand); transition: border-color 0.3s;
+    text-decoration: none; color: inherit; margin-bottom: 1rem;
+  }
+  .blog-featured:hover { border-color: var(--accent); }
+  .blog-featured .blog-card-img { aspect-ratio: auto; min-height: 320px; }
+  .blog-featured .blog-card-body {
+    padding: 2.5rem; display: flex; flex-direction: column; justify-content: center;
+  }
+  .blog-featured .blog-card-title {
+    font-size: 1.8rem; margin-bottom: 1rem;
+  }
+  .blog-featured .blog-card-excerpt { font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+  .blog-empty {
+    grid-column: 1 / -1; text-align: center;
+    padding: 4rem; color: var(--grey); font-size: 0.9rem;
+  }
+
+  @media (max-width: 1024px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 768px) {
+    .blog-hero { padding: calc(var(--nav-height, 80px) + 2rem) 1.5rem 3rem; }
+    .blog-main { padding: 3rem 1.5rem; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .blog-featured { grid-template-columns: 1fr; }
+    .blog-featured .blog-card-img { min-height: 200px; }
+  }
+</style>
+
+<section class="blog-hero">
+  <p class="blog-hero-eyebrow" id="blog-eyebrow">YSP Collective</p>
+  <h1 class="blog-hero-title" id="blog-title">Fragrance &amp; beauty,<br><em>explored.</em></h1>
+  <p class="blog-hero-desc" id="blog-desc">Expert guides, brand deep-dives and skincare education — written for fragrance lovers and beauty enthusiasts across Portugal, Spain and Europe.</p>
+</section>
+
+<div class="blog-main">
+  <div class="blog-filters reveal" id="blog-filters">
+    <button class="blog-filter-btn active" data-cat="all" onclick="filterPosts('all', this)" id="filter-all">All Posts</button>
+    <button class="blog-filter-btn" data-cat="fragrance" onclick="filterPosts('fragrance', this)" id="filter-fragrance">Fragrance Guides</button>
+    <button class="blog-filter-btn" data-cat="arabian" onclick="filterPosts('arabian', this)" id="filter-arabian">Arabian Perfume</button>
+    <button class="blog-filter-btn" data-cat="skincare" onclick="filterPosts('skincare', this)" id="filter-skincare">K-Beauty &amp; Skincare</button>
+    <button class="blog-filter-btn" data-cat="brands" onclick="filterPosts('brands', this)" id="filter-brands">Brand Spotlights</button>
+  </div>
+
+  <div class="blog-grid reveal" id="blog-grid">
+    {% set posts = collections.posts | reverse %}
+    {% if posts.length %}
+      {% for post in posts %}
+        {% set isFirst = loop.first %}
+        {% if isFirst %}
+        <a href="{{ post.url }}" class="blog-featured blog-post-card" data-cat="{{ post.data.category }}">
+          <div class="blog-card-img">
+            {% if post.data.image %}
+              <img src="{{ post.data.image }}" alt="{{ post.data.title }}" loading="lazy">
+            {% else %}
+              <div class="blog-card-img-placeholder">✦</div>
+            {% endif %}
+            <span class="blog-card-cat">{{ post.data.category_label or post.data.category }}</span>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span>{{ post.data.date | date("d MMM yyyy") }}</span>
+              <span>·</span>
+              <span>{{ post.data.read_time or '5' }} min read</span>
+            </div>
+            <div class="blog-card-title">{{ post.data.title }}</div>
+            <p class="blog-card-excerpt">{{ post.data.description }}</p>
+            <span class="blog-card-read" id="read-more-label">Read article →</span>
+          </div>
+        </a>
+        {% else %}
+        <a href="{{ post.url }}" class="blog-card blog-post-card" data-cat="{{ post.data.category }}">
+          <div class="blog-card-img">
+            {% if post.data.image %}
+              <img src="{{ post.data.image }}" alt="{{ post.data.title }}" loading="lazy">
+            {% else %}
+              <div class="blog-card-img-placeholder">✦</div>
+            {% endif %}
+            <span class="blog-card-cat">{{ post.data.category_label or post.data.category }}</span>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span>{{ post.data.date | date("d MMM yyyy") }}</span>
+              <span>·</span>
+              <span>{{ post.data.read_time or '5' }} min read</span>
+            </div>
+            <div class="blog-card-title">{{ post.data.title }}</div>
+            <p class="blog-card-excerpt">{{ post.data.description }}</p>
+            <span class="blog-card-read" id="read-more-label-{{ loop.index }}">Read article →</span>
+          </div>
+        </a>
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      <div class="blog-empty">
+        <p>No posts yet — check back soon.</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+  // Language strings
+  const blogI18n = {
+    en: {
+      eyebrow: 'YSP Collective',
+      title: 'Fragrance &amp; beauty,<br><em>explored.</em>',
+      desc: 'Expert guides, brand deep-dives and skincare education — written for fragrance lovers and beauty enthusiasts across Portugal, Spain and Europe.',
+      all: 'All Posts', fragrance: 'Fragrance Guides', arabian: 'Arabian Perfume',
+      skincare: 'K-Beauty &amp; Skincare', brands: 'Brand Spotlights',
+      read: 'Read article →'
+    },
+    pt: {
+      eyebrow: 'YSP Collective',
+      title: 'Perfumaria &amp; beleza,<br><em>exploradas.</em>',
+      desc: 'Guias especializados, análises de marcas e educação sobre skincare — escritos para amantes de perfumaria e entusiastas de beleza em Portugal, Espanha e Europa.',
+      all: 'Todos os Artigos', fragrance: 'Guias de Perfumaria', arabian: 'Perfume Árabe',
+      skincare: 'K-Beauty &amp; Skincare', brands: 'Marcas em Destaque',
+      read: 'Ler artigo →'
+    },
+    es: {
+      eyebrow: 'YSP Collective',
+      title: 'Perfumería &amp; belleza,<br><em>exploradas.</em>',
+      desc: 'Guías especializadas, análisis de marcas y educación sobre skincare — escritas para amantes de la perfumería y entusiastas de la belleza en Portugal, España y Europa.',
+      all: 'Todos los Artículos', fragrance: 'Guías de Perfumería', arabian: 'Perfume Árabe',
+      skincare: 'K-Beauty &amp; Skincare', brands: 'Marcas Destacadas',
+      read: 'Leer artículo →'
+    }
+  };
+
+  function applyBlogLang(lang) {
+    const t = blogI18n[lang] || blogI18n.en;
+    document.getElementById('blog-eyebrow').textContent = t.eyebrow;
+    document.getElementById('blog-title').innerHTML = t.title;
+    document.getElementById('blog-desc').textContent = t.desc;
+    document.getElementById('filter-all').innerHTML = t.all;
+    document.getElementById('filter-fragrance').innerHTML = t.fragrance;
+    document.getElementById('filter-arabian').innerHTML = t.arabian;
+    document.getElementById('filter-skincare').innerHTML = t.skincare;
+    document.getElementById('filter-brands').innerHTML = t.brands;
+    document.querySelectorAll('[id^="read-more-label"]').forEach(el => { el.textContent = t.read.replace(' →',''); el.innerHTML += ' →'; });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    let lang = 'en';
+    try { lang = localStorage.getItem('ysp_lang') || 'en'; } catch(e) {}
+    if (!blogI18n[lang]) lang = 'en';
+    applyBlogLang(lang);
+  });
+
+  document.addEventListener('ysp:langchange', (e) => {
+    applyBlogLang(e.detail && e.detail.lang ? e.detail.lang : 'en');
+  });
+
+  // Category filter
+  function filterPosts(cat, btn) {
+    document.querySelectorAll('.blog-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.blog-post-card').forEach(card => {
+      if (cat === 'all' || card.dataset.cat === cat) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>

@@ -1,0 +1,296 @@
+---
+layout: base.njk
+---
+
+<style>
+  .post-hero {
+    padding: calc(var(--nav-height, 80px) + 3rem) 3.5rem 3rem;
+    background: var(--black);
+    position: relative; overflow: hidden;
+  }
+  .post-hero::after {
+    content: ''; position: absolute; top: 0; right: 0;
+    width: 1px; height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(200,168,122,0.25), transparent);
+  }
+  .post-breadcrumb {
+    font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.3); margin-bottom: 1.5rem;
+    display: flex; gap: 0.6rem; align-items: center;
+  }
+  .post-breadcrumb a { color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+  .post-breadcrumb a:hover { color: var(--accent-light); }
+
+  .post-cat {
+    font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--accent-light); margin-bottom: 1rem;
+  }
+  .post-title {
+    font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 300; color: var(--white); line-height: 1.12;
+    margin-bottom: 1.2rem; letter-spacing: -0.01em; max-width: 760px;
+  }
+  .post-meta {
+    display: flex; gap: 1.5rem; align-items: center;
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+  .post-meta-divider { opacity: 0.3; }
+
+  .post-hero-img {
+    margin-top: 3rem;
+    aspect-ratio: 21/9;
+    overflow: hidden; position: relative;
+  }
+  .post-hero-img img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+
+  .post-layout {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 3.5rem 6rem;
+    align-items: start;
+  }
+
+  /* Article body */
+  .post-body { min-width: 0; }
+
+  .post-body h2 {
+    font-family: var(--serif); font-size: 1.8rem; font-weight: 300;
+    margin: 2.5rem 0 1rem; line-height: 1.25;
+    color: var(--black);
+  }
+  .post-body h3 {
+    font-family: var(--serif); font-size: 1.3rem; font-weight: 400;
+    margin: 2rem 0 0.8rem; color: var(--black);
+  }
+  .post-body p {
+    font-size: 0.95rem; line-height: 1.9; color: var(--grey);
+    margin-bottom: 1.2rem;
+  }
+  .post-body strong { color: var(--black); font-weight: 400; }
+  .post-body em { font-style: italic; }
+  .post-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+  .post-body ul, .post-body ol {
+    margin: 1rem 0 1.2rem 1.5rem;
+  }
+  .post-body li {
+    font-size: 0.95rem; line-height: 1.8; color: var(--grey); margin-bottom: 0.4rem;
+  }
+  .post-body blockquote {
+    border-left: 3px solid var(--accent);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    background: var(--cream);
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--black);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .post-body hr {
+    border: none; border-top: 1px solid var(--sand); margin: 2.5rem 0;
+  }
+  .post-body img {
+    width: 100%; height: auto; margin: 1.5rem 0;
+  }
+
+  /* Product callout box */
+  .post-product-callout {
+    border: 1px solid var(--sand); padding: 1.5rem; margin: 2rem 0;
+    display: flex; gap: 1.2rem; align-items: center;
+    text-decoration: none; color: inherit;
+    transition: border-color 0.3s;
+  }
+  .post-product-callout:hover { border-color: var(--accent); }
+  .post-product-callout img {
+    width: 80px; height: 80px; object-fit: cover; flex-shrink: 0; margin: 0;
+  }
+  .post-product-callout-body { flex: 1; }
+  .post-product-callout-label {
+    font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.3rem;
+  }
+  .post-product-callout-name {
+    font-family: var(--serif); font-size: 1.1rem; font-weight: 300; margin-bottom: 0.2rem;
+  }
+  .post-product-callout-price { font-size: 0.85rem; color: var(--grey); }
+  .post-product-callout-cta {
+    font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); white-space: nowrap;
+  }
+
+  /* Sidebar */
+  .post-sidebar { position: sticky; top: calc(var(--nav-height, 80px) + 2rem); }
+
+  .sidebar-toc {
+    border: 1px solid var(--sand); padding: 1.5rem; margin-bottom: 1.5rem;
+  }
+  .sidebar-toc-title {
+    font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1rem; font-weight: 400;
+  }
+  .sidebar-toc a {
+    display: block; font-size: 0.82rem; color: var(--grey);
+    text-decoration: none; padding: 0.35rem 0;
+    border-bottom: 1px solid var(--sand); transition: color 0.2s;
+    line-height: 1.4;
+  }
+  .sidebar-toc a:last-child { border-bottom: none; }
+  .sidebar-toc a:hover { color: var(--accent); }
+
+  .sidebar-related { border: 1px solid var(--sand); padding: 1.5rem; }
+  .sidebar-related-title {
+    font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1rem; font-weight: 400;
+  }
+  .sidebar-related-post {
+    display: block; text-decoration: none; color: inherit;
+    padding: 0.8rem 0; border-bottom: 1px solid var(--sand);
+    transition: color 0.25s;
+  }
+  .sidebar-related-post:last-child { border-bottom: none; }
+  .sidebar-related-post:hover { color: var(--accent); }
+  .sidebar-related-post-title {
+    font-size: 0.85rem; font-weight: 400; line-height: 1.35; margin-bottom: 0.2rem;
+  }
+  .sidebar-related-post-date {
+    font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--grey-light);
+  }
+
+  .post-tags {
+    display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 3rem;
+    padding-top: 2rem; border-top: 1px solid var(--sand);
+  }
+  .post-tag {
+    padding: 0.3rem 0.75rem; border: 1px solid var(--sand);
+    font-size: 0.68rem; color: var(--grey); letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Next / Prev */
+  .post-nav {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+    background: var(--sand); border-top: 1px solid var(--sand);
+    max-width: 1200px; margin: 0 auto;
+  }
+  .post-nav-item {
+    background: var(--white); padding: 2rem 3.5rem;
+    text-decoration: none; color: inherit; transition: background 0.25s;
+  }
+  .post-nav-item:hover { background: var(--cream); }
+  .post-nav-item:last-child { text-align: right; }
+  .post-nav-label {
+    font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.4rem;
+  }
+  .post-nav-title {
+    font-family: var(--serif); font-size: 1rem; font-weight: 300; line-height: 1.35;
+    color: var(--black);
+  }
+
+  @media (max-width: 1024px) {
+    .post-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .post-sidebar { position: static; }
+  }
+  @media (max-width: 768px) {
+    .post-hero { padding: calc(var(--nav-height, 80px) + 2rem) 1.5rem 2rem; }
+    .post-layout { padding: 3rem 1.5rem 4rem; }
+    .post-nav-item { padding: 1.5rem; }
+    .post-hero-img { aspect-ratio: 4/3; }
+  }
+</style>
+
+<article>
+  <header class="post-hero">
+    <div class="post-breadcrumb">
+      <a href="/">Home</a> <span>›</span>
+      <a href="/blog.html">Blog</a> <span>›</span>
+      <span>{{ category_label or category }}</span>
+    </div>
+    <p class="post-cat">{{ category_label or category }}</p>
+    <h1 class="post-title">{{ title }}</h1>
+    <div class="post-meta">
+      <span>{{ date | date("d MMMM yyyy") }}</span>
+      <span class="post-meta-divider">·</span>
+      <span>{{ read_time or '5' }} min read</span>
+      {% if author %}<span class="post-meta-divider">·</span><span>By {{ author }}</span>{% endif %}
+    </div>
+    {% if image %}
+    <div class="post-hero-img">
+      <img src="{{ image }}" alt="{{ title }}">
+    </div>
+    {% endif %}
+  </header>
+
+  <div class="post-layout">
+    <div class="post-body">
+      {{ content | safe }}
+
+      {% if tags %}
+      <div class="post-tags">
+        {% for tag in tags %}
+          {% if tag != 'posts' %}
+          <span class="post-tag">{{ tag }}</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+    <aside class="post-sidebar">
+      {% if toc %}
+      <div class="sidebar-toc">
+        <div class="sidebar-toc-title">In this article</div>
+        {{ toc | safe }}
+      </div>
+      {% endif %}
+
+      {% set related = collections.posts | reverse %}
+      {% if related.length > 1 %}
+      <div class="sidebar-related">
+        <div class="sidebar-related-title">More from the blog</div>
+        {% for p in related %}
+          {% if p.url != page.url %}
+          <a href="{{ p.url }}" class="sidebar-related-post">
+            <div class="sidebar-related-post-title">{{ p.data.title }}</div>
+            <div class="sidebar-related-post-date">{{ p.data.date | date("d MMM yyyy") }}</div>
+          </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </aside>
+  </div>
+</article>
+
+{% set postList = collections.posts | reverse %}
+{% set currentIndex = 0 %}
+{% for p in postList %}
+  {% if p.url == page.url %}{% set currentIndex = loop.index0 %}{% endif %}
+{% endfor %}
+
+<nav class="post-nav" aria-label="Post navigation">
+  {% if postList[currentIndex + 1] %}
+  <a href="{{ postList[currentIndex + 1].url }}" class="post-nav-item">
+    <div class="post-nav-label">← Previous</div>
+    <div class="post-nav-title">{{ postList[currentIndex + 1].data.title }}</div>
+  </a>
+  {% else %}
+  <div class="post-nav-item"></div>
+  {% endif %}
+  {% if currentIndex > 0 %}
+  <a href="{{ postList[currentIndex - 1].url }}" class="post-nav-item">
+    <div class="post-nav-label">Next →</div>
+    <div class="post-nav-title">{{ postList[currentIndex - 1].data.title }}</div>
+  </a>
+  {% else %}
+  <div class="post-nav-item"></div>
+  {% endif %}
+</nav>

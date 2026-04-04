@@ -277,3 +277,35 @@ collections:
           - { label: "Contact Email", name: "email", widget: "string" }
           - { label: "Amazon Store URL", name: "amazon_url", widget: "string" }
           - { label: "Instagram URL", name: "instagram_url", widget: "string", required: false }
+
+  # ─── BLOG POSTS ───────────────────────────────────────────────────────────
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "src/_posts"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}} — {{date}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", hint: "Short summary shown on blog listing and in search results (150–160 chars ideal)" }
+      - { label: "Publish Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, default: "" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Fragrance Guides", value: "fragrance" }
+          - { label: "Arabian Perfume", value: "arabian" }
+          - { label: "K-Beauty & Skincare", value: "skincare" }
+          - { label: "Brand Spotlights", value: "brands" }
+      - { label: "Category Label", name: "category_label", widget: "string", hint: "Display label e.g. 'Arabian Perfume'" }
+      - { label: "Author", name: "author", widget: "string", default: "YSP Collective", required: false }
+      - { label: "Read Time (minutes)", name: "read_time", widget: "number", default: 5, required: false }
+      - { label: "Hero Image", name: "image", widget: "image", required: false, hint: "Recommended 1200x630px" }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        default: ["posts"]
+        hint: "Always include 'posts'. Add topic tags e.g. oud, lattafa, k-beauty"
+      - { label: "Table of Contents (HTML)", name: "toc", widget: "text", required: false, hint: "Optional anchor links for sidebar TOC" }
+      - { label: "Body", name: "body", widget: "markdown" }
