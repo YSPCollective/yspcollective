@@ -1,537 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-root">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Guide — Fragrance & Beauty Education | YSP Collective</title>
-  <meta name="description" content="Everything you need to know about fragrance. EDP vs EDT explained, how to wear perfume, fragrance notes decoded, Arabian vs Western scents, and K-beauty skincare routines. Your complete guide from YSP Collective.">
-  <meta name="keywords" content="EDP vs EDT difference, how to wear perfume, fragrance concentration guide, Arabian perfume guide, what is oud, K-beauty skincare routine, fragrance notes explained, best affordable luxury fragrances, Creed alternative, Lattafa guide">
+  <title data-i18n-attr="title" data-en="The Guide — Fragrance &amp; Beauty Education | YSP Collective" data-pt="O Guia — Perfumaria &amp; Beleza | YSP Collective" data-es="La Guía — Perfumería &amp; Belleza | YSP Collective">The Guide — Fragrance &amp; Beauty Education | YSP Collective</title>
+  <meta name="description" data-i18n-attr="content" data-en="Everything you need to know about fragrance. EDP vs EDT explained, how to wear perfume, fragrance notes decoded, Arabian vs Western scents, and K-beauty skincare routines." data-pt="Tudo o que precisa de saber sobre perfumaria. EDP vs EDT explicado, como usar perfume, notas olfativas, fragrâncias árabes vs ocidentais e rotinas de beleza K-beauty." data-es="Todo lo que necesitas saber sobre perfumería. EDP vs EDT explicado, cómo usar perfume, notas olfativas, fragancias árabes vs occidentales y rutinas de belleza K-beauty." content="Everything you need to know about fragrance. EDP vs EDT explained, how to wear perfume, fragrance notes decoded, Arabian vs Western scents, and K-beauty skincare routines.">
   <link rel="canonical" href="https://yspcollective.com/the-guide">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --black: #1a1916;
-      --white: #faf8f5;
-      --cream: #f3efe8;
-      --sand: #e6dfd4;
-      --grey: #8a847a;
-      --grey-light: #b5afa5;
-      --accent: #9c7b56;
-      --accent-light: #c8a87a;
-      --serif: 'Playfair Display', Georgia, serif;
-      --sans: 'Outfit', -apple-system, sans-serif;
+      --black: #1a1916; --white: #faf8f5; --cream: #f3efe8; --sand: #e6dfd4;
+      --grey: #8a847a; --grey-light: #b5afa5; --accent: #9c7b56; --accent-light: #c8a87a;
+      --serif: 'Playfair Display', Georgia, serif; --sans: 'Outfit', -apple-system, sans-serif;
       --nav-height: 72px;
     }
-
     html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--sans); font-weight: 300; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
 
-    body {
-      background: var(--white);
-      color: var(--black);
-      font-family: var(--sans);
-      font-weight: 300;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ─── NAV ─── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      z-index: 1000; height: var(--nav-height);
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0 3.5rem;
-      background: rgba(250,248,245,0.95);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: var(--nav-height); display: flex; justify-content: space-between; align-items: center; padding: 0 3.5rem; background: rgba(250,248,245,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,0,0,0.05); }
     .nav-logo { text-decoration: none; display: flex; align-items: baseline; gap: 0.5rem; }
     .nav-logo-text { font-family: var(--serif); font-size: 1.5rem; font-weight: 300; color: var(--black); letter-spacing: 0.04em; }
     .nav-logo-sub { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--grey); }
+    .nav-right { display: flex; align-items: center; gap: 1.5rem; }
     .nav-back { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.25s; }
     .nav-back:hover { color: var(--accent); }
+    .lang-switcher { display: flex; gap: 0; }
+    .lang-btn { background: none; border: 1px solid var(--sand); padding: 0.3rem 0.6rem; font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; color: var(--grey); transition: all 0.2s; }
+    .lang-btn:not(:last-child) { border-right: none; }
+    .lang-btn.active { background: var(--black); color: var(--white); border-color: var(--black); }
+    .lang-btn:hover:not(.active) { color: var(--accent); border-color: var(--accent); }
 
-    /* ─── HERO ─── */
-    #hero {
-      min-height: 52vh;
-      background: var(--black);
-      display: flex; flex-direction: column;
-      justify-content: flex-end;
-      padding: calc(var(--nav-height) + 4rem) 3.5rem 5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Subtle grain texture */
-    #hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-    }
-
-    /* Decorative lines */
-    #hero::after {
-      content: '';
-      position: absolute;
-      top: 0; right: 0;
-      width: 1px; height: 100%;
-      background: linear-gradient(to bottom, transparent, rgba(200,168,122,0.3), transparent);
-    }
-
-    .hero-eyebrow {
-      font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase;
-      color: var(--accent-light); margin-bottom: 1.2rem;
-      opacity: 0; animation: fadeUp 0.7s 0.2s forwards;
-    }
-
-    .hero-title {
-      font-family: var(--serif);
-      font-size: clamp(3rem, 7vw, 6rem);
-      font-weight: 300; line-height: 1.05;
-      color: var(--white); letter-spacing: -0.02em;
-      margin-bottom: 1.5rem;
-      opacity: 0; animation: fadeUp 0.7s 0.35s forwards;
-    }
-
+    /* HERO */
+    #hero { min-height: 52vh; background: var(--black); display: flex; flex-direction: column; justify-content: flex-end; padding: calc(var(--nav-height) + 4rem) 3.5rem 5rem; position: relative; overflow: hidden; }
+    #hero::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; }
+    #hero::after { content: ''; position: absolute; top: 0; right: 0; width: 1px; height: 100%; background: linear-gradient(to bottom, transparent, rgba(200,168,122,0.3), transparent); }
+    .hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 1.2rem; opacity: 0; animation: fadeUp 0.7s 0.2s forwards; }
+    .hero-title { font-family: var(--serif); font-size: clamp(3rem, 7vw, 6rem); font-weight: 300; line-height: 1.05; color: var(--white); letter-spacing: -0.02em; margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.7s 0.35s forwards; }
     .hero-title em { font-style: italic; color: var(--accent-light); }
+    .hero-desc { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.5); max-width: 560px; margin-bottom: 2.5rem; opacity: 0; animation: fadeUp 0.7s 0.5s forwards; }
+    .hero-nav { display: flex; flex-wrap: wrap; gap: 0.6rem; opacity: 0; animation: fadeUp 0.7s 0.65s forwards; }
+    .hero-nav-pill { padding: 0.45rem 1.1rem; border: 1px solid rgba(200,168,122,0.3); color: rgba(255,255,255,0.6); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: all 0.25s; }
+    .hero-nav-pill:hover { border-color: var(--accent-light); color: var(--accent-light); }
 
-    .hero-desc {
-      font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.5);
-      max-width: 560px; margin-bottom: 2.5rem;
-      opacity: 0; animation: fadeUp 0.7s 0.5s forwards;
-    }
-
-    .hero-nav {
-      display: flex; flex-wrap: wrap; gap: 0.6rem;
-      opacity: 0; animation: fadeUp 0.7s 0.65s forwards;
-    }
-
-    .hero-nav-pill {
-      padding: 0.45rem 1.1rem;
-      border: 1px solid rgba(200,168,122,0.3);
-      color: rgba(255,255,255,0.6);
-      font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
-      text-decoration: none;
-      transition: all 0.25s;
-      background: transparent;
-      cursor: pointer;
-    }
-
-    .hero-nav-pill:hover {
-      border-color: var(--accent-light);
-      color: var(--accent-light);
-      background: rgba(200,168,122,0.06);
-    }
-
-    /* ─── SECTION WRAPPER ─── */
-    .guide-section {
-      padding: 6rem 3.5rem;
-      scroll-margin-top: var(--nav-height);
-      border-bottom: 1px solid var(--sand);
-    }
-
+    /* SECTIONS */
+    .guide-section { padding: 6rem 3.5rem; scroll-margin-top: var(--nav-height); border-bottom: 1px solid var(--sand); }
     .guide-section:nth-child(even) { background: var(--cream); }
+    .section-eyebrow { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; font-weight: 400; }
+    .section-title { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.2; margin-bottom: 1rem; }
+    .section-intro { font-size: 0.95rem; line-height: 1.85; color: var(--grey); max-width: 640px; margin-bottom: 3rem; }
 
-    .section-eyebrow {
-      font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 1rem; font-weight: 400;
-    }
-
-    .section-title {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 300; line-height: 1.2; margin-bottom: 1rem;
-    }
-
-    .section-intro {
-      font-size: 0.95rem; line-height: 1.85; color: var(--grey);
-      max-width: 640px; margin-bottom: 3rem;
-    }
-
-    /* ─── CONCENTRATION CARDS ─── */
-    .concentration-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .conc-card {
-      padding: 2rem 1.8rem;
-      border: 1px solid var(--sand);
-      background: var(--white);
-      transition: border-color 0.3s, transform 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .conc-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0;
-      height: 3px;
-    }
-
+    /* CONCENTRATION CARDS */
+    .concentration-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
+    .conc-card { padding: 2rem 1.8rem; border: 1px solid var(--sand); background: var(--white); transition: border-color 0.3s, transform 0.3s; position: relative; overflow: hidden; }
     .conc-card:hover { border-color: var(--accent); transform: translateY(-3px); }
-
-    .conc-name {
-      font-family: var(--serif); font-size: 1.3rem; font-weight: 400;
-      margin-bottom: 0.3rem;
-    }
-
-    .conc-abbr {
-      font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--grey); margin-bottom: 1rem;
-    }
-
-    .conc-bar-wrap {
-      margin-bottom: 1rem;
-    }
-
-    .conc-bar-label {
-      font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--grey-light); margin-bottom: 0.35rem;
-      display: flex; justify-content: space-between;
-    }
-
-    .conc-bar {
-      height: 4px; background: var(--sand); border-radius: 2px; overflow: hidden;
-    }
-
-    .conc-bar-fill {
-      height: 100%; background: var(--accent); border-radius: 2px;
-    }
-
-    .conc-desc {
-      font-size: 0.82rem; line-height: 1.65; color: var(--grey);
-    }
-
-    .conc-stats {
-      display: flex; gap: 1.5rem; margin: 1rem 0 0.8rem;
-      padding-top: 0.8rem; border-top: 1px solid var(--sand);
-    }
-
-    .conc-stat { }
+    .conc-name { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; margin-bottom: 0.3rem; }
+    .conc-abbr { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); margin-bottom: 1rem; }
+    .conc-bar-wrap { margin-bottom: 1rem; }
+    .conc-bar-label { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--grey-light); margin-bottom: 0.35rem; display: flex; justify-content: space-between; }
+    .conc-bar { height: 4px; background: var(--sand); border-radius: 2px; overflow: hidden; }
+    .conc-bar-fill { height: 100%; background: var(--accent); border-radius: 2px; }
+    .conc-stats { display: flex; gap: 1.5rem; margin: 1rem 0 0.8rem; padding-top: 0.8rem; border-top: 1px solid var(--sand); }
     .conc-stat-val { font-size: 0.9rem; font-weight: 400; color: var(--black); }
     .conc-stat-label { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey-light); }
+    .conc-desc { font-size: 0.82rem; line-height: 1.65; color: var(--grey); }
 
-    /* ─── SPRAY GUIDE ─── */
-    .spray-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    .body-diagram {
-      background: var(--cream);
-      aspect-ratio: 3/4;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .spray-points-list { }
-
-    .spray-point {
-      padding: 1.2rem 0;
-      border-bottom: 1px solid var(--sand);
-      display: grid;
-      grid-template-columns: 2rem 1fr;
-      gap: 1rem;
-      align-items: start;
-    }
-
+    /* SPRAY GUIDE */
+    .spray-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .body-diagram { background: var(--cream); aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .spray-point { padding: 1.2rem 0; border-bottom: 1px solid var(--sand); display: grid; grid-template-columns: 2rem 1fr; gap: 1rem; align-items: start; }
     .spray-point:first-child { border-top: 1px solid var(--sand); }
+    .spray-num { font-family: var(--serif); font-size: 1.2rem; color: var(--accent); font-weight: 300; line-height: 1; padding-top: 0.1rem; }
+    .spray-title { font-size: 0.85rem; font-weight: 400; margin-bottom: 0.25rem; }
+    .spray-desc { font-size: 0.78rem; color: var(--grey); line-height: 1.6; }
 
-    .spray-num {
-      font-family: var(--serif); font-size: 1.2rem;
-      color: var(--accent); font-weight: 300; line-height: 1;
-      padding-top: 0.1rem;
-    }
-
-    .spray-title {
-      font-size: 0.85rem; font-weight: 400; margin-bottom: 0.25rem;
-    }
-
-    .spray-desc {
-      font-size: 0.78rem; color: var(--grey); line-height: 1.6;
-    }
-
-    /* ─── ACCORDION ─── */
-    .accordion { }
-
-    .acc-item {
-      border-top: 1px solid var(--sand);
-    }
-
+    /* ACCORDION */
+    .acc-item { border-top: 1px solid var(--sand); }
     .acc-item:last-child { border-bottom: 1px solid var(--sand); }
-
-    .acc-trigger {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1.4rem 0;
-      cursor: pointer; user-select: none;
-      background: none; border: none; width: 100%;
-      text-align: left; font-family: var(--sans);
-    }
-
+    .acc-trigger { display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 0; cursor: pointer; user-select: none; background: none; border: none; width: 100%; text-align: left; font-family: var(--sans); }
     .acc-trigger:hover .acc-q { color: var(--accent); }
-
-    .acc-q {
-      font-size: 0.95rem; font-weight: 400; color: var(--black);
-      transition: color 0.25s; padding-right: 2rem;
-      line-height: 1.4;
-    }
-
-    .acc-icon {
-      font-size: 1.2rem; color: var(--accent);
-      transition: transform 0.3s; flex-shrink: 0;
-    }
-
+    .acc-q { font-size: 0.95rem; font-weight: 400; color: var(--black); transition: color 0.25s; padding-right: 2rem; line-height: 1.4; }
+    .acc-icon { font-size: 1.2rem; color: var(--accent); transition: transform 0.3s; flex-shrink: 0; }
     .acc-item.open .acc-icon { transform: rotate(45deg); }
-
-    .acc-body {
-      max-height: 0; overflow: hidden;
-      transition: max-height 0.45s ease, padding 0.3s;
-      font-size: 0.88rem; color: var(--grey); line-height: 1.85;
-    }
-
-    .acc-item.open .acc-body {
-      max-height: 600px;
-      padding-bottom: 1.4rem;
-    }
-
+    .acc-body { max-height: 0; overflow: hidden; transition: max-height 0.45s ease, padding 0.3s; font-size: 0.88rem; color: var(--grey); line-height: 1.85; }
+    .acc-item.open .acc-body { max-height: 600px; padding-bottom: 1.4rem; }
     .acc-body p { margin-bottom: 0.8rem; }
     .acc-body p:last-child { margin-bottom: 0; }
     .acc-body strong { color: var(--black); font-weight: 400; }
 
-    /* ─── COMPARISON TABLE ─── */
-    .compare-table {
-      width: 100%; border-collapse: collapse;
-      font-size: 0.85rem;
-    }
-
-    .compare-table th {
-      text-align: left; padding: 0.8rem 1rem;
-      font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--grey); font-weight: 400;
-      border-bottom: 2px solid var(--sand);
-    }
-
-    .compare-table td {
-      padding: 0.8rem 1rem; border-bottom: 1px solid var(--sand);
-      vertical-align: top; line-height: 1.5;
-    }
-
-    .compare-table td:first-child {
-      font-weight: 400; color: var(--black);
-    }
-
+    /* TABLE */
+    .compare-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    .compare-table th { text-align: left; padding: 0.8rem 1rem; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); font-weight: 400; border-bottom: 2px solid var(--sand); }
+    .compare-table td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--sand); vertical-align: top; line-height: 1.5; }
+    .compare-table td:first-child { font-weight: 400; color: var(--black); }
     .compare-table tr:last-child td { border-bottom: none; }
-
     .compare-table tr:hover td { background: var(--cream); }
 
-    /* ─── CALLOUT BOXES ─── */
-    .callout {
-      padding: 1.8rem 2rem;
-      border-left: 3px solid var(--accent);
-      background: var(--cream);
-      margin: 2rem 0;
-    }
-
-    .callout-label {
-      font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 0.6rem;
-    }
-
-    .callout p {
-      font-size: 0.9rem; line-height: 1.8; color: var(--grey);
-      margin-bottom: 0.5rem;
-    }
-
+    /* CALLOUT */
+    .callout { padding: 1.8rem 2rem; border-left: 3px solid var(--accent); background: var(--cream); margin: 2rem 0; }
+    .callout-label { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
+    .callout p { font-size: 0.9rem; line-height: 1.8; color: var(--grey); margin-bottom: 0.5rem; }
     .callout p:last-child { margin-bottom: 0; }
     .callout strong { color: var(--black); font-weight: 400; }
 
-    /* ─── BEAUTY ROUTINE ─── */
-    .routine-steps {
-      display: flex; flex-direction: column; gap: 0;
-      counter-reset: step;
-    }
-
-    .routine-step {
-      display: grid;
-      grid-template-columns: 3.5rem 1fr;
-      gap: 1.5rem;
-      padding: 1.8rem 0;
-      border-bottom: 1px solid var(--sand);
-      align-items: start;
-    }
-
+    /* ROUTINE */
+    .routine-step { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1.5rem; padding: 1.8rem 0; border-bottom: 1px solid var(--sand); align-items: start; }
     .routine-step:first-child { border-top: 1px solid var(--sand); }
+    .step-num { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: var(--accent); line-height: 1; padding-top: 0.2rem; }
+    .step-title { font-size: 0.9rem; font-weight: 400; margin-bottom: 0.3rem; }
+    .step-timing { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+    .step-desc { font-size: 0.82rem; color: var(--grey); line-height: 1.65; }
+    .step-products { margin-top: 0.6rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .step-product-tag { padding: 0.2rem 0.6rem; border: 1px solid var(--sand); font-size: 0.68rem; color: var(--grey); letter-spacing: 0.06em; }
 
-    .step-num {
-      font-family: var(--serif); font-size: 2rem; font-weight: 300;
-      color: var(--accent); line-height: 1;
-      padding-top: 0.2rem;
-    }
-
-    .step-content { }
-
-    .step-title {
-      font-size: 0.9rem; font-weight: 400; margin-bottom: 0.3rem;
-    }
-
-    .step-timing {
-      font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 0.5rem;
-    }
-
-    .step-desc {
-      font-size: 0.82rem; color: var(--grey); line-height: 1.65;
-    }
-
-    .step-products {
-      margin-top: 0.6rem; display: flex; flex-wrap: wrap; gap: 0.4rem;
-    }
-
-    .step-product-tag {
-      padding: 0.2rem 0.6rem; border: 1px solid var(--sand);
-      font-size: 0.68rem; color: var(--grey); letter-spacing: 0.06em;
-    }
-
-    /* ─── LAYERING GUIDE ─── */
-    .layer-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-
-    .layer-card {
-      padding: 1.8rem;
-      background: var(--black);
-      color: var(--white);
-      transition: transform 0.3s;
-    }
-
+    /* LAYERING */
+    .layer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .layer-card { padding: 1.8rem; background: var(--black); color: var(--white); transition: transform 0.3s; }
     .layer-card:hover { transform: translateY(-3px); }
+    .layer-num { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: var(--accent-light); margin-bottom: 0.8rem; }
+    .layer-title { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem; }
+    .layer-name { font-family: var(--serif); font-size: 1.2rem; font-weight: 300; color: var(--white); margin-bottom: 0.8rem; }
+    .layer-desc { font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
 
-    .layer-num {
-      font-family: var(--serif); font-size: 2rem; font-weight: 300;
-      color: var(--accent-light); margin-bottom: 0.8rem;
-    }
-
-    .layer-title {
-      font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
-      color: rgba(255,255,255,0.5); margin-bottom: 0.5rem;
-    }
-
-    .layer-name {
-      font-family: var(--serif); font-size: 1.2rem; font-weight: 300;
-      color: var(--white); margin-bottom: 0.8rem;
-    }
-
-    .layer-desc {
-      font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.65;
-    }
-
-    /* ─── ARABIAN VS WESTERN ─── */
-    .vs-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
-    }
-
-    .vs-col {
-      padding: 2.5rem 2rem; border: 1px solid var(--sand);
-    }
-
-    .vs-col-head {
-      font-family: var(--serif); font-size: 1.5rem; font-weight: 300;
-      margin-bottom: 0.3rem;
-    }
-
-    .vs-col-sub {
-      font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 1.5rem;
-    }
-
+    /* VS GRID */
+    .vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .vs-col { padding: 2.5rem 2rem; border: 1px solid var(--sand); }
+    .vs-col-head { font-family: var(--serif); font-size: 1.5rem; font-weight: 300; margin-bottom: 0.3rem; }
+    .vs-col-sub { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
     .vs-list { list-style: none; }
-
-    .vs-list li {
-      padding: 0.6rem 0; border-bottom: 1px solid var(--sand);
-      font-size: 0.85rem; color: var(--grey); line-height: 1.5;
-      display: flex; gap: 0.8rem; align-items: baseline;
-    }
-
+    .vs-list li { padding: 0.6rem 0; border-bottom: 1px solid var(--sand); font-size: 0.85rem; color: var(--grey); line-height: 1.5; display: flex; gap: 0.8rem; align-items: baseline; }
     .vs-list li:last-child { border-bottom: none; }
-
     .vs-bullet { color: var(--accent); flex-shrink: 0; font-size: 0.7rem; }
 
-    /* ─── QUICK LINKS ─── */
-    .quick-links {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-    }
+    /* QUICK LINKS */
+    .quick-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .quick-link-card { padding: 2rem 1.8rem; border: 1px solid var(--sand); text-decoration: none; color: inherit; transition: border-color 0.3s, transform 0.3s; display: block; }
+    .quick-link-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .qlc-eyebrow { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+    .qlc-title { font-family: var(--serif); font-size: 1.3rem; font-weight: 300; margin-bottom: 0.5rem; }
+    .qlc-desc { font-size: 0.78rem; color: var(--grey); line-height: 1.6; }
 
-    .quick-link-card {
-      padding: 2rem 1.8rem;
-      border: 1px solid var(--sand);
-      text-decoration: none; color: inherit;
-      transition: border-color 0.3s, transform 0.3s;
-      display: block;
-    }
-
-    .quick-link-card:hover {
-      border-color: var(--accent); transform: translateY(-3px);
-    }
-
-    .qlc-eyebrow {
-      font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 0.5rem;
-    }
-
-    .qlc-title {
-      font-family: var(--serif); font-size: 1.3rem; font-weight: 300;
-      margin-bottom: 0.5rem;
-    }
-
-    .qlc-desc {
-      font-size: 0.78rem; color: var(--grey); line-height: 1.6;
-    }
-
-    /* ─── FOOTER ─── */
-    footer {
-      padding: 3rem 3.5rem;
-      background: var(--black);
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 1rem;
-    }
-
+    /* FOOTER */
+    footer { padding: 3rem 3.5rem; background: var(--black); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
     .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
-
     .footer-links { display: flex; gap: 2rem; }
-    .footer-links a {
-      font-size: 0.72rem; color: rgba(255,255,255,0.35); text-decoration: none;
-      transition: color 0.25s;
-    }
+    .footer-links a { font-size: 0.72rem; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.25s; }
     .footer-links a:hover { color: var(--accent-light); }
 
-    /* ─── REVEAL ─── */
-    .reveal {
-      opacity: 0; transform: translateY(22px);
-      transition: opacity 0.7s, transform 0.7s;
-    }
+    /* REVEAL & ANIMATIONS */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s, transform 0.7s; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* ─── ANIMATIONS ─── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ─── RESPONSIVE ─── */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       nav { padding: 0 1.5rem; }
       #hero { padding: calc(var(--nav-height) + 3rem) 1.5rem 4rem; }
@@ -543,11 +168,10 @@
       .quick-links { grid-template-columns: 1fr; }
       .concentration-grid { grid-template-columns: 1fr 1fr; }
       footer { padding: 2.5rem 1.5rem; }
+      .lang-switcher { display: none; }
     }
-
     @media (max-width: 480px) {
       .concentration-grid { grid-template-columns: 1fr; }
-      .quick-links { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -559,180 +183,164 @@
       <span class="nav-logo-text">YSP</span>
       <span class="nav-logo-sub">Collective</span>
     </a>
-    <a href="/" class="nav-back">← Back to Store</a>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" data-lang="pt" onclick="setLang('pt')">PT</button>
+        <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+      </div>
+      <a href="/" class="nav-back" data-i18n="nav_back">← Back to Store</a>
+    </div>
   </nav>
 
   <!-- HERO -->
   <section id="hero">
-    <p class="hero-eyebrow">YSP Collective</p>
-    <h1 class="hero-title">The <em>Guide.</em></h1>
-    <p class="hero-desc">Everything you need to know about fragrance and skincare — from the difference between EDP and EDT to where to spray, how to layer, and what makes Arabian perfume extraordinary.</p>
+    <p class="hero-eyebrow" data-i18n="hero_eyebrow">YSP Collective</p>
+    <h1 class="hero-title" data-i18n="hero_title_html">The <em>Guide.</em></h1>
+    <p class="hero-desc" data-i18n="hero_desc">Everything you need to know about fragrance and skincare — from the difference between EDP and EDT to where to spray, how to layer, and what makes Arabian perfume extraordinary.</p>
     <div class="hero-nav">
-      <a href="#concentrations" class="hero-nav-pill">EDP vs EDT vs Parfum</a>
-      <a href="#how-to-wear" class="hero-nav-pill">How to Wear Fragrance</a>
-      <a href="#arabian" class="hero-nav-pill">Arabian vs Western</a>
-      <a href="#layering" class="hero-nav-pill">Layering Fragrances</a>
-      <a href="#skincare" class="hero-nav-pill">Skincare Routine</a>
-      <a href="#faq" class="hero-nav-pill">Common Questions</a>
-      <a href="/fragrance-notes.html" class="hero-nav-pill">Fragrance Notes →</a>
+      <a href="#concentrations" class="hero-nav-pill" data-i18n="pill_conc">EDP vs EDT vs Parfum</a>
+      <a href="#how-to-wear" class="hero-nav-pill" data-i18n="pill_wear">How to Wear Fragrance</a>
+      <a href="#arabian" class="hero-nav-pill" data-i18n="pill_arabian">Arabian vs Western</a>
+      <a href="#layering" class="hero-nav-pill" data-i18n="pill_layer">Layering Fragrances</a>
+      <a href="#skincare" class="hero-nav-pill" data-i18n="pill_skin">Skincare Routine</a>
+      <a href="#faq" class="hero-nav-pill" data-i18n="pill_faq">Common Questions</a>
+      <a href="/fragrance-notes.html" class="hero-nav-pill" data-i18n="pill_notes">Fragrance Notes →</a>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════
-       1. CONCENTRATION — EDP VS EDT ETC
-  ═══════════════════════════════════════════════════ -->
+  <!-- 1. CONCENTRATIONS -->
   <section class="guide-section" id="concentrations">
     <div class="reveal">
-      <p class="section-eyebrow">Fragrance Concentration</p>
-      <h2 class="section-title">EDP, EDT, Parfum — what's the difference?</h2>
-      <p class="section-intro">The biggest single factor in how long a fragrance lasts and how much it projects is its concentration — the percentage of fragrance oil relative to alcohol and water. Higher concentration means more longevity, more projection, and usually a higher price. But it doesn't always mean better — some compositions are designed specifically for a lighter touch.</p>
+      <p class="section-eyebrow" data-i18n="conc_eyebrow">Fragrance Concentration</p>
+      <h2 class="section-title" data-i18n="conc_title">EDP, EDT, Parfum — what's the difference?</h2>
+      <p class="section-intro" data-i18n="conc_intro">The biggest single factor in how long a fragrance lasts and how much it projects is its concentration — the percentage of fragrance oil relative to alcohol and water. Higher concentration means more longevity, more projection, and usually a higher price. But it doesn't always mean better — some compositions are designed specifically for a lighter touch.</p>
     </div>
 
     <div class="concentration-grid reveal">
-
-      <!-- Parfum / Extrait -->
       <div class="conc-card">
         <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent)"></div>
         <div class="conc-name">Parfum</div>
-        <div class="conc-abbr">Also: Extrait de Parfum · Pure Perfume</div>
+        <div class="conc-abbr" data-i18n="parfum_abbr">Also: Extrait de Parfum · Pure Perfume</div>
         <div class="conc-bar-wrap">
-          <div class="conc-bar-label"><span>Oil concentration</span><span>20–40%</span></div>
+          <div class="conc-bar-label"><span data-i18n="oil_conc">Oil concentration</span><span>20–40%</span></div>
           <div class="conc-bar"><div class="conc-bar-fill" style="width:90%"></div></div>
         </div>
         <div class="conc-stats">
-          <div class="conc-stat"><div class="conc-stat-val">12–24h</div><div class="conc-stat-label">Longevity</div></div>
-          <div class="conc-stat"><div class="conc-stat-val">Very Strong</div><div class="conc-stat-label">Projection</div></div>
+          <div class="conc-stat"><div class="conc-stat-val">12–24h</div><div class="conc-stat-label" data-i18n="longevity">Longevity</div></div>
+          <div class="conc-stat"><div class="conc-stat-val" data-i18n="very_strong">Very Strong</div><div class="conc-stat-label" data-i18n="projection">Projection</div></div>
         </div>
-        <p class="conc-desc">The purest and most concentrated form of fragrance. Parfum or Extrait de Parfum contains the highest percentage of aromatic compounds — producing extraordinary longevity and rich, complex character. Often oilier in texture with minimal alcohol. A single application can last an entire day and well into the next. The choice of serious fragrance collectors.</p>
+        <p class="conc-desc" data-i18n="parfum_desc">The purest and most concentrated form of fragrance. Parfum contains the highest percentage of aromatic compounds — producing extraordinary longevity and rich, complex character. Often oilier in texture with minimal alcohol. A single application can last an entire day. The choice of serious fragrance collectors.</p>
       </div>
-
-      <!-- EDP -->
       <div class="conc-card">
         <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#b08040"></div>
         <div class="conc-name">Eau de Parfum</div>
         <div class="conc-abbr">EDP</div>
         <div class="conc-bar-wrap">
-          <div class="conc-bar-label"><span>Oil concentration</span><span>15–20%</span></div>
+          <div class="conc-bar-label"><span data-i18n="oil_conc">Oil concentration</span><span>15–20%</span></div>
           <div class="conc-bar"><div class="conc-bar-fill" style="width:72%"></div></div>
         </div>
         <div class="conc-stats">
-          <div class="conc-stat"><div class="conc-stat-val">6–12h</div><div class="conc-stat-label">Longevity</div></div>
-          <div class="conc-stat"><div class="conc-stat-val">Strong</div><div class="conc-stat-label">Projection</div></div>
+          <div class="conc-stat"><div class="conc-stat-val">6–12h</div><div class="conc-stat-label" data-i18n="longevity">Longevity</div></div>
+          <div class="conc-stat"><div class="conc-stat-val" data-i18n="strong">Strong</div><div class="conc-stat-label" data-i18n="projection">Projection</div></div>
         </div>
-        <p class="conc-desc">The sweet spot for most fragrance lovers and the most common format in the YSP range. EDP offers excellent longevity, strong projection and full expression of the composition — without the cost and intensity of a pure parfum. It's versatile enough for day or evening wear and projects well for several hours. <strong>Most recommended as a starting point.</strong></p>
+        <p class="conc-desc" data-i18n="edp_desc">The sweet spot for most fragrance lovers and the most common format in the YSP range. EDP offers excellent longevity, strong projection and full expression of the composition — without the cost and intensity of a pure parfum. Versatile enough for day or evening wear. Most recommended as a starting point.</p>
       </div>
-
-      <!-- EDT -->
       <div class="conc-card">
         <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#8a8050"></div>
         <div class="conc-name">Eau de Toilette</div>
         <div class="conc-abbr">EDT</div>
         <div class="conc-bar-wrap">
-          <div class="conc-bar-label"><span>Oil concentration</span><span>8–15%</span></div>
+          <div class="conc-bar-label"><span data-i18n="oil_conc">Oil concentration</span><span>8–15%</span></div>
           <div class="conc-bar"><div class="conc-bar-fill" style="width:50%"></div></div>
         </div>
         <div class="conc-stats">
-          <div class="conc-stat"><div class="conc-stat-val">3–6h</div><div class="conc-stat-label">Longevity</div></div>
-          <div class="conc-stat"><div class="conc-stat-val">Moderate</div><div class="conc-stat-label">Projection</div></div>
+          <div class="conc-stat"><div class="conc-stat-val">3–6h</div><div class="conc-stat-label" data-i18n="longevity">Longevity</div></div>
+          <div class="conc-stat"><div class="conc-stat-val" data-i18n="moderate">Moderate</div><div class="conc-stat-label" data-i18n="projection">Projection</div></div>
         </div>
-        <p class="conc-desc">Lighter, fresher and more casual. EDT is ideal for daytime wear, warmer weather and office environments where you want presence without overwhelming a room. The higher alcohol content means a brighter, more immediate opening but a shorter lifespan on skin. Many classic masculine fragrances are designed specifically as EDT — the format suits their fresh, aromatic character.</p>
+        <p class="conc-desc" data-i18n="edt_desc">Lighter, fresher and more casual. EDT is ideal for daytime wear, warmer weather and office environments where you want presence without overwhelming a room. The higher alcohol content means a brighter, more immediate opening but a shorter lifespan on skin.</p>
       </div>
-
-      <!-- EDC -->
       <div class="conc-card">
         <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#7a8a7a"></div>
         <div class="conc-name">Eau de Cologne</div>
         <div class="conc-abbr">EDC</div>
         <div class="conc-bar-wrap">
-          <div class="conc-bar-label"><span>Oil concentration</span><span>2–5%</span></div>
+          <div class="conc-bar-label"><span data-i18n="oil_conc">Oil concentration</span><span>2–5%</span></div>
           <div class="conc-bar"><div class="conc-bar-fill" style="width:22%"></div></div>
         </div>
         <div class="conc-stats">
-          <div class="conc-stat"><div class="conc-stat-val">1–3h</div><div class="conc-stat-label">Longevity</div></div>
-          <div class="conc-stat"><div class="conc-stat-val">Light</div><div class="conc-stat-label">Projection</div></div>
+          <div class="conc-stat"><div class="conc-stat-val">1–3h</div><div class="conc-stat-label" data-i18n="longevity">Longevity</div></div>
+          <div class="conc-stat"><div class="conc-stat-val" data-i18n="light">Light</div><div class="conc-stat-label" data-i18n="projection">Projection</div></div>
         </div>
-        <p class="conc-desc">The lightest concentration — traditionally a citrus and herb blend applied generously and frequently. Modern "cologne" is often used as a category descriptor for men's fragrance rather than as a concentration indicator. True EDC is fleeting but refreshing — best used as a body splash rather than a signature scent. Most people find EDT or EDP a better investment.</p>
+        <p class="conc-desc" data-i18n="edc_desc">The lightest concentration — traditionally a citrus and herb blend applied generously and frequently. Most people find EDT or EDP a better investment as a signature scent. Best used as a body splash or for layering.</p>
       </div>
-
-      <!-- Body Mist -->
       <div class="conc-card">
         <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#9a8080"></div>
-        <div class="conc-name">Body Mist / Splash</div>
-        <div class="conc-abbr">1–3% concentration</div>
+        <div class="conc-name" data-i18n="mist_name">Body Mist / Splash</div>
+        <div class="conc-abbr" data-i18n="mist_abbr">1–3% concentration</div>
         <div class="conc-bar-wrap">
-          <div class="conc-bar-label"><span>Oil concentration</span><span>1–3%</span></div>
+          <div class="conc-bar-label"><span data-i18n="oil_conc">Oil concentration</span><span>1–3%</span></div>
           <div class="conc-bar"><div class="conc-bar-fill" style="width:10%"></div></div>
         </div>
         <div class="conc-stats">
-          <div class="conc-stat"><div class="conc-stat-val">30–90min</div><div class="conc-stat-label">Longevity</div></div>
-          <div class="conc-stat"><div class="conc-stat-val">Very Light</div><div class="conc-stat-label">Projection</div></div>
+          <div class="conc-stat"><div class="conc-stat-val">30–90min</div><div class="conc-stat-label" data-i18n="longevity">Longevity</div></div>
+          <div class="conc-stat"><div class="conc-stat-val" data-i18n="very_light">Very Light</div><div class="conc-stat-label" data-i18n="projection">Projection</div></div>
         </div>
-        <p class="conc-desc">A thin, highly diluted scented water designed for full-body application. Very low longevity and projection — these are about freshness and layering, not performance. Often used in combination with a matching body lotion or as a post-shower ritual to complement your main fragrance.</p>
+        <p class="conc-desc" data-i18n="mist_desc">A thin, highly diluted scented water designed for full-body application. Very low longevity — these are about freshness and layering, not performance. Often used in combination with a matching body lotion to complement your main fragrance.</p>
       </div>
-
-      <!-- Oil -->
       <div class="conc-card">
         <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#6a5030"></div>
-        <div class="conc-name">Fragrance / Perfume Oil</div>
-        <div class="conc-abbr">Attar · Pure Oil · Roll-On</div>
+        <div class="conc-name" data-i18n="oil_name">Fragrance / Perfume Oil</div>
+        <div class="conc-abbr" data-i18n="oil_abbr">Attar · Pure Oil · Roll-On</div>
         <div class="conc-bar-wrap">
-          <div class="conc-bar-label"><span>Oil concentration</span><span>up to 100%</span></div>
+          <div class="conc-bar-label"><span data-i18n="oil_conc">Oil concentration</span><span>up to 100%</span></div>
           <div class="conc-bar"><div class="conc-bar-fill" style="width:100%"></div></div>
         </div>
         <div class="conc-stats">
-          <div class="conc-stat"><div class="conc-stat-val">12–24h+</div><div class="conc-stat-label">Longevity</div></div>
-          <div class="conc-stat"><div class="conc-stat-val">Intimate</div><div class="conc-stat-label">Projection</div></div>
+          <div class="conc-stat"><div class="conc-stat-val">12–24h+</div><div class="conc-stat-label" data-i18n="longevity">Longevity</div></div>
+          <div class="conc-stat"><div class="conc-stat-val" data-i18n="intimate">Intimate</div><div class="conc-stat-label" data-i18n="projection">Projection</div></div>
         </div>
-        <p class="conc-desc">Alcohol-free fragrance in a pure or carrier-oil base. Traditional Arabian attars are perfume oils — worn by applying to pulse points, wrists and behind the ears. Fragrance oils typically have exceptional longevity and a close, skin-intimate projection that develops slowly and beautifully. Ideal for sensitive skin and for those who find alcohol-based fragrances too sharp on the opening.</p>
+        <p class="conc-desc" data-i18n="oil_desc">Alcohol-free fragrance in a pure or carrier-oil base. Traditional Arabian attars are perfume oils — worn by applying to pulse points. Exceptional longevity and a close, skin-intimate projection that develops slowly and beautifully. Ideal for sensitive skin and those who find alcohol-based fragrances too sharp.</p>
       </div>
     </div>
 
     <div class="callout reveal">
-      <div class="callout-label">YSP Note</div>
-      <p>Almost all fragrances in our range are <strong>Eau de Parfum (EDP)</strong> — we specifically source this concentration because it offers the best balance of performance and versatility. Many of our Arabian fragrances, being oil-rich by formulation tradition, perform significantly above what the EDP label might suggest — longevity of 10–14 hours is common.</p>
+      <div class="callout-label" data-i18n="ysp_note">YSP Note</div>
+      <p data-i18n="conc_callout">Almost all fragrances in our range are Eau de Parfum (EDP) — we specifically source this concentration because it offers the best balance of performance and versatility. Many of our Arabian fragrances, being oil-rich by formulation tradition, perform significantly above what the EDP label might suggest — longevity of 10–14 hours is common.</p>
     </div>
 
     <div class="reveal" style="margin-top:2.5rem">
-      <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:300;margin-bottom:1.5rem">Concentration at a glance</h3>
+      <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:300;margin-bottom:1.5rem" data-i18n="conc_table_title">Concentration at a glance</h3>
       <div style="overflow-x:auto">
         <table class="compare-table">
           <thead>
             <tr>
-              <th>Type</th>
-              <th>Oil %</th>
-              <th>Longevity</th>
-              <th>Projection</th>
-              <th>Best For</th>
+              <th data-i18n="th_type">Type</th><th data-i18n="th_oil">Oil %</th><th data-i18n="th_long">Longevity</th><th data-i18n="th_proj">Projection</th><th data-i18n="th_best">Best For</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Parfum / Extrait</td><td>20–40%</td><td>12–24 hours</td><td>Very strong</td><td>Special occasions, serious collectors</td></tr>
-            <tr><td>Eau de Parfum (EDP)</td><td>15–20%</td><td>6–12 hours</td><td>Strong</td><td>Most occasions — our recommended choice</td></tr>
-            <tr><td>Eau de Toilette (EDT)</td><td>8–15%</td><td>3–6 hours</td><td>Moderate</td><td>Daytime, office, warm weather</td></tr>
-            <tr><td>Eau de Cologne (EDC)</td><td>2–5%</td><td>1–3 hours</td><td>Light</td><td>Refreshing splash, layering</td></tr>
-            <tr><td>Body Mist</td><td>1–3%</td><td>Under 1 hour</td><td>Very light</td><td>Post-shower, all-over body</td></tr>
-            <tr><td>Perfume Oil / Attar</td><td>Up to 100%</td><td>12–24+ hours</td><td>Intimate</td><td>Skin-close wear, alcohol sensitivity</td></tr>
+            <tr><td>Parfum / Extrait</td><td>20–40%</td><td data-i18n="t_parfum_long">12–24 hours</td><td data-i18n="t_very_strong">Very strong</td><td data-i18n="t_parfum_best">Special occasions, serious collectors</td></tr>
+            <tr><td>Eau de Parfum (EDP)</td><td>15–20%</td><td data-i18n="t_edp_long">6–12 hours</td><td data-i18n="t_strong">Strong</td><td data-i18n="t_edp_best">Most occasions — our recommended choice</td></tr>
+            <tr><td>Eau de Toilette (EDT)</td><td>8–15%</td><td data-i18n="t_edt_long">3–6 hours</td><td data-i18n="t_moderate">Moderate</td><td data-i18n="t_edt_best">Daytime, office, warm weather</td></tr>
+            <tr><td>Eau de Cologne (EDC)</td><td>2–5%</td><td data-i18n="t_edc_long">1–3 hours</td><td data-i18n="t_light">Light</td><td data-i18n="t_edc_best">Refreshing splash, layering</td></tr>
+            <tr><td data-i18n="mist_name">Body Mist</td><td>1–3%</td><td data-i18n="t_mist_long">Under 1 hour</td><td data-i18n="t_very_light">Very light</td><td data-i18n="t_mist_best">Post-shower, all-over body</td></tr>
+            <tr><td data-i18n="t_oil_row">Perfume Oil / Attar</td><td data-i18n="t_oil_pct">Up to 100%</td><td data-i18n="t_oil_long">12–24+ hours</td><td data-i18n="intimate">Intimate</td><td data-i18n="t_oil_best">Skin-close wear, alcohol sensitivity</td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════
-       2. HOW TO WEAR FRAGRANCE
-  ═══════════════════════════════════════════════════ -->
+  <!-- 2. HOW TO WEAR -->
   <section class="guide-section" id="how-to-wear">
     <div class="reveal">
-      <p class="section-eyebrow">Application</p>
-      <h2 class="section-title">Where — and how — to wear fragrance</h2>
-      <p class="section-intro">The way you apply fragrance has an enormous impact on how it performs and evolves. Fragrance needs heat to develop — apply to pulse points where blood vessels run close to the skin surface, and let the warmth carry the scent upward.</p>
+      <p class="section-eyebrow" data-i18n="wear_eyebrow">Application</p>
+      <h2 class="section-title" data-i18n="wear_title">Where — and how — to wear fragrance</h2>
+      <p class="section-intro" data-i18n="wear_intro">The way you apply fragrance has an enormous impact on how it performs and evolves. Fragrance needs heat to develop — apply to pulse points where blood vessels run close to the skin surface, and let the warmth carry the scent upward.</p>
     </div>
-
     <div class="spray-grid reveal">
       <div class="body-diagram">
-        <!-- SVG body silhouette with pulse point markers -->
         <svg viewBox="0 0 220 380" width="200" xmlns="http://www.w3.org/2000/svg" style="opacity:0.9">
-          <!-- Body outline -->
           <ellipse cx="110" cy="42" rx="26" ry="30" fill="none" stroke="#e6dfd4" stroke-width="1.5"/>
           <path d="M84 68 C72 85 68 110 72 130 L78 160 L142 160 L148 130 C152 110 148 85 136 68" fill="none" stroke="#e6dfd4" stroke-width="1.5"/>
           <path d="M78 85 C62 88 52 100 50 118 L54 148 L70 144 L74 115 L78 108" fill="none" stroke="#e6dfd4" stroke-width="1.5"/>
@@ -740,401 +348,178 @@
           <path d="M88 160 L82 220 L86 270 L94 310 L106 310 L110 260 L114 310 L126 310 L134 270 L138 220 L132 160" fill="none" stroke="#e6dfd4" stroke-width="1.5"/>
           <path d="M86 270 L80 310 L88 312 L96 274" fill="none" stroke="#e6dfd4" stroke-width="1.5"/>
           <path d="M134 270 L140 310 L132 312 L124 274" fill="none" stroke="#e6dfd4" stroke-width="1.5"/>
-          <!-- Pulse point markers -->
-          <!-- Wrists -->
           <circle cx="52" cy="148" r="7" fill="rgba(156,123,86,0.15)" stroke="#9c7b56" stroke-width="1.2"/>
           <circle cx="168" cy="148" r="7" fill="rgba(156,123,86,0.15)" stroke="#9c7b56" stroke-width="1.2"/>
-          <!-- Neck -->
           <circle cx="110" cy="72" r="7" fill="rgba(156,123,86,0.15)" stroke="#9c7b56" stroke-width="1.2"/>
-          <!-- Inner elbow -->
           <circle cx="57" cy="118" r="6" fill="rgba(156,123,86,0.1)" stroke="#9c7b56" stroke-width="1" stroke-dasharray="2,2"/>
           <circle cx="163" cy="118" r="6" fill="rgba(156,123,86,0.1)" stroke="#9c7b56" stroke-width="1" stroke-dasharray="2,2"/>
-          <!-- Behind ears -->
           <circle cx="85" cy="40" r="5" fill="rgba(156,123,86,0.1)" stroke="#9c7b56" stroke-width="1" stroke-dasharray="2,2"/>
           <circle cx="135" cy="40" r="5" fill="rgba(156,123,86,0.1)" stroke="#9c7b56" stroke-width="1" stroke-dasharray="2,2"/>
-          <!-- Chest -->
           <circle cx="110" cy="108" r="8" fill="rgba(156,123,86,0.12)" stroke="#9c7b56" stroke-width="1.2"/>
-          <!-- Hair -->
           <circle cx="110" cy="16" r="5" fill="rgba(156,123,86,0.08)" stroke="#9c7b56" stroke-width="1" stroke-dasharray="2,2"/>
-          <!-- Labels -->
-          <text x="28" y="152" font-family="'Outfit', sans-serif" font-size="7.5" fill="#8a847a" letter-spacing="0.5">Wrists</text>
-          <text x="176" y="152" font-family="'Outfit', sans-serif" font-size="7.5" fill="#8a847a" letter-spacing="0.5">Wrists</text>
-          <text x="118" y="76" font-family="'Outfit', sans-serif" font-size="7.5" fill="#8a847a" letter-spacing="0.5">Neck</text>
-          <text x="118" y="112" font-family="'Outfit', sans-serif" font-size="7.5" fill="#8a847a" letter-spacing="0.5">Chest</text>
-          <!-- Solid vs dashed legend -->
-          <circle cx="30" cy="340" r="5" fill="rgba(156,123,86,0.15)" stroke="#9c7b56" stroke-width="1.2"/>
-          <text x="40" y="344" font-family="'Outfit', sans-serif" font-size="7" fill="#8a847a">Primary</text>
-          <circle cx="90" cy="340" r="5" fill="rgba(156,123,86,0.1)" stroke="#9c7b56" stroke-width="1" stroke-dasharray="2,2"/>
-          <text x="100" y="344" font-family="'Outfit', sans-serif" font-size="7" fill="#8a847a">Secondary</text>
         </svg>
       </div>
-
-      <div class="spray-points-list">
-        <div class="spray-point">
-          <div class="spray-num">1</div>
-          <div>
-            <div class="spray-title">Wrists — Primary pulse point</div>
-            <p class="spray-desc">The classic application spot. The radial artery runs close to the surface here, creating warmth that helps fragrance bloom and project. Apply 1–2 sprays and let it develop naturally — avoid rubbing the wrists together, which breaks down the fragrance molecules and flattens the top notes.</p>
-          </div>
-        </div>
-        <div class="spray-point">
-          <div class="spray-num">2</div>
-          <div>
-            <div class="spray-title">Neck / Base of throat</div>
-            <p class="spray-desc">The warmest area of the body and the most projecting application point. Fragrance sprayed here rises naturally with body heat, creating a scent trail (sillage) as you move. Ideal for evening wear and occasions where you want to be noticed.</p>
-          </div>
-        </div>
-        <div class="spray-point">
-          <div class="spray-num">3</div>
-          <div>
-            <div class="spray-title">Chest / Sternum</div>
-            <p class="spray-desc">A powerful point for projection — the heat of your body carries the scent outward and upward. Particularly effective for richer oriental and oud-based fragrances that benefit from the sustained warmth. This is where Arabian fragrances traditionally excel.</p>
-          </div>
-        </div>
-        <div class="spray-point">
-          <div class="spray-num">4</div>
-          <div>
-            <div class="spray-title">Behind the ears — Secondary point</div>
-            <p class="spray-desc">The warmth behind the ear creates a close, intimate cloud of scent — perfect for date nights. Fragrance applied here tends to develop slowly and last particularly well. Also the ideal spot for dabs of perfume oil or attar.</p>
-          </div>
-        </div>
-        <div class="spray-point">
-          <div class="spray-num">5</div>
-          <div>
-            <div class="spray-title">Inner elbows — Secondary point</div>
-            <p class="spray-desc">Underused but effective — the inner elbow is a warm, sheltered pulse point that allows fragrance to develop steadily without the exposure of wrists or neck. Great for hot weather when wrists become sweaty and alter the scent.</p>
-          </div>
-        </div>
-        <div class="spray-point">
-          <div class="spray-num">6</div>
-          <div>
-            <div class="spray-title">Hair — Optional</div>
-            <p class="spray-desc">Hair holds fragrance beautifully and creates a trail as you move. However, alcohol in spray fragrances can dry hair over time — spray into the air and walk through the mist, or apply to a hairbrush. Fragrance oils are better suited to hair application than sprays.</p>
-          </div>
-        </div>
-
+      <div>
+        <div class="spray-point"><div class="spray-num">1</div><div><div class="spray-title" data-i18n="sp1_title">Wrists — Primary pulse point</div><p class="spray-desc" data-i18n="sp1_desc">The classic application spot. The radial artery runs close to the surface here, creating warmth that helps fragrance bloom and project. Apply 1–2 sprays and let it develop naturally — avoid rubbing the wrists together, which breaks down the fragrance molecules and flattens the top notes.</p></div></div>
+        <div class="spray-point"><div class="spray-num">2</div><div><div class="spray-title" data-i18n="sp2_title">Neck / Base of throat</div><p class="spray-desc" data-i18n="sp2_desc">The warmest area of the body and the most projecting application point. Fragrance sprayed here rises naturally with body heat, creating a scent trail as you move. Ideal for evening wear and occasions where you want to be noticed.</p></div></div>
+        <div class="spray-point"><div class="spray-num">3</div><div><div class="spray-title" data-i18n="sp3_title">Chest / Sternum</div><p class="spray-desc" data-i18n="sp3_desc">A powerful point for projection — the heat of your body carries the scent outward and upward. Particularly effective for richer oriental and oud-based fragrances. This is where Arabian fragrances traditionally excel.</p></div></div>
+        <div class="spray-point"><div class="spray-num">4</div><div><div class="spray-title" data-i18n="sp4_title">Behind the ears</div><p class="spray-desc" data-i18n="sp4_desc">The warmth behind the ear creates a close, intimate cloud of scent — perfect for evenings. Fragrance applied here tends to last particularly well. Also the ideal spot for dabs of perfume oil or attar.</p></div></div>
+        <div class="spray-point"><div class="spray-num">5</div><div><div class="spray-title" data-i18n="sp5_title">Inner elbows</div><p class="spray-desc" data-i18n="sp5_desc">Underused but effective — a warm, sheltered pulse point that allows fragrance to develop steadily. Great for hot weather when wrists become sweaty and alter the scent.</p></div></div>
+        <div class="spray-point"><div class="spray-num">6</div><div><div class="spray-title" data-i18n="sp6_title">Hair</div><p class="spray-desc" data-i18n="sp6_desc">Hair holds fragrance beautifully and creates a trail as you move. Spray into the air and walk through the mist, or apply to a hairbrush. Fragrance oils are better suited to hair than alcohol-based sprays.</p></div></div>
         <div class="callout" style="margin-top:1.5rem">
-          <div class="callout-label">The rule of thumb</div>
-          <p>For EDP, <strong>3–5 sprays</strong> is usually enough. More is not better — it becomes overwhelming and the composition loses definition. Apply less than you think you need; you can always add more.</p>
-          <p>For perfume oil / attar, <strong>1–2 dabs</strong> per pulse point. Oils are slower to project but longer lasting — resist the urge to apply more in the first hour.</p>
+          <div class="callout-label" data-i18n="rule_thumb">The rule of thumb</div>
+          <p data-i18n="spray_callout">For EDP, 3–5 sprays is usually enough. More is not better — it becomes overwhelming and the composition loses definition. For perfume oil / attar, 1–2 dabs per pulse point. Oils are slower to project but longer lasting — resist the urge to apply more in the first hour.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════
-       3. ARABIAN VS WESTERN
-  ═══════════════════════════════════════════════════ -->
+  <!-- 3. ARABIAN VS WESTERN -->
   <section class="guide-section" id="arabian">
     <div class="reveal">
-      <p class="section-eyebrow">Understanding Arabian Fragrance</p>
-      <h2 class="section-title">Arabian perfume vs Western fragrance</h2>
-      <p class="section-intro">Arabian and Western perfumery traditions are fundamentally different in philosophy, ingredients and performance. Understanding these differences helps you appreciate why fragrances like Lattafa, Armaf and Swiss Arabian behave the way they do — and why they represent extraordinary value.</p>
+      <p class="section-eyebrow" data-i18n="arab_eyebrow">Understanding Arabian Fragrance</p>
+      <h2 class="section-title" data-i18n="arab_title">Arabian perfume vs Western fragrance</h2>
+      <p class="section-intro" data-i18n="arab_intro">Arabian and Western perfumery traditions are fundamentally different in philosophy, ingredients and performance. Understanding these differences helps you appreciate why fragrances like Lattafa, Armaf and Swiss Arabian behave the way they do — and why they represent extraordinary value.</p>
     </div>
-
     <div class="vs-grid reveal">
       <div class="vs-col">
-        <div class="vs-col-head">Arabian Perfumery</div>
+        <div class="vs-col-head" data-i18n="arab_col_head">Arabian Perfumery</div>
         <div class="vs-col-sub">Dubai · UAE · Gulf tradition</div>
         <ul class="vs-list">
-          <li><span class="vs-bullet">◆</span><span>Built on oud, amber, musk, saffron and rich spice accords</span></li>
-          <li><span class="vs-bullet">◆</span><span>Oil concentration typically 20–30% — well above Western EDP</span></li>
-          <li><span class="vs-bullet">◆</span><span>Longevity of 10–16 hours is standard, not exceptional</span></li>
-          <li><span class="vs-bullet">◆</span><span>Designed to project — sillage is considered a sign of quality</span></li>
-          <li><span class="vs-bullet">◆</span><span>Often unisex or gender-fluid in character</span></li>
-          <li><span class="vs-bullet">◆</span><span>Oud, bakhoor and rose are the holy trinity of Arabian fragrance</span></li>
-          <li><span class="vs-bullet">◆</span><span>Price reflects materials, not marketing — exceptional value at the price point</span></li>
-          <li><span class="vs-bullet">◆</span><span>Scent develops slowly — judge at 2–3 hours, not immediately</span></li>
+          <li><span class="vs-bullet">◆</span><span data-i18n="arab_1">Built on oud, amber, musk, saffron and rich spice accords</span></li>
+          <li><span class="vs-bullet">◆</span><span data-i18n="arab_2">Oil concentration typically 20–30% — well above Western EDP</span></li>
+          <li><span class="vs-bullet">◆</span><span data-i18n="arab_3">Longevity of 10–16 hours is standard, not exceptional</span></li>
+          <li><span class="vs-bullet">◆</span><span data-i18n="arab_4">Designed to project — sillage is considered a sign of quality</span></li>
+          <li><span class="vs-bullet">◆</span><span data-i18n="arab_5">Often unisex or gender-fluid in character</span></li>
+          <li><span class="vs-bullet">◆</span><span data-i18n="arab_6">Oud, bakhoor and rose are the holy trinity of Arabian fragrance</span></li>
+          <li><span class="vs-bullet">◆</span><span data-i18n="arab_7">Price reflects materials, not marketing — exceptional value</span></li>
+          <li><span class="vs-bullet">◆</span><span data-i18n="arab_8">Scent develops slowly — judge at 2–3 hours, not immediately</span></li>
         </ul>
       </div>
       <div class="vs-col">
-        <div class="vs-col-head">Western Perfumery</div>
+        <div class="vs-col-head" data-i18n="west_col_head">Western Perfumery</div>
         <div class="vs-col-sub">Paris · London · New York tradition</div>
         <ul class="vs-list">
-          <li><span class="vs-bullet">◇</span><span>Built on florals, fresh notes, woods and clean musks</span></li>
-          <li><span class="vs-bullet">◇</span><span>EDP typically 15–20% oil concentration</span></li>
-          <li><span class="vs-bullet">◇</span><span>Longevity of 4–8 hours typical for EDP</span></li>
-          <li><span class="vs-bullet">◇</span><span>Restrained projection preferred — "close to the skin" is valued</span></li>
-          <li><span class="vs-bullet">◇</span><span>Strongly gendered marketing and positioning</span></li>
-          <li><span class="vs-bullet">◇</span><span>Bergamot, jasmine, vetiver and cedarwood are the classic backbone</span></li>
-          <li><span class="vs-bullet">◇</span><span>Price includes significant marketing, packaging and brand premium</span></li>
-          <li><span class="vs-bullet">◇</span><span>Top notes important — designed to impress immediately</span></li>
+          <li><span class="vs-bullet">◇</span><span data-i18n="west_1">Built on florals, fresh notes, woods and clean musks</span></li>
+          <li><span class="vs-bullet">◇</span><span data-i18n="west_2">EDP typically 15–20% oil concentration</span></li>
+          <li><span class="vs-bullet">◇</span><span data-i18n="west_3">Longevity of 4–8 hours typical for EDP</span></li>
+          <li><span class="vs-bullet">◇</span><span data-i18n="west_4">Restrained projection preferred — "close to the skin" is valued</span></li>
+          <li><span class="vs-bullet">◇</span><span data-i18n="west_5">Strongly gendered marketing and positioning</span></li>
+          <li><span class="vs-bullet">◇</span><span data-i18n="west_6">Bergamot, jasmine, vetiver and cedarwood are the classic backbone</span></li>
+          <li><span class="vs-bullet">◇</span><span data-i18n="west_7">Price includes significant marketing, packaging and brand premium</span></li>
+          <li><span class="vs-bullet">◇</span><span data-i18n="west_8">Top notes important — designed to impress immediately</span></li>
         </ul>
       </div>
     </div>
-
     <div class="callout reveal" style="margin-top:2rem">
-      <div class="callout-label">The value question</div>
-      <p>A bottle of Creed Aventus costs €300–400. A bottle of Armaf Club de Nuit Intense — widely acknowledged as the closest affordable alternative — costs under €30. The gap in performance? Most people who've worn both would struggle to call it significant. Arabian fragrance houses have access to the same raw material suppliers, use comparable compositions, and often outperform on longevity. <strong>The difference is almost entirely in marketing, heritage positioning and the retail markup chain.</strong></p>
-      <p>This is why Arabian fragrances have exploded in popularity among fragrance enthusiasts globally — not as "cheap alternatives" but as genuinely excellent compositions that happen to be priced fairly.</p>
+      <div class="callout-label" data-i18n="value_q">The value question</div>
+      <p data-i18n="value_p1">A bottle of Creed Aventus costs €300–400. A bottle of Armaf Club de Nuit Intense — widely acknowledged as the closest affordable alternative — costs under €30. The gap in performance? Most people who've worn both would struggle to call it significant. Arabian fragrance houses have access to the same raw material suppliers and often outperform on longevity.</p>
+      <p data-i18n="value_p2">This is why Arabian fragrances have exploded in popularity among fragrance enthusiasts globally — not as "cheap alternatives" but as genuinely excellent compositions that happen to be priced fairly.</p>
     </div>
-
     <div class="reveal" style="margin-top:2.5rem">
-      <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:300;margin-bottom:1.5rem">Popular comparisons</h3>
+      <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:300;margin-bottom:1.5rem" data-i18n="compare_title">Popular comparisons</h3>
       <div style="overflow-x:auto">
         <table class="compare-table">
-          <thead>
-            <tr>
-              <th>Arabian / Affordable</th>
-              <th>YSP Price</th>
-              <th>Western Equivalent</th>
-              <th>Western Price</th>
-              <th>Character</th>
-            </tr>
-          </thead>
+          <thead><tr><th data-i18n="th_arabian">Arabian / Affordable</th><th data-i18n="th_ysp_price">YSP Price</th><th data-i18n="th_western">Western Equivalent</th><th data-i18n="th_west_price">Western Price</th><th data-i18n="th_character">Character</th></tr></thead>
           <tbody>
-            <tr><td>Armaf Club de Nuit Intense</td><td>~€30</td><td>Creed Aventus</td><td>€300+</td><td>Smoky birch, pineapple, musk</td></tr>
-            <tr><td>Lattafa Khamrah</td><td>~€34</td><td>Kilian Angel's Share</td><td>€250+</td><td>Coffee, cognac, vanilla, warm spice</td></tr>
-            <tr><td>Lattafa Yara</td><td>~€30</td><td>Lanvin Eclat / YSL Mon Paris</td><td>€70–90</td><td>Fruity floral, vanilla, soft musk</td></tr>
-            <tr><td>Swiss Arabian Soul of Bali</td><td>~€90</td><td>Tom Ford Soleil Blanc</td><td>€200+</td><td>Tropical floral, woody, creamy</td></tr>
+            <tr><td>Armaf Club de Nuit Intense</td><td>~€30</td><td>Creed Aventus</td><td>€300+</td><td data-i18n="comp1">Smoky birch, pineapple, musk</td></tr>
+            <tr><td>Lattafa Khamrah</td><td>~€34</td><td>Kilian Angel's Share</td><td>€250+</td><td data-i18n="comp2">Coffee, cognac, vanilla, warm spice</td></tr>
+            <tr><td>Lattafa Yara</td><td>~€30</td><td>Lanvin Eclat / YSL Mon Paris</td><td>€70–90</td><td data-i18n="comp3">Fruity floral, vanilla, soft musk</td></tr>
+            <tr><td>Swiss Arabian Soul of Bali</td><td>~€90</td><td>Tom Ford Soleil Blanc</td><td>€200+</td><td data-i18n="comp4">Tropical floral, woody, creamy</td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════
-       4. LAYERING
-  ═══════════════════════════════════════════════════ -->
+  <!-- 4. LAYERING -->
   <section class="guide-section" id="layering">
     <div class="reveal">
-      <p class="section-eyebrow">Advanced Technique</p>
-      <h2 class="section-title">Layering fragrances</h2>
-      <p class="section-intro">Layering — wearing two or more fragrances together — is a traditional Arabian practice and one of the most creative aspects of perfumery. Done well, it creates a completely personal scent that belongs only to you. Done poorly, it's a headache in a bottle. Here's how to get it right.</p>
+      <p class="section-eyebrow" data-i18n="layer_eyebrow">Advanced Technique</p>
+      <h2 class="section-title" data-i18n="layer_title">Layering fragrances</h2>
+      <p class="section-intro" data-i18n="layer_intro">Layering — wearing two or more fragrances together — is a traditional Arabian practice and one of the most creative aspects of perfumery. Done well, it creates a completely personal scent that belongs only to you.</p>
     </div>
-
     <div class="layer-grid reveal">
-      <div class="layer-card">
-        <div class="layer-num">01</div>
-        <div class="layer-title">Foundation</div>
-        <div class="layer-name">Apply the base first</div>
-        <p class="layer-desc">Start with your richest, heaviest fragrance — typically your oud, amber or oriental base. Apply to pulse points and let it settle for 2–3 minutes before adding anything over it. The foundation fragrance should be the dominant character.</p>
-      </div>
-      <div class="layer-card">
-        <div class="layer-num">02</div>
-        <div class="layer-title">Complement</div>
-        <div class="layer-name">Add your top layer</div>
-        <p class="layer-desc">Apply your lighter, fresher fragrance over the top — a floral, citrus or fresh accord that lifts the base and adds complexity. The two should enhance each other, not compete. Start with one spray and evaluate before adding more.</p>
-      </div>
-      <div class="layer-card">
-        <div class="layer-num">03</div>
-        <div class="layer-title">Patience</div>
-        <div class="layer-name">Let it develop</div>
-        <p class="layer-desc">Layered fragrances take 20–30 minutes to fully merge on skin. Reserve your final judgement for at least half an hour after application — what smells jarring initially often becomes beautifully integrated once the alcohol burns off and the accords blend on your skin chemistry.</p>
-      </div>
+      <div class="layer-card"><div class="layer-num">01</div><div class="layer-title" data-i18n="l1_eyebrow">Foundation</div><div class="layer-name" data-i18n="l1_title">Apply the base first</div><p class="layer-desc" data-i18n="l1_desc">Start with your richest, heaviest fragrance — typically your oud, amber or oriental base. Apply to pulse points and let it settle for 2–3 minutes before adding anything over it. The foundation fragrance should be the dominant character.</p></div>
+      <div class="layer-card"><div class="layer-num">02</div><div class="layer-title" data-i18n="l2_eyebrow">Complement</div><div class="layer-name" data-i18n="l2_title">Add your top layer</div><p class="layer-desc" data-i18n="l2_desc">Apply your lighter, fresher fragrance over the top — a floral, citrus or fresh accord that lifts the base and adds complexity. The two should enhance each other, not compete. Start with one spray and evaluate before adding more.</p></div>
+      <div class="layer-card"><div class="layer-num">03</div><div class="layer-title" data-i18n="l3_eyebrow">Patience</div><div class="layer-name" data-i18n="l3_title">Let it develop</div><p class="layer-desc" data-i18n="l3_desc">Layered fragrances take 20–30 minutes to fully merge on skin. Reserve your final judgement for at least half an hour after application — what smells jarring initially often becomes beautifully integrated once the alcohol burns off.</p></div>
     </div>
-
     <div class="accordion reveal" style="margin-top:2.5rem">
       <div class="acc-item">
-        <button class="acc-trigger">
-          <span class="acc-q">Which fragrances layer well together?</span>
-          <span class="acc-icon">+</span>
-        </button>
-        <div class="acc-body">
-          <p>The safest rule: <strong>fragrances from the same family layer beautifully</strong>. Two orientals, two woods, a floral over a woody base — these combinations create depth without conflict.</p>
-          <p>Classic combinations that work: <strong>oud + rose</strong> (the Arabian classic), <strong>vanilla + wood</strong> (sweet but grounded), <strong>citrus over amber</strong> (fresh brightness over warm depth), <strong>lavender + musk</strong> (clean and effortless).</p>
-          <p>Avoid combining two dominant, competing characters — two strong ouds, two sharp citrus fragrances, or anything where both are trying to be the "lead" note. One should always support the other.</p>
-        </div>
+        <button class="acc-trigger"><span class="acc-q" data-i18n="lq1">Which fragrances layer well together?</span><span class="acc-icon">+</span></button>
+        <div class="acc-body"><p data-i18n="la1">The safest rule: fragrances from the same family layer beautifully. Two orientals, two woods, a floral over a woody base — these combinations create depth without conflict. Classic combinations: oud + rose (the Arabian classic), vanilla + wood (sweet but grounded), citrus over amber (fresh brightness over warm depth), lavender + musk (clean and effortless). Avoid combining two dominant, competing characters.</p></div>
       </div>
       <div class="acc-item">
-        <button class="acc-trigger">
-          <span class="acc-q">Can I layer any YSP fragrances together?</span>
-          <span class="acc-icon">+</span>
-        </button>
-        <div class="acc-body">
-          <p>Yes, and we'd encourage experimenting. A few combinations that work particularly well from our range:</p>
-          <p><strong>Lattafa Yara + Lattafa Khamrah</strong> — the fruity floral of Yara over the warm coffee-spice of Khamrah creates a complex, distinctive evening scent.</p>
-          <p><strong>Armaf Club de Nuit + any oud</strong> — the smoky birch of CDNI benefits enormously from an oud base applied first.</p>
-          <p>Not sure what would work? Use our chat assistant to describe your existing fragrances and we'll suggest combinations from our range.</p>
-        </div>
+        <button class="acc-trigger"><span class="acc-q" data-i18n="lq2">Can I layer any YSP fragrances together?</span><span class="acc-icon">+</span></button>
+        <div class="acc-body"><p data-i18n="la2">Yes, and we'd encourage experimenting. Lattafa Yara + Lattafa Khamrah — the fruity floral of Yara over the warm coffee-spice of Khamrah creates a complex, distinctive evening scent. Armaf Club de Nuit + any oud — the smoky birch of CDNI benefits enormously from an oud base applied first. Not sure? Use our chat assistant to get personalised suggestions.</p></div>
       </div>
       <div class="acc-item">
-        <button class="acc-trigger">
-          <span class="acc-q">Should I layer on different body areas or the same spots?</span>
-          <span class="acc-icon">+</span>
-        </button>
-        <div class="acc-body">
-          <p>Both approaches work — it depends on what you want.</p>
-          <p><strong>Same pulse points:</strong> The two fragrances merge on skin and blend into a single, unified scent. This gives the most integrated result — the combination becomes one.</p>
-          <p><strong>Different areas:</strong> Apply fragrance A to your wrists and fragrance B to your neck. The two remain more distinct and create a "scent journey" as people move closer or further away. More complex and harder to control.</p>
-          <p>For beginners, same points first — it's easier to evaluate and adjust.</p>
-        </div>
+        <button class="acc-trigger"><span class="acc-q" data-i18n="lq3">Should I layer on different body areas or the same spots?</span><span class="acc-icon">+</span></button>
+        <div class="acc-body"><p data-i18n="la3">Both approaches work. Same pulse points: the two fragrances merge on skin and blend into a unified scent — the most integrated result. Different areas: apply fragrance A to your wrists and fragrance B to your neck, keeping them more distinct. For beginners, same points first — it's easier to evaluate and adjust.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════
-       5. K-BEAUTY SKINCARE ROUTINE
-  ═══════════════════════════════════════════════════ -->
+  <!-- 5. SKINCARE -->
   <section class="guide-section" id="skincare">
     <div class="reveal">
-      <p class="section-eyebrow">Skincare</p>
-      <h2 class="section-title">The K-beauty routine — order matters</h2>
-      <p class="section-intro">Korean skincare philosophy is built on layering products from lightest to heaviest, allowing each to absorb before adding the next. The order you apply products in directly affects their efficacy — apply in the wrong sequence and you can actually block absorption. Here's the correct sequence for a full routine using products from our range.</p>
+      <p class="section-eyebrow" data-i18n="skin_eyebrow">Skincare</p>
+      <h2 class="section-title" data-i18n="skin_title">The K-beauty routine — order matters</h2>
+      <p class="section-intro" data-i18n="skin_intro">Korean skincare philosophy is built on layering products from lightest to heaviest, allowing each to absorb before adding the next. The order you apply products in directly affects their efficacy — apply in the wrong sequence and you can block absorption. Here's the correct sequence.</p>
     </div>
-
     <div class="routine-steps reveal">
-      <div class="routine-step">
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <div class="step-timing">AM + PM</div>
-          <div class="step-title">Oil Cleanser — First cleanse</div>
-          <p class="step-desc">An oil-based cleanser dissolves oil-soluble impurities: sunscreen, makeup, sebum and pollution. Massage onto dry skin, add a little water to emulsify, then rinse. This is not optional if you wear SPF or makeup — water-based cleansers cannot remove these effectively on their own.</p>
-          <div class="step-products">
-            <span class="step-product-tag">Anua Heartleaf Pore Control Cleansing Oil</span>
-          </div>
-        </div>
-      </div>
-      <div class="routine-step">
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <div class="step-timing">AM + PM</div>
-          <div class="step-title">Water-Based Cleanser — Second cleanse (PM)</div>
-          <p class="step-desc">After oil cleansing, a gentle water-based cleanser removes any remaining residue, sweat and water-soluble impurities. In the morning, a light rinse with water or a very gentle cleanser is usually sufficient — skin doesn't accumulate the same impurities overnight.</p>
-          <div class="step-products">
-            <span class="step-product-tag">Any gentle low-pH foaming cleanser</span>
-          </div>
-        </div>
-      </div>
-      <div class="routine-step">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <div class="step-timing">AM + PM</div>
-          <div class="step-title">Toner / Essence — Hydration prep</div>
-          <p class="step-desc">Applied to slightly damp skin, a hydrating toner or essence begins the moisture layering process and preps skin to better absorb subsequent products. Pat in gently — do not rub. In K-beauty, toners are often layered 2–3 times (the "7-skin method") for intensive hydration.</p>
-        </div>
-      </div>
-      <div class="routine-step">
-        <div class="step-num">4</div>
-        <div class="step-content">
-          <div class="step-timing">AM + PM</div>
-          <div class="step-title">Serum — Active ingredients</div>
-          <p class="step-desc">Serums deliver concentrated active ingredients — hyaluronic acid for hydration, niacinamide for pores and brightness, PDRN for repair and regeneration. Apply to damp skin and pat in — do not drag. If using multiple serums, apply from thinnest to thickest consistency.</p>
-          <div class="step-products">
-            <span class="step-product-tag">Anua PDRN Hyaluronic Acid Capsule 100 Serum</span>
-          </div>
-        </div>
-      </div>
-      <div class="routine-step">
-        <div class="step-num">5</div>
-        <div class="step-content">
-          <div class="step-timing">AM + PM</div>
-          <div class="step-title">Moisturiser — Seal and protect</div>
-          <p class="step-desc">A moisturiser locks in the hydration and actives applied in previous steps and creates a protective barrier. Apply while skin is still slightly damp from serum for best absorption. In the morning, choose a lighter texture; PM can be richer and more occlusive.</p>
-          <div class="step-products">
-            <span class="step-product-tag">Anua Heartleaf 70 Intense Calming Cream</span>
-          </div>
-        </div>
-      </div>
-      <div class="routine-step">
-        <div class="step-num">6</div>
-        <div class="step-content">
-          <div class="step-timing">AM only</div>
-          <div class="step-title">SPF — Non-negotiable</div>
-          <p class="step-desc">Sunscreen is the single most impactful anti-ageing product you can use — full stop. Apply as the final step of your morning routine, after moisturiser, before makeup. SPF must be the last skincare layer to function correctly. Do not mix it into your moisturiser. Reapply every 2 hours if outdoors.</p>
-          <div class="step-products">
-            <span class="step-product-tag">Beauty of Joseon Relief Sun SPF50+</span>
-          </div>
-        </div>
-      </div>
+      <div class="routine-step"><div class="step-num">1</div><div class="step-content"><div class="step-timing" data-i18n="am_pm">AM + PM</div><div class="step-title" data-i18n="s1_title">Oil Cleanser — First cleanse</div><p class="step-desc" data-i18n="s1_desc">An oil-based cleanser dissolves oil-soluble impurities: sunscreen, makeup, sebum and pollution. Massage onto dry skin, add a little water to emulsify, then rinse. This is not optional if you wear SPF or makeup — water-based cleansers cannot remove these effectively on their own.</p><div class="step-products"><span class="step-product-tag">Anua Heartleaf Pore Control Cleansing Oil</span></div></div></div>
+      <div class="routine-step"><div class="step-num">2</div><div class="step-content"><div class="step-timing" data-i18n="am_pm">AM + PM</div><div class="step-title" data-i18n="s2_title">Water-Based Cleanser — Second cleanse (PM)</div><p class="step-desc" data-i18n="s2_desc">After oil cleansing, a gentle water-based cleanser removes remaining residue and water-soluble impurities. In the morning, a light rinse with water is usually sufficient — skin doesn't accumulate the same impurities overnight.</p></div></div>
+      <div class="routine-step"><div class="step-num">3</div><div class="step-content"><div class="step-timing" data-i18n="am_pm">AM + PM</div><div class="step-title" data-i18n="s3_title">Toner / Essence — Hydration prep</div><p class="step-desc" data-i18n="s3_desc">Applied to slightly damp skin, a hydrating toner or essence begins the moisture layering process and preps skin to better absorb subsequent products. Pat in gently — do not rub.</p></div></div>
+      <div class="routine-step"><div class="step-num">4</div><div class="step-content"><div class="step-timing" data-i18n="am_pm">AM + PM</div><div class="step-title" data-i18n="s4_title">Serum — Active ingredients</div><p class="step-desc" data-i18n="s4_desc">Serums deliver concentrated active ingredients — hyaluronic acid for hydration, niacinamide for pores and brightness, PDRN for repair and regeneration. Apply to damp skin and pat in gently. If using multiple serums, apply from thinnest to thickest consistency.</p><div class="step-products"><span class="step-product-tag">Anua PDRN Hyaluronic Acid Capsule 100 Serum</span></div></div></div>
+      <div class="routine-step"><div class="step-num">5</div><div class="step-content"><div class="step-timing" data-i18n="am_pm">AM + PM</div><div class="step-title" data-i18n="s5_title">Moisturiser — Seal and protect</div><p class="step-desc" data-i18n="s5_desc">A moisturiser locks in the hydration and actives applied in previous steps and creates a protective barrier. Apply while skin is still slightly damp from serum for best absorption. In the morning, choose a lighter texture; PM can be richer and more occlusive.</p><div class="step-products"><span class="step-product-tag">Anua Heartleaf 70 Intense Calming Cream</span></div></div></div>
+      <div class="routine-step"><div class="step-num">6</div><div class="step-content"><div class="step-timing" data-i18n="am_only">AM only</div><div class="step-title" data-i18n="s6_title">SPF — Non-negotiable</div><p class="step-desc" data-i18n="s6_desc">Sunscreen is the single most impactful anti-ageing product you can use. Apply as the final step of your morning routine, after moisturiser, before makeup. SPF must be the last skincare layer to function correctly. Do not mix it into your moisturiser. Reapply every 2 hours if outdoors.</p><div class="step-products"><span class="step-product-tag">Beauty of Joseon Relief Sun SPF50+</span></div></div></div>
     </div>
-
     <div class="accordion reveal" style="margin-top:2.5rem">
-      <div class="acc-item">
-        <button class="acc-trigger">
-          <span class="acc-q">Do I need to do every step every day?</span>
-          <span class="acc-icon">+</span>
-        </button>
-        <div class="acc-body">
-          <p>No — a simplified routine you actually do consistently beats a full 6-step routine you skip. At minimum: <strong>cleanse, moisturise, SPF (AM)</strong>. Add a serum when you want to target a specific concern.</p>
-          <p>The full double-cleanse is most important in the PM when you're removing the day's sunscreen and pollution. In the morning, a simple water rinse is often sufficient for most skin types.</p>
-        </div>
-      </div>
-      <div class="acc-item">
-        <button class="acc-trigger">
-          <span class="acc-q">What order do I apply sunscreen and makeup?</span>
-          <span class="acc-icon">+</span>
-        </button>
-        <div class="acc-body">
-          <p>Skincare first, SPF second, makeup last — always. Your skincare routine should be fully absorbed before SPF goes on, and SPF should be the final layer before any colour cosmetics.</p>
-          <p>Never mix SPF into your moisturiser or foundation — diluting sunscreen reduces its SPF rating unpredictably. Apply each as its own distinct layer.</p>
-        </div>
-      </div>
-      <div class="acc-item">
-        <button class="acc-trigger">
-          <span class="acc-q">Can I use K-beauty products with my existing Western skincare?</span>
-          <span class="acc-icon">+</span>
-        </button>
-        <div class="acc-body">
-          <p>Absolutely — K-beauty products integrate seamlessly with any routine. The cleansing oil, serum and SPF in our range work perfectly alongside any existing moisturiser or other products you use.</p>
-          <p>One consideration: if you're currently using strong Western actives (retinol, AHAs, high-strength vitamin C), introduce new products one at a time so you can identify any reactions. Patch test any new product on the inner arm for 24 hours before full application.</p>
-        </div>
-      </div>
+      <div class="acc-item"><button class="acc-trigger"><span class="acc-q" data-i18n="sq1">Do I need to do every step every day?</span><span class="acc-icon">+</span></button><div class="acc-body"><p data-i18n="sa1">No — a simplified routine you actually do consistently beats a full 6-step routine you skip. At minimum: cleanse, moisturise, SPF (AM). Add a serum when you want to target a specific concern. The full double-cleanse is most important in the PM when removing sunscreen and pollution.</p></div></div>
+      <div class="acc-item"><button class="acc-trigger"><span class="acc-q" data-i18n="sq2">What order do I apply sunscreen and makeup?</span><span class="acc-icon">+</span></button><div class="acc-body"><p data-i18n="sa2">Skincare first, SPF second, makeup last — always. Never mix SPF into your moisturiser or foundation — diluting sunscreen reduces its SPF rating unpredictably. Apply each as its own distinct layer.</p></div></div>
+      <div class="acc-item"><button class="acc-trigger"><span class="acc-q" data-i18n="sq3">Can I use K-beauty products with my existing Western skincare?</span><span class="acc-icon">+</span></button><div class="acc-body"><p data-i18n="sa3">Absolutely — K-beauty products integrate seamlessly with any routine. The cleansing oil, serum and SPF in our range work perfectly alongside any existing products you use. If you're currently using strong actives (retinol, AHAs), introduce new products one at a time and patch test on the inner arm for 24 hours before full application.</p></div></div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════
-       6. FAQ
-  ═══════════════════════════════════════════════════ -->
+  <!-- 6. FAQ -->
   <section class="guide-section" id="faq">
     <div class="reveal">
-      <p class="section-eyebrow">Common Questions</p>
-      <h2 class="section-title">Everything else you might want to know</h2>
+      <p class="section-eyebrow" data-i18n="faq_eyebrow">Common Questions</p>
+      <h2 class="section-title" data-i18n="faq_title">Everything else you might want to know</h2>
     </div>
-
     <div class="accordion reveal">
-      <div class="acc-item">
-        <button class="acc-trigger"><span class="acc-q">Why does my fragrance smell different on someone else?</span><span class="acc-icon">+</span></button>
-        <div class="acc-body"><p>Skin chemistry — pH, moisture level, body temperature, diet and even medication — all affect how fragrance molecules interact and evaporate from your skin. A fragrance that reads as sweet vanilla on one person can smell powdery and dry on another. This is normal and expected. It's why testers exist and why wearing a fragrance for several hours before buying is important.</p></div>
-      </div>
-      <div class="acc-item">
-        <button class="acc-trigger"><span class="acc-q">Should I store fragrance in the fridge?</span><span class="acc-icon">+</span></button>
-        <div class="acc-body"><p>Not necessarily the fridge, but <strong>away from light, heat and humidity</strong>. The bathroom — despite being the most common storage spot — is actually the worst place (heat and steam degrade fragrance over time). Store bottles in a cool, dark place: a bedroom drawer, cupboard, or dedicated fragrance box. If you have a very valuable bottle you use rarely, the fridge is fine. For everyday fragrances, simply avoid direct sunlight and heat.</p></div>
-      </div>
-      <div class="acc-item">
-        <button class="acc-trigger"><span class="acc-q">How do I know if a fragrance has "gone off"?</span><span class="acc-icon">+</span></button>
-        <div class="acc-body"><p>Signs of a degraded fragrance: the colour has darkened significantly, the opening smells sour or vinegary, or the characteristic scent has dramatically flattened. Most fragrances stored correctly last 5–10 years without significant degradation — the alcohol acts as a preservative. Fragrances with high citrus or fresh content degrade faster than oriental or woody compositions.</p></div>
-      </div>
-      <div class="acc-item">
-        <button class="acc-trigger"><span class="acc-q">What does "sillage" mean?</span><span class="acc-icon">+</span></button>
-        <div class="acc-body"><p>Sillage (pronounced "see-yazh") is a French word meaning "wake" — as in the wake left behind a boat. In fragrance, it refers to the trail of scent you leave as you move through a room. A high-sillage fragrance fills a space and lingers after you've left; a skin-scent fragrance stays close and intimate. Arabian fragrances are typically known for generous sillage — considered a sign of quality in the Gulf tradition.</p></div>
-      </div>
-      <div class="acc-item">
-        <button class="acc-trigger"><span class="acc-q">Are your fragrances authentic?</span><span class="acc-icon">+</span></button>
-        <div class="acc-body"><p>Yes — 100%. We source exclusively from authorised EU distributors who import directly and legally into the European market. Every fragrance comes with full batch traceability. We never use grey market channels. This matters particularly for Arabian fragrances where counterfeits do exist in certain markets — you can buy from us with confidence.</p></div>
-      </div>
-      <div class="acc-item">
-        <button class="acc-trigger"><span class="acc-q">What's the difference between natural and synthetic fragrance ingredients?</span><span class="acc-icon">+</span></button>
-        <div class="acc-body"><p>Natural ingredients are extracted directly from plant, animal or mineral sources. Synthetic ingredients are laboratory-created molecules — either to replicate naturals (cheaper, consistent, sustainable) or to create scents that don't exist in nature (like "fresh laundry" or "sea air"). <strong>Synthetic doesn't mean inferior</strong> — most modern perfumes are a blend of both. Many of the most beloved and long-lasting fragrance ingredients are synthetic. The key question is always: does it smell good and does it work?</p></div>
-      </div>
-      <div class="acc-item">
-        <button class="acc-trigger"><span class="acc-q">How should I apply perfume oil / attar differently from a spray?</span><span class="acc-icon">+</span></button>
-        <div class="acc-body"><p>Perfume oils and attars are applied by dabbing — not spraying. Use the applicator or a clean fingertip to apply a small amount to pulse points: wrists, behind ears, inner elbows, and the base of the throat. Use very sparingly at first — oils are highly concentrated and a little goes a long way. Allow 20–30 minutes for the oil to fully develop before judging the scent. Avoid rubbing — this generates heat that distorts the composition.</p></div>
-      </div>
+      <div class="acc-item"><button class="acc-trigger"><span class="acc-q" data-i18n="fq1">Why does my fragrance smell different on someone else?</span><span class="acc-icon">+</span></button><div class="acc-body"><p data-i18n="fa1">Skin chemistry — pH, moisture level, body temperature, diet and even medication — all affect how fragrance molecules interact and evaporate from your skin. A fragrance that reads as sweet vanilla on one person can smell powdery and dry on another. This is normal and expected. It's why wearing a fragrance for several hours before buying is important.</p></div></div>
+      <div class="acc-item"><button class="acc-trigger"><span class="acc-q" data-i18n="fq2">Should I store fragrance in the fridge?</span><span class="acc-icon">+</span></button><div class="acc-body"><p data-i18n="fa2">Not necessarily the fridge, but away from light, heat and humidity. The bathroom — despite being the most common storage spot — is actually the worst place (heat and steam degrade fragrance over time). Store bottles in a cool, dark place: a bedroom drawer, cupboard, or dedicated fragrance box. For everyday fragrances, simply avoid direct sunlight and heat.</p></div></div>
+      <div class="acc-item"><button class="acc-trigger"><span class="acc-q" data-i18n="fq3">How do I know if a fragrance has "gone off"?</span><span class="acc-icon">+</span></button><div class="acc-body"><p data-i18n="fa3">Signs of a degraded fragrance: the colour has darkened significantly, the opening smells sour or vinegary, or the characteristic scent has dramatically flattened. Most fragrances stored correctly last 5–10 years — the alcohol acts as a preservative. Fragrances with high citrus or fresh content degrade faster than oriental or woody compositions.</p></div></div>
+      <div class="acc-item"><button class="acc-trigger"><span class="acc-q" data-i18n="fq4">What does "sillage" mean?</span><span class="acc-icon">+</span></button><div class="acc-body"><p data-i18n="fa4">Sillage (pronounced "see-yazh") is a French word meaning "wake" — as in the wake left behind a boat. In fragrance, it refers to the trail of scent you leave as you move through a room. Arabian fragrances are typically known for generous sillage — considered a sign of quality in the Gulf tradition.</p></div></div>
+      <div class="acc-item"><button class="acc-trigger"><span class="acc-q" data-i18n="fq5">Are your fragrances authentic?</span><span class="acc-icon">+</span></button><div class="acc-body"><p data-i18n="fa5">Yes — 100%. We source exclusively from authorised EU distributors who import directly and legally into the European market. Every fragrance comes with full batch traceability. We never use grey market channels. This matters particularly for Arabian fragrances where counterfeits do exist in certain markets.</p></div></div>
+      <div class="acc-item"><button class="acc-trigger"><span class="acc-q" data-i18n="fq6">What's the difference between natural and synthetic fragrance ingredients?</span><span class="acc-icon">+</span></button><div class="acc-body"><p data-i18n="fa6">Natural ingredients are extracted directly from plant, animal or mineral sources. Synthetic ingredients are laboratory-created molecules — either to replicate naturals or to create scents that don't exist in nature. Synthetic doesn't mean inferior — most modern perfumes are a blend of both. The key question is always: does it smell good and does it work?</p></div></div>
+      <div class="acc-item"><button class="acc-trigger"><span class="acc-q" data-i18n="fq7">How should I apply perfume oil / attar differently from a spray?</span><span class="acc-icon">+</span></button><div class="acc-body"><p data-i18n="fa7">Perfume oils and attars are applied by dabbing — not spraying. Use the applicator or a clean fingertip to apply a small amount to pulse points. Use very sparingly at first — oils are highly concentrated. Allow 20–30 minutes for the oil to fully develop before judging the scent. Avoid rubbing — this generates heat that distorts the composition.</p></div></div>
     </div>
   </section>
 
-  <!-- ─── QUICK LINKS ─── -->
+  <!-- QUICK LINKS -->
   <section style="padding:5rem 3.5rem; background:var(--black);">
     <div class="reveal">
-      <p class="section-eyebrow" style="color:var(--accent-light)">Go deeper</p>
-      <h2 class="section-title" style="color:var(--white);margin-bottom:2.5rem">Explore further</h2>
+      <p class="section-eyebrow" style="color:var(--accent-light)" data-i18n="deeper_eyebrow">Go deeper</p>
+      <h2 class="section-title" style="color:var(--white);margin-bottom:2.5rem" data-i18n="deeper_title">Explore further</h2>
     </div>
     <div class="quick-links reveal">
       <a href="/fragrance-notes.html" class="quick-link-card" style="background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.08);">
-        <div class="qlc-eyebrow" style="color:var(--accent-light)">Deep dive</div>
-        <div class="qlc-title" style="color:var(--white)">Fragrance Notes & Accords</div>
-        <p class="qlc-desc" style="color:rgba(255,255,255,0.4)">The full interactive guide to every note — from bergamot to oud. With the fragrance wheel, family groupings and a drawer explainer on every product page.</p>
+        <div class="qlc-eyebrow" style="color:var(--accent-light)" data-i18n="ql1_eye">Deep dive</div>
+        <div class="qlc-title" style="color:var(--white)" data-i18n="ql1_title">Fragrance Notes &amp; Accords</div>
+        <p class="qlc-desc" style="color:rgba(255,255,255,0.4)" data-i18n="ql1_desc">The full interactive guide to every note — from bergamot to oud. With the fragrance wheel, family groupings and a drawer explainer on every product page.</p>
       </a>
       <a href="/#featured" class="quick-link-card" style="background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.08);">
-        <div class="qlc-eyebrow" style="color:var(--accent-light)">Shop</div>
-        <div class="qlc-title" style="color:var(--white)">Browse Our Fragrances</div>
-        <p class="qlc-desc" style="color:rgba(255,255,255,0.4)">Lattafa, Armaf, Arabiyat Prestige, Swiss Arabian and more. Every product described with full notes and accords — click any to understand what you're smelling.</p>
+        <div class="qlc-eyebrow" style="color:var(--accent-light)" data-i18n="ql2_eye">Shop</div>
+        <div class="qlc-title" style="color:var(--white)" data-i18n="ql2_title">Browse Our Fragrances</div>
+        <p class="qlc-desc" style="color:rgba(255,255,255,0.4)" data-i18n="ql2_desc">Lattafa, Armaf, Arabiyat Prestige, Swiss Arabian and more. Every product described with full notes and accords.</p>
       </a>
       <a href="/#contact" class="quick-link-card" style="background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.08);">
-        <div class="qlc-eyebrow" style="color:var(--accent-light)">Personalised</div>
-        <div class="qlc-title" style="color:var(--white)">Ask Us Directly</div>
-        <p class="qlc-desc" style="color:rgba(255,255,255,0.4)">Not sure where to start? Our fragrance advisor chat is on every page — or drop us a message and we'll recommend something based on what you already love.</p>
+        <div class="qlc-eyebrow" style="color:var(--accent-light)" data-i18n="ql3_eye">Personalised</div>
+        <div class="qlc-title" style="color:var(--white)" data-i18n="ql3_title">Ask Us Directly</div>
+        <p class="qlc-desc" style="color:rgba(255,255,255,0.4)" data-i18n="ql3_desc">Not sure where to start? Our fragrance advisor chat is on every page — or drop us a message and we'll recommend something based on what you already love.</p>
       </a>
     </div>
   </section>
@@ -1146,33 +531,309 @@
       <div class="footer-copy">© 2026 YSP Collective. All rights reserved. Portugal, EU.</div>
     </div>
     <div class="footer-links">
-      <a href="/">Store</a>
-      <a href="/fragrance-notes.html">Notes Guide</a>
-      <a href="/#contact">Contact</a>
+      <a href="/" data-i18n="footer_store">Store</a>
+      <a href="/fragrance-notes.html" data-i18n="footer_notes">Notes Guide</a>
+      <a href="/#contact" data-i18n="footer_contact">Contact</a>
     </div>
   </footer>
 
   <script>
-    // Accordion
-    document.querySelectorAll('.acc-trigger').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.parentElement;
-        const wasOpen = item.classList.contains('open');
-        document.querySelectorAll('.acc-item').forEach(i => i.classList.remove('open'));
-        if (!wasOpen) item.classList.add('open');
-      });
+  // ── TRANSLATIONS ──────────────────────────────────────────────────────────
+  const T = {
+    en: {
+      nav_back: '← Back to Store',
+      hero_eyebrow: 'YSP Collective',
+      hero_title_html: 'The <em>Guide.</em>',
+      hero_desc: 'Everything you need to know about fragrance and skincare — from the difference between EDP and EDT to where to spray, how to layer, and what makes Arabian perfume extraordinary.',
+      pill_conc: 'EDP vs EDT vs Parfum', pill_wear: 'How to Wear Fragrance', pill_arabian: 'Arabian vs Western', pill_layer: 'Layering Fragrances', pill_skin: 'Skincare Routine', pill_faq: 'Common Questions', pill_notes: 'Fragrance Notes →',
+      conc_eyebrow: 'Fragrance Concentration', conc_title: "EDP, EDT, Parfum — what's the difference?",
+      conc_intro: 'The biggest single factor in how long a fragrance lasts and how much it projects is its concentration — the percentage of fragrance oil relative to alcohol and water. Higher concentration means more longevity, more projection, and usually a higher price.',
+      parfum_abbr: 'Also: Extrait de Parfum · Pure Perfume', oil_conc: 'Oil concentration', longevity: 'Longevity', projection: 'Projection',
+      very_strong: 'Very Strong', strong: 'Strong', moderate: 'Moderate', light: 'Light', very_light: 'Very Light', intimate: 'Intimate',
+      parfum_desc: 'The purest and most concentrated form of fragrance. Parfum contains the highest percentage of aromatic compounds — producing extraordinary longevity and rich, complex character. Often oilier in texture with minimal alcohol. A single application can last an entire day. The choice of serious fragrance collectors.',
+      edp_desc: 'The sweet spot for most fragrance lovers and the most common format in the YSP range. EDP offers excellent longevity, strong projection and full expression of the composition — without the cost and intensity of a pure parfum. Versatile enough for day or evening wear. Most recommended as a starting point.',
+      edt_desc: 'Lighter, fresher and more casual. EDT is ideal for daytime wear, warmer weather and office environments where you want presence without overwhelming a room. The higher alcohol content means a brighter, more immediate opening but a shorter lifespan on skin.',
+      edc_desc: 'The lightest concentration — traditionally a citrus and herb blend applied generously and frequently. Most people find EDT or EDP a better investment as a signature scent. Best used as a body splash or for layering.',
+      mist_name: 'Body Mist / Splash', mist_abbr: '1–3% concentration', mist_desc: 'A thin, highly diluted scented water designed for full-body application. Very low longevity — these are about freshness and layering, not performance. Often used in combination with a matching body lotion.',
+      oil_name: 'Fragrance / Perfume Oil', oil_abbr: 'Attar · Pure Oil · Roll-On', oil_desc: 'Alcohol-free fragrance in a pure or carrier-oil base. Traditional Arabian attars are perfume oils — exceptional longevity and a close, skin-intimate projection. Ideal for sensitive skin and those who find alcohol-based fragrances too sharp.',
+      ysp_note: 'YSP Note', conc_callout: 'Almost all fragrances in our range are Eau de Parfum (EDP) — we specifically source this concentration because it offers the best balance of performance and versatility. Many of our Arabian fragrances perform significantly above what the EDP label might suggest — longevity of 10–14 hours is common.',
+      conc_table_title: 'Concentration at a glance',
+      th_type: 'Type', th_oil: 'Oil %', th_long: 'Longevity', th_proj: 'Projection', th_best: 'Best For',
+      t_parfum_long: '12–24 hours', t_very_strong: 'Very strong', t_parfum_best: 'Special occasions, serious collectors',
+      t_edp_long: '6–12 hours', t_strong: 'Strong', t_edp_best: 'Most occasions — our recommended choice',
+      t_edt_long: '3–6 hours', t_moderate: 'Moderate', t_edt_best: 'Daytime, office, warm weather',
+      t_edc_long: '1–3 hours', t_light: 'Light', t_edc_best: 'Refreshing splash, layering',
+      t_mist_long: 'Under 1 hour', t_very_light: 'Very light', t_mist_best: 'Post-shower, all-over body',
+      t_oil_row: 'Perfume Oil / Attar', t_oil_pct: 'Up to 100%', t_oil_long: '12–24+ hours', t_oil_best: 'Skin-close wear, alcohol sensitivity',
+      wear_eyebrow: 'Application', wear_title: 'Where — and how — to wear fragrance',
+      wear_intro: 'The way you apply fragrance has an enormous impact on how it performs and evolves. Fragrance needs heat to develop — apply to pulse points where blood vessels run close to the skin surface.',
+      sp1_title: 'Wrists — Primary pulse point', sp1_desc: "The classic application spot. The radial artery runs close to the surface here, creating warmth that helps fragrance bloom and project. Apply 1–2 sprays and let it develop naturally — avoid rubbing the wrists together, which breaks down the fragrance molecules and flattens the top notes.",
+      sp2_title: 'Neck / Base of throat', sp2_desc: 'The warmest area of the body and the most projecting application point. Fragrance sprayed here rises naturally with body heat, creating a scent trail as you move. Ideal for evening wear.',
+      sp3_title: 'Chest / Sternum', sp3_desc: 'A powerful point for projection — the heat of your body carries the scent outward and upward. Particularly effective for richer oriental and oud-based fragrances. This is where Arabian fragrances traditionally excel.',
+      sp4_title: 'Behind the ears', sp4_desc: 'The warmth behind the ear creates a close, intimate cloud of scent — perfect for evenings. Fragrance applied here tends to last particularly well. Also the ideal spot for dabs of perfume oil or attar.',
+      sp5_title: 'Inner elbows', sp5_desc: 'Underused but effective — a warm, sheltered pulse point that allows fragrance to develop steadily. Great for hot weather when wrists become sweaty and alter the scent.',
+      sp6_title: 'Hair', sp6_desc: 'Hair holds fragrance beautifully and creates a trail as you move. Spray into the air and walk through the mist, or apply to a hairbrush. Fragrance oils are better suited to hair than alcohol-based sprays.',
+      rule_thumb: 'The rule of thumb', spray_callout: 'For EDP, 3–5 sprays is usually enough. More is not better. For perfume oil / attar, 1–2 dabs per pulse point. Oils are slower to project but longer lasting — resist the urge to apply more in the first hour.',
+      arab_eyebrow: 'Understanding Arabian Fragrance', arab_title: 'Arabian perfume vs Western fragrance',
+      arab_intro: 'Arabian and Western perfumery traditions are fundamentally different in philosophy, ingredients and performance. Understanding these differences helps you appreciate why fragrances like Lattafa, Armaf and Swiss Arabian behave the way they do — and why they represent extraordinary value.',
+      arab_col_head: 'Arabian Perfumery', west_col_head: 'Western Perfumery',
+      arab_1: 'Built on oud, amber, musk, saffron and rich spice accords', arab_2: 'Oil concentration typically 20–30% — well above Western EDP', arab_3: 'Longevity of 10–16 hours is standard, not exceptional', arab_4: 'Designed to project — sillage is considered a sign of quality', arab_5: 'Often unisex or gender-fluid in character', arab_6: 'Oud, bakhoor and rose are the holy trinity of Arabian fragrance', arab_7: 'Price reflects materials, not marketing — exceptional value', arab_8: 'Scent develops slowly — judge at 2–3 hours, not immediately',
+      west_1: 'Built on florals, fresh notes, woods and clean musks', west_2: 'EDP typically 15–20% oil concentration', west_3: 'Longevity of 4–8 hours typical for EDP', west_4: 'Restrained projection preferred — "close to the skin" is valued', west_5: 'Strongly gendered marketing and positioning', west_6: 'Bergamot, jasmine, vetiver and cedarwood are the classic backbone', west_7: 'Price includes significant marketing, packaging and brand premium', west_8: 'Top notes important — designed to impress immediately',
+      value_q: 'The value question', value_p1: "A bottle of Creed Aventus costs €300–400. A bottle of Armaf Club de Nuit Intense — widely acknowledged as the closest affordable alternative — costs under €30. The gap in performance? Most people who've worn both would struggle to call it significant. Arabian fragrance houses have access to the same raw material suppliers and often outperform on longevity.", value_p2: 'This is why Arabian fragrances have exploded in popularity among fragrance enthusiasts globally — not as "cheap alternatives" but as genuinely excellent compositions that happen to be priced fairly.',
+      compare_title: 'Popular comparisons', th_arabian: 'Arabian / Affordable', th_ysp_price: 'YSP Price', th_western: 'Western Equivalent', th_west_price: 'Western Price', th_character: 'Character',
+      comp1: 'Smoky birch, pineapple, musk', comp2: 'Coffee, cognac, vanilla, warm spice', comp3: 'Fruity floral, vanilla, soft musk', comp4: 'Tropical floral, woody, creamy',
+      layer_eyebrow: 'Advanced Technique', layer_title: 'Layering fragrances', layer_intro: 'Layering — wearing two or more fragrances together — is a traditional Arabian practice and one of the most creative aspects of perfumery. Done well, it creates a completely personal scent that belongs only to you.',
+      l1_eyebrow: 'Foundation', l1_title: 'Apply the base first', l1_desc: 'Start with your richest, heaviest fragrance — typically your oud, amber or oriental base. Apply to pulse points and let it settle for 2–3 minutes before adding anything over it.',
+      l2_eyebrow: 'Complement', l2_title: 'Add your top layer', l2_desc: 'Apply your lighter, fresher fragrance over the top — a floral, citrus or fresh accord that lifts the base and adds complexity. Start with one spray and evaluate before adding more.',
+      l3_eyebrow: 'Patience', l3_title: 'Let it develop', l3_desc: 'Layered fragrances take 20–30 minutes to fully merge on skin. Reserve your final judgement for at least half an hour after application.',
+      lq1: 'Which fragrances layer well together?', la1: 'The safest rule: fragrances from the same family layer beautifully. Classic combinations: oud + rose (the Arabian classic), vanilla + wood, citrus over amber, lavender + musk. Avoid combining two dominant, competing characters.',
+      lq2: 'Can I layer any YSP fragrances together?', la2: 'Yes, and we\'d encourage experimenting. Lattafa Yara + Lattafa Khamrah creates a complex, distinctive evening scent. Armaf Club de Nuit + any oud benefits enormously from an oud base applied first.',
+      lq3: 'Should I layer on different body areas or the same spots?', la3: 'Both work. Same pulse points: the fragrances merge into a unified scent. Different areas: apply fragrance A to wrists and B to neck for more distinction. For beginners, same points first.',
+      skin_eyebrow: 'Skincare', skin_title: 'The K-beauty routine — order matters', skin_intro: 'Korean skincare philosophy is built on layering products from lightest to heaviest, allowing each to absorb before adding the next. The order you apply products in directly affects their efficacy.',
+      am_pm: 'AM + PM', am_only: 'AM only',
+      s1_title: 'Oil Cleanser — First cleanse', s1_desc: 'An oil-based cleanser dissolves oil-soluble impurities: sunscreen, makeup, sebum and pollution. Massage onto dry skin, add a little water to emulsify, then rinse. Not optional if you wear SPF or makeup.',
+      s2_title: 'Water-Based Cleanser — Second cleanse (PM)', s2_desc: 'After oil cleansing, a gentle water-based cleanser removes remaining residue. In the morning, a light rinse with water is usually sufficient.',
+      s3_title: 'Toner / Essence — Hydration prep', s3_desc: 'Applied to slightly damp skin, a hydrating toner or essence begins the moisture layering process and preps skin to better absorb subsequent products. Pat in gently — do not rub.',
+      s4_title: 'Serum — Active ingredients', s4_desc: 'Serums deliver concentrated active ingredients — hyaluronic acid for hydration, PDRN for repair. Apply to damp skin and pat in gently. Apply from thinnest to thickest consistency if using multiple serums.',
+      s5_title: 'Moisturiser — Seal and protect', s5_desc: 'A moisturiser locks in the hydration and actives applied in previous steps. Apply while skin is still slightly damp from serum. In the morning, choose a lighter texture; PM can be richer.',
+      s6_title: 'SPF — Non-negotiable', s6_desc: 'Sunscreen is the single most impactful anti-ageing product you can use. Apply as the final step of your morning routine, after moisturiser, before makeup. Do not mix it into your moisturiser. Reapply every 2 hours if outdoors.',
+      sq1: 'Do I need to do every step every day?', sa1: 'No — a simplified routine you actually do consistently beats a full 6-step routine you skip. At minimum: cleanse, moisturise, SPF (AM). The full double-cleanse is most important in the PM.',
+      sq2: 'What order do I apply sunscreen and makeup?', sa2: 'Skincare first, SPF second, makeup last — always. Never mix SPF into your moisturiser or foundation — diluting sunscreen reduces its SPF rating unpredictably.',
+      sq3: 'Can I use K-beauty products with my existing Western skincare?', sa3: "Absolutely — K-beauty products integrate seamlessly with any routine. If you're using strong actives (retinol, AHAs), introduce new products one at a time and patch test on the inner arm for 24 hours.",
+      faq_eyebrow: 'Common Questions', faq_title: 'Everything else you might want to know',
+      fq1: 'Why does my fragrance smell different on someone else?', fa1: 'Skin chemistry — pH, moisture level, body temperature, diet and even medication — all affect how fragrance molecules interact and evaporate from your skin. A fragrance that reads as sweet vanilla on one person can smell powdery and dry on another. This is why wearing a fragrance for several hours before buying is important.',
+      fq2: 'Should I store fragrance in the fridge?', fa2: 'Not necessarily the fridge, but away from light, heat and humidity. The bathroom is actually the worst place (heat and steam degrade fragrance over time). Store bottles in a cool, dark place: a bedroom drawer, cupboard, or dedicated fragrance box.',
+      fq3: 'How do I know if a fragrance has "gone off"?', fa3: 'Signs of a degraded fragrance: the colour has darkened significantly, the opening smells sour or vinegary, or the characteristic scent has dramatically flattened. Most fragrances stored correctly last 5–10 years.',
+      fq4: 'What does "sillage" mean?', fa4: 'Sillage (pronounced "see-yazh") is a French word meaning "wake". In fragrance, it refers to the trail of scent you leave as you move through a room. Arabian fragrances are typically known for generous sillage — considered a sign of quality in the Gulf tradition.',
+      fq5: 'Are your fragrances authentic?', fa5: 'Yes — 100%. We source exclusively from authorised EU distributors who import directly and legally into the European market. Every fragrance comes with full batch traceability. We never use grey market channels.',
+      fq6: "What's the difference between natural and synthetic fragrance ingredients?", fa6: "Natural ingredients are extracted from plant, animal or mineral sources. Synthetic ingredients are laboratory-created molecules. Synthetic doesn't mean inferior — most modern perfumes are a blend of both. The key question is always: does it smell good and does it work?",
+      fq7: 'How should I apply perfume oil / attar differently from a spray?', fa7: 'Perfume oils and attars are applied by dabbing — not spraying. Use a fingertip to apply to pulse points. Use very sparingly at first — oils are highly concentrated. Allow 20–30 minutes for the oil to fully develop. Avoid rubbing — this distorts the composition.',
+      deeper_eyebrow: 'Go deeper', deeper_title: 'Explore further',
+      ql1_eye: 'Deep dive', ql1_title: 'Fragrance Notes & Accords', ql1_desc: 'The full interactive guide to every note — from bergamot to oud. With the fragrance wheel, family groupings and a drawer explainer on every product page.',
+      ql2_eye: 'Shop', ql2_title: 'Browse Our Fragrances', ql2_desc: 'Lattafa, Armaf, Arabiyat Prestige, Swiss Arabian and more. Every product described with full notes and accords.',
+      ql3_eye: 'Personalised', ql3_title: 'Ask Us Directly', ql3_desc: "Not sure where to start? Our fragrance advisor chat is on every page — or drop us a message and we'll recommend something based on what you already love.",
+      footer_store: 'Store', footer_notes: 'Notes Guide', footer_contact: 'Contact',
+    },
+
+    pt: {
+      nav_back: '← Voltar à Loja',
+      hero_eyebrow: 'YSP Collective',
+      hero_title_html: 'O <em>Guia.</em>',
+      hero_desc: 'Tudo o que precisa de saber sobre perfumaria e cuidados de pele — desde a diferença entre EDP e EDT até onde aplicar, como combinar fragrâncias e o que torna os perfumes árabes extraordinários.',
+      pill_conc: 'EDP vs EDT vs Parfum', pill_wear: 'Como Usar Perfume', pill_arabian: 'Árabe vs Ocidental', pill_layer: 'Combinação de Fragrâncias', pill_skin: 'Rotina de Skincare', pill_faq: 'Perguntas Frequentes', pill_notes: 'Notas Olfativas →',
+      conc_eyebrow: 'Concentração do Perfume', conc_title: 'EDP, EDT, Parfum — qual é a diferença?',
+      conc_intro: 'O principal factor que determina quanto tempo um perfume dura e a sua projecção é a concentração — a percentagem de óleo aromático em relação ao álcool e à água. Maior concentração significa mais duração, mais projecção e, normalmente, um preço mais elevado.',
+      parfum_abbr: 'Também: Extrait de Parfum · Parfum Puro', oil_conc: 'Concentração de óleo', longevity: 'Duração', projection: 'Projecção',
+      very_strong: 'Muito Forte', strong: 'Forte', moderate: 'Moderado', light: 'Leve', very_light: 'Muito Leve', intimate: 'Íntimo',
+      parfum_desc: 'A forma mais pura e concentrada de perfume. O Parfum contém a maior percentagem de compostos aromáticos — produzindo uma longevidade extraordinária e um carácter rico e complexo. Frequentemente mais oleoso, com mínimo de álcool. Uma única aplicação pode durar o dia inteiro. A escolha dos coleccionadores mais exigentes.',
+      edp_desc: 'O ponto de equilíbrio para a maioria dos apreciadores de perfumaria e o formato mais comum na nossa selecção. O EDP oferece excelente duração, forte projecção e plena expressão da composição — sem o custo e a intensidade de um Parfum puro. Versátil para uso diurno e nocturno. A nossa recomendação de entrada.',
+      edt_desc: 'Mais leve, fresco e casual. O EDT é ideal para uso diurno, clima mais quente e ambiente de trabalho — onde se quer presença sem saturar o espaço. O maior teor de álcool confere uma abertura mais vibrante mas menor duração na pele.',
+      edc_desc: 'A concentração mais leve — tradicionalmente uma mistura de citrinos e ervas, aplicada em maior quantidade e com mais frequência. A maioria das pessoas considera o EDT ou EDP um investimento melhor como fragrância de assinatura.',
+      mist_name: 'Névoa Corporal / Splash', mist_abbr: 'Concentração de 1–3%', mist_desc: 'Uma água perfumada muito diluída para aplicação em todo o corpo. Duração muito reduzida — adequada para frescura e sobreposição, não para desempenho. Frequentemente usada em combinação com loção corporal.',
+      oil_name: 'Óleo de Perfume / Attar', oil_abbr: 'Attar · Óleo Puro · Roll-On', oil_desc: 'Fragrância sem álcool numa base de óleo puro ou óleo transportador. Os attars árabes tradicionais são óleos de perfume — longevidade excepcional e projecção íntima que se desenvolve de forma lenta e bela. Ideal para pele sensível e para quem acha os perfumes com álcool demasiado intensos na abertura.',
+      ysp_note: 'Nota YSP', conc_callout: 'Quase todas as fragrâncias da nossa selecção são Eau de Parfum (EDP) — escolhemos esta concentração porque oferece o melhor equilíbrio entre desempenho e versatilidade. Muitas das nossas fragrâncias árabes, dado o seu elevado teor de óleo por tradição de formulação, superam significativamente o que o rótulo EDP poderia sugerir — durações de 10 a 14 horas são comuns.',
+      conc_table_title: 'Concentrações em resumo',
+      th_type: 'Tipo', th_oil: '% Óleo', th_long: 'Duração', th_proj: 'Projecção', th_best: 'Ideal Para',
+      t_parfum_long: '12–24 horas', t_very_strong: 'Muito forte', t_parfum_best: 'Ocasiões especiais, coleccionadores',
+      t_edp_long: '6–12 horas', t_strong: 'Forte', t_edp_best: 'Maioria das ocasiões — a nossa recomendação',
+      t_edt_long: '3–6 horas', t_moderate: 'Moderada', t_edt_best: 'Dia a dia, escritório, clima quente',
+      t_edc_long: '1–3 horas', t_light: 'Leve', t_edc_best: 'Frescura rápida, sobreposição',
+      t_mist_long: 'Menos de 1 hora', t_very_light: 'Muito leve', t_mist_best: 'Pós-banho, corpo inteiro',
+      t_oil_row: 'Óleo de Perfume / Attar', t_oil_pct: 'Até 100%', t_oil_long: '12–24+ horas', t_oil_best: 'Uso íntimo, sensibilidade ao álcool',
+      wear_eyebrow: 'Aplicação', wear_title: 'Onde — e como — usar perfume',
+      wear_intro: 'A forma como aplica o perfume tem um impacto enorme no seu desempenho e evolução. O perfume necessita de calor para se desenvolver — aplique nos pontos de pulso, onde os vasos sanguíneos ficam perto da superfície da pele.',
+      sp1_title: 'Pulsos — Ponto principal de pulso', sp1_desc: 'O local de aplicação clássico. A artéria radial fica perto da superfície, criando calor que ajuda o perfume a florir e a projectar-se. Aplique 1–2 sprays e deixe desenvolver naturalmente — evite esfregar os pulsos, pois isso destrói as moléculas aromáticas e achata as notas de topo.',
+      sp2_title: 'Pescoço / Base da garganta', sp2_desc: 'A zona mais quente do corpo e o ponto de aplicação com maior projecção. O perfume aplicado aqui sobe naturalmente com o calor corporal, criando um rasto olfativo à medida que se move. Ideal para a noite e ocasiões especiais.',
+      sp3_title: 'Peito / Esterno', sp3_desc: 'Um ponto poderoso para a projecção — o calor do corpo transporta o perfume para fora e para cima. Particularmente eficaz para fragrâncias orientais mais ricas e de oud. É aqui que as fragrâncias árabes tradicionalmente se destacam.',
+      sp4_title: 'Atrás das orelhas', sp4_desc: 'O calor atrás da orelha cria uma nuvem de perfume íntima e próxima — perfeito para as noites. O perfume aplicado aqui tende a durar particularmente bem. Também o local ideal para óleo de perfume ou attar.',
+      sp5_title: 'Interior dos cotovelos', sp5_desc: 'Subutilizado mas eficaz — um ponto de pulso quente e abrigado que permite ao perfume desenvolver-se de forma estável. Excelente no verão, quando os pulsos ficam húmidos e alteram o perfume.',
+      sp6_title: 'Cabelo', sp6_desc: 'O cabelo retém o perfume muito bem e cria um rasto à medida que se move. Pulverize no ar e passe por entre a névoa, ou aplique numa escova. Os óleos de perfume são mais adequados para o cabelo do que os sprays com álcool.',
+      rule_thumb: 'A regra de ouro', spray_callout: 'Para EDP, 3 a 5 sprays geralmente são suficientes. Mais não é melhor — torna-se avassalador. Para óleo de perfume / attar, 1 a 2 toques por ponto de pulso. Os óleos demoram mais a projectar-se mas duram mais — resista ao impulso de aplicar mais na primeira hora.',
+      arab_eyebrow: 'Compreender a Perfumaria Árabe', arab_title: 'Perfume árabe vs fragrância ocidental',
+      arab_intro: 'As tradições árabe e ocidental de perfumaria são fundamentalmente diferentes em filosofia, ingredientes e desempenho. Compreender estas diferenças ajuda a apreciar porque é que fragrâncias como a Lattafa, Armaf e Swiss Arabian se comportam desta forma — e porque representam um valor extraordinário.',
+      arab_col_head: 'Perfumaria Árabe', west_col_head: 'Perfumaria Ocidental',
+      arab_1: 'Construída sobre oud, âmbar, almíscar, açafrão e acordes de especiarias ricas', arab_2: 'Concentração de óleo tipicamente de 20–30% — muito acima do EDP ocidental', arab_3: 'Duração de 10–16 horas é padrão, não excepcional', arab_4: 'Concebida para projectar — o sillage é considerado sinal de qualidade', arab_5: 'Frequentemente unissexo ou de carácter fluido em termos de género', arab_6: 'Oud, bakhoor e rosa são a santíssima trindade da perfumaria árabe', arab_7: 'O preço reflecte os materiais, não o marketing — valor excepcional', arab_8: 'O perfume desenvolve-se lentamente — julgue às 2–3 horas, não imediatamente',
+      west_1: 'Construída sobre florais, notas frescas, madeiras e almíscares limpos', west_2: 'EDP tipicamente com 15–20% de concentração de óleo', west_3: 'Duração de 4–8 horas típica para EDP', west_4: 'Projecção contida preferida — "próximo da pele" é valorizado', west_5: 'Marketing e posicionamento fortemente divididos por género', west_6: 'Bergamota, jasmim, vetiver e cedro são a espinha dorsal clássica', west_7: 'O preço inclui um premium significativo de marketing, embalagem e marca', west_8: 'As notas de topo são importantes — concebidas para impressionar imediatamente',
+      value_q: 'A questão do valor', value_p1: 'Um frasco de Creed Aventus custa entre €300 e €400. Um frasco de Armaf Club de Nuit Intense — amplamente reconhecida como a alternativa mais acessível — custa menos de €30. A diferença de desempenho? A maioria das pessoas que usou ambas teria dificuldade em classificá-la como significativa. As casas de perfumaria árabe têm acesso aos mesmos fornecedores de matérias-primas e muitas vezes superam na duração.', value_p2: 'É por isso que as fragrâncias árabes explodiram em popularidade entre os entusiastas de perfumaria — não como "alternativas baratas", mas como composições genuinamente excelentes que, por acaso, têm preços justos.',
+      compare_title: 'Comparações populares', th_arabian: 'Árabe / Acessível', th_ysp_price: 'Preço YSP', th_western: 'Equivalente Ocidental', th_west_price: 'Preço Ocidental', th_character: 'Carácter',
+      comp1: 'Bétula fumada, ananás, almíscar', comp2: 'Café, conhaque, baunilha, especiaria quente', comp3: 'Floral frutado, baunilha, almíscar suave', comp4: 'Floral tropical, amadeirado, cremoso',
+      layer_eyebrow: 'Técnica Avançada', layer_title: 'Combinação de fragrâncias', layer_intro: 'A sobreposição — usar dois ou mais perfumes em conjunto — é uma prática árabe tradicional e um dos aspectos mais criativos da perfumaria. Bem feita, cria um perfume completamente pessoal e único.',
+      l1_eyebrow: 'Base', l1_title: 'Aplique primeiro a base', l1_desc: 'Comece com a sua fragrância mais rica e intensa — tipicamente a sua base de oud, âmbar ou oriental. Aplique nos pontos de pulso e deixe assentar 2–3 minutos antes de adicionar qualquer coisa por cima.',
+      l2_eyebrow: 'Complemento', l2_title: 'Adicione a camada superior', l2_desc: 'Aplique a sua fragrância mais leve e fresca por cima — um acorde floral, cítrico ou fresco que eleva a base e acrescenta complexidade. Comece com um spray e avalie antes de adicionar mais.',
+      l3_eyebrow: 'Paciência', l3_title: 'Deixe desenvolver', l3_desc: 'As fragrâncias sobrepostas demoram 20–30 minutos a fundir-se completamente na pele. Reserve o seu julgamento final para pelo menos meia hora após a aplicação.',
+      lq1: 'Quais as fragrâncias que combinam bem?', la1: 'A regra mais segura: fragrâncias da mesma família combinam muito bem. Combinações clássicas: oud + rosa (o clássico árabe), baunilha + madeira, cítrico sobre âmbar, lavanda + almíscar. Evite combinar dois caracteres dominantes e concorrentes.',
+      lq2: 'Posso combinar fragrâncias YSP?', la2: 'Sim, e encorajamos a experiência. Lattafa Yara + Lattafa Khamrah cria um perfume de noite complexo e distinto. Armaf Club de Nuit + qualquer oud beneficia enormemente de uma base de oud aplicada primeiro.',
+      lq3: 'Devo aplicar em zonas diferentes ou nos mesmos pontos?', la3: 'Ambas as abordagens funcionam. Mesmos pontos de pulso: as fragrâncias fundem-se numa composição unificada. Zonas diferentes: pulsos e pescoço, mantendo-as mais distintas. Para iniciantes, comece pelos mesmos pontos.',
+      skin_eyebrow: 'Cuidados de Pele', skin_title: 'A rotina K-beauty — a ordem importa', skin_intro: 'A filosofia coreana de cuidados de pele baseia-se na sobreposição de produtos do mais leve para o mais pesado, permitindo que cada um seja absorvido antes de adicionar o seguinte. A ordem de aplicação afecta directamente a eficácia dos produtos.',
+      am_pm: 'Manhã + Noite', am_only: 'Só de manhã',
+      s1_title: 'Limpador a Óleo — Primeira limpeza', s1_desc: 'Um limpador à base de óleo dissolve impurezas lipossolúveis: protector solar, maquilhagem, sebo e poluição. Massaje na pele seca, adicione um pouco de água para emulsionar e enxague. Não é opcional se usar SPF ou maquilhagem — os limpadores à base de água não conseguem remover estas impurezas de forma eficaz.',
+      s2_title: 'Limpador à Base de Água — Segunda limpeza (Noite)', s2_desc: 'Após a limpeza a óleo, um limpador suave à base de água remove os resíduos restantes. De manhã, um simples enxague com água é geralmente suficiente.',
+      s3_title: 'Tónico / Essência — Preparação hidratante', s3_desc: 'Aplicado na pele ligeiramente húmida, um tónico ou essência hidratante inicia o processo de sobreposição de hidratação e prepara a pele para absorver melhor os produtos seguintes. Aplique dando batidinhas — não esfregue.',
+      s4_title: 'Sérum — Ingredientes activos', s4_desc: 'Os séruns fornecem ingredientes activos concentrados — ácido hialurónico para hidratação, niacinamida para os poros, PDRN para regeneração. Aplique na pele húmida e dê batidinhas. Se usar vários séruns, aplique do mais líquido para o mais espesso.',
+      s5_title: 'Hidratante — Sele e proteja', s5_desc: 'Um hidratante sela a hidratação e os activos aplicados nas etapas anteriores. Aplique enquanto a pele ainda está ligeiramente húmida do sérum. De manhã, escolha uma textura mais leve; à noite pode ser mais rico.',
+      s6_title: 'SPF — Incontornável', s6_desc: 'O protector solar é o produto anti-envelhecimento com maior impacto. Aplique como último passo da rotina de manhã, após o hidratante e antes da maquilhagem. O SPF tem de ser a última camada de skincare. Não o misture com o hidratante. Reaplique de 2 em 2 horas se estiver ao exterior.',
+      sq1: 'Preciso de fazer todos os passos todos os dias?', sa1: 'Não — uma rotina simplificada que cumpre de forma consistente supera sempre uma rotina completa de 6 passos que acaba por não seguir. No mínimo: limpar, hidratar, SPF (manhã). A dupla limpeza é mais importante à noite para remover o protector solar do dia.',
+      sq2: 'Por que ordem aplico o protector solar e a maquilhagem?', sa2: 'Skincare primeiro, SPF em segundo, maquilhagem por último — sempre. Nunca misture o SPF com o hidratante ou base — diluir o protector solar reduz a sua classificação de SPF de forma imprevisível.',
+      sq3: 'Posso usar produtos K-beauty com o meu skincare ocidental actual?', sa3: 'Absolutamente — os produtos K-beauty integram-se perfeitamente em qualquer rotina. Se estiver a usar activos fortes (retinol, AHAs), introduza novos produtos um de cada vez e faça sempre teste de sensibilidade no antebraço durante 24 horas.',
+      faq_eyebrow: 'Perguntas Frequentes', faq_title: 'Tudo o resto que poderá querer saber',
+      fq1: 'Porque é que o meu perfume cheira diferente noutras pessoas?', fa1: 'A química da pele — pH, nível de hidratação, temperatura corporal, alimentação e até medicação — afecta a forma como as moléculas aromáticas interagem e evaporam. Uma fragrância que numa pessoa se sente como baunilha adocicada pode cheirar a pó e seco noutra. É por isso que usar um perfume durante várias horas antes de comprar é tão importante.',
+      fq2: 'Devo guardar o perfume no frigorífico?', fa2: 'Não necessariamente no frigorífico, mas longe da luz, calor e humidade. A casa de banho — apesar de ser o local mais comum — é de facto o pior sítio (o calor e o vapor degradam o perfume ao longo do tempo). Guarde os frascos num local fresco e escuro: uma gaveta do quarto ou um armário.',
+      fq3: 'Como sei se um perfume está estragado?', fa3: 'Sinais de degradação: a cor escureceu significativamente, a abertura cheira a azedo ou vinagre, ou o perfume característico achatou de forma dramática. A maioria dos perfumes guardados correctamente dura 5–10 anos — o álcool funciona como conservante.',
+      fq4: 'O que significa "sillage"?', fa4: 'Sillage (pronunciado "see-yazh") é uma palavra francesa que significa "esteira" — como a esteira que um barco deixa atrás de si. Em perfumaria, refere-se ao rasto de perfume que deixa ao mover-se. As fragrâncias árabes são tipicamente conhecidas pelo seu generoso sillage — considerado sinal de qualidade na tradição do Golfo.',
+      fq5: 'As vossas fragrâncias são autênticas?', fa5: 'Sim — 100%. Abastecemo-nos exclusivamente de distribuidores autorizados pela UE que importam directa e legalmente para o mercado europeu. Cada fragrância tem rastreabilidade completa de lote. Nunca usamos canais de mercado paralelo.',
+      fq6: 'Qual é a diferença entre ingredientes naturais e sintéticos?', fa6: 'Os ingredientes naturais são extraídos directamente de fontes vegetais, animais ou minerais. Os ingredientes sintéticos são moléculas criadas em laboratório. Sintético não significa inferior — a maioria dos perfumes modernos é uma mistura de ambos. A questão fundamental é sempre: cheira bem e funciona?',
+      fq7: 'Como aplicar um óleo de perfume / attar de forma diferente de um spray?', fa7: 'Os óleos de perfume e attars aplicam-se por toque — não por spray. Use a ponta do dedo para aplicar uma pequena quantidade nos pontos de pulso. Use com muita parcimónia — os óleos são altamente concentrados. Aguarde 20–30 minutos para o óleo se desenvolver completamente. Evite esfregar — gera calor que distorce a composição.',
+      deeper_eyebrow: 'Aprofunde o tema', deeper_title: 'Explore mais',
+      ql1_eye: 'Guia completo', ql1_title: 'Notas & Acordes Olfativos', ql1_desc: 'O guia interactivo completo de todas as notas — de bergamota a oud. Com a roda olfativa, grupos por família e um painel explicativo em cada página de produto.',
+      ql2_eye: 'Comprar', ql2_title: 'Ver as Nossas Fragrâncias', ql2_desc: 'Lattafa, Armaf, Arabiyat Prestige, Swiss Arabian e muito mais. Cada produto descrito com notas e acordes completos.',
+      ql3_eye: 'Personalizado', ql3_title: 'Fale Connosco', ql3_desc: 'Não sabe por onde começar? O nosso consultor de fragrâncias está disponível em todas as páginas — ou envie-nos uma mensagem e recomendamos algo com base no que já gosta.',
+      footer_store: 'Loja', footer_notes: 'Guia de Notas', footer_contact: 'Contacto',
+    },
+
+    es: {
+      nav_back: '← Volver a la Tienda',
+      hero_eyebrow: 'YSP Collective',
+      hero_title_html: 'La <em>Guía.</em>',
+      hero_desc: 'Todo lo que necesitas saber sobre perfumería y cuidado de la piel — desde la diferencia entre EDP y EDT hasta dónde aplicar, cómo superponer fragancias y qué hace que el perfume árabe sea extraordinario.',
+      pill_conc: 'EDP vs EDT vs Parfum', pill_wear: 'Cómo Usar el Perfume', pill_arabian: 'Árabe vs Occidental', pill_layer: 'Combinación de Fragancias', pill_skin: 'Rutina de Skincare', pill_faq: 'Preguntas Frecuentes', pill_notes: 'Notas Olfativas →',
+      conc_eyebrow: 'Concentración del Perfume', conc_title: 'EDP, EDT, Parfum — ¿cuál es la diferencia?',
+      conc_intro: 'El principal factor que determina cuánto dura una fragancia y su proyección es la concentración — el porcentaje de aceite aromático en relación con el alcohol y el agua. Mayor concentración significa más duración, más proyección y, normalmente, un precio más elevado.',
+      parfum_abbr: 'También: Extrait de Parfum · Perfume Puro', oil_conc: 'Concentración de aceite', longevity: 'Duración', projection: 'Proyección',
+      very_strong: 'Muy Fuerte', strong: 'Fuerte', moderate: 'Moderada', light: 'Ligera', very_light: 'Muy Ligera', intimate: 'Íntima',
+      parfum_desc: 'La forma más pura y concentrada de perfume. El Parfum contiene el mayor porcentaje de compuestos aromáticos — produciendo una longevidad extraordinaria y un carácter rico y complejo. Frecuentemente más aceitoso, con mínimo de alcohol. Una sola aplicación puede durar todo el día. La elección de los coleccionistas más exigentes.',
+      edp_desc: 'El punto ideal para la mayoría de los amantes de la perfumería y el formato más común en nuestra selección. El EDP ofrece excelente duración, fuerte proyección y plena expresión de la composición — sin el coste y la intensidad de un Parfum puro. Versátil para uso diurno y nocturno. Nuestra recomendación como punto de partida.',
+      edt_desc: 'Más ligero, fresco y casual. El EDT es ideal para uso diurno, clima cálido y entornos de trabajo donde se desea presencia sin saturar el espacio. El mayor contenido de alcohol ofrece una apertura más brillante pero menor duración en la piel.',
+      edc_desc: 'La concentración más ligera — tradicionalmente una mezcla de cítricos y hierbas aplicada en mayor cantidad y con más frecuencia. La mayoría prefiere el EDT o EDP como fragancia de firma. Ideal como splash corporal o para superposición.',
+      mist_name: 'Bruma Corporal / Splash', mist_abbr: 'Concentración del 1–3%', mist_desc: 'Un agua perfumada muy diluida para aplicación en todo el cuerpo. Duración muy reducida — es para frescura y superposición, no para rendimiento. Se usa frecuentemente junto con loción corporal.',
+      oil_name: 'Aceite de Perfume / Attar', oil_abbr: 'Attar · Aceite Puro · Roll-On', oil_desc: 'Fragancia sin alcohol en base de aceite puro o aceite transportador. Los attars árabes tradicionales son aceites de perfume — longevidad excepcional y proyección íntima que se desarrolla lenta y bellamente. Ideal para piel sensible y para quienes encuentran demasiado intensas las fragancias con alcohol.',
+      ysp_note: 'Nota YSP', conc_callout: 'Casi todas las fragancias de nuestra selección son Eau de Parfum (EDP) — elegimos esta concentración porque ofrece el mejor equilibrio entre rendimiento y versatilidad. Muchas de nuestras fragancias árabes, por su alta concentración de aceites, superan significativamente lo que la etiqueta EDP podría sugerir — duraciones de 10 a 14 horas son habituales.',
+      conc_table_title: 'Concentraciones de un vistazo',
+      th_type: 'Tipo', th_oil: '% Aceite', th_long: 'Duración', th_proj: 'Proyección', th_best: 'Ideal Para',
+      t_parfum_long: '12–24 horas', t_very_strong: 'Muy fuerte', t_parfum_best: 'Ocasiones especiales, coleccionistas',
+      t_edp_long: '6–12 horas', t_strong: 'Fuerte', t_edp_best: 'La mayoría de ocasiones — nuestra recomendación',
+      t_edt_long: '3–6 horas', t_moderate: 'Moderada', t_edt_best: 'Día a día, oficina, clima cálido',
+      t_edc_long: '1–3 horas', t_light: 'Ligera', t_edc_best: 'Frescura rápida, superposición',
+      t_mist_long: 'Menos de 1 hora', t_very_light: 'Muy ligera', t_mist_best: 'Post-ducha, cuerpo completo',
+      t_oil_row: 'Aceite de Perfume / Attar', t_oil_pct: 'Hasta el 100%', t_oil_long: '12–24+ horas', t_oil_best: 'Uso íntimo, sensibilidad al alcohol',
+      wear_eyebrow: 'Aplicación', wear_title: 'Dónde — y cómo — usar el perfume',
+      wear_intro: 'La forma en que aplicas el perfume tiene un enorme impacto en su rendimiento y evolución. El perfume necesita calor para desarrollarse — aplícalo en los puntos de pulso, donde los vasos sanguíneos están cerca de la superficie de la piel.',
+      sp1_title: 'Muñecas — Punto de pulso principal', sp1_desc: 'El punto de aplicación clásico. La arteria radial está cerca de la superficie, creando calor que ayuda a la fragancia a florecer y proyectarse. Aplica 1–2 pulverizaciones y deja que se desarrolle naturalmente — evita frotar las muñecas, pues destruye las moléculas aromáticas.',
+      sp2_title: 'Cuello / Base de la garganta', sp2_desc: 'La zona más cálida del cuerpo y el punto de aplicación con mayor proyección. El perfume aplicado aquí sube naturalmente con el calor corporal, creando una estela olfativa al moverte. Ideal para la noche.',
+      sp3_title: 'Pecho / Esternón', sp3_desc: 'Un punto potente para la proyección — el calor del cuerpo transporta el perfume hacia afuera y hacia arriba. Especialmente eficaz para fragancias orientales más ricas y de oud. Aquí es donde las fragancias árabes destacan.',
+      sp4_title: 'Detrás de las orejas', sp4_desc: 'El calor detrás de la oreja crea una nube de perfume íntima — perfecta para las noches. El perfume aplicado aquí tiende a durar especialmente bien. También el lugar ideal para aceite de perfume o attar.',
+      sp5_title: 'Interior de los codos', sp5_desc: 'Infrautilizado pero efectivo — un punto de pulso cálido y resguardado. Ideal en verano cuando las muñecas se humedecen y alteran la fragancia.',
+      sp6_title: 'Cabello', sp6_desc: 'El cabello retiene el perfume muy bien y crea una estela al moverte. Pulveriza en el aire y pasa a través de la nube, o aplica en un cepillo. Los aceites de perfume son más adecuados para el cabello que los sprays con alcohol.',
+      rule_thumb: 'La regla de oro', spray_callout: 'Para EDP, 3–5 pulverizaciones suelen ser suficientes. Más no es mejor. Para aceite de perfume / attar, 1–2 toques por punto de pulso. Los aceites tardan más en proyectarse pero duran más — resiste la tentación de aplicar más en la primera hora.',
+      arab_eyebrow: 'Entender la Perfumería Árabe', arab_title: 'Perfume árabe vs fragancia occidental',
+      arab_intro: 'Las tradiciones árabe y occidental de perfumería son fundamentalmente diferentes en filosofía, ingredientes y rendimiento. Comprender estas diferencias ayuda a apreciar por qué fragancias como Lattafa, Armaf y Swiss Arabian se comportan así — y por qué representan un valor extraordinario.',
+      arab_col_head: 'Perfumería Árabe', west_col_head: 'Perfumería Occidental',
+      arab_1: 'Construida sobre oud, ámbar, almizcle, azafrán y acordes de especias ricas', arab_2: 'Concentración de aceite típicamente del 20–30% — muy por encima del EDP occidental', arab_3: 'Una duración de 10–16 horas es estándar, no excepcional', arab_4: 'Diseñada para proyectarse — el sillage se considera señal de calidad', arab_5: 'Frecuentemente unisex o de carácter fluido en cuanto al género', arab_6: 'El oud, el bakhoor y la rosa son la santísima trinidad de la perfumería árabe', arab_7: 'El precio refleja los materiales, no el marketing — valor excepcional', arab_8: 'El perfume se desarrolla lentamente — júzgalo a las 2–3 horas, no de inmediato',
+      west_1: 'Construida sobre florales, notas frescas, maderas y almizcles limpios', west_2: 'EDP típicamente con concentración de aceite del 15–20%', west_3: 'Duración de 4–8 horas típica para EDP', west_4: 'Proyección contenida preferida — "cerca de la piel" se valora', west_5: 'Marketing y posicionamiento fuertemente divididos por género', west_6: 'Bergamota, jazmín, vetiver y cedro son la columna vertebral clásica', west_7: 'El precio incluye una prima significativa de marketing, packaging y marca', west_8: 'Las notas de salida son importantes — diseñadas para impresionar de inmediato',
+      value_q: 'La cuestión del valor', value_p1: 'Un frasco de Creed Aventus cuesta entre €300 y €400. Un frasco de Armaf Club de Nuit Intense — ampliamente reconocida como la alternativa más asequible — cuesta menos de €30. ¿La diferencia de rendimiento? La mayoría de quienes han usado ambas tendría dificultades para calificarla de significativa.', value_p2: 'Por eso las fragancias árabes han explotado en popularidad entre los entusiastas — no como "alternativas baratas" sino como composiciones genuinamente excelentes que resultan estar a precios justos.',
+      compare_title: 'Comparaciones populares', th_arabian: 'Árabe / Asequible', th_ysp_price: 'Precio YSP', th_western: 'Equivalente Occidental', th_west_price: 'Precio Occidental', th_character: 'Carácter',
+      comp1: 'Abedul ahumado, piña, almizcle', comp2: 'Café, coñac, vainilla, especia cálida', comp3: 'Floral afrutado, vainilla, almizcle suave', comp4: 'Floral tropical, amaderado, cremoso',
+      layer_eyebrow: 'Técnica Avanzada', layer_title: 'Combinación de fragancias', layer_intro: 'La superposición — usar dos o más fragancias juntas — es una práctica árabe tradicional y uno de los aspectos más creativos de la perfumería. Bien hecha, crea un perfume completamente personal.',
+      l1_eyebrow: 'Base', l1_title: 'Aplica primero la base', l1_desc: 'Empieza con tu fragancia más rica e intensa — typically tu base de oud, ámbar u oriental. Aplica en los puntos de pulso y deja reposar 2–3 minutos antes de añadir nada más.',
+      l2_eyebrow: 'Complemento', l2_title: 'Añade la capa superior', l2_desc: 'Aplica tu fragancia más ligera y fresca por encima — un acorde floral, cítrico o fresco que eleva la base. Empieza con una pulverización y evalúa antes de añadir más.',
+      l3_eyebrow: 'Paciencia', l3_title: 'Deja que se desarrolle', l3_desc: 'Las fragancias superpuestas tardan 20–30 minutos en fusionarse completamente en la piel. Reserva tu juicio final para al menos media hora después de la aplicación.',
+      lq1: '¿Qué fragancias combinan bien?', la1: 'La regla más segura: las fragancias de la misma familia combinan muy bien. Combinaciones clásicas: oud + rosa (el clásico árabe), vainilla + madera, cítrico sobre ámbar, lavanda + almizcle. Evita combinar dos caracteres dominantes que compitan.',
+      lq2: '¿Puedo combinar fragancias YSP?', la2: 'Sí, y lo fomentamos. Lattafa Yara + Lattafa Khamrah crea una fragancia nocturna compleja y distintiva. Armaf Club de Nuit + cualquier oud se beneficia enormemente de una base de oud aplicada primero.',
+      lq3: '¿Debo aplicar en zonas distintas o en los mismos puntos?', la3: 'Ambas funcionan. Mismos puntos de pulso: las fragancias se fusionan en una composición unificada. Zonas distintas: muñecas y cuello, manteniéndolas más diferenciadas. Para principiantes, empieza en los mismos puntos.',
+      skin_eyebrow: 'Cuidado de la Piel', skin_title: 'La rutina K-beauty — el orden importa', skin_intro: 'La filosofía coreana de cuidado de la piel se basa en aplicar los productos de más ligero a más pesado, permitiendo que cada uno se absorba antes de añadir el siguiente. El orden de aplicación afecta directamente a la eficacia.',
+      am_pm: 'Mañana + Noche', am_only: 'Solo por la mañana',
+      s1_title: 'Limpiador en Aceite — Primera limpieza', s1_desc: 'Un limpiador a base de aceite disuelve las impurezas liposolubles: protector solar, maquillaje, sebo y contaminación. Masajea en la piel seca, añade un poco de agua para emulsionar y aclara. No es opcional si usas SPF o maquillaje.',
+      s2_title: 'Limpiador al Agua — Segunda limpieza (Noche)', s2_desc: 'Tras la limpieza en aceite, un limpiador suave al agua elimina los residuos restantes. Por la mañana, un simple aclarado con agua suele ser suficiente.',
+      s3_title: 'Tónico / Esencia — Preparación hidratante', s3_desc: 'Aplicado en la piel ligeramente húmeda, un tónico o esencia hidratante inicia el proceso de capas de hidratación y prepara la piel para absorber mejor los productos siguientes. Aplica dando palmaditas suaves — no frotar.',
+      s4_title: 'Sérum — Ingredientes activos', s4_desc: 'Los sérums aportan ingredientes activos concentrados — ácido hialurónico para hidratación, niacinamida para los poros, PDRN para regeneración. Aplica en la piel húmeda con palmaditas. Si usas varios sérums, aplica del más líquido al más espeso.',
+      s5_title: 'Hidratante — Sella y protege', s5_desc: 'Un hidratante sella la hidratación y los activos aplicados en los pasos anteriores. Aplica mientras la piel aún está ligeramente húmeda. Por la mañana elige una textura más ligera; por la noche puede ser más rico.',
+      s6_title: 'SPF — Innegociable', s6_desc: 'El protector solar es el producto antiedad con mayor impacto. Aplica como último paso de tu rutina de mañana, después del hidratante y antes del maquillaje. El SPF debe ser la última capa de skincare. No lo mezcles con el hidratante. Reaplica cada 2 horas si estás al aire libre.',
+      sq1: '¿Necesito hacer todos los pasos todos los días?', sa1: 'No — una rutina simplificada que realmente haces de forma consistente supera siempre a una rutina de 6 pasos que acabas saltándote. Como mínimo: limpiar, hidratar, SPF (mañana). La doble limpieza es más importante por la noche para eliminar el protector solar del día.',
+      sq2: '¿En qué orden aplico el protector solar y el maquillaje?', sa2: 'Skincare primero, SPF segundo, maquillaje al final — siempre. Nunca mezcles el SPF con el hidratante o la base — diluir el protector solar reduce su factor de protección de forma impredecible.',
+      sq3: '¿Puedo usar productos K-beauty con mi skincare occidental actual?', sa3: 'Por supuesto — los productos K-beauty se integran perfectamente en cualquier rutina. Si estás usando activos fuertes (retinol, AHAs), introduce nuevos productos de uno en uno y haz siempre una prueba de tolerancia en el antebrazo durante 24 horas.',
+      faq_eyebrow: 'Preguntas Frecuentes', faq_title: 'Todo lo demás que podrías querer saber',
+      fq1: '¿Por qué mi perfume huele diferente en otra persona?', fa1: 'La química de la piel — pH, nivel de hidratación, temperatura corporal, alimentación e incluso medicación — afecta a cómo las moléculas aromáticas interactúan y se evaporan. Una fragancia que en una persona huele a vainilla dulce puede oler a polvo y seco en otra. Por eso es importante usar un perfume durante varias horas antes de comprarlo.',
+      fq2: '¿Debo guardar el perfume en la nevera?', fa2: 'No necesariamente en la nevera, pero sí lejos de la luz, el calor y la humedad. El baño — a pesar de ser el lugar más habitual — es en realidad el peor sitio (el vapor degrada el perfume con el tiempo). Guarda los frascos en un lugar fresco y oscuro: un cajón del dormitorio o un armario.',
+      fq3: '¿Cómo sé si un perfume se ha estropeado?', fa3: 'Señales de degradación: el color se ha oscurecido significativamente, la apertura huele a agrio o vinagre, o la fragancia característica se ha aplanado drásticamente. La mayoría de los perfumes correctamente conservados duran 5–10 años.',
+      fq4: '¿Qué significa "sillage"?', fa4: 'Sillage (pronunciado "see-yazh") es una palabra francesa que significa "estela" — como la estela que deja un barco. En perfumería, se refiere al rastro de aroma que dejas al moverte. Las fragancias árabes son conocidas por su generoso sillage — considerado señal de calidad en la tradición del Golfo.',
+      fq5: '¿Son auténticas vuestras fragancias?', fa5: 'Sí — al 100%. Nos abastecemos exclusivamente de distribuidores autorizados por la UE que importan directa y legalmente al mercado europeo. Cada fragancia tiene trazabilidad completa de lote. Nunca usamos canales de mercado paralelo.',
+      fq6: '¿Cuál es la diferencia entre ingredientes naturales y sintéticos?', fa6: 'Los ingredientes naturales se extraen directamente de fuentes vegetales, animales o minerales. Los sintéticos son moléculas creadas en laboratorio. Sintético no significa inferior — la mayoría de los perfumes modernos son una mezcla de ambos. La pregunta fundamental es siempre: ¿huele bien y funciona?',
+      fq7: '¿Cómo se aplica un aceite de perfume / attar de forma diferente a un spray?', fa7: 'Los aceites de perfume y attars se aplican mediante toque — no en spray. Usa la yema del dedo para aplicar una pequeña cantidad en los puntos de pulso. Úsalo con mucha moderación — los aceites están muy concentrados. Espera 20–30 minutos para que el aceite se desarrolle completamente. Evita frotar — genera calor que distorsiona la composición.',
+      deeper_eyebrow: 'Profundiza', deeper_title: 'Explora más',
+      ql1_eye: 'Guía completa', ql1_title: 'Notas y Acordes Olfativos', ql1_desc: 'La guía interactiva completa de todas las notas — de bergamota a oud. Con la rueda olfativa, grupos por familia y un panel explicativo en cada página de producto.',
+      ql2_eye: 'Comprar', ql2_title: 'Ver Nuestras Fragancias', ql2_desc: 'Lattafa, Armaf, Arabiyat Prestige, Swiss Arabian y mucho más. Cada producto descrito con notas y acordes completos.',
+      ql3_eye: 'Personalizado', ql3_title: 'Pregúntanos Directamente', ql3_desc: '¿No sabes por dónde empezar? Nuestro asesor de fragancias está disponible en todas las páginas — o envíanos un mensaje y te recomendaremos algo basándonos en lo que ya te gusta.',
+      footer_store: 'Tienda', footer_notes: 'Guía de Notas', footer_contact: 'Contacto',
+    }
+  };
+
+  // ── LANG ENGINE ───────────────────────────────────────────────────────────
+  let currentLang = 'en';
+
+  function applyLang(lang) {
+    currentLang = lang;
+    const t = T[lang] || T.en;
+
+    // Set html lang attribute
+    document.getElementById('html-root').lang = lang;
+
+    // Update meta title and description
+    document.querySelectorAll('[data-i18n-attr]').forEach(el => {
+      const attr = el.getAttribute('data-i18n-attr');
+      const val = el.getAttribute('data-' + lang) || el.getAttribute('data-en');
+      if (val) el.setAttribute(attr, val);
     });
 
-    // Scroll reveal
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('visible'), i * 70);
-          obs.unobserve(e.target);
+    // Update text/html nodes
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) {
+        if (key.endsWith('_html')) {
+          el.innerHTML = t[key];
+        } else {
+          el.textContent = t[key];
         }
-      });
-    }, { threshold: 0.07 });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+      }
+    });
+
+    // Update lang switcher buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+
+    // Persist
+    try { localStorage.setItem('ysp_lang', lang); } catch(e) {}
+  }
+
+  function setLang(lang) { applyLang(lang); }
+
+  // Init — read from ysp_lang (same key as the main site)
+  document.addEventListener('DOMContentLoaded', () => {
+    let lang = 'en';
+    try { lang = localStorage.getItem('ysp_lang') || 'en'; } catch(e) {}
+    if (!T[lang]) lang = 'en';
+    applyLang(lang);
+  });
+
+  // ── ACCORDION ─────────────────────────────────────────────────────────────
+  document.querySelectorAll('.acc-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.acc-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // ── SCROLL REVEAL ─────────────────────────────────────────────────────────
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 70);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   </script>
 </body>
 </html>
