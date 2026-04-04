@@ -166,17 +166,17 @@ permalink: "products/{{ product.slug }}.html"
   .nd-backdrop.nd-open { opacity: 1; pointer-events: all; }
   .nd-drawer {
     position: fixed; top: 0; right: 0; bottom: 0; width: min(440px, 94vw);
-    background: #faf8f5; z-index: 9001;
+    background: #ffffff; z-index: 9001;
     transform: translateX(100%);
     transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
     display: flex; flex-direction: column; overflow: hidden;
     box-shadow: -20px 0 60px rgba(0,0,0,0.12);
   }
   .nd-drawer.nd-open { transform: translateX(0); }
-  .nd-header { padding: 1.4rem 1.8rem; border-bottom: 1px solid #e6dfd4; display: flex; justify-content: space-between; align-items: flex-start; flex-shrink: 0; }
+  .nd-header { padding: 1.4rem 1.8rem; border-bottom: 1px solid var(--sand); display: flex; justify-content: space-between; align-items: flex-start; flex-shrink: 0; }
   .nd-eyebrow { font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase; color: #9c7b56; margin-bottom: 0.2rem; }
   .nd-name { font-family: var(--serif); font-size: 1.55rem; font-weight: 300; color: #1a1916; line-height: 1.2; }
-  .nd-close { background: none; border: 1px solid #e6dfd4; width: 34px; height: 34px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: #8a847a; transition: all 0.25s; flex-shrink: 0; margin-left: 1rem; }
+  .nd-close { background: none; border: 1px solid var(--sand); width: 34px; height: 34px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: #8a847a; transition: all 0.25s; flex-shrink: 0; margin-left: 1rem; }
   .nd-close:hover { border-color: #9c7b56; color: #9c7b56; }
   .nd-body { flex: 1; overflow-y: auto; overscroll-behavior: contain; }
   .nd-image { display: flex; align-items: center; justify-content: center; height: 180px; }
@@ -185,14 +185,14 @@ permalink: "products/{{ product.slug }}.html"
   .nd-desc { font-size: 0.875rem; line-height: 1.85; color: #8a847a; margin-bottom: 1.4rem; }
   .nd-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: #b5afa5; margin-bottom: 0.55rem; }
   .nd-pairings { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.4rem; }
-  .nd-pair-tag { padding: 0.28rem 0.65rem; border: 1px solid #e6dfd4; font-size: 0.7rem; color: #8a847a; }
+  .nd-pair-tag { padding: 0.28rem 0.65rem; border: 1px solid var(--sand); font-size: 0.7rem; color: #8a847a; }
   .nd-intensity-row { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.6rem; }
   .nd-intensity-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: #b5afa5; white-space: nowrap; }
-  .nd-intensity-track { flex: 1; height: 3px; background: #e6dfd4; position: relative; border-radius: 2px; }
+  .nd-intensity-track { flex: 1; height: 3px; background: var(--sand); position: relative; border-radius: 2px; }
   .nd-intensity-fill { position: absolute; left: 0; top: 0; bottom: 0; background: #9c7b56; transition: width 0.6s 0.15s cubic-bezier(0.4,0,0.2,1); border-radius: 2px; }
   .nd-intensity-value { font-size: 0.7rem; color: #9c7b56; white-space: nowrap; }
   .nd-footer { padding: 0 1.8rem 1.8rem; flex-shrink: 0; }
-  .nd-cta { display: block; text-align: center; padding: 0.8rem; background: #1a1916; color: #faf8f5; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: background 0.25s; }
+  .nd-cta { display: block; text-align: center; padding: 0.8rem; background: #1a1916; color: #ffffff; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: background 0.25s; }
   .nd-cta:hover { background: #9c7b56; }
 
   @media (max-width: 900px) {
