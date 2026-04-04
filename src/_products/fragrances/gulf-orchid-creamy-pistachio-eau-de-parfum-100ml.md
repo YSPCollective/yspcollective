@@ -1,27 +1,13 @@
 ---
-name: Gulf Orchid Creamy Pistachio Eau de Parfum 100ml
-slug: gulf-orchid-creamy-pistachio
-badge: Limited
 price: "33.50"
 brand: Gulf Orchid
 gender: Unisex
 size: 100ml
-concentration: Eau de Parfum (EDP)
-fragrance_family: Gourmand Oriental
-top_notes: Bergamot, Pistachio, Apple
+badge: Limited
+stock_status: in_stock
 heart_notes: Neroli, Cedarwood, Rose
-base_notes: Vanilla, Milk, Musk
-accords:
-  - citrus
-  - woody
-  - vanilla
-  - powdery
-  - green
-  - fresh spicy
-  - musky
-  - lactonic
-  - fresh
-  - fruity
+accords_text: citrus, woody, vanilla, powdery, green, fresh spicy, musky,
+  lactonic, fresh, fruity
 longevity: 6-8 hours
 projection: Moderate
 origin: UAE
@@ -58,7 +44,24 @@ ysp_thoughts: >-
 
 
   We picked it because it stands out in a lineup without being weird about it. If you're the kind of person who's bored with smelling like everyone else, Creamy Pistachio is a quiet statement that does the job perfectly.
-stock_status: in_stock
-featured: false
+name: Gulf Orchid Creamy Pistachio Eau de Parfum 100ml
+slug: gulf-orchid-creamy-pistachio
+concentration: Eau de Parfum (EDP)
+featured: true
 published: true
+exclude_from_feed: false
+accords:
+  - citrus
+  - woody
+  - vanilla
+  - powdery
+  - green
+  - fresh spicy
+  - musky
+  - lactonic
+  - fresh
+  - fruity
+fragrance_family: Gourmand Oriental
+top_notes: Bergamot, Pistachio, Apple
+base_notes: Vanilla, Milk, Musk
 ---

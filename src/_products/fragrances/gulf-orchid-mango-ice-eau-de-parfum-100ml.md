@@ -1,27 +1,14 @@
 ---
-name: Gulf Orchid Mango Ice Eau de Parfum 100ml
-slug: gulf-orchid-mango-ice
-badge: New
 price: "39.99"
 brand: Gulf Orchid
 gender: Unisex
 size: 100ml
-concentration: Eau de Parfum (EDP)
-fragrance_family: Fruity Floral
+badge: New
+stock_status: in_stock
 top_notes: Mango, Lemon, Ginger, Rhubarb
 heart_notes: White Flowers, Amber, Licorice
-base_notes: Musk, Vanilla, Caramel, Chestnut
-accords:
-  - fruity
-  - tropical
-  - sweet
-  - citrus
-  - fresh spicy
-  - musky
-  - fresh
-  - aromatic
-  - terpenic
-  - white floral
+accords_text: fruity, tropical, sweet, citrus, fresh spicy, musky, fresh,
+  aromatic, terpenic, white floral
 longevity: 6-8 hours
 projection: "Moderate - Strong "
 best_for: Daytime wear
@@ -51,7 +38,23 @@ ysp_thoughts: >-
 
 
   This does exactly that. We were drawn to it because it fills a gap in an Arabian fragrance lineup that can lean heavy and resinous — this is the palate cleanser, the warm weather option, the one that surprises people who assume Arabian perfumery is all oud and amber. It earns its place on the shelf by being genuinely different.
-stock_status: in_stock
-featured: false
+name: Gulf Orchid Mango Ice Eau de Parfum 100ml
+slug: gulf-orchid-mango-ice
+concentration: Eau de Parfum (EDP)
+featured: true
 published: true
+exclude_from_feed: false
+accords:
+  - fruity
+  - tropical
+  - sweet
+  - citrus
+  - fresh spicy
+  - musky
+  - fresh
+  - aromatic
+  - terpenic
+  - white floral
+fragrance_family: Fruity Floral
+base_notes: Musk, Vanilla, Caramel, Chestnut
 ---
