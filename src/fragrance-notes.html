@@ -1,873 +1,322 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-root">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fragrance Notes & Accords Explained | YSP Collective</title>
-  <meta name="description" content="Discover the building blocks of fragrance. Learn what each note smells like — from citrus and floral to woody, oriental and gourmand. Your guide to understanding perfume accords and scent families.">
-  <meta name="keywords" content="fragrance notes explained, what are fragrance accords, citrus notes perfume, woody notes fragrance, oriental scents, K-beauty fragrance guide, Arabian perfume notes, oud, amber, musk explained">
+  <title id="page-title">Fragrance Notes &amp; Accords Explained | YSP Collective</title>
+  <meta name="description" id="page-desc" content="Discover the building blocks of fragrance. Learn what each note smells like — from citrus and floral to woody, oriental and gourmand. Your guide to understanding perfume accords and scent families.">
   <link rel="canonical" href="https://yspcollective.com/fragrance-notes">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --black: #1a1916;
-      --white: #faf8f5;
-      --cream: #f3efe8;
-      --sand: #e6dfd4;
-      --grey: #8a847a;
-      --grey-light: #b5afa5;
-      --accent: #9c7b56;
-      --accent-light: #c8a87a;
-      --serif: 'Playfair Display', Georgia, serif;
-      --sans: 'Outfit', -apple-system, sans-serif;
+      --black: #1a1916; --white: #faf8f5; --cream: #f3efe8; --sand: #e6dfd4;
+      --grey: #8a847a; --grey-light: #b5afa5; --accent: #9c7b56; --accent-light: #c8a87a;
+      --serif: 'Playfair Display', Georgia, serif; --sans: 'Outfit', -apple-system, sans-serif;
       --nav-height: 72px;
-
-      /* Family colours */
-      --citrus: #e8a84a;
-      --floral: #c97a8a;
-      --woody: #7a5c3a;
-      --oriental: #6a4a7a;
-      --fresh: #4a8a7a;
-      --gourmand: #9a5a4a;
+      --citrus:#e8a84a; --floral:#c97a8a; --woody:#7a5c3a; --oriental:#6a4a7a; --fresh:#4a8a7a; --gourmand:#9a5a4a;
     }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--white);
-      color: var(--black);
-      font-family: var(--sans);
-      font-weight: 300;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ─── NAV ─── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      height: var(--nav-height);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 3.5rem;
-      background: rgba(250, 248, 245, 0.95);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-
-    .nav-logo {
-      text-decoration: none;
-      display: flex;
-      align-items: baseline;
-      gap: 0.5rem;
-    }
-
-    .nav-logo-yspc {
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      font-weight: 300;
-      color: var(--black);
-      letter-spacing: 0.04em;
-    }
-
-    .nav-logo-sub {
-      font-size: 0.6rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--grey);
-    }
-
-    .nav-back {
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--grey);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: color 0.25s;
-    }
-
-    .nav-back:hover { color: var(--accent); }
-
-    /* ─── HERO ─── */
-    #hero {
-      padding-top: calc(var(--nav-height) + 5rem);
-      padding-bottom: 4rem;
-      text-align: center;
-      background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-
-    .hero-eyebrow {
-      font-size: 0.65rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.2rem;
-    }
-
-    .hero-title {
-      font-family: var(--serif);
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      font-weight: 300;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.01em;
-    }
-
-    .hero-title em {
-      font-style: italic;
-      color: var(--accent);
-    }
-
-    .hero-desc {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--grey);
-      max-width: 560px;
-      margin: 0 auto 2.5rem;
-    }
-
-    .hero-families {
-      display: flex;
-      justify-content: center;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-    }
-
-    .family-pill {
-      padding: 0.4rem 1rem;
-      border-radius: 100px;
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-weight: 400;
-      cursor: pointer;
-      transition: all 0.25s;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .pill-citrus    { background: rgba(232,168,74,0.12); color: var(--citrus); border: 1px solid rgba(232,168,74,0.3); }
-    .pill-floral    { background: rgba(201,122,138,0.1); color: var(--floral); border: 1px solid rgba(201,122,138,0.25); }
-    .pill-woody     { background: rgba(122,92,58,0.1);   color: var(--woody);  border: 1px solid rgba(122,92,58,0.25); }
-    .pill-oriental  { background: rgba(106,74,122,0.1);  color: var(--oriental); border: 1px solid rgba(106,74,122,0.25); }
-    .pill-fresh     { background: rgba(74,138,122,0.1);  color: var(--fresh);  border: 1px solid rgba(74,138,122,0.25); }
-    .pill-gourmand  { background: rgba(154,90,74,0.1);   color: var(--gourmand); border: 1px solid rgba(154,90,74,0.25); }
-
-    .family-pill:hover { transform: translateY(-2px); opacity: 0.8; }
-
-    /* ─── FRAGRANCE WHEEL ─── */
-    #wheel {
-      padding: 6rem 3.5rem;
-      background: var(--black);
-      text-align: center;
-    }
-
-    #wheel .section-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--accent-light);
-      margin-bottom: 1rem;
-    }
-
-    #wheel .section-title {
-      font-family: var(--serif);
-      font-size: clamp(1.8rem, 3vw, 2.8rem);
-      font-weight: 300;
-      color: var(--white);
-      margin-bottom: 1rem;
-    }
-
-    #wheel .section-desc {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.45);
-      max-width: 480px;
-      margin: 0 auto 3rem;
-      line-height: 1.75;
-    }
-
-    .wheel-container {
-      max-width: 640px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .wheel-svg {
-      width: 100%;
-      height: auto;
-    }
-
-    .wheel-segment {
-      cursor: pointer;
-      transition: opacity 0.25s;
-    }
-
-    .wheel-segment:hover { opacity: 0.85; }
-
-    .wheel-center-text {
-      font-family: var(--serif);
-      fill: var(--white);
-    }
-
-    /* ─── NOTES GRID ─── */
-    .family-section {
-      padding: 5rem 3.5rem;
-      scroll-margin-top: var(--nav-height);
-    }
-
-    .family-section:nth-child(even) {
-      background: var(--cream);
-    }
-
-    .family-header {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .family-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .family-title {
-      font-family: var(--serif);
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 300;
-    }
-
-    .family-desc {
-      font-size: 0.92rem;
-      color: var(--grey);
-      line-height: 1.8;
-      max-width: 680px;
-      margin-bottom: 3rem;
-      padding-left: 22px;
-    }
-
-    .notes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .note-card {
-      border: 1px solid var(--sand);
-      background: var(--white);
-      padding: 0;
-      overflow: hidden;
-      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
-    }
-
-    .note-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(156,123,86,0.12);
-    }
-
-    .note-card-image {
-      height: 140px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .note-card-svg {
-      width: 80px;
-      height: 80px;
-      opacity: 0.85;
-      transition: transform 0.4s;
-    }
-
-    .note-card:hover .note-card-svg {
-      transform: scale(1.08) rotate(3deg);
-    }
-
-    .note-card-body {
-      padding: 1.4rem 1.5rem;
-      border-top: 1px solid var(--sand);
-    }
-
-    .note-card-name {
-      font-family: var(--serif);
-      font-size: 1.15rem;
-      font-weight: 400;
-      margin-bottom: 0.5rem;
-    }
-
-    .note-card-desc {
-      font-size: 0.8rem;
-      line-height: 1.65;
-      color: var(--grey);
-    }
-
-    .note-card-strength {
-      display: flex;
-      gap: 3px;
-      margin-top: 0.8rem;
-    }
-
-    .strength-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--sand);
-    }
-
-    .strength-dot.filled { background: var(--accent); }
-
-    /* ─── SEO INTRO SECTION ─── */
-    #seo-intro {
-      padding: 5rem 3.5rem;
-      background: var(--cream);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .seo-title {
-      font-family: var(--serif);
-      font-size: clamp(1.8rem, 2.5vw, 2.4rem);
-      font-weight: 300;
-      line-height: 1.3;
-      margin-bottom: 1.5rem;
-    }
-
-    .seo-body p {
-      font-size: 0.92rem;
-      line-height: 1.85;
-      color: var(--grey);
-      margin-bottom: 1rem;
-    }
-
-    .seo-body strong { color: var(--black); font-weight: 400; }
-
-    .seo-accordion-item {
-      border-top: 1px solid var(--sand);
-      padding: 1.2rem 0;
-    }
-
-    .seo-accordion-item:last-child { border-bottom: 1px solid var(--sand); }
-
-    .seo-accordion-q {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      font-size: 0.88rem;
-      font-weight: 400;
-      user-select: none;
-      transition: color 0.25s;
-    }
-
-    .seo-accordion-q:hover { color: var(--accent); }
-
-    .seo-accordion-icon {
-      color: var(--accent);
-      font-size: 1.1rem;
-      transition: transform 0.3s;
-    }
-
-    .seo-accordion-a {
-      font-size: 0.85rem;
-      color: var(--grey);
-      line-height: 1.8;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s;
-    }
-
-    .seo-accordion-item.open .seo-accordion-a {
-      max-height: 300px;
-      padding-top: 0.8rem;
-    }
-
-    .seo-accordion-item.open .seo-accordion-icon { transform: rotate(45deg); }
-
-    /* ─── FOOTER ─── */
-    footer {
-      padding: 3rem 3.5rem;
-      background: var(--black);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-copy {
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.3);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .footer-links a {
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.35);
-      text-decoration: none;
-      letter-spacing: 0.08em;
-      transition: color 0.25s;
-    }
-
-    .footer-links a:hover { color: var(--accent-light); }
-
-    /* ─── DRAWER (shared with product pages) ─── */
-    .note-drawer-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(26,25,22,0.5);
-      z-index: 2000;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.35s;
-    }
-
-    .note-drawer-backdrop.open {
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    .note-drawer {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: min(440px, 92vw);
-      background: var(--white);
-      z-index: 2001;
-      transform: translateX(100%);
-      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    .note-drawer.open {
-      transform: translateX(0);
-    }
-
-    .drawer-header {
-      padding: 1.5rem 2rem;
-      border-bottom: 1px solid var(--sand);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-shrink: 0;
-    }
-
-    .drawer-eyebrow {
-      font-size: 0.62rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.25rem;
-    }
-
-    .drawer-title {
-      font-family: var(--serif);
-      font-size: 1.6rem;
-      font-weight: 300;
-    }
-
-    .drawer-close {
-      background: none;
-      border: 1px solid var(--sand);
-      width: 36px;
-      height: 36px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      color: var(--grey);
-      transition: all 0.25s;
-      flex-shrink: 0;
-    }
-
-    .drawer-close:hover { border-color: var(--accent); color: var(--accent); }
-
-    .drawer-body {
-      flex: 1;
-      overflow-y: auto;
-      padding: 0;
-    }
-
-    .drawer-image {
-      height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .drawer-image svg {
-      width: 110px;
-      height: 110px;
-    }
-
-    .drawer-content {
-      padding: 1.8rem 2rem;
-    }
-
-    .drawer-family-tag {
-      display: inline-block;
-      font-size: 0.62rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.8rem;
-      border-radius: 100px;
-      margin-bottom: 1rem;
-      font-weight: 400;
-    }
-
-    .drawer-desc {
-      font-size: 0.9rem;
-      line-height: 1.85;
-      color: var(--grey);
-      margin-bottom: 1.5rem;
-    }
-
-    .drawer-pairings-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--grey);
-      margin-bottom: 0.6rem;
-    }
-
-    .drawer-pairings {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .drawer-pairing-tag {
-      padding: 0.3rem 0.7rem;
-      border: 1px solid var(--sand);
-      font-size: 0.72rem;
-      color: var(--grey);
-    }
-
-    .drawer-strength-row {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.8rem;
-    }
-
-    .drawer-strength-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--grey);
-      white-space: nowrap;
-    }
-
-    .drawer-strength-bar {
-      flex: 1;
-      height: 3px;
-      background: var(--sand);
-      position: relative;
-    }
-
-    .drawer-strength-fill {
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      background: var(--accent);
-      transition: width 0.6s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .drawer-cta {
-      display: block;
-      text-align: center;
-      padding: 0.85rem;
-      background: var(--black);
-      color: var(--white);
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background 0.25s;
-    }
-
-    .drawer-cta:hover { background: var(--accent); }
-
-    /* ─── REVEAL ─── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.7s, transform 0.7s;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 768px) {
-      nav { padding: 0 1.5rem; }
-      #hero { padding-left: 1.5rem; padding-right: 1.5rem; }
-      .family-section { padding: 4rem 1.5rem; }
-      #seo-intro { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; }
-      footer { padding: 2rem 1.5rem; }
-      #wheel { padding: 4rem 1.5rem; }
-    }
-
-    @media (max-width: 480px) {
-      .notes-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
-    }
+    body { background:var(--white); color:var(--black); font-family:var(--sans); font-weight:300; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+
+    /* NAV */
+    nav { position:fixed; top:0; left:0; right:0; z-index:1000; height:var(--nav-height); display:flex; justify-content:space-between; align-items:center; padding:0 3.5rem; background:rgba(250,248,245,0.95); backdrop-filter:blur(16px); border-bottom:1px solid rgba(0,0,0,0.05); }
+    .nav-logo { text-decoration:none; display:flex; align-items:baseline; gap:0.5rem; }
+    .nav-logo-yspc { font-family:var(--serif); font-size:1.5rem; font-weight:300; color:var(--black); letter-spacing:0.04em; }
+    .nav-logo-sub { font-size:0.6rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--grey); }
+    .nav-right { display:flex; align-items:center; gap:1.5rem; }
+    .nav-back { font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--grey); text-decoration:none; transition:color 0.25s; }
+    .nav-back:hover { color:var(--accent); }
+    .lang-switcher { display:flex; gap:0; }
+    .lang-btn { background:none; border:1px solid var(--sand); padding:0.3rem 0.6rem; font-family:var(--sans); font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer; color:var(--grey); transition:all 0.2s; }
+    .lang-btn:not(:last-child) { border-right:none; }
+    .lang-btn.active { background:var(--black); color:var(--white); border-color:var(--black); }
+    .lang-btn:hover:not(.active) { color:var(--accent); border-color:var(--accent); }
+
+    /* HERO */
+    #hero { min-height:52vh; background:var(--black); display:flex; flex-direction:column; justify-content:flex-end; padding:calc(var(--nav-height) + 4rem) 3.5rem 5rem; position:relative; overflow:hidden; }
+    #hero::after { content:''; position:absolute; top:0; right:0; width:1px; height:100%; background:linear-gradient(to bottom, transparent, rgba(200,168,122,0.3), transparent); }
+    .hero-eyebrow { font-size:0.62rem; letter-spacing:0.35em; text-transform:uppercase; color:var(--accent-light); margin-bottom:1.2rem; }
+    .hero-title { font-family:var(--serif); font-size:clamp(2.8rem,6vw,5rem); font-weight:300; line-height:1.1; color:var(--white); margin-bottom:1.5rem; letter-spacing:-0.01em; }
+    .hero-title em { font-style:italic; color:var(--accent-light); }
+    .hero-desc { font-size:1rem; line-height:1.8; color:rgba(255,255,255,0.5); max-width:560px; margin-bottom:2.5rem; }
+    .hero-families { display:flex; justify-content:flex-start; gap:0.6rem; flex-wrap:wrap; }
+    .family-pill { padding:0.4rem 1rem; border-radius:100px; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:400; cursor:pointer; transition:all 0.25s; text-decoration:none; display:inline-block; }
+    .pill-citrus    { background:rgba(232,168,74,0.12); color:var(--citrus); border:1px solid rgba(232,168,74,0.3); }
+    .pill-floral    { background:rgba(201,122,138,0.1); color:var(--floral); border:1px solid rgba(201,122,138,0.25); }
+    .pill-woody     { background:rgba(122,92,58,0.1); color:var(--woody); border:1px solid rgba(122,92,58,0.25); }
+    .pill-oriental  { background:rgba(106,74,122,0.1); color:var(--oriental); border:1px solid rgba(106,74,122,0.25); }
+    .pill-fresh     { background:rgba(74,138,122,0.1); color:var(--fresh); border:1px solid rgba(74,138,122,0.25); }
+    .pill-gourmand  { background:rgba(154,90,74,0.1); color:var(--gourmand); border:1px solid rgba(154,90,74,0.25); }
+    .family-pill:hover { opacity:0.75; transform:translateY(-2px); }
+
+    /* WHEEL */
+    #wheel { padding:6rem 3.5rem; background:var(--black); text-align:center; }
+    #wheel .section-label { font-size:0.65rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--accent-light); margin-bottom:1rem; }
+    #wheel .section-title { font-family:var(--serif); font-size:clamp(1.8rem,3vw,2.8rem); font-weight:300; color:var(--white); margin-bottom:1rem; }
+    #wheel .section-desc { font-size:0.9rem; color:rgba(255,255,255,0.45); max-width:480px; margin:0 auto 3rem; line-height:1.75; }
+    .wheel-container { max-width:640px; margin:0 auto; }
+    .wheel-svg { width:100%; height:auto; }
+    .wheel-segment { cursor:pointer; transition:opacity 0.25s; }
+    .wheel-segment:hover { opacity:0.85; }
+
+    /* FAMILY SECTIONS */
+    .family-section { padding:5rem 3.5rem; scroll-margin-top:var(--nav-height); }
+    .family-section:nth-child(even) { background:var(--cream); }
+    .family-header { display:flex; align-items:center; gap:1.2rem; margin-bottom:0.8rem; }
+    .family-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+    .family-title { font-family:var(--serif); font-size:clamp(1.8rem,3vw,2.6rem); font-weight:300; }
+    .family-desc { font-size:0.92rem; color:var(--grey); line-height:1.8; max-width:680px; margin-bottom:3rem; padding-left:22px; }
+
+    /* NOTE CARDS */
+    .notes-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1.5rem; }
+    .note-card { border:1px solid var(--sand); background:var(--white); overflow:hidden; transition:border-color 0.3s,transform 0.3s,box-shadow 0.3s; cursor:pointer; }
+    .note-card:hover { border-color:var(--accent); transform:translateY(-3px); box-shadow:0 8px 30px rgba(156,123,86,0.12); }
+    .note-card-image { height:140px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+    .note-card-svg { width:80px; height:80px; opacity:0.85; transition:transform 0.4s; }
+    .note-card:hover .note-card-svg { transform:scale(1.08) rotate(3deg); }
+    .note-card-body { padding:1.4rem 1.5rem; border-top:1px solid var(--sand); }
+    .note-card-name { font-family:var(--serif); font-size:1.15rem; font-weight:400; margin-bottom:0.5rem; }
+    .note-card-desc { font-size:0.8rem; line-height:1.65; color:var(--grey); margin-bottom:0.8rem; }
+    .note-card-strength { display:flex; gap:3px; }
+    .strength-dot { width:6px; height:6px; border-radius:50%; background:var(--sand); }
+    .strength-dot.filled { background:var(--accent); }
+
+    /* SEO SECTION */
+    #seo-intro { padding:5rem 3.5rem; background:var(--cream); display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; }
+    .seo-title { font-family:var(--serif); font-size:clamp(1.8rem,2.5vw,2.4rem); font-weight:300; line-height:1.3; margin-bottom:1.5rem; }
+    .seo-body p { font-size:0.92rem; line-height:1.85; color:var(--grey); margin-bottom:1rem; }
+    .seo-body strong { color:var(--black); font-weight:400; }
+    .seo-accordion-item { border-top:1px solid var(--sand); padding:1.2rem 0; }
+    .seo-accordion-item:last-child { border-bottom:1px solid var(--sand); }
+    .seo-accordion-q { display:flex; justify-content:space-between; align-items:center; cursor:pointer; font-size:0.88rem; font-weight:400; user-select:none; transition:color 0.25s; }
+    .seo-accordion-q:hover { color:var(--accent); }
+    .seo-accordion-icon { color:var(--accent); font-size:1.1rem; transition:transform 0.3s; }
+    .seo-accordion-a { font-size:0.85rem; color:var(--grey); line-height:1.8; max-height:0; overflow:hidden; transition:max-height 0.4s ease, padding 0.3s; }
+    .seo-accordion-item.open .seo-accordion-a { max-height:300px; padding-top:0.8rem; }
+    .seo-accordion-item.open .seo-accordion-icon { transform:rotate(45deg); }
+
+    /* FOOTER */
+    footer { padding:3rem 3.5rem; background:var(--black); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+    .footer-copy { font-size:0.72rem; color:rgba(255,255,255,0.3); }
+    .footer-links { display:flex; gap:2rem; }
+    .footer-links a { font-size:0.72rem; color:rgba(255,255,255,0.35); text-decoration:none; transition:color 0.25s; }
+    .footer-links a:hover { color:var(--accent-light); }
+
+    /* DRAWER */
+    .note-drawer-backdrop { position:fixed; inset:0; background:rgba(26,25,22,0.5); z-index:2000; opacity:0; pointer-events:none; transition:opacity 0.35s; }
+    .note-drawer-backdrop.open { opacity:1; pointer-events:all; }
+    .note-drawer { position:fixed; top:0; right:0; bottom:0; width:min(440px,92vw); background:var(--white); z-index:2001; transform:translateX(100%); transition:transform 0.4s cubic-bezier(0.4,0,0.2,1); display:flex; flex-direction:column; overflow:hidden; }
+    .note-drawer.open { transform:translateX(0); }
+    .drawer-header { padding:1.5rem 2rem; border-bottom:1px solid var(--sand); display:flex; justify-content:space-between; align-items:center; flex-shrink:0; }
+    .drawer-eyebrow { font-size:0.62rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); margin-bottom:0.25rem; }
+    .drawer-title { font-family:var(--serif); font-size:1.6rem; font-weight:300; }
+    .drawer-close { background:none; border:1px solid var(--sand); width:36px; height:36px; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:1.1rem; color:var(--grey); transition:all 0.25s; flex-shrink:0; }
+    .drawer-close:hover { border-color:var(--accent); color:var(--accent); }
+    .drawer-body { flex:1; overflow-y:auto; }
+    .drawer-image { height:200px; display:flex; align-items:center; justify-content:center; }
+    .drawer-image svg { width:110px; height:110px; }
+    .drawer-content { padding:1.8rem 2rem; }
+    .drawer-family-tag { display:inline-block; font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; padding:0.3rem 0.8rem; border-radius:100px; margin-bottom:1rem; font-weight:400; }
+    .drawer-desc { font-size:0.9rem; line-height:1.85; color:var(--grey); margin-bottom:1.5rem; }
+    .drawer-pairings-label { font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--grey); margin-bottom:0.6rem; }
+    .drawer-pairings { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.5rem; }
+    .drawer-pairing-tag { padding:0.3rem 0.7rem; border:1px solid var(--sand); font-size:0.72rem; color:var(--grey); }
+    .drawer-strength-row { display:flex; align-items:center; gap:1rem; margin-bottom:1.8rem; }
+    .drawer-strength-label { font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--grey); white-space:nowrap; }
+    .drawer-strength-bar { flex:1; height:3px; background:var(--sand); position:relative; }
+    .drawer-strength-fill { position:absolute; left:0; top:0; bottom:0; background:var(--accent); transition:width 0.6s 0.2s cubic-bezier(0.4,0,0.2,1); }
+    .drawer-cta { display:block; text-align:center; padding:0.85rem; background:var(--black); color:var(--white); font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; transition:background 0.25s; }
+    .drawer-cta:hover { background:var(--accent); }
+
+    /* REVEAL */
+    .reveal { opacity:0; transform:translateY(22px); transition:opacity 0.7s,transform 0.7s; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    @media (max-width:768px) {
+      nav { padding:0 1.5rem; }
+      #hero { padding:calc(var(--nav-height) + 3rem) 1.5rem 4rem; }
+      .family-section { padding:4rem 1.5rem; }
+      #seo-intro { grid-template-columns:1fr; gap:2.5rem; padding:4rem 1.5rem; }
+      footer { padding:2rem 1.5rem; }
+      #wheel { padding:4rem 1.5rem; }
+      .lang-switcher { display:none; }
+    }
+    @media (max-width:480px) { .notes-grid { grid-template-columns:1fr 1fr; gap:1rem; } }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <a href="/" class="nav-logo">
       <span class="nav-logo-yspc">YSP</span>
       <span class="nav-logo-sub">Collective</span>
     </a>
-    <a href="/" class="nav-back">← Back to Store</a>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" data-lang="pt" onclick="setLang('pt')">PT</button>
+        <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+      </div>
+      <a href="/" class="nav-back" id="nav-back">← Back to Store</a>
+    </div>
   </nav>
 
-  <!-- HERO -->
   <section id="hero">
-    <p class="hero-eyebrow">Fragrance Education</p>
-    <h1 class="hero-title">The language<br>of <em>scent.</em></h1>
-    <p class="hero-desc">Every fragrance is built from notes and accords — the individual ingredients that combine to create a complete scent story. Learn what each one means, smells like, and why it matters.</p>
+    <p class="hero-eyebrow" id="hero-eyebrow">Fragrance Education</p>
+    <h1 class="hero-title" id="hero-title">The language<br>of <em>scent.</em></h1>
+    <p class="hero-desc" id="hero-desc">Every fragrance is built from notes and accords — the individual ingredients that combine to create a complete scent story. Learn what each one means, smells like, and why it matters.</p>
     <div class="hero-families">
-      <a href="#citrus" class="family-pill pill-citrus">🍊 Citrus</a>
-      <a href="#floral" class="family-pill pill-floral">🌸 Floral</a>
-      <a href="#woody" class="family-pill pill-woody">🌳 Woody</a>
-      <a href="#oriental" class="family-pill pill-oriental">✦ Oriental</a>
-      <a href="#fresh" class="family-pill pill-fresh">🌿 Fresh</a>
-      <a href="#gourmand" class="family-pill pill-gourmand">🍬 Gourmand</a>
+      <a href="#citrus" class="family-pill pill-citrus" id="pill-citrus">🍊 Citrus</a>
+      <a href="#floral" class="family-pill pill-floral" id="pill-floral">🌸 Floral</a>
+      <a href="#woody" class="family-pill pill-woody" id="pill-woody">🌳 Woody</a>
+      <a href="#oriental" class="family-pill pill-oriental" id="pill-oriental">✦ Oriental</a>
+      <a href="#fresh" class="family-pill pill-fresh" id="pill-fresh">🌿 Fresh</a>
+      <a href="#gourmand" class="family-pill pill-gourmand" id="pill-gourmand">🍬 Gourmand</a>
     </div>
   </section>
 
-  <!-- FRAGRANCE WHEEL -->
   <section id="wheel">
-    <p class="section-label">The Fragrance Wheel</p>
-    <h2 class="section-title">How scents relate to each other</h2>
-    <p class="section-desc">The fragrance wheel maps scent families and shows how they blend, contrast, and complement. Adjacent families share qualities; opposite families create contrast.</p>
+    <p class="section-label" id="wheel-label">The Fragrance Wheel</p>
+    <h2 class="section-title" id="wheel-title">How scents relate to each other</h2>
+    <p class="section-desc" id="wheel-desc">The fragrance wheel maps scent families and shows how they blend, contrast, and complement. Adjacent families share qualities; opposite families create contrast.</p>
     <div class="wheel-container">
       <svg class="wheel-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <style>
-            .wlabel { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 400; fill: white; }
-            .wsublabel { font-family: 'Outfit', sans-serif; font-size: 9.5px; fill: rgba(255,255,255,0.6); }
-            .wcenter { font-family: 'Playfair Display', serif; fill: white; }
-          </style>
-        </defs>
-
-        <!-- Outer segments - 6 families -->
-        <!-- Citrus (0° – 60°) -->
+        <defs><style>.wlabel{font-family:'Outfit',sans-serif;font-size:13px;font-weight:400;fill:white;}.wsublabel{font-family:'Outfit',sans-serif;font-size:9.5px;fill:rgba(255,255,255,0.6);}.wcenter{font-family:'Playfair Display',serif;fill:white;}</style></defs>
         <path d="M250,250 L250,50 A200,200 0 0,1 423,125 Z" fill="#c8822a" opacity="0.85" class="wheel-segment" onclick="scrollToFamily('citrus')"/>
-        <!-- Floral (60° – 120°) -->
         <path d="M250,250 L423,125 A200,200 0 0,1 423,375 Z" fill="#b05a6a" opacity="0.85" class="wheel-segment" onclick="scrollToFamily('floral')"/>
-        <!-- Woody (120° – 180°) -->
         <path d="M250,250 L423,375 A200,200 0 0,1 250,450 Z" fill="#6a3c1e" opacity="0.85" class="wheel-segment" onclick="scrollToFamily('woody')"/>
-        <!-- Oriental (180° – 240°) -->
         <path d="M250,250 L250,450 A200,200 0 0,1 77,375 Z" fill="#52346a" opacity="0.85" class="wheel-segment" onclick="scrollToFamily('oriental')"/>
-        <!-- Fresh (240° – 300°) -->
         <path d="M250,250 L77,375 A200,200 0 0,1 77,125 Z" fill="#2a6a5a" opacity="0.85" class="wheel-segment" onclick="scrollToFamily('fresh')"/>
-        <!-- Gourmand (300° – 360°) -->
         <path d="M250,250 L77,125 A200,200 0 0,1 250,50 Z" fill="#7a3a2a" opacity="0.85" class="wheel-segment" onclick="scrollToFamily('gourmand')"/>
-
-        <!-- Inner ring - lighter shades -->
         <path d="M250,250 L250,110 A140,140 0 0,1 371,180 Z" fill="#d4923e" opacity="0.7"/>
         <path d="M250,250 L371,180 A140,140 0 0,1 371,320 Z" fill="#c06a7a" opacity="0.7"/>
         <path d="M250,250 L371,320 A140,140 0 0,1 250,390 Z" fill="#7a4c2a" opacity="0.7"/>
         <path d="M250,250 L250,390 A140,140 0 0,1 129,320 Z" fill="#624478" opacity="0.7"/>
         <path d="M250,250 L129,320 A140,140 0 0,1 129,180 Z" fill="#3a7a6a" opacity="0.7"/>
         <path d="M250,250 L129,180 A140,140 0 0,1 250,110 Z" fill="#8a4a3a" opacity="0.7"/>
-
-        <!-- Divider lines -->
         <line x1="250" y1="250" x2="250" y2="50" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
         <line x1="250" y1="250" x2="423" y2="125" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
         <line x1="250" y1="250" x2="423" y2="375" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
         <line x1="250" y1="250" x2="250" y2="450" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
         <line x1="250" y1="250" x2="77" y2="375" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
         <line x1="250" y1="250" x2="77" y2="125" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-
-        <!-- Inner circle (center) -->
         <circle cx="250" cy="250" r="72" fill="#1a1916"/>
         <circle cx="250" cy="250" r="70" fill="#1a1916" stroke="rgba(200,168,122,0.2)" stroke-width="1"/>
-
-        <!-- Center text -->
         <text x="250" y="244" text-anchor="middle" class="wcenter" font-size="22" font-weight="300">YSP</text>
         <text x="250" y="264" text-anchor="middle" class="wcenter" font-size="9" letter-spacing="4" opacity="0.5">GUIDE</text>
-
-        <!-- Family labels - positioned at segment centres -->
-        <!-- Citrus top right -->
-        <text x="320" y="115" text-anchor="middle" class="wlabel">Citrus</text>
-        <text x="320" y="129" text-anchor="middle" class="wsublabel">Bright · Zesty</text>
-        <!-- Floral right -->
-        <text x="400" y="248" text-anchor="middle" class="wlabel">Floral</text>
-        <text x="400" y="262" text-anchor="middle" class="wsublabel">Soft · Romantic</text>
-        <!-- Woody bottom right -->
-        <text x="322" y="385" text-anchor="middle" class="wlabel">Woody</text>
-        <text x="322" y="399" text-anchor="middle" class="wsublabel">Warm · Earthy</text>
-        <!-- Oriental bottom left -->
-        <text x="178" y="385" text-anchor="middle" class="wlabel">Oriental</text>
-        <text x="178" y="399" text-anchor="middle" class="wsublabel">Rich · Exotic</text>
-        <!-- Fresh left -->
-        <text x="98" y="248" text-anchor="middle" class="wlabel">Fresh</text>
-        <text x="98" y="262" text-anchor="middle" class="wsublabel">Clean · Aquatic</text>
-        <!-- Gourmand top left -->
-        <text x="178" y="115" text-anchor="middle" class="wlabel">Gourmand</text>
-        <text x="178" y="129" text-anchor="middle" class="wsublabel">Sweet · Edible</text>
-
-        <!-- Click hint -->
-        <text x="250" y="478" text-anchor="middle" class="wsublabel" opacity="0.5">Click a segment to explore</text>
+        <text x="320" y="115" text-anchor="middle" class="wlabel" id="wl-citrus">Citrus</text>
+        <text x="320" y="129" text-anchor="middle" class="wsublabel" id="wsl-citrus">Bright · Zesty</text>
+        <text x="400" y="248" text-anchor="middle" class="wlabel" id="wl-floral">Floral</text>
+        <text x="400" y="262" text-anchor="middle" class="wsublabel" id="wsl-floral">Soft · Romantic</text>
+        <text x="322" y="385" text-anchor="middle" class="wlabel" id="wl-woody">Woody</text>
+        <text x="322" y="399" text-anchor="middle" class="wsublabel" id="wsl-woody">Warm · Earthy</text>
+        <text x="178" y="385" text-anchor="middle" class="wlabel" id="wl-oriental">Oriental</text>
+        <text x="178" y="399" text-anchor="middle" class="wsublabel" id="wsl-oriental">Rich · Exotic</text>
+        <text x="98" y="248" text-anchor="middle" class="wlabel" id="wl-fresh">Fresh</text>
+        <text x="98" y="262" text-anchor="middle" class="wsublabel" id="wsl-fresh">Clean · Aquatic</text>
+        <text x="178" y="115" text-anchor="middle" class="wlabel" id="wl-gourmand">Gourmand</text>
+        <text x="178" y="129" text-anchor="middle" class="wsublabel" id="wsl-gourmand">Sweet · Edible</text>
+        <text x="250" y="478" text-anchor="middle" class="wsublabel" id="wheel-hint" opacity="0.5">Click a segment to explore</text>
       </svg>
     </div>
   </section>
 
-  <!-- ══════════ CITRUS ══════════ -->
   <section class="family-section" id="citrus">
     <div class="reveal">
-      <div class="family-header">
-        <div class="family-dot" style="background:var(--citrus)"></div>
-        <h2 class="family-title">Citrus</h2>
-      </div>
-      <p class="family-desc">The freshest family in perfumery. Citrus notes open most fragrances with immediate brightness and lift. They're among the most volatile notes, meaning they're often the first thing you smell and the first to fade — but their energy sets the tone for everything that follows.</p>
+      <div class="family-header"><div class="family-dot" style="background:var(--citrus)"></div><h2 class="family-title" id="fam-citrus-title">Citrus</h2></div>
+      <p class="family-desc" id="fam-citrus-desc">The freshest family in perfumery. Citrus notes open most fragrances with immediate brightness and lift. They're among the most volatile notes, meaning they're often the first thing you smell and the first to fade — but their energy sets the tone for everything that follows.</p>
     </div>
     <div class="notes-grid reveal" id="citrus-grid"></div>
   </section>
 
-  <!-- ══════════ FLORAL ══════════ -->
   <section class="family-section" id="floral" style="background:var(--cream)">
     <div class="reveal">
-      <div class="family-header">
-        <div class="family-dot" style="background:var(--floral)"></div>
-        <h2 class="family-title">Floral</h2>
-      </div>
-      <p class="family-desc">The most diverse family in fragrance, spanning everything from light and airy to rich and opulent. Floral notes form the heart of countless classic perfumes and are the most widely used accord in feminine and unisex compositions. From dewy rose to heady tuberose — florals are perfumery's most expressive palette.</p>
+      <div class="family-header"><div class="family-dot" style="background:var(--floral)"></div><h2 class="family-title" id="fam-floral-title">Floral</h2></div>
+      <p class="family-desc" id="fam-floral-desc">The most diverse family in fragrance, spanning everything from light and airy to rich and opulent. Floral notes form the heart of countless classic perfumes and are the most widely used accord in feminine and unisex compositions. From dewy rose to heady tuberose — florals are perfumery's most expressive palette.</p>
     </div>
     <div class="notes-grid reveal" id="floral-grid"></div>
   </section>
 
-  <!-- ══════════ WOODY ══════════ -->
   <section class="family-section" id="woody">
     <div class="reveal">
-      <div class="family-header">
-        <div class="family-dot" style="background:var(--woody)"></div>
-        <h2 class="family-title">Woody</h2>
-      </div>
-      <p class="family-desc">Warm, grounding and deeply sensual. Woody notes form the backbone of most oriental and masculine compositions and are responsible for the dry-down — the final phase of a fragrance. Woods provide depth, longevity and a sense of natural comfort. Many iconic Arabian perfumes are built around woody bases like oud, sandalwood and cedarwood.</p>
+      <div class="family-header"><div class="family-dot" style="background:var(--woody)"></div><h2 class="family-title" id="fam-woody-title">Woody</h2></div>
+      <p class="family-desc" id="fam-woody-desc">Warm, grounding and deeply sensual. Woody notes form the backbone of most oriental and masculine compositions and are responsible for the dry-down — the final phase of a fragrance. Woods provide depth, longevity and a sense of natural comfort. Many iconic Arabian perfumes are built around woody bases like oud, sandalwood and cedarwood.</p>
     </div>
     <div class="notes-grid reveal" id="woody-grid"></div>
   </section>
 
-  <!-- ══════════ ORIENTAL ══════════ -->
   <section class="family-section" id="oriental" style="background:var(--cream)">
     <div class="reveal">
-      <div class="family-header">
-        <div class="family-dot" style="background:var(--oriental)"></div>
-        <h2 class="family-title">Oriental</h2>
-      </div>
-      <p class="family-desc">The richest, most complex family in perfumery. Oriental notes are warm, exotic and deeply layered — drawing on resins, spices, incense and rare botanical extracts. This is the heartland of Arabian fragrance, where accords like amber, oud and bakhoor create compositions with legendary longevity and extraordinary sillage.</p>
+      <div class="family-header"><div class="family-dot" style="background:var(--oriental)"></div><h2 class="family-title" id="fam-oriental-title">Oriental</h2></div>
+      <p class="family-desc" id="fam-oriental-desc">The richest, most complex family in perfumery. Oriental notes are warm, exotic and deeply layered — drawing on resins, spices, incense and rare botanical extracts. This is the heartland of Arabian fragrance, where accords like amber, oud and bakhoor create compositions with legendary longevity and extraordinary sillage.</p>
     </div>
     <div class="notes-grid reveal" id="oriental-grid"></div>
   </section>
 
-  <!-- ══════════ FRESH ══════════ -->
   <section class="family-section" id="fresh">
     <div class="reveal">
-      <div class="family-header">
-        <div class="family-dot" style="background:var(--fresh)"></div>
-        <h2 class="family-title">Fresh</h2>
-      </div>
-      <p class="family-desc">Clean, airy and effortless. Fresh notes are created both synthetically and from natural sources to evoke everything from ocean breezes to crisp linen and morning dew. They're the foundation of lighter, daytime and summer fragrances, and often used to balance heavier oriental or woody compositions.</p>
+      <div class="family-header"><div class="family-dot" style="background:var(--fresh)"></div><h2 class="family-title" id="fam-fresh-title">Fresh</h2></div>
+      <p class="family-desc" id="fam-fresh-desc">Clean, airy and effortless. Fresh notes are created both synthetically and from natural sources to evoke everything from ocean breezes to crisp linen and morning dew. They're the foundation of lighter, daytime and summer fragrances, and often used to balance heavier oriental or woody compositions.</p>
     </div>
     <div class="notes-grid reveal" id="fresh-grid"></div>
   </section>
 
-  <!-- ══════════ GOURMAND ══════════ -->
   <section class="family-section" id="gourmand" style="background:var(--cream)">
     <div class="reveal">
-      <div class="family-header">
-        <div class="family-dot" style="background:var(--gourmand)"></div>
-        <h2 class="family-title">Gourmand</h2>
-      </div>
-      <p class="family-desc">The most modern family in perfumery, popularised from the 1990s onwards. Gourmand notes reference edible ingredients — vanilla, caramel, coffee, chocolate — creating sweet, comforting and often addictive compositions. They're a signature of many contemporary Arabian and niche fragrances, adding warmth and instant wearability.</p>
+      <div class="family-header"><div class="family-dot" style="background:var(--gourmand)"></div><h2 class="family-title" id="fam-gourmand-title">Gourmand</h2></div>
+      <p class="family-desc" id="fam-gourmand-desc">The most modern family in perfumery, popularised from the 1990s onwards. Gourmand notes reference edible ingredients — vanilla, caramel, coffee, chocolate — creating sweet, comforting and often addictive compositions. They're a signature of many contemporary Arabian and niche fragrances, adding warmth and instant wearability.</p>
     </div>
     <div class="notes-grid reveal" id="gourmand-grid"></div>
   </section>
 
-  <!-- SEO / EDUCATION SECTION -->
   <section id="seo-intro">
     <div class="reveal">
-      <h2 class="seo-title">Understanding fragrance notes, accords &amp; families</h2>
+      <h2 class="seo-title" id="seo-title">Understanding fragrance notes, accords &amp; families</h2>
       <div class="seo-body">
-        <p>A fragrance is constructed in three layers — <strong>top notes</strong>, <strong>heart notes</strong> and <strong>base notes</strong>. Top notes are the first impression: bright, volatile and short-lived. Heart notes emerge after 15–30 minutes and form the core character of the scent. Base notes are the final, lasting phase — the deepest and most enduring part of the fragrance.</p>
-        <p>An <strong>accord</strong> is a harmonious blend of individual notes that combine to create a single recognisable smell — like "amber" or "leather". Most fragrances are described by their dominant accords rather than every single ingredient.</p>
-        <p>Understanding these building blocks helps you predict whether a fragrance will suit your skin, your style and the occasions you wear it.</p>
+        <p id="seo-p1">A fragrance is constructed in three layers — <strong>top notes</strong>, <strong>heart notes</strong> and <strong>base notes</strong>. Top notes are the first impression: bright, volatile and short-lived. Heart notes emerge after 15–30 minutes and form the core character of the scent. Base notes are the final, lasting phase — the deepest and most enduring part of the fragrance.</p>
+        <p id="seo-p2">An <strong>accord</strong> is a harmonious blend of individual notes that combine to create a single recognisable smell — like "amber" or "leather". Most fragrances are described by their dominant accords rather than every single ingredient.</p>
+        <p id="seo-p3">Understanding these building blocks helps you predict whether a fragrance will suit your skin, your style and the occasions you wear it.</p>
       </div>
     </div>
     <div class="reveal">
       <div class="seo-accordion-item">
-        <div class="seo-accordion-q">What's the difference between a note and an accord? <span class="seo-accordion-icon">+</span></div>
-        <div class="seo-accordion-a">A note is a single aromatic ingredient (e.g. bergamot, rose, vetiver). An accord is a blend of several notes that together create a single recognisable smell — for example, an "amber" accord might combine benzoin, labdanum, vanilla and sandalwood. Accords are the building blocks; notes are the raw materials.</div>
+        <div class="seo-accordion-q" id="aq1">What's the difference between a note and an accord? <span class="seo-accordion-icon">+</span></div>
+        <div class="seo-accordion-a" id="aa1">A note is a single aromatic ingredient (e.g. bergamot, rose, vetiver). An accord is a blend of several notes that together create a single recognisable smell — for example, an "amber" accord might combine benzoin, labdanum, vanilla and sandalwood. Accords are the building blocks; notes are the raw materials.</div>
       </div>
       <div class="seo-accordion-item">
-        <div class="seo-accordion-q">Why do fragrances smell different on different people? <span class="seo-accordion-icon">+</span></div>
-        <div class="seo-accordion-a">Skin chemistry affects how fragrance molecules interact and evaporate. Skin pH, moisture level, body temperature and diet all influence how a scent develops on your skin. This is why it's always recommended to wear a fragrance for a few hours before deciding — what smells like cedar on one person may read more as musk on another.</div>
+        <div class="seo-accordion-q" id="aq2">Why do fragrances smell different on different people? <span class="seo-accordion-icon">+</span></div>
+        <div class="seo-accordion-a" id="aa2">Skin chemistry affects how fragrance molecules interact and evaporate. Skin pH, moisture level, body temperature and diet all influence how a scent develops on your skin. This is why it's always recommended to wear a fragrance for a few hours before deciding — what smells like cedar on one person may read more as musk on another.</div>
       </div>
       <div class="seo-accordion-item">
-        <div class="seo-accordion-q">What makes Arabian fragrances different? <span class="seo-accordion-icon">+</span></div>
-        <div class="seo-accordion-a">Arabian perfumes typically use higher concentrations of fragrance oil (often 20–30%) and lean heavily on warming base notes like oud, amber, musk and sandalwood. They're designed for longevity and presence — many last 10–14 hours on skin and project significantly. The tradition also places greater importance on woody and oriental accords compared to Western perfumery's preference for florals and fresh notes.</div>
+        <div class="seo-accordion-q" id="aq3">What makes Arabian fragrances different? <span class="seo-accordion-icon">+</span></div>
+        <div class="seo-accordion-a" id="aa3">Arabian perfumes typically use higher concentrations of fragrance oil (often 20–30%) and lean heavily on warming base notes like oud, amber, musk and sandalwood. They're designed for longevity and presence — many last 10–14 hours on skin and project significantly. The tradition also places greater importance on woody and oriental accords compared to Western perfumery's preference for florals and fresh notes.</div>
       </div>
       <div class="seo-accordion-item">
-        <div class="seo-accordion-q">What does sillage mean? <span class="seo-accordion-icon">+</span></div>
-        <div class="seo-accordion-a">Sillage (pronounced "see-yazh") refers to the trail a fragrance leaves in the air as you move. A high-sillage fragrance fills a room and lingers after you've left; a low-sillage fragrance stays close to the skin. Arabian fragrances are typically known for generous sillage thanks to their oil-rich compositions.</div>
+        <div class="seo-accordion-q" id="aq4">What does sillage mean? <span class="seo-accordion-icon">+</span></div>
+        <div class="seo-accordion-a" id="aa4">Sillage (pronounced "see-yazh") refers to the trail a fragrance leaves in the air as you move. A high-sillage fragrance fills a room and lingers after you've left; a low-sillage fragrance stays close to the skin. Arabian fragrances are typically known for generous sillage thanks to their oil-rich compositions.</div>
       </div>
       <div class="seo-accordion-item">
-        <div class="seo-accordion-q">How do I choose a fragrance based on notes? <span class="seo-accordion-icon">+</span></div>
-        <div class="seo-accordion-a">Start with the base notes — these define the lasting character of the fragrance. If you love warmth and depth, look for woody and oriental bases. If you prefer clean and light, look for fresh or citrus bases. Then use the heart notes to refine your choice: floral hearts add romance, spicy hearts add complexity. The top notes tell you the opening impression but fade quickly — so don't judge a fragrance in the first 5 minutes.</div>
+        <div class="seo-accordion-q" id="aq5">How do I choose a fragrance based on notes? <span class="seo-accordion-icon">+</span></div>
+        <div class="seo-accordion-a" id="aa5">Start with the base notes — these define the lasting character of the fragrance. If you love warmth and depth, look for woody and oriental bases. If you prefer clean and light, look for fresh or citrus bases. Then use the heart notes to refine your choice: floral hearts add romance, spicy hearts add complexity. The top notes tell you the opening impression but fade quickly — so don't judge a fragrance in the first 5 minutes.</div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div>
-      <div style="font-family:var(--serif); font-size:1.3rem; color:rgba(255,255,255,0.6); margin-bottom:0.3rem;">YSP Collective</div>
+      <div style="font-family:var(--serif);font-size:1.3rem;color:rgba(255,255,255,0.6);margin-bottom:0.3rem">YSP Collective</div>
       <div class="footer-copy">© 2026 YSP Collective. All rights reserved. Portugal, EU.</div>
     </div>
     <div class="footer-links">
-      <a href="/">Store</a>
-      <a href="/#featured">Products</a>
-      <a href="/#contact">Contact</a>
+      <a href="/" id="footer-store">Store</a>
+      <a href="/#featured" id="footer-products">Products</a>
+      <a href="/#contact" id="footer-contact">Contact</a>
     </div>
   </footer>
 
-  <!-- NOTE DRAWER -->
   <div class="note-drawer-backdrop" id="drawerBackdrop" onclick="closeDrawer()"></div>
   <div class="note-drawer" id="noteDrawer">
     <div class="drawer-header">
@@ -882,374 +331,405 @@
       <div class="drawer-content">
         <div id="drawerFamilyTag"></div>
         <p class="drawer-desc" id="drawerDesc"></p>
-        <div class="drawer-pairings-label">Pairs well with</div>
+        <div class="drawer-pairings-label" id="drawer-pairings-label">Pairs well with</div>
         <div class="drawer-pairings" id="drawerPairings"></div>
         <div class="drawer-strength-row">
-          <span class="drawer-strength-label">Intensity</span>
+          <span class="drawer-strength-label" id="drawer-strength-label">Intensity</span>
           <div class="drawer-strength-bar"><div class="drawer-strength-fill" id="drawerStrength"></div></div>
         </div>
-        <a href="fragrance-notes.html" class="drawer-cta">Explore all fragrance notes →</a>
+        <a href="/fragrance-notes.html" class="drawer-cta" id="drawer-cta">Explore all fragrance notes →</a>
       </div>
     </div>
   </div>
 
   <script>
-    /* ═══════════════════════════════════════════════════
-       NOTE DATA
-    ═══════════════════════════════════════════════════ */
-    const NOTE_DATA = {
+  // ── TRANSLATIONS ──────────────────────────────────────────────────────────
+  const UI = {
+    en: {
+      pageTitle: 'Fragrance Notes & Accords Explained | YSP Collective',
+      pageDesc: 'Discover the building blocks of fragrance. Learn what each note smells like — from citrus and floral to woody, oriental and gourmand.',
+      navBack: '← Back to Store',
+      heroEyebrow: 'Fragrance Education',
+      heroTitle: 'The language<br>of <em>scent.</em>',
+      heroDesc: 'Every fragrance is built from notes and accords — the individual ingredients that combine to create a complete scent story. Learn what each one means, smells like, and why it matters.',
+      pillCitrus:'🍊 Citrus', pillFloral:'🌸 Floral', pillWoody:'🌳 Woody', pillOriental:'✦ Oriental', pillFresh:'🌿 Fresh', pillGourmand:'🍬 Gourmand',
+      wheelLabel:'The Fragrance Wheel', wheelTitle:'How scents relate to each other', wheelDesc:'The fragrance wheel maps scent families and shows how they blend, contrast, and complement. Adjacent families share qualities; opposite families create contrast.', wheelHint:'Click a segment to explore',
+      wlCitrus:'Citrus', wslCitrus:'Bright · Zesty', wlFloral:'Floral', wslFloral:'Soft · Romantic', wlWoody:'Woody', wslWoody:'Warm · Earthy', wlOriental:'Oriental', wslOriental:'Rich · Exotic', wlFresh:'Fresh', wslFresh:'Clean · Aquatic', wlGourmand:'Gourmand', wslGourmand:'Sweet · Edible',
+      famCitrusTitle:'Citrus', famCitrusDesc:"The freshest family in perfumery. Citrus notes open most fragrances with immediate brightness and lift. They're among the most volatile notes, meaning they're often the first thing you smell and the first to fade — but their energy sets the tone for everything that follows.",
+      famFloralTitle:'Floral', famFloralDesc:"The most diverse family in fragrance, spanning everything from light and airy to rich and opulent. Floral notes form the heart of countless classic perfumes and are the most widely used accord in feminine and unisex compositions. From dewy rose to heady tuberose — florals are perfumery's most expressive palette.",
+      famWoodyTitle:'Woody', famWoodyDesc:'Warm, grounding and deeply sensual. Woody notes form the backbone of most oriental and masculine compositions and are responsible for the dry-down — the final phase of a fragrance. Woods provide depth, longevity and a sense of natural comfort. Many iconic Arabian perfumes are built around woody bases like oud, sandalwood and cedarwood.',
+      famOrientalTitle:'Oriental', famOrientalDesc:'The richest, most complex family in perfumery. Oriental notes are warm, exotic and deeply layered — drawing on resins, spices, incense and rare botanical extracts. This is the heartland of Arabian fragrance, where accords like amber, oud and bakhoor create compositions with legendary longevity and extraordinary sillage.',
+      famFreshTitle:'Fresh', famFreshDesc:"Clean, airy and effortless. Fresh notes are created both synthetically and from natural sources to evoke everything from ocean breezes to crisp linen and morning dew. They're the foundation of lighter, daytime and summer fragrances, and often used to balance heavier oriental or woody compositions.",
+      famGourmandTitle:'Gourmand', famGourmandDesc:"The most modern family in perfumery, popularised from the 1990s onwards. Gourmand notes reference edible ingredients — vanilla, caramel, coffee, chocolate — creating sweet, comforting and often addictive compositions. They're a signature of many contemporary Arabian and niche fragrances, adding warmth and instant wearability.",
+      seoTitle:'Understanding fragrance notes, accords & families',
+      seoP1:'A fragrance is constructed in three layers — <strong>top notes</strong>, <strong>heart notes</strong> and <strong>base notes</strong>. Top notes are the first impression: bright, volatile and short-lived. Heart notes emerge after 15–30 minutes and form the core character of the scent. Base notes are the final, lasting phase — the deepest and most enduring part of the fragrance.',
+      seoP2:'An <strong>accord</strong> is a harmonious blend of individual notes that combine to create a single recognisable smell — like "amber" or "leather". Most fragrances are described by their dominant accords rather than every single ingredient.',
+      seoP3:'Understanding these building blocks helps you predict whether a fragrance will suit your skin, your style and the occasions you wear it.',
+      aq1:"What's the difference between a note and an accord?", aa1:'A note is a single aromatic ingredient (e.g. bergamot, rose, vetiver). An accord is a blend of several notes that together create a single recognisable smell — for example, an "amber" accord might combine benzoin, labdanum, vanilla and sandalwood. Accords are the building blocks; notes are the raw materials.',
+      aq2:'Why do fragrances smell different on different people?', aa2:'Skin chemistry affects how fragrance molecules interact and evaporate. Skin pH, moisture level, body temperature and diet all influence how a scent develops on your skin. This is why it\'s always recommended to wear a fragrance for a few hours before deciding — what smells like cedar on one person may read more as musk on another.',
+      aq3:'What makes Arabian fragrances different?', aa3:'Arabian perfumes typically use higher concentrations of fragrance oil (often 20–30%) and lean heavily on warming base notes like oud, amber, musk and sandalwood. They\'re designed for longevity and presence — many last 10–14 hours on skin and project significantly. The tradition also places greater importance on woody and oriental accords compared to Western perfumery\'s preference for florals and fresh notes.',
+      aq4:'What does sillage mean?', aa4:'Sillage (pronounced "see-yazh") refers to the trail a fragrance leaves in the air as you move. A high-sillage fragrance fills a room and lingers after you\'ve left; a low-sillage fragrance stays close to the skin. Arabian fragrances are typically known for generous sillage thanks to their oil-rich compositions.',
+      aq5:'How do I choose a fragrance based on notes?', aa5:"Start with the base notes — these define the lasting character of the fragrance. If you love warmth and depth, look for woody and oriental bases. If you prefer clean and light, look for fresh or citrus bases. Then use the heart notes to refine your choice: floral hearts add romance, spicy hearts add complexity. The top notes tell you the opening impression but fade quickly — so don't judge a fragrance in the first 5 minutes.",
+      drawerPairingsLabel:'Pairs well with', drawerStrengthLabel:'Intensity', drawerCta:'Explore all fragrance notes →',
+      footerStore:'Store', footerProducts:'Products', footerContact:'Contact',
+      familySuffix:' Family',
+    },
+    pt: {
+      pageTitle: 'Notas e Acordes Olfativos Explicados | YSP Collective',
+      pageDesc: 'Descubra os ingredientes que constroem um perfume. Aprenda o que cada nota cheira — de cítrico e floral a amadeirado, oriental e gourmand.',
+      navBack: '← Voltar à Loja',
+      heroEyebrow: 'Educação em Perfumaria',
+      heroTitle: 'A linguagem<br>do <em>aroma.</em>',
+      heroDesc: 'Cada perfume é construído a partir de notas e acordes — os ingredientes individuais que se combinam para criar uma história olfativa completa. Aprenda o que cada um significa, como cheira e por que razão é importante.',
+      pillCitrus:'🍊 Cítrico', pillFloral:'🌸 Floral', pillWoody:'🌳 Amadeirado', pillOriental:'✦ Oriental', pillFresh:'🌿 Fresco', pillGourmand:'🍬 Gourmand',
+      wheelLabel:'A Roda Olfativa', wheelTitle:'Como as famílias se relacionam entre si', wheelDesc:'A roda olfativa mapeia as famílias de fragrâncias e mostra como se misturam, contrastam e complementam. Famílias adjacentes partilham qualidades; famílias opostas criam contraste.', wheelHint:'Clique num segmento para explorar',
+      wlCitrus:'Cítrico', wslCitrus:'Brilhante · Fresco', wlFloral:'Floral', wslFloral:'Suave · Romântico', wlWoody:'Amadeirado', wslWoody:'Quente · Terroso', wlOriental:'Oriental', wslOriental:'Rico · Exótico', wlFresh:'Fresco', wslFresh:'Limpo · Aquático', wlGourmand:'Gourmand', wslGourmand:'Doce · Comestível',
+      famCitrusTitle:'Cítrico', famCitrusDesc:'A família mais fresca da perfumaria. As notas cítricas abrem a maioria das fragrâncias com brilho e leveza imediatos. São das notas mais voláteis, o que significa que são muitas vezes a primeira coisa que se sente e a primeira a desaparecer — mas a sua energia define o tom para tudo o que se segue.',
+      famFloralTitle:'Floral', famFloralDesc:"A família mais diversificada das fragrâncias, abrangendo desde o leve e aéreo até ao rico e opulento. As notas florais formam o coração de inúmeros perfumes clássicos e são o acorde mais utilizado em composições femininas e unissexo. Da rosa fresca à tuberosa intensa — os florais são a paleta mais expressiva da perfumaria.",
+      famWoodyTitle:'Amadeirado', famWoodyDesc:'Quente, enraizado e profundamente sensual. As notas amadeiradas formam a espinha dorsal da maioria das composições orientais e masculinas e são responsáveis pelo dry-down — a fase final de uma fragrância. As madeiras proporcionam profundidade, longevidade e uma sensação de conforto natural. Muitos perfumes árabes icónicos são construídos sobre bases amadeiradas como oud, sândalo e cedro.',
+      famOrientalTitle:'Oriental', famOrientalDesc:'A família mais rica e complexa da perfumaria. As notas orientais são quentes, exóticas e profundamente estratificadas — recorrendo a resinas, especiarias, incenso e extractos botânicos raros. Este é o coração da perfumaria árabe, onde acordes como âmbar, oud e bakhoor criam composições com longevidade lendária e um sillage extraordinário.',
+      famFreshTitle:'Fresco', famFreshDesc:'Limpo, aéreo e sem esforço. As notas frescas são criadas tanto sinteticamente como a partir de fontes naturais para evocar tudo, desde brisas oceânicas a linho fresco e orvalho matinal. São a base das fragrâncias mais leves, diurnas e de verão, e frequentemente usadas para equilibrar composições orientais ou amadeiradas mais pesadas.',
+      famGourmandTitle:'Gourmand', famGourmandDesc:'A família mais moderna da perfumaria, popularizada a partir dos anos 90. As notas gourmand referenciam ingredientes comestíveis — baunilha, caramelo, café, chocolate — criando composições doces, reconfortantes e frequentemente viciantes. São uma assinatura de muitas fragrâncias árabes e de nicho contemporâneas, acrescentando calor e facilidade de uso imediata.',
+      seoTitle:'Compreender notas, acordes e famílias olfativas',
+      seoP1:'Uma fragrância é construída em três camadas — <strong>notas de topo</strong>, <strong>notas de coração</strong> e <strong>notas de base</strong>. As notas de topo são a primeira impressão: brilhantes, voláteis e efémeras. As notas de coração surgem após 15 a 30 minutos e formam o carácter central do perfume. As notas de base são a fase final e duradoura — a parte mais profunda e persistente da fragrância.',
+      seoP2:'Um <strong>acorde</strong> é uma mistura harmoniosa de notas individuais que em conjunto criam um cheiro único e reconhecível — como "âmbar" ou "couro". A maioria das fragrâncias é descrita pelos seus acordes dominantes em vez de cada ingrediente individualmente.',
+      seoP3:'Compreender estes elementos de base ajuda-o a prever se uma fragrância se adequa à sua pele, ao seu estilo e às ocasiões em que a usa.',
+      aq1:'Qual é a diferença entre uma nota e um acorde?', aa1:'Uma nota é um único ingrediente aromático (p. ex. bergamota, rosa, vetiver). Um acorde é uma mistura de várias notas que em conjunto criam um cheiro único e reconhecível — por exemplo, um acorde de "âmbar" pode combinar benzoin, láudano, baunilha e sândalo. Os acordes são os blocos de construção; as notas são as matérias-primas.',
+      aq2:'Porque é que os perfumes cheiram diferente em pessoas diferentes?', aa2:'A química da pele afecta a forma como as moléculas aromáticas interagem e evaporam. O pH, o nível de hidratação, a temperatura corporal e a alimentação influenciam o desenvolvimento do perfume na pele. É por isso que se recomenda sempre usar uma fragrância durante algumas horas antes de decidir — o que numa pessoa cheira a cedro pode sentir-se mais como almíscar noutra.',
+      aq3:'O que torna as fragrâncias árabes diferentes?', aa3:'Os perfumes árabes utilizam tipicamente concentrações mais elevadas de óleo aromático (frequentemente 20–30%) e apoiam-se fortemente em notas de base quentes como oud, âmbar, almíscar e sândalo. São concebidos para longevidade e presença — muitos duram 10 a 14 horas na pele e projectam-se significativamente. A tradição também valoriza mais os acordes amadeirados e orientais em relação à preferência da perfumaria ocidental por florais e frescos.',
+      aq4:'O que significa sillage?', aa4:'Sillage (pronunciado "see-yazh") refere-se ao rasto que uma fragrância deixa no ar à medida que se move. Uma fragrância de alto sillage preenche um espaço e persiste depois de ter saído; uma fragrância de baixo sillage fica próxima da pele. As fragrâncias árabes são tipicamente conhecidas pelo seu generoso sillage, graças às suas composições ricas em óleo.',
+      aq5:'Como escolher uma fragrância com base nas notas?', aa5:'Comece pelas notas de base — estas definem o carácter duradouro da fragrância. Se aprecia calor e profundidade, procure bases amadeiradas e orientais. Se prefere limpo e leve, procure bases frescas ou cítricas. Em seguida, use as notas de coração para refinar a sua escolha: corações florais acrescentam romance, corações especiados acrescentam complexidade. As notas de topo dizem-lhe a impressão inicial, mas desaparecem rapidamente — por isso não julgue uma fragrância nos primeiros 5 minutos.',
+      drawerPairingsLabel:'Combina bem com', drawerStrengthLabel:'Intensidade', drawerCta:'Explorar todas as notas olfativas →',
+      footerStore:'Loja', footerProducts:'Produtos', footerContact:'Contacto',
+      familySuffix:' Família',
+    },
+    es: {
+      pageTitle: 'Notas y Acordes Olfativos Explicados | YSP Collective',
+      pageDesc: 'Descubre los ingredientes que construyen un perfume. Aprende cómo huele cada nota — de cítrico y floral a amaderado, oriental y gourmand.',
+      navBack: '← Volver a la Tienda',
+      heroEyebrow: 'Educación en Perfumería',
+      heroTitle: 'El lenguaje<br>del <em>aroma.</em>',
+      heroDesc: 'Cada fragancia está construida a partir de notas y acordes — los ingredientes individuales que se combinan para crear una historia olfativa completa. Aprende qué significa cada uno, cómo huele y por qué importa.',
+      pillCitrus:'🍊 Cítrico', pillFloral:'🌸 Floral', pillWoody:'🌳 Amaderado', pillOriental:'✦ Oriental', pillFresh:'🌿 Fresco', pillGourmand:'🍬 Gourmand',
+      wheelLabel:'La Rueda Olfativa', wheelTitle:'Cómo se relacionan las familias entre sí', wheelDesc:'La rueda olfativa mapea las familias de fragancias y muestra cómo se mezclan, contrastan y complementan. Las familias adyacentes comparten cualidades; las familias opuestas crean contraste.', wheelHint:'Haz clic en un segmento para explorar',
+      wlCitrus:'Cítrico', wslCitrus:'Brillante · Fresco', wlFloral:'Floral', wslFloral:'Suave · Romántico', wlWoody:'Amaderado', wslWoody:'Cálido · Terroso', wlOriental:'Oriental', wslOriental:'Rico · Exótico', wlFresh:'Fresco', wslFresh:'Limpio · Acuático', wlGourmand:'Gourmand', wslGourmand:'Dulce · Comestible',
+      famCitrusTitle:'Cítrico', famCitrusDesc:'La familia más fresca de la perfumería. Las notas cítricas abren la mayoría de las fragancias con brillo y ligereza inmediatos. Son de las notas más volátiles, lo que significa que suelen ser lo primero que se huele y lo primero que desaparece — pero su energía marca el tono de todo lo que sigue.',
+      famFloralTitle:'Floral', famFloralDesc:'La familia más diversa de las fragancias, que abarca desde lo ligero y aéreo hasta lo rico y opulento. Las notas florales forman el corazón de innumerables perfumes clásicos y son el acorde más utilizado en composiciones femeninas y unisex. De la rosa fresca a la tuberosa intensa — los florales son la paleta más expresiva de la perfumería.',
+      famWoodyTitle:'Amaderado', famWoodyDesc:'Cálido, enraizado y profundamente sensual. Las notas amaderadas forman la columna vertebral de la mayoría de las composiciones orientales y masculinas y son responsables del dry-down — la fase final de una fragancia. Las maderas aportan profundidad, longevidad y una sensación de confort natural. Muchos perfumes árabes icónicos se construyen sobre bases amaderadas como oud, sándalo y cedro.',
+      famOrientalTitle:'Oriental', famOrientalDesc:'La familia más rica y compleja de la perfumería. Las notas orientales son cálidas, exóticas y profundamente estratificadas — utilizando resinas, especias, incienso y extractos botánicos raros. Este es el corazón de la perfumería árabe, donde acordes como el ámbar, el oud y el bakhoor crean composiciones con una longevidad legendaria y un sillage extraordinario.',
+      famFreshTitle:'Fresco', famFreshDesc:'Limpio, aéreo y sin esfuerzo. Las notas frescas se crean tanto de forma sintética como a partir de fuentes naturales para evocar desde brisas oceánicas hasta lino crujiente y rocío matinal. Son la base de las fragancias más ligeras, diurnas y de verano, y se usan frecuentemente para equilibrar composiciones orientales o amaderadas más pesadas.',
+      famGourmandTitle:'Gourmand', famGourmandDesc:'La familia más moderna de la perfumería, popularizada a partir de los años 90. Las notas gourmand hacen referencia a ingredientes comestibles — vainilla, caramelo, café, chocolate — creando composiciones dulces, reconfortantes y frecuentemente adictivas. Son una seña de identidad de muchas fragancias árabes y de nicho contemporáneas, añadiendo calidez y facilidad de uso inmediata.',
+      seoTitle:'Comprender notas, acordes y familias olfativas',
+      seoP1:'Una fragancia se construye en tres capas — <strong>notas de salida</strong>, <strong>notas de corazón</strong> y <strong>notas de fondo</strong>. Las notas de salida son la primera impresión: brillantes, volátiles y efímeras. Las notas de corazón emergen después de 15 a 30 minutos y forman el carácter central del perfume. Las notas de fondo son la fase final y duradera — la parte más profunda y persistente de la fragancia.',
+      seoP2:'Un <strong>acorde</strong> es una mezcla armoniosa de notas individuales que juntas crean un olor único y reconocible — como "ámbar" o "cuero". La mayoría de las fragancias se describen por sus acordes dominantes en lugar de cada ingrediente individualmente.',
+      seoP3:'Comprender estos componentes básicos te ayuda a predecir si una fragancia se adaptará a tu piel, tu estilo y las ocasiones en que la usas.',
+      aq1:'¿Cuál es la diferencia entre una nota y un acorde?', aa1:'Una nota es un único ingrediente aromático (p. ej. bergamota, rosa, vetiver). Un acorde es una mezcla de varias notas que juntas crean un olor único y reconocible — por ejemplo, un acorde de "ámbar" puede combinar benjuí, ladano, vainilla y sándalo. Los acordes son los bloques de construcción; las notas son las materias primas.',
+      aq2:'¿Por qué las fragancias huelen diferente en personas distintas?', aa2:'La química de la piel afecta a cómo las moléculas aromáticas interactúan y se evaporan. El pH, el nivel de hidratación, la temperatura corporal y la alimentación influyen en el desarrollo del perfume en la piel. Por eso siempre se recomienda usar una fragancia durante varias horas antes de decidir — lo que en una persona huele a cedro puede sentirse más como almizcle en otra.',
+      aq3:'¿Qué hace diferentes a las fragancias árabes?', aa3:'Los perfumes árabes utilizan típicamente concentraciones más altas de aceite aromático (frecuentemente del 20–30%) y se apoyan fuertemente en notas de fondo cálidas como oud, ámbar, almizcle y sándalo. Están diseñados para la longevidad y la presencia — muchos duran 10–14 horas en la piel y proyectan significativamente. La tradición también da mayor importancia a los acordes amaderados y orientales frente a la preferencia de la perfumería occidental por los florales y los frescos.',
+      aq4:'¿Qué significa sillage?', aa4:'Sillage (pronunciado "see-yazh") se refiere a la estela que deja una fragancia en el aire al moverse. Una fragancia de alto sillage llena un espacio y permanece después de que te hayas ido; una fragancia de bajo sillage se queda cerca de la piel. Las fragancias árabes son típicamente conocidas por su generoso sillage gracias a sus composiciones ricas en aceites.',
+      aq5:'¿Cómo elegir una fragancia basándose en las notas?', aa5:"Empieza por las notas de fondo — estas definen el carácter duradero de la fragancia. Si te gusta el calor y la profundidad, busca bases amaderadas y orientales. Si prefieres lo limpio y ligero, busca bases frescas o cítricas. Luego usa las notas de corazón para refinar tu elección: los corazones florales añaden romance, los corazones especiados añaden complejidad. Las notas de salida te dicen la impresión inicial, pero desaparecen rápidamente — así que no juzgues una fragancia en los primeros 5 minutos.",
+      drawerPairingsLabel:'Combina bien con', drawerStrengthLabel:'Intensidad', drawerCta:'Explorar todas las notas olfativas →',
+      footerStore:'Tienda', footerProducts:'Productos', footerContact:'Contacto',
+      familySuffix:' Familia',
+    }
+  };
 
-      // CITRUS
-      bergamot: {
-        name: "Bergamot", family: "Citrus", familyColor: "var(--citrus)",
-        strength: 30,
-        desc: "The most refined citrus in perfumery — bergamot is a small Italian citrus fruit whose peel oil has a uniquely floral, slightly spicy character beneath its brightness. It's the defining note in Earl Grey tea and opens some of the world's most celebrated fragrances, including Acqua di Giò and countless Arabian compositions. Bergamot bridges citrus and floral families elegantly.",
-        pairings: ["Cedar", "Lavender", "Rose", "Musk", "Amber"],
-        svgColor: "#e8a84a", icon: "citrus"
-      },
-      lemon: {
-        name: "Lemon", family: "Citrus", familyColor: "var(--citrus)",
-        strength: 25,
-        desc: "Sharp, clean and instantly recognisable. Lemon in perfumery captures the bright, fizzy quality of freshly squeezed juice with a slight waxy depth from the peel. It's the most transparent of all citrus notes — adding luminosity and freshness without weight. Often used in aquatic and fresh compositions as an energising opener.",
-        pairings: ["Marine", "White Musk", "Vetiver", "Cedar", "Ginger"],
-        svgColor: "#f0d060", icon: "citrus"
-      },
-      grapefruit: {
-        name: "Grapefruit", family: "Citrus", familyColor: "var(--citrus)",
-        strength: 28,
-        desc: "Juicy, slightly bitter and wonderfully uplifting. Grapefruit has a natural effervescence that makes fragrances feel alive and modern. It has a slight green, almost herbal edge that distinguishes it from sweeter citrus notes. Popular in contemporary fresh and sport fragrances, grapefruit also works beautifully against warm woody and musky bases.",
-        pairings: ["White Musk", "Vetiver", "Cedar", "Jasmine", "Amber"],
-        svgColor: "#f0a080", icon: "citrus"
-      },
-      mandarin: {
-        name: "Mandarin", family: "Citrus", familyColor: "var(--citrus)",
-        strength: 35,
-        desc: "Sweeter and rounder than other citrus notes, mandarin has a jammy, almost red-fruited quality that bridges the gap between citrus and gourmand families. It's warmer and more sensual than lemon or bergamot, sitting comfortably in oriental and woody contexts as well as fresh ones. A key note in many Italian and Arabian perfumery traditions.",
-        pairings: ["Rose", "Sandalwood", "Amber", "Vanilla", "Jasmine"],
-        svgColor: "#e87030", icon: "citrus"
-      },
+  // ── NOTE DATA (multilingual) ──────────────────────────────────────────────
+  const NOTE_DATA_ALL = {
+    en: {
+      bergamot:  { name:"Bergamot",          family:"Citrus",   familyColor:"var(--citrus)",   strength:30, desc:"The most refined citrus in perfumery — bergamot is a small Italian citrus fruit whose peel oil has a uniquely floral, slightly spicy character beneath its brightness. It's the defining note in Earl Grey tea and opens some of the world's most celebrated fragrances. Bergamot bridges citrus and floral families elegantly.", pairings:["Cedar","Lavender","Rose","Musk","Amber"], svgColor:"#e8a84a", icon:"citrus" },
+      lemon:     { name:"Lemon",             family:"Citrus",   familyColor:"var(--citrus)",   strength:25, desc:"Sharp, clean and instantly recognisable. Lemon in perfumery captures the bright, fizzy quality of freshly squeezed juice with a slight waxy depth from the peel. The most transparent of all citrus notes — adding luminosity and freshness without weight. Often used in aquatic and fresh compositions as an energising opener.", pairings:["Marine","White Musk","Vetiver","Cedar","Ginger"], svgColor:"#f0d060", icon:"citrus" },
+      grapefruit:{ name:"Grapefruit",        family:"Citrus",   familyColor:"var(--citrus)",   strength:28, desc:"Juicy, slightly bitter and wonderfully uplifting. Grapefruit has a natural effervescence that makes fragrances feel alive and modern. It has a slight green, almost herbal edge that distinguishes it from sweeter citrus notes. Popular in contemporary fresh and sport fragrances.", pairings:["White Musk","Vetiver","Cedar","Jasmine","Amber"], svgColor:"#f0a080", icon:"citrus" },
+      mandarin:  { name:"Mandarin",          family:"Citrus",   familyColor:"var(--citrus)",   strength:35, desc:"Sweeter and rounder than other citrus notes, mandarin has a jammy, almost red-fruited quality that bridges the gap between citrus and gourmand families. It's warmer and more sensual than lemon or bergamot — a key note in many Italian and Arabian perfumery traditions.", pairings:["Rose","Sandalwood","Amber","Vanilla","Jasmine"], svgColor:"#e87030", icon:"citrus" },
+      rose:      { name:"Rose",              family:"Floral",   familyColor:"var(--floral)",   strength:55, desc:"The queen of flowers and the most used note in perfumery. Rose ranges from fresh and dewy to rich and jam-like depending on species and processing. It adds romance, femininity and complexity in equal measure. Central to Arabian perfumery — particularly in oud-rose combinations considered the pinnacle of Middle Eastern fragrance tradition.", pairings:["Oud","Sandalwood","Amber","Musk","Bergamot"], svgColor:"#c06070", icon:"floral" },
+      jasmine:   { name:"Jasmine",           family:"Floral",   familyColor:"var(--floral)",   strength:60, desc:"Intoxicating, rich and slightly animalic. Jasmine is one of the most complex floral materials in perfumery — containing over 200 distinct aromatic compounds. At its heart it's deeply sensual, with an almost skin-like quality that makes it extraordinarily seductive. Indian jasmine (sambac) is particularly prized in Arabian perfumery.", pairings:["Musk","Sandalwood","Amber","Rose","Vanilla"], svgColor:"#e8e0c8", icon:"floral" },
+      lavender:  { name:"Lavender",          family:"Floral",   familyColor:"var(--floral)",   strength:40, desc:"Aromatic, herbal and endlessly calming. Lavender straddles the floral and aromatic families — floral enough to soften masculine compositions but herbal enough to add structure. Lavender underpins the classic fougère accord — the foundation of most classic masculine fragrances.", pairings:["Oakmoss","Coumarin","Musk","Cedar","Bergamot"], svgColor:"#9080b0", icon:"floral" },
+      iris:      { name:"Iris",              family:"Floral",   familyColor:"var(--floral)",   strength:50, desc:"One of the rarest and most precious materials in perfumery. True iris comes from orris root — the dried rhizome of the iris plant, which must age for several years. Iris has a powdery, violet-like quality with a clean, almost metallic edge. Associated with refinement and luxury in Parisian haute parfumerie.", pairings:["Violet","Cedar","Musk","Sandalwood","Rose"], svgColor:"#8070a0", icon:"floral" },
+      oud:       { name:"Oud (Agarwood)",    family:"Woody",    familyColor:"var(--woody)",    strength:90, desc:"The most precious material in all of perfumery — sometimes called 'liquid gold'. Oud comes from agarwood formed when Aquilaria trees become infected with a specific mould. The resulting resin is smoky, deep, animalic and extraordinarily complex. It's the defining note of Middle Eastern perfumery and underpins countless iconic fragrances.", pairings:["Rose","Amber","Saffron","Sandalwood","Musk"], svgColor:"#5a3010", icon:"woody" },
+      sandalwood:{ name:"Sandalwood",        family:"Woody",    familyColor:"var(--woody)",    strength:65, desc:"Creamy, milky and deeply sensual. Sandalwood is one of the most harmonious base notes in perfumery — it blends seamlessly with almost any ingredient, smoothing rough edges and adding a warm, almost skin-like depth. A cornerstone of both Arabian and European perfumery traditions.", pairings:["Rose","Jasmine","Vanilla","Musk","Amber"], svgColor:"#c0906a", icon:"woody" },
+      cedarwood: { name:"Cedarwood",         family:"Woody",    familyColor:"var(--woody)",    strength:50, desc:"Clean, dry and pencil-shaving dry. Cedar provides structure and a pleasant woody skeleton to fragrances without overwhelming other notes. One of the most versatile materials in perfumery — equally at home in fresh aquatics, classic masculines and rich orientals.", pairings:["Bergamot","Vetiver","Musk","Amber","Lavender"], svgColor:"#8a6040", icon:"woody" },
+      vetiver:   { name:"Vetiver",           family:"Woody",    familyColor:"var(--woody)",    strength:70, desc:"Earthy, smoky, rooty and profoundly grounding. Vetiver is extracted from the roots of a grass native to India and Haiti. Haitian vetiver is smokier and more complex; Indonesian vetiver is cleaner and more earthy. A deeply masculine note used to add gravitas, depth and a wonderful dry quality to woody and aromatic compositions.", pairings:["Bergamot","Cedar","Oakmoss","Amber","Grapefruit"], svgColor:"#706040", icon:"woody" },
+      amber:     { name:"Amber",             family:"Oriental", familyColor:"var(--oriental)", strength:75, desc:"Warm, honeyed, powdery and deeply comforting. Amber in perfumery is an accord — typically combining labdanum, benzoin, vanilla and sandalwood to create a warm, golden warmth. The most iconic accord in Arabian perfumery and the backbone of countless oriental compositions.", pairings:["Oud","Musk","Rose","Vanilla","Sandalwood"], svgColor:"#b08030", icon:"oriental" },
+      musk:      { name:"Musk",              family:"Oriental", familyColor:"var(--oriental)", strength:45, desc:"The most intimate of all fragrance materials. Musks range from clean and soapy (white musk) to animalic and earthy (grey musk) to the warm, skin-like quality of ambrette. Musk gives fragrances their intimacy and 'second skin' quality — making them feel like they belong to you.", pairings:["Amber","Vanilla","Sandalwood","Rose","Bergamot"], svgColor:"#7a6060", icon:"oriental" },
+      saffron:   { name:"Saffron",           family:"Oriental", familyColor:"var(--oriental)", strength:80, desc:"Intensely spicy, leathery and metallic. Saffron has a complex, deeply warm quality — simultaneously sharp and sweet, with a distinctly leather-like facet. A signature note in Arabian perfumery, particularly in premium oud-based compositions. It gives fragrances an immediate sense of luxury and exotic opulence.", pairings:["Oud","Rose","Amber","Sandalwood","Musk"], svgColor:"#c06810", icon:"oriental" },
+      incense:   { name:"Incense / Frankincense", family:"Oriental", familyColor:"var(--oriental)", strength:70, desc:"Smoky, resinous, ceremonial and profound. Frankincense — derived from Boswellia trees — has been treasured for thousands of years. Its smoke has a crystalline, slightly lemony quality beneath the resin. A cornerstone of Arabic bakhoor tradition and adds a timeless, almost sacred quality to oriental fragrances.", pairings:["Oud","Amber","Rose","Sandalwood","Musk"], svgColor:"#806030", icon:"oriental" },
+      marine:    { name:"Marine / Aquatic",  family:"Fresh",    familyColor:"var(--fresh)",    strength:35, desc:"Clean, airy and oceanic. Marine notes are almost entirely synthetic — created using molecules that evoke the smell of sea air, ozone and wet stone. They add a sense of openness and freedom to compositions without the retro 'aftershave' feel of earlier aquatic fragrances.", pairings:["Citrus","Musk","Cedar","Lavender","Grapefruit"], svgColor:"#4080a0", icon:"fresh" },
+      greenTea:  { name:"Green Tea",         family:"Fresh",    familyColor:"var(--fresh)",    strength:30, desc:"Delicately vegetal, subtly bitter and wonderfully clean. Green tea notes capture the essence of freshly steeped sencha — grassy, slightly smoky and refreshingly simple. A staple of K-beauty-adjacent fragrances and light oriental compositions, adding a serene, mindful quality.", pairings:["Bergamot","White Musk","Cedar","Jasmine","Lemon"], svgColor:"#70a060", icon:"fresh" },
+      mint:      { name:"Mint",              family:"Fresh",    familyColor:"var(--fresh)",    strength:40, desc:"Cool, sharp and immediately invigorating. In perfumery, mint is used sparingly to add a burst of coolness and contrast. It works particularly well in aromatic fougères and aquatic fragrances, and appears in some modern Arabian compositions as a fresh counterpoint to warm amber bases.", pairings:["Lavender","Bergamot","Vetiver","Musk","Cedar"], svgColor:"#50b070", icon:"fresh" },
+      vanilla:   { name:"Vanilla",           family:"Gourmand", familyColor:"var(--gourmand)", strength:60, desc:"Warm, creamy and universally comforting. Vanilla is one of the most complex natural materials in perfumery — containing over 200 aromatic compounds. In fragrance, it adds warmth, sweetness and a skin-like softness. Vanilla underpins the 'oriental drydown' that makes Arabian fragrances so addictive.", pairings:["Amber","Musk","Sandalwood","Rose","Oud"], svgColor:"#c0902a", icon:"gourmand" },
+      caramel:   { name:"Caramel",           family:"Gourmand", familyColor:"var(--gourmand)", strength:55, desc:"Rich, buttery and deeply sweet. Caramel notes evoke the smell of sugar heated to the point of transformation. They add a warm, enveloping sweetness — particularly popular in evening and winter fragrances. Caramel sits comfortably alongside amber, vanilla and warm musks in oriental compositions.", pairings:["Vanilla","Amber","Musk","Tonka Bean","Sandalwood"], svgColor:"#a06020", icon:"gourmand" },
+      coffee:    { name:"Coffee",            family:"Gourmand", familyColor:"var(--gourmand)", strength:65, desc:"Dark, roasted, intensely aromatic. Coffee in perfumery ranges from bright and acidic to dark and bitter to sweet and creamy. It adds incredible depth and a distinctly modern character. Coffee accords are having a major moment in Arabian perfumery — particularly in fragrances like Lattafa Khamrah Qahwa.", pairings:["Vanilla","Tobacco","Amber","Musk","Cedar"], svgColor:"#604020", icon:"gourmand" },
+      tonkaBean: { name:"Tonka Bean",        family:"Gourmand", familyColor:"var(--gourmand)", strength:50, desc:"Almondine, sweet and warmly powdery. Tonka bean contains coumarin — a compound with a distinctive hay-like, vanilla-adjacent scent that bridges the gourmand and oriental families. It adds a soft, comforting sweetness and is essential in oriental perfumery, softening spicy and woody notes.", pairings:["Vanilla","Lavender","Musk","Amber","Cedarwood"], svgColor:"#906838", icon:"gourmand" },
+    },
+    pt: {
+      bergamot:  { name:"Bergamota", family:"Cítrico", strength:30, desc:"A nota cítrica mais refinada da perfumaria — a bergamota é um pequeno fruto cítrico italiano cujo óleo de casca tem um carácter uniquamente floral e ligeiramente picante. É a nota definidora do chá Earl Grey e abre algumas das fragrâncias mais celebradas do mundo. A bergamota une elegantemente as famílias cítrica e floral." },
+      lemon:     { name:"Limão",      family:"Cítrico", strength:25, desc:"Nítido, limpo e instantaneamente reconhecível. O limão na perfumaria captura a qualidade brilhante e efervescente do sumo espremido na hora, com uma ligeira profundidade cerosa da casca. A mais transparente das notas cítricas — acrescentando luminosidade e frescura sem peso. Frequentemente usado como abertura energizante em composições aquáticas." },
+      grapefruit:{ name:"Toranja",    family:"Cítrico", strength:28, desc:"Suculenta, ligeiramente amarga e maravilhosamente revigorante. A toranja tem uma efervescência natural que faz as fragrâncias parecerem vivas e modernas. Tem uma ligeira aresta verde, quase herbácea, que a distingue das notas cítricas mais doces. Popular nas fragrâncias frescas e desportivas contemporâneas." },
+      mandarin:  { name:"Mandarina",  family:"Cítrico", strength:35, desc:"Mais doce e redonda do que outras notas cítricas, a mandarina tem uma qualidade confiturada e quase vermelha que une as famílias cítrica e gourmand. É mais quente e sensual do que o limão ou a bergamota — uma nota chave em muitas tradições de perfumaria italiana e árabe." },
+      rose:      { name:"Rosa",       family:"Floral",  strength:55, desc:"A rainha das flores e a nota mais usada na perfumaria. A rosa varia de fresca e com orvalho a rica e confiturada, dependendo da espécie e do processamento. Acrescenta romance, feminilidade e complexidade em igual medida. Central na perfumaria árabe — particularmente nas combinações oud-rosa consideradas o pináculo da tradição de fragrâncias do Médio Oriente." },
+      jasmine:   { name:"Jasmim",     family:"Floral",  strength:60, desc:"Intoxicante, rico e ligeiramente animalic. O jasmim é um dos materiais florais mais complexos da perfumaria — contendo mais de 200 compostos aromáticos distintos. No seu coração é profundamente sensual, com uma qualidade quase semelhante à pele que o torna extraordinariamente sedutor. O jasmim índio (sambac) é particularmente valorizado na perfumaria árabe." },
+      lavender:  { name:"Lavanda",    family:"Floral",  strength:40, desc:"Aromática, herbácea e infinitamente calmante. A lavanda atravessa as famílias floral e aromática — floral o suficiente para suavizar as composições masculinas, mas herbácea o suficiente para acrescentar estrutura. A lavanda sustenta o clássico acorde fougère — a base da maioria das fragrâncias masculinas clássicas." },
+      iris:      { name:"Íris",       family:"Floral",  strength:50, desc:"Um dos materiais mais raros e preciosos da perfumaria. O íris verdadeiro vem da raiz de orris — o rizoma seco da planta de íris, que deve envelhecer vários anos. Tem uma qualidade em pó, semelhante à violeta, com uma aresta limpa e quase metálica. Associado ao refinamento e ao luxo na haute parfumerie parisiense." },
+      oud:       { name:"Oud (Madeira de Agar)", family:"Amadeirado", strength:90, desc:"O material mais precioso de toda a perfumaria — por vezes chamado 'ouro líquido'. O oud provém da madeira de agar formada quando as árvores Aquilaria são infectadas por um molde específico. A resina resultante é fumada, profunda, animalic e extraordinariamente complexa. É a nota definidora da perfumaria do Médio Oriente." },
+      sandalwood:{ name:"Sândalo",    family:"Amadeirado", strength:65, desc:"Cremoso, leitoso e profundamente sensual. O sândalo é uma das notas de base mais harmoniosas da perfumaria — combina perfeitamente com quase qualquer ingrediente, suavizando as arestas e acrescentando uma profundidade quente, quase semelhante à pele. Uma pedra angular das tradições de perfumaria árabe e europeia." },
+      cedarwood: { name:"Cedro",      family:"Amadeirado", strength:50, desc:"Limpo, seco e com a secura de um lápis a ser aguçado. O cedro fornece estrutura e um esqueleto amadeirado agradável às fragrâncias sem dominar as outras notas. Um dos materiais mais versáteis da perfumaria — igualmente confortável em aquáticos frescos, masculinos clássicos e orientais ricos." },
+      vetiver:   { name:"Vetiver",    family:"Amadeirado", strength:70, desc:"Terroso, fumado, com aroma a raízes e profundamente enraizado. O vetiver é extraído das raízes de uma erva nativa da Índia e do Haiti. O vetiver do Haiti é mais fumado e complexo; o da Indonésia é mais limpo e terroso. Uma nota profundamente masculina usada para acrescentar gravitas e profundidade às composições." },
+      amber:     { name:"Âmbar",      family:"Oriental",   strength:75, desc:"Quente, com mel, empoado e profundamente reconfortante. O âmbar na perfumaria é um acorde — tipicamente combinando láudano, benzoin, baunilha e sândalo para criar um calor dourado e envolvente. O acorde mais icónico da perfumaria árabe e a espinha dorsal de inúmeras composições orientais." },
+      musk:      { name:"Almíscar",   family:"Oriental",   strength:45, desc:"O material mais íntimo de todos os ingredientes de fragrâncias. Os almíscares variam de limpo e sabonete (almíscar branco) a animalic e terroso (almíscar cinzento) à qualidade quente e semelhante à pele do ambrette. O almíscar dá às fragrâncias a sua intimidade e qualidade de 'segunda pele'." },
+      saffron:   { name:"Açafrão",    family:"Oriental",   strength:80, desc:"Intensamente picante, com couro e metálico. O açafrão tem uma qualidade complexa e profundamente quente — simultaneamente nítida e doce, com uma faceta distintamente de couro. Uma nota de assinatura na perfumaria árabe, particularmente em composições premium à base de oud." },
+      incense:   { name:"Incenso / Olíbano", family:"Oriental", strength:70, desc:"Fumado, resinoso, cerimonial e profundo. O olíbano — derivado de árvores Boswellia — tem sido valorizado durante milénios. O seu fumo tem uma qualidade cristalina e ligeiramente limão sob a resina. Uma pedra angular da tradição árabe do bakhoor e acrescenta uma qualidade atemporal, quase sagrada, às fragrâncias orientais." },
+      marine:    { name:"Marinho / Aquático", family:"Fresco", strength:35, desc:"Limpo, aéreo e oceânico. As notas marinhas são quase inteiramente sintéticas — criadas usando moléculas que evocam o cheiro de ar do mar, ozono e pedra molhada. Acrescentam uma sensação de abertura e liberdade às composições sem o retro 'after-shave' das fragrâncias aquáticas mais antigas." },
+      greenTea:  { name:"Chá Verde",  family:"Fresco",     strength:30, desc:"Delicadamente vegetal, subtilmente amargo e maravilhosamente limpo. As notas de chá verde capturam a essência do sencha recentemente preparado — herbáceo, ligeiramente fumado e refrescantemente simples. Um elemento chave das fragrâncias adjacentes ao K-beauty e das composições orientais leves." },
+      mint:      { name:"Menta",      family:"Fresco",     strength:40, desc:"Fresca, nítida e imediatamente revigorante. Na perfumaria, a menta é usada com moderação para acrescentar um sopro de frescura e contraste. Funciona particularmente bem em fougères aromáticos e fragrâncias aquáticas, e aparece em algumas composições árabes modernas como contraponto fresco a bases de âmbar quentes." },
+      vanilla:   { name:"Baunilha",   family:"Gourmand",   strength:60, desc:"Quente, cremosa e universalmente reconfortante. A baunilha é um dos materiais naturais mais complexos da perfumaria — contendo mais de 200 compostos aromáticos. Na fragrância, acrescenta calor, doçura e uma suavidade semelhante à pele. A baunilha sustenta o 'drydown oriental' que torna as fragrâncias árabes tão viciantes." },
+      caramel:   { name:"Caramelo",   family:"Gourmand",   strength:55, desc:"Rico, amanteigado e profundamente doce. As notas de caramelo evocam o cheiro do açúcar aquecido até ao ponto de transformação. Acrescentam uma doçura quente e envolvente — particularmente populares em fragrâncias nocturnas e de inverno. O caramelo assenta confortavelmente ao lado do âmbar, baunilha e almíscaras quentes." },
+      coffee:    { name:"Café",       family:"Gourmand",   strength:65, desc:"Escuro, torrado, intensamente aromático. O café na perfumaria varia de brilhante e ácido a escuro e amargo a doce e cremoso. Acrescenta profundidade incredível e um carácter distintamente moderno. Os acordes de café têm um momento importante na perfumaria árabe — particularmente em fragrâncias como a Lattafa Khamrah Qahwa." },
+      tonkaBean: { name:"Feijão Tonka", family:"Gourmand",  strength:50, desc:"Com aroma a amêndoa, doce e quentemente empoado. O feijão tonka contém cumarina — um composto com um aroma distintivo de feno, adjacente à baunilha, que une as famílias gourmand e oriental. Acrescenta uma doçura suave e reconfortante e é essencial na perfumaria oriental, suavizando as notas picantes e amadeiradas." },
+    },
+    es: {
+      bergamot:  { name:"Bergamota", family:"Cítrico", strength:30, desc:"La nota cítrica más refinada de la perfumería — la bergamota es un pequeño fruto cítrico italiano cuyo aceite de piel tiene un carácter únicamente floral y ligeramente especiado. Es la nota definitoria del té Earl Grey y abre algunas de las fragancias más celebradas del mundo. La bergamota une elegantemente las familias cítrica y floral." },
+      lemon:     { name:"Limón",     family:"Cítrico", strength:25, desc:"Nítido, limpio e instantáneamente reconocible. El limón en perfumería captura la calidad brillante y efervescente del zumo recién exprimido con una ligera profundidad cerosa de la piel. La más transparente de todas las notas cítricas — añadiendo luminosidad y frescura sin peso. Frecuentemente usado como apertura energizante en composiciones acuáticas." },
+      grapefruit:{ name:"Pomelo",    family:"Cítrico", strength:28, desc:"Jugoso, ligeramente amargo y maravillosamente estimulante. El pomelo tiene una efervescencia natural que hace que las fragancias se sientan vivas y modernas. Tiene un ligero filo verde, casi herbáceo, que lo distingue de las notas cítricas más dulces. Popular en las fragancias frescas y deportivas contemporáneas." },
+      mandarin:  { name:"Mandarina", family:"Cítrico", strength:35, desc:"Más dulce y redonda que otras notas cítricas, la mandarina tiene una calidad afrutada y casi roja que une las familias cítrica y gourmand. Es más cálida y sensual que el limón o la bergamota — una nota clave en muchas tradiciones de perfumería italiana y árabe." },
+      rose:      { name:"Rosa",      family:"Floral",  strength:55, desc:"La reina de las flores y la nota más usada en perfumería. La rosa varía de fresca y con rocío a rica y mermelada, dependiendo de la especie y el procesamiento. Añade romance, feminidad y complejidad en igual medida. Central en la perfumería árabe — particularmente en las combinaciones oud-rosa consideradas la cima de la tradición de fragancias de Oriente Medio." },
+      jasmine:   { name:"Jazmín",    family:"Floral",  strength:60, desc:"Embriagador, rico y ligeramente animalic. El jazmín es uno de los materiales florales más complejos de la perfumería — con más de 200 compuestos aromáticos distintos. En su corazón es profundamente sensual, con una calidad casi similar a la piel que lo hace extraordinariamente seductor. El jazmín índio (sambac) es especialmente apreciado en la perfumería árabe." },
+      lavender:  { name:"Lavanda",   family:"Floral",  strength:40, desc:"Aromática, herbácea e infinitamente calmante. La lavanda atraviesa las familias floral y aromática — lo suficientemente floral para suavizar las composiciones masculinas pero lo suficientemente herbácea para añadir estructura. La lavanda sustenta el clásico acorde fougère — la base de la mayoría de las fragancias masculinas clásicas." },
+      iris:      { name:"Iris",      family:"Floral",  strength:50, desc:"Uno de los materiales más raros y preciosos de la perfumería. El iris verdadero proviene de la raíz de orris — el rizoma seco de la planta de iris, que debe envejecer varios años. Tiene una calidad empolvada, similar a la violeta, con un filo limpio y casi metálico. Asociado con el refinamiento y el lujo en la haute parfumerie parisina." },
+      oud:       { name:"Oud (Madera de Agar)", family:"Amaderado", strength:90, desc:"El material más precioso de toda la perfumería — a veces llamado 'oro líquido'. El oud proviene de la madera de agar formada cuando los árboles Aquilaria se infectan con un molde específico. La resina resultante es ahumada, profunda, animalic y extraordinariamente compleja. Es la nota definitoria de la perfumería de Oriente Medio." },
+      sandalwood:{ name:"Sándalo",   family:"Amaderado", strength:65, desc:"Cremoso, lechoso y profundamente sensual. El sándalo es una de las notas de fondo más armoniosas de la perfumería — se combina perfectamente con casi cualquier ingrediente, suavizando las aristas y añadiendo una profundidad cálida, casi similar a la piel. Una piedra angular de las tradiciones de perfumería árabe y europea." },
+      cedarwood: { name:"Cedro",     family:"Amaderado", strength:50, desc:"Limpio, seco y con la sequedad de un lápiz al afilarse. El cedro proporciona estructura y un esqueleto amaderado agradable a las fragancias sin dominar las demás notas. Uno de los materiales más versátiles de la perfumería — igualmente cómodo en acuáticos frescos, masculinos clásicos y orientales ricos." },
+      vetiver:   { name:"Vetiver",   family:"Amaderado", strength:70, desc:"Terroso, ahumado, con aroma a raíces y profundamente arraigado. El vetiver se extrae de las raíces de una hierba nativa de India y Haití. El vetiver haitiano es más ahumado y complejo; el indonesio es más limpio y terroso. Una nota profundamente masculina usada para añadir gravitas y profundidad a las composiciones." },
+      amber:     { name:"Ámbar",     family:"Oriental", strength:75, desc:"Cálido, con miel, empolvado y profundamente reconfortante. El ámbar en perfumería es un acorde — típicamente combinando ladano, benjuí, vainilla y sándalo para crear un calor dorado y envolvente. El acorde más icónico de la perfumería árabe y la columna vertebral de innumerables composiciones orientales." },
+      musk:      { name:"Almizcle",  family:"Oriental", strength:45, desc:"El material más íntimo de todos los ingredientes de fragancias. Los almizcles van de limpio y jabonoso (almizcle blanco) a animalic y terroso (almizcle gris) a la calidad cálida y similar a la piel del ambrette. El almizcle da a las fragancias su intimidad y calidad de 'segunda piel'." },
+      saffron:   { name:"Azafrán",   family:"Oriental", strength:80, desc:"Intensamente especiado, con cuero y metálico. El azafrán tiene una calidad compleja y profundamente cálida — simultáneamente nítida y dulce, con una faceta distintamente de cuero. Una nota de firma en la perfumería árabe, particularmente en composiciones premium a base de oud." },
+      incense:   { name:"Incienso / Olíbano", family:"Oriental", strength:70, desc:"Ahumado, resinoso, ceremonial y profundo. El olíbano — derivado de árboles Boswellia — ha sido valorado durante milenios. Su humo tiene una calidad cristalina y ligeramente cítrica bajo la resina. Una piedra angular de la tradición árabe del bakhoor y añade una calidad atemporal, casi sagrada, a las fragancias orientales." },
+      marine:    { name:"Marino / Acuático", family:"Fresco", strength:35, desc:"Limpio, aéreo y oceánico. Las notas marinas son casi completamente sintéticas — creadas usando moléculas que evocan el olor del aire del mar, el ozono y la piedra mojada. Añaden una sensación de apertura y libertad a las composiciones sin el retro 'aftershave' de las fragancias acuáticas más antiguas." },
+      greenTea:  { name:"Té Verde",  family:"Fresco",   strength:30, desc:"Delicadamente vegetal, sutilmente amargo y maravillosamente limpio. Las notas de té verde capturan la esencia del sencha recién preparado — herbáceo, ligeramente ahumado y refrescantemente simple. Un elemento clave de las fragancias adyacentes al K-beauty y las composiciones orientales ligeras." },
+      mint:      { name:"Menta",     family:"Fresco",   strength:40, desc:"Fresca, nítida e inmediatamente vigorizante. En perfumería, la menta se usa con moderación para añadir un soplo de frescura y contraste. Funciona particularmente bien en fougères aromáticos y fragancias acuáticas, y aparece en algunas composiciones árabes modernas como contrapunto fresco a bases de ámbar cálidas." },
+      vanilla:   { name:"Vainilla",  family:"Gourmand", strength:60, desc:"Cálida, cremosa y universalmente reconfortante. La vainilla es uno de los materiales naturales más complejos de la perfumería — con más de 200 compuestos aromáticos. En la fragancia, añade calor, dulzura y una suavidad similar a la piel. La vainilla sustenta el 'drydown oriental' que hace las fragancias árabes tan adictivas." },
+      caramel:   { name:"Caramelo",  family:"Gourmand", strength:55, desc:"Rico, mantecoso y profundamente dulce. Las notas de caramelo evocan el olor del azúcar calentado hasta el punto de transformación. Añaden una dulzura cálida y envolvente — particularmente populares en fragancias nocturnas y de invierno. El caramelo encaja cómodamente junto al ámbar, la vainilla y los almizcles cálidos." },
+      coffee:    { name:"Café",      family:"Gourmand", strength:65, desc:"Oscuro, tostado, intensamente aromático. El café en perfumería va de brillante y ácido a oscuro y amargo a dulce y cremoso. Añade una profundidad increíble y un carácter distintamente moderno. Los acordes de café tienen un momento importante en la perfumería árabe — particularmente en fragancias como la Lattafa Khamrah Qahwa." },
+      tonkaBean: { name:"Haba Tonka", family:"Gourmand", strength:50, desc:"Con aroma a almendra, dulce y cálidamente empolvado. El haba tonka contiene cumarina — un compuesto con un aroma distintivo de heno, adyacente a la vainilla, que une las familias gourmand y oriental. Añade una dulzura suave y reconfortante y es esencial en la perfumería oriental, suavizando las notas especiadas y amaderadas." },
+    }
+  };
 
-      // FLORAL
-      rose: {
-        name: "Rose", family: "Floral", familyColor: "var(--floral)",
-        strength: 55,
-        desc: "The queen of flowers and the most used note in perfumery. Rose ranges from fresh and dewy (like Bulgarian rose) to rich and jam-like (like Turkish rose) depending on species, harvest and processing. It adds romance, femininity and complexity in equal measure. Rose is central to Arabian perfumery — particularly in oud-rose combinations that are considered the pinnacle of Middle Eastern fragrance tradition.",
-        pairings: ["Oud", "Sandalwood", "Amber", "Musk", "Bergamot"],
-        svgColor: "#c06070", icon: "floral"
-      },
-      jasmine: {
-        name: "Jasmine", family: "Floral", familyColor: "var(--floral)",
-        strength: 60,
-        desc: "Intoxicating, rich and slightly animalic. Jasmine is one of the most complex floral materials in perfumery — containing over 200 distinct aromatic compounds. At its heart it's deeply sensual, with an almost skin-like quality that makes it extraordinarily seductive. It's used in both feminine and masculine fragrances and forms the heart of many iconic compositions. Indian jasmine (sambac) is particularly prized in Arabian perfumery.",
-        pairings: ["Musk", "Sandalwood", "Amber", "Rose", "Vanilla"],
-        svgColor: "#e8e0c8", icon: "floral"
-      },
-      lavender: {
-        name: "Lavender", family: "Floral", familyColor: "var(--floral)",
-        strength: 40,
-        desc: "Aromatic, herbal and endlessly calming. Lavender straddles the floral and aromatic families — it's floral enough to soften masculine compositions but herbal enough to add structure and clarity. French lavender (from Provence) is richer and more floral; English spike lavender is sharper and more camphoraceous. Lavender underpins the classic 'fougère' accord — the foundation of most classic masculine fragrances.",
-        pairings: ["Oakmoss", "Coumarin", "Musk", "Cedar", "Bergamot"],
-        svgColor: "#9080b0", icon: "floral"
-      },
-      iris: {
-        name: "Iris", family: "Floral", familyColor: "var(--floral)",
-        strength: 50,
-        desc: "One of the rarest and most precious materials in perfumery. True iris comes from orris root — the dried rhizome of the iris plant, which must age for several years before it yields its characteristic scent. Iris has a powdery, violet-like quality with a clean, almost metallic edge and a hint of carrot. It's associated with refinement, luxury and timelessness — a key material in many Parisian haute parfumerie houses.",
-        pairings: ["Violet", "Cedar", "Musk", "Sandalwood", "Rose"],
-        svgColor: "#8070a0", icon: "floral"
-      },
+  // ── CURRENT LANG STATE ────────────────────────────────────────────────────
+  let currentLang = 'en';
+  let currentDrawerKey = null;
 
-      // WOODY
-      oud: {
-        name: "Oud (Agarwood)", family: "Woody", familyColor: "var(--woody)",
-        strength: 90,
-        desc: "The most precious material in all of perfumery — sometimes called 'liquid gold'. Oud comes from agarwood, a resinous heartwood formed when Aquilaria trees become infected with a specific mould. The resulting resin is smoky, deep, animalic and extraordinarily complex. Real oud can cost more than gold by weight. Arabian oud tends to be richer and smokier; Indian and Cambodian ouds are lighter and more earthy. It's the defining note of Middle Eastern perfumery and underpins countless iconic fragrances.",
-        pairings: ["Rose", "Amber", "Saffron", "Sandalwood", "Musk"],
-        svgColor: "#5a3010", icon: "woody"
-      },
-      sandalwood: {
-        name: "Sandalwood", family: "Woody", familyColor: "var(--woody)",
-        strength: 65,
-        desc: "Creamy, milky and deeply sensual. Sandalwood is one of the most harmonious base notes in perfumery — it blends seamlessly with almost any ingredient, smoothing rough edges and adding a warm, almost skin-like depth. Mysore sandalwood from India is considered the finest, though sustainably-sourced Australian sandalwood is now widely used. It's a cornerstone of both Arabian and European perfumery traditions.",
-        pairings: ["Rose", "Jasmine", "Vanilla", "Musk", "Amber"],
-        svgColor: "#c0906a", icon: "woody"
-      },
-      cedarwood: {
-        name: "Cedarwood", family: "Woody", familyColor: "var(--woody)",
-        strength: 50,
-        desc: "Clean, dry and pencil-shaving dry. Cedar provides structure and a pleasant woody skeleton to fragrances without overwhelming other notes. Virginian cedarwood is dry and dusty; Atlas cedarwood from Morocco is warmer and slightly sweet. Cedar is one of the most versatile materials in perfumery — equally at home in fresh aquatics, classic masculines and rich orientals. It's often used to anchor lighter notes and extend longevity.",
-        pairings: ["Bergamot", "Vetiver", "Musk", "Amber", "Lavender"],
-        svgColor: "#8a6040", icon: "woody"
-      },
-      vetiver: {
-        name: "Vetiver", family: "Woody", familyColor: "var(--woody)",
-        strength: 70,
-        desc: "Earthy, smoky, rooty and profoundly grounding. Vetiver is extracted from the roots of a grass native to India and Haiti — and the character varies dramatically by origin. Haitian vetiver is smokier and more complex; Indonesian vetiver is cleaner and more earthy. It's a deeply masculine note in the classical sense — used to add gravitas, depth and a wonderful dry, almost smoky quality to woody and aromatic compositions.",
-        pairings: ["Bergamot", "Cedar", "Oakmoss", "Amber", "Grapefruit"],
-        svgColor: "#706040", icon: "woody"
-      },
-
-      // ORIENTAL
-      amber: {
-        name: "Amber", family: "Oriental", familyColor: "var(--oriental)",
-        strength: 75,
-        desc: "Warm, honeyed, powdery and deeply comforting. Amber in perfumery isn't derived from fossilised tree resin — it's an accord, typically combining labdanum (a resinous rock rose), benzoin, vanilla and sandalwood to create a warm, golden warmth. It's the most iconic accord in Arabian perfumery and the backbone of countless oriental compositions. Amber makes fragrances feel opulent, sensual and long-lasting.",
-        pairings: ["Oud", "Musk", "Rose", "Vanilla", "Sandalwood"],
-        svgColor: "#b08030", icon: "oriental"
-      },
-      musk: {
-        name: "Musk", family: "Oriental", familyColor: "var(--oriental)",
-        strength: 45,
-        desc: "The most intimate of all fragrance materials. Natural musk was historically derived from the musk deer gland — now universally replaced by synthetic musks that are both ethical and more diverse in character. Musks range from clean and soapy (white musk) to animalic and earthy (grey musk) to the warm, skin-like quality of ambrette. Musk gives fragrances their intimacy and 'second skin' quality — making them feel like they belong to you.",
-        pairings: ["Amber", "Vanilla", "Sandalwood", "Rose", "Bergamot"],
-        svgColor: "#7a6060", icon: "oriental"
-      },
-      saffron: {
-        name: "Saffron", family: "Oriental", familyColor: "var(--oriental)",
-        strength: 80,
-        desc: "Intensely spicy, leathery and metallic. Saffron is the most expensive culinary spice in the world and equally prized in perfumery. It has a complex, deeply warm quality — simultaneously sharp and sweet, with a distinctly leather-like facet that adds incredible depth. Saffron is a signature note in Arabian perfumery, particularly in premium oud-based compositions. It gives fragrances an immediate sense of luxury and exotic opulence.",
-        pairings: ["Oud", "Rose", "Amber", "Sandalwood", "Musk"],
-        svgColor: "#c06810", icon: "oriental"
-      },
-      incense: {
-        name: "Incense / Frankincense", family: "Oriental", familyColor: "var(--oriental)",
-        strength: 70,
-        desc: "Smoky, resinous, ceremonial and profound. Frankincense — derived from Boswellia trees grown across Oman, Somalia and Ethiopia — has been treasured for thousands of years. Its smoke has a crystalline, slightly lemony quality beneath the resin that gives compositions extraordinary depth and spiritual resonance. It's a cornerstone of Arabic bakhoor tradition and adds a timeless, almost sacred quality to oriental fragrances.",
-        pairings: ["Oud", "Amber", "Rose", "Sandalwood", "Musk"],
-        svgColor: "#806030", icon: "oriental"
-      },
-
-      // FRESH
-      marine: {
-        name: "Marine / Aquatic", family: "Fresh", familyColor: "var(--fresh)",
-        strength: 35,
-        desc: "Clean, airy and oceanic. Marine notes are almost entirely synthetic — created using molecules like Calone that evoke the smell of sea air, ozone and wet stone. They were pioneered in the early 1990s and became the defining accord of a generation of fresh masculine fragrances. Today they're more restrained and blended — adding a sense of openness and freedom to compositions without the retro 'aftershave' feel.",
-        pairings: ["Citrus", "Musk", "Cedar", "Lavender", "Grapefruit"],
-        svgColor: "#4080a0", icon: "fresh"
-      },
-      greenTea: {
-        name: "Green Tea", family: "Fresh", familyColor: "var(--fresh)",
-        strength: 30,
-        desc: "Delicately vegetal, subtly bitter and wonderfully clean. Green tea notes capture the essence of freshly steeped sencha — grassy, slightly smoky and refreshingly simple. It's a staple of K-beauty-adjacent fragrances and light oriental compositions, adding a serene, mindful quality. Green tea pairs beautifully with citrus, woody and clean musk notes to create effortlessly wearable everyday fragrances.",
-        pairings: ["Bergamot", "White Musk", "Cedar", "Jasmine", "Lemon"],
-        svgColor: "#70a060", icon: "fresh"
-      },
-      mint: {
-        name: "Mint", family: "Fresh", familyColor: "var(--fresh)",
-        strength: 40,
-        desc: "Cool, sharp and immediately invigorating. Spearmint is softer and sweeter; peppermint is more medicinal and sharp. In perfumery, mint is used sparingly to add a burst of coolness and contrast — it wakes up compositions and creates a sense of sparkling freshness. It works particularly well in aromatic fougères and aquatic fragrances, and appears in some modern Arabian compositions as a fresh counterpoint to warm amber bases.",
-        pairings: ["Lavender", "Bergamot", "Vetiver", "Musk", "Cedar"],
-        svgColor: "#50b070", icon: "fresh"
-      },
-
-      // GOURMAND
-      vanilla: {
-        name: "Vanilla", family: "Gourmand", familyColor: "var(--gourmand)",
-        strength: 60,
-        desc: "Warm, creamy and universally comforting. Vanilla is derived from the seed pod of a tropical orchid and is one of the most complex natural materials in perfumery — containing over 200 aromatic compounds. In fragrance, it adds warmth, sweetness and a skin-like softness that makes compositions feel intimate and wearable. Vanilla is central to oriental and gourmand families and underpins the 'oriental drydown' that makes Arabian fragrances so addictive.",
-        pairings: ["Amber", "Musk", "Sandalwood", "Rose", "Oud"],
-        svgColor: "#c0902a", icon: "gourmand"
-      },
-      caramel: {
-        name: "Caramel", family: "Gourmand", familyColor: "var(--gourmand)",
-        strength: 55,
-        desc: "Rich, buttery and deeply sweet. Caramel notes are created through the use of ethyl maltol and related molecules that evoke the smell of sugar heated to the point of transformation. They add a warm, enveloping sweetness to compositions — particularly popular in evening and winter fragrances. Caramel sits comfortably alongside amber, vanilla and warm musks, and adds an almost edible seduction to oriental compositions.",
-        pairings: ["Vanilla", "Amber", "Musk", "Tonka Bean", "Sandalwood"],
-        svgColor: "#a06020", icon: "gourmand"
-      },
-      coffee: {
-        name: "Coffee", family: "Gourmand", familyColor: "var(--gourmand)",
-        strength: 65,
-        desc: "Dark, roasted, intensely aromatic. Coffee in perfumery ranges from bright and acidic (like freshly ground beans) to dark and bitter (like espresso) to sweet and creamy (like a cappuccino). It adds incredible depth and a distinctly modern character to compositions. Coffee accords are having a moment in niche and Arabian perfumery — particularly in fragrances like Lattafa Khamrah Qahwa, where it forms the centrepiece of the composition.",
-        pairings: ["Vanilla", "Tobacco", "Amber", "Musk", "Cedar"],
-        svgColor: "#604020", icon: "gourmand"
-      },
-      tonkaBean: {
-        name: "Tonka Bean", family: "Gourmand", familyColor: "var(--gourmand)",
-        strength: 50,
-        desc: "Almondine, sweet and warmly powdery. Tonka bean contains coumarin — a compound with a distinctive hay-like, vanilla-adjacent scent that bridges the gourmand and oriental families. It adds a soft, comforting sweetness without the heavy cloying quality of pure vanilla. Tonka bean is an essential material in oriental perfumery, softening spicy and woody notes while adding a warm, inviting texture that makes fragrances feel effortlessly approachable.",
-        pairings: ["Vanilla", "Lavender", "Musk", "Amber", "Cedarwood"],
-        svgColor: "#906838", icon: "gourmand"
-      }
+  // ── SVG ILLUSTRATIONS ─────────────────────────────────────────────────────
+  function getNoteIllustration(icon, color) {
+    const c = color || '#9c7b56';
+    const svgs = {
+      citrus:   `<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="30" fill="${c}" opacity="0.15"/><circle cx="40" cy="40" r="22" fill="${c}" opacity="0.25"/><circle cx="40" cy="40" r="14" fill="${c}" opacity="0.5"/><line x1="40" y1="10" x2="40" y2="70" stroke="${c}" stroke-width="1" opacity="0.4"/><line x1="10" y1="40" x2="70" y2="40" stroke="${c}" stroke-width="1" opacity="0.4"/><line x1="19" y1="19" x2="61" y2="61" stroke="${c}" stroke-width="0.8" opacity="0.3"/><line x1="61" y1="19" x2="19" y2="61" stroke="${c}" stroke-width="0.8" opacity="0.3"/><circle cx="40" cy="40" r="4" fill="${c}" opacity="0.9"/><path d="M40 18 Q44 12 40 8 Q36 12 40 18" fill="${c}" opacity="0.7"/></svg>`,
+      floral:   `<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="40" cy="24" rx="8" ry="14" fill="${c}" opacity="0.5" transform="rotate(0 40 40)"/><ellipse cx="56" cy="32" rx="8" ry="14" fill="${c}" opacity="0.5" transform="rotate(60 40 40)"/><ellipse cx="56" cy="48" rx="8" ry="14" fill="${c}" opacity="0.5" transform="rotate(120 40 40)"/><ellipse cx="40" cy="56" rx="8" ry="14" fill="${c}" opacity="0.5" transform="rotate(180 40 40)"/><ellipse cx="24" cy="48" rx="8" ry="14" fill="${c}" opacity="0.5" transform="rotate(240 40 40)"/><ellipse cx="24" cy="32" rx="8" ry="14" fill="${c}" opacity="0.5" transform="rotate(300 40 40)"/><circle cx="40" cy="40" r="9" fill="${c}" opacity="0.9"/><circle cx="40" cy="40" r="5" fill="white" opacity="0.4"/></svg>`,
+      woody:    `<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="35" y="12" width="10" height="50" rx="2" fill="${c}" opacity="0.6"/><path d="M40 28 L20 44 L28 44 L28 58 L52 58 L52 44 L60 44 Z" fill="${c}" opacity="0.4"/><path d="M40 18 L24 34 L32 34 L32 46 L48 46 L48 34 L56 34 Z" fill="${c}" opacity="0.5"/><path d="M40 10 L28 24 L34 24 L34 34 L46 34 L46 24 L52 24 Z" fill="${c}" opacity="0.65"/><circle cx="40" cy="10" r="3" fill="${c}" opacity="0.8"/></svg>`,
+      oriental: `<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="40,8 46,28 66,28 50,40 56,60 40,48 24,60 30,40 14,28 34,28" fill="${c}" opacity="0.2"/><polygon points="40,14 44,27 58,27 47,35 51,48 40,40 29,48 33,35 22,27 36,27" fill="${c}" opacity="0.35"/><polygon points="40,20 43,30 53,30 45,36 48,46 40,40 32,46 35,36 27,30 37,30" fill="${c}" opacity="0.6"/><circle cx="40" cy="40" r="6" fill="${c}" opacity="0.9"/></svg>`,
+      fresh:    `<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 45 Q25 25 40 30 Q55 25 65 45 Q55 65 40 60 Q25 65 15 45Z" fill="${c}" opacity="0.15"/><path d="M20 44 Q28 30 40 34 Q52 30 60 44 Q52 58 40 54 Q28 58 20 44Z" fill="${c}" opacity="0.3"/><path d="M26 43 Q32 35 40 38 Q48 35 54 43 Q48 51 40 48 Q32 51 26 43Z" fill="${c}" opacity="0.5"/><circle cx="40" cy="42" r="5" fill="${c}" opacity="0.85"/></svg>`,
+      gourmand: `<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="30" fill="${c}" opacity="0.13"/><circle cx="40" cy="40" r="21" fill="${c}" opacity="0.28"/><circle cx="40" cy="40" r="13" fill="${c}" opacity="0.58"/><circle cx="40" cy="40" r="7" fill="${c}" opacity="0.85"/><path d="M34 36 Q40 32 46 36" stroke="white" stroke-width="1.5" fill="none" opacity="0.38"/></svg>`
     };
+    return svgs[icon] || svgs.oriental;
+  }
 
-    /* ─── SVG ICONS PER FAMILY ─── */
-    function getNoteIlustration(icon, color) {
-      const c = color || "#9c7b56";
-      const svgs = {
-        citrus: `<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="40" cy="40" r="30" fill="${c}" opacity="0.15"/>
-          <circle cx="40" cy="40" r="22" fill="${c}" opacity="0.25"/>
-          <circle cx="40" cy="40" r="14" fill="${c}" opacity="0.5"/>
-          <line x1="40" y1="10" x2="40" y2="70" stroke="${c}" stroke-width="1" opacity="0.4"/>
-          <line x1="10" y1="40" x2="70" y2="40" stroke="${c}" stroke-width="1" opacity="0.4"/>
-          <line x1="19" y1="19" x2="61" y2="61" stroke="${c}" stroke-width="0.8" opacity="0.3"/>
-          <line x1="61" y1="19" x2="19" y2="61" stroke="${c}" stroke-width="0.8" opacity="0.3"/>
-          <circle cx="40" cy="40" r="4" fill="${c}" opacity="0.9"/>
-          <path d="M40 18 Q44 12 40 8 Q36 12 40 18" fill="${c}" opacity="0.7"/>
-        </svg>`,
+  // ── BUILD NOTE CARDS ──────────────────────────────────────────────────────
+  function buildNoteCard(key, lang) {
+    const base = NOTE_DATA_ALL.en[key];
+    const loc  = NOTE_DATA_ALL[lang] && NOTE_DATA_ALL[lang][key] ? NOTE_DATA_ALL[lang][key] : base;
+    if (!base) return '';
+    const bg = base.familyColor
+      .replace('var(--citrus)','#e8a84a').replace('var(--floral)','#c97a8a')
+      .replace('var(--woody)','#7a5c3a').replace('var(--oriental)','#6a4a7a')
+      .replace('var(--fresh)','#4a8a7a').replace('var(--gourmand)','#9a5a4a');
+    const dots = [1,2,3,4,5].map(i =>
+      `<div class="strength-dot${i <= Math.round(base.strength/20) ? ' filled' : ''}"></div>`
+    ).join('');
+    const shortDesc = loc.desc.substring(0, 90) + '…';
+    return `<div class="note-card" onclick="openDrawer('${key}')">
+      <div class="note-card-image" style="background:${bg}18">${getNoteIllustration(base.icon, base.svgColor)}</div>
+      <div class="note-card-body">
+        <div class="note-card-name">${loc.name}</div>
+        <div class="note-card-desc">${shortDesc}</div>
+        <div class="note-card-strength">${dots}</div>
+      </div>
+    </div>`;
+  }
 
-        floral: `<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="40" cy="24" rx="8" ry="14" fill="${c}" opacity="0.5" transform="rotate(0 40 40)"/>
-          <ellipse cx="56" cy="32" rx="8" ry="14" fill="${c}" opacity="0.5" transform="rotate(60 40 40)"/>
-          <ellipse cx="56" cy="48" rx="8" ry="14" fill="${c}" opacity="0.5" transform="rotate(120 40 40)"/>
-          <ellipse cx="40" cy="56" rx="8" ry="14" fill="${c}" opacity="0.5" transform="rotate(180 40 40)"/>
-          <ellipse cx="24" cy="48" rx="8" ry="14" fill="${c}" opacity="0.5" transform="rotate(240 40 40)"/>
-          <ellipse cx="24" cy="32" rx="8" ry="14" fill="${c}" opacity="0.5" transform="rotate(300 40 40)"/>
-          <circle cx="40" cy="40" r="9" fill="${c}" opacity="0.9"/>
-          <circle cx="40" cy="40" r="5" fill="white" opacity="0.4"/>
-        </svg>`,
+  const familyMap = {
+    citrus:   ['bergamot','lemon','grapefruit','mandarin'],
+    floral:   ['rose','jasmine','lavender','iris'],
+    woody:    ['oud','sandalwood','cedarwood','vetiver'],
+    oriental: ['amber','musk','saffron','incense'],
+    fresh:    ['marine','greenTea','mint'],
+    gourmand: ['vanilla','caramel','coffee','tonkaBean']
+  };
 
-        woody: `<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="35" y="12" width="10" height="50" rx="2" fill="${c}" opacity="0.6"/>
-          <path d="M40 28 L20 44 L28 44 L28 58 L52 58 L52 44 L60 44 Z" fill="${c}" opacity="0.4"/>
-          <path d="M40 18 L24 34 L32 34 L32 46 L48 46 L48 34 L56 34 Z" fill="${c}" opacity="0.5"/>
-          <path d="M40 10 L28 24 L34 24 L34 34 L46 34 L46 24 L52 24 Z" fill="${c}" opacity="0.65"/>
-          <circle cx="40" cy="10" r="3" fill="${c}" opacity="0.8"/>
-        </svg>`,
-
-        oriental: `<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polygon points="40,8 46,28 66,28 50,40 56,60 40,48 24,60 30,40 14,28 34,28" fill="${c}" opacity="0.2"/>
-          <polygon points="40,14 44,27 58,27 47,35 51,48 40,40 29,48 33,35 22,27 36,27" fill="${c}" opacity="0.35"/>
-          <polygon points="40,20 43,30 53,30 45,36 48,46 40,40 32,46 35,36 27,30 37,30" fill="${c}" opacity="0.6"/>
-          <circle cx="40" cy="40" r="6" fill="${c}" opacity="0.9"/>
-          <path d="M40 8 Q42 6 40 4 Q38 6 40 8" fill="${c}" opacity="0.6"/>
-          ${[0,60,120,180,240,300].map(a => `<line x1="40" y1="40" x2="${40+32*Math.cos(a*Math.PI/180)}" y2="${40+32*Math.sin(a*Math.PI/180)}" stroke="${c}" stroke-width="0.6" opacity="0.2"/>`).join('')}
-        </svg>`,
-
-        fresh: `<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 45 Q25 25 40 30 Q55 25 65 45 Q55 65 40 60 Q25 65 15 45Z" fill="${c}" opacity="0.15"/>
-          <path d="M20 44 Q28 30 40 34 Q52 30 60 44 Q52 58 40 54 Q28 58 20 44Z" fill="${c}" opacity="0.3"/>
-          <path d="M26 43 Q32 35 40 38 Q48 35 54 43 Q48 51 40 48 Q32 51 26 43Z" fill="${c}" opacity="0.5"/>
-          <circle cx="40" cy="42" r="5" fill="${c}" opacity="0.85"/>
-          ${[0,45,90,135,180,225,270,315].map((a,i) => `<circle cx="${40+26*Math.cos(a*Math.PI/180)}" cy="${42+26*Math.sin(a*Math.PI/180)}" r="1.5" fill="${c}" opacity="${0.2+i*0.03}"/>`).join('')}
-        </svg>`,
-
-        gourmand: `<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M40 15 Q52 15 58 26 Q68 30 66 42 Q68 56 56 60 Q52 68 40 66 Q28 68 24 60 Q12 56 14 42 Q12 30 22 26 Q28 15 40 15Z" fill="${c}" opacity="0.15"/>
-          <path d="M40 22 Q50 22 54 31 Q62 34 60 44 Q61 54 52 57 Q49 63 40 62 Q31 63 28 57 Q19 54 20 44 Q18 34 26 31 Q30 22 40 22Z" fill="${c}" opacity="0.3"/>
-          <ellipse cx="40" cy="42" rx="16" ry="14" fill="${c}" opacity="0.55"/>
-          <ellipse cx="40" cy="41" rx="8" ry="7" fill="${c}" opacity="0.8"/>
-          <path d="M34 36 Q40 32 46 36" stroke="white" stroke-width="1.5" fill="none" opacity="0.4"/>
-        </svg>`
-      };
-      return svgs[icon] || svgs.oriental;
-    }
-
-    function getDrawerIllustration(icon, color) {
-      const c = color || "#9c7b56";
-      return `<div style="width:110px;height:110px;display:flex;align-items:center;justify-content:center;">
-        ${getNoteIlustration(icon, c).replace('width="80" height="80"', 'width="110" height="110"')}
-      </div>`;
-    }
-
-    /* ─── RENDER NOTE CARDS ─── */
-    function buildNoteCard(key) {
-      const n = NOTE_DATA[key];
-      if (!n) return '';
-      const bg = n.familyColor.replace('var(--citrus)', '#e8a84a')
-        .replace('var(--floral)', '#c97a8a')
-        .replace('var(--woody)', '#7a5c3a')
-        .replace('var(--oriental)', '#6a4a7a')
-        .replace('var(--fresh)', '#4a8a7a')
-        .replace('var(--gourmand)', '#9a5a4a');
-      const dots = [1,2,3,4,5].map(i =>
-        `<div class="strength-dot${i <= Math.round(n.strength/20) ? ' filled' : ''}"></div>`
-      ).join('');
-      return `<div class="note-card" onclick="openDrawer('${key}')">
-        <div class="note-card-image" style="background:${bg}18">
-          ${getNoteIlustration(n.icon, n.svgColor)}
-        </div>
-        <div class="note-card-body">
-          <div class="note-card-name">${n.name}</div>
-          <div class="note-card-desc">${n.desc.substring(0, 90)}…</div>
-          <div class="note-card-strength">${dots}</div>
-        </div>
-      </div>`;
-    }
-
-    // Map notes to families
-    const familyMap = {
-      citrus: ['bergamot','lemon','grapefruit','mandarin'],
-      floral: ['rose','jasmine','lavender','iris'],
-      woody: ['oud','sandalwood','cedarwood','vetiver'],
-      oriental: ['amber','musk','saffron','incense'],
-      fresh: ['marine','greenTea','mint'],
-      gourmand: ['vanilla','caramel','coffee','tonkaBean']
-    };
-
+  function renderAllGrids(lang) {
     Object.entries(familyMap).forEach(([family, keys]) => {
       const grid = document.getElementById(`${family}-grid`);
-      if (grid) grid.innerHTML = keys.map(buildNoteCard).join('');
+      if (grid) grid.innerHTML = keys.map(k => buildNoteCard(k, lang)).join('');
     });
+  }
 
-    /* ─── DRAWER ─── */
-    function openDrawer(key) {
-      const n = NOTE_DATA[key];
-      if (!n) return;
-      const familyColors = {
-        Citrus: 'var(--citrus)', Floral: 'var(--floral)', Woody: 'var(--woody)',
-        Oriental: 'var(--oriental)', Fresh: 'var(--fresh)', Gourmand: 'var(--gourmand)'
-      };
-      const pillStyles = {
-        Citrus: 'pill-citrus', Floral: 'pill-floral', Woody: 'pill-woody',
-        Oriental: 'pill-oriental', Fresh: 'pill-fresh', Gourmand: 'pill-gourmand'
-      };
-      document.getElementById('drawerFamily').textContent = n.family + ' Family';
-      document.getElementById('drawerName').textContent = n.name;
-      document.getElementById('drawerImage').innerHTML = getDrawerIllustration(n.icon, n.svgColor);
-      document.getElementById('drawerImage').style.background = n.svgColor + '18';
-      document.getElementById('drawerFamilyTag').innerHTML =
-        `<span class="drawer-family-tag family-pill ${pillStyles[n.family]}">${n.family}</span>`;
-      document.getElementById('drawerDesc').textContent = n.desc;
-      document.getElementById('drawerPairings').innerHTML =
-        n.pairings.map(p => `<span class="drawer-pairing-tag">${p}</span>`).join('');
-      const sf = document.getElementById('drawerStrength');
-      sf.style.width = '0%';
-      setTimeout(() => { sf.style.width = n.strength + '%'; }, 50);
-      document.getElementById('drawerBackdrop').classList.add('open');
-      document.getElementById('noteDrawer').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
+  // ── DRAWER ────────────────────────────────────────────────────────────────
+  function openDrawer(key) {
+    currentDrawerKey = key;
+    const base = NOTE_DATA_ALL.en[key];
+    if (!base) return;
+    const lang = currentLang;
+    const loc  = NOTE_DATA_ALL[lang] && NOTE_DATA_ALL[lang][key] ? NOTE_DATA_ALL[lang][key] : base;
+    const ui   = UI[lang] || UI.en;
+    const pillStyles = {
+      Citrus:'pill-citrus', Floral:'pill-floral', Woody:'pill-woody',
+      Oriental:'pill-oriental', Fresh:'pill-fresh', Gourmand:'pill-gourmand'
+    };
+    // Family name in current language
+    const famKey = `fam${base.family}Title`;
+    const famName = ui[famKey] || base.family;
+    document.getElementById('drawerFamily').textContent = famName + ui.familySuffix;
+    document.getElementById('drawerName').textContent = loc.name;
+    const imgEl = document.getElementById('drawerImage');
+    imgEl.innerHTML = `<div style="width:110px;height:110px;display:flex;align-items:center;justify-content:center;">${getNoteIllustration(base.icon, base.svgColor).replace('width="80" height="80"','width="110" height="110"')}</div>`;
+    imgEl.style.background = base.svgColor + '18';
+    document.getElementById('drawerFamilyTag').innerHTML =
+      `<span class="drawer-family-tag family-pill ${pillStyles[base.family] || ''}">${famName}</span>`;
+    document.getElementById('drawerDesc').textContent = loc.desc;
+    document.getElementById('drawerPairings').innerHTML =
+      base.pairings.map(p => `<span class="drawer-pairing-tag">${p}</span>`).join('');
+    document.getElementById('drawer-pairings-label').textContent = ui.drawerPairingsLabel;
+    document.getElementById('drawer-strength-label').textContent = ui.drawerStrengthLabel;
+    document.getElementById('drawer-cta').textContent = ui.drawerCta;
+    const sf = document.getElementById('drawerStrength');
+    sf.style.width = '0%';
+    setTimeout(() => { sf.style.width = base.strength + '%'; }, 50);
+    document.getElementById('drawerBackdrop').classList.add('open');
+    document.getElementById('noteDrawer').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  window.openDrawer = openDrawer;
 
-    window.openDrawer = openDrawer;
+  function closeDrawer() {
+    document.getElementById('drawerBackdrop').classList.remove('open');
+    document.getElementById('noteDrawer').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
-    function closeDrawer() {
-      document.getElementById('drawerBackdrop').classList.remove('open');
-      document.getElementById('noteDrawer').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
-
-    /* ─── WHEEL SCROLL ─── */
-    function scrollToFamily(id) {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
-    window.scrollToFamily = scrollToFamily;
-
-    /* ─── REVEAL ─── */
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('visible'), i * 80);
-          obs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.07 });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-    /* ─── SEO ACCORDION ─── */
-    document.querySelectorAll('.seo-accordion-q').forEach(q => {
-      q.addEventListener('click', () => {
-        const item = q.parentElement;
-        const was = item.classList.contains('open');
-        document.querySelectorAll('.seo-accordion-item').forEach(i => i.classList.remove('open'));
-        if (!was) item.classList.add('open');
-      });
+  // ── APPLY LANGUAGE ────────────────────────────────────────────────────────
+  function applyLang(lang) {
+    currentLang = lang;
+    const t = UI[lang] || UI.en;
+    document.getElementById('html-root').lang = lang;
+    document.getElementById('page-title').textContent = t.pageTitle;
+    document.getElementById('page-desc').setAttribute('content', t.pageDesc);
+    document.getElementById('nav-back').textContent = t.navBack;
+    document.getElementById('hero-eyebrow').textContent = t.heroEyebrow;
+    document.getElementById('hero-title').innerHTML = t.heroTitle;
+    document.getElementById('hero-desc').textContent = t.heroDesc;
+    document.getElementById('pill-citrus').textContent = t.pillCitrus;
+    document.getElementById('pill-floral').textContent = t.pillFloral;
+    document.getElementById('pill-woody').textContent = t.pillWoody;
+    document.getElementById('pill-oriental').textContent = t.pillOriental;
+    document.getElementById('pill-fresh').textContent = t.pillFresh;
+    document.getElementById('pill-gourmand').textContent = t.pillGourmand;
+    document.getElementById('wheel-label').textContent = t.wheelLabel;
+    document.getElementById('wheel-title').textContent = t.wheelTitle;
+    document.getElementById('wheel-desc').textContent = t.wheelDesc;
+    document.getElementById('wheel-hint').textContent = t.wheelHint;
+    document.getElementById('wl-citrus').textContent = t.wlCitrus;
+    document.getElementById('wsl-citrus').textContent = t.wslCitrus;
+    document.getElementById('wl-floral').textContent = t.wlFloral;
+    document.getElementById('wsl-floral').textContent = t.wslFloral;
+    document.getElementById('wl-woody').textContent = t.wlWoody;
+    document.getElementById('wsl-woody').textContent = t.wslWoody;
+    document.getElementById('wl-oriental').textContent = t.wlOriental;
+    document.getElementById('wsl-oriental').textContent = t.wslOriental;
+    document.getElementById('wl-fresh').textContent = t.wlFresh;
+    document.getElementById('wsl-fresh').textContent = t.wslFresh;
+    document.getElementById('wl-gourmand').textContent = t.wlGourmand;
+    document.getElementById('wsl-gourmand').textContent = t.wslGourmand;
+    document.getElementById('fam-citrus-title').textContent = t.famCitrusTitle;
+    document.getElementById('fam-citrus-desc').textContent = t.famCitrusDesc;
+    document.getElementById('fam-floral-title').textContent = t.famFloralTitle;
+    document.getElementById('fam-floral-desc').textContent = t.famFloralDesc;
+    document.getElementById('fam-woody-title').textContent = t.famWoodyTitle;
+    document.getElementById('fam-woody-desc').textContent = t.famWoodyDesc;
+    document.getElementById('fam-oriental-title').textContent = t.famOrientalTitle;
+    document.getElementById('fam-oriental-desc').textContent = t.famOrientalDesc;
+    document.getElementById('fam-fresh-title').textContent = t.famFreshTitle;
+    document.getElementById('fam-fresh-desc').textContent = t.famFreshDesc;
+    document.getElementById('fam-gourmand-title').textContent = t.famGourmandTitle;
+    document.getElementById('fam-gourmand-desc').textContent = t.famGourmandDesc;
+    document.getElementById('seo-title').textContent = t.seoTitle;
+    document.getElementById('seo-p1').innerHTML = t.seoP1;
+    document.getElementById('seo-p2').innerHTML = t.seoP2;
+    document.getElementById('seo-p3').textContent = t.seoP3;
+    // Accordion questions and answers
+    [1,2,3,4,5].forEach(i => {
+      const q = document.getElementById('aq'+i);
+      const a = document.getElementById('aa'+i);
+      if (q) { q.childNodes[0].textContent = t['aq'+i] + ' '; }
+      if (a) a.textContent = t['aa'+i];
     });
+    document.getElementById('footer-store').textContent = t.footerStore;
+    document.getElementById('footer-products').textContent = t.footerProducts;
+    document.getElementById('footer-contact').textContent = t.footerContact;
+    // Update lang buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    // Re-render note cards in new language
+    renderAllGrids(lang);
+    // Update drawer if open
+    if (currentDrawerKey && document.getElementById('noteDrawer').classList.contains('open')) {
+      openDrawer(currentDrawerKey);
+    }
+    try { localStorage.setItem('ysp_lang', lang); } catch(e) {}
+  }
+
+  function setLang(lang) { applyLang(lang); }
+  window.setLang = setLang;
+
+  // ── WHEEL SCROLL ──────────────────────────────────────────────────────────
+  function scrollToFamily(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }
+  window.scrollToFamily = scrollToFamily;
+
+  // ── REVEAL ────────────────────────────────────────────────────────────────
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // ── SEO ACCORDION ─────────────────────────────────────────────────────────
+  document.querySelectorAll('.seo-accordion-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const was = item.classList.contains('open');
+      document.querySelectorAll('.seo-accordion-item').forEach(i => i.classList.remove('open'));
+      if (!was) item.classList.add('open');
+    });
+  });
+
+  // ── INIT ──────────────────────────────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', () => {
+    let lang = 'en';
+    try { lang = localStorage.getItem('ysp_lang') || 'en'; } catch(e) {}
+    if (!UI[lang]) lang = 'en';
+    applyLang(lang);
+  });
+
+  // Listen for lang changes from the main site
+  document.addEventListener('ysp:langchange', (e) => {
+    const lang = e.detail && e.detail.lang ? e.detail.lang : 'en';
+    if (UI[lang]) applyLang(lang);
+  });
   </script>
-
 </body>
 </html>
