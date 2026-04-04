@@ -175,9 +175,14 @@ layout: base.njk
   }
 
   /* Next / Prev */
+  .post-nav-wrap {
+    background: var(--cream);
+    border-top: 1px solid var(--sand);
+    margin-top: 0;
+  }
   .post-nav {
     display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
-    background: var(--sand); border-top: 1px solid var(--sand);
+    background: var(--sand);
     max-width: 1200px; margin: 0 auto;
   }
   .post-nav-item {
@@ -276,21 +281,23 @@ layout: base.njk
   {% if p.url == page.url %}{% set currentIndex = loop.index0 %}{% endif %}
 {% endfor %}
 
-<nav class="post-nav" aria-label="Post navigation">
-  {% if postList[currentIndex + 1] %}
-  <a href="{{ postList[currentIndex + 1].url }}" class="post-nav-item">
-    <div class="post-nav-label">← Previous</div>
-    <div class="post-nav-title">{{ postList[currentIndex + 1].data.title }}</div>
-  </a>
-  {% else %}
-  <div class="post-nav-item"></div>
-  {% endif %}
-  {% if currentIndex > 0 %}
-  <a href="{{ postList[currentIndex - 1].url }}" class="post-nav-item">
-    <div class="post-nav-label">Next →</div>
-    <div class="post-nav-title">{{ postList[currentIndex - 1].data.title }}</div>
-  </a>
-  {% else %}
-  <div class="post-nav-item"></div>
-  {% endif %}
-</nav>
+<div class="post-nav-wrap">
+  <div class="post-nav">
+    {% if postList[currentIndex + 1] %}
+    <a href="{{ postList[currentIndex + 1].url }}" class="post-nav-item">
+      <div class="post-nav-label">← Previous</div>
+      <div class="post-nav-title">{{ postList[currentIndex + 1].data.title }}</div>
+    </a>
+    {% else %}
+    <div class="post-nav-item"></div>
+    {% endif %}
+    {% if currentIndex > 0 %}
+    <a href="{{ postList[currentIndex - 1].url }}" class="post-nav-item">
+      <div class="post-nav-label">Next →</div>
+      <div class="post-nav-title">{{ postList[currentIndex - 1].data.title }}</div>
+    </a>
+    {% else %}
+    <div class="post-nav-item"></div>
+    {% endif %}
+  </div>
+</div>
