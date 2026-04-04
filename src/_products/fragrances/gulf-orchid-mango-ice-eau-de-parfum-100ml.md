@@ -7,6 +7,8 @@ badge: New
 stock_status: in_stock
 top_notes: Mango, Lemon, Ginger, Rhubarb
 heart_notes: White Flowers, Amber, Licorice
+accords_text: fruity, tropical, sweet, citrus, fresh spicy, musky, fresh,
+  aromatic, terpenic, white floral
 longevity: 6-8 hours
 projection: "Moderate - Strong "
 best_for: Daytime wear
