@@ -25,7 +25,7 @@ Korean skincare has taken over European bathrooms for good reason: it works. Not
 
 Here's what you need to know.
 
-## What is K-beauty? {#what-is-kbeauty}
+## What is K-beauty?
 
 K-beauty — Korean beauty — is less a set of specific products and more an approach to skincare. It prioritises long-term skin health over short-term results. It's built on the understanding that the skin is an ecosystem that needs to be kept in balance rather than attacked with harsh treatments.
 
@@ -35,7 +35,7 @@ The result is the skin Korean beauty is associated with: clear, smooth, with a l
 
 ---
 
-## The philosophy {#the-philosophy}
+## The philosophy
 
 Before we get into the steps, it's worth understanding what K-beauty is actually trying to do — because it changes how you think about every product in your routine.
 
@@ -47,7 +47,7 @@ Before we get into the steps, it's worth understanding what K-beauty is actually
 
 ---
 
-## The routine, step by step {#the-routine}
+## The routine, step by step
 
 ### Morning routine
 
@@ -73,7 +73,7 @@ The evening routine follows the same sequence — but begins with a proper doubl
 
 ---
 
-## The products we carry {#the-products}
+## The products we carry
 
 We've curated a small, focused range of K-beauty products chosen specifically because they're genuinely excellent — not because they're trendy.
 
@@ -87,7 +87,7 @@ We've curated a small, focused range of K-beauty products chosen specifically be
 
 ---
 
-## Common mistakes {#common-mistakes}
+## Common mistakes
 
 **Skipping SPF on cloudy days.** UV radiation penetrates cloud cover. The vast majority of cumulative sun damage — the kind that causes premature ageing — happens on ordinary days, not on the beach. Daily SPF is the single highest-impact thing most people can add to their skincare routine.
 

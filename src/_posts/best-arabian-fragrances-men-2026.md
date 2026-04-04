@@ -26,7 +26,7 @@ Arabian fragrance has quietly taken over the European perfume market — and for
 
 If you're still spending €150 on a 50ml bottle of designer fragrance that needs reapplying by lunchtime, this guide is for you.
 
-## Why Arabian fragrance? {#why-arabian}
+## Why Arabian fragrance?
 
 The Gulf perfumery tradition is built differently. Where Western fragrance houses allocate enormous budgets to advertising, celebrity endorsement and retail packaging, Arabian houses put that money into the juice itself. Higher oil concentration. More complex base accords. Deeper, richer compositions that were designed to last through an entire day in the desert heat.
 
@@ -38,7 +38,7 @@ This isn't a secret. The fragrance community has known for years. Armaf Club de 
 
 ---
 
-## Armaf Club de Nuit Intense {#armaf-cdni}
+## Armaf Club de Nuit Intense
 
 **The one everyone talks about — for good reason.**
 
@@ -54,7 +54,7 @@ The opening is unmistakably smoky birch — sharp, slightly medicinal, immediate
 
 ---
 
-## Lattafa Khamrah {#lattafa-khamrah}
+## Lattafa Khamrah
 
 **For lovers of rich, warming gourmand orientals.**
 
@@ -70,7 +70,7 @@ The opening hits you with roasted coffee and cognac — dark, boozy, immediately
 
 ---
 
-## Swiss Arabian Soul of Bali {#swiss-arabian}
+## Swiss Arabian Soul of Bali
 
 **Premium positioning, extraordinary composition.**
 
@@ -88,7 +88,7 @@ Soul of Bali is the fragrance for people who think Arabian perfumery is all heav
 
 ---
 
-## How to wear Arabian fragrances {#how-to-wear}
+## How to wear Arabian fragrances
 
 Arabian fragrances are built differently and reward a slightly different application approach.
 
@@ -100,7 +100,7 @@ Arabian fragrances are built differently and reward a slightly different applica
 
 ---
 
-## Buying guide {#buying-guide}
+## Buying guide
 
 A few things worth knowing before you buy.
 

@@ -24,7 +24,7 @@ Oud. Agarwood. Liquid gold. The most expensive raw material in perfumery, someti
 
 Here's everything you need to know.
 
-## What is oud? {#what-is-oud}
+## What is oud?
 
 Oud — known botanically as agarwood — is a resinous heartwood that forms inside Aquilaria trees when they become infected with a specific mould (*Phialophora parasitica*). The tree's defence response produces a dense, dark resin that saturates the wood over years or even decades. It is this resin-saturated wood — and the oil extracted from it — that becomes oud.
 
@@ -36,7 +36,7 @@ This is why most oud used in mainstream perfumery — including in the Arabian f
 
 ---
 
-## How does oud smell? {#how-it-smells}
+## How does oud smell?
 
 Oud is extraordinarily difficult to describe to someone who hasn't smelled it. It is not a single smell but a cluster of qualities.
 
@@ -54,7 +54,7 @@ The balance of these elements varies enormously by origin, age, distillation met
 
 ---
 
-## Types of oud {#types-of-oud}
+## Types of oud
 
 **Wild oud** — harvested from naturally infected trees. The finest and most expensive. Increasingly rare and subject to CITES trade regulations.
 
@@ -68,7 +68,7 @@ There is no shame in synthetic or accord oud — many extraordinary fragrances a
 
 ---
 
-## Oud in perfumery {#oud-in-perfumery}
+## Oud in perfumery
 
 Oud has been central to Arabian perfumery for centuries. In the Gulf tradition, raw oud chips are burned over charcoal as bakhoor — a form of aromatic incense used to scent homes, prayer spaces and clothing. Oud oil (attar) is applied directly to skin as a pure fragrance. Oud-based EDPs have become the defining category of modern Arabian perfumery.
 
@@ -86,7 +86,7 @@ Other classic pairings:
 
 ---
 
-## Finding good oud in Europe {#finding-oud}
+## Finding good oud in Europe
 
 The challenge for European buyers has historically been access. Arabian oud fragrances — the genuine article, sourced properly — were difficult to find outside of specialist Middle Eastern fragrance stores. What was available through mainstream channels was often grey market, incorrectly stored or outright fake.
 
