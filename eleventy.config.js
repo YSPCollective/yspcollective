@@ -66,6 +66,11 @@ module.exports = function(eleventyConfig) {
       .sort((a,b) => (a.data.name||'').localeCompare(b.data.name||''));
   });
 
+  eleventyConfig.addCollection("posts", function(col) {
+    return col.getFilteredByGlob("src/_posts/*.md")
+      .sort((a, b) => b.date - a.date);
+  });
+
   eleventyConfig.addCollection("allProducts", function(col) {
     const fragrances = col.getFilteredByGlob("src/_products/fragrances/*.md")
       .filter(i => i.data.published !== false)
@@ -77,6 +82,21 @@ module.exports = function(eleventyConfig) {
   });
 
   // Filters
+  eleventyConfig.addFilter("date", function(date, format) {
+    if (!date) return '';
+    const d = new Date(date);
+    if (isNaN(d)) return '';
+    const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const monthsShort = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const day = d.getDate();
+    const month = d.getMonth();
+    const year = d.getFullYear();
+    if (!format || format === 'd MMMM yyyy') return `${day} ${months[month]} ${year}`;
+    if (format === 'd MMM yyyy') return `${day} ${monthsShort[month]} ${year}`;
+    if (format === 'YYYY-MM-DD') return `${year}-${String(d.getMonth()+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+    return d.toLocaleDateString();
+  });
+
   eleventyConfig.addFilter("jsonify", value => JSON.stringify(value));
   eleventyConfig.addFilter("limit", (arr, n) => arr.slice(0, n));
 
