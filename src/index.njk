@@ -44,7 +44,7 @@ canonical: "https://yspcollective.com/"
   .intro-divider { width: 1px; height: 48px; background: var(--sand); }
 
   /* SEARCH */
-  #product-search { padding: 4rem 3.5rem; background: var(--black); }
+  #product-search { padding: 4rem 3.5rem; background: var(--black); overflow-x: hidden; }
   .search-inner { max-width: 900px; margin: 0 auto; text-align: center; }
   .search-inner .section-label { color: var(--accent-light); }
   .search-inner .section-title { color: var(--white); margin-bottom: 2rem; }
@@ -57,7 +57,7 @@ canonical: "https://yspcollective.com/"
   .filter-chip:hover, .filter-chip.active { background: var(--accent); border-color: var(--accent); color: var(--white); }
   .filter-chip.type-chip.active { background: var(--white); border-color: var(--white); color: var(--black); }
   .filter-divider { width: 1px; height: 20px; background: rgba(255,255,255,0.15); margin: 0 0.25rem; flex-shrink: 0; }
-  .accord-chips { display: flex; gap: 0.5rem; flex-wrap: nowrap; align-items: center; transition: opacity 0.2s; }
+  .accord-chips { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; transition: opacity 0.2s; justify-content: center; }
   .accord-chips.hidden { opacity: 0.25; pointer-events: none; }
   #search-results { margin-top: 2rem; display: none; }
   #search-results.visible { display: block; }
