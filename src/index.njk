@@ -78,7 +78,7 @@ canonical: "https://yspcollective.com/"
 
   /* FEATURED SECTIONS */
   .featured-section { padding: 6rem 3.5rem; }
-
+  .featured-section.bg-cream { background: var(--cream); }
   .featured-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
   /* PRODUCT GRID — desktop: auto-fill columns, mobile: horizontal scroll */
   .products-grid {
@@ -121,8 +121,8 @@ canonical: "https://yspcollective.com/"
   .btn-favourite.is-favourite { color: var(--accent); border-color: var(--accent); }
 
   /* PHILOSOPHY */
-  #philosophy { padding: 7rem 3.5rem; background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-  .philosophy-image { aspect-ratio: 4/5; background: var(--sand); position: relative; overflow: hidden; }
+  #philosophy { padding: 7rem 3.5rem; background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .philosophy-image { background: var(--sand); position: relative; overflow: hidden; align-self: stretch; max-height: 600px; }
   .philosophy-image img { width: 100%; height: 100%; object-fit: cover; }
   .philosophy-text p { font-size: 0.95rem; line-height: 1.85; color: var(--grey); margin-bottom: 1.2rem; }
   .philosophy-values { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
@@ -379,7 +379,7 @@ canonical: "https://yspcollective.com/"
 </section>
 
 <!-- FEATURED BEAUTY -->
-<section class="featured-section" id="featured-beauty">
+<section class="featured-section bg-cream" id="featured-beauty">
   <div class="featured-header reveal">
     <div>
       <p class="section-label" data-i18n="beauty_label">K-Beauty &amp; Skincare</p>
@@ -443,7 +443,7 @@ canonical: "https://yspcollective.com/"
     <p class="section-desc" data-i18n="cat_desc">From daily skincare essentials to premium Arabian fragrance — browse our curated categories.</p>
   </div>
   <div class="categories-grid reveal">
-    <a href="#featured-beauty" class="category-card">
+    <a href="/beauty/all.html" class="category-card">
       <img src="/images/categories-beauty.jpg" alt="Beauty &amp; Skincare">
       <div class="category-card-overlay"></div>
       <div class="category-card-content">
@@ -451,7 +451,7 @@ canonical: "https://yspcollective.com/"
         <div class="category-card-count">Explore Collection →</div>
       </div>
     </a>
-    <a href="#featured-fragrances" class="category-card">
+    <a href="/fragrances/all.html" class="category-card">
       <img src="/images/categories-fragrance.jpg" alt="Fragrance">
       <div class="category-card-overlay"></div>
       <div class="category-card-content">
@@ -459,7 +459,7 @@ canonical: "https://yspcollective.com/"
         <div class="category-card-count">Explore Collection →</div>
       </div>
     </a>
-    <a href="#featured-fragrances" class="category-card">
+    <a href="/fragrances/all.html" class="category-card">
       <img src="/images/categories-arabian.jpg" alt="Arabian Fragrance">
       <div class="category-card-overlay"></div>
       <div class="category-card-content">
