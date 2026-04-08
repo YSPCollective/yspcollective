@@ -1,17 +1,17 @@
 ---
-name: Lattafa Pride Fakhar Platin Eau de Parfum 100ml
-slug: lattafa-pride-fakhar-platin
-badge: Premium
 price: "26.75"
 brand: Lattafa Pride
 gender: Men
 size: 100ml
-concentration: Eau de Parfum (EDP)
+badge: Premium
+stock_status: coming_soon
+published: true
 fragrance_family: Floral Woody Oriental
 top_notes: Bergamot, Pink Pepper, Cardamom
 heart_notes: Ginger, Lavender, Guava
 base_notes: Palo Santo, Incense, Sandalwood
 longevity: 10-12 hours
+projection: Moderate
 origin: UAE
 launched: "2025"
 vegan: false
@@ -45,6 +45,11 @@ ysp_thoughts: >-
 
 
   We chose it because it's the bottle you reach for when the occasion actually demands something special — and it never lets you down. The platinum positioning isn't just marketing; you can smell the difference.
+inspired_by_name: Creed Silver Mountain Water
+inspired_by_note: fresh aquatic-metallic opening, clean woody drydown
+name: Lattafa Pride Fakhar Platin Eau de Parfum 100ml
+slug: lattafa-pride-fakhar-platin
+concentration: Eau de Parfum (EDP)
 featured: false
-published: true
+exclude_from_feed: true
 ---
