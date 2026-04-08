@@ -5,6 +5,7 @@ gender: Men
 size: 90ml
 badge: Popular
 stock_status: in_stock
+published: true
 fragrance_family: Aromatic Fresh Woody
 top_notes: Saffron, Pineapple
 heart_notes: Jasmine, Fir Balsam
@@ -47,10 +48,11 @@ ysp_thoughts: >-
 
 
   We picked it because it's the kind of fragrance that builds quiet loyalty. People don't rave about it the first time they smell it — they just keep coming back to it. That consistency is worth a lot.
+inspired_by_name: Creed Aventus
+inspired_by_note: fruity-woody Aventus family, lighter projection and more accessible
 name: Lattafa Qaed al Fursan Eau de Parfum 90ml
 slug: lattafa-qaed-al-fursan
 concentration: Eau de Parfum (EDP)
 featured: true
-published: true
 exclude_from_feed: false
 ---

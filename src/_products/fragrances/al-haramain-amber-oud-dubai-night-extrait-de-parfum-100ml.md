@@ -1,43 +1,23 @@
 ---
-name: Al Haramain Amber Oud Dubai Night Extrait de Parfum 100ml
-slug: al-haramain-amber-oud-dubai-night
-badge: Curated
 price: "49.99"
 rrp: "69.99"
 brand: Al Haramain
 gender: Men
 size: 100ml
-concentration: Extrait de Parfum
-fragrance_family: Woody Oriental Oud
-top_notes: Saffron, Bergamot, Elemi
+badge: Curated
+published: true
 heart_notes: Agarwood, Bulgarian Rose, Lily of the Valley
-base_notes: Tonka Bean, Amber, White Must, Oakmoss
-accords:
-  - amber
-  - warm spicy
-  - oud
-  - rose
-  - aromatic
-  - citrus
-  - musky
-  - vanilla
-  - fresh spicy
-  - metallic
 longevity: 10+ hours
 projection: Strong +
 best_for: Night time wear, Winter/Spring/Autumn
 origin: UAE
 launched: "2024"
 vegan: false
-image_main: /images/uploads/ahp1485_.jpeg
 gallery:
   - /images/uploads/ahp1485_with_box.jpeg
   - /images/uploads/ahp1485_pyramid.jpeg
   - /images/uploads/ahp1485_solo_2.jpeg
   - /images/uploads/ahp1485_.jpeg
-description_short: A bold, smoky oriental from Al Haramain — one of the Gulf's
-  most established fragrance houses. Dubai Night is a dark, addictive blend of
-  oud and amber with serious projection and all-night longevity.
 description_full: >-
   
   Al Haramain Amber Oud Dubai Night Extrait de Parfum is an unapologetically opulent scent built for those who want to be noticed. 
@@ -56,7 +36,30 @@ ysp_thoughts: >-
 
 
   If you have clients who find designer fragrances too light or too fleeting, this is the answer. Strong salon performer.
-stock_status: in_stock
+inspired_by_note: dark amber-oud oriental, similar evening character
+name: Al Haramain Amber Oud Dubai Night Extrait de Parfum 100ml
+slug: al-haramain-amber-oud-dubai-night
+concentration: Extrait de Parfum
 featured: true
-published: true
+exclude_from_feed: false
+accords:
+  - amber
+  - warm spicy
+  - oud
+  - rose
+  - aromatic
+  - citrus
+  - musky
+  - vanilla
+  - fresh spicy
+  - metallic
+stock_status: in_stock
+fragrance_family: Woody Oriental Oud
+top_notes: Saffron, Bergamot, Elemi
+base_notes: Tonka Bean, Amber, White Must, Oakmoss
+image_main: /images/uploads/ahp1485_.jpeg
+description_short: A bold, smoky oriental from Al Haramain — one of the Gulf's
+  most established fragrance houses. Dubai Night is a dark, addictive blend of
+  oud and amber with serious projection and all-night longevity.
+inspired_by_name: Tom Ford Noir
 ---

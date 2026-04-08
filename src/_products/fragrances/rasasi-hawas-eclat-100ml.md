@@ -1,27 +1,13 @@
 ---
-name: Rasasi Hawas Eclat 100ml
-slug: rasasi-hawas-eclat
-badge: Popular
 price: "49"
 brand: Rasasi
 gender: Women
 size: 100ml
-concentration: Eau de Parfum (EDP)
-fragrance_family: "Fresh Aquatic "
+badge: Popular
+stock_status: in_stock
+published: true
 top_notes: Litchi, Pear, Beramot, Pistachio
 heart_notes: Rose, Incense
-base_notes: Vanilla, Musk, Amber, Woodsy Notes
-accords:
-  - fruity
-  - rose
-  - amber
-  - vanilla
-  - powdery
-  - musky
-  - woody
-  - sweet
-  - fresh
-  - tropical
 longevity: 8-10 hours
 projection: Moderate - Strong
 best_for: Anytime
@@ -47,6 +33,24 @@ ysp_thoughts: >-
 
 
   We like it because it's genuinely easy to wear — clean, bright, never overdone. It reminded us that sometimes the most useful fragrance in your collection is the one that just works, every time, without asking anything of you.
+inspired_by_note: fresh aromatic with woody amber base, same confident projection
+name: Rasasi Hawas Eclat 100ml
+slug: rasasi-hawas-eclat
+concentration: Eau de Parfum (EDP)
 featured: false
-published: true
+exclude_from_feed: false
+accords:
+  - fruity
+  - rose
+  - amber
+  - vanilla
+  - powdery
+  - musky
+  - woody
+  - sweet
+  - fresh
+  - tropical
+fragrance_family: "Fresh Aquatic "
+base_notes: Vanilla, Musk, Amber, Woodsy Notes
+inspired_by_name: Bleu de Chanel EDP
 ---

@@ -1,30 +1,16 @@
 ---
-name: Lattafa Yara 100ml
-slug: lattafa-yara-100ml
-badge: Bestseller
-custom_badge: ""
-price: "19.55"
 rrp: ""
-brand: Lattafa
 gender: Women
 size: 100ml
-concentration: Eau de Parfum (EDP)
-fragrance_family: Oriental Vanilla / Amber Floral
-heart_notes: Gourmand Accord, Tropical Fruits
-base_notes: Vanilla, Musk, Sandalwood
-accords:
-  - vanilla
-  - floral
-  - fruity
-  - gourmand
-  - musk
-  - powdery
+badge: Bestseller
+stock_status: sold_out
+published: true
 longevity: 4–6 hours
 projection: Moderate
 best_for: Daytime wear, spring/summer, casual evenings
-origin: UAE
 launched: "2020"
 vegan: true
+image_main: /products/lattafa/yara/1-78.jpeg
 gallery:
   - /products/lattafa/yara/1-78.jpeg
   - /products/lattafa/yara/2-78.jpeg
@@ -52,13 +38,31 @@ ysp_thoughts: >
 
 
   We carry it because it's a crowd-pleaser in the truest sense — not generic, but immediately appealing to almost everyone who smells it. For the price, it's an easy recommendation.
-amazon_url: ""
+inspired_by_name: YSL Libre
+inspired_by_note: similar iris-and-lavender-over-vanilla structure, warmer and sweeter drydown
 ebay_url: ""
+price: "19.55"
+brand: Lattafa
+heart_notes: Gourmand Accord, Tropical Fruits
+origin: UAE
+name: Lattafa Yara 100ml
+slug: lattafa-yara-100ml
+concentration: Eau de Parfum (EDP)
 featured: false
-published: true
+exclude_from_feed: true
+accords:
+  - vanilla
+  - floral
+  - fruity
+  - gourmand
+  - musk
+  - powdery
+custom_badge: ""
+fragrance_family: Oriental Vanilla / Amber Floral
+base_notes: Vanilla, Musk, Sandalwood
+amazon_url: ""
 gender_label: Women
 top_notes: Orchid, Heliotrope, Tangerine
-image_main: /products/lattafa/yara/1-78.jpeg
 description_short: Sweet, creamy and unapologetically feminine. One of the
   most-loved Arabic fragrances of recent years — fruity, floral and soft vanilla
   gourmand.
