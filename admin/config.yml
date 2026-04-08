@@ -113,6 +113,10 @@ collections:
       - { label: "YSP Thoughts — Why We Carry This", name: "ysp_thoughts", widget: "markdown" }
       - { label: "Amazon Link", name: "amazon_url", widget: "string", required: false }
 
+      # ── 6b. SCENT COMPARISON ──────────────────────────────────────
+      - { label: "In the same world as (Designer Name)", name: "inspired_by_name", widget: "string", required: false, hint: "e.g. Tom Ford Oud Wood — the well-known fragrance this sits alongside. Leave blank if no clear comparison." }
+      - { label: "Comparison Note", name: "inspired_by_note", widget: "string", required: false, hint: "Optional one-liner e.g. same dark resinous depth, stronger projection. Leave blank to use default phrasing." }
+
       # ── 7. GOOGLE SHOPPING ────────────────────────────────────────
       - { label: "GTIN / EAN Barcode", name: "gtin", widget: "string", required: false, hint: "13-digit barcode from the product box. Improves Google Shopping ad performance significantly." }
       - { label: "Exclude from Google Shopping Feed", name: "exclude_from_feed", widget: "boolean", default: false, hint: "Check to hide this product from the Google Shopping XML feed." }

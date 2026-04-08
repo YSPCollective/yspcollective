@@ -92,6 +92,25 @@ permalink: "products/{{ product.slug }}.html"
     font-size: 0.58rem; font-weight: 500; opacity: 0.6; flex-shrink: 0;
   }
 
+  /* ── Inspired-by comparison ── */
+  .inspired-by {
+    display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.4rem;
+    margin-top: 1rem; margin-bottom: 0.5rem;
+    padding: 0.7rem 0; border-top: 1px solid var(--sand);
+  }
+  .inspired-by-label {
+    font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--grey-light); white-space: nowrap; flex-shrink: 0;
+  }
+  .inspired-by-name {
+    font-family: var(--serif); font-size: 0.95rem; font-weight: 400;
+    color: var(--black);
+  }
+  .inspired-by-note {
+    font-size: 0.78rem; color: var(--grey); font-style: italic;
+  }
+  .inspired-by-dot { color: var(--sand); font-size: 0.7rem; }
+
   .product-cta { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; align-items: center; }
   .btn-buy-now { padding: 1rem 2.5rem; background: var(--accent); color: var(--white); font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; border: none; cursor: pointer; transition: background 0.2s, transform 0.2s; display: inline-block; }
   .btn-buy-now:hover { background: var(--black); transform: translateY(-1px); }
@@ -289,6 +308,20 @@ permalink: "products/{{ product.slug }}.html"
       <a href="/fragrance-notes.html" style="display:inline-block;margin-top:0.7rem;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);text-decoration:none;opacity:0.8;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">What do these mean? Explore all notes →</a>
     </div>
     {% endif %}
+    {% endif %}
+
+    {% if product.inspired_by_name %}
+    <div class="inspired-by">
+      <span class="inspired-by-label">In the same world as</span>
+      <span class="inspired-by-name">{{ product.inspired_by_name }}</span>
+      {% if product.inspired_by_note %}
+        <span class="inspired-by-dot">·</span>
+        <span class="inspired-by-note">{{ product.inspired_by_note }}</span>
+      {% else %}
+        <span class="inspired-by-dot">·</span>
+        <span class="inspired-by-note">at a fraction of the price</span>
+      {% endif %}
+    </div>
     {% endif %}
 
     {% set stockStatus = product.stock_status or "in_stock" %}
