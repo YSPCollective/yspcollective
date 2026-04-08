@@ -1,12 +1,11 @@
 ---
-name: Zimaya Sharaf Divine Extract de parfum 100ml
-slug: zimaya-sharaf-divine
-badge: Premium
 price: "39.99"
 brand: Zimaya
 gender: Unisex
 size: 100ml
-concentration: Eau de Parfum (EDP)
+badge: Premium
+stock_status: in_stock
+published: true
 fragrance_family: Floral Woody Oriental Spicy
 top_notes: Raspberry, Cinnamon, Bergamot
 heart_notes: Apple, Caramel, Rose
@@ -48,6 +47,11 @@ ysp_thoughts: >-
 
 
   We stocked this because it's the kind of fragrance that makes people stop and ask — and that conversation is always a good one.
+inspired_by_name: Tom Ford Black Orchid
+inspired_by_note: dark floral-oriental, similar gourmand resin drydown
+name: Zimaya Sharaf Divine Extract de parfum 100ml
+slug: zimaya-sharaf-divine
+concentration: Eau de Parfum (EDP)
 featured: true
-published: true
+exclude_from_feed: false
 ---
