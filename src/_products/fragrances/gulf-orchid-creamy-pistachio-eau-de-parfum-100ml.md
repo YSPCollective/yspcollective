@@ -5,6 +5,8 @@ gender: Unisex
 size: 100ml
 badge: Limited
 stock_status: in_stock
+published: true
+top_notes: Bergamot, Pistachio, Apple
 heart_notes: Neroli, Cedarwood, Rose
 accords_text: citrus, woody, vanilla, powdery, green, fresh spicy, musky,
   lactonic, fresh, fruity
@@ -44,11 +46,11 @@ ysp_thoughts: >-
 
 
   We picked it because it stands out in a lineup without being weird about it. If you're the kind of person who's bored with smelling like everyone else, Creamy Pistachio is a quiet statement that does the job perfectly.
+inspired_by_note: sweet creamy floral, similar skin-close warmth
 name: Gulf Orchid Creamy Pistachio Eau de Parfum 100ml
 slug: gulf-orchid-creamy-pistachio
 concentration: Eau de Parfum (EDP)
 featured: true
-published: true
 exclude_from_feed: false
 accords:
   - citrus
@@ -62,6 +64,6 @@ accords:
   - fresh
   - fruity
 fragrance_family: Gourmand Oriental
-top_notes: Bergamot, Pistachio, Apple
 base_notes: Vanilla, Milk, Musk
+inspired_by_name: Givenchy L'Interdit
 ---
