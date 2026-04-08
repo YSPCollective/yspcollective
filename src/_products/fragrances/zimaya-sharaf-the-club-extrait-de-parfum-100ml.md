@@ -1,28 +1,14 @@
 ---
-name: Zimaya Sharaf the Club Extrait de Parfum 100ml
-slug: zimaya-sharaf-the-club
-badge: ""
-custom_badge: Night Out
 price: "35.00"
 brand: Zimaya
 gender: Men
 size: 100ml
-concentration: Extrait de Parfum (EdP)
-fragrance_family: Woody Oriental Spicy
+badge: ""
+custom_badge: Night Out
+stock_status: in_stock
+published: true
 top_notes: Pineapple, Bergamot, Apple, White Flowers
 heart_notes: Birch, Amber, Orange Blossom
-base_notes: "Oak moss, Ambergis, Musk "
-accords:
-  - fruity
-  - leather
-  - mossy
-  - citrus
-  - sweet
-  - smoky
-  - amber
-  - woody
-  - earthy
-  - white floral
 longevity: 10-12 hours
 projection: Moderate - Strong
 best_for: ""
@@ -52,6 +38,24 @@ ysp_thoughts: >-
 
 
   We picked this because it has an energy to it that's hard to manufacture. It's the fragrance you choose when the evening actually matters. Zimaya sits under the Afnan umbrella, which has serious perfumery credentials behind it, and that quality shows in the composition. Dark, unapologetic, and genuinely excellent for the price point.
+inspired_by_note: spicy-woody masculine, similar intensity and projection
+name: Zimaya Sharaf the Club Extrait de Parfum 100ml
+slug: zimaya-sharaf-the-club
+concentration: Extrait de Parfum
 featured: false
-published: true
+exclude_from_feed: false
+accords:
+  - fruity
+  - leather
+  - mossy
+  - citrus
+  - sweet
+  - smoky
+  - amber
+  - woody
+  - earthy
+  - white floral
+fragrance_family: Woody Oriental Spicy
+base_notes: "Oak moss, Ambergis, Musk "
+inspired_by_name: Dior Sauvage Elixir
 ---
