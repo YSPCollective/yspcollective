@@ -119,7 +119,7 @@ collections:
 
       # ── 7. GOOGLE SHOPPING ────────────────────────────────────────
       - { label: "GTIN / EAN Barcode", name: "gtin", widget: "string", required: false, hint: "13-digit barcode from the product box. Improves Google Shopping ad performance significantly." }
-      - { label: "Exclude from Google Shopping Feed", name: "exclude_from_feed", widget: "boolean", default: false, hint: "Check to hide this product from the Google Shopping XML feed." }
+      - { label: "Exclude from Google Shopping Feed", name: "exclude_from_feed", widget: "boolean", default: false, required: false, hint: "Check to hide this product from the Google Shopping XML feed." }
       - { label: "Google Product Category Override", name: "google_product_category", widget: "string", required: false, hint: "Leave blank to use default. Override with full Google taxonomy string if needed." }
 
       # ── 8. TRANSLATIONS ───────────────────────────────────────────
@@ -241,7 +241,7 @@ collections:
 
       # ── 7. GOOGLE SHOPPING ────────────────────────────────────────
       - { label: "GTIN / EAN Barcode", name: "gtin", widget: "string", required: false, hint: "13-digit barcode from the product box. Improves Google Shopping ad performance significantly." }
-      - { label: "Exclude from Google Shopping Feed", name: "exclude_from_feed", widget: "boolean", default: false, hint: "Check to hide this product from the Google Shopping XML feed." }
+      - { label: "Exclude from Google Shopping Feed", name: "exclude_from_feed", widget: "boolean", default: false, required: false, hint: "Check to hide this product from the Google Shopping XML feed." }
       - { label: "Google Product Category Override", name: "google_product_category", widget: "string", required: false, hint: "Leave blank to use default. Override with full Google taxonomy string if needed." }
 
       # ── 8. TRANSLATIONS ───────────────────────────────────────────
