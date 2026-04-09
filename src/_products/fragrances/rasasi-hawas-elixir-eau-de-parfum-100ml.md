@@ -1,31 +1,13 @@
 ---
-name: Rasasi Hawas Elixir Eau de Parfum 100ml
-slug: rasasi-hawas-elixir
-badge: Curated
-price: "37.90"
+price: "37.00"
 brand: Rasasi
 gender: Unisex
 size: 100ml
-concentration: Eau de Parfum (EDP)
-fragrance_family: Aquatic Oriental
-top_notes: Mint, Bergamot, Artemisia
+badge: Curated
+stock_status: in_stock
 heart_notes: Dark Chocolate, Lavender, Benzoin
-base_notes: Vanilla, Tonka Bean, White Musk
-accords:
-  - vanilla
-  - aromatic
-  - green
-  - sweet
-  - fresh spicy
-  - warm spicy
-  - amber
-  - amber
-  - chocolate
-  - lavender
-  - powdery
 longevity: 8-10 hours
 projection: Strong
-best_for: Spring/Autumn
 origin: UAE
 launched: "2024"
 vegan: false
@@ -60,6 +42,25 @@ ysp_thoughts: >-
 
 
   It sits in that rare sweet spot where it's fresh enough to wear casually but rich enough to feel like a proper evening fragrance. We stocked this because we'd wear it ourselves — and that's always the starting point for what ends up on our shelves.
-featured: false
+name: Rasasi Hawas Elixir Eau de Parfum 100ml
+slug: rasasi-hawas-elixir
+concentration: Eau de Parfum (EDP)
+featured: true
 published: true
+best_for: Spring/Autumn
+accords:
+  - vanilla
+  - aromatic
+  - green
+  - sweet
+  - fresh spicy
+  - warm spicy
+  - amber
+  - amber
+  - chocolate
+  - lavender
+  - powdery
+fragrance_family: Aquatic Oriental
+top_notes: Mint, Bergamot, Artemisia
+base_notes: Vanilla, Tonka Bean, White Musk
 ---
