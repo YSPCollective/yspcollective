@@ -1,5 +1,5 @@
 ---
-price: "49"
+price: "39"
 brand: Rasasi
 gender: Women
 size: 100ml
