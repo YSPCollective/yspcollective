@@ -156,12 +156,12 @@
     m.innerHTML = `
       <div class="ysp-modal-box">
         <button class="ysp-modal-close" id="ysp-modal-close" aria-label="Close">✕</button>
-        <div class="ysp-modal-title">${t('cookie_modal_title')}</div>
-        <div class="ysp-modal-intro">${t('cookie_modal_intro')}</div>
+        <div class="ysp-modal-title" data-i18n="cookie_modal_title">${t('cookie_modal_title')}</div>
+        <div class="ysp-modal-intro" data-i18n="cookie_modal_intro">${t('cookie_modal_intro')}</div>
         <div class="ysp-cat">
           <div>
-            <div class="ysp-cat-name">${t('cookie_cat_essential')}</div>
-            <div class="ysp-cat-desc">${t('cookie_cat_essential_desc')}</div>
+            <div class="ysp-cat-name" data-i18n="cookie_cat_essential">${t('cookie_cat_essential')}</div>
+            <div class="ysp-cat-desc" data-i18n="cookie_cat_essential_desc">${t('cookie_cat_essential_desc')}</div>
           </div>
           <label class="ysp-toggle">
             <input type="checkbox" checked disabled>
@@ -170,8 +170,8 @@
         </div>
         <div class="ysp-cat">
           <div>
-            <div class="ysp-cat-name">${t('cookie_cat_analytics')}</div>
-            <div class="ysp-cat-desc">${t('cookie_cat_analytics_desc')}</div>
+            <div class="ysp-cat-name" data-i18n="cookie_cat_analytics">${t('cookie_cat_analytics')}</div>
+            <div class="ysp-cat-desc" data-i18n="cookie_cat_analytics_desc">${t('cookie_cat_analytics_desc')}</div>
           </div>
           <label class="ysp-toggle">
             <input type="checkbox" id="ysp-analytics-toggle">
@@ -179,8 +179,8 @@
           </label>
         </div>
         <div class="ysp-modal-actions">
-          <button class="ysp-btn ysp-btn-save" id="ysp-save-prefs">${t('cookie_save')}</button>
-          <button class="ysp-btn ysp-btn-accept-all" id="ysp-accept-all-modal">${t('cookie_accept_all')}</button>
+          <button class="ysp-btn ysp-btn-save" id="ysp-save-prefs" data-i18n="cookie_save">${t('cookie_save')}</button>
+          <button class="ysp-btn ysp-btn-accept-all" id="ysp-accept-all-modal" data-i18n="cookie_accept_all">${t('cookie_accept_all')}</button>
         </div>
       </div>`;
     return m;
@@ -236,13 +236,13 @@
     banner.setAttribute('role', 'dialog');
     banner.innerHTML = `
       <div class="ysp-cookie-text">
-        <div class="ysp-cookie-title">${t('cookie_title')}</div>
-        <div class="ysp-cookie-desc">${t('cookie_desc')}</div>
+        <div class="ysp-cookie-title" data-i18n="cookie_title">${t('cookie_title')}</div>
+        <div class="ysp-cookie-desc" data-i18n-html="true" data-i18n="cookie_desc">${t('cookie_desc')}</div>
       </div>
       <div class="ysp-cookie-actions">
-        <button class="ysp-btn ysp-btn-reject" id="ysp-reject-all">${t('cookie_reject')}</button>
-        <button class="ysp-btn ysp-btn-accept" id="ysp-accept-all">${t('cookie_accept')}</button>
-        <button class="ysp-btn-manage" id="ysp-manage">${t('cookie_manage')}</button>
+        <button class="ysp-btn ysp-btn-reject" id="ysp-reject-all" data-i18n="cookie_reject">${t('cookie_reject')}</button>
+        <button class="ysp-btn ysp-btn-accept" id="ysp-accept-all" data-i18n="cookie_accept">${t('cookie_accept')}</button>
+        <button class="ysp-btn-manage" id="ysp-manage" data-i18n="cookie_manage">${t('cookie_manage')}</button>
       </div>`;
     document.body.appendChild(banner);
 
