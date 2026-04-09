@@ -1,7 +1,10 @@
 /**
  * YSP Collective — Cookie Consent Manager
  * GDPR / ePrivacy compliant · GA4 Consent Mode v2 · Multilingual (EN/PT/ES)
- * Integrates with window.YSP_LANG.t() and window.YSP_TRANSLATIONS
+ *
+ * LOADING: This script must load AFTER ysp-translations.js and ysp-lang.js
+ * GA4 consent defaults are set by a separate inline snippet in <head> (see base.njk)
+ *
  * Save to: src/ysp-cookie-consent.js
  */
 (function () {
@@ -28,18 +31,7 @@
     }));
   }
 
-  // ── GA4 Consent Mode v2 — set defaults IMMEDIATELY (before GA4 loads) ────
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { window.dataLayer.push(arguments); }
-  window.gtag = window.gtag || gtag;
-  gtag('consent', 'default', {
-    analytics_storage: 'denied',
-    ad_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
-    wait_for_update: 2000
-  });
-
+  // ── GA4 helpers ───────────────────────────────────────────────────────────
   function activateGA4() {
     if (typeof gtag === 'function') {
       gtag('consent', 'update', {
@@ -63,22 +55,22 @@
   }
 
   // ── Translation helper ────────────────────────────────────────────────────
-  // Falls back gracefully if YSP_LANG isn't ready yet
+  // By the time this script runs (after ysp-translations.js + ysp-lang.js),
+  // both window.YSP_TRANSLATIONS and window.YSP_LANG are guaranteed available.
   function t(key) {
     try {
       if (window.YSP_LANG && typeof window.YSP_LANG.t === 'function') {
         return window.YSP_LANG.t(key);
       }
-      // YSP_LANG not ready — try reading directly from YSP_TRANSLATIONS
       if (window.YSP_TRANSLATIONS) {
-        const lang = (function() {
-          try { return localStorage.getItem('ysp_lang') || 'en'; } catch(e) { return 'en'; }
+        const lang = (function () {
+          try { return localStorage.getItem('ysp_lang') || 'en'; } catch (e) { return 'en'; }
         })();
         const tr = window.YSP_TRANSLATIONS[lang] || window.YSP_TRANSLATIONS['en'];
         if (tr && tr[key]) return tr[key];
       }
-    } catch(e) {}
-    // Hard-coded EN fallbacks — ensures banner always renders
+    } catch (e) {}
+    // Hard-coded EN fallbacks — should never be needed given load order
     const fallbacks = {
       cookie_title: 'We use cookies',
       cookie_desc: 'We use essential cookies to make our site work, and optional analytics cookies (Google Analytics) to understand how visitors use it. Read our <a href="/privacy-policy.html">Privacy Policy</a> for details.',
@@ -161,7 +153,6 @@
     m.id = 'ysp-cookie-modal';
     m.setAttribute('role', 'dialog');
     m.setAttribute('aria-modal', 'true');
-    m.setAttribute('aria-label', t('cookie_modal_title'));
     m.innerHTML = `
       <div class="ysp-modal-box">
         <button class="ysp-modal-close" id="ysp-modal-close" aria-label="Close">✕</button>
@@ -173,7 +164,7 @@
             <div class="ysp-cat-desc">${t('cookie_cat_essential_desc')}</div>
           </div>
           <label class="ysp-toggle">
-            <input type="checkbox" checked disabled aria-label="${t('cookie_cat_essential')}">
+            <input type="checkbox" checked disabled>
             <span class="ysp-toggle-track"></span>
           </label>
         </div>
@@ -183,7 +174,7 @@
             <div class="ysp-cat-desc">${t('cookie_cat_analytics_desc')}</div>
           </div>
           <label class="ysp-toggle">
-            <input type="checkbox" id="ysp-analytics-toggle" aria-label="${t('cookie_cat_analytics')}">
+            <input type="checkbox" id="ysp-analytics-toggle">
             <span class="ysp-toggle-track"></span>
           </label>
         </div>
@@ -240,11 +231,9 @@
   // ── Show banner ───────────────────────────────────────────────────────────
   function showBanner() {
     injectStyles();
-
     const banner = document.createElement('div');
     banner.id = 'ysp-cookie-banner';
     banner.setAttribute('role', 'dialog');
-    banner.setAttribute('aria-label', t('cookie_title'));
     banner.innerHTML = `
       <div class="ysp-cookie-text">
         <div class="ysp-cookie-title">${t('cookie_title')}</div>
@@ -272,67 +261,32 @@
     });
   }
 
-  // ── Public API — called from footer "Cookie Settings" button ──────────────
+  // ── Public API ────────────────────────────────────────────────────────────
   window.yspOpenCookieSettings = function () { openModal(null); };
 
-  // ── Also update footer button label when language changes ─────────────────
-  // Hook into YSP_LANG.set if available after DOM ready
-  document.addEventListener('DOMContentLoaded', function () {
-    var originalSet = window.YSP_LANG && window.YSP_LANG.set;
+  // ── Update footer button label when language switches ─────────────────────
+  (function hookLangSwitcher() {
+    const originalSet = window.YSP_LANG && window.YSP_LANG.set;
     if (originalSet) {
-      window.YSP_LANG.set = function(code) {
+      window.YSP_LANG.set = function (code) {
         originalSet(code);
-        // Update footer cookie settings button text
-        document.querySelectorAll('.ysp-cookie-settings-btn').forEach(function(btn) {
+        document.querySelectorAll('.ysp-cookie-settings-btn').forEach(function (btn) {
           btn.textContent = t('cookie_settings');
         });
       };
     }
-    // Set initial button text in correct language
-    document.querySelectorAll('.ysp-cookie-settings-btn').forEach(function(btn) {
+    document.querySelectorAll('.ysp-cookie-settings-btn').forEach(function (btn) {
       btn.textContent = t('cookie_settings');
     });
-  });
+  })();
 
-  // ── Init ──────────────────────────────────────────────────────────────────
-  // Wait for YSP_TRANSLATIONS to be available before rendering banner text.
-  // GA4 consent defaults are already set above at parse time — that is correct.
-  function waitForTranslations(callback) {
-    if (window.YSP_TRANSLATIONS) {
-      callback();
-      return;
-    }
-    // Poll every 50ms, give up after 3s and use fallback strings
-    var attempts = 0;
-    var interval = setInterval(function() {
-      attempts++;
-      if (window.YSP_TRANSLATIONS || attempts > 60) {
-        clearInterval(interval);
-        callback();
-      }
-    }, 50);
+  // ── Init — runs immediately (script is at bottom of body, after translations) ──
+  const c = getConsent();
+  if (c === null) {
+    showBanner();
+  } else if (c.analytics === true) {
+    activateGA4();
   }
-
-  function init() {
-    var c = getConsent();
-    if (c === null) {
-      // Show banner — but wait for translations first
-      var doShow = function() { waitForTranslations(showBanner); };
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', doShow);
-      } else {
-        doShow();
-      }
-    } else if (c.analytics === true) {
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', activateGA4);
-      } else {
-        activateGA4();
-      }
-    }
-    // analytics === false: GA4 stays denied (default set above)
-  }
-
-  init();
+  // c.analytics === false: GA4 stays denied via the <head> defaults
 
 })();

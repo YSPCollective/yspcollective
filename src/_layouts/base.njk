@@ -393,8 +393,19 @@
     @media (max-width: 480px) { #ysp-popup { padding: 2rem 1.5rem; } .popup-discount { font-size: 2.2rem; } }
   </style>
 
-  <!-- Cookie Consent — must load before GA4 to set Consent Mode v2 defaults -->
-  <script src="/ysp-cookie-consent.js"></script>
+  <!-- GA4 Consent Mode v2 defaults — blocks analytics until user consents -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 2000
+    });
+  </script>
 
   {{ head_extra | safe }}
 </head>
@@ -661,6 +672,7 @@
   <script src="/ysp-config.js"></script>
   <script src="/ysp-translations.js"></script>
   <script src="/ysp-lang.js"></script>
+  <script src="/ysp-cookie-consent.js"></script>
   <script src="/ysp-account.js"></script>
   <script src="/ysp-chat.js"></script>
 
