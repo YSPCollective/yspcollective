@@ -389,13 +389,23 @@ canonical: https://yspcollective.com/terms.html
 
     tabs.forEach(tab => tab.addEventListener('click', () => showLang(tab.dataset.lang)));
 
-    // Sync with site language
-    document.addEventListener('DOMContentLoaded', function() {
-      const siteLang = (window.YSP_LANG ? window.YSP_LANG.get() : null)
-        || localStorage.getItem('ysp_lang')
-        || 'en';
-      showLang(siteLang);
+    // Read lang directly from localStorage — always available immediately, no dependency on YSP_LANG
+    function initLang() {
+      try {
+        const siteLang = localStorage.getItem('ysp_lang') || 'en';
+        showLang(siteLang);
+      } catch(e) { showLang('en'); }
+    }
 
+    // Run immediately if DOM is ready, otherwise wait
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initLang);
+    } else {
+      initLang();
+    }
+
+    // Also hook into YSP_LANG.set once it's available, so switching language updates the page
+    window.addEventListener('load', function() {
       if (window.YSP_LANG) {
         const orig = window.YSP_LANG.set;
         window.YSP_LANG.set = function(code) {
