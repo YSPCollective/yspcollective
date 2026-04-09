@@ -47,8 +47,8 @@ origin: UAE
 name: Arabiyat Prestige Nyla 80ml
 slug: arabiyat-prestige-nyla-80ml-eau-de-parfum-unisex-perfume
 concentration: Eau de Parfum (EDP)
-featured: true
-exclude_from_feed: false
+featured: false
+exclude_from_feed: true
 accords:
   - floral
   - fruity
