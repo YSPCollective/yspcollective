@@ -1,6 +1,7 @@
 /**
  * YSP Collective — Cookie Consent Manager
- * GDPR / ePrivacy compliant · GA4 Consent Mode v2
+ * GDPR / ePrivacy compliant · GA4 Consent Mode v2 · Multilingual (EN/PT/ES)
+ * Integrates with window.YSP_LANG.t() and window.YSP_TRANSLATIONS
  * Save to: src/ysp-cookie-consent.js
  */
 (function () {
@@ -9,6 +10,7 @@
   const CONSENT_KEY = 'ysp_cookie_consent';
   const CONSENT_VERSION = '1';
 
+  // ── Consent helpers ───────────────────────────────────────────────────────
   function getConsent() {
     try {
       const raw = localStorage.getItem(CONSENT_KEY);
@@ -25,6 +27,18 @@
       timestamp: new Date().toISOString()
     }));
   }
+
+  // ── GA4 Consent Mode v2 — set defaults IMMEDIATELY (before GA4 loads) ────
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = window.gtag || gtag;
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    wait_for_update: 2000
+  });
 
   function activateGA4() {
     if (typeof gtag === 'function') {
@@ -48,18 +62,43 @@
     }
   }
 
-  // Set GA4 Consent Mode v2 defaults — must run before gtag loads
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { window.dataLayer.push(arguments); }
-  window.gtag = window.gtag || gtag;
-  gtag('consent', 'default', {
-    analytics_storage: 'denied',
-    ad_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
-    wait_for_update: 2000
-  });
+  // ── Translation helper ────────────────────────────────────────────────────
+  // Falls back gracefully if YSP_LANG isn't ready yet
+  function t(key) {
+    try {
+      if (window.YSP_LANG && typeof window.YSP_LANG.t === 'function') {
+        return window.YSP_LANG.t(key);
+      }
+      // YSP_LANG not ready — try reading directly from YSP_TRANSLATIONS
+      if (window.YSP_TRANSLATIONS) {
+        const lang = (function() {
+          try { return localStorage.getItem('ysp_lang') || 'en'; } catch(e) { return 'en'; }
+        })();
+        const tr = window.YSP_TRANSLATIONS[lang] || window.YSP_TRANSLATIONS['en'];
+        if (tr && tr[key]) return tr[key];
+      }
+    } catch(e) {}
+    // Hard-coded EN fallbacks — ensures banner always renders
+    const fallbacks = {
+      cookie_title: 'We use cookies',
+      cookie_desc: 'We use essential cookies to make our site work, and optional analytics cookies (Google Analytics) to understand how visitors use it. Read our <a href="/privacy-policy.html">Privacy Policy</a> for details.',
+      cookie_accept: 'Accept All',
+      cookie_reject: 'Essential Only',
+      cookie_manage: 'Manage',
+      cookie_modal_title: 'Cookie Preferences',
+      cookie_modal_intro: 'Manage your preferences below. Essential cookies are always active. You can opt in or out of analytics cookies at any time.',
+      cookie_cat_essential: 'Essential Cookies',
+      cookie_cat_essential_desc: 'Required for the site to function — checkout, sessions, security. These cannot be disabled.',
+      cookie_cat_analytics: 'Analytics Cookies',
+      cookie_cat_analytics_desc: 'Google Analytics (GA4) — helps us understand how visitors use the site. No personal data is sold to third parties.',
+      cookie_save: 'Save Preferences',
+      cookie_accept_all: 'Accept All',
+      cookie_settings: 'Cookie Settings'
+    };
+    return fallbacks[key] || key;
+  }
 
+  // ── Styles ────────────────────────────────────────────────────────────────
   function injectStyles() {
     if (document.getElementById('ysp-cookie-styles')) return;
     const css = `
@@ -102,7 +141,7 @@
       .ysp-btn-save:hover{background:#1a1916;}
       .ysp-btn-accept-all{background:#1a1916;color:#faf8f5;}
       .ysp-btn-accept-all:hover{background:#9c7b56;}
-      .ysp-cookie-settings-btn{background:none;border:none;cursor:pointer;font-family:'Outfit',-apple-system,sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.35);transition:color 0.25s;padding:0;display:block;margin-bottom:0.6rem;}
+      .ysp-cookie-settings-btn{background:none;border:none;cursor:pointer;font-family:'Outfit',-apple-system,sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.35);transition:color 0.25s;padding:0;display:block;margin-bottom:0.6rem;text-align:left;}
       .ysp-cookie-settings-btn:hover{color:#c8a87a;}
       @media(max-width:768px){
         #ysp-cookie-banner{padding:1.25rem 1.5rem;flex-direction:column;align-items:flex-start;gap:1.25rem;}
@@ -116,40 +155,41 @@
     document.head.appendChild(s);
   }
 
+  // ── Build modal ───────────────────────────────────────────────────────────
   function buildModal() {
     const m = document.createElement('div');
     m.id = 'ysp-cookie-modal';
     m.setAttribute('role', 'dialog');
     m.setAttribute('aria-modal', 'true');
-    m.setAttribute('aria-label', 'Cookie preferences');
+    m.setAttribute('aria-label', t('cookie_modal_title'));
     m.innerHTML = `
       <div class="ysp-modal-box">
         <button class="ysp-modal-close" id="ysp-modal-close" aria-label="Close">✕</button>
-        <div class="ysp-modal-title">Cookie Preferences</div>
-        <div class="ysp-modal-intro">Manage your preferences below. Essential cookies are always active. You can opt in or out of analytics cookies at any time.</div>
+        <div class="ysp-modal-title">${t('cookie_modal_title')}</div>
+        <div class="ysp-modal-intro">${t('cookie_modal_intro')}</div>
         <div class="ysp-cat">
           <div>
-            <div class="ysp-cat-name">Essential Cookies</div>
-            <div class="ysp-cat-desc">Required for the site to function — checkout, sessions, security. These cannot be disabled.</div>
+            <div class="ysp-cat-name">${t('cookie_cat_essential')}</div>
+            <div class="ysp-cat-desc">${t('cookie_cat_essential_desc')}</div>
           </div>
           <label class="ysp-toggle">
-            <input type="checkbox" checked disabled aria-label="Essential cookies, always active">
+            <input type="checkbox" checked disabled aria-label="${t('cookie_cat_essential')}">
             <span class="ysp-toggle-track"></span>
           </label>
         </div>
         <div class="ysp-cat">
           <div>
-            <div class="ysp-cat-name">Analytics Cookies</div>
-            <div class="ysp-cat-desc">Google Analytics (GA4) — helps us understand how visitors use the site. No personal data is sold to third parties.</div>
+            <div class="ysp-cat-name">${t('cookie_cat_analytics')}</div>
+            <div class="ysp-cat-desc">${t('cookie_cat_analytics_desc')}</div>
           </div>
           <label class="ysp-toggle">
-            <input type="checkbox" id="ysp-analytics-toggle" aria-label="Analytics cookies">
+            <input type="checkbox" id="ysp-analytics-toggle" aria-label="${t('cookie_cat_analytics')}">
             <span class="ysp-toggle-track"></span>
           </label>
         </div>
         <div class="ysp-modal-actions">
-          <button class="ysp-btn ysp-btn-save" id="ysp-save-prefs">Save Preferences</button>
-          <button class="ysp-btn ysp-btn-accept-all" id="ysp-accept-all-modal">Accept All</button>
+          <button class="ysp-btn ysp-btn-save" id="ysp-save-prefs">${t('cookie_save')}</button>
+          <button class="ysp-btn ysp-btn-accept-all" id="ysp-accept-all-modal">${t('cookie_accept_all')}</button>
         </div>
       </div>`;
     return m;
@@ -178,13 +218,13 @@
     });
   }
 
-  function openModal(closeBanner) {
+  function openModal(onSave) {
     injectStyles();
     let modal = document.getElementById('ysp-cookie-modal');
     if (!modal) {
       modal = buildModal();
       document.body.appendChild(modal);
-      attachModalEvents(modal, closeBanner);
+      attachModalEvents(modal, onSave);
     }
     const c = getConsent();
     const toggle = document.getElementById('ysp-analytics-toggle');
@@ -197,22 +237,23 @@
     setTimeout(function () { if (banner.parentNode) banner.parentNode.removeChild(banner); }, 600);
   }
 
+  // ── Show banner ───────────────────────────────────────────────────────────
   function showBanner() {
     injectStyles();
 
     const banner = document.createElement('div');
     banner.id = 'ysp-cookie-banner';
     banner.setAttribute('role', 'dialog');
-    banner.setAttribute('aria-label', 'Cookie consent');
+    banner.setAttribute('aria-label', t('cookie_title'));
     banner.innerHTML = `
       <div class="ysp-cookie-text">
-        <div class="ysp-cookie-title">We use cookies</div>
-        <div class="ysp-cookie-desc">We use essential cookies to make our site work, and optional analytics cookies (Google Analytics) to understand how visitors use it. Read our <a href="/privacy-policy.html">Privacy Policy</a> for details.</div>
+        <div class="ysp-cookie-title">${t('cookie_title')}</div>
+        <div class="ysp-cookie-desc">${t('cookie_desc')}</div>
       </div>
       <div class="ysp-cookie-actions">
-        <button class="ysp-btn ysp-btn-reject" id="ysp-reject-all">Essential Only</button>
-        <button class="ysp-btn ysp-btn-accept" id="ysp-accept-all">Accept All</button>
-        <button class="ysp-btn-manage" id="ysp-manage">Manage</button>
+        <button class="ysp-btn ysp-btn-reject" id="ysp-reject-all">${t('cookie_reject')}</button>
+        <button class="ysp-btn ysp-btn-accept" id="ysp-accept-all">${t('cookie_accept')}</button>
+        <button class="ysp-btn-manage" id="ysp-manage">${t('cookie_manage')}</button>
       </div>`;
     document.body.appendChild(banner);
 
@@ -231,22 +272,48 @@
     });
   }
 
-  // Public API — called from footer "Cookie Settings" button
+  // ── Public API — called from footer "Cookie Settings" button ──────────────
   window.yspOpenCookieSettings = function () { openModal(null); };
 
-  // Init
+  // ── Also update footer button label when language changes ─────────────────
+  // Hook into YSP_LANG.set if available after DOM ready
+  document.addEventListener('DOMContentLoaded', function () {
+    var originalSet = window.YSP_LANG && window.YSP_LANG.set;
+    if (originalSet) {
+      window.YSP_LANG.set = function(code) {
+        originalSet(code);
+        // Update footer cookie settings button text
+        document.querySelectorAll('.ysp-cookie-settings-btn').forEach(function(btn) {
+          btn.textContent = t('cookie_settings');
+        });
+      };
+    }
+    // Set initial button text in correct language
+    document.querySelectorAll('.ysp-cookie-settings-btn').forEach(function(btn) {
+      btn.textContent = t('cookie_settings');
+    });
+  });
+
+  // ── Init ──────────────────────────────────────────────────────────────────
   function init() {
     const c = getConsent();
     if (c === null) {
-      document.readyState === 'loading'
-        ? document.addEventListener('DOMContentLoaded', showBanner)
-        : showBanner();
+      // Wait for DOMContentLoaded so YSP_TRANSLATIONS is available for t()
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', showBanner);
+      } else {
+        showBanner();
+      }
     } else if (c.analytics === true) {
-      document.readyState === 'loading'
-        ? document.addEventListener('DOMContentLoaded', activateGA4)
-        : activateGA4();
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', activateGA4);
+      } else {
+        activateGA4();
+      }
     }
+    // analytics === false: GA4 stays denied (default set above)
   }
 
   init();
+
 })();

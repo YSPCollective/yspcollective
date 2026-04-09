@@ -171,6 +171,22 @@ const YSP_TRANSLATIONS = {
     chat_suggest_3: "Skincare advice",
     chat_suggest_4: "Shipping info",
     chat_error: "I'm having a little trouble connecting right now. For immediate help, please email info@yspcollective.com and we'll get back to you within 24 hours.",
+
+    // Cookie consent
+    cookie_title: "We use cookies",
+    cookie_desc: "We use essential cookies to make our site work, and optional analytics cookies (Google Analytics) to understand how visitors use it. Read our <a href=\"/privacy-policy.html\">Privacy Policy</a> for details.",
+    cookie_accept: "Accept All",
+    cookie_reject: "Essential Only",
+    cookie_manage: "Manage",
+    cookie_modal_title: "Cookie Preferences",
+    cookie_modal_intro: "Manage your preferences below. Essential cookies are always active. You can opt in or out of analytics cookies at any time.",
+    cookie_cat_essential: "Essential Cookies",
+    cookie_cat_essential_desc: "Required for the site to function — checkout, sessions, security. These cannot be disabled.",
+    cookie_cat_analytics: "Analytics Cookies",
+    cookie_cat_analytics_desc: "Google Analytics (GA4) — helps us understand how visitors use the site. No personal data is sold to third parties.",
+    cookie_save: "Save Preferences",
+    cookie_accept_all: "Accept All",
+    cookie_settings: "Cookie Settings"
     chat_footer: "Powered by YSP Collective · info@yspcollective.com"
   },
 
@@ -346,6 +362,22 @@ const YSP_TRANSLATIONS = {
     chat_suggest_3: "Conselhos de skincare",
     chat_suggest_4: "Informação de envio",
     chat_error: "Estou com dificuldades de ligação. Para ajuda imediata, envie email para info@yspcollective.com e responderemos em 24 horas.",
+
+    // Cookie consent
+    cookie_title: "Utilizamos cookies",
+    cookie_desc: "Utilizamos cookies essenciais para o funcionamento do site e cookies de análise opcionais (Google Analytics) para perceber como os visitantes o utilizam. Leia a nossa <a href=\"/privacy-policy.html\">Política de Privacidade</a> para mais detalhes.",
+    cookie_accept: "Aceitar Tudo",
+    cookie_reject: "Apenas Essenciais",
+    cookie_manage: "Gerir",
+    cookie_modal_title: "Preferências de Cookies",
+    cookie_modal_intro: "Gira as suas preferências abaixo. Os cookies essenciais estão sempre ativos. Pode ativar ou desativar os cookies de análise a qualquer momento.",
+    cookie_cat_essential: "Cookies Essenciais",
+    cookie_cat_essential_desc: "Necessários para o funcionamento do site — checkout, sessões, segurança. Não podem ser desativados.",
+    cookie_cat_analytics: "Cookies de Análise",
+    cookie_cat_analytics_desc: "Google Analytics (GA4) — ajuda-nos a perceber como os visitantes utilizam o site. Nenhum dado pessoal é vendido a terceiros.",
+    cookie_save: "Guardar Preferências",
+    cookie_accept_all: "Aceitar Tudo",
+    cookie_settings: "Definições de Cookies"
     chat_footer: "Powered by YSP Collective · info@yspcollective.com"
   },
 
@@ -521,6 +553,22 @@ const YSP_TRANSLATIONS = {
     chat_suggest_3: "Consejos de skincare",
     chat_suggest_4: "Info de envío",
     chat_error: "Tengo problemas de conexión. Para ayuda inmediata, envía un email a info@yspcollective.com y te responderemos en 24 horas.",
+
+    // Cookie consent
+    cookie_title: "Usamos cookies",
+    cookie_desc: "Usamos cookies esenciales para el funcionamiento del sitio y cookies de análisis opcionales (Google Analytics) para entender cómo lo usan los visitantes. Lee nuestra <a href=\"/privacy-policy.html\">Política de Privacidad</a> para más detalles.",
+    cookie_accept: "Aceptar Todo",
+    cookie_reject: "Solo Esenciales",
+    cookie_manage: "Gestionar",
+    cookie_modal_title: "Preferencias de Cookies",
+    cookie_modal_intro: "Gestiona tus preferencias a continuación. Las cookies esenciales siempre están activas. Puedes activar o desactivar las cookies de análisis en cualquier momento.",
+    cookie_cat_essential: "Cookies Esenciales",
+    cookie_cat_essential_desc: "Necesarias para el funcionamiento del sitio — pago, sesiones, seguridad. No se pueden desactivar.",
+    cookie_cat_analytics: "Cookies de Análisis",
+    cookie_cat_analytics_desc: "Google Analytics (GA4) — nos ayuda a entender cómo usan el sitio los visitantes. No se venden datos personales a terceros.",
+    cookie_save: "Guardar Preferencias",
+    cookie_accept_all: "Aceptar Todo",
+    cookie_settings: "Configuración de Cookies"
     chat_footer: "Powered by YSP Collective · info@yspcollective.com"
   }
 };
