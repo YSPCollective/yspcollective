@@ -295,14 +295,33 @@
   });
 
   // ── Init ──────────────────────────────────────────────────────────────────
+  // Wait for YSP_TRANSLATIONS to be available before rendering banner text.
+  // GA4 consent defaults are already set above at parse time — that is correct.
+  function waitForTranslations(callback) {
+    if (window.YSP_TRANSLATIONS) {
+      callback();
+      return;
+    }
+    // Poll every 50ms, give up after 3s and use fallback strings
+    var attempts = 0;
+    var interval = setInterval(function() {
+      attempts++;
+      if (window.YSP_TRANSLATIONS || attempts > 60) {
+        clearInterval(interval);
+        callback();
+      }
+    }, 50);
+  }
+
   function init() {
-    const c = getConsent();
+    var c = getConsent();
     if (c === null) {
-      // Wait for DOMContentLoaded so YSP_TRANSLATIONS is available for t()
+      // Show banner — but wait for translations first
+      var doShow = function() { waitForTranslations(showBanner); };
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', showBanner);
+        document.addEventListener('DOMContentLoaded', doShow);
       } else {
-        showBanner();
+        doShow();
       }
     } else if (c.analytics === true) {
       if (document.readyState === 'loading') {
