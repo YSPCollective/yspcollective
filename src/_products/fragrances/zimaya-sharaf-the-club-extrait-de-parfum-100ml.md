@@ -1,5 +1,5 @@
 ---
-price: "35.00"
+price: "29.99"
 brand: Zimaya
 gender: Men
 size: 100ml
