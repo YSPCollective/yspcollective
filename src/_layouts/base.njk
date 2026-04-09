@@ -393,6 +393,9 @@
     @media (max-width: 480px) { #ysp-popup { padding: 2rem 1.5rem; } .popup-discount { font-size: 2.2rem; } }
   </style>
 
+  <!-- Cookie Consent — must load before GA4 to set Consent Mode v2 defaults -->
+  <script src="/ysp-cookie-consent.js"></script>
+
   {{ head_extra | safe }}
 </head>
 <body>
@@ -616,6 +619,8 @@
         <a href="/privacy-policy.html">Privacy Policy</a>
         <a href="/returns-policy.html">Returns Policy</a>
         <a href="/shipping-policy.html">Shipping Policy</a>
+        <a href="/terms.html">Terms &amp; Conditions</a>
+        <button onclick="yspOpenCookieSettings()" class="ysp-cookie-settings-btn">Cookie Settings</button>
       </div>
       <div class="footer-col">
         <h4 data-i18n="footer_find">Also Find Us</h4>
@@ -644,6 +649,8 @@
       <span>© 2026 YSP Collective. All rights reserved. Portugal, EU.</span>
       <div class="footer-bottom-links">
         <a href="https://livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações</a>
+        <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ODR Platform</a>
+        <a href="/terms.html">Terms</a>
         <a href="/privacy-policy.html">Privacy</a>
         <a href="/returns-policy.html">Returns</a>
         <a href="/shipping-policy.html">Shipping</a>
