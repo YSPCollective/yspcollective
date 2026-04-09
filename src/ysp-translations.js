@@ -186,7 +186,7 @@ const YSP_TRANSLATIONS = {
     cookie_cat_analytics_desc: "Google Analytics (GA4) — helps us understand how visitors use the site. No personal data is sold to third parties.",
     cookie_save: "Save Preferences",
     cookie_accept_all: "Accept All",
-    cookie_settings: "Cookie Settings"
+    cookie_settings: "Cookie Settings",
     chat_footer: "Powered by YSP Collective · info@yspcollective.com"
   },
 
@@ -377,7 +377,7 @@ const YSP_TRANSLATIONS = {
     cookie_cat_analytics_desc: "Google Analytics (GA4) — ajuda-nos a perceber como os visitantes utilizam o site. Nenhum dado pessoal é vendido a terceiros.",
     cookie_save: "Guardar Preferências",
     cookie_accept_all: "Aceitar Tudo",
-    cookie_settings: "Definições de Cookies"
+    cookie_settings: "Definições de Cookies",
     chat_footer: "Powered by YSP Collective · info@yspcollective.com"
   },
 
@@ -568,7 +568,7 @@ const YSP_TRANSLATIONS = {
     cookie_cat_analytics_desc: "Google Analytics (GA4) — nos ayuda a entender cómo usan el sitio los visitantes. No se venden datos personales a terceros.",
     cookie_save: "Guardar Preferencias",
     cookie_accept_all: "Aceptar Todo",
-    cookie_settings: "Configuración de Cookies"
+    cookie_settings: "Configuración de Cookies",
     chat_footer: "Powered by YSP Collective · info@yspcollective.com"
   }
 };
