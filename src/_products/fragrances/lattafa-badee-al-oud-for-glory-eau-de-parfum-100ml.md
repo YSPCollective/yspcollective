@@ -1,5 +1,5 @@
 ---
-price: "25"
+price: "27.50"
 brand: Lattafa
 gender: Unisex
 size: 100ml
