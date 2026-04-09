@@ -40,8 +40,8 @@ inspired_by_note: dark amber-oud oriental, similar evening character
 name: Al Haramain Amber Oud Dubai Night Extrait de Parfum 100ml
 slug: al-haramain-amber-oud-dubai-night
 concentration: Extrait de Parfum
-featured: true
-exclude_from_feed: false
+featured: false
+exclude_from_feed: true
 accords:
   - amber
   - warm spicy
@@ -53,7 +53,7 @@ accords:
   - vanilla
   - fresh spicy
   - metallic
-stock_status: in_stock
+stock_status: on_order
 fragrance_family: Woody Oriental Oud
 top_notes: Saffron, Bergamot, Elemi
 base_notes: Tonka Bean, Amber, White Must, Oakmoss
