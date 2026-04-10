@@ -144,69 +144,6 @@ permalink: "products/{{ product.slug }}.html"
   .btn-fav-pdp:hover { border-color: var(--accent); color: var(--accent); background: var(--white); }
   .btn-fav-pdp.is-favourite { color: var(--accent); border-color: var(--accent); background: var(--white); }
 
-  /* ── Share button ── */
-  .share-wrap { position: relative; display: inline-flex; flex-shrink: 0; }
-  .btn-share-pdp {
-    width: 54px; height: 54px;
-    background: var(--cream);
-    border: 1px solid var(--sand);
-    cursor: pointer;
-    font-size: 1.2rem;
-    color: var(--grey-light);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s;
-    flex-shrink: 0;
-  }
-  .btn-share-pdp:hover { border-color: var(--accent); color: var(--accent); background: var(--white); }
-  .share-dropdown {
-    display: none;
-    position: absolute;
-    bottom: calc(100% + 0.6rem);
-    right: 0;
-    background: var(--white);
-    border: 1px solid var(--sand);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    min-width: 180px;
-    z-index: 100;
-  }
-  .share-wrap.open .share-dropdown { display: block; }
-  .share-option {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    padding: 0.75rem 1rem;
-    font-size: 0.78rem;
-    color: var(--grey);
-    cursor: pointer;
-    border: none;
-    background: none;
-    width: 100%;
-    text-align: left;
-    font-family: var(--sans);
-    border-bottom: 1px solid var(--sand);
-    transition: color 0.2s, background 0.2s;
-    text-decoration: none;
-  }
-  .share-option:last-child { border-bottom: none; }
-  .share-option:hover { color: var(--accent); background: var(--cream); }
-  .share-option-icon { font-size: 1rem; flex-shrink: 0; }
-  .share-copied {
-    position: absolute;
-    bottom: calc(100% + 0.6rem);
-    right: 0;
-    background: var(--black);
-    color: var(--white);
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    padding: 0.4rem 0.9rem;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  .share-copied.show { opacity: 1; }
-
   .trust-badges { display: flex; gap: 1.5rem; flex-wrap: wrap; padding: 1.2rem 0; border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); margin-bottom: 2rem; }
   .trust-badge { font-size: 0.72rem; color: var(--grey); display: flex; align-items: center; gap: 0.4rem; }
   .trust-badge-icon { color: var(--accent); }
@@ -277,31 +214,52 @@ permalink: "products/{{ product.slug }}.html"
   .nd-cta { display: block; text-align: center; padding: 0.8rem; background: #1a1916; color: #ffffff; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: background 0.25s; }
   .nd-cta:hover { background: #9c7b56; }
 
+  /* ── Share button ── */
+  .share-wrap { position: relative; display: inline-flex; flex-shrink: 0; }
+  .btn-share-pdp { width: 54px; height: 54px; background: var(--cream); border: 1px solid var(--sand); cursor: pointer; font-size: 1.2rem; color: var(--grey-light); display: inline-flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0; }
+  .btn-share-pdp:hover { border-color: var(--accent); color: var(--accent); background: var(--white); }
+  .share-dropdown { display: none; position: absolute; bottom: calc(100% + 0.6rem); right: 0; background: var(--white); border: 1px solid var(--sand); box-shadow: 0 8px 32px rgba(0,0,0,0.1); min-width: 180px; z-index: 100; }
+  .share-wrap.open .share-dropdown { display: block; }
+  .share-option { display: flex; align-items: center; gap: 0.7rem; padding: 0.75rem 1rem; font-size: 0.78rem; color: var(--grey); cursor: pointer; border: none; background: none; width: 100%; text-align: left; font-family: var(--sans); border-bottom: 1px solid var(--sand); transition: color 0.2s, background 0.2s; text-decoration: none; }
+  .share-option:last-child { border-bottom: none; }
+  .share-option:hover { color: var(--accent); background: var(--cream); }
+  .share-option-icon { font-size: 1rem; flex-shrink: 0; }
+  .share-copied { position: absolute; bottom: calc(100% + 0.6rem); right: 0; background: var(--black); color: var(--white); font-size: 0.7rem; letter-spacing: 0.1em; padding: 0.4rem 0.9rem; pointer-events: none; opacity: 0; transition: opacity 0.3s; }
+  .share-copied.show { opacity: 1; }
+
+  /* ── Notes pyramid (desktop — inside gallery col) ── */
+  .notes-pyramid { margin-top: 1.8rem; padding-top: 1.5rem; border-top: 1px solid var(--sand); }
+  .notes-pyramid-label { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--grey); margin-bottom: 1rem; }
+  .pyr-tier { margin-bottom: 0.5rem; }
+  .pyr-tier-label { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--grey-light); margin-bottom: 0.4rem; }
+  .pyr-notes { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .pyr-note { font-size: 0.72rem; padding: 0.28rem 0.75rem; border: 1px solid var(--sand); color: var(--grey); background: var(--white); letter-spacing: 0.04em; display: inline-block; }
+  .pyr-note.top-note { background: var(--black); color: var(--white); border-color: var(--black); }
+  .pyr-note.heart-note { background: rgba(156,123,86,0.08); color: var(--accent); border-color: rgba(156,123,86,0.3); }
+  .pyr-note.base-note { background: var(--cream); color: var(--grey); border-color: var(--sand); }
+  .pyr-connector { width: 1px; height: 10px; background: var(--sand); margin-bottom: 0.4rem; }
+
+  /* ── Trust badges inline (under CTA, inside product-info) ── */
+  .trust-badges-inline { display: flex; gap: 1.2rem; flex-wrap: wrap; padding-top: 0.9rem; border-top: 1px solid var(--sand); margin-top: 0.4rem; }
+
+  /* ── Mobile pyramid (inside product-info, hidden on desktop) ── */
+  .notes-pyramid-mobile { display: none; }
+
   @media (max-width: 900px) {
     .breadcrumb { padding: 6rem 1.5rem 0; }
-    .product-wrap { grid-template-columns: 1fr; gap: 0; padding: 1.5rem 1.5rem 3rem; }
+    .product-wrap { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1.5rem 3rem; }
     .quick-specs { grid-template-columns: 1fr 1fr; }
     .related-section { padding: 3rem 1.5rem; }
     .related-grid { grid-template-columns: 1fr 1fr; }
     .tabs-wrap { padding: 0 1.5rem 3rem; }
     .gallery-arrow { opacity: 1; width: 32px; height: 32px; }
-
-    /* Mobile reorder — use flex column with explicit order */
-    .product-wrap { display: flex; flex-direction: column; }
-    .gallery-col { order: 1; }
-    .product-info { order: 2; }
-
-    /* On mobile: gallery col shows image + thumbs only (pyramid hidden via CSS above)
-       product-info shows in natural order: badge, brand, name, meta, price, desc, specs,
-       accords (hidden), inspired, cta, trust */
+    /* Hide desktop pyramid and accords on mobile */
+    .notes-pyramid-desktop { display: none; }
     .accords-wrap { display: none; }
-
-    /* Pyramid hidden on mobile — shown inline in product-info order instead */
-    .notes-pyramid { display: block !important; margin-top: 1.2rem; padding-top: 1.2rem; }
-
-    /* Hide the gallery-col pyramid on mobile, show a mobile-specific one inside product-info */
-    .gallery-col .notes-pyramid { display: none !important; }
-    .product-info .notes-pyramid-mobile { display: block; }
+    /* Show mobile pyramid */
+    .notes-pyramid-mobile { display: block; }
+    /* Hide old full-width trust strip */
+    .trust-badges { display: none; }
   }
   @media (max-width: 500px) { .related-grid { grid-template-columns: 1fr; } }
 </style>
@@ -329,41 +287,26 @@ permalink: "products/{{ product.slug }}.html"
     </div>
 
     {% if isFragrance and (product.top_notes or product.heart_notes or product.base_notes) %}
-    <div class="notes-pyramid">
+    <div class="notes-pyramid notes-pyramid-desktop">
       <div class="notes-pyramid-label">Fragrance Notes</div>
       {% if product.top_notes %}
       <div class="pyr-tier">
         <div class="pyr-tier-label">Top notes</div>
-        <div class="pyr-notes">
-          {% set topList = product.top_notes.split(',') %}
-          {% for note in topList %}
-            <span class="pyr-note top-note">{{ note | trim }}</span>
-          {% endfor %}
-        </div>
+        <div class="pyr-notes">{% set topList = product.top_notes.split(',') %}{% for note in topList %}<span class="pyr-note top-note">{{ note | trim }}</span>{% endfor %}</div>
       </div>
       <div class="pyr-connector"></div>
       {% endif %}
       {% if product.heart_notes %}
       <div class="pyr-tier">
         <div class="pyr-tier-label">Heart notes</div>
-        <div class="pyr-notes">
-          {% set heartList = product.heart_notes.split(',') %}
-          {% for note in heartList %}
-            <span class="pyr-note heart-note">{{ note | trim }}</span>
-          {% endfor %}
-        </div>
+        <div class="pyr-notes">{% set heartList = product.heart_notes.split(',') %}{% for note in heartList %}<span class="pyr-note heart-note">{{ note | trim }}</span>{% endfor %}</div>
       </div>
       <div class="pyr-connector"></div>
       {% endif %}
       {% if product.base_notes %}
       <div class="pyr-tier">
         <div class="pyr-tier-label">Base notes</div>
-        <div class="pyr-notes">
-          {% set baseList = product.base_notes.split(',') %}
-          {% for note in baseList %}
-            <span class="pyr-note base-note">{{ note | trim }}</span>
-          {% endfor %}
-        </div>
+        <div class="pyr-notes">{% set baseList = product.base_notes.split(',') %}{% for note in baseList %}<span class="pyr-note base-note">{{ note | trim }}</span>{% endfor %}</div>
       </div>
       {% endif %}
     </div>
@@ -396,35 +339,26 @@ permalink: "products/{{ product.slug }}.html"
     </div>
 
     {% if isFragrance and (product.top_notes or product.heart_notes or product.base_notes) %}
-    <div class="notes-pyramid notes-pyramid-mobile" style="display:none">
+    <div class="notes-pyramid notes-pyramid-mobile">
       <div class="notes-pyramid-label">Fragrance Notes</div>
       {% if product.top_notes %}
       <div class="pyr-tier">
         <div class="pyr-tier-label">Top notes</div>
-        <div class="pyr-notes">
-          {% set topList = product.top_notes.split(',') %}
-          {% for note in topList %}<span class="pyr-note top-note">{{ note | trim }}</span>{% endfor %}
-        </div>
+        <div class="pyr-notes">{% set topListM = product.top_notes.split(',') %}{% for note in topListM %}<span class="pyr-note top-note">{{ note | trim }}</span>{% endfor %}</div>
       </div>
       <div class="pyr-connector"></div>
       {% endif %}
       {% if product.heart_notes %}
       <div class="pyr-tier">
         <div class="pyr-tier-label">Heart notes</div>
-        <div class="pyr-notes">
-          {% set heartList = product.heart_notes.split(',') %}
-          {% for note in heartList %}<span class="pyr-note heart-note">{{ note | trim }}</span>{% endfor %}
-        </div>
+        <div class="pyr-notes">{% set heartListM = product.heart_notes.split(',') %}{% for note in heartListM %}<span class="pyr-note heart-note">{{ note | trim }}</span>{% endfor %}</div>
       </div>
       <div class="pyr-connector"></div>
       {% endif %}
       {% if product.base_notes %}
       <div class="pyr-tier">
         <div class="pyr-tier-label">Base notes</div>
-        <div class="pyr-notes">
-          {% set baseList = product.base_notes.split(',') %}
-          {% for note in baseList %}<span class="pyr-note base-note">{{ note | trim }}</span>{% endfor %}
-        </div>
+        <div class="pyr-notes">{% set baseListM = product.base_notes.split(',') %}{% for note in baseListM %}<span class="pyr-note base-note">{{ note | trim }}</span>{% endfor %}</div>
       </div>
       {% endif %}
     </div>
@@ -542,15 +476,11 @@ permalink: "products/{{ product.slug }}.html"
         </button>
         <div class="share-dropdown" id="share-dropdown">
           <a class="share-option" id="share-whatsapp" href="#" target="_blank" rel="noopener">
-            <span class="share-option-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </span>
+            <span class="share-option-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
             WhatsApp
           </a>
           <button class="share-option" id="share-copy">
-            <span class="share-option-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-            </span>
+            <span class="share-option-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></span>
             Copy Link
           </button>
           <button class="share-option" id="share-native" style="display:none">
@@ -565,6 +495,13 @@ permalink: "products/{{ product.slug }}.html"
     {% if product.amazon_url %}
       <a href="{{ product.amazon_url }}" class="btn-shop" target="_blank" rel="noopener" data-i18n="pdp_amazon">📦 Buy on Amazon</a>
     {% endif %}
+
+    <div class="trust-badges-inline">
+      <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_1">EU Authorised Stock</span></div>
+      <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_2">Authentic &amp; Sealed</span></div>
+      <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_3">Fast EU Shipping</span></div>
+      <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_4">90-Day Guarantee</span></div>
+    </div>
   </div>
 
   <div id="notify-popup" style="display:none;margin-top:1rem">
@@ -575,12 +512,6 @@ permalink: "products/{{ product.slug }}.html"
     <p id="notify-success" style="display:none;font-size:0.82rem;color:var(--accent);margin-top:0.5rem">✓ We'll let you know when this is back in stock.</p>
   </div>
 
-  <div class="trust-badges-inline">
-    <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_1">EU Authorised Stock</span></div>
-    <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_2">Authentic &amp; Sealed</span></div>
-    <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_3">Fast EU Shipping</span></div>
-    <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_4">90-Day Guarantee</span></div>
-  </div>
 </div>
 
 <div class="tabs-wrap">
@@ -997,24 +928,22 @@ permalink: "products/{{ product.slug }}.html"
     document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeNoteDrawer(); });
   })();
 
-  // ── Share button ──────────────────────────────────────────────────────────
+  // ── Share button ──
   (function() {
     const wrap = document.getElementById('share-wrap');
     const btn = document.getElementById('btn-share');
-    const dropdown = document.getElementById('share-dropdown');
     const copyBtn = document.getElementById('share-copy');
     const nativeBtn = document.getElementById('share-native');
     const whatsappBtn = document.getElementById('share-whatsapp');
     const copiedMsg = document.getElementById('share-copied');
+    if (!wrap) return;
 
     const url = window.location.href;
     const title = document.querySelector('.product-name') ? document.querySelector('.product-name').textContent.trim() : document.title;
     const text = 'Check out ' + title + ' on YSP Collective';
 
-    // Set WhatsApp link
     whatsappBtn.href = 'https://wa.me/?text=' + encodeURIComponent(text + ' — ' + url);
 
-    // Show native share if supported (mobile)
     if (navigator.share) {
       nativeBtn.style.display = 'flex';
       nativeBtn.addEventListener('click', function() {
@@ -1023,37 +952,28 @@ permalink: "products/{{ product.slug }}.html"
       });
     }
 
-    // Toggle dropdown
     btn.addEventListener('click', function(e) {
       e.stopPropagation();
       wrap.classList.toggle('open');
     });
 
-    // Close on outside click
     document.addEventListener('click', function(e) {
       if (!wrap.contains(e.target)) wrap.classList.remove('open');
     });
 
-    // Close on Escape
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') wrap.classList.remove('open');
     });
 
-    // Copy link
     copyBtn.addEventListener('click', function() {
       navigator.clipboard.writeText(url).then(function() {
         wrap.classList.remove('open');
         copiedMsg.classList.add('show');
         setTimeout(function() { copiedMsg.classList.remove('show'); }, 2000);
       }).catch(function() {
-        // Fallback for older browsers
         const ta = document.createElement('textarea');
-        ta.value = url;
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
+        ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select(); document.execCommand('copy');
         document.body.removeChild(ta);
         wrap.classList.remove('open');
         copiedMsg.classList.add('show');
