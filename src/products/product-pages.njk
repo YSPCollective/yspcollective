@@ -279,12 +279,29 @@ permalink: "products/{{ product.slug }}.html"
 
   @media (max-width: 900px) {
     .breadcrumb { padding: 6rem 1.5rem 0; }
-    .product-wrap { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem 4rem; }
-    .quick-specs { grid-template-columns: 1fr; }
+    .product-wrap { grid-template-columns: 1fr; gap: 0; padding: 1.5rem 1.5rem 3rem; }
+    .quick-specs { grid-template-columns: 1fr 1fr; }
     .related-section { padding: 3rem 1.5rem; }
     .related-grid { grid-template-columns: 1fr 1fr; }
     .tabs-wrap { padding: 0 1.5rem 3rem; }
     .gallery-arrow { opacity: 1; width: 32px; height: 32px; }
+
+    /* Mobile reorder — use flex column with explicit order */
+    .product-wrap { display: flex; flex-direction: column; }
+    .gallery-col { order: 1; }
+    .product-info { order: 2; }
+
+    /* On mobile: gallery col shows image + thumbs only (pyramid hidden via CSS above)
+       product-info shows in natural order: badge, brand, name, meta, price, desc, specs,
+       accords (hidden), inspired, cta, trust */
+    .accords-wrap { display: none; }
+
+    /* Pyramid hidden on mobile — shown inline in product-info order instead */
+    .notes-pyramid { display: block !important; margin-top: 1.2rem; padding-top: 1.2rem; }
+
+    /* Hide the gallery-col pyramid on mobile, show a mobile-specific one inside product-info */
+    .gallery-col .notes-pyramid { display: none !important; }
+    .product-info .notes-pyramid-mobile { display: block; }
   }
   @media (max-width: 500px) { .related-grid { grid-template-columns: 1fr; } }
 </style>
@@ -310,6 +327,47 @@ permalink: "products/{{ product.slug }}.html"
       </div>
       {% endfor %}
     </div>
+
+    {% if isFragrance and (product.top_notes or product.heart_notes or product.base_notes) %}
+    <div class="notes-pyramid">
+      <div class="notes-pyramid-label">Fragrance Notes</div>
+      {% if product.top_notes %}
+      <div class="pyr-tier">
+        <div class="pyr-tier-label">Top notes</div>
+        <div class="pyr-notes">
+          {% set topList = product.top_notes.split(',') %}
+          {% for note in topList %}
+            <span class="pyr-note top-note">{{ note | trim }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="pyr-connector"></div>
+      {% endif %}
+      {% if product.heart_notes %}
+      <div class="pyr-tier">
+        <div class="pyr-tier-label">Heart notes</div>
+        <div class="pyr-notes">
+          {% set heartList = product.heart_notes.split(',') %}
+          {% for note in heartList %}
+            <span class="pyr-note heart-note">{{ note | trim }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="pyr-connector"></div>
+      {% endif %}
+      {% if product.base_notes %}
+      <div class="pyr-tier">
+        <div class="pyr-tier-label">Base notes</div>
+        <div class="pyr-notes">
+          {% set baseList = product.base_notes.split(',') %}
+          {% for note in baseList %}
+            <span class="pyr-note base-note">{{ note | trim }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
   </div>
 
   <div class="product-info">
@@ -336,6 +394,41 @@ permalink: "products/{{ product.slug }}.html"
       <div class="spec-item"><div class="spec-label">Longevity</div><div class="spec-value">{{ product.longevity or '—' }}</div></div>
       <div class="spec-item"><div class="spec-label">Projection</div><div class="spec-value">{{ product.projection or '—' }}</div></div>
     </div>
+
+    {% if isFragrance and (product.top_notes or product.heart_notes or product.base_notes) %}
+    <div class="notes-pyramid notes-pyramid-mobile" style="display:none">
+      <div class="notes-pyramid-label">Fragrance Notes</div>
+      {% if product.top_notes %}
+      <div class="pyr-tier">
+        <div class="pyr-tier-label">Top notes</div>
+        <div class="pyr-notes">
+          {% set topList = product.top_notes.split(',') %}
+          {% for note in topList %}<span class="pyr-note top-note">{{ note | trim }}</span>{% endfor %}
+        </div>
+      </div>
+      <div class="pyr-connector"></div>
+      {% endif %}
+      {% if product.heart_notes %}
+      <div class="pyr-tier">
+        <div class="pyr-tier-label">Heart notes</div>
+        <div class="pyr-notes">
+          {% set heartList = product.heart_notes.split(',') %}
+          {% for note in heartList %}<span class="pyr-note heart-note">{{ note | trim }}</span>{% endfor %}
+        </div>
+      </div>
+      <div class="pyr-connector"></div>
+      {% endif %}
+      {% if product.base_notes %}
+      <div class="pyr-tier">
+        <div class="pyr-tier-label">Base notes</div>
+        <div class="pyr-notes">
+          {% set baseList = product.base_notes.split(',') %}
+          {% for note in baseList %}<span class="pyr-note base-note">{{ note | trim }}</span>{% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
 
     {% set accordsList = product | parseAccords %}
     {% if accordsList.length %}
@@ -482,7 +575,7 @@ permalink: "products/{{ product.slug }}.html"
     <p id="notify-success" style="display:none;font-size:0.82rem;color:var(--accent);margin-top:0.5rem">✓ We'll let you know when this is back in stock.</p>
   </div>
 
-  <div class="trust-badges">
+  <div class="trust-badges-inline">
     <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_1">EU Authorised Stock</span></div>
     <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_2">Authentic &amp; Sealed</span></div>
     <div class="trust-badge"><span class="trust-badge-icon">✓</span><span data-i18n="pdp_trust_3">Fast EU Shipping</span></div>
