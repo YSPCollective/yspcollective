@@ -31,6 +31,7 @@
   }
 
   function applyTranslations(lang) {
+    document.dispatchEvent(new CustomEvent('ysp:langchange', { detail: { lang } }));
     if (!window.YSP_TRANSLATIONS) return;
     const t = window.YSP_TRANSLATIONS[lang] || window.YSP_TRANSLATIONS['en'];
     if (!t) return;
@@ -195,7 +196,7 @@
   // Expose for external use
   window.YSP_LANG = {
     get: getLang,
-    set: (code) => { setLang(code); applyTranslations(code); },
+    set: (code) => { setLang(code); applyTranslations(code); },  // langchange fired inside applyTranslations
     t: (key, lang) => {
       const l = lang || getLang();
       return (window.YSP_TRANSLATIONS && window.YSP_TRANSLATIONS[l] && window.YSP_TRANSLATIONS[l][key]) || key;

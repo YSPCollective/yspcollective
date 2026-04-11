@@ -658,8 +658,6 @@ permalink: "products/{{ product.slug }}.html"
 
   // ── LANGUAGE ─────────────────────────────────────────────────────────────
   (function() {
-    const lang = localStorage.getItem('ysp_lang') || 'en';
-    if (lang === 'en') return;
     const productData = {
       name_pt: {{ (product.pt.name_pt or '') | jsonify | safe }},
       description_short_pt: {{ (product.pt.description_short_pt or '') | jsonify | safe }},
@@ -670,29 +668,29 @@ permalink: "products/{{ product.slug }}.html"
       description_full_es: {{ (product.es.description_full_es if product.es else '') | jsonify | safe }},
       ysp_thoughts_es: {{ (product.es.ysp_thoughts_es if product.es else '') | jsonify | safe }}
     };
-    const suffix = lang === 'pt' ? '_pt' : '_es';
-    const descShort = productData['description_short' + suffix];
-    if (descShort) { const el = document.getElementById('pdp-desc-short'); if (el) el.textContent = descShort; }
-    const descFull = productData['description_full' + suffix];
-    if (descFull) { const el = document.getElementById('pdp-desc-full'); if (el) el.innerHTML = descFull; }
-    const thoughts = productData['ysp_thoughts' + suffix];
-    if (thoughts) { const el = document.getElementById('pdp-thoughts'); if (el) el.innerHTML = thoughts; }
-    document.addEventListener('ysp:langchange', (e) => {
-      const newLang = e.detail.lang;
-      const newSuffix = newLang === 'pt' ? '_pt' : newLang === 'es' ? '_es' : null;
+
+    function applyProductLang(lang) {
+      const suffix = lang === 'pt' ? '_pt' : lang === 'es' ? '_es' : null;
       const shortEl = document.getElementById('pdp-desc-short');
       const fullEl = document.getElementById('pdp-desc-full');
       const thoughtsEl = document.getElementById('pdp-thoughts');
-      if (!newSuffix) {
+      if (!suffix) {
         if (shortEl) shortEl.textContent = {{ product.description_short | jsonify | safe }};
         if (fullEl) fullEl.innerHTML = {{ product.description_full | jsonify | safe }};
         if (thoughtsEl) thoughtsEl.innerHTML = {{ product.ysp_thoughts | jsonify | safe }};
       } else {
-        if (shortEl) shortEl.textContent = productData['description_short' + newSuffix] || {{ product.description_short | jsonify | safe }};
-        if (fullEl) fullEl.innerHTML = productData['description_full' + newSuffix] || {{ product.description_full | jsonify | safe }};
-        if (thoughtsEl) thoughtsEl.innerHTML = productData['ysp_thoughts' + newSuffix] || {{ product.ysp_thoughts | jsonify | safe }};
+        if (shortEl) shortEl.textContent = productData['description_short' + suffix] || {{ product.description_short | jsonify | safe }};
+        if (fullEl) fullEl.innerHTML = productData['description_full' + suffix] || {{ product.description_full | jsonify | safe }};
+        if (thoughtsEl) thoughtsEl.innerHTML = productData['ysp_thoughts' + suffix] || {{ product.ysp_thoughts | jsonify | safe }};
       }
-    });
+    }
+
+    // Apply on page load if non-English
+    const initialLang = localStorage.getItem('ysp_lang') || 'en';
+    if (initialLang !== 'en') applyProductLang(initialLang);
+
+    // Always listen for language changes
+    document.addEventListener('ysp:langchange', (e) => applyProductLang(e.detail.lang));
   })();
 
   // ── NOTIFY ME ────────────────────────────────────────────────────────────
