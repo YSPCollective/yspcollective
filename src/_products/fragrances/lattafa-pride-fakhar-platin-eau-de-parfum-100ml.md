@@ -52,5 +52,5 @@ slug: lattafa-pride-fakhar-platin
 concentration: Eau de Parfum (EDP)
 featured: true
 gtin: "6290362345817"
-exclude_from_feed: true
+exclude_from_feed: false
 ---
