@@ -44,6 +44,19 @@ module.exports = function(eleventyConfig) {
     PRODUCT_FIELDS.forEach(f => { if (item.data[f] !== undefined) d[f] = item.data[f]; });
     d.url = `/products/${item.data.slug}.html`;
     d.accords = parseAccords(item.data);
+    // Support both flat fields (new CMS format) and nested pt/es objects (old format)
+    // Flat fields take priority; fall back to nested if flat is missing
+    const langs = ['pt', 'es'];
+    const transFields = ['name', 'description_short', 'description_full', 'ysp_thoughts'];
+    langs.forEach(lang => {
+      transFields.forEach(field => {
+        const flatKey = field + '_' + lang;
+        const nested = item.data[lang];
+        if (d[flatKey] === undefined && nested && nested[flatKey] !== undefined) {
+          d[flatKey] = nested[flatKey];
+        }
+      });
+    });
     return d;
   }
 

@@ -123,14 +123,29 @@ collections:
       - { label: "Google Product Category Override", name: "google_product_category", widget: "string", required: false, hint: "Leave blank to use default. Override with full Google taxonomy string if needed." }
 
       # ── 8. TRANSLATIONS ───────────────────────────────────────────
-      - { label: "🇵🇹 Name (PT)", name: "name_pt", widget: "string", required: false }
-      - { label: "🇵🇹 Short Description (PT)", name: "description_short_pt", widget: "text", required: false }
-      - { label: "🇵🇹 Full Description (PT)", name: "description_full_pt", widget: "markdown", required: false }
-      - { label: "🇵🇹 YSP Thoughts (PT)", name: "ysp_thoughts_pt", widget: "markdown", required: false }
-      - { label: "🇪🇸 Name (ES)", name: "name_es", widget: "string", required: false }
-      - { label: "🇪🇸 Short Description (ES)", name: "description_short_es", widget: "text", required: false }
-      - { label: "🇪🇸 Full Description (ES)", name: "description_full_es", widget: "markdown", required: false }
-      - { label: "🇪🇸 YSP Thoughts (ES)", name: "ysp_thoughts_es", widget: "markdown", required: false }
+      - label: "🇵🇹 Portuguese Translation"
+        name: "pt"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "Optional — leave blank to show English"
+        fields:
+          - { label: "Name (PT)", name: "name_pt", widget: "string", required: false }
+          - { label: "Short Description (PT)", name: "description_short_pt", widget: "text", required: false }
+          - { label: "Full Description (PT)", name: "description_full_pt", widget: "markdown", required: false }
+          - { label: "YSP Thoughts (PT)", name: "ysp_thoughts_pt", widget: "markdown", required: false }
+
+      - label: "🇪🇸 Spanish Translation"
+        name: "es"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "Optional — leave blank to show English"
+        fields:
+          - { label: "Name (ES)", name: "name_es", widget: "string", required: false }
+          - { label: "Short Description (ES)", name: "description_short_es", widget: "text", required: false }
+          - { label: "Full Description (ES)", name: "description_full_es", widget: "markdown", required: false }
+          - { label: "YSP Thoughts (ES)", name: "ysp_thoughts_es", widget: "markdown", required: false }
 
   # ─── SKINCARE / BEAUTY PRODUCTS ───────────────────────────────────
   - name: "beauty"
@@ -230,14 +245,29 @@ collections:
       - { label: "Google Product Category Override", name: "google_product_category", widget: "string", required: false, hint: "Leave blank to use default. Override with full Google taxonomy string if needed." }
 
       # ── 8. TRANSLATIONS ───────────────────────────────────────────
-      - { label: "🇵🇹 Name (PT)", name: "name_pt", widget: "string", required: false }
-      - { label: "🇵🇹 Short Description (PT)", name: "description_short_pt", widget: "text", required: false }
-      - { label: "🇵🇹 Full Description (PT)", name: "description_full_pt", widget: "markdown", required: false }
-      - { label: "🇵🇹 YSP Thoughts (PT)", name: "ysp_thoughts_pt", widget: "markdown", required: false }
-      - { label: "🇪🇸 Name (ES)", name: "name_es", widget: "string", required: false }
-      - { label: "🇪🇸 Short Description (ES)", name: "description_short_es", widget: "text", required: false }
-      - { label: "🇪🇸 Full Description (ES)", name: "description_full_es", widget: "markdown", required: false }
-      - { label: "🇪🇸 YSP Thoughts (ES)", name: "ysp_thoughts_es", widget: "markdown", required: false }
+      - label: "🇵🇹 Portuguese Translation"
+        name: "pt"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "Optional — leave blank to show English"
+        fields:
+          - { label: "Name (PT)", name: "name_pt", widget: "string", required: false }
+          - { label: "Short Description (PT)", name: "description_short_pt", widget: "text", required: false }
+          - { label: "Full Description (PT)", name: "description_full_pt", widget: "markdown", required: false }
+          - { label: "YSP Thoughts (PT)", name: "ysp_thoughts_pt", widget: "markdown", required: false }
+
+      - label: "🇪🇸 Spanish Translation"
+        name: "es"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "Optional — leave blank to show English"
+        fields:
+          - { label: "Name (ES)", name: "name_es", widget: "string", required: false }
+          - { label: "Short Description (ES)", name: "description_short_es", widget: "text", required: false }
+          - { label: "Full Description (ES)", name: "description_full_es", widget: "markdown", required: false }
+          - { label: "YSP Thoughts (ES)", name: "ysp_thoughts_es", widget: "markdown", required: false }
 
   # ─── SITE SETTINGS ────────────────────────────────────────────────
   - name: "settings"
