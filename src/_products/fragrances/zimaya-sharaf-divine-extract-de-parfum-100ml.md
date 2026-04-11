@@ -53,5 +53,6 @@ name: Zimaya Sharaf Divine Extract de parfum 100ml
 slug: zimaya-sharaf-divine
 concentration: Eau de Parfum (EDP)
 featured: true
+gtin: "6290171077213"
 exclude_from_feed: false
 ---
