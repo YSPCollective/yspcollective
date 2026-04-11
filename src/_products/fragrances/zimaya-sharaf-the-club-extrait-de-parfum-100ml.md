@@ -7,6 +7,7 @@ badge: ""
 custom_badge: Night Out
 stock_status: in_stock
 published: true
+fragrance_family: Woody Oriental Spicy
 top_notes: Pineapple, Bergamot, Apple, White Flowers
 heart_notes: Birch, Amber, Orange Blossom
 longevity: 10-12 hours
@@ -38,11 +39,13 @@ ysp_thoughts: >-
 
 
   We picked this because it has an energy to it that's hard to manufacture. It's the fragrance you choose when the evening actually matters. Zimaya sits under the Afnan umbrella, which has serious perfumery credentials behind it, and that quality shows in the composition. Dark, unapologetic, and genuinely excellent for the price point.
+inspired_by_name: Dior Sauvage Elixir
 inspired_by_note: spicy-woody masculine, similar intensity and projection
 name: Zimaya Sharaf the Club Extrait de Parfum 100ml
 slug: zimaya-sharaf-the-club
 concentration: Extrait de Parfum
 featured: false
+gtin: "6290171074199"
 exclude_from_feed: false
 accords:
   - fruity
@@ -55,7 +58,5 @@ accords:
   - woody
   - earthy
   - white floral
-fragrance_family: Woody Oriental Spicy
 base_notes: "Oak moss, Ambergis, Musk "
-inspired_by_name: Dior Sauvage Elixir
 ---

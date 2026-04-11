@@ -30,6 +30,7 @@ name: Swiss Arabian Enigma of Taif Extrait de Parfum
 slug: swiss-arabian-enigma-of-taif
 concentration: Extrait de Parfum
 featured: true
+gtin: "6295124050275"
 exclude_from_feed: false
 accords:
   - amber

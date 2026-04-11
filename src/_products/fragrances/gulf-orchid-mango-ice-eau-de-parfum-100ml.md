@@ -31,6 +31,7 @@ ysp_thoughts: >-
 
 
   This does exactly that. We were drawn to it because it fills a gap in an Arabian fragrance lineup that can lean heavy and resinous — this is the palate cleanser, the warm weather option, the one that surprises people who assume Arabian perfumery is all oud and amber. It earns its place on the shelf by being genuinely different.
+gtin: "6290362162629"
 exclude_from_feed: false
 pt:
   description_short_pt: Uma fragrância EDP divertida e frutada da Gulf Orchid —

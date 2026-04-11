@@ -6,6 +6,7 @@ size: 100ml
 badge: Popular
 stock_status: in_stock
 published: true
+fragrance_family: "Fresh Aquatic "
 top_notes: Litchi, Pear, Beramot, Pistachio
 heart_notes: Rose, Incense
 longevity: 8-10 hours
@@ -33,11 +34,13 @@ ysp_thoughts: >-
 
 
   We like it because it's genuinely easy to wear — clean, bright, never overdone. It reminded us that sometimes the most useful fragrance in your collection is the one that just works, every time, without asking anything of you.
+inspired_by_name: Bleu de Chanel EDP
 inspired_by_note: fresh aromatic with woody amber base, same confident projection
 name: Rasasi Hawas Eclat 100ml
 slug: rasasi-hawas-eclat
 concentration: Eau de Parfum (EDP)
 featured: false
+gtin: "614514339206"
 exclude_from_feed: false
 accords:
   - fruity
@@ -50,7 +53,5 @@ accords:
   - sweet
   - fresh
   - tropical
-fragrance_family: "Fresh Aquatic "
 base_notes: Vanilla, Musk, Amber, Woodsy Notes
-inspired_by_name: Bleu de Chanel EDP
 ---

@@ -5,9 +5,12 @@ gender: Unisex
 size: 100ml
 badge: Curated
 stock_status: in_stock
+fragrance_family: Aquatic Oriental
+top_notes: Mint, Bergamot, Artemisia
 heart_notes: Dark Chocolate, Lavender, Benzoin
 longevity: 8-10 hours
 projection: Strong
+best_for: Spring/Autumn
 origin: UAE
 launched: "2024"
 vegan: false
@@ -42,12 +45,15 @@ ysp_thoughts: >-
 
 
   It sits in that rare sweet spot where it's fresh enough to wear casually but rich enough to feel like a proper evening fragrance. We stocked this because we'd wear it ourselves — and that's always the starting point for what ends up on our shelves.
+inspired_by_name: Jean Paul Gaultier Le Male Elixir
+inspired_by_note: shares the same sophisticated DNA as JPG Le Male Elixir, but
+  with a unique Middle Eastern twist and enhanced performance.
 name: Rasasi Hawas Elixir Eau de Parfum 100ml
 slug: rasasi-hawas-elixir
 concentration: Eau de Parfum (EDP)
 featured: true
 published: true
-best_for: Spring/Autumn
+gtin: "614514331057"
 accords:
   - vanilla
   - aromatic
@@ -60,8 +66,5 @@ accords:
   - chocolate
   - lavender
   - powdery
-fragrance_family: Aquatic Oriental
-top_notes: Mint, Bergamot, Artemisia
 base_notes: Vanilla, Tonka Bean, White Musk
-inspired_by_name: Jean Paul Gaultier Le Male Elixir
 ---
