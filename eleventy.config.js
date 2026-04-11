@@ -34,7 +34,9 @@ module.exports = function(eleventyConfig) {
     'stock_status','expected_date','featured',
     'inspired_by_name','inspired_by_note',
     'gtin','exclude_from_feed','google_product_category',
-    'pt','es'
+    'pt','es',
+    'name_pt','description_short_pt','description_full_pt','ysp_thoughts_pt',
+    'name_es','description_short_es','description_full_es','ysp_thoughts_es'
   ];
 
   function extractProduct(item, type) {
