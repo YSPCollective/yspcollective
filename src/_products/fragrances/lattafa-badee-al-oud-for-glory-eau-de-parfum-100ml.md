@@ -54,5 +54,6 @@ name: Lattafa Bade'e Al Oud For Glory Eau de Parfum 100ml
 slug: lattafa-badee-al-oud-for-glory
 concentration: Eau de Parfum (EDP)
 featured: true
+gtin: "6291107458328"
 exclude_from_feed: false
 ---
