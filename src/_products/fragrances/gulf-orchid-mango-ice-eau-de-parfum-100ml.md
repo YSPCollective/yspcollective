@@ -57,4 +57,5 @@ accords:
   - white floral
 fragrance_family: Fruity Floral
 base_notes: Musk, Vanilla, Caramel, Chestnut
+inspired_by_name: God of Fire by Stéphane Humbert Lucas
 ---
