@@ -661,14 +661,14 @@ permalink: "products/{{ product.slug }}.html"
     const lang = localStorage.getItem('ysp_lang') || 'en';
     if (lang === 'en') return;
     const productData = {
-      name_pt: {{ (product.name_pt or '') | jsonify | safe }},
-      description_short_pt: {{ (product.description_short_pt or '') | jsonify | safe }},
-      description_full_pt: {{ (product.description_full_pt or '') | jsonify | safe }},
-      ysp_thoughts_pt: {{ (product.ysp_thoughts_pt or '') | jsonify | safe }},
-      name_es: {{ (product.name_es or '') | jsonify | safe }},
-      description_short_es: {{ (product.description_short_es or '') | jsonify | safe }},
-      description_full_es: {{ (product.description_full_es or '') | jsonify | safe }},
-      ysp_thoughts_es: {{ (product.ysp_thoughts_es or '') | jsonify | safe }}
+      name_pt: {{ (product.pt.name_pt or '') | jsonify | safe }},
+      description_short_pt: {{ (product.pt.description_short_pt or '') | jsonify | safe }},
+      description_full_pt: {{ (product.pt.description_full_pt or '') | jsonify | safe }},
+      ysp_thoughts_pt: {{ (product.pt.ysp_thoughts_pt or '') | jsonify | safe }},
+      name_es: {{ (product.es.name_es if product.es else '') | jsonify | safe }},
+      description_short_es: {{ (product.es.description_short_es if product.es else '') | jsonify | safe }},
+      description_full_es: {{ (product.es.description_full_es if product.es else '') | jsonify | safe }},
+      ysp_thoughts_es: {{ (product.es.ysp_thoughts_es if product.es else '') | jsonify | safe }}
     };
     const suffix = lang === 'pt' ? '_pt' : '_es';
     const descShort = productData['description_short' + suffix];
