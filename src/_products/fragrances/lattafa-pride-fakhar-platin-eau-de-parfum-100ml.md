@@ -1,6 +1,6 @@
 ---
 price: "26.75"
-brand: Lattafa Pride
+brand: Lattafa
 gender: Men
 size: 100ml
 badge: Premium

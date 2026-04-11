@@ -1,14 +1,9 @@
 ---
-name: Anua PDRN Hyaluronic Acid Capsule 100 Serum
-slug: anua-pdrn-hyaluronic-acid-capsule-100-serum
-rrp: ""
 category: Serum
 size: 30ml
 badge: Curated
 custom_badge: ""
 stock_status: on_order
-featured: true
-published: true
 skin_type: All skin types, including sensitive
 key_ingredients: PDRN (Sodium DNA), 11-type Hyaluronic Acid Complex, Hydrolyzed
   Collagen, Niacinamide, Glutathione, Adenosine, Glycerin
@@ -16,14 +11,35 @@ free_from: Fragrance-free
 spf_rating: ""
 vegan: false
 image_main: /products/anua/anua-pdrn-hyaluronic-acid-100-Serum/anua-pdrn-image-main.jpeg
+description_short: Clinical-grade PDRN in a daily serum. 11 types of hyaluronic
+  acid, collagen, niacinamide. Dewy glass-skin finish, works as serum or
+  sleeping mask.
+ysp_thoughts: >
+  This one caught our attention for the ingredient story alone. PDRN — the same
+  compound used in clinical skin treatments — showing up in an affordable daily
+  serum felt worth paying attention to. So we tried it.
+
+
+  The texture is unlike most serums we've used. It's almost water-thin but somehow leaves skin looking visibly more plump and alive within minutes. The dewy finish is genuinely impressive — the kind of glow that usually requires a lot more effort (or a much bigger budget).
+
+
+  What kept us coming back is how it layers. It sits under moisturiser and SPF without pilling, mixes cleanly into foundation when you want extra dewiness, and doubles as a sleeping mask on nights when your skin needs a proper reset. One product doing three jobs well is always going to earn a spot in the lineup.
+
+
+  The emerald colour is a nice touch too. Small thing, but it looks great on a shelf.
+ebay_url: ""
+price: "28.99"
+brand: ANUA
+name: Anua PDRN Hyaluronic Acid Capsule 100 Serum
+slug: anua-pdrn-hyaluronic-acid-capsule-100-serum
+rrp: ""
+featured: true
+published: true
 gallery:
   - /products/anua/anua-pdrn-hyaluronic-acid-100-Serum/anua-pdrn-image-main.jpeg
   - /products/anua/anua-pdrn-hyaluronic-acid-100-Serum/anua-pdrn-image-2.jpeg
   - /products/anua/anua-pdrn-hyaluronic-acid-100-Serum/anua-pdrn-image-3.jpeg
   - /products/anua/anua-pdrn-hyaluronic-acid-100-Serum/anua-pdrn-image-4.jpeg
-description_short: Clinical-grade PDRN in a daily serum. 11 types of hyaluronic
-  acid, collagen, niacinamide. Dewy glass-skin finish, works as serum or
-  sleeping mask.
 description_full: >
   PDRN is having a moment — and this serum is exactly why.
 
@@ -41,22 +57,6 @@ description_full: >
 
 
   Fragrance-free, non-comedogenic, and suitable for all skin types.
-ysp_thoughts: >
-  This one caught our attention for the ingredient story alone. PDRN — the same
-  compound used in clinical skin treatments — showing up in an affordable daily
-  serum felt worth paying attention to. So we tried it.
-
-
-  The texture is unlike most serums we've used. It's almost water-thin but somehow leaves skin looking visibly more plump and alive within minutes. The dewy finish is genuinely impressive — the kind of glow that usually requires a lot more effort (or a much bigger budget).
-
-
-  What kept us coming back is how it layers. It sits under moisturiser and SPF without pilling, mixes cleanly into foundation when you want extra dewiness, and doubles as a sleeping mask on nights when your skin needs a proper reset. One product doing three jobs well is always going to earn a spot in the lineup.
-
-
-  The emerald colour is a nice touch too. Small thing, but it looks great on a shelf.
-ebay_url: ""
-price: "27.50"
-brand: ANUA
 amazon_url: ""
 exclude_from_feed: true
 ---

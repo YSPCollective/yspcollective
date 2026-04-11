@@ -63,4 +63,5 @@ accords:
 fragrance_family: Aquatic Oriental
 top_notes: Mint, Bergamot, Artemisia
 base_notes: Vanilla, Tonka Bean, White Musk
+inspired_by_name: Jean Paul Gaultier Le Male Elixir
 ---
