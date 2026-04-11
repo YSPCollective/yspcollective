@@ -54,5 +54,6 @@ name: Lattafa Qaed al Fursan Eau de Parfum 90ml
 slug: lattafa-qaed-al-fursan
 concentration: Eau de Parfum (EDP)
 featured: true
+gtin: "6291107455365"
 exclude_from_feed: false
 ---
