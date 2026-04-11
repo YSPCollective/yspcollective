@@ -57,6 +57,7 @@ pt:
 
 
     Merece o seu lugar na prateleira por ser genuinamente diferente.
+  name_pt: Gulf Orchid Mango Ice Eau de Parfum 100ml
 name: Gulf Orchid Mango Ice Eau de Parfum 100ml
 slug: gulf-orchid-mango-ice
 concentration: Eau de Parfum (EDP)
@@ -84,6 +85,7 @@ es:
      Este perfume logra exactamente eso. Lo elegimos porque llena un vacío en las colecciones de perfumes árabes, que suelen ser pesadas y resinosas; este es el "limpiador de paladar", la opción para el buen tiempo, la que sorprende a quienes piensan que la perfumería árabe es solo oud y ámbar. 
 
     Se gana su lugar en el estante por ser genuinamente diferente.
+  name_es: Gulf Orchid Mango Ice Eau de Parfum 100ml
 accords:
   - fruity
   - tropical
