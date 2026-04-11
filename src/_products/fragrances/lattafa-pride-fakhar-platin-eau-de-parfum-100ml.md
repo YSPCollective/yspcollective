@@ -50,6 +50,7 @@ inspired_by_note: fresh aquatic-metallic opening, clean woody drydown
 name: Lattafa Pride Fakhar Platin Eau de Parfum 100ml
 slug: lattafa-pride-fakhar-platin
 concentration: Eau de Parfum (EDP)
-featured: false
+featured: true
+gtin: "6290362345817"
 exclude_from_feed: true
 ---
