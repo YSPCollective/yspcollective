@@ -25,7 +25,7 @@ description_full: >-
 ysp_thoughts: >-
   
   Taif rose is to Arabian perfumery what Grasse is to French — it's the benchmark. Swiss Arabian has been crafting in Dubai since 1974 and this is one of their most refined expressions. If you're curious about true Arabian rose perfumery without paying niche European prices, this is the one to start with. We chose it because it converts — customers who smell it, buy it.
-inspired_by_note: rose-forward, similar clean floral clarity
+inspired_by_note: ""
 name: Swiss Arabian Enigma of Taif Extrait de Parfum
 slug: swiss-arabian-enigma-of-taif
 concentration: Extrait de Parfum
@@ -49,5 +49,5 @@ description_short: A warm, rosy oriental from one of Dubai's most respected
   fragrance houses. Enigma of Taif captures the legendary Taif rose of Saudi
   Arabia — rich, velvety, and deeply complex. Long-lasting and distinctly
   Arabian in character.
-inspired_by_name: Jo Malone Red Roses
+inspired_by_name: ""
 ---
