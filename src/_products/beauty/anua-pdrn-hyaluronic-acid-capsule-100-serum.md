@@ -28,7 +28,7 @@ ysp_thoughts: >
 
   The emerald colour is a nice touch too. Small thing, but it looks great on a shelf.
 ebay_url: ""
-price: "24.99"
+price: "24.69"
 brand: ANUA
 name: Anua PDRN Hyaluronic Acid Capsule 100 Serum
 slug: anua-pdrn-hyaluronic-acid-capsule-100-serum
