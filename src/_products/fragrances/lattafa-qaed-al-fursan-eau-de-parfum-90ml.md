@@ -4,7 +4,7 @@ brand: Lattafa
 gender: Men
 size: 90ml
 badge: Popular
-stock_status: in_stock
+stock_status: sold_out
 published: true
 fragrance_family: Aromatic Fresh Woody
 top_notes: Saffron, Pineapple
