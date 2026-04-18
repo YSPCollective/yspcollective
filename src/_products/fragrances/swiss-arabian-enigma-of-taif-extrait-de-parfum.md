@@ -1,5 +1,5 @@
 ---
-price: "69.95"
+price: "63.50"
 rrp: "122.00"
 brand: Swiss Arabian
 gender: Unisex
