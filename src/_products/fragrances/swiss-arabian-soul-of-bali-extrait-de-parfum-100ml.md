@@ -1,11 +1,13 @@
 ---
-price: "89.99"
+price: "69"
+rrp: "89.99"
 brand: Swiss Arabian
 gender: Unisex
 size: 100ml
 badge: Premium
 custom_badge: ""
 stock_status: in_stock
+fragrance_family: Floral Woody Oriental
 top_notes: Bergamot, Ginger, Pineapple, Rhubarb, Mango, Pink Pepper
 heart_notes: Aquatic notes, Saffron, Cardamom, Nutmeg, Olibanum
 longevity: 7-12 hours
@@ -61,6 +63,5 @@ accords:
   - amber
   - citrus
   - tropical
-fragrance_family: Floral Woody Oriental
 base_notes: Sandalwood, Musk, Cypriol
 ---
