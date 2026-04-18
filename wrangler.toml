@@ -1,6 +1,7 @@
-name = "yspcollective"
+name = "ysp-ai-proxy"
+main = "worker.js"
 compatibility_date = "2024-01-01"
-compatibility_flags = ["nodejs_compat"]
 
-[assets]
-directory = "./_site"
+[[kv_namespaces]]
+binding = "YSP_USERS"
+id = "940cf71cfdee47509f8e5e765b3cc158"
