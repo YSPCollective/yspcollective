@@ -34,8 +34,8 @@ ysp_thoughts: >-
 
 
   We like it because it's genuinely easy to wear — clean, bright, never overdone. It reminded us that sometimes the most useful fragrance in your collection is the one that just works, every time, without asking anything of you.
-inspired_by_name: Bleu de Chanel EDP
-inspired_by_note: fresh aromatic with woody amber base, same confident projection
+inspired_by_name: Delina da Parfums de Marly
+inspired_by_note: The lychee-rose DNA is classic Delina territory
 name: Rasasi Hawas Eclat 100ml
 slug: rasasi-hawas-eclat
 concentration: Eau de Parfum (EDP)
