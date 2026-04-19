@@ -1,16 +1,17 @@
 ---
-name: Lattafa Qaed al Fursan Eau de Parfum 90ml
-slug: lattafa-qaed-al-fursan
-badge: Popular
 price: "19.95"
 brand: Lattafa
 gender: Men
 size: 90ml
-concentration: Eau de Parfum (EDP)
+badge: Popular
+stock_status: sold_out
+published: true
 fragrance_family: Aromatic Fresh Woody
 top_notes: Saffron, Pineapple
 heart_notes: Jasmine, Fir Balsam
 base_notes: Oud Wood, Cedarwood, Amber
+accords_text: fruity, sweet, woody, tropical, fresh, amber, warm spicy, oud,
+  white floral, fresh spicy
 longevity: 8-10 hours
 projection: Moderate - Strong
 origin: UAE
@@ -47,6 +48,12 @@ ysp_thoughts: >-
 
 
   We picked it because it's the kind of fragrance that builds quiet loyalty. People don't rave about it the first time they smell it — they just keep coming back to it. That consistency is worth a lot.
-featured: false
-published: true
+inspired_by_name: Creed Aventus
+inspired_by_note: fruity-woody Aventus family, lighter projection and more accessible
+name: Lattafa Qaed al Fursan Eau de Parfum 90ml
+slug: lattafa-qaed-al-fursan
+concentration: Eau de Parfum (EDP)
+featured: true
+gtin: "6291107455365"
+exclude_from_feed: false
 ---

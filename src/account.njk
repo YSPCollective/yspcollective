@@ -1,0 +1,1345 @@
+---
+layout: null
+permalink: /account.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Account — YSP Collective</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #1a1916;
+      --white: #faf8f5;
+      --cream: #f7f7f7;
+      --sand: #e6dfd4;
+      --grey: #8a847a;
+      --grey-light: #b5afa5;
+      --accent: #9c7b56;
+      --accent-light: #c8a87a;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Outfit', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white); color: var(--black);
+      font-family: var(--sans); font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── LOADING STATE ── */
+    #account-loading {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 1rem;
+    }
+    .loading-spinner {
+      width: 32px; height: 32px;
+      border: 2px solid var(--sand);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── ACCOUNT LAYOUT ── */
+    #account-app { display: none; min-height: 100vh; }
+    #account-app.ready { display: block; }
+
+    /* ── TOP BAR ── */
+    .acc-topbar {
+      background: var(--black);
+      padding: 1rem 3.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .acc-topbar-logo {
+      font-family: var(--serif); font-size: 1.3rem; font-weight: 300;
+      color: var(--white); text-decoration: none; letter-spacing: 0.06em;
+    }
+    .acc-topbar-logo span {
+      display: block; font-family: var(--sans); font-size: 0.5rem;
+      letter-spacing: 0.35em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); margin-top: -2px;
+    }
+    .acc-topbar-actions {
+      display: flex; align-items: center; gap: 2rem;
+    }
+    .acc-topbar-actions a {
+      font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s;
+    }
+    .acc-topbar-actions a:hover { color: var(--accent-light); }
+    .acc-signout-btn {
+      background: none; border: 1px solid rgba(255,255,255,0.15); cursor: pointer;
+      font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: rgba(255,255,255,0.4);
+      padding: 0.4rem 1rem; transition: all 0.2s;
+    }
+    .acc-signout-btn:hover { border-color: rgba(255,255,255,0.4); color: var(--white); }
+
+    /* ── HERO ── */
+    .acc-hero {
+      background: var(--cream);
+      border-bottom: 1px solid var(--sand);
+      padding: 3rem 3.5rem;
+    }
+    .acc-hero-inner { max-width: 1100px; margin: 0 auto; }
+    .acc-greeting {
+      font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 0.6rem;
+    }
+    .acc-name {
+      font-family: var(--serif); font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 300; color: var(--black); margin-bottom: 0.4rem;
+    }
+    .acc-email { font-size: 0.85rem; color: var(--grey); }
+    .acc-profile-status {
+      margin-top: 1.2rem; display: inline-flex; align-items: center;
+      gap: 0.5rem; font-size: 0.8rem;
+    }
+    .acc-profile-status .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--accent);
+    }
+    .acc-profile-status.incomplete .dot { background: var(--sand); border: 1px solid var(--grey-light); }
+    .acc-profile-status button {
+      background: none; border: none; cursor: pointer;
+      font-family: var(--sans); font-size: 0.78rem;
+      color: var(--accent); text-decoration: underline; padding: 0;
+    }
+
+    /* ── NAV TABS ── */
+    .acc-tabs {
+      background: var(--white);
+      border-bottom: 1px solid var(--sand);
+      padding: 0 3.5rem;
+      display: flex; gap: 0;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .acc-tab {
+      background: none; border: none; border-bottom: 2px solid transparent;
+      cursor: pointer; font-family: var(--sans);
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--grey); padding: 1.1rem 1.5rem;
+      margin-bottom: -1px; transition: all 0.2s;
+    }
+    .acc-tab:hover { color: var(--black); }
+    .acc-tab.active { color: var(--black); border-bottom-color: var(--accent); }
+    .acc-tab-badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 18px; height: 18px; border-radius: 50%;
+      background: var(--accent); color: var(--white);
+      font-size: 0.6rem; margin-left: 0.4rem;
+    }
+
+    /* ── CONTENT ── */
+    .acc-content { max-width: 1100px; margin: 0 auto; padding: 3rem 3.5rem; }
+    .acc-panel { display: none; }
+    .acc-panel.active { display: block; }
+
+    /* ── SECTION HEADS ── */
+    .acc-section-label {
+      font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 2rem;
+    }
+    .acc-section-title {
+      font-family: var(--serif); font-size: 1.5rem; font-weight: 300;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── RECOMMENDATIONS ── */
+    .acc-recs-intro {
+      background: var(--cream); border: 1px solid var(--sand);
+      padding: 2rem; margin-bottom: 2rem;
+      display: flex; align-items: flex-start; gap: 1.5rem;
+    }
+    .acc-recs-icon { font-size: 1.8rem; flex-shrink: 0; }
+    .acc-recs-intro h3 {
+      font-family: var(--serif); font-size: 1.1rem; font-weight: 400;
+      margin-bottom: 0.4rem;
+    }
+    .acc-recs-intro p { font-size: 0.85rem; color: var(--grey); line-height: 1.6; }
+    .acc-recs-intro .acc-btn {
+      display: inline-block; margin-top: 0.8rem;
+      padding: 0.5rem 1.2rem; background: var(--accent);
+      color: var(--white); font-size: 0.72rem; letter-spacing: 0.12em;
+      text-transform: uppercase; border: none; cursor: pointer;
+      font-family: var(--sans); text-decoration: none; transition: background 0.2s;
+    }
+    .acc-recs-intro .acc-btn:hover { background: var(--black); }
+    /* ── Account AI Chat Box ── */
+    .acc-ai-chat-box {
+      border: 1px solid var(--sand); background: var(--white);
+      min-height: 340px; max-height: 520px; display: flex; flex-direction: column;
+    }
+    .acc-ai-messages {
+      flex: 1; padding: 1.4rem 1.5rem; overflow-y: auto;
+      display: flex; flex-direction: column; gap: 0.9rem;
+      scroll-behavior: smooth;
+    }
+    .acc-ai-messages::-webkit-scrollbar { width: 4px; }
+    .acc-ai-messages::-webkit-scrollbar-track { background: transparent; }
+    .acc-ai-messages::-webkit-scrollbar-thumb { background: var(--sand); border-radius: 2px; }
+
+    .acc-ai-msg {
+      max-width: 82%; font-size: 0.88rem; line-height: 1.72;
+      padding: 0.75rem 1rem;
+    }
+    .acc-ai-msg.assistant {
+      background: var(--cream); align-self: flex-start;
+      border-left: 2px solid var(--accent); border-radius: 0 8px 8px 0;
+    }
+    .acc-ai-msg.assistant strong { font-weight: 500; }
+    .acc-ai-msg.assistant em { font-style: italic; color: var(--accent); }
+    /* Product blocks inside assistant messages */
+    .acc-ai-msg.assistant .acc-rec-item {
+      display: block; margin-top: 0.6rem;
+      padding: 0.55rem 0.8rem;
+      background: var(--white);
+      border: 1px solid var(--sand);
+      border-left: 2px solid var(--accent-light);
+      font-size: 0.84rem; line-height: 1.5;
+    }
+    .acc-ai-msg.assistant .acc-rec-item-name {
+      display: block; font-weight: 500; color: var(--black); margin-bottom: 0.15rem;
+    }
+    .acc-ai-msg.assistant .acc-rec-item-detail {
+      display: block; font-size: 0.78rem; color: var(--grey);
+    }
+    .acc-ai-msg.user {
+      background: var(--black); color: var(--white);
+      align-self: flex-end;
+      border-radius: 8px 0 0 8px;
+      font-size: 0.86rem;
+    }
+
+    /* Typing dots */
+    .acc-ai-typing {
+      display: none; align-items: center; gap: 5px;
+      padding: 0.65rem 1rem;
+      align-self: flex-start;
+      background: var(--cream);
+      border-left: 2px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+    }
+    .acc-ai-typing.visible { display: flex; }
+    .acc-ai-typing span {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); opacity: 0.4;
+      animation: accDotPulse 1.3s ease-in-out infinite;
+    }
+    .acc-ai-typing span:nth-child(2) { animation-delay: 0.2s; }
+    .acc-ai-typing span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes accDotPulse {
+      0%, 80%, 100% { transform: scale(0.7); opacity: 0.3; }
+      40% { transform: scale(1.1); opacity: 1; }
+    }
+
+    /* Suggestion chips */
+    .acc-ai-chips {
+      padding: 0.6rem 1.2rem 0.3rem;
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      border-top: 1px solid var(--sand);
+      flex-shrink: 0;
+    }
+    .acc-ai-chip {
+      padding: 0.3rem 0.85rem;
+      border: 1px solid var(--sand);
+      background: var(--white);
+      font-family: var(--sans); font-size: 0.72rem;
+      color: var(--grey); cursor: pointer;
+      border-radius: 20px; white-space: nowrap;
+      transition: all 0.2s; letter-spacing: 0.02em;
+    }
+    .acc-ai-chip:hover { border-color: var(--accent); color: var(--black); background: var(--cream); }
+
+    /* Input row */
+    .acc-ai-input-row {
+      border-top: 1px solid var(--sand);
+      display: flex; align-items: center; gap: 0; padding: 0;
+    }
+    .acc-ai-input {
+      flex: 1; padding: 0.85rem 1.2rem;
+      border: none; background: none;
+      font-family: var(--sans); font-size: 0.88rem; font-weight: 300;
+      color: var(--black); outline: none;
+    }
+    .acc-ai-input::placeholder { color: var(--grey-light); }
+    .acc-ai-send {
+      padding: 0.85rem 1.4rem; background: var(--accent);
+      border: none; cursor: pointer; color: var(--white);
+      font-family: var(--sans); font-size: 0.7rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      transition: background 0.2s; flex-shrink: 0;
+      border-left: 1px solid rgba(0,0,0,0.06);
+    }
+    .acc-ai-send:hover { background: var(--black); }
+    .acc-ai-send:disabled { opacity: 0.4; cursor: not-allowed; }
+    /* Hide old thinking text element */
+    .acc-ai-thinking { display: none !important; }
+
+    /* ── FAVOURITES ── */
+    .acc-favs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .acc-fav-card {
+      border: 1px solid var(--sand); background: var(--white);
+      transition: box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .acc-fav-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+    .acc-fav-card a { text-decoration: none; color: inherit; flex: 1; display: flex; flex-direction: column; }
+    .acc-fav-img {
+      width: 100%; aspect-ratio: 1;
+      background: var(--cream);
+      object-fit: contain; padding: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem;
+    }
+    .acc-fav-img img { width: 100%; height: 100%; object-fit: contain; }
+    .acc-fav-info { padding: 0.9rem 1rem; flex: 1; }
+    .acc-fav-name { font-size: 0.85rem; font-weight: 400; margin-bottom: 0.2rem; }
+    .acc-fav-price { font-size: 0.82rem; color: var(--accent); }
+    .acc-fav-remove {
+      display: block; width: 100%; padding: 0.75rem;
+      border: none; border-top: 1px solid var(--sand);
+      background: none; cursor: pointer;
+      font-family: var(--sans); font-size: 0.68rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--grey); transition: all 0.2s;
+      text-align: center; margin-top: auto; flex-shrink: 0;
+    }
+    .acc-fav-remove:hover { background: var(--black); color: var(--white); }
+    .acc-empty {
+      text-align: center; padding: 4rem 2rem;
+      color: var(--grey);
+    }
+    .acc-empty-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .acc-empty h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 300; margin-bottom: 0.5rem; color: var(--black); }
+    .acc-empty p { font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .acc-empty a {
+      display: inline-block; padding: 0.65rem 1.5rem;
+      background: var(--accent); color: var(--white);
+      text-decoration: none; font-size: 0.72rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    .acc-empty a:hover { background: var(--black); }
+
+    /* ── PROFILE ── */
+    .acc-profile-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
+    @media (max-width: 900px) { .acc-profile-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .acc-profile-grid { grid-template-columns: 1fr; } }
+    .acc-profile-card {
+      border: 1px solid var(--sand); padding: 1.8rem;
+    }
+    .acc-profile-card h3 {
+      font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1.2rem; padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--sand);
+    }
+    .acc-profile-row {
+      display: flex; justify-content: space-between;
+      padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.04);
+      font-size: 0.85rem;
+    }
+    .acc-profile-row:last-child { border-bottom: none; }
+    .acc-profile-row span:first-child { color: var(--grey); }
+    .acc-pref-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .acc-pref-tag {
+      padding: 0.25rem 0.7rem; border: 1px solid var(--sand);
+      font-size: 0.75rem; color: var(--grey);
+    }
+    .acc-profile-actions { margin-top: 2rem; display: flex; gap: 1rem; }
+
+    /* ── EMAIL TOGGLE ── */
+    .acc-email-toggle {
+      position: relative; width: 42px; height: 24px; flex-shrink: 0; cursor: pointer;
+    }
+    .acc-email-toggle input { opacity: 0; width: 0; height: 0; position: absolute; }
+    .acc-toggle-track {
+      position: absolute; inset: 0;
+      background: var(--sand); border-radius: 24px;
+      transition: background 0.25s;
+    }
+    .acc-email-toggle input:checked + .acc-toggle-track { background: var(--accent); }
+    .acc-toggle-track::after {
+      content: ''; position: absolute;
+      left: 3px; top: 3px;
+      width: 18px; height: 18px;
+      background: var(--white); border-radius: 50%;
+      transition: transform 0.25s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+    }
+    .acc-email-toggle input:checked + .acc-toggle-track::after { transform: translateX(18px); }
+    .acc-email-pref-note {
+      font-size: 0.75rem; color: var(--accent);
+      margin-top: 0.8rem; min-height: 1rem;
+      transition: opacity 0.3s;
+    }
+    .acc-btn-outline {
+      padding: 0.65rem 1.5rem; border: 1px solid var(--sand);
+      background: none; cursor: pointer; font-family: var(--sans);
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--grey); transition: all 0.2s;
+    }
+    .acc-btn-outline:hover { border-color: var(--black); color: var(--black); }
+
+    /* ── ORDERS ── */
+    .acc-orders-empty {
+      text-align: center; padding: 4rem 2rem; color: var(--grey);
+    }
+    .acc-order-card {
+      border: 1px solid var(--sand); margin-bottom: 1rem;
+      padding: 1.5rem;
+    }
+    .acc-order-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 0.8rem;
+    }
+    .acc-order-id { font-size: 0.78rem; color: var(--grey); }
+    .acc-order-status {
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.3rem 0.7rem; background: var(--cream);
+      color: var(--accent);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .acc-topbar { padding: 1rem 1.5rem; }
+      .acc-hero { padding: 2rem 1.5rem; }
+      .acc-tabs { padding: 0 0.5rem; overflow-x: auto; }
+      .acc-tab { padding: 1rem 0.8rem; white-space: nowrap; }
+      .acc-content { padding: 2rem 1.5rem; }
+      .acc-profile-grid { grid-template-columns: 1fr; }
+      .acc-topbar-actions { gap: 1rem; }
+      .acc-topbar-actions a { display: none; }
+    }
+
+    /* ── RECS SUB-TABS ── */
+    .recs-subtabs {
+      display: flex; gap: 0; border-bottom: 1px solid var(--sand);
+      margin-bottom: 2rem;
+    }
+    .recs-subtab {
+      background: none; border: none; border-bottom: 2px solid transparent;
+      cursor: pointer; font-family: var(--sans);
+      font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--grey); padding: 0.8rem 1.8rem;
+      margin-bottom: -1px; transition: all 0.2s;
+    }
+    .recs-subtab:hover { color: var(--black); }
+    .recs-subtab.active { color: var(--black); border-bottom-color: var(--accent); }
+
+    .recs-section { display: none; }
+    .recs-section.active { display: block; }
+
+    /* ── AI INTRO BLOCK ── */
+    .recs-ai-intro {
+      background: var(--cream); border-left: 2px solid var(--accent);
+      padding: 1.4rem 1.6rem; margin-bottom: 2rem;
+      font-size: 0.92rem; line-height: 1.82; color: var(--black);
+      min-height: 60px;
+    }
+    .recs-ai-intro p { margin: 0 0 0.75rem; }
+    .recs-ai-intro p:last-child { margin-bottom: 0; }
+    @media (max-width: 768px) {
+      .recs-ai-intro { font-size: 0.86rem; line-height: 1.75; padding: 1.1rem 1.2rem; }
+    }
+    .recs-ai-thinking {
+      display: flex; gap: 5px; align-items: center; padding: 0.3rem 0;
+    }
+    .recs-ai-thinking span {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); opacity: 0.4;
+      animation: recsPulse 1.2s ease-in-out infinite;
+    }
+    .recs-ai-thinking span:nth-child(2) { animation-delay: 0.2s; }
+    .recs-ai-thinking span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes recsPulse {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+
+    /* ── PRODUCT GRID ── */
+    .recs-product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+      align-items: stretch;
+      max-width: 640px;
+    }
+    .recs-product-card {
+      border: 1px solid var(--sand);
+      background: var(--white);
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .recs-product-card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+    .recs-product-img {
+      width: 100%; aspect-ratio: 1 / 1;
+      background: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .recs-product-img img {
+      width: 100%; height: 100%;
+      object-fit: contain; padding: 1rem;
+      transition: transform 0.3s; display: block;
+    }
+    .recs-product-card:hover .recs-product-img img { transform: scale(1.04); }
+    .recs-product-info {
+      padding: 0.7rem 0.8rem 0.5rem;
+      border-top: 1px solid var(--sand);
+      flex: 1;
+    }
+    .recs-product-brand-top {
+      display: block;
+      font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 0.3rem; line-height: 1;
+    }
+    .recs-product-name {
+      display: block;
+      font-size: 0.82rem; font-weight: 400; line-height: 1.3;
+      color: var(--black); margin-bottom: 0.25rem;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .recs-product-price {
+      display: block; font-size: 0.8rem; color: var(--grey);
+    }
+    .recs-product-cta {
+      display: block; width: 100%; padding: 0.65rem;
+      border: none; border-top: 1px solid var(--sand);
+      background: none; cursor: pointer; font-family: var(--sans);
+      font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--grey); text-align: center;
+      transition: all 0.2s; text-decoration: none;
+      margin-top: auto;
+    }
+    .recs-product-cta:hover { background: var(--accent); color: var(--white); border-color: var(--accent); }
+
+    .recs-ai-intro strong {
+      font-weight: 500;
+      color: var(--black);
+    }
+
+    @media (max-width: 900px) {
+      .recs-product-grid { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
+    }
+    @media (max-width: 480px) {
+      .recs-product-grid { grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
+    }
+
+    /* ── CHAT SECTION ── */
+    .recs-chat-wrap { margin-top: 1rem; }
+    .recs-chat-label {
+      font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .recs-product-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading -->
+  <div id="account-loading">
+    <div class="loading-spinner"></div>
+    <p style="font-size:0.82rem;color:var(--grey)">Loading your account…</p>
+  </div>
+
+  <!-- Account App -->
+  <div id="account-app">
+
+    <!-- Top Bar -->
+    <div class="acc-topbar">
+      <a href="/" class="acc-topbar-logo">YSP<span>Collective</span></a>
+      <div class="acc-topbar-actions">
+        <a href="/fragrances/all.html">Fragrances</a>
+        <a href="/beauty/all.html">Beauty</a>
+        <button class="acc-signout-btn" id="acc-signout">Sign Out</button>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="acc-hero">
+      <div class="acc-hero-inner">
+        <p class="acc-greeting">Welcome back</p>
+        <h1 class="acc-name" id="acc-user-name">—</h1>
+        <p class="acc-email" id="acc-user-email">—</p>
+        <div class="acc-profile-status" id="acc-profile-status">
+          <span class="dot"></span>
+          <span id="acc-profile-status-text">Profile complete</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="acc-tabs">
+      <button class="acc-tab active" data-panel="recommendations">Recommendations</button>
+      <button class="acc-tab" data-panel="favourites">Saved Items <span class="acc-tab-badge" id="fav-count" style="display:none"></span></button>
+      <button class="acc-tab" data-panel="profile">My Profile</button>
+      <button class="acc-tab" data-panel="orders">Orders</button>
+    </div>
+
+    <!-- Content -->
+    <div class="acc-content">
+
+      <!-- Recommendations Panel -->
+      <div class="acc-panel active" id="panel-recommendations">
+
+        <!-- No profile state -->
+        <div id="recs-no-profile" style="display:none">
+          <div class="acc-recs-intro">
+            <div class="acc-recs-icon">✦</div>
+            <div>
+              <h3>Let's find what you'll love</h3>
+              <p>Answer a few quick questions and our advisor will recommend products matched to your taste, skin type, and budget.</p>
+              <button class="acc-btn" id="start-profile-btn">Set my preferences →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recommendations area -->
+        <div id="recs-chat-area">
+
+          <!-- Fragrance / Beauty sub-tabs -->
+          <div class="recs-subtabs" id="recs-subtabs">
+            <button class="recs-subtab active" data-rec="fragrance" id="subtab-fragrance">Fragrance</button>
+            <button class="recs-subtab" data-rec="beauty" id="subtab-beauty">Beauty</button>
+          </div>
+
+          <!-- Fragrance recommendations -->
+          <div class="recs-section active" id="recs-fragrance">
+            <div class="recs-ai-intro" id="recs-frag-intro">
+              <div class="recs-ai-thinking"><span></span><span></span><span></span></div>
+            </div>
+            <div class="recs-product-grid" id="recs-frag-grid"></div>
+          </div>
+
+          <!-- Beauty recommendations -->
+          <div class="recs-section" id="recs-beauty">
+            <div class="recs-ai-intro" id="recs-beauty-intro">
+              <div class="recs-ai-thinking"><span></span><span></span><span></span></div>
+            </div>
+            <div class="recs-product-grid" id="recs-beauty-grid"></div>
+          </div>
+
+          <!-- Chat -->
+          <div class="recs-chat-wrap">
+            <p class="recs-chat-label">Ask our advisor anything</p>
+            <div class="acc-ai-chat-box">
+              <div class="acc-ai-messages" id="acc-ai-messages"></div>
+              <div class="acc-ai-typing" id="acc-ai-typing"><span></span><span></span><span></span></div>
+              <div class="acc-ai-chips" id="acc-ai-chips"></div>
+              <div id="acc-ai-thinking" class="acc-ai-thinking"></div>
+              <div class="acc-ai-input-row">
+                <input type="text" class="acc-ai-input" id="acc-ai-input"
+                  placeholder="Ask about a scent, ingredient, occasion…">
+                <button class="acc-ai-send" id="acc-ai-send">Send →</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Favourites Panel -->
+      <div class="acc-panel" id="panel-favourites">
+        <p class="acc-section-label">Saved items</p>
+        <div id="favs-grid-wrap"></div>
+      </div>
+
+      <!-- Profile Panel -->
+      <div class="acc-panel" id="panel-profile">
+        <p class="acc-section-label">Account details</p>
+        <div class="acc-profile-grid">
+          <div class="acc-profile-card">
+            <h3>Personal Details</h3>
+            <div class="acc-profile-row">
+              <span>Name</span>
+              <span id="prf-name">—</span>
+            </div>
+            <div class="acc-profile-row">
+              <span>Email</span>
+              <span id="prf-email">—</span>
+            </div>
+            <div class="acc-profile-row">
+              <span>Member since</span>
+              <span id="prf-since">—</span>
+            </div>
+          </div>
+          <div class="acc-profile-card">
+            <h3>Preferences</h3>
+            <div id="prf-interests-wrap">
+              <div class="acc-profile-row">
+                <span>Interests</span>
+                <span id="prf-interests">—</span>
+              </div>
+            </div>
+            <div id="prf-frag-wrap"></div>
+            <div id="prf-beauty-wrap"></div>
+          </div>
+          <div class="acc-profile-card">
+            <h3>Email Preferences</h3>
+            <div class="acc-profile-row" style="align-items:center;">
+              <span style="line-height:1.4">Offers &amp; recommendations<br><span style="font-size:0.78rem;color:var(--grey-light)">New arrivals, personal picks, exclusive discounts</span></span>
+              <label class="acc-email-toggle" id="email-toggle-wrap" title="Toggle marketing emails">
+                <input type="checkbox" id="email-marketing-toggle">
+                <span class="acc-toggle-track"></span>
+              </label>
+            </div>
+            <p class="acc-email-pref-note" id="email-pref-note"></p>
+          </div>
+        </div>
+        <div class="acc-profile-actions">
+          <button class="acc-btn-outline" id="edit-prefs-btn">Update preferences</button>
+        </div>
+      </div>
+
+      <!-- Orders Panel -->
+      <div class="acc-panel" id="panel-orders">
+        <p class="acc-section-label">Order history</p>
+        <div id="orders-wrap">
+          <div class="acc-orders-empty">
+            <div class="acc-empty-icon">📦</div>
+            <h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:300;margin-bottom:0.5rem">No orders yet</h3>
+            <p style="font-size:0.85rem;color:var(--grey);margin-bottom:1.5rem">Your order history will appear here.</p>
+            <a href="/fragrances/all.html" style="display:inline-block;padding:0.65rem 1.5rem;background:var(--accent);color:var(--white);text-decoration:none;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;">Shop Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="/ysp-account.js"></script>
+  <script>
+    const PROXY = 'https://ysp-ai-proxy.rapid-shadow-439d.workers.dev';
+    let currentUser = null;
+    let chatMessages = [];
+
+    // ── Boot ──────────────────────────────────────────────────────────────────
+    async function boot() {
+      // Use cached user first to avoid redirect flash
+      const cachedUser = YSPAccount.getUser();
+      const token = YSPAccount.getToken();
+
+      if (!token) {
+        // Definitely not logged in
+        sessionStorage.setItem('ysp_redirect_account', '1');
+        window.location.href = '/';
+        return;
+      }
+
+      // Show page immediately with cached data while we verify
+      if (cachedUser) {
+        currentUser = cachedUser;
+        renderAccount(cachedUser);
+        document.getElementById('account-loading').style.display = 'none';
+        document.getElementById('account-app').classList.add('ready');
+        await Promise.all([loadFavourites(), loadRecommendations(cachedUser), loadFullProfile(cachedUser)]);
+      }
+
+      // Verify session in background — redirect if invalid
+      const verified = await YSPAccount.verifySession();
+      if (!verified) {
+        sessionStorage.setItem('ysp_redirect_account', '1');
+        window.location.href = '/';
+        return;
+      }
+
+      // If not already rendered (no cache), render now
+      if (!cachedUser) {
+        currentUser = verified;
+        renderAccount(verified);
+        await Promise.all([loadFavourites(), loadRecommendations(verified), loadFullProfile(verified)]);
+        document.getElementById('account-loading').style.display = 'none';
+        document.getElementById('account-app').classList.add('ready');
+      }
+    }
+
+    function renderAccount(user) {
+      document.getElementById('acc-user-name').textContent = `${user.firstName} ${user.lastName}`.trim();
+      document.getElementById('acc-user-email').textContent = user.email;
+      document.getElementById('prf-name').textContent = `${user.firstName} ${user.lastName}`.trim();
+      document.getElementById('prf-email').textContent = user.email;
+
+      // Member since — format createdAt
+      const sinceEl = document.getElementById('prf-since');
+      if (user.createdAt) {
+        try {
+          const d = new Date(user.createdAt);
+          sinceEl.textContent = d.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+        } catch(_) { sinceEl.textContent = '—'; }
+      } else {
+        sinceEl.textContent = '—';
+      }
+
+      // Profile status
+      const statusEl = document.getElementById('acc-profile-status');
+      const statusText = document.getElementById('acc-profile-status-text');
+      if (!user.profileComplete) {
+        statusEl.classList.add('incomplete');
+        statusText.innerHTML = 'Profile incomplete — <button onclick="YSPAccount.showProfileQA(currentUser)">complete now</button>';
+      }
+
+      // Profile panel
+      if (user.profileComplete) {
+        document.getElementById('prf-interests').textContent = user.interests || '—';
+        renderPrefDetails(user);
+      }
+    }
+
+    function renderPrefDetails(user) {
+      const fragWrap = document.getElementById('prf-frag-wrap');
+      const beautyWrap = document.getElementById('prf-beauty-wrap');
+
+      if (user.fragrancePrefs) {
+        const fp = user.fragrancePrefs;
+        fragWrap.innerHTML = `
+          <div style="margin-top:0.8rem;padding-top:0.8rem;border-top:1px solid var(--sand)">
+            <p style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem">Fragrance</p>
+            ${fp.scents?.length ? `<div class="acc-pref-tags">${fp.scents.map(s => `<span class="acc-pref-tag">${s}</span>`).join('')}</div>` : ''}
+            ${fp.gender ? `<p style="font-size:0.82rem;color:var(--grey);margin-top:0.4rem">Preference: ${fp.gender}</p>` : ''}
+            ${fp.budget ? `<p style="font-size:0.82rem;color:var(--grey)">Budget: ${fp.budget}</p>` : ''}
+          </div>
+        `;
+      }
+
+      if (user.beautyPrefs) {
+        const bp = user.beautyPrefs;
+        beautyWrap.innerHTML = `
+          <div style="margin-top:0.8rem;padding-top:0.8rem;border-top:1px solid var(--sand)">
+            <p style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem">Beauty</p>
+            ${bp.skinType?.length ? `<div class="acc-pref-tags">${bp.skinType.map(s => `<span class="acc-pref-tag">${s}</span>`).join('')}</div>` : ''}
+            ${bp.concerns?.length ? `<div class="acc-pref-tags" style="margin-top:0.3rem">${bp.concerns.map(s => `<span class="acc-pref-tag">${s}</span>`).join('')}</div>` : ''}
+            ${bp.budget ? `<p style="font-size:0.82rem;color:var(--grey);margin-top:0.4rem">Budget: ${bp.budget}</p>` : ''}
+          </div>
+        `;
+      }
+    }
+
+    // ── Recommendations ───────────────────────────────────────────────────────
+    // Product catalogue for card rendering (matches worker)
+    const PRODUCT_CATALOGUE = {{ collections.allProducts | jsonify | safe }};
+
+    async function loadRecommendations(user) {
+      if (!user.profileComplete) {
+        document.getElementById('recs-no-profile').style.display = 'block';
+        document.getElementById('recs-chat-area').style.display = 'none';
+        return;
+      }
+
+      const interests = user.interests || 'both';
+      const showFrag = interests === 'fragrance' || interests === 'both';
+      const showBeauty = interests === 'beauty' || interests === 'both';
+
+      // Hide tabs if only one interest
+      const subtabs = document.getElementById('recs-subtabs');
+      if (!showFrag || !showBeauty) subtabs.style.display = 'none';
+      if (!showFrag) {
+        document.getElementById('subtab-fragrance').style.display = 'none';
+        document.getElementById('recs-fragrance').classList.remove('active');
+        document.getElementById('recs-beauty').classList.add('active');
+        document.getElementById('subtab-beauty').classList.add('active');
+      }
+      if (!showBeauty) {
+        document.getElementById('subtab-beauty').style.display = 'none';
+      }
+
+      // Load both in parallel
+      const tasks = [];
+      if (showFrag) tasks.push(loadFragranceRecs(user));
+      if (showBeauty) tasks.push(loadBeautyRecs(user));
+      await Promise.all(tasks);
+    }
+
+    function stripMarkdown(text) {
+      return text
+        .replace(/\*\*([^*]+)\*\*/g, '$1')
+        .replace(/\*([^*]+)\*/g, '$1')
+        .replace(/#+\s/g, '')
+        .trim();
+    }
+
+    /**
+     * Render the AI intro text with paragraph formatting.
+     * Splits on double newlines or ". " boundaries if the AI returns a wall of text.
+     */
+    /**
+     * Normalise smart/curly quotes and apostrophes to their plain ASCII equivalents.
+     * Needed because the AI often returns "Bade'e" (right single quote U+2019)
+     * while catalogue data uses a straight apostrophe "Bade'e".
+     */
+    function normaliseQuotes(str) {
+      return str
+        .replace(/[\u2018\u2019\u02BC\u02B9\uFF07]/g, "'")  // curly/modifier apostrophes → '
+        .replace(/[\u201C\u201D\u00AB\u00BB]/g, '"')         // curly double quotes → "
+        .replace(/\u2013|\u2014/g, '-');                      // en/em dash → hyphen
+    }
+
+    /**
+     * Bold any catalogue product names found in text, then render as paragraphs.
+     */
+    function renderIntroText(el, text, catalogueProducts) {
+      // Normalise quotes in the reply before any processing
+      let clean = normaliseQuotes(text)
+        .replace(/\*\*([^*]+)\*\*/g, '$1')
+        .replace(/\*([^*]+)\*/g, '$1')
+        .replace(/#+\s/g, '')
+        .trim();
+
+      // Bold catalogue product names wherever they appear
+      if (catalogueProducts && catalogueProducts.length) {
+        // Sort longest names first so longer names match before shorter subsets
+        const sorted = [...catalogueProducts].sort((a, b) => b.name.length - a.name.length);
+        sorted.forEach(p => {
+          const normName = normaliseQuotes(p.name);
+          const escaped = normName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          // Case-insensitive match
+          const re = new RegExp(`(${escaped})`, 'gi');
+          clean = clean.replace(re, '<strong>$1</strong>');
+        });
+      }
+
+      // Split into paragraphs — honour \n\n first
+      let paras = clean.split(/\n\n+/).map(s => s.replace(/\n/g, ' ').trim()).filter(Boolean);
+
+      // If single blob, split at ". [Capital]" boundaries
+      if (paras.length === 1 && clean.replace(/<[^>]+>/g, '').length > 200) {
+        const parts = clean.split(/(?<=\.)\s+(?=[A-Z])/).map(s => s.trim()).filter(Boolean);
+        const merged = [];
+        for (let i = 0; i < parts.length; i += 2) {
+          merged.push([parts[i], parts[i+1]].filter(Boolean).join(' '));
+        }
+        paras = merged.length > 1 ? merged : paras;
+      }
+
+      el.innerHTML = paras.map(p => `<p>${p}</p>`).join('');
+    }
+
+    /**
+     * Extract the 1–2 products the AI specifically recommended.
+     * Uses exact substring matching (longest name first) with quote normalisation
+     * to handle curly apostrophes like "Bade'e" vs "Bade'e".
+     */
+    function extractMentionedProducts(replyText, catalogueProducts) {
+      // Normalise both the reply and product names before comparison
+      const normReply = normaliseQuotes(replyText).toLowerCase();
+
+      // Sort longest name first — prevents shorter names matching inside longer ones
+      const sorted = [...catalogueProducts].sort((a, b) => b.name.length - a.name.length);
+
+      const matched = [];
+      const usedSpans = [];
+
+      sorted.forEach(p => {
+        const normName = normaliseQuotes(p.name).toLowerCase();
+        const idx = normReply.indexOf(normName);
+        if (idx === -1) return;
+
+        // Skip if this span is already consumed by a longer match
+        const overlaps = usedSpans.some(s => idx < s.end && (idx + normName.length) > s.start);
+        if (!overlaps) {
+          matched.push({ product: p, idx });
+          usedSpans.push({ start: idx, end: idx + normName.length });
+        }
+      });
+
+      // Return in order of appearance, capped at 2
+      return matched
+        .sort((a, b) => a.idx - b.idx)
+        .map(m => m.product)
+        .slice(0, 2);
+    }
+
+    async function loadFragranceRecs(user) {
+      const fp = user.fragrancePrefs || {};
+      const fragranceProducts = PRODUCT_CATALOGUE.filter(p => p.type === 'fragrance');
+      const catalogueNames = fragranceProducts.map(p => `${p.name} (€${p.price})`).join(', ');
+
+      const prompt = `You are recommending fragrances to ${user.firstName} from the YSP Collective range. ` +
+        `Their profile — scent preferences: ${(fp.scents||[]).join(', ') || 'no preference'}; ` +
+        `occasions: ${(fp.occasions||[]).join(', ') || 'everyday'}; ` +
+        `gender preference: ${fp.gender || 'any'}; budget: ${fp.budget || 'flexible'}. ` +
+        `Write exactly 2 short paragraphs. First paragraph: one top pick and why it suits them personally. ` +
+        `Second paragraph: one alternative for a different occasion or mood. ` +
+        `Recommend exactly 2 different products total. ` +
+        `Only recommend products from this list: ${catalogueNames}. ` +
+        `Use the exact product names as they appear in the list. Do not use markdown bullets, headers, or asterisks.`;
+
+      const reply = await callAI([{ role: 'user', content: prompt }]);
+      const introEl = document.getElementById('recs-frag-intro');
+      renderIntroText(introEl, reply, fragranceProducts);
+
+      // Match exactly what the AI mentioned (strict, capped at 2)
+      let toShow = extractMentionedProducts(reply, fragranceProducts);
+
+      if (toShow.length < 2) {
+        // Fallback: accord scoring for any missing slots, no dupes
+        const scents = fp.scents || [];
+        const mentionedSlugs = new Set(toShow.map(p => p.slug));
+        const scored = fragranceProducts
+          .filter(p => !mentionedSlugs.has(p.slug))
+          .map(p => {
+            const accords = p.accords || [];
+            const score = accords.filter(a =>
+              scents.some(s => a.toLowerCase().includes(s.replace('-',' ').split(' ')[0]))
+            ).length;
+            return { ...p, score };
+          })
+          .sort((a, b) => b.score - a.score);
+        toShow = [...toShow, ...scored].slice(0, 2);
+      }
+
+      renderProductCards('recs-frag-grid', toShow);
+    }
+
+    async function loadBeautyRecs(user) {
+      const bp = user.beautyPrefs || {};
+      const beautyProducts = PRODUCT_CATALOGUE.filter(p => p.type === 'beauty');
+      const catalogueNames = beautyProducts.map(p => `${p.name} (€${p.price})`).join(', ');
+
+      const prompt = `You are recommending skincare to ${user.firstName} from the YSP Collective range. ` +
+        `Their profile — skin type: ${(bp.skinType||[]).join(', ') || 'normal'}; ` +
+        `concerns: ${(bp.concerns||[]).join(', ') || 'general care'}; budget: ${bp.budget || 'flexible'}. ` +
+        `Write exactly 2 short paragraphs. First paragraph: one top pick and why it suits their skin. ` +
+        `Second paragraph: one complementary product. ` +
+        `Recommend exactly 2 different products total. ` +
+        `Only recommend products from this list: ${catalogueNames}. ` +
+        `Use the exact product names as they appear in the list. Do not use markdown bullets, headers, or asterisks.`;
+
+      const reply = await callAI([{ role: 'user', content: prompt }]);
+      const introEl = document.getElementById('recs-beauty-intro');
+      renderIntroText(introEl, reply, beautyProducts);
+
+      let toShow = extractMentionedProducts(reply, beautyProducts);
+
+      if (toShow.length < 2) {
+        const mentionedSlugs = new Set(toShow.map(p => p.slug));
+        const fill = beautyProducts.filter(p => !mentionedSlugs.has(p.slug));
+        toShow = [...toShow, ...fill].slice(0, 2);
+      }
+
+      renderProductCards('recs-beauty-grid', toShow);
+    }
+
+    function renderProductCards(gridId, products) {
+      const grid = document.getElementById(gridId);
+      grid.innerHTML = '';
+      products.slice(0, 4).forEach(p => {
+        const image = p.image_main || p.image || '';
+        const price = p.price ? (String(p.price).startsWith('€') ? p.price : '€' + p.price) : '';
+        const url = p.url || ('/products/' + p.slug + '.html');
+        const card = document.createElement('a');
+        card.className = 'recs-product-card';
+        card.href = url;
+        card.style.cssText = 'display:flex;flex-direction:column;height:100%;';
+        card.innerHTML = `
+          <div class="recs-product-img" style="width:100%;aspect-ratio:1/1;overflow:hidden;flex-shrink:0;">
+            ${image
+              ? `<img src="${image}" alt="${p.name}" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:0.8rem;"
+                  onerror="this.style.display='none'">`
+              : ''
+            }
+          </div>
+          <div style="padding:0.7rem 0.8rem 0.5rem;border-top:1px solid #e6dfd4;flex:1;">
+            <span style="display:block;font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:#9c7b56;margin-bottom:0.3rem;">${p.brand || ''}</span>
+            <span style="display:block;font-size:0.82rem;font-weight:400;line-height:1.3;color:#1a1916;margin-bottom:0.25rem;">${p.name}</span>
+            <span style="display:block;font-size:0.8rem;color:#8a847a;">${price}</span>
+          </div>
+          <span class="recs-product-cta" style="display:block;width:100%;padding:0.65rem;border:none;border-top:1px solid #e6dfd4;background:none;cursor:pointer;font-family:inherit;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:#8a847a;text-align:center;text-decoration:none;">View Product →</span>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function buildPersonalisedIntro(user) {
+      const fp = user.fragrancePrefs;
+      const bp = user.beautyPrefs;
+      const name = user.firstName;
+      if (user.interests === 'fragrance' && fp) {
+        return `Hi, I'm ${name}. I like ${fp.scents?.join(', ')} scents, wear fragrance for ${fp.occasions?.join(', ')}, prefer ${fp.gender}, budget ${fp.budget}. What do you recommend?`;
+      }
+      if (user.interests === 'beauty' && bp) {
+        return `Hi, I'm ${name}. I have ${bp.skinType?.join(', ')} skin, concerns: ${bp.concerns?.join(', ')}, budget ${bp.budget}. What skincare do you recommend?`;
+      }
+      return `Hi, I'm ${name}. I'm interested in both fragrance and beauty. What do you recommend based on my profile?`;
+    }
+
+    async function callAI(messages) {
+      try {
+        const token = YSPAccount.getToken();
+        const headers = { 'Content-Type': 'application/json' };
+        if (token) headers['Authorization'] = `Bearer ${token}`;
+        const res = await fetch(PROXY + '/chat', {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({ messages })
+        });
+        const data = await res.json();
+        return data.content || 'Sorry, I couldn\'t get a response. Please try again.';
+      } catch (_) {
+        return 'Something went wrong. Please try again.';
+      }
+    }
+
+    function renderAccBotHtml(text) {
+      let html = text
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+
+      const lines = html.split('\n');
+      const out = [];
+      let inItem = false;
+      lines.forEach(line => {
+        const stripped = line.trim();
+        if (/^[-•\d+\.]\s/.test(stripped)) {
+          if (!inItem) { out.push('<span class="acc-rec-item">'); inItem = true; }
+          else { out.push('</span><span class="acc-rec-item">'); }
+          out.push(`<span class="acc-rec-item-name">${stripped.replace(/^[-•\d+\.]\s/, '')}</span>`);
+        } else {
+          if (inItem) { out.push('</span>'); inItem = false; }
+          if (stripped) out.push(`<p style="margin:0 0 0.3rem">${stripped}</p>`);
+        }
+      });
+      if (inItem) out.push('</span>');
+      return out.join('');
+    }
+
+    function addAIMessage(role, text) {
+      const el = document.createElement('div');
+      el.className = `acc-ai-msg ${role}`;
+      if (role === 'assistant') {
+        el.innerHTML = renderAccBotHtml(text);
+      } else {
+        el.textContent = text;
+      }
+      document.getElementById('acc-ai-messages').appendChild(el);
+      el.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }
+
+    const ACC_CHIPS = [
+      'Best fragrance for evenings',
+      'Recommend a K-beauty SPF',
+      'What pairs with Lattafa Yara?',
+      'Best gift under €35',
+      'Long-lasting fragrances',
+    ];
+
+    function renderAccChips() {
+      const el = document.getElementById('acc-ai-chips');
+      if (!el) return;
+      el.innerHTML = '';
+      ACC_CHIPS.forEach(label => {
+        const btn = document.createElement('button');
+        btn.className = 'acc-ai-chip';
+        btn.textContent = label;
+        btn.addEventListener('click', () => {
+          el.style.display = 'none';
+          sendChatMessage(label);
+        });
+        el.appendChild(btn);
+      });
+    }
+
+    // Chat input
+    async function sendChatMessage(forcedText) {
+      const input = document.getElementById('acc-ai-input');
+      const msg = forcedText || input.value.trim();
+      if (!msg) return;
+      if (!forcedText) input.value = '';
+
+      // Hide chips after first use
+      const chipsEl = document.getElementById('acc-ai-chips');
+      if (chipsEl) chipsEl.style.display = 'none';
+
+      addAIMessage('user', msg);
+      chatMessages.push({ role: 'user', content: msg });
+
+      const typingEl = document.getElementById('acc-ai-typing');
+      if (typingEl) { typingEl.classList.add('visible'); typingEl.scrollIntoView({ behavior: 'smooth', block: 'end' }); }
+      document.getElementById('acc-ai-send').disabled = true;
+
+      const response = await callAI(chatMessages);
+      chatMessages.push({ role: 'assistant', content: response });
+
+      if (typingEl) typingEl.classList.remove('visible');
+      document.getElementById('acc-ai-send').disabled = false;
+      addAIMessage('assistant', response);
+    }
+
+    document.getElementById('acc-ai-send').addEventListener('click', () => sendChatMessage());
+    document.getElementById('acc-ai-input').addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendChatMessage(); }
+    });
+
+    // Render suggestion chips once panel loads
+    renderAccChips();
+
+    // ── Email preferences toggle ──────────────────────────────────────────────
+    (function initEmailToggle() {
+      const toggle = document.getElementById('email-marketing-toggle');
+      const note   = document.getElementById('email-pref-note');
+      if (!toggle) return;
+
+      // Read stored preference (default: subscribed)
+      let subscribed = true;
+      try {
+        const stored = localStorage.getItem('ysp_email_pref');
+        if (stored !== null) subscribed = stored === '1';
+      } catch(_) {}
+
+      toggle.checked = subscribed;
+
+      toggle.addEventListener('change', async () => {
+        const isSubscribed = toggle.checked;
+        note.textContent = isSubscribed ? 'Saving…' : 'Saving…';
+
+        try {
+          localStorage.setItem('ysp_email_pref', isSubscribed ? '1' : '0');
+          const user = currentUser;
+          if (user && user.email) {
+            const lang = window.YSP_LANG ? window.YSP_LANG.get() : 'en';
+            await fetch(PROXY + '/subscribe', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                email: user.email,
+                lang,
+                unsubscribe: !isSubscribed,
+              })
+            });
+          }
+          note.textContent = isSubscribed ? '✓ You\'re subscribed to offers and recommendations.' : '✓ Unsubscribed — you won\'t receive marketing emails.';
+        } catch(_) {
+          note.textContent = 'Something went wrong. Please try again.';
+        }
+
+        setTimeout(() => { note.textContent = ''; }, 4000);
+      });
+    })();
+
+    // ── Full Profile ─────────────────────────────────────────────────────────
+    async function loadFullProfile(user) {
+      if (!user.profileComplete) return;
+      const data = await YSPAccount.getProfile();
+      if (data.error) return;
+      const enriched = { ...user, ...data };
+      document.getElementById('prf-interests').textContent = enriched.interests || '—';
+      renderPrefDetails(enriched);
+    }
+
+        // ── Favourites ────────────────────────────────────────────────────────────
+    async function loadFavourites() {
+      const data = await YSPAccount.getFavourites();
+      const favs = data.favourites || [];
+      const wrap = document.getElementById('favs-grid-wrap');
+
+      // Update badge
+      const badge = document.getElementById('fav-count');
+      if (favs.length > 0) {
+        badge.textContent = favs.length;
+        badge.style.display = 'inline-flex';
+      }
+
+      if (favs.length === 0) {
+        wrap.innerHTML = `
+          <div class="acc-empty">
+            <div class="acc-empty-icon">🤍</div>
+            <h3>No saved items yet</h3>
+            <p>Heart any product to save it here for later.</p>
+            <a href="/fragrances/all.html">Browse Fragrances</a>
+          </div>
+        `;
+        return;
+      }
+
+      const grid = document.createElement('div');
+      grid.className = 'acc-favs-grid';
+      favs.forEach(fav => {
+        const card = document.createElement('div');
+        card.className = 'acc-fav-card';
+        card.innerHTML = `
+          <a href="/products/${fav.slug}.html">
+            <div class="acc-fav-img">
+              ${fav.image ? `<img src="${fav.image}" alt="${fav.name}" loading="lazy">` : '🧴'}
+            </div>
+            <div class="acc-fav-info">
+              <p class="acc-fav-name">${fav.name}</p>
+              <p class="acc-fav-price">${fav.price}</p>
+            </div>
+          </a>
+          <button class="acc-fav-remove" data-slug="${fav.slug}">Remove</button>
+        `;
+        card.querySelector('.acc-fav-remove').addEventListener('click', async () => {
+          await YSPAccount.toggleFavourite({ slug: fav.slug });
+          card.remove();
+          const remaining = wrap.querySelectorAll('.acc-fav-card').length;
+          if (remaining === 0) loadFavourites();
+        });
+        grid.appendChild(card);
+      });
+      wrap.innerHTML = '';
+      wrap.appendChild(grid);
+    }
+
+    // ── Tabs ──────────────────────────────────────────────────────────────────
+    document.querySelectorAll('.acc-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.acc-tab, .acc-panel').forEach(el => el.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(`panel-${tab.dataset.panel}`).classList.add('active');
+      });
+    });
+
+    // ── Recs sub-tabs ─────────────────────────────────────────────────────────
+    document.querySelectorAll('.recs-subtab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.recs-subtab, .recs-section').forEach(el => el.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('recs-' + tab.dataset.rec).classList.add('active');
+      });
+    });
+
+    // ── Buttons ───────────────────────────────────────────────────────────────
+    document.getElementById('acc-signout').addEventListener('click', () => YSPAccount.logout());
+    document.getElementById('start-profile-btn')?.addEventListener('click', () => {
+      YSPAccount.showProfileQA(currentUser);
+    });
+    document.getElementById('edit-prefs-btn')?.addEventListener('click', () => {
+      YSPAccount.showProfileQA(currentUser);
+    });
+
+    // ── Handle redirect after login ───────────────────────────────────────────
+    if (sessionStorage.getItem('ysp_redirect_account')) {
+      sessionStorage.removeItem('ysp_redirect_account');
+      window.addEventListener('ysp:loggedIn', () => window.location.reload());
+    }
+
+    boot();
+  </script>
+</body>
+</html>

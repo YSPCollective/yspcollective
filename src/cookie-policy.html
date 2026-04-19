@@ -1,0 +1,607 @@
+---
+layout: base.njk
+title: Cookie Policy — YSP Collective
+description: Cookie Policy for YSP Collective. Learn what cookies we use, why, and how to manage them.
+canonical: https://yspcollective.com/cookie-policy.html
+---
+
+<style>
+  .policy-hero {
+    background: var(--black);
+    padding: 8rem 3.5rem 4rem;
+    text-align: center;
+  }
+  .policy-hero .section-label { color: var(--accent-light); }
+  .policy-hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+  .policy-hero p {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.06em;
+  }
+
+  .policy-body {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 5rem 3.5rem 6rem;
+  }
+
+  .policy-lang-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 3.5rem;
+    border-bottom: 1px solid var(--sand);
+  }
+  .policy-lang-tab {
+    padding: 0.5rem 1.2rem 0.75rem;
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    cursor: pointer;
+    color: var(--grey);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .policy-lang-tab.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  .policy-version {
+    display: block;
+    margin-bottom: 3rem;
+    padding: 1rem 1.5rem;
+    background: var(--cream);
+    border-left: 3px solid var(--accent);
+    font-size: 0.82rem;
+    color: var(--grey);
+    line-height: 1.6;
+  }
+
+  .policy-content { display: none; }
+  .policy-content.active { display: block; }
+
+  .policy-content h2 {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--black);
+    margin: 2.5rem 0 0.8rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--sand);
+  }
+  .policy-content h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+
+  .policy-content p {
+    font-size: 0.92rem;
+    line-height: 1.85;
+    color: var(--grey);
+    margin-bottom: 1rem;
+  }
+
+  .policy-content a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(156,123,86,0.3);
+    transition: border-color 0.2s;
+  }
+  .policy-content a:hover { border-color: var(--accent); }
+
+  /* Cookie table */
+  .cookie-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.2rem 0 2rem;
+    font-size: 0.82rem;
+  }
+  .cookie-table th {
+    text-align: left;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 400;
+    padding: 0.6rem 1rem;
+    border-bottom: 2px solid var(--sand);
+    background: var(--cream);
+  }
+  .cookie-table td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--sand);
+    color: var(--grey);
+    line-height: 1.5;
+    vertical-align: top;
+  }
+  .cookie-table tr:last-child td { border-bottom: none; }
+  .cookie-table td:first-child {
+    font-family: monospace;
+    font-size: 0.78rem;
+    color: var(--black);
+    white-space: nowrap;
+  }
+
+  .cookie-category-label {
+    display: inline-block;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+  .cat-essential { background: var(--black); color: var(--white); }
+  .cat-analytics { background: var(--accent); color: var(--white); }
+  .cat-third-party { background: var(--grey); color: var(--white); }
+
+  .manage-box {
+    margin: 2rem 0;
+    padding: 1.5rem 2rem;
+    border: 1px solid var(--sand);
+    background: var(--cream);
+    font-size: 0.88rem;
+    color: var(--grey);
+    line-height: 1.7;
+  }
+  .manage-box strong { color: var(--black); }
+  .manage-box .manage-btn {
+    display: inline-block;
+    margin-top: 0.8rem;
+    padding: 0.6rem 1.5rem;
+    background: var(--accent);
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    transition: background 0.25s;
+    text-decoration: none;
+    border-bottom: none;
+  }
+  .manage-box .manage-btn:hover { background: var(--black); }
+
+  @media (max-width: 768px) {
+    .policy-hero { padding: 7rem 1.5rem 3rem; }
+    .policy-body { padding: 3rem 1.5rem 4rem; }
+    .cookie-table { display: block; overflow-x: auto; }
+  }
+</style>
+
+<div class="policy-hero">
+  <p class="section-label">Legal</p>
+  <h1>Cookie Policy</h1>
+  <p>Last updated: April 2026</p>
+</div>
+
+<div class="policy-body">
+
+  <div class="policy-lang-tabs">
+    <button class="policy-lang-tab active" data-lang="en">EN</button>
+    <button class="policy-lang-tab" data-lang="pt">PT</button>
+    <button class="policy-lang-tab" data-lang="es">ES</button>
+  </div>
+
+  <!-- ══════════════════ ENGLISH ══════════════════ -->
+  <div class="policy-content active" id="cookie-en">
+
+    <span class="policy-version">
+      This Cookie Policy applies to <strong>yspcollective.com</strong>, operated by YSP Collective (NIF 252439287), Portugal.<br>
+      Contact: <a href="mailto:info@yspcollective.com">info@yspcollective.com</a>
+    </span>
+
+    <h2>What Are Cookies</h2>
+    <p>Cookies are small text files placed on your device when you visit a website. They are widely used to make websites work, function more efficiently, and to provide information to the site owner. Cookies are not harmful and cannot run programmes or deliver viruses.</p>
+
+    <h2>How We Use Cookies</h2>
+    <p>We use a small number of cookies, grouped into two categories: essential cookies that the site cannot function without, and optional analytics cookies that we only set with your consent.</p>
+
+    <div class="manage-box">
+      <strong>Manage your preferences</strong><br>
+      You can change your cookie consent at any time using our cookie preference centre.
+      <br><button class="manage-btn" onclick="yspOpenCookieSettings()">Open Cookie Settings</button>
+    </div>
+
+    <h2>Essential Cookies</h2>
+    <span class="cookie-category-label cat-essential">Always Active</span>
+    <p>These cookies are strictly necessary for the website to function. They cannot be disabled. They do not track you or store any personally identifiable information.</p>
+
+    <table class="cookie-table">
+      <thead>
+        <tr>
+          <th>Cookie</th>
+          <th>Provider</th>
+          <th>Purpose</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ysp_cookie_consent</td>
+          <td>YSP Collective</td>
+          <td>Stores your cookie consent preferences so we don't ask you on every page visit.</td>
+          <td>1 year</td>
+        </tr>
+        <tr>
+          <td>ysp_lang</td>
+          <td>YSP Collective</td>
+          <td>Remembers your preferred language (EN, PT, or ES) across visits.</td>
+          <td>1 year</td>
+        </tr>
+        <tr>
+          <td>ysp_popup_seen</td>
+          <td>YSP Collective</td>
+          <td>Remembers that you have seen the welcome offer popup so it is not shown repeatedly.</td>
+          <td>Session / persistent</td>
+        </tr>
+        <tr>
+          <td>ysp_bar_dismissed</td>
+          <td>YSP Collective</td>
+          <td>Remembers that you dismissed the announcement bar.</td>
+          <td>Session</td>
+        </tr>
+        <tr>
+          <td>__stripe_mid</td>
+          <td>Stripe</td>
+          <td>Fraud prevention and security for payment processing. Set only when you proceed to checkout. Required for Stripe's fraud detection systems to protect you and us.</td>
+          <td>1 year</td>
+        </tr>
+        <tr>
+          <td>__stripe_sid</td>
+          <td>Stripe</td>
+          <td>Fraud prevention and session management for payment processing. Set only when you proceed to checkout.</td>
+          <td>30 minutes</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Analytics Cookies</h2>
+    <span class="cookie-category-label cat-analytics">Requires Consent</span>
+    <p>We use Google Analytics (GA4) to understand how visitors use our site — which pages are popular, how people arrive, and where they leave. This helps us improve the site. These cookies are only set if you accept analytics cookies via our consent banner.</p>
+    <p>Google Analytics data is anonymised (IP anonymisation is enabled) and is not used to identify you personally. We do not sell this data to any third party.</p>
+
+    <table class="cookie-table">
+      <thead>
+        <tr>
+          <th>Cookie</th>
+          <th>Provider</th>
+          <th>Purpose</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>_ga</td>
+          <td>Google Analytics</td>
+          <td>Distinguishes unique users by assigning a randomly generated number as a client identifier. Used to calculate visitor, session, and campaign data for site analytics.</td>
+          <td>2 years</td>
+        </tr>
+        <tr>
+          <td>_ga_G-SPR047XTDH</td>
+          <td>Google Analytics</td>
+          <td>Used by GA4 to persist session state and track pageviews for this specific property.</td>
+          <td>2 years</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Third-Party Cookies</h2>
+    <span class="cookie-category-label cat-third-party">Third Party</span>
+    <p>Our website includes a Trustpilot review widget in the footer. Trustpilot may set their own cookies when this widget loads. We do not control these cookies. Please refer to <a href="https://legal.trustpilot.com/end-user-privacy-terms" target="_blank" rel="noopener">Trustpilot's Privacy Policy</a> for details.</p>
+    <p>Our email marketing is handled by Brevo (Sendinblue). Brevo processes email data server-side only and does not set any cookies on your browser through our website.</p>
+
+    <h2>What We Don't Do</h2>
+    <p>We do not use cookies for advertising, retargeting, or profiling. We do not share cookie data with advertisers. We do not use any social media tracking pixels.</p>
+
+    <h2>How to Control Cookies</h2>
+    <p>You can manage your cookie preferences for this site at any time by clicking "Cookie Settings" in our website footer, or using the button above.</p>
+    <p>You can also control cookies through your browser settings. Most browsers allow you to refuse or delete cookies. Note that disabling essential cookies may affect the functionality of the site. Useful links:</p>
+    <p>
+      <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a> ·
+      <a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences" target="_blank" rel="noopener">Mozilla Firefox</a> ·
+      <a href="https://support.apple.com/en-gb/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a> ·
+      <a href="https://support.microsoft.com/en-us/windows/manage-cookies-in-microsoft-edge" target="_blank" rel="noopener">Microsoft Edge</a>
+    </p>
+    <p>To opt out of Google Analytics across all websites, you can use the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Cookie Policy from time to time. The current version will always be published on this page with the date of last update. If we make significant changes, we will reset consent so you are asked again.</p>
+
+    <h2>Contact</h2>
+    <p>If you have any questions about our use of cookies, please contact us at <a href="mailto:info@yspcollective.com">info@yspcollective.com</a>.</p>
+
+  </div>
+
+  <!-- ══════════════════ PORTUGUÊS ══════════════════ -->
+  <div class="policy-content" id="cookie-pt">
+
+    <span class="policy-version">
+      Esta Política de Cookies aplica-se a <strong>yspcollective.com</strong>, operado pela YSP Collective (NIF 252439287), Portugal.<br>
+      Contacto: <a href="mailto:info@yspcollective.com">info@yspcollective.com</a>
+    </span>
+
+    <h2>O Que São Cookies</h2>
+    <p>Os cookies são pequenos ficheiros de texto colocados no seu dispositivo quando visita um website. São amplamente utilizados para fazer os websites funcionar, operar de forma mais eficiente e fornecer informações ao proprietário do site. Os cookies não são prejudiciais e não podem executar programas nem transmitir vírus.</p>
+
+    <h2>Como Utilizamos Cookies</h2>
+    <p>Utilizamos um número reduzido de cookies, agrupados em duas categorias: cookies essenciais sem os quais o site não pode funcionar, e cookies analíticos opcionais que apenas definimos com o seu consentimento.</p>
+
+    <div class="manage-box">
+      <strong>Gerir as suas preferências</strong><br>
+      Pode alterar o seu consentimento de cookies a qualquer momento através do nosso centro de preferências.
+      <br><button class="manage-btn" onclick="yspOpenCookieSettings()">Abrir Definições de Cookies</button>
+    </div>
+
+    <h2>Cookies Essenciais</h2>
+    <span class="cookie-category-label cat-essential">Sempre Ativos</span>
+    <p>Estes cookies são estritamente necessários para o funcionamento do website. Não podem ser desativados. Não o rastreiam nem armazenam qualquer informação de identificação pessoal.</p>
+
+    <table class="cookie-table">
+      <thead>
+        <tr>
+          <th>Cookie</th>
+          <th>Fornecedor</th>
+          <th>Finalidade</th>
+          <th>Duração</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ysp_cookie_consent</td>
+          <td>YSP Collective</td>
+          <td>Guarda as suas preferências de consentimento de cookies para não lhe perguntarmos em cada visita.</td>
+          <td>1 ano</td>
+        </tr>
+        <tr>
+          <td>ysp_lang</td>
+          <td>YSP Collective</td>
+          <td>Recorda o seu idioma preferido (EN, PT ou ES) entre visitas.</td>
+          <td>1 ano</td>
+        </tr>
+        <tr>
+          <td>ysp_popup_seen</td>
+          <td>YSP Collective</td>
+          <td>Recorda que já viu o popup de boas-vindas para não o mostrar repetidamente.</td>
+          <td>Sessão / persistente</td>
+        </tr>
+        <tr>
+          <td>ysp_bar_dismissed</td>
+          <td>YSP Collective</td>
+          <td>Recorda que dispensou a barra de anúncio.</td>
+          <td>Sessão</td>
+        </tr>
+        <tr>
+          <td>__stripe_mid</td>
+          <td>Stripe</td>
+          <td>Prevenção de fraude e segurança no processamento de pagamentos. Definido apenas quando avança para o checkout.</td>
+          <td>1 ano</td>
+        </tr>
+        <tr>
+          <td>__stripe_sid</td>
+          <td>Stripe</td>
+          <td>Prevenção de fraude e gestão de sessão no processamento de pagamentos.</td>
+          <td>30 minutos</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Cookies Analíticos</h2>
+    <span class="cookie-category-label cat-analytics">Requer Consentimento</span>
+    <p>Utilizamos o Google Analytics (GA4) para compreender como os visitantes utilizam o nosso site. Estes cookies apenas são definidos se aceitar os cookies analíticos através do nosso banner de consentimento. Os dados do Google Analytics são anonimizados e não são utilizados para o identificar pessoalmente. Não vendemos estes dados a terceiros.</p>
+
+    <table class="cookie-table">
+      <thead>
+        <tr>
+          <th>Cookie</th>
+          <th>Fornecedor</th>
+          <th>Finalidade</th>
+          <th>Duração</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>_ga</td>
+          <td>Google Analytics</td>
+          <td>Distingue utilizadores únicos através de um identificador gerado aleatoriamente. Utilizado para calcular dados de visitantes, sessões e campanhas.</td>
+          <td>2 anos</td>
+        </tr>
+        <tr>
+          <td>_ga_G-SPR047XTDH</td>
+          <td>Google Analytics</td>
+          <td>Utilizado pelo GA4 para manter o estado da sessão e rastrear visualizações de página para esta propriedade específica.</td>
+          <td>2 anos</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Cookies de Terceiros</h2>
+    <span class="cookie-category-label cat-third-party">Terceiros</span>
+    <p>O nosso website inclui um widget de avaliações do Trustpilot no rodapé. O Trustpilot pode definir os seus próprios cookies quando este widget é carregado. Não controlamos estes cookies. Consulte a <a href="https://legal.trustpilot.com/end-user-privacy-terms" target="_blank" rel="noopener">Política de Privacidade do Trustpilot</a> para mais informações.</p>
+    <p>O nosso email marketing é gerido pelo Brevo. O Brevo processa dados de email apenas do lado do servidor e não define cookies no seu browser através do nosso website.</p>
+
+    <h2>O Que Não Fazemos</h2>
+    <p>Não utilizamos cookies para publicidade, retargeting ou criação de perfis. Não partilhamos dados de cookies com anunciantes. Não utilizamos pixels de rastreamento de redes sociais.</p>
+
+    <h2>Como Controlar os Cookies</h2>
+    <p>Pode gerir as suas preferências de cookies para este site a qualquer momento clicando em "Definições de Cookies" no rodapé do nosso website, ou utilizando o botão acima.</p>
+    <p>Também pode controlar os cookies através das definições do seu browser. Para desativar o Google Analytics em todos os websites, pode utilizar o <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Add-on de Exclusão do Google Analytics</a>.</p>
+
+    <h2>Alterações a Esta Política</h2>
+    <p>Podemos atualizar esta Política de Cookies periodicamente. A versão atual será sempre publicada nesta página com a data da última atualização.</p>
+
+    <h2>Contacto</h2>
+    <p>Se tiver alguma questão sobre a nossa utilização de cookies, contacte-nos para <a href="mailto:info@yspcollective.com">info@yspcollective.com</a>.</p>
+
+  </div>
+
+  <!-- ══════════════════ ESPAÑOL ══════════════════ -->
+  <div class="policy-content" id="cookie-es">
+
+    <span class="policy-version">
+      Esta Política de Cookies se aplica a <strong>yspcollective.com</strong>, operado por YSP Collective (NIF 252439287), Portugal.<br>
+      Contacto: <a href="mailto:info@yspcollective.com">info@yspcollective.com</a>
+    </span>
+
+    <h2>Qué Son las Cookies</h2>
+    <p>Las cookies son pequeños archivos de texto que se colocan en su dispositivo cuando visita un sitio web. Se utilizan ampliamente para hacer que los sitios web funcionen, operen de manera más eficiente y para proporcionar información al propietario del sitio. Las cookies no son dañinas y no pueden ejecutar programas ni transmitir virus.</p>
+
+    <h2>Cómo Usamos las Cookies</h2>
+    <p>Usamos un número reducido de cookies, agrupadas en dos categorías: cookies esenciales sin las cuales el sitio no puede funcionar, y cookies analíticas opcionales que solo establecemos con su consentimiento.</p>
+
+    <div class="manage-box">
+      <strong>Gestionar sus preferencias</strong><br>
+      Puede cambiar su consentimiento de cookies en cualquier momento a través de nuestro centro de preferencias.
+      <br><button class="manage-btn" onclick="yspOpenCookieSettings()">Abrir Configuración de Cookies</button>
+    </div>
+
+    <h2>Cookies Esenciales</h2>
+    <span class="cookie-category-label cat-essential">Siempre Activas</span>
+    <p>Estas cookies son estrictamente necesarias para el funcionamiento del sitio web. No pueden desactivarse. No le rastrean ni almacenan ninguna información de identificación personal.</p>
+
+    <table class="cookie-table">
+      <thead>
+        <tr>
+          <th>Cookie</th>
+          <th>Proveedor</th>
+          <th>Finalidad</th>
+          <th>Duración</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ysp_cookie_consent</td>
+          <td>YSP Collective</td>
+          <td>Guarda sus preferencias de consentimiento de cookies para no preguntarle en cada visita.</td>
+          <td>1 año</td>
+        </tr>
+        <tr>
+          <td>ysp_lang</td>
+          <td>YSP Collective</td>
+          <td>Recuerda su idioma preferido (EN, PT o ES) entre visitas.</td>
+          <td>1 año</td>
+        </tr>
+        <tr>
+          <td>ysp_popup_seen</td>
+          <td>YSP Collective</td>
+          <td>Recuerda que ya vio el popup de bienvenida para no mostrarlo repetidamente.</td>
+          <td>Sesión / persistente</td>
+        </tr>
+        <tr>
+          <td>ysp_bar_dismissed</td>
+          <td>YSP Collective</td>
+          <td>Recuerda que descartó la barra de anuncio.</td>
+          <td>Sesión</td>
+        </tr>
+        <tr>
+          <td>__stripe_mid</td>
+          <td>Stripe</td>
+          <td>Prevención de fraude y seguridad en el procesamiento de pagos. Se establece solo cuando avanza al checkout.</td>
+          <td>1 año</td>
+        </tr>
+        <tr>
+          <td>__stripe_sid</td>
+          <td>Stripe</td>
+          <td>Prevención de fraude y gestión de sesión en el procesamiento de pagos.</td>
+          <td>30 minutos</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Cookies Analíticas</h2>
+    <span class="cookie-category-label cat-analytics">Requiere Consentimiento</span>
+    <p>Usamos Google Analytics (GA4) para entender cómo los visitantes usan nuestro sitio. Estas cookies solo se establecen si acepta las cookies analíticas a través de nuestro banner de consentimiento. Los datos de Google Analytics están anonimizados y no se usan para identificarle personalmente. No vendemos estos datos a terceros.</p>
+
+    <table class="cookie-table">
+      <thead>
+        <tr>
+          <th>Cookie</th>
+          <th>Proveedor</th>
+          <th>Finalidad</th>
+          <th>Duración</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>_ga</td>
+          <td>Google Analytics</td>
+          <td>Distingue usuarios únicos asignando un número generado aleatoriamente como identificador de cliente.</td>
+          <td>2 años</td>
+        </tr>
+        <tr>
+          <td>_ga_G-SPR047XTDH</td>
+          <td>Google Analytics</td>
+          <td>Usado por GA4 para mantener el estado de sesión y rastrear páginas vistas para esta propiedad específica.</td>
+          <td>2 años</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Cookies de Terceros</h2>
+    <span class="cookie-category-label cat-third-party">Terceros</span>
+    <p>Nuestro sitio web incluye un widget de reseñas de Trustpilot en el pie de página. Trustpilot puede establecer sus propias cookies cuando se carga este widget. No controlamos estas cookies. Consulte la <a href="https://legal.trustpilot.com/end-user-privacy-terms" target="_blank" rel="noopener">Política de Privacidad de Trustpilot</a> para más información.</p>
+    <p>Nuestro email marketing es gestionado por Brevo. Brevo procesa datos de email solo del lado del servidor y no establece cookies en su navegador a través de nuestro sitio web.</p>
+
+    <h2>Lo Que No Hacemos</h2>
+    <p>No usamos cookies para publicidad, retargeting o elaboración de perfiles. No compartimos datos de cookies con anunciantes. No usamos píxeles de seguimiento de redes sociales.</p>
+
+    <h2>Cómo Controlar las Cookies</h2>
+    <p>Puede gestionar sus preferencias de cookies para este sitio en cualquier momento haciendo clic en "Configuración de Cookies" en el pie de página de nuestro sitio web, o usando el botón de arriba.</p>
+    <p>Para desactivar Google Analytics en todos los sitios web, puede usar el <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Complemento de inhabilitación de Google Analytics</a>.</p>
+
+    <h2>Cambios en Esta Política</h2>
+    <p>Podemos actualizar esta Política de Cookies periódicamente. La versión actual siempre estará publicada en esta página con la fecha de última actualización.</p>
+
+    <h2>Contacto</h2>
+    <p>Si tiene alguna pregunta sobre nuestro uso de cookies, contáctenos en <a href="mailto:info@yspcollective.com">info@yspcollective.com</a>.</p>
+
+  </div>
+
+</div>
+
+<script>
+  (function() {
+    const tabs = document.querySelectorAll('.policy-lang-tab');
+    const contents = document.querySelectorAll('.policy-content');
+
+    function showLang(lang) {
+      const validLangs = ['en','pt','es'];
+      const target = validLangs.includes(lang) ? lang : 'en';
+      tabs.forEach(t => t.classList.toggle('active', t.dataset.lang === target));
+      contents.forEach(c => c.classList.toggle('active', c.id === 'cookie-' + target));
+    }
+
+    tabs.forEach(tab => tab.addEventListener('click', () => showLang(tab.dataset.lang)));
+
+    function initLang() {
+      try {
+        const siteLang = localStorage.getItem('ysp_lang') || 'en';
+        showLang(siteLang);
+      } catch(e) { showLang('en'); }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initLang);
+    } else {
+      initLang();
+    }
+
+    window.addEventListener('load', function() {
+      if (window.YSP_LANG) {
+        const orig = window.YSP_LANG.set;
+        window.YSP_LANG.set = function(code) {
+          orig(code);
+          showLang(code);
+        };
+      }
+    });
+  })();
+</script>

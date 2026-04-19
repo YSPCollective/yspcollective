@@ -14,23 +14,46 @@ collections:
     create: true
     slug: "{{slug}}"
     identifier_field: name
-    summary: "{{name}} — €{{price}}"
+    summary: "{{name}} — €{{price}} · {{stock_status}} · {{badge}}"
+    view_filters:
+      - label: "In Stock"
+        field: stock_status
+        pattern: "in_stock"
+      - label: "Low Stock"
+        field: stock_status
+        pattern: "low_stock"
+      - label: "Sold Out"
+        field: stock_status
+        pattern: "sold_out"
+      - label: "On Order"
+        field: stock_status
+        pattern: "on_order"
+      - label: "Coming Soon"
+        field: stock_status
+        pattern: "coming_soon"
+      - label: "Featured"
+        field: featured
+        pattern: true
+      - label: "Excluded from Feed"
+        field: exclude_from_feed
+        pattern: true
+    view_groups:
+      - label: "By Stock Status"
+        field: stock_status
+      - label: "By Brand"
+        field: brand
     fields:
+      # ── 1. IDENTITY ───────────────────────────────────────────────
       - { label: "Product Name", name: "name", widget: "string", hint: "e.g. Lattafa Yara 100ml" }
-      - { label: "URL Slug", name: "slug", widget: "string", hint: "IMPORTANT: Use only lowercase letters and hyphens. e.g. swiss-arabian-enigma-of-taif" }
-      - label: "Badge"
-        name: "badge"
-        widget: "select"
-        options: ["Bestseller", "Popular", "Curated", "New", "Limited", "Premium"]
-        default: ""
-        required: false
-      - { label: "Custom Badge Label", name: "custom_badge", widget: "string", required: false, hint: "Overrides badge above if filled in" }
+      - { label: "URL Slug", name: "slug", widget: "string", hint: "Lowercase letters and hyphens only. e.g. lattafa-yara-100ml" }
+
+      # ── 2. PRICING & CLASSIFICATION ──────────────────────────────
       - { label: "Price (€)", name: "price", widget: "string", hint: "e.g. 29.55" }
       - { label: "RRP / Was Price (€)", name: "rrp", widget: "string", required: false, hint: "Optional crossed-out price" }
       - label: "Brand"
         name: "brand"
         widget: "select"
-        options: ["Lattafa", "Armaf", "Arabiyat Prestige", "Swiss Arabian", "Maison Alhambra", "Al Haramain", "Rasasi", "Gulf Orchid", "Zimaya", "Ministry of Gourmand", "Lattafa Pride", "Other"]
+        options: ["Lattafa", "Armaf", "Arabiyat Prestige", "Swiss Arabian", "Maison Alhambra", "Rasasi", "Gulf Orchid", "Ministry of Gourmand", "Zimaya", "Al Haramain", "Rayhaan", "Tom Ford", "Creed", "Dior", "Chanel", "Roja Parfums", "YSL", "Other"]
       - label: "Gender"
         name: "gender"
         widget: "select"
@@ -39,70 +62,92 @@ collections:
       - label: "Concentration"
         name: "concentration"
         widget: "select"
-        options: ["Eau de Parfum (EDP)", "Eau de Toilette (EDT)", "Extrait de Parfum (EdP)", "Parfum", "Oil", "Other"]
+        options: ["Eau de Parfum (EDP)", "Eau de Toilette (EDT)", "Parfum", "Extrait de Parfum", "Oil", "Other"]
+      - label: "Badge"
+        name: "badge"
+        widget: "select"
+        options: ["Bestseller", "Popular", "Curated", "New", "Limited", "Premium", ""]
+        default: ""
+        required: false
+      - { label: "Custom Badge", name: "custom_badge", widget: "string", required: false, hint: "Overrides Badge above if filled in" }
+
+      # ── 3. STOCK & PUBLISHING ─────────────────────────────────────
+      - label: "Stock Status"
+        name: "stock_status"
+        widget: "select"
+        default: "in_stock"
+        options:
+          - { label: "✅ In Stock", value: "in_stock" }
+          - { label: "⚠️ Low Stock", value: "low_stock" }
+          - { label: "🔴 Last One", value: "last_one" }
+          - { label: "❌ Sold Out", value: "sold_out" }
+          - { label: "📦 On Order", value: "on_order" }
+          - { label: "📅 Pre-Order", value: "pre_order" }
+          - { label: "🔜 Coming Soon", value: "coming_soon" }
+      - { label: "Expected Date", name: "expected_date", widget: "string", required: false, hint: "e.g. April 2026 — shows on page when On Order or Pre-Order" }
+      - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, hint: "Show in Featured Fragrances section" }
+      - { label: "Published", name: "published", widget: "boolean", default: true }
+
+      # ── 4. FRAGRANCE PROFILE ──────────────────────────────────────
       - { label: "Fragrance Family", name: "fragrance_family", widget: "string", hint: "e.g. Oriental Vanilla / Amber Floral" }
       - { label: "Top Notes", name: "top_notes", widget: "string", hint: "e.g. Orchid, Heliotrope, Tangerine" }
       - { label: "Heart Notes", name: "heart_notes", widget: "string", required: false }
       - { label: "Base Notes", name: "base_notes", widget: "string", required: false }
-      - label: "Main Accords (for AI selector)"
-        name: "accords"
-        widget: "list"
-        hint: "Add each accord separately — e.g. vanilla, oud, musk, amber, floral, woody"
-        field: { label: "Accord", name: "accord", widget: "string" }
-      - { label: "Longevity", name: "longevity", widget: "string", required: false, hint: "e.g. 4–6 hours" }
-      - { label: "Projection", name: "projection", widget: "string", required: false, hint: "e.g. Moderate" }
-      - { label: "Best For", name: "best_for", widget: "string", required: false, hint: "e.g. Daytime wear, spring/summer" }
+      - { label: "Main Accords", name: "accords_text", widget: "string", required: false, hint: "Comma-separated e.g. vanilla, oud, musk, amber, floral" }
+      - { label: "Longevity", name: "longevity", widget: "string", required: false, hint: "e.g. 7–12 hours" }
+      - { label: "Projection", name: "projection", widget: "string", required: false, hint: "e.g. Strong" }
+      - { label: "Best For", name: "best_for", widget: "string", required: false, hint: "e.g. Evening wear, autumn/winter" }
       - { label: "Origin", name: "origin", widget: "string", default: "UAE" }
       - { label: "Launched", name: "launched", widget: "string", required: false, hint: "e.g. 2020" }
       - { label: "Vegan & Cruelty-Free", name: "vegan", widget: "boolean", default: false }
-      - label: "Main Product Image"
-        name: "image_main"
-        widget: "image"
+
+      # ── 5. IMAGES ─────────────────────────────────────────────────
+      - { label: "Main Product Image", name: "image_main", widget: "image" }
       - label: "Gallery Images"
         name: "gallery"
         widget: "list"
         required: false
         field: { label: "Image", name: "image", widget: "image" }
-      - { label: "Short Description", name: "description_short", widget: "text", hint: "Used on product cards on the homepage" }
-      - { label: "Full Description", name: "description_full", widget: "markdown", hint: "Full product page description" }
-      - { label: "YSP Thoughts (Why We Carry This)", name: "ysp_thoughts", widget: "markdown" }
-      - label: "Amazon Link"
-        name: "amazon_url"
-        widget: "string"
-        required: false
-      - label: "eBay Link"
-        name: "ebay_url"
-        widget: "string"
-        required: false
 
-      # ─── PORTUGUESE TRANSLATIONS ───────────────────────────────────
+      # ── 6. CONTENT ────────────────────────────────────────────────
+      - { label: "Short Description", name: "description_short", widget: "text", hint: "2-3 sentences shown on product cards" }
+      - { label: "Full Description", name: "description_full", widget: "markdown", hint: "Full product page description" }
+      - { label: "YSP Thoughts — Why We Carry This", name: "ysp_thoughts", widget: "markdown" }
+      - { label: "Amazon Link", name: "amazon_url", widget: "string", required: false }
+
+      # ── 6b. SCENT COMPARISON ──────────────────────────────────────
+      - { label: "In the same world as (Designer Name)", name: "inspired_by_name", widget: "string", required: false, hint: "e.g. Tom Ford Oud Wood — the well-known fragrance this sits alongside. Leave blank if no clear comparison." }
+      - { label: "Comparison Note", name: "inspired_by_note", widget: "string", required: false, hint: "Optional one-liner e.g. same dark resinous depth, stronger projection. Leave blank to use default phrasing." }
+
+      # ── 7. GOOGLE SHOPPING ────────────────────────────────────────
+      - { label: "GTIN / EAN Barcode", name: "gtin", widget: "string", required: false, hint: "13-digit barcode from the product box. Improves Google Shopping ad performance significantly." }
+      - { label: "Exclude from Google Shopping Feed", name: "exclude_from_feed", widget: "boolean", default: false, required: false, hint: "Check to hide this product from the Google Shopping XML feed." }
+      - { label: "Google Product Category Override", name: "google_product_category", widget: "string", required: false, hint: "Leave blank to use default. Override with full Google taxonomy string if needed." }
+
+      # ── 8. TRANSLATIONS ───────────────────────────────────────────
       - label: "🇵🇹 Portuguese Translation"
         name: "pt"
         widget: "object"
         collapsed: true
         required: false
-        hint: "Optional — leave blank to show English version"
+        hint: "Optional — leave blank to show English"
         fields:
           - { label: "Name (PT)", name: "name_pt", widget: "string", required: false }
           - { label: "Short Description (PT)", name: "description_short_pt", widget: "text", required: false }
           - { label: "Full Description (PT)", name: "description_full_pt", widget: "markdown", required: false }
           - { label: "YSP Thoughts (PT)", name: "ysp_thoughts_pt", widget: "markdown", required: false }
 
-      # ─── SPANISH TRANSLATIONS ──────────────────────────────────────
       - label: "🇪🇸 Spanish Translation"
         name: "es"
         widget: "object"
         collapsed: true
         required: false
-        hint: "Optional — leave blank to show English version"
+        hint: "Optional — leave blank to show English"
         fields:
           - { label: "Name (ES)", name: "name_es", widget: "string", required: false }
           - { label: "Short Description (ES)", name: "description_short_es", widget: "text", required: false }
           - { label: "Full Description (ES)", name: "description_full_es", widget: "markdown", required: false }
           - { label: "YSP Thoughts (ES)", name: "ysp_thoughts_es", widget: "markdown", required: false }
-
-      - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, hint: "Show this product in the Featured Fragrances section on the homepage" }
-      - { label: "Published", name: "published", widget: "boolean", default: true }
 
   # ─── SKINCARE / BEAUTY PRODUCTS ───────────────────────────────────
   - name: "beauty"
@@ -111,17 +156,37 @@ collections:
     create: true
     slug: "{{slug}}"
     identifier_field: name
-    summary: "{{name}} — €{{price}}"
+    summary: "{{name}} — €{{price}} · {{stock_status}} · {{badge}}"
+    view_filters:
+      - label: "In Stock"
+        field: stock_status
+        pattern: "in_stock"
+      - label: "Low Stock"
+        field: stock_status
+        pattern: "low_stock"
+      - label: "Sold Out"
+        field: stock_status
+        pattern: "sold_out"
+      - label: "On Order"
+        field: stock_status
+        pattern: "on_order"
+      - label: "Featured"
+        field: featured
+        pattern: true
+      - label: "Excluded from Feed"
+        field: exclude_from_feed
+        pattern: true
+    view_groups:
+      - label: "By Stock Status"
+        field: stock_status
+      - label: "By Brand"
+        field: brand
     fields:
-      - { label: "Product Name", name: "name", widget: "string" }
-      - { label: "URL Slug", name: "slug", widget: "string", hint: "e.g. beauty-of-joseon-relief-sun-spf50" }
-      - label: "Badge"
-        name: "badge"
-        widget: "select"
-        options: ["Bestseller", "Popular", "Curated", "New", "Limited", ""]
-        default: ""
-        required: false
-      - { label: "Custom Badge Label", name: "custom_badge", widget: "string", required: false }
+      # ── 1. IDENTITY ───────────────────────────────────────────────
+      - { label: "Product Name", name: "name", widget: "string", hint: "e.g. Beauty of Joseon Relief Sun SPF50+" }
+      - { label: "URL Slug", name: "slug", widget: "string", hint: "Lowercase letters and hyphens only. e.g. beauty-of-joseon-relief-sun-spf50" }
+
+      # ── 2. PRICING & CLASSIFICATION ──────────────────────────────
       - { label: "Price (€)", name: "price", widget: "string" }
       - { label: "RRP / Was Price (€)", name: "rrp", widget: "string", required: false }
       - label: "Brand"
@@ -133,53 +198,81 @@ collections:
         widget: "select"
         options: ["SPF / Sunscreen", "Moisturiser", "Serum", "Cleanser", "Toner", "Eye Cream", "Mask", "Oil", "Other"]
       - { label: "Size", name: "size", widget: "string", hint: "e.g. 50ml" }
+      - label: "Badge"
+        name: "badge"
+        widget: "select"
+        options: ["Bestseller", "Popular", "Curated", "New", "Limited", ""]
+        default: ""
+        required: false
+      - { label: "Custom Badge", name: "custom_badge", widget: "string", required: false }
+
+      # ── 3. STOCK & PUBLISHING ─────────────────────────────────────
+      - label: "Stock Status"
+        name: "stock_status"
+        widget: "select"
+        default: "in_stock"
+        options:
+          - { label: "✅ In Stock", value: "in_stock" }
+          - { label: "⚠️ Low Stock", value: "low_stock" }
+          - { label: "🔴 Last One", value: "last_one" }
+          - { label: "❌ Sold Out", value: "sold_out" }
+          - { label: "📦 On Order", value: "on_order" }
+          - { label: "📅 Pre-Order", value: "pre_order" }
+          - { label: "🔜 Coming Soon", value: "coming_soon" }
+      - { label: "Expected Date", name: "expected_date", widget: "string", required: false, hint: "e.g. April 2026 — shows on page when On Order or Pre-Order" }
+      - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, hint: "Show in Featured Beauty section" }
+      - { label: "Published", name: "published", widget: "boolean", default: true }
+
+      # ── 4. PRODUCT PROFILE ────────────────────────────────────────
       - { label: "Skin Type", name: "skin_type", widget: "string", hint: "e.g. All skin types, including sensitive" }
       - { label: "Key Ingredients", name: "key_ingredients", widget: "string" }
       - { label: "Free From", name: "free_from", widget: "string", required: false, hint: "e.g. Fragrance-free, essential oil-free" }
       - { label: "SPF Rating", name: "spf_rating", widget: "string", required: false, hint: "e.g. SPF50+ PA++++" }
       - { label: "Vegan & Cruelty-Free", name: "vegan", widget: "boolean", default: false }
-      - label: "Main Product Image"
-        name: "image_main"
-        widget: "image"
+
+      # ── 5. IMAGES ─────────────────────────────────────────────────
+      - { label: "Main Product Image", name: "image_main", widget: "image" }
       - label: "Gallery Images"
         name: "gallery"
         widget: "list"
         required: false
         field: { label: "Image", name: "image", widget: "image" }
+
+      # ── 6. CONTENT ────────────────────────────────────────────────
       - { label: "Short Description", name: "description_short", widget: "text" }
       - { label: "Full Description", name: "description_full", widget: "markdown" }
-      - { label: "YSP Thoughts (Why We Carry This)", name: "ysp_thoughts", widget: "markdown" }
+      - { label: "YSP Thoughts — Why We Carry This", name: "ysp_thoughts", widget: "markdown" }
       - { label: "Amazon Link", name: "amazon_url", widget: "string", required: false }
-      - { label: "eBay Link", name: "ebay_url", widget: "string", required: false }
 
-      # ─── PORTUGUESE TRANSLATIONS ───────────────────────────────────
+      # ── 7. GOOGLE SHOPPING ────────────────────────────────────────
+      - { label: "GTIN / EAN Barcode", name: "gtin", widget: "string", required: false, hint: "13-digit barcode from the product box. Improves Google Shopping ad performance significantly." }
+      - { label: "Exclude from Google Shopping Feed", name: "exclude_from_feed", widget: "boolean", default: false, required: false, hint: "Check to hide this product from the Google Shopping XML feed." }
+      - { label: "Google Product Category Override", name: "google_product_category", widget: "string", required: false, hint: "Leave blank to use default. Override with full Google taxonomy string if needed." }
+
+      # ── 8. TRANSLATIONS ───────────────────────────────────────────
       - label: "🇵🇹 Portuguese Translation"
         name: "pt"
         widget: "object"
         collapsed: true
         required: false
-        hint: "Optional — leave blank to show English version"
+        hint: "Optional — leave blank to show English"
         fields:
           - { label: "Name (PT)", name: "name_pt", widget: "string", required: false }
           - { label: "Short Description (PT)", name: "description_short_pt", widget: "text", required: false }
           - { label: "Full Description (PT)", name: "description_full_pt", widget: "markdown", required: false }
           - { label: "YSP Thoughts (PT)", name: "ysp_thoughts_pt", widget: "markdown", required: false }
 
-      # ─── SPANISH TRANSLATIONS ──────────────────────────────────────
       - label: "🇪🇸 Spanish Translation"
         name: "es"
         widget: "object"
         collapsed: true
         required: false
-        hint: "Optional — leave blank to show English version"
+        hint: "Optional — leave blank to show English"
         fields:
           - { label: "Name (ES)", name: "name_es", widget: "string", required: false }
           - { label: "Short Description (ES)", name: "description_short_es", widget: "text", required: false }
           - { label: "Full Description (ES)", name: "description_full_es", widget: "markdown", required: false }
           - { label: "YSP Thoughts (ES)", name: "ysp_thoughts_es", widget: "markdown", required: false }
-
-      - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, hint: "Show this product in the Featured Beauty section on the homepage" }
-      - { label: "Published", name: "published", widget: "boolean", default: true }
 
   # ─── SITE SETTINGS ────────────────────────────────────────────────
   - name: "settings"
@@ -192,5 +285,42 @@ collections:
           - { label: "Site Tagline", name: "tagline", widget: "string" }
           - { label: "Contact Email", name: "email", widget: "string" }
           - { label: "Amazon Store URL", name: "amazon_url", widget: "string" }
-          - { label: "eBay Store URL", name: "ebay_url", widget: "string" }
           - { label: "Instagram URL", name: "instagram_url", widget: "string", required: false }
+
+  # ─── BLOG POSTS ───────────────────────────────────────────────────────────
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "src/_posts"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}} — {{date}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", hint: "Short summary shown on blog listing and in search results (150–160 chars ideal)" }
+      - { label: "Publish Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, default: "" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Fragrance Guides", value: "fragrance" }
+          - { label: "Arabian Perfume", value: "arabian" }
+          - { label: "K-Beauty & Skincare", value: "skincare" }
+          - { label: "Brand Spotlights", value: "brands" }
+      - { label: "Category Label", name: "category_label", widget: "string", hint: "Display label e.g. 'Arabian Perfume'" }
+      - { label: "Author", name: "author", widget: "string", default: "YSP Collective", required: false }
+      - { label: "Read Time (minutes)", name: "read_time", widget: "number", default: 5, required: false }
+      - { label: "Hero Image", name: "image", widget: "image", required: false, hint: "Recommended 1200x630px" }
+      - label: "Post Images (Gallery)"
+        name: "gallery"
+        widget: "list"
+        required: false
+        hint: "Upload images here, then place them in your article body using: {% image \"filename.jpg\", \"Alt text\", \"size\" %} — Size options: full (full width), wide (wider than text), half (50% centred), left (floats left, text wraps right), right (floats right, text wraps left). Use just the filename e.g. lattafa-bottle.jpg — not the full path."
+        field: { label: "Image", name: "image", widget: "image" }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        default: ["posts"]
+        hint: "Always include 'posts'. Add topic tags e.g. oud, lattafa, k-beauty"
+      - { label: "Table of Contents (HTML)", name: "toc", widget: "text", required: false, hint: "Optional anchor links for sidebar TOC" }
+      - { label: "Body", name: "body", widget: "markdown" }

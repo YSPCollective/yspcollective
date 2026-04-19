@@ -1,0 +1,57 @@
+---
+permalink: /ysp-products-data.js
+eleventyExcludeFromCollections: true
+---
+// Auto-generated from CMS — do not edit manually
+// Rebuilds automatically when products are added or updated via admin
+
+const YSP_PRODUCTS_DATA = [
+{% for product in collections.fragrances %}{% set p = product.data %}
+  {
+    name: {{ p.name | jsonify | safe }},
+    slug: {{ p.slug | jsonify | safe }},
+    url: {{ ('/products/' + p.slug + '.html') | jsonify | safe }},
+    badge: {{ (p.custom_badge or p.badge or '') | jsonify | safe }},
+    price: {{ p.price | jsonify | safe }},
+    brand: {{ p.brand | jsonify | safe }},
+    type: "fragrance",
+    meta: {{ ((p.gender or '') + ' · Fragrance') | jsonify | safe }},
+    image_main: {{ p.image_main | jsonify | safe }},
+    concentration: {{ (p.concentration or '') | jsonify | safe }},
+    size: {{ (p.size or '') | jsonify | safe }},
+    fragrance_family: {{ (p.fragrance_family or '') | jsonify | safe }},
+    top_notes: {{ (p.top_notes or '') | jsonify | safe }},
+    heart_notes: {{ (p.heart_notes or '') | jsonify | safe }},
+    base_notes: {{ (p.base_notes or '') | jsonify | safe }},
+    accords: {{ (p.accords or []) | jsonify | safe }},
+    longevity: {{ (p.longevity or '') | jsonify | safe }},
+    projection: {{ (p.projection or '') | jsonify | safe }},
+    best_for: {{ (p.best_for or '') | jsonify | safe }},
+    gender: {{ (p.gender or '') | jsonify | safe }},
+    origin: {{ (p.origin or '') | jsonify | safe }},
+    launched: {{ (p.launched or '') | jsonify | safe }},
+    summary: {{ (p.description_short or '') | jsonify | safe }}
+  }{% if not loop.last %},{% endif %}
+{% endfor %}{% if collections.fragrances.length and collections.beauty.length %},{% endif %}
+{% for product in collections.beauty %}{% set p = product.data %}
+  {
+    name: {{ p.name | jsonify | safe }},
+    slug: {{ p.slug | jsonify | safe }},
+    url: {{ ('/products/' + p.slug + '.html') | jsonify | safe }},
+    badge: {{ (p.custom_badge or p.badge or '') | jsonify | safe }},
+    price: {{ p.price | jsonify | safe }},
+    brand: {{ p.brand | jsonify | safe }},
+    type: "beauty",
+    meta: {{ ('Skincare · ' + (p.category or '')) | jsonify | safe }},
+    image_main: {{ p.image_main | jsonify | safe }},
+    category: {{ (p.category or '') | jsonify | safe }},
+    size: {{ (p.size or '') | jsonify | safe }},
+    skin_type: {{ (p.skin_type or '') | jsonify | safe }},
+    key_ingredients: {{ (p.key_ingredients or '') | jsonify | safe }},
+    accords: [],
+    summary: {{ (p.description_short or '') | jsonify | safe }}
+  }{% if not loop.last %},{% endif %}
+{% endfor %}
+];
+
+if (typeof window !== 'undefined') window.YSP_PRODUCTS_DATA = YSP_PRODUCTS_DATA;
