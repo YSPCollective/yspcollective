@@ -43,6 +43,8 @@ collections:
       - label: "By Brand"
         field: brand
     fields:
+      # ── 1. IDENTITY ───────────────────────────────────────────────
+      - { label: "Product Name", name: "name", widget: "string", hint: "e.g. Lattafa Yara 100ml" }
       - { label: "URL Slug", name: "slug", widget: "string", hint: "Lowercase letters and hyphens only. e.g. lattafa-yara-100ml" }
 
       # ── 2. PRICING & CLASSIFICATION ──────────────────────────────
@@ -51,7 +53,7 @@ collections:
       - label: "Brand"
         name: "brand"
         widget: "select"
-        options: ["Lattafa", "Armaf", "Arabiyat Prestige", "Swiss Arabian", "Maison Alhambra", "Rasasi", "Gulf Orchid", "Ministry of Gourmand", "Zimaya", "Al Haramain", "Tom Ford", "Creed", "Dior", "Chanel", "Roja Parfums","YSL", "Other"]
+        options: ["Lattafa", "Armaf", "Arabiyat Prestige", "Swiss Arabian", "Maison Alhambra", "Rasasi", "Gulf Orchid", "Ministry of Gourmand", "Zimaya", "Al Haramain", "Rayhaan", "Tom Ford", "Creed", "Dior", "Chanel", "Roja Parfums", "YSL", "Other"]
       - label: "Gender"
         name: "gender"
         widget: "select"
@@ -180,6 +182,9 @@ collections:
       - label: "By Brand"
         field: brand
     fields:
+      # ── 1. IDENTITY ───────────────────────────────────────────────
+      - { label: "Product Name", name: "name", widget: "string", hint: "e.g. Beauty of Joseon Relief Sun SPF50+" }
+      - { label: "URL Slug", name: "slug", widget: "string", hint: "Lowercase letters and hyphens only. e.g. beauty-of-joseon-relief-sun-spf50" }
 
       # ── 2. PRICING & CLASSIFICATION ──────────────────────────────
       - { label: "Price (€)", name: "price", widget: "string" }
