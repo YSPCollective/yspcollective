@@ -103,6 +103,25 @@ module.exports = [
     ysp_take: "Rasasi is a house that rewards the curious. Less hyped than some contemporaries but consistently excellent — this is serious Arabian perfumery from people who have been doing it longer than most."
   },
 
+  // ── RAYHAAN ──────────────────────────────────────────────────────
+
+{
+    slug: "rayhaan",
+    name: "Rayhaan",
+    type: "fragrance",
+    origin: "Arabian Fragrance · Dubai, UAE",
+    origin_city: "Dubai",
+    founded: "2020",
+    tagline: "East meets West — luxury perfumery made accessible.",
+    stat_value: "2020",
+    stat_label: "Est.",
+    story_heading: "One perfumer's independent vision, built in Dubai.",
+    story: `<p>Rayhaan was founded in Dubai by Khalid — an Indian-born, Dubai-raised perfumer with a background in finance and marketing, and a lifelong obsession with fragrance. After years working within the industry, he launched Rayhaan as his own independent footprint: a curated alliance of his creative vision and the expertise of world-class perfumers.</p>
+<p>The range is deliberately wide. From rich, deep woody compositions to fresh marine and aquatic profiles; from mild citrus openings to powerful amber and oud finales. The philosophy is that no two people are alike, and no two fragrances should be either.</p>
+<p>What ties it together is the brand's core belief: that luxury should be accessible. Every bottle is built with high-quality ingredients and serious intent — without the markup that usually comes with it. The logo itself reflects this duality, designed by a Dubai calligraphy artist as a modern take on a centuries-old tradition.</p>`,
+    ysp_take: "Rayhaan's range is broader than most houses at this price point — there's something here regardless of your taste. The woody and leather compositions in particular are worth exploring."
+  },
+
   {
     slug: "al-haramain",
     name: "Al Haramain",
