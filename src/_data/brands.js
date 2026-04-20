@@ -173,21 +173,21 @@ module.exports = [
     ysp_take: "Zimaya is for customers who want to be remembered. These are big, confident fragrances that punch well above their weight. If you want something that lasts all day and gets noticed — this is it."
   },
 
-  {
-    slug: "ministry-of-gourmand",
-    name: "Ministry of Gourmand",
+{
+    slug: "paris-corner",
+    name: "Paris Corner",
     type: "fragrance",
     origin: "Arabian Fragrance · Dubai, UAE",
     origin_city: "Dubai",
-    founded: "2020",
-    tagline: "Indulgent, edible-inspired fragrances from the heart of Dubai.",
-    stat_value: "UAE",
-    stat_label: "Heritage",
-    story_heading: "Where fragrance meets indulgence.",
-    story: `<p>Ministry of Gourmand is a Dubai-based house with a deliciously specific focus: gourmand fragrances inspired by the world's most indulgent ingredients. Vanilla, caramel, chocolate, coffee, praline — these are scents that blur the line between perfume and dessert, and Ministry of Gourmand does them exceptionally well.</p>
-<p>Gourmand perfumery is one of the fastest-growing fragrance categories globally, driven by a generation of consumers who grew up wearing sweet, comforting scents and want that experience with adult sophistication. Ministry of Gourmand serves that demand with compositions that are rich and indulgent without becoming cloying or simplistic.</p>
-<p>Their fragrances consistently achieve remarkable longevity — the sweet, resinous nature of gourmand ingredients means they bond beautifully with skin and last for hours. For anyone who loves Lattafa Khamrah or similar sweet orientals, Ministry of Gourmand is an essential discovery.</p>`,
-    ysp_take: "If Khamrah is your kind of fragrance, you need to try Ministry of Gourmand. They've made gourmand their entire identity and they're very, very good at it."
+    founded: "1995",
+    tagline: "Parisian elegance meets Middle Eastern opulence.",
+    stat_value: "400+",
+    stat_label: "Fragrances Created",
+    story_heading: "Four decades of fragrance mastery.",
+    story: `<p>Paris Corner is a Dubai-based fragrance house with a legacy spanning over four decades, officially established as a brand nearly 30 years ago. Built on a simple but powerful idea — that exceptional fragrance should be accessible to everyone — Paris Corner has grown from humble beginnings into an international name with over 400 creations in their catalogue.</p>
+<p>What makes Paris Corner distinctive is their ability to bridge two great perfumery traditions: the timeless elegance of Parisian composition and the opulent warmth of Middle Eastern olfactory craft. The result is a portfolio that spans bold orientals, richly sweet gourmands, and sophisticated modern compositions, all crafted with genuine quality of raw materials.</p>
+<p>Their collections each tell their own story — Ministry of Gourmand for indulgent, dessert-inspired sweetness; Pendora Scents for accessible takes on iconic DNA; Emir for classic Arabian richness; North Stag for fresh, contemporary masculines. Perfumers Leandro Petit and Daniel René have shaped much of the range, bringing real craft to every release. Whatever the collection, the Paris Corner signature remains consistent: generous longevity, bold projection, and pricing that makes niche-quality fragrance genuinely accessible.</p>`,
+    ysp_take: "Paris Corner is one of the most underrated houses in Arabian perfumery. The Ministry of Gourmand collection alone is worth exploring if you love rich, indulgent scents — and the breadth of their wider catalogue means there's something here for everyone, at prices that remove every excuse not to try."
   },
 
   // ── EUROPEAN BRANDS ─────────────────────────────────────────────────────
