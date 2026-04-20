@@ -1,6 +1,6 @@
 ---
 price: "39.50"
-brand: Ministry of Gourmand
+brand: Paris Corner
 gender: Unisex
 size: 100ml
 badge: Curated
@@ -14,7 +14,7 @@ origin: UAE
 launched: "2024"
 vegan: false
 image_main: /images/uploads/375x500.101955.jpeg
-description_short: A sun-drenched, tropical gourmand from Ministry of Gourmand —
+description_short: A sun-drenched, tropical gourmand from Paris Corner —
   creamy coconut and warm lagoon vibes bottled into an EDP that feels like a
   holiday you don't want to end.
 description_full: >-
