@@ -7,7 +7,7 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  # ─── FRAGRANCE PRODUCTS  ───────────────────────────────────────────
+  # ─── FRAGRANCE PRODUCTS ───────────────────────────────────────────
   - name: "fragrances"
     label: "Fragrances"
     folder: "src/_products/fragrances"
