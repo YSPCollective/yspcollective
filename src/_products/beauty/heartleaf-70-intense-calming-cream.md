@@ -16,13 +16,15 @@ free_from: Fragrance-free, paraben-free, alcohol-free, sulfate-free, mineral
   oil-free, artificial colour-free
 spf_rating: ""
 vegan: false
-image_main: /products/anua/heartleaf-70-intense-moisturizer/heartleaf-70-intense-calming-cream-image-main.png
+image_main: /images/uploads/anua-cream-70-1.jpeg
 gallery:
-  - /products/anua/heartleaf-70-intense-moisturizer/heartleaf-70-intense-calming-cream-image-main.png
-  - /products/anua/heartleaf-70-intense-moisturizer/heartleaf-70-intense-calming-cream-image-2.jpeg
-  - /products/anua/heartleaf-70-intense-moisturizer/heartleaf-70-intense-calming-cream-image-3.jpeg
-  - /products/anua/heartleaf-70-intense-moisturizer/heartleaf-70-intense-calming-cream-image-4.jpeg
+  - /images/uploads/anua-cream-2.jpeg
+  - /images/uploads/anua-cream-3.jpeg
   - /products/anua/heartleaf-70-intense-moisturizer/heartleaf-70-intense-calming-cream-image-5.jpeg
+  - /images/uploads/anua-cream-4.jpeg
+  - /images/uploads/anua-cream-5.jpeg
+  - /images/uploads/anua-cream-6.jpeg
+  - /images/uploads/anua-cream-7.jpeg
 description_short: 70% heartleaf extract moisturiser for sensitive and reactive
   skin. Rich, creamy texture that absorbs without greasiness. Fragrance-free,
   barrier-repairing.
