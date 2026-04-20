@@ -33,6 +33,7 @@
  *   POST /stripe-webhook
  *   POST /subscribe
  *   GET  /reviews/{slug}
+ *   GET  /reviews/averages
  *   POST /reviews/submit
  *   POST /reviews/approve
  *   GET  /health
@@ -486,6 +487,7 @@ export default {
     if (url.pathname === '/subscribe'     && method === 'POST') return handleSubscribe(request, env);
 
     // ── REVIEWS ──
+    if (url.pathname === '/reviews/averages'  && method === 'GET')  return handleReviewsAverages(env);
     if (url.pathname.startsWith('/reviews/') && method === 'GET')  return handleReviewsGet(url, env);
     if (url.pathname === '/reviews/submit'   && method === 'POST') return handleReviewSubmit(request, env);
     if (url.pathname === '/reviews/approve'  && method === 'POST') return handleReviewApprove(request, env);
@@ -896,6 +898,39 @@ async function sendReviewAdminNotification(env, { review, pendingKey }) {
       htmlContent: html,
     }),
   });
+}
+
+// GET /reviews/averages — returns average rating + count for all products
+async function handleReviewsAverages(env) {
+  try {
+    const list = await env.YSP_USERS.list({ prefix: 'review:approved:' });
+    const map = {};
+
+    for (const key of list.keys) {
+      const raw = await env.YSP_USERS.get(key.name);
+      if (!raw) continue;
+      try {
+        const review = JSON.parse(raw);
+        const slug = review.slug;
+        if (!slug) continue;
+        if (!map[slug]) map[slug] = { total: 0, count: 0 };
+        map[slug].total += review.rating;
+        map[slug].count += 1;
+      } catch(_) {}
+    }
+
+    const averages = {};
+    for (const [slug, data] of Object.entries(map)) {
+      averages[slug] = {
+        average: Math.round((data.total / data.count) * 10) / 10,
+        count: data.count
+      };
+    }
+
+    return json(averages);
+  } catch (err) {
+    return json({ error: err.message }, 500);
+  }
 }
 
 // ── AUTH HANDLERS ─────────────────────────────────────────────────────────────
