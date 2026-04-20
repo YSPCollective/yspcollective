@@ -3,8 +3,8 @@ rrp: ""
 gender: Unisex
 size: 80ml
 badge: Curated
-stock_status: low_stock
-published: true
+stock_status: sold_out
+published: false
 longevity: 4-6 hours
 projection: Moderate
 best_for: Daytime wear, spring/summer, casual and smart-casual occasions
@@ -40,14 +40,14 @@ ysp_thoughts: >
 inspired_by_name: Maison Margiela Replica Flower Market
 inspired_by_note: light floral-musky, similar airy softness
 ebay_url: ""
-price: "28.95"
-brand: Arabiyat Prestige
-heart_notes: Tiare, Jasmine, Rose, White Flowers
-origin: UAE
 name: Arabiyat Prestige Nyla 80ml
 slug: arabiyat-prestige-nyla-80ml-eau-de-parfum-unisex-perfume
+price: "28.95"
+brand: Arabiyat Prestige
 concentration: Eau de Parfum (EDP)
 featured: false
+heart_notes: Tiare, Jasmine, Rose, White Flowers
+origin: UAE
 exclude_from_feed: true
 accords:
   - floral
