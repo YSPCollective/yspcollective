@@ -1,10 +1,14 @@
 ---
+name: Al Haramain Amber Oud Dubai Night Extrait de Parfum 100ml
+slug: al-haramain-amber-oud-dubai-night
 price: "49.99"
 rrp: "69.99"
 brand: Al Haramain
 gender: Men
 size: 100ml
+concentration: Extrait de Parfum
 badge: Curated
+featured: false
 published: true
 heart_notes: Agarwood, Bulgarian Rose, Lily of the Valley
 longevity: 10+ hours
@@ -14,7 +18,7 @@ origin: UAE
 launched: "2024"
 vegan: false
 gallery:
-  - /images/uploads/ahp1485_with_box.jpeg
+  - /images/uploads/ahp1485_.jpeg
   - /images/uploads/ahp1485_pyramid.jpeg
   - /images/uploads/ahp1485_solo_2.jpeg
   - /images/uploads/ahp1485_.jpeg
@@ -37,10 +41,6 @@ ysp_thoughts: >-
 
   If you have clients who find designer fragrances too light or too fleeting, this is the answer. Strong salon performer.
 inspired_by_note: dark amber-oud oriental, similar evening character
-name: Al Haramain Amber Oud Dubai Night Extrait de Parfum 100ml
-slug: al-haramain-amber-oud-dubai-night
-concentration: Extrait de Parfum
-featured: false
 exclude_from_feed: true
 accords:
   - amber
@@ -53,11 +53,11 @@ accords:
   - vanilla
   - fresh spicy
   - metallic
-stock_status: on_order
+stock_status: coming_soon
 fragrance_family: Woody Oriental Oud
 top_notes: Saffron, Bergamot, Elemi
 base_notes: Tonka Bean, Amber, White Must, Oakmoss
-image_main: /images/uploads/ahp1485_.jpeg
+image_main: /images/uploads/ahp1485_with_box.jpeg
 description_short: A bold, smoky oriental from Al Haramain — one of the Gulf's
   most established fragrance houses. Dubai Night is a dark, addictive blend of
   oud and amber with serious projection and all-night longevity.
