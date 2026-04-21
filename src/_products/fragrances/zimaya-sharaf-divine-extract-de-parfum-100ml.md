@@ -1,15 +1,21 @@
 ---
+name: Zimaya Sharaf Divine Extract de parfum 100ml
+slug: zimaya-sharaf-divine
 price: "39.99"
 brand: Zimaya
 gender: Unisex
 size: 100ml
+concentration: Eau de Parfum (EDP)
 badge: Premium
 stock_status: in_stock
+featured: true
 published: true
 fragrance_family: Floral Woody Oriental Spicy
 top_notes: Raspberry, Cinnamon, Bergamot
 heart_notes: Apple, Caramel, Rose
 base_notes: Cognac, Vanilla, Amber, Tonka Beans, Moss
+accords_text: fruity, sweet, warm spicy, vanilla, woody, cinnamon, amber, rose,
+  caramel, citrus
 longevity: 8-10 hours
 projection: Strong
 origin: UAE
@@ -20,39 +26,35 @@ gallery:
   - /images/uploads/sharaf_divine.png
   - /images/uploads/sharaf_divine_1.jpeg
   - /images/uploads/sharaf_divine-1.png
-description_short: The refined counterpart to Sharaf the Club — Divine takes the
-  same bold Zimaya DNA and elevates it into something more elegant, more
-  complex, and deeply luxurious.
+description_short: A gourmand oriental that opens with playful raspberry and
+  spice before revealing a warm, cognac-laced heart.  Sharaf Divine is Zimaya's
+  most indulgent release yet.
 description_full: >-
-  
-  Zimaya Sharaf Divine Extrait de Parfum opens with a rich interplay of saffron and rose — two cornerstones of Arabian perfumery — before deepening into a heart of oud, incense, and warm spices. 
+  Zimaya Sharaf Divine Extrait de Parfum opens with a vibrant burst of
+  raspberry, cinnamon, and bergamot, bright, spiced, and immediately
+  compelling. 
 
 
-  The extrait concentration allows the composition to unfold slowly and deliberately, each stage more compelling than the last. 
+  The heart deepens into caramel, apple, and rose, adding a rich sweetness that feels luxurious rather than cloying. The base is where it earns its name. cognac, tonka bean, vanilla, amber, and moss create a warm, smooth, almost boozy dry-down that lingers long after the opening has faded. 
 
 
-  Where Sharaf the Club leans into darkness and energy, Divine leans into ceremony and refinement — this is a fragrance that feels considered and unhurried. 
+  The extrait concentration gives everything exceptional weight and longevity. Projection is bold without being overpowering.
 
-
-  The base of sandalwood, amber, and musks is seamlessly blended, giving the dry-down a velvety smoothness that lasts well into the following day. Projection is commanding without being aggressive. 
-
-
-  Suited to special occasions, formal settings, and anyone who treats fragrance as the final word in how they present themselves.
+   In the world of fragrance, this sits firmly in the Angel's Share family. if Kilian's iconic cognac-and-vanilla accord appeals to you, Divine delivers that same sophistication at a fraction of the price.
 ysp_thoughts: >-
-  
-  If Sharaf the Club is the night out, Divine is the dinner before it. There's a gravitas to this one that you don't often find outside of fragrances costing three or four times the price. 
+  This is the one that surprises people. Raspberry and cognac sounds like a
+  cocktail. and in the best possible way, it is. 
 
 
-  Saffron and oud is a combination that's been refined over centuries of Arabian perfumery, and Zimaya's version does it genuine justice. 
+  Zimaya consistently punches above its price point and Divine is no exception. 
 
 
-  We stocked this because it's the kind of fragrance that makes people stop and ask — and that conversation is always a good one.
-inspired_by_name: Tom Ford Black Orchid
-inspired_by_note: dark floral-oriental, similar gourmand resin drydown
-name: Zimaya Sharaf Divine Extract de parfum 100ml
-slug: zimaya-sharaf-divine
-concentration: Eau de Parfum (EDP)
-featured: true
+  We chose it because it fills a specific gap: the special occasion gourmand that feels genuinely luxurious without costing €280.
+
+
+  It's the Angel's Share conversation starter, at a price that makes sense.
+inspired_by_name: Angels' Share Paradis by Kilian
+inspired_by_note: ""
 gtin: "6290171077213"
 exclude_from_feed: false
 ---
