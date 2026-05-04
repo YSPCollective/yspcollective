@@ -8,7 +8,7 @@ size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
 stock_status: in_stock
-featured: false
+featured: true
 published: true
 fragrance_family: Amber Citrus Woody
 top_notes: Mandarin Orange, Orange, Saffron, Sage
