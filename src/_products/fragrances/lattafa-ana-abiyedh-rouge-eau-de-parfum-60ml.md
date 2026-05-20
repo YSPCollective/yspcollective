@@ -7,7 +7,7 @@ gender: Women
 size: 60ml
 concentration: Eau de Parfum (EDP)
 badge: Bestseller
-stock_status: coming_soon
+stock_status: in_stock
 featured: false
 published: true
 fragrance_family: Woody Spicy

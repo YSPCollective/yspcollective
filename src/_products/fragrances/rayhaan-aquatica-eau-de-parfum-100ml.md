@@ -7,8 +7,8 @@ gender: Men
 size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
-stock_status: coming_soon
-featured: false
+stock_status: in_stock
+featured: true
 published: true
 fragrance_family: Citrus Gourmand
 top_notes: Lime, Coconut Milk, Bergamot, Mandarin

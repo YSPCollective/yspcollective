@@ -7,7 +7,7 @@ gender: Women
 size: 50ml
 concentration: Parfum
 badge: Premium
-stock_status: low_stock
+stock_status: sold_out
 featured: false
 published: true
 fragrance_family: Floral Chypre
