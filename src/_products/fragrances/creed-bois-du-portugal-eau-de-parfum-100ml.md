@@ -8,7 +8,7 @@ size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: ""
 custom_badge: Our Home
-stock_status: low_stock
+stock_status: sold_out
 featured: false
 published: true
 fragrance_family: Aromatic Spicy Woody
