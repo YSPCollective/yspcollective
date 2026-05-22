@@ -7,7 +7,7 @@ gender: Men
 size: 90ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
-stock_status: low_stock
+stock_status: in_stock
 featured: true
 published: true
 fragrance_family: Aromatic Fresh Woody
