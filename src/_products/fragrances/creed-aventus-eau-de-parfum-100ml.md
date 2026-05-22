@@ -8,7 +8,7 @@ size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Premium
 custom_badge: ""
-stock_status: low_stock
+stock_status: sold_out
 featured: false
 published: true
 fragrance_family: Fruity Chypre
