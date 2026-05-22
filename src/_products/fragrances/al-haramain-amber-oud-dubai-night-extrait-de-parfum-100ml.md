@@ -53,7 +53,7 @@ accords:
   - vanilla
   - fresh spicy
   - metallic
-stock_status: low_stock
+stock_status: in_stock
 fragrance_family: Woody Oriental Oud
 top_notes: Saffron, Bergamot, Elemi
 base_notes: Tonka Bean, Amber, White Must, Oakmoss
