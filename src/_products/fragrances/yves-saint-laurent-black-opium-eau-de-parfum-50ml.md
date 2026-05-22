@@ -7,7 +7,7 @@ gender: Women
 size: 50ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
-stock_status: in_stock
+stock_status: sold_out
 featured: false
 published: true
 fragrance_family: Floral Gourmand Oriental
