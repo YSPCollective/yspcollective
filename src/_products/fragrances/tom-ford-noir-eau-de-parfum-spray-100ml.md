@@ -7,7 +7,7 @@ gender: Men
 size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Premium
-stock_status: low_stock
+stock_status: sold_out
 featured: false
 published: true
 fragrance_family: Oriental Woody Spicy
