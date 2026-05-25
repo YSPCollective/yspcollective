@@ -16,6 +16,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "images": "images" });
   eleventyConfig.addPassthroughCopy({ "products": "products" });
   eleventyConfig.addPassthroughCopy("src/*.js");
+  eleventyConfig.addPassthroughCopy({ "src/yspcart.js": "yspcart.js" });
 
   // Favicon files (root → _site root)
   eleventyConfig.addPassthroughCopy({ "favicon.ico": "favicon.ico" });
