@@ -306,10 +306,9 @@ function buildOrderConfirmationHtml(lang, firstName, lineItems, total, shippingC
 </html>`;
 }
 
-async function sendOrderConfirmationEmail(env, session) {
+async function sendOrderConfirmationEmail(env, session, lineItems = []) {
   const apiKey = env.BREVO_API_KEY;
-  const stripeKey = env.STRIPE_SECRET_KEY;
-  if (!apiKey || !stripeKey) return;
+  if (!apiKey) return;
 
   const customerEmail = session.customer_details?.email;
   const customerName = session.customer_details?.name || "Customer";
@@ -319,21 +318,6 @@ async function sendOrderConfirmationEmail(env, session) {
   const lang = detectLang(session);
   const total = ((session.amount_total || 0) / 100).toFixed(2);
   const shippingCost = session.shipping_cost ? (session.shipping_cost.amount_total / 100).toFixed(2) : "0.00";
-
-  // Fetch line items from Stripe
-  let lineItems = [];
-  try {
-    const res = await fetch(
-      `https://api.stripe.com/v1/checkout/sessions/${session.id}/line_items?limit=20&expand[]=data.price.product`,
-      { headers: { Authorization: `Bearer ${stripeKey}` } }
-    );
-    if (res.ok) {
-      const data = await res.json();
-      lineItems = data.data || [];
-    }
-  } catch (err) {
-    console.error("Failed to fetch line items:", err.message);
-  }
 
   const c = ORDER_CONFIRM_CONTENT[lang] || ORDER_CONFIRM_CONTENT.en;
   const html = buildOrderConfirmationHtml(lang, firstName, lineItems, total, shippingCost);
@@ -352,6 +336,108 @@ async function sendOrderConfirmationEmail(env, session) {
   if (!res.ok) {
     const err = await res.text();
     throw new Error(`Brevo order confirm error ${res.status}: ${err}`);
+  }
+}
+
+async function sendOrderAdminNotification(env, session, lineItems) {
+  const apiKey = env.BREVO_API_KEY;
+  if (!apiKey) return;
+
+  const customerName = session.customer_details?.name || "Customer";
+  const customerEmail = session.customer_details?.email || "—";
+  const total = ((session.amount_total || 0) / 100).toFixed(2);
+  const shippingCost = session.shipping_cost ? (session.shipping_cost.amount_total / 100).toFixed(2) : "0.00";
+  const shippingDisplay = parseFloat(shippingCost) === 0 ? "Free" : `€${shippingCost}`;
+
+  const addr = session.shipping?.address || session.customer_details?.address;
+  const addressHtml = addr
+    ? `${addr.line1 || ""}${addr.line2 ? ", " + addr.line2 : ""}, ${addr.city || ""}, ${addr.postal_code || ""}, ${addr.country || ""}`
+    : "—";
+
+  const itemRows = lineItems.map((item) => {
+    const name = item.description || item.price?.product?.name || "Product";
+    const qty = item.quantity || 1;
+    const unitAmount = item.price?.unit_amount ? (item.price.unit_amount / 100).toFixed(2) : "—";
+    const lineTotal = item.amount_total ? (item.amount_total / 100).toFixed(2) : "—";
+    return `<tr>
+      <td style="padding:8px 0;border-bottom:1px solid #eee;font-size:14px;">${name}</td>
+      <td style="padding:8px 0;border-bottom:1px solid #eee;font-size:14px;text-align:center;">${qty}</td>
+      <td style="padding:8px 0;border-bottom:1px solid #eee;font-size:14px;text-align:right;">€${unitAmount}</td>
+      <td style="padding:8px 0;border-bottom:1px solid #eee;font-size:14px;text-align:right;">€${lineTotal}</td>
+    </tr>`;
+  }).join("");
+
+  const html = `<!DOCTYPE html>
+<html>
+<body style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;max-width:600px;margin:0 auto;padding:24px;color:#1a1916;background:#f3efe8;">
+  <div style="background:#faf8f5;border:1px solid #e6dfd4;padding:32px;">
+
+    <div style="text-align:center;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid #e6dfd4;">
+      <p style="font-family:Georgia,serif;font-size:22px;font-weight:300;color:#1a1916;letter-spacing:0.06em;margin:0;">YSP</p>
+      <p style="font-size:8px;letter-spacing:0.4em;text-transform:uppercase;color:#8a847a;margin:2px 0 8px;">COLLECTIVE</p>
+      <p style="font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:#9c7b56;margin:0;font-weight:500;">New Order Received</p>
+    </div>
+
+    <table style="width:100%;border-collapse:collapse;margin-bottom:24px;">
+      <tr>
+        <td style="padding:6px 0;color:#8a847a;font-size:13px;width:130px;">Customer</td>
+        <td style="padding:6px 0;font-size:13px;color:#1a1916;">${customerName}</td>
+      </tr>
+      <tr>
+        <td style="padding:6px 0;color:#8a847a;font-size:13px;">Email</td>
+        <td style="padding:6px 0;font-size:13px;color:#1a1916;">${customerEmail}</td>
+      </tr>
+      <tr>
+        <td style="padding:6px 0;color:#8a847a;font-size:13px;">Ship to</td>
+        <td style="padding:6px 0;font-size:13px;color:#1a1916;">${addressHtml}</td>
+      </tr>
+    </table>
+
+    <p style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8a847a;margin:0 0 10px;">Items</p>
+    <table style="width:100%;border-collapse:collapse;margin-bottom:20px;">
+      <thead>
+        <tr>
+          <th style="padding:6px 0;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#8a847a;text-align:left;border-bottom:1px solid #e6dfd4;">Product</th>
+          <th style="padding:6px 0;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#8a847a;text-align:center;border-bottom:1px solid #e6dfd4;">Qty</th>
+          <th style="padding:6px 0;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#8a847a;text-align:right;border-bottom:1px solid #e6dfd4;">Unit</th>
+          <th style="padding:6px 0;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#8a847a;text-align:right;border-bottom:1px solid #e6dfd4;">Line</th>
+        </tr>
+      </thead>
+      <tbody>${itemRows}</tbody>
+    </table>
+
+    <table style="width:100%;border-collapse:collapse;">
+      <tr>
+        <td style="padding:6px 0;font-size:13px;color:#8a847a;">Shipping</td>
+        <td style="padding:6px 0;font-size:13px;color:#8a847a;text-align:right;">${shippingDisplay}</td>
+      </tr>
+      <tr>
+        <td style="padding:8px 0 0;font-size:15px;font-weight:600;color:#1a1916;border-top:1px solid #e6dfd4;">Total</td>
+        <td style="padding:8px 0 0;font-size:15px;font-weight:600;color:#1a1916;text-align:right;border-top:1px solid #e6dfd4;">€${total}</td>
+      </tr>
+    </table>
+
+  </div>
+  <p style="text-align:center;font-size:11px;color:#b5afa5;margin:16px 0 0;">
+    <a href="https://dashboard.stripe.com/payments" style="color:#9c7b56;text-decoration:none;">View in Stripe →</a>
+  </p>
+</body>
+</html>`;
+
+  const res = await fetch("https://api.brevo.com/v3/smtp/email", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "api-key": apiKey },
+    body: JSON.stringify({
+      sender: { name: "YSP Orders", email: "info@yspcollective.com" },
+      to: [{ email: "info@yspcollective.com", name: "Stephen" }],
+      subject: `🛍 New order — ${customerName} — €${total}`,
+      htmlContent: html
+    })
+  });
+
+  if (!res.ok) {
+    const err = await res.text();
+    throw new Error(`Brevo admin notify error ${res.status}: ${err}`);
   }
 }
 
@@ -623,15 +709,38 @@ async function handleStripeWebhook(request, env) {
 
     const lang = detectLang(session);
 
-    // 1. Send order confirmation immediately
+    // Fetch line items once — used by both emails
+    let lineItems = [];
     try {
-      await sendOrderConfirmationEmail(env, session);
+      const liRes = await fetch(
+        `https://api.stripe.com/v1/checkout/sessions/${session.id}/line_items?limit=20&expand[]=data.price.product`,
+        { headers: { Authorization: `Bearer ${env.STRIPE_SECRET_KEY}` } }
+      );
+      if (liRes.ok) {
+        const liData = await liRes.json();
+        lineItems = liData.data || [];
+      }
+    } catch (err) {
+      console.error("Failed to fetch line items:", err.message);
+    }
+
+    // 1. Send order confirmation to customer
+    try {
+      await sendOrderConfirmationEmail(env, session, lineItems);
       console.log(`Order confirmation sent to ${customerEmail}`);
     } catch (err) {
       console.error("Order confirmation email failed:", err.message);
     }
 
-    // 2. Schedule review email for 6 days later
+    // 2. Send admin notification to Stephen
+    try {
+      await sendOrderAdminNotification(env, session, lineItems);
+      console.log(`Admin order notification sent`);
+    } catch (err) {
+      console.error("Admin order notification failed:", err.message);
+    }
+
+    // 3. Schedule review email for 6 days later
     const sendAfter = Date.now() + 6 * 24 * 60 * 60 * 1000;
     const reviewKey = `review_pending:${session.id}`;
     await env.YSP_USERS.put(
