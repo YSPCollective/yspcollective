@@ -102,7 +102,8 @@
             quantity: item.quantity
           })),
           success_url: window.location.origin + '/checkout-success.html',
-          cancel_url: window.location.href
+          cancel_url: window.location.href,
+          subtotal: getTotal()
         })
       });
 
