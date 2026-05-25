@@ -809,17 +809,14 @@ async function handleCheckout(request, env) {
     };
   });
 
-  // Calculate subtotal to determine shipping rate
-  // Use frontend-provided subtotal if available, otherwise derive from inline items
+  // Select shipping rate based on cart total
   const cartTotal = typeof subtotal === "number"
     ? subtotal
     : items.reduce((sum, item) => sum + ((item.price || 0) * (item.quantity || 1)), 0);
 
-  const FREE_SHIPPING_THRESHOLD = 50;
-  const SHIPPING_AMOUNT = cartTotal >= FREE_SHIPPING_THRESHOLD ? 0 : 500; // cents
-  const shippingLabel = SHIPPING_AMOUNT === 0
-    ? "Free Shipping — Mainland PT & ES (2–5 business days)"
-    : "Standard Shipping — Mainland PT & ES (2–5 business days) — €5.00";
+  const SHIPPING_RATE_ID = cartTotal >= 50
+    ? "shr_1Tb5ySBUWm11KZzMBTAW1hRV"  // Free shipping (orders >= €50)
+    : "shr_1Tb5v1BUWm11KZzMQ6QK82fP"; // €5.00 standard shipping
 
   const origin = request.headers.get("Origin") || "https://yspcollective.com";
 
@@ -835,15 +832,8 @@ async function handleCheckout(request, env) {
 
   if (lang) params.append("metadata[lang]", lang);
 
-  // Shipping option
-  params.append("shipping_options[0][shipping_rate_data][type]", "fixed_amount");
-  params.append("shipping_options[0][shipping_rate_data][display_name]", shippingLabel);
-  params.append("shipping_options[0][shipping_rate_data][fixed_amount][amount]", SHIPPING_AMOUNT);
-  params.append("shipping_options[0][shipping_rate_data][fixed_amount][currency]", "eur");
-  params.append("shipping_options[0][shipping_rate_data][delivery_estimate][minimum][unit]", "business_day");
-  params.append("shipping_options[0][shipping_rate_data][delivery_estimate][minimum][value]", "2");
-  params.append("shipping_options[0][shipping_rate_data][delivery_estimate][maximum][unit]", "business_day");
-  params.append("shipping_options[0][shipping_rate_data][delivery_estimate][maximum][value]", "5");
+  // Shipping rate (pre-created in Stripe Dashboard)
+  params.append("shipping_options[0][shipping_rate]", SHIPPING_RATE_ID);
 
   params.append(
     "custom_text[submit][message]",
