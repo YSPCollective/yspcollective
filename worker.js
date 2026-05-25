@@ -1,66 +1,25 @@
-/**
- * YSP Collective — Cloudflare Worker
- * Worker name: ysp-ai-proxy
- *
- * Required secrets:
- *   STRIPE_SECRET_KEY      →  sk_live_xxxx
- *   STRIPE_WEBHOOK_SECRET  →  whsec_xxxx  (from Stripe dashboard → Webhooks)
- *   ANTHROPIC_API_KEY      →  sk-ant-xxxx
- *   AUTH_SECRET            →  any long random string
- *   BREVO_API_KEY          →  your Brevo API key (v3)
- *
- * Required KV binding (wrangler.toml):
- *   [[kv_namespaces]]
- *   binding = "YSP_USERS"
- *   id = "YOUR_KV_NAMESPACE_ID"
- *
- * Required Cron Trigger (wrangler.toml):
- *   [triggers]
- *   crons = ["0 9 * * *"]   ← runs daily at 9am UTC
- *
- * Endpoints:
- *   POST /auth/register
- *   POST /auth/login
- *   POST /auth/logout
- *   GET  /auth/me
- *   POST /profile/save
- *   GET  /profile
- *   POST /favourites/toggle
- *   GET  /favourites
- *   POST /checkout
- *   POST /sync-product
- *   POST /chat
- *   POST /stripe-webhook
- *   POST /subscribe
- *   GET  /reviews/{slug}
- *   GET  /reviews/averages
- *   POST /reviews/submit
- *   POST /reviews/approve
- *   GET  /health
- */
+// worker.js
 
-// ── CORS ─────────────────────────────────────────────────────────────────────
 function corsHeaders() {
   return {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-    'Access-Control-Max-Age': '86400',
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    "Access-Control-Max-Age": "86400"
   };
 }
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
     status,
-    headers: { 'Content-Type': 'application/json', ...corsHeaders() },
+    headers: { "Content-Type": "application/json", ...corsHeaders() }
   });
 }
 
-// ── CRYPTO HELPERS ───────────────────────────────────────────────────────────
 async function hashPassword(password) {
   const encoder = new TextEncoder();
   const data = encoder.encode(password);
-  const hash = await crypto.subtle.digest('SHA-256', data);
+  const hash = await crypto.subtle.digest("SHA-256", data);
   return btoa(String.fromCharCode(...new Uint8Array(hash)));
 }
 
@@ -68,16 +27,20 @@ async function generateToken(userId, secret) {
   const payload = `${userId}:${Date.now()}:${Math.random()}`;
   const encoder = new TextEncoder();
   const key = await crypto.subtle.importKey(
-    'raw', encoder.encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']
+    "raw",
+    encoder.encode(secret),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"]
   );
-  const signature = await crypto.subtle.sign('HMAC', key, encoder.encode(payload));
+  const signature = await crypto.subtle.sign("HMAC", key, encoder.encode(payload));
   const sigB64 = btoa(String.fromCharCode(...new Uint8Array(signature)));
   return btoa(`${payload}|||${sigB64}`);
 }
 
 function getAuthToken(request) {
-  const auth = request.headers.get('Authorization') || '';
-  if (auth.startsWith('Bearer ')) return auth.slice(7);
+  const auth = request.headers.get("Authorization") || "";
+  if (auth.startsWith("Bearer ")) return auth.slice(7);
   return null;
 }
 
@@ -99,60 +62,63 @@ async function getUserFromToken(token, env) {
   }
 }
 
-// ── STRIPE WEBHOOK VERIFICATION ──────────────────────────────────────────────
 async function verifyStripeSignature(payload, sigHeader, secret) {
-  const parts = sigHeader.split(',');
-  const timestamp = parts.find(p => p.startsWith('t='))?.slice(2);
-  const signature = parts.find(p => p.startsWith('v1='))?.slice(3);
+  const parts = sigHeader.split(",");
+  const timestamp = parts.find((p) => p.startsWith("t="))?.slice(2);
+  const signature = parts.find((p) => p.startsWith("v1="))?.slice(3);
   if (!timestamp || !signature) return false;
-
   const signedPayload = `${timestamp}.${payload}`;
   const encoder = new TextEncoder();
   const key = await crypto.subtle.importKey(
-    'raw', encoder.encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']
+    "raw",
+    encoder.encode(secret),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"]
   );
-  const mac = await crypto.subtle.sign('HMAC', key, encoder.encode(signedPayload));
-  const expected = Array.from(new Uint8Array(mac)).map(b => b.toString(16).padStart(2, '0')).join('');
+  const mac = await crypto.subtle.sign("HMAC", key, encoder.encode(signedPayload));
+  const expected = Array.from(new Uint8Array(mac)).map((b) => b.toString(16).padStart(2, "0")).join("");
   return expected === signature;
 }
 
-// ── BREVO EMAIL ───────────────────────────────────────────────────────────────
-const REVIEW_LINK = 'https://www.trustpilot.com/review/yspcollective.com';
+// ─── REVIEW EMAIL ─────────────────────────────────────────────────────────────
 
-const REVIEW_EMAIL_CONTENT = {
+var REVIEW_LINK = "https://www.trustpilot.com/review/yspcollective.com";
+
+var REVIEW_EMAIL_CONTENT = {
   pt: {
-    subject: 'Como correu a sua encomenda? 🌟',
-    preheader: 'Adoraríamos saber a sua opinião',
+    subject: "Como correu a sua encomenda? 🌟",
+    preheader: "Adoraríamos saber a sua opinião",
     greeting: (name) => `Olá ${name},`,
-    p1: 'Esperamos que a sua encomenda tenha chegado em perfeitas condições e que esteja a adorar o(s) produto(s).',
-    p2: 'A YSP Collective é uma marca jovem e cada avaliação faz uma diferença enorme para nós. Se tiver um minuto, ficávamos muito gratos se partilhasse a sua experiência no Trustpilot — honestamente, mesmo que tenha corrido menos bem, queremos saber.',
-    cta: 'Deixar uma Avaliação',
-    p3: 'Obrigado por nos ter dado uma oportunidade. Se tiver alguma questão ou preocupação, responda directamente a este e-mail — estou aqui para ajudar.',
-    sign: 'Stephen',
-    sign_sub: 'YSP Collective, Portugal',
+    p1: "Esperamos que a sua encomenda tenha chegado em perfeitas condições e que esteja a adorar o(s) produto(s).",
+    p2: "A YSP Collective é uma marca jovem e cada avaliação faz uma diferença enorme para nós. Se tiver um minuto, ficávamos muito gratos se partilhasse a sua experiência no Trustpilot — honestamente, mesmo que tenha corrido menos bem, queremos saber.",
+    cta: "Deixar uma Avaliação",
+    p3: "Obrigado por nos ter dado uma oportunidade. Se tiver alguma questão ou preocupação, responda directamente a este e-mail — estou aqui para ajudar.",
+    sign: "Stephen",
+    sign_sub: "YSP Collective, Portugal"
   },
   es: {
-    subject: '¿Cómo fue su pedido? 🌟',
-    preheader: 'Nos encantaría conocer su opinión',
+    subject: "¿Cómo fue su pedido? 🌟",
+    preheader: "Nos encantaría conocer su opinión",
     greeting: (name) => `Hola ${name},`,
-    p1: 'Esperamos que su pedido haya llegado en perfectas condiciones y que esté disfrutando de los productos.',
-    p2: 'YSP Collective es una marca joven y cada reseña marca una gran diferencia para nosotros. Si tiene un minuto, le estaríamos muy agradecidos si compartiera su experiencia en Trustpilot — honestamente, aunque algo no haya ido bien, nos gustaría saberlo.',
-    cta: 'Dejar una Reseña',
-    p3: 'Gracias por darnos una oportunidad. Si tiene alguna pregunta o inquietud, responda directamente a este correo — estoy aquí para ayudar.',
-    sign: 'Stephen',
-    sign_sub: 'YSP Collective, Portugal',
+    p1: "Esperamos que su pedido haya llegado en perfectas condiciones y que esté disfrutando de los productos.",
+    p2: "YSP Collective es una marca joven y cada reseña marca una gran diferencia para nosotros. Si tiene un minuto, le estaríamos muy agradecidos si compartiera su experiencia en Trustpilot — honestamente, aunque algo no haya ido bien, nos gustaría saberlo.",
+    cta: "Dejar una Reseña",
+    p3: "Gracias por darnos una oportunidad. Si tiene alguna pregunta o inquietud, responda directamente a este correo — estoy aquí para ayudar.",
+    sign: "Stephen",
+    sign_sub: "YSP Collective, Portugal"
   },
   en: {
-    subject: 'How was your order? 🌟',
-    preheader: 'We\'d love to hear from you',
+    subject: "How was your order? 🌟",
+    preheader: "We'd love to hear from you",
     greeting: (name) => `Hi ${name},`,
-    p1: 'We hope your order arrived in perfect condition and that you\'re enjoying the product(s).',
-    p2: 'YSP Collective is a young brand and every review makes a huge difference to us. If you have a minute, we\'d be incredibly grateful if you could share your experience on Trustpilot — honestly, even if something didn\'t go quite right, we want to know.',
-    cta: 'Leave a Review',
-    p3: 'Thank you for giving us a chance. If you have any questions or concerns, just reply to this email — I\'m here to help.',
-    sign: 'Stephen',
-    sign_sub: 'YSP Collective, Portugal',
-  },
+    p1: "We hope your order arrived in perfect condition and that you're enjoying the product(s).",
+    p2: "YSP Collective is a young brand and every review makes a huge difference to us. If you have a minute, we'd be incredibly grateful if you could share your experience on Trustpilot — honestly, even if something didn't go quite right, we want to know.",
+    cta: "Leave a Review",
+    p3: "Thank you for giving us a chance. If you have any questions or concerns, just reply to this email — I'm here to help.",
+    sign: "Stephen",
+    sign_sub: "YSP Collective, Portugal"
+  }
 };
 
 function buildReviewEmailHtml(lang, firstName) {
@@ -166,32 +132,159 @@ function buildReviewEmailHtml(lang, firstName) {
 </head>
 <body style="margin:0;padding:0;background:#f3efe8;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
   <div style="max-width:580px;margin:0 auto;padding:40px 20px;">
+    <div style="text-align:center;margin-bottom:32px;">
+      <p style="font-family:Georgia,serif;font-size:28px;font-weight:300;color:#1a1916;letter-spacing:0.06em;margin:0;">YSP</p>
+      <p style="font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:#8a847a;margin:2px 0 0;">COLLECTIVE</p>
+    </div>
+    <div style="background:#faf8f5;padding:40px 40px 32px;border:1px solid #e6dfd4;">
+      <p style="font-size:16px;color:#1a1916;margin:0 0 20px;line-height:1.6;">${c.greeting(firstName)}</p>
+      <p style="font-size:15px;color:#8a847a;line-height:1.8;margin:0 0 16px;">${c.p1}</p>
+      <p style="font-size:15px;color:#8a847a;line-height:1.8;margin:0 0 32px;">${c.p2}</p>
+      <div style="text-align:center;margin-bottom:32px;">
+        <a href="${REVIEW_LINK}" style="display:inline-block;padding:14px 36px;background:#9c7b56;color:#ffffff;text-decoration:none;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
+          ${c.cta} →
+        </a>
+      </div>
+      <div style="border-top:1px solid #e6dfd4;margin:0 0 24px;"></div>
+      <p style="font-size:14px;color:#8a847a;line-height:1.8;margin:0 0 24px;">${c.p3}</p>
+      <p style="font-size:15px;color:#1a1916;margin:0;">
+        ${c.sign}<br>
+        <span style="font-size:12px;color:#b5afa5;">${c.sign_sub}</span>
+      </p>
+    </div>
+    <div style="text-align:center;padding:24px 0;">
+      <p style="font-size:11px;color:#b5afa5;margin:0;line-height:1.7;">
+        YSP Collective · Portugal, EU<br>
+        <a href="https://yspcollective.com" style="color:#9c7b56;text-decoration:none;">yspcollective.com</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>`;
+}
 
-    <!-- Header -->
+async function sendReviewEmail(env, { toEmail, toName, lang }) {
+  const apiKey = env.BREVO_API_KEY;
+  if (!apiKey) throw new Error("BREVO_API_KEY not configured");
+  const c = REVIEW_EMAIL_CONTENT[lang] || REVIEW_EMAIL_CONTENT.en;
+  const firstName = toName.split(" ")[0] || toName;
+  const res = await fetch("https://api.brevo.com/v3/smtp/email", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "api-key": apiKey },
+    body: JSON.stringify({
+      sender: { name: "Stephen from YSP Collective", email: "info@yspcollective.com" },
+      to: [{ email: toEmail, name: toName }],
+      subject: c.subject,
+      htmlContent: buildReviewEmailHtml(lang, firstName),
+      headers: { "X-Mailin-custom": "review-request" }
+    })
+  });
+  if (!res.ok) {
+    const err = await res.text();
+    throw new Error(`Brevo error ${res.status}: ${err}`);
+  }
+  return true;
+}
+
+// ─── ORDER CONFIRMATION EMAIL ─────────────────────────────────────────────────
+
+var ORDER_CONFIRM_CONTENT = {
+  pt: {
+    subject: "A sua encomenda foi confirmada ✓",
+    greeting: (name) => `Olá ${name},`,
+    p1: "Recebemos o seu pagamento e a sua encomenda está confirmada.",
+    p2: "Iremos processar e enviar no prazo de 1 dia útil. Receberá uma notificação quando a sua encomenda for expedida.",
+    items_label: "Resumo da encomenda",
+    shipping_label: "Envio",
+    total_label: "Total",
+    free_shipping: "Grátis",
+    p3: "Se tiver alguma questão, responda directamente a este e-mail — estou aqui para ajudar.",
+    sign: "Stephen",
+    sign_sub: "YSP Collective, Portugal"
+  },
+  es: {
+    subject: "Su pedido ha sido confirmado ✓",
+    greeting: (name) => `Hola ${name},`,
+    p1: "Hemos recibido su pago y su pedido está confirmado.",
+    p2: "Lo procesaremos y enviaremos en el plazo de 1 día hábil. Recibirá una notificación cuando su pedido sea enviado.",
+    items_label: "Resumen del pedido",
+    shipping_label: "Envío",
+    total_label: "Total",
+    free_shipping: "Gratis",
+    p3: "Si tiene alguna pregunta, responda directamente a este correo — estoy aquí para ayudar.",
+    sign: "Stephen",
+    sign_sub: "YSP Collective, Portugal"
+  },
+  en: {
+    subject: "Your order is confirmed ✓",
+    greeting: (name) => `Hi ${name},`,
+    p1: "We've received your payment and your order is confirmed.",
+    p2: "We'll process and dispatch within 1 business day. You'll receive a notification once your order has shipped.",
+    items_label: "Order summary",
+    shipping_label: "Shipping",
+    total_label: "Total",
+    free_shipping: "Free",
+    p3: "If you have any questions, just reply to this email — I'm here to help.",
+    sign: "Stephen",
+    sign_sub: "YSP Collective, Portugal"
+  }
+};
+
+function buildOrderConfirmationHtml(lang, firstName, lineItems, total, shippingCost) {
+  const c = ORDER_CONFIRM_CONTENT[lang] || ORDER_CONFIRM_CONTENT.en;
+  const shippingDisplay = parseFloat(shippingCost) === 0 ? c.free_shipping : `€${parseFloat(shippingCost).toFixed(2)}`;
+
+  const itemRows = lineItems.map((item) => {
+    const name = item.description || item.price?.product?.name || "Product";
+    const qty = item.quantity || 1;
+    const unitAmount = item.price?.unit_amount ? (item.price.unit_amount / 100).toFixed(2) : "—";
+    const lineTotal = item.amount_total ? (item.amount_total / 100).toFixed(2) : "—";
+    return `
+      <tr>
+        <td style="padding:10px 0;border-bottom:1px solid #e6dfd4;color:#1a1916;font-size:14px;line-height:1.5;">
+          ${name}<br>
+          <span style="color:#8a847a;font-size:12px;">Qty: ${qty} × €${unitAmount}</span>
+        </td>
+        <td style="padding:10px 0;border-bottom:1px solid #e6dfd4;color:#1a1916;font-size:14px;text-align:right;vertical-align:top;">€${lineTotal}</td>
+      </tr>`;
+  }).join("");
+
+  return `<!DOCTYPE html>
+<html lang="${lang}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${c.subject}</title>
+</head>
+<body style="margin:0;padding:0;background:#f3efe8;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
+  <div style="max-width:580px;margin:0 auto;padding:40px 20px;">
+
     <div style="text-align:center;margin-bottom:32px;">
       <p style="font-family:Georgia,serif;font-size:28px;font-weight:300;color:#1a1916;letter-spacing:0.06em;margin:0;">YSP</p>
       <p style="font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:#8a847a;margin:2px 0 0;">COLLECTIVE</p>
     </div>
 
-    <!-- Card -->
     <div style="background:#faf8f5;padding:40px 40px 32px;border:1px solid #e6dfd4;">
 
       <p style="font-size:16px;color:#1a1916;margin:0 0 20px;line-height:1.6;">${c.greeting(firstName)}</p>
-
-      <p style="font-size:15px;color:#8a847a;line-height:1.8;margin:0 0 16px;">${c.p1}</p>
-
+      <p style="font-size:15px;color:#8a847a;line-height:1.8;margin:0 0 8px;">${c.p1}</p>
       <p style="font-size:15px;color:#8a847a;line-height:1.8;margin:0 0 32px;">${c.p2}</p>
 
-      <!-- CTA -->
-      <div style="text-align:center;margin-bottom:32px;">
-        <a href="${REVIEW_LINK}"
-           style="display:inline-block;padding:14px 36px;background:#9c7b56;color:#ffffff;text-decoration:none;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
-          ${c.cta} →
-        </a>
-      </div>
+      <p style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#8a847a;margin:0 0 12px;">${c.items_label}</p>
 
-      <!-- Divider -->
-      <div style="border-top:1px solid #e6dfd4;margin:0 0 24px;"></div>
+      <table style="width:100%;border-collapse:collapse;margin-bottom:16px;">
+        ${itemRows}
+        <tr>
+          <td style="padding:10px 0;color:#8a847a;font-size:13px;">${c.shipping_label}</td>
+          <td style="padding:10px 0;color:#8a847a;font-size:13px;text-align:right;">${shippingDisplay}</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 0 0;color:#1a1916;font-size:15px;font-weight:600;border-top:1px solid #e6dfd4;">${c.total_label}</td>
+          <td style="padding:12px 0 0;color:#1a1916;font-size:15px;font-weight:600;text-align:right;border-top:1px solid #e6dfd4;">€${parseFloat(total).toFixed(2)}</td>
+        </tr>
+      </table>
+
+      <div style="border-top:1px solid #e6dfd4;margin:24px 0;"></div>
 
       <p style="font-size:14px;color:#8a847a;line-height:1.8;margin:0 0 24px;">${c.p3}</p>
 
@@ -201,7 +294,6 @@ function buildReviewEmailHtml(lang, firstName) {
       </p>
     </div>
 
-    <!-- Footer -->
     <div style="text-align:center;padding:24px 0;">
       <p style="font-size:11px;color:#b5afa5;margin:0;line-height:1.7;">
         YSP Collective · Portugal, EU<br>
@@ -214,52 +306,74 @@ function buildReviewEmailHtml(lang, firstName) {
 </html>`;
 }
 
-async function sendReviewEmail(env, { toEmail, toName, lang }) {
+async function sendOrderConfirmationEmail(env, session) {
   const apiKey = env.BREVO_API_KEY;
-  if (!apiKey) throw new Error('BREVO_API_KEY not configured');
+  const stripeKey = env.STRIPE_SECRET_KEY;
+  if (!apiKey || !stripeKey) return;
 
-  const c = REVIEW_EMAIL_CONTENT[lang] || REVIEW_EMAIL_CONTENT.en;
-  const firstName = toName.split(' ')[0] || toName;
+  const customerEmail = session.customer_details?.email;
+  const customerName = session.customer_details?.name || "Customer";
+  if (!customerEmail) return;
 
-  const res = await fetch('https://api.brevo.com/v3/smtp/email', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'api-key': apiKey,
-    },
+  const firstName = customerName.split(" ")[0] || customerName;
+  const lang = detectLang(session);
+  const total = ((session.amount_total || 0) / 100).toFixed(2);
+  const shippingCost = session.shipping_cost ? (session.shipping_cost.amount_total / 100).toFixed(2) : "0.00";
+
+  // Fetch line items from Stripe
+  let lineItems = [];
+  try {
+    const res = await fetch(
+      `https://api.stripe.com/v1/checkout/sessions/${session.id}/line_items?limit=20&expand[]=data.price.product`,
+      { headers: { Authorization: `Bearer ${stripeKey}` } }
+    );
+    if (res.ok) {
+      const data = await res.json();
+      lineItems = data.data || [];
+    }
+  } catch (err) {
+    console.error("Failed to fetch line items:", err.message);
+  }
+
+  const c = ORDER_CONFIRM_CONTENT[lang] || ORDER_CONFIRM_CONTENT.en;
+  const html = buildOrderConfirmationHtml(lang, firstName, lineItems, total, shippingCost);
+
+  const res = await fetch("https://api.brevo.com/v3/smtp/email", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "api-key": apiKey },
     body: JSON.stringify({
-      sender: { name: 'Stephen from YSP Collective', email: 'info@yspcollective.com' },
-      to: [{ email: toEmail, name: toName }],
+      sender: { name: "YSP Collective", email: "info@yspcollective.com" },
+      to: [{ email: customerEmail, name: customerName }],
       subject: c.subject,
-      htmlContent: buildReviewEmailHtml(lang, firstName),
-      headers: {
-        'X-Mailin-custom': 'review-request',
-      },
-    }),
+      htmlContent: html
+    })
   });
 
   if (!res.ok) {
     const err = await res.text();
-    throw new Error(`Brevo error ${res.status}: ${err}`);
+    throw new Error(`Brevo order confirm error ${res.status}: ${err}`);
   }
-  return true;
 }
 
-// ── LANGUAGE DETECTION ───────────────────────────────────────────────────────
+// ─── LANGUAGE DETECTION ───────────────────────────────────────────────────────
+
 function detectLang(stripeSession) {
   if (stripeSession.metadata?.lang) {
     const l = stripeSession.metadata.lang;
-    if (['pt', 'es', 'en'].includes(l)) return l;
+    if (["pt", "es", "en"].includes(l)) return l;
   }
-  const country = stripeSession.shipping?.address?.country ||
-                  stripeSession.customer_details?.address?.country || '';
-  if (country === 'PT') return 'pt';
-  if (country === 'ES') return 'es';
-  return 'en';
+  const country =
+    stripeSession.shipping?.address?.country ||
+    stripeSession.customer_details?.address?.country ||
+    "";
+  if (country === "PT") return "pt";
+  if (country === "ES") return "es";
+  return "en";
 }
 
-// ── PRODUCT CATALOGUE ────────────────────────────────────────────────────────
-const PRODUCTS = [
+// ─── PRODUCTS & CHAT SYSTEM ───────────────────────────────────────────────────
+
+var PRODUCTS = [
   {
     name: "Lattafa Yara 100ml",
     url: "https://yspcollective.com/products/lattafa-yara-100ml.html",
@@ -398,21 +512,19 @@ const PRODUCTS = [
   }
 ];
 
-// ── SYSTEM PROMPT ────────────────────────────────────────────────────────────
 function buildSystemPrompt(userProfile = null) {
-  let profileSection = '';
+  let profileSection = "";
   if (userProfile) {
     profileSection = `
 CUSTOMER PROFILE (use this to personalise all recommendations):
-- Name: ${userProfile.firstName || 'Customer'}
-- Interests: ${userProfile.interests || 'not set'}
+- Name: ${userProfile.firstName || "Customer"}
+- Interests: ${userProfile.interests || "not set"}
 - Fragrance preferences: ${JSON.stringify(userProfile.fragrancePrefs || {})}
 - Beauty preferences: ${JSON.stringify(userProfile.beautyPrefs || {})}
 
 Always address them by first name. Lead recommendations with what matches their profile before exploring alternatives.
 `;
   }
-
   return `You are the YSP Collective fragrance and beauty advisor — a warm, knowledgeable assistant for a curated lifestyle brand based in Portugal. You have the personality of an expert friend who genuinely loves fragrance and skincare: enthusiastic, honest, and never pushy.
 
 YSP Collective sells:
@@ -449,176 +561,185 @@ TONE:
 If asked something outside your knowledge, direct to info@yspcollective.com`;
 }
 
-// ── MAIN HANDLER ─────────────────────────────────────────────────────────────
+// ─── ROUTING ──────────────────────────────────────────────────────────────────
+
 export default {
   async fetch(request, env) {
     const method = request.method;
     const url = new URL(request.url);
 
-    if (method === 'OPTIONS') {
-      return new Response(null, { status: 204, headers: corsHeaders() });
-    }
-
-    if (url.pathname === '/health') return json({ ok: true });
-
-    // ── AUTH ──
-    if (url.pathname === '/auth/register' && method === 'POST') return handleRegister(request, env);
-    if (url.pathname === '/auth/login'    && method === 'POST') return handleLogin(request, env);
-    if (url.pathname === '/auth/logout'   && method === 'POST') return handleLogout(request, env);
-    if (url.pathname === '/auth/me'       && method === 'GET')  return handleMe(request, env);
-
-    // ── PROFILE ──
-    if (url.pathname === '/profile/save'  && method === 'POST') return handleProfileSave(request, env);
-    if (url.pathname === '/profile'       && method === 'GET')  return handleProfileGet(request, env);
-
-    // ── FAVOURITES ──
-    if (url.pathname === '/favourites/toggle' && method === 'POST') return handleFavouriteToggle(request, env);
-    if (url.pathname === '/favourites'        && method === 'GET')  return handleFavouritesGet(request, env);
-
-    // ── COMMERCE ──
-    if (url.pathname === '/checkout'      && method === 'POST') return handleCheckout(request, env);
-    if (url.pathname === '/sync-product'  && method === 'POST') return handleSyncProduct(request, env);
-    if (url.pathname === '/stripe-webhook'&& method === 'POST') return handleStripeWebhook(request, env);
-
-    // ── AI ──
-    if (url.pathname === '/chat'          && method === 'POST') return handleChat(request, env);
-
-    // ── SUBSCRIBE ──
-    if (url.pathname === '/subscribe'     && method === 'POST') return handleSubscribe(request, env);
-
-    // ── REVIEWS ──
-    if (url.pathname === '/reviews/averages'  && method === 'GET')  return handleReviewsAverages(env);
-    if (url.pathname.startsWith('/reviews/') && method === 'GET')  return handleReviewsGet(url, env);
-    if (url.pathname === '/reviews/submit'   && method === 'POST') return handleReviewSubmit(request, env);
-    if (url.pathname === '/reviews/approve'  && method === 'POST') return handleReviewApprove(request, env);
-
-    return json({ error: 'Not found' }, 404);
+    if (method === "OPTIONS") return new Response(null, { status: 204, headers: corsHeaders() });
+    if (url.pathname === "/health") return json({ ok: true });
+    if (url.pathname === "/auth/register" && method === "POST") return handleRegister(request, env);
+    if (url.pathname === "/auth/login" && method === "POST") return handleLogin(request, env);
+    if (url.pathname === "/auth/logout" && method === "POST") return handleLogout(request, env);
+    if (url.pathname === "/auth/me" && method === "GET") return handleMe(request, env);
+    if (url.pathname === "/profile/save" && method === "POST") return handleProfileSave(request, env);
+    if (url.pathname === "/profile" && method === "GET") return handleProfileGet(request, env);
+    if (url.pathname === "/favourites/toggle" && method === "POST") return handleFavouriteToggle(request, env);
+    if (url.pathname === "/favourites" && method === "GET") return handleFavouritesGet(request, env);
+    if (url.pathname === "/checkout" && method === "POST") return handleCheckout(request, env);
+    if (url.pathname === "/sync-product" && method === "POST") return handleSyncProduct(request, env);
+    if (url.pathname === "/stripe-webhook" && method === "POST") return handleStripeWebhook(request, env);
+    if (url.pathname === "/chat" && method === "POST") return handleChat(request, env);
+    if (url.pathname === "/subscribe" && method === "POST") return handleSubscribe(request, env);
+    if (url.pathname.startsWith("/reviews/") && method === "GET") return handleReviewsGet(url, env);
+    if (url.pathname === "/reviews/submit" && method === "POST") return handleReviewSubmit(request, env);
+    if (url.pathname === "/reviews/approve" && method === "POST") return handleReviewApprove(request, env);
+    return json({ error: "Not found" }, 404);
   },
 
   // Cron Trigger — runs daily at 9am UTC
   async scheduled(event, env, ctx) {
     ctx.waitUntil(processScheduledReviewEmails(env));
-  },
+  }
 };
 
-// ── STRIPE WEBHOOK ───────────────────────────────────────────────────────────
+// ─── STRIPE WEBHOOK ───────────────────────────────────────────────────────────
+
 async function handleStripeWebhook(request, env) {
   const webhookSecret = env.STRIPE_WEBHOOK_SECRET;
-  if (!webhookSecret) return json({ error: 'Webhook secret not configured' }, 500);
+  if (!webhookSecret) return json({ error: "Webhook secret not configured" }, 500);
 
   const payload = await request.text();
-  const sigHeader = request.headers.get('stripe-signature') || '';
-
+  const sigHeader = request.headers.get("stripe-signature") || "";
   const valid = await verifyStripeSignature(payload, sigHeader, webhookSecret);
-  if (!valid) return json({ error: 'Invalid signature' }, 400);
+  if (!valid) return json({ error: "Invalid signature" }, 400);
 
   let event;
-  try { event = JSON.parse(payload); } catch (_) { return json({ error: 'Invalid JSON' }, 400); }
+  try {
+    event = JSON.parse(payload);
+  } catch (_) {
+    return json({ error: "Invalid JSON" }, 400);
+  }
 
-  if (event.type === 'checkout.session.completed') {
+  if (event.type === "checkout.session.completed") {
     const session = event.data.object;
-
-    if (session.payment_status !== 'paid') return json({ ok: true });
+    if (session.payment_status !== "paid") return json({ ok: true });
 
     const customerEmail = session.customer_details?.email;
-    const customerName  = session.customer_details?.name || 'Customer';
+    const customerName = session.customer_details?.name || "Customer";
     if (!customerEmail) return json({ ok: true });
 
     const lang = detectLang(session);
 
+    // 1. Send order confirmation immediately
+    try {
+      await sendOrderConfirmationEmail(env, session);
+      console.log(`Order confirmation sent to ${customerEmail}`);
+    } catch (err) {
+      console.error("Order confirmation email failed:", err.message);
+    }
+
+    // 2. Schedule review email for 6 days later
     const sendAfter = Date.now() + 6 * 24 * 60 * 60 * 1000;
     const reviewKey = `review_pending:${session.id}`;
-
-    await env.YSP_USERS.put(reviewKey, JSON.stringify({
-      email: customerEmail,
-      name: customerName,
-      lang,
-      sendAfter,
-      sessionId: session.id,
-    }), {
-      expirationTtl: 30 * 24 * 60 * 60,
-    });
-
+    await env.YSP_USERS.put(
+      reviewKey,
+      JSON.stringify({ email: customerEmail, name: customerName, lang, sendAfter, sessionId: session.id }),
+      { expirationTtl: 30 * 24 * 60 * 60 }
+    );
     console.log(`Review email scheduled for ${customerEmail} in 6 days (lang: ${lang})`);
   }
 
   return json({ ok: true });
 }
 
-// ── SCHEDULED REVIEW EMAIL PROCESSOR ─────────────────────────────────────────
 async function processScheduledReviewEmails(env) {
-  const list = await env.YSP_USERS.list({ prefix: 'review_pending:' });
+  const list = await env.YSP_USERS.list({ prefix: "review_pending:" });
   const now = Date.now();
   let sent = 0;
   let errors = 0;
-
   for (const key of list.keys) {
     try {
       const raw = await env.YSP_USERS.get(key.name);
       if (!raw) continue;
-
       const pending = JSON.parse(raw);
-
       if (pending.sendAfter > now) continue;
-
-      await sendReviewEmail(env, {
-        toEmail: pending.email,
-        toName: pending.name,
-        lang: pending.lang || 'en',
-      });
-
+      await sendReviewEmail(env, { toEmail: pending.email, toName: pending.name, lang: pending.lang || "en" });
       await env.YSP_USERS.delete(key.name);
       sent++;
       console.log(`Review email sent to ${pending.email}`);
-
     } catch (err) {
       errors++;
       console.error(`Failed to send review email for ${key.name}:`, err.message);
     }
   }
-
   console.log(`Review emails: ${sent} sent, ${errors} errors`);
 }
 
-// ── CHECKOUT ─────────────────────────────────────────────────────────────────
+// ─── CHECKOUT ─────────────────────────────────────────────────────────────────
+
 async function handleCheckout(request, env) {
   const stripeKey = env.STRIPE_SECRET_KEY;
-  if (!stripeKey) return json({ error: 'Stripe not configured' }, 500);
+  if (!stripeKey) return json({ error: "Stripe not configured" }, 500);
 
   let body;
-  try { body = await request.json(); } catch (_) { return json({ error: 'Invalid JSON' }, 400); }
-
-  const { items, success_url, cancel_url, lang } = body;
-  if (!items || !Array.isArray(items) || items.length === 0) {
-    return json({ error: 'items array required' }, 400);
+  try {
+    body = await request.json();
+  } catch (_) {
+    return json({ error: "Invalid JSON" }, 400);
   }
 
-  const lineItems = items.map(item => {
+  const { items, success_url, cancel_url, lang, subtotal } = body;
+  if (!items || !Array.isArray(items) || items.length === 0) {
+    return json({ error: "items array required" }, 400);
+  }
+
+  const lineItems = items.map((item) => {
     if (item.priceId) {
       return { price: item.priceId, quantity: item.quantity || 1 };
     }
     return {
       price_data: {
-        currency: 'eur',
-        product_data: { name: item.name || 'Product' },
-        unit_amount: Math.round((item.price || 0) * 100),
+        currency: "eur",
+        product_data: { name: item.name || "Product" },
+        unit_amount: Math.round((item.price || 0) * 100)
       },
-      quantity: item.quantity || 1,
+      quantity: item.quantity || 1
     };
   });
 
-  const origin = request.headers.get('Origin') || 'https://yspcollective.com';
+  // Calculate subtotal to determine shipping rate
+  // Use frontend-provided subtotal if available, otherwise derive from inline items
+  const cartTotal = typeof subtotal === "number"
+    ? subtotal
+    : items.reduce((sum, item) => sum + ((item.price || 0) * (item.quantity || 1)), 0);
+
+  const FREE_SHIPPING_THRESHOLD = 50;
+  const SHIPPING_AMOUNT = cartTotal >= FREE_SHIPPING_THRESHOLD ? 0 : 500; // cents
+  const shippingLabel = SHIPPING_AMOUNT === 0
+    ? "Free Shipping — Mainland PT & ES (2–5 business days)"
+    : "Standard Shipping — Mainland PT & ES (2–5 business days) — €5.00";
+
+  const origin = request.headers.get("Origin") || "https://yspcollective.com";
+
   const params = new URLSearchParams({
-    mode: 'payment',
-    'success_url': success_url || `${origin}/checkout-success.html?session_id={CHECKOUT_SESSION_ID}`,
-    'cancel_url': cancel_url || `${origin}/`,
-    'payment_method_types[]': 'card',
-    'billing_address_collection': 'required',
-    'shipping_address_collection[allowed_countries][0]': 'PT',
-    'shipping_address_collection[allowed_countries][1]': 'ES',
+    mode: "payment",
+    "success_url": success_url || `${origin}/checkout-success.html?session_id={CHECKOUT_SESSION_ID}`,
+    "cancel_url": cancel_url || `${origin}/`,
+    "payment_method_types[]": "card",
+    "billing_address_collection": "required",
+    "shipping_address_collection[allowed_countries][0]": "PT",
+    "shipping_address_collection[allowed_countries][1]": "ES"
   });
 
-  if (lang) params.append('metadata[lang]', lang); params.append("custom_text[submit][message]", "By completing this order you confirm you have read our Terms & Conditions. Under EU consumer law you have the right to withdraw from this purchase within 14 days of receiving your order without giving any reason.");
+  if (lang) params.append("metadata[lang]", lang);
+
+  // Shipping option
+  params.append("shipping_options[0][shipping_rate_data][type]", "fixed_amount");
+  params.append("shipping_options[0][shipping_rate_data][display_name]", shippingLabel);
+  params.append("shipping_options[0][shipping_rate_data][fixed_amount][amount]", SHIPPING_AMOUNT);
+  params.append("shipping_options[0][shipping_rate_data][fixed_amount][currency]", "eur");
+  params.append("shipping_options[0][shipping_rate_data][delivery_estimate][minimum][unit]", "business_day");
+  params.append("shipping_options[0][shipping_rate_data][delivery_estimate][minimum][value]", "2");
+  params.append("shipping_options[0][shipping_rate_data][delivery_estimate][maximum][unit]", "business_day");
+  params.append("shipping_options[0][shipping_rate_data][delivery_estimate][maximum][value]", "5");
+
+  params.append(
+    "custom_text[submit][message]",
+    "By completing this order you confirm you have read our Terms & Conditions. Under EU consumer law you have the right to withdraw from this purchase within 14 days of receiving your order without giving any reason."
+  );
 
   lineItems.forEach((li, i) => {
     if (li.price) {
@@ -632,147 +753,130 @@ async function handleCheckout(request, env) {
   });
 
   try {
-    const response = await fetch('https://api.stripe.com/v1/checkout/sessions', {
-      method: 'POST',
+    const response = await fetch("https://api.stripe.com/v1/checkout/sessions", {
+      method: "POST",
       headers: {
-        'Authorization': `Bearer ${stripeKey}`,
-        'Content-Type': 'application/x-www-form-urlencoded',
+        "Authorization": `Bearer ${stripeKey}`,
+        "Content-Type": "application/x-www-form-urlencoded"
       },
-      body: params.toString(),
+      body: params.toString()
     });
-
     const data = await response.json();
-    if (!response.ok) return json({ error: data.error?.message || 'Stripe error' }, 502);
+    if (!response.ok) return json({ error: data.error?.message || "Stripe error" }, 502);
     return json({ url: data.url, sessionId: data.id });
-
   } catch (err) {
     return json({ error: err.message }, 500);
   }
 }
 
-// ── SUBSCRIBE ─────────────────────────────────────────────────────────────────
+// ─── SUBSCRIBE ────────────────────────────────────────────────────────────────
+
 async function handleSubscribe(request, env) {
   let body;
-  try { body = await request.json(); } catch (_) { return json({ error: 'Invalid JSON' }, 400); }
-
+  try {
+    body = await request.json();
+  } catch (_) {
+    return json({ error: "Invalid JSON" }, 400);
+  }
   const { email, lang, product, unsubscribe } = body;
-  if (!email || !email.includes('@')) return json({ error: 'Valid email required' }, 400);
-
+  if (!email || !email.includes("@")) return json({ error: "Valid email required" }, 400);
   const apiKey = env.BREVO_API_KEY;
-  if (!apiKey) return json({ error: 'Email not configured' }, 500);
-
+  if (!apiKey) return json({ error: "Email not configured" }, 500);
   try {
     if (unsubscribe) {
-      const res = await fetch('https://api.brevo.com/v3/contacts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'api-key': apiKey },
-        body: JSON.stringify({
-          email,
-          listIds: [],
-          unlinkListIds: [2, 3, 4],
-          updateEnabled: true,
-        }),
+      const res = await fetch("https://api.brevo.com/v3/contacts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "api-key": apiKey },
+        body: JSON.stringify({ email, listIds: [], unlinkListIds: [2, 3, 4], updateEnabled: true })
       });
-      if (!res.ok && res.status !== 204) console.error('Brevo unsubscribe error:', await res.text());
+      if (!res.ok && res.status !== 204) console.error("Brevo unsubscribe error:", await res.text());
     } else {
-      const listId = lang === 'pt' ? 3 : lang === 'es' ? 4 : 2;
-      const res = await fetch('https://api.brevo.com/v3/contacts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'api-key': apiKey },
+      const listId = lang === "pt" ? 3 : lang === "es" ? 4 : 2;
+      const res = await fetch("https://api.brevo.com/v3/contacts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "api-key": apiKey },
         body: JSON.stringify({
           email,
           listIds: [listId],
           updateEnabled: true,
-          attributes: {
-            LANGUAGE: lang || 'en',
-            ...(product ? { NOTIFY_PRODUCT: product } : {}),
-          },
-        }),
+          attributes: { LANGUAGE: lang || "en", ...product ? { NOTIFY_PRODUCT: product } : {} }
+        })
       });
-      if (!res.ok && res.status !== 204) console.error('Brevo subscribe error:', await res.text());
+      if (!res.ok && res.status !== 204) console.error("Brevo subscribe error:", await res.text());
     }
-
     return json({ ok: true });
   } catch (err) {
-    console.error('Subscribe error:', err.message);
+    console.error("Subscribe error:", err.message);
     return json({ ok: true });
   }
 }
 
-// ── REVIEWS ───────────────────────────────────────────────────────────────────
+// ─── REVIEWS ──────────────────────────────────────────────────────────────────
 
-// GET /reviews/{slug} — fetch approved reviews for a product
 async function handleReviewsGet(url, env) {
-  const slug = url.pathname.replace('/reviews/', '').replace(/\//g, '');
-  if (!slug) return json({ error: 'slug required' }, 400);
-
+  const slug = url.pathname.replace("/reviews/", "").replace(/\//g, "");
+  if (!slug) return json({ error: "slug required" }, 400);
   try {
     const list = await env.YSP_USERS.list({ prefix: `review:approved:${slug}:` });
     const reviews = [];
-
     for (const key of list.keys) {
       const raw = await env.YSP_USERS.get(key.name);
       if (raw) {
-        try { reviews.push(JSON.parse(raw)); } catch(_) {}
+        try { reviews.push(JSON.parse(raw)); } catch (_) {}
       }
     }
-
-    // Sort newest first
     reviews.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-
     return json({ reviews, count: reviews.length });
   } catch (err) {
     return json({ error: err.message }, 500);
   }
 }
 
-// POST /reviews/submit — submit a new review (goes to pending, awaits approval)
 async function handleReviewSubmit(request, env) {
   let body;
-  try { body = await request.json(); } catch(_) { return json({ error: 'Invalid JSON' }, 400); }
-
+  try {
+    body = await request.json();
+  } catch (_) {
+    return json({ error: "Invalid JSON" }, 400);
+  }
   const { slug, product_name, rating, name, email, title, body: reviewBody, photos } = body;
+  if (!slug) return json({ error: "slug required" }, 400);
+  if (!rating || rating < 1 || rating > 5) return json({ error: "rating must be 1–5" }, 400);
+  if (!name || name.trim().length < 1) return json({ error: "name required" }, 400);
+  if (!email || !email.includes("@")) return json({ error: "valid email required" }, 400);
+  if (!reviewBody || reviewBody.trim().length < 15) return json({ error: "review must be at least 15 characters" }, 400);
 
-  if (!slug) return json({ error: 'slug required' }, 400);
-  if (!rating || rating < 1 || rating > 5) return json({ error: 'rating must be 1–5' }, 400);
-  if (!name || name.trim().length < 1) return json({ error: 'name required' }, 400);
-  if (!email || !email.includes('@')) return json({ error: 'valid email required' }, 400);
-  if (!reviewBody || reviewBody.trim().length < 15) return json({ error: 'review must be at least 15 characters' }, 400);
-
-  // Check verified buyer via Stripe
   let verified_buyer = false;
   try {
     const stripeKey = env.STRIPE_SECRET_KEY;
     if (stripeKey) {
       const customerRes = await fetch(
         `https://api.stripe.com/v1/customers/search?query=email:'${encodeURIComponent(email.toLowerCase().trim())}'&limit=1`,
-        { headers: { 'Authorization': `Bearer ${stripeKey}` } }
+        { headers: { "Authorization": `Bearer ${stripeKey}` } }
       );
       if (customerRes.ok) {
         const customerData = await customerRes.json();
         if (customerData.data && customerData.data.length > 0) {
           const chargesRes = await fetch(
             `https://api.stripe.com/v1/charges?customer=${customerData.data[0].id}&limit=1`,
-            { headers: { 'Authorization': `Bearer ${stripeKey}` } }
+            { headers: { "Authorization": `Bearer ${stripeKey}` } }
           );
           if (chargesRes.ok) {
             const chargesData = await chargesRes.json();
-            verified_buyer = chargesData.data && chargesData.data.length > 0 &&
-              chargesData.data.some(c => c.status === 'succeeded');
+            verified_buyer = chargesData.data && chargesData.data.length > 0 && chargesData.data.some((c) => c.status === "succeeded");
           }
         }
       }
     }
-  } catch(err) {
-    console.error('Stripe verification error:', err.message);
+  } catch (err) {
+    console.error("Stripe verification error:", err.message);
   }
 
-  // Validate photos — base64 data URLs only, max 3, max ~2MB each
   const MAX_PHOTO_SIZE = 2.8 * 1024 * 1024;
   const cleanPhotos = [];
   if (Array.isArray(photos)) {
     for (const p of photos.slice(0, 3)) {
-      if (typeof p === 'string' && p.startsWith('data:image/') && p.length < MAX_PHOTO_SIZE) {
+      if (typeof p === "string" && p.startsWith("data:image/") && p.length < MAX_PHOTO_SIZE) {
         cleanPhotos.push(p);
       }
     }
@@ -785,83 +889,73 @@ async function handleReviewSubmit(request, env) {
     rating: parseInt(rating),
     name: name.trim().substring(0, 60),
     email: email.toLowerCase().trim(),
-    title: (title || '').trim().substring(0, 100),
+    title: (title || "").trim().substring(0, 100),
     body: reviewBody.trim().substring(0, 1200),
     photos: cleanPhotos,
     verified_buyer,
     created_at: new Date().toISOString(),
-    ip: request.headers.get('CF-Connecting-IP') || '',
+    ip: request.headers.get("CF-Connecting-IP") || ""
   };
 
   const pendingKey = `review:pending:${slug}:${ts}`;
-  await env.YSP_USERS.put(pendingKey, JSON.stringify(review), {
-    expirationTtl: 90 * 24 * 60 * 60,
-  });
+  await env.YSP_USERS.put(pendingKey, JSON.stringify(review), { expirationTtl: 90 * 24 * 60 * 60 });
 
-  // Notify admin via Brevo
   try {
     await sendReviewAdminNotification(env, { review, pendingKey });
-  } catch(err) {
-    console.error('Review admin notification failed:', err.message);
+  } catch (err) {
+    console.error("Review admin notification failed:", err.message);
   }
 
   console.log(`Review pending for ${slug} from ${email} (verified: ${verified_buyer})`);
   return json({ ok: true, verified_buyer });
 }
 
-// POST /reviews/approve — approve or reject a pending review (admin only)
 async function handleReviewApprove(request, env) {
-  const authHeader = request.headers.get('Authorization') || '';
-  const authSecret = env.AUTH_SECRET || 'ysp-default-secret';
-  if (authHeader !== `Bearer ${authSecret}`) {
-    return json({ error: 'Unauthorised' }, 401);
-  }
+  const authHeader = request.headers.get("Authorization") || "";
+  const authSecret = env.AUTH_SECRET || "ysp-default-secret";
+  if (authHeader !== `Bearer ${authSecret}`) return json({ error: "Unauthorised" }, 401);
 
   let body;
-  try { body = await request.json(); } catch(_) { return json({ error: 'Invalid JSON' }, 400); }
+  try {
+    body = await request.json();
+  } catch (_) {
+    return json({ error: "Invalid JSON" }, 400);
+  }
 
   const { action, key } = body;
-  if (!key || !key.startsWith('review:pending:')) {
-    return json({ error: 'key must be a review:pending: key' }, 400);
-  }
-  if (!['approve', 'reject'].includes(action)) {
-    return json({ error: 'action must be approve or reject' }, 400);
-  }
+  if (!key || !key.startsWith("review:pending:")) return json({ error: "key must be a review:pending: key" }, 400);
+  if (!["approve", "reject"].includes(action)) return json({ error: "action must be approve or reject" }, 400);
 
   const raw = await env.YSP_USERS.get(key);
-  if (!raw) return json({ error: 'Review not found or already processed' }, 404);
+  if (!raw) return json({ error: "Review not found or already processed" }, 404);
 
   let review;
-  try { review = JSON.parse(raw); } catch(_) { return json({ error: 'Corrupt review data' }, 500); }
+  try {
+    review = JSON.parse(raw);
+  } catch (_) {
+    return json({ error: "Corrupt review data" }, 500);
+  }
 
   await env.YSP_USERS.delete(key);
 
-  if (action === 'approve') {
+  if (action === "approve") {
     const ts = new Date(review.created_at).getTime() || Date.now();
     const approvedKey = `review:approved:${review.slug}:${ts}`;
-
-    // Strip private fields before storing the public record
     const { email: _email, ip: _ip, ...publicReview } = review;
-    await env.YSP_USERS.put(approvedKey, JSON.stringify(publicReview), {
-      expirationTtl: 3 * 365 * 24 * 60 * 60,
-    });
-
+    await env.YSP_USERS.put(approvedKey, JSON.stringify(publicReview), { expirationTtl: 3 * 365 * 24 * 60 * 60 });
     console.log(`Review approved: ${approvedKey}`);
-    return json({ ok: true, action: 'approved', key: approvedKey });
+    return json({ ok: true, action: "approved", key: approvedKey });
   } else {
     console.log(`Review rejected: ${key}`);
-    return json({ ok: true, action: 'rejected' });
+    return json({ ok: true, action: "rejected" });
   }
 }
 
-// Admin email notification when a new review is submitted
 async function sendReviewAdminNotification(env, { review, pendingKey }) {
   const apiKey = env.BREVO_API_KEY;
   if (!apiKey) return;
-
-  const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
-  const verifiedBadge = review.verified_buyer ? ' ✓ VERIFIED BUYER' : '';
-
+  const stars = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
+  const verifiedBadge = review.verified_buyer ? " ✓ VERIFIED BUYER" : "";
   const html = `<!DOCTYPE html>
 <html>
 <body style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:20px;color:#333;">
@@ -871,9 +965,9 @@ async function sendReviewAdminNotification(env, { review, pendingKey }) {
     <tr><td style="padding:6px 0;color:#888;">Rating</td><td>${stars} (${review.rating}/5)</td></tr>
     <tr><td style="padding:6px 0;color:#888;">Reviewer</td><td>${review.name}${verifiedBadge}</td></tr>
     <tr><td style="padding:6px 0;color:#888;">Email</td><td>${review.email}</td></tr>
-    ${review.title ? `<tr><td style="padding:6px 0;color:#888;">Title</td><td>${review.title}</td></tr>` : ''}
+    ${review.title ? `<tr><td style="padding:6px 0;color:#888;">Title</td><td>${review.title}</td></tr>` : ""}
     <tr><td style="padding:6px 0;color:#888;vertical-align:top;">Review</td><td style="line-height:1.6;">${review.body}</td></tr>
-    <tr><td style="padding:6px 0;color:#888;">Photos</td><td>${review.photos.length} photo${review.photos.length === 1 ? '' : 's'}</td></tr>
+    <tr><td style="padding:6px 0;color:#888;">Photos</td><td>${review.photos.length} photo${review.photos.length === 1 ? "" : "s"}</td></tr>
   </table>
   <p style="margin-bottom:0.5rem;font-weight:bold;">To approve:</p>
   <pre style="background:#f5f5f5;padding:12px;font-size:12px;overflow-x:auto;border-left:3px solid #9c7b56;">curl -X POST https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/reviews/approve \\
@@ -887,115 +981,75 @@ async function sendReviewAdminNotification(env, { review, pendingKey }) {
   -d '{"action":"reject","key":"${pendingKey}"}'</pre>
 </body>
 </html>`;
-
-  await fetch('https://api.brevo.com/v3/smtp/email', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'api-key': apiKey },
+  await fetch("https://api.brevo.com/v3/smtp/email", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "api-key": apiKey },
     body: JSON.stringify({
-      sender: { name: 'YSP Review System', email: 'info@yspcollective.com' },
-      to: [{ email: 'info@yspcollective.com', name: 'Stephen' }],
+      sender: { name: "YSP Review System", email: "info@yspcollective.com" },
+      to: [{ email: "info@yspcollective.com", name: "Stephen" }],
       subject: `⭐ New ${review.rating}-star review pending — ${review.product_name}`,
-      htmlContent: html,
-    }),
+      htmlContent: html
+    })
   });
 }
 
-// GET /reviews/averages — returns average rating + count for all products
-async function handleReviewsAverages(env) {
-  try {
-    const list = await env.YSP_USERS.list({ prefix: 'review:approved:' });
-    const map = {};
+// ─── AUTH ─────────────────────────────────────────────────────────────────────
 
-    for (const key of list.keys) {
-      const raw = await env.YSP_USERS.get(key.name);
-      if (!raw) continue;
-      try {
-        const review = JSON.parse(raw);
-        const slug = review.slug;
-        if (!slug) continue;
-        if (!map[slug]) map[slug] = { total: 0, count: 0 };
-        map[slug].total += review.rating;
-        map[slug].count += 1;
-      } catch(_) {}
-    }
-
-    const averages = {};
-    for (const [slug, data] of Object.entries(map)) {
-      averages[slug] = {
-        average: Math.round((data.total / data.count) * 10) / 10,
-        count: data.count
-      };
-    }
-
-    return json(averages);
-  } catch (err) {
-    return json({ error: err.message }, 500);
-  }
-}
-
-// ── AUTH HANDLERS ─────────────────────────────────────────────────────────────
 async function handleRegister(request, env) {
   let body;
-  try { body = await request.json(); } catch (_) { return json({ error: 'Invalid JSON' }, 400); }
-
-  const { email, password, firstName, lastName } = body;
-  if (!email || !password || !firstName) {
-    return json({ error: 'email, password and firstName required' }, 400);
+  try {
+    body = await request.json();
+  } catch (_) {
+    return json({ error: "Invalid JSON" }, 400);
   }
-  if (password.length < 8) return json({ error: 'Password must be at least 8 characters' }, 400);
+  const { email, password, firstName, lastName } = body;
+  if (!email || !password || !firstName) return json({ error: "email, password and firstName required" }, 400);
+  if (password.length < 8) return json({ error: "Password must be at least 8 characters" }, 400);
 
   const emailKey = `email:${email.toLowerCase().trim()}`;
   const existing = await env.YSP_USERS.get(emailKey);
-  if (existing) return json({ error: 'An account with this email already exists' }, 409);
+  if (existing) return json({ error: "An account with this email already exists" }, 409);
 
   const userId = `usr_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`;
   const passwordHash = await hashPassword(password);
   const now = new Date().toISOString();
-
   const user = {
-    userId,
-    email: email.toLowerCase().trim(),
-    firstName,
-    lastName: lastName || '',
-    passwordHash,
-    createdAt: now,
-    profileComplete: false,
-    interests: null,
-    fragrancePrefs: null,
-    beautyPrefs: null,
+    userId, email: email.toLowerCase().trim(), firstName, lastName: lastName || "",
+    passwordHash, createdAt: now, profileComplete: false,
+    interests: null, fragrancePrefs: null, beautyPrefs: null
   };
-
   await env.YSP_USERS.put(`user:${userId}`, JSON.stringify(user));
   await env.YSP_USERS.put(emailKey, userId);
 
-  const token = await generateToken(userId, env.AUTH_SECRET || 'ysp-default-secret');
+  const token = await generateToken(userId, env.AUTH_SECRET || "ysp-default-secret");
   const session = { userId, expires: Date.now() + 30 * 24 * 60 * 60 * 1000 };
   await env.YSP_USERS.put(`session:${token}`, JSON.stringify(session), { expirationTtl: 30 * 24 * 60 * 60 });
-
   return json({ token, user: { userId, email: user.email, firstName, lastName: user.lastName, profileComplete: false } });
 }
 
 async function handleLogin(request, env) {
   let body;
-  try { body = await request.json(); } catch (_) { return json({ error: 'Invalid JSON' }, 400); }
-
+  try {
+    body = await request.json();
+  } catch (_) {
+    return json({ error: "Invalid JSON" }, 400);
+  }
   const { email, password } = body;
-  if (!email || !password) return json({ error: 'email and password required' }, 400);
+  if (!email || !password) return json({ error: "email and password required" }, 400);
 
   const userId = await env.YSP_USERS.get(`email:${email.toLowerCase().trim()}`);
-  if (!userId) return json({ error: 'Invalid email or password' }, 401);
+  if (!userId) return json({ error: "Invalid email or password" }, 401);
 
   const userData = await env.YSP_USERS.get(`user:${userId}`);
-  if (!userData) return json({ error: 'Invalid email or password' }, 401);
+  if (!userData) return json({ error: "Invalid email or password" }, 401);
 
   const user = JSON.parse(userData);
   const passwordHash = await hashPassword(password);
-  if (passwordHash !== user.passwordHash) return json({ error: 'Invalid email or password' }, 401);
+  if (passwordHash !== user.passwordHash) return json({ error: "Invalid email or password" }, 401);
 
-  const token = await generateToken(userId, env.AUTH_SECRET || 'ysp-default-secret');
+  const token = await generateToken(userId, env.AUTH_SECRET || "ysp-default-secret");
   const session = { userId, expires: Date.now() + 30 * 24 * 60 * 60 * 1000 };
   await env.YSP_USERS.put(`session:${token}`, JSON.stringify(session), { expirationTtl: 30 * 24 * 60 * 60 });
-
   return json({ token, user: { userId: user.userId, email: user.email, firstName: user.firstName, lastName: user.lastName, profileComplete: user.profileComplete, interests: user.interests, fragrancePrefs: user.fragrancePrefs, beautyPrefs: user.beautyPrefs, createdAt: user.createdAt || null } });
 }
 
@@ -1008,18 +1062,22 @@ async function handleLogout(request, env) {
 async function handleMe(request, env) {
   const token = getAuthToken(request);
   const user = await getUserFromToken(token, env);
-  if (!user) return json({ error: 'Unauthorised' }, 401);
+  if (!user) return json({ error: "Unauthorised" }, 401);
   return json({ userId: user.userId, email: user.email, firstName: user.firstName, lastName: user.lastName, profileComplete: user.profileComplete, interests: user.interests, fragrancePrefs: user.fragrancePrefs, beautyPrefs: user.beautyPrefs, createdAt: user.createdAt || null });
 }
+
+// ─── PROFILE ──────────────────────────────────────────────────────────────────
 
 async function handleProfileSave(request, env) {
   const token = getAuthToken(request);
   const user = await getUserFromToken(token, env);
-  if (!user) return json({ error: 'Unauthorised' }, 401);
-
+  if (!user) return json({ error: "Unauthorised" }, 401);
   let body;
-  try { body = await request.json(); } catch (_) { return json({ error: 'Invalid JSON' }, 400); }
-
+  try {
+    body = await request.json();
+  } catch (_) {
+    return json({ error: "Invalid JSON" }, 400);
+  }
   const { interests, fragrancePrefs, beautyPrefs } = body;
   const updated = { ...user, interests: interests || user.interests, fragrancePrefs: fragrancePrefs || user.fragrancePrefs, beautyPrefs: beautyPrefs || user.beautyPrefs, profileComplete: true };
   const { userId, ...toStore } = updated;
@@ -1030,30 +1088,36 @@ async function handleProfileSave(request, env) {
 async function handleProfileGet(request, env) {
   const token = getAuthToken(request);
   const user = await getUserFromToken(token, env);
-  if (!user) return json({ error: 'Unauthorised' }, 401);
+  if (!user) return json({ error: "Unauthorised" }, 401);
   return json({ interests: user.interests, fragrancePrefs: user.fragrancePrefs, beautyPrefs: user.beautyPrefs, profileComplete: user.profileComplete });
 }
+
+// ─── FAVOURITES ───────────────────────────────────────────────────────────────
 
 async function handleFavouriteToggle(request, env) {
   const token = getAuthToken(request);
   const user = await getUserFromToken(token, env);
-  if (!user) return json({ error: 'Unauthorised' }, 401);
-
+  if (!user) return json({ error: "Unauthorised" }, 401);
   let body;
-  try { body = await request.json(); } catch (_) { return json({ error: 'Invalid JSON' }, 400); }
-
+  try {
+    body = await request.json();
+  } catch (_) {
+    return json({ error: "Invalid JSON" }, 400);
+  }
   const { slug, name, price, image, type } = body;
-  if (!slug) return json({ error: 'slug required' }, 400);
-
+  if (!slug) return json({ error: "slug required" }, 400);
   const favsKey = `favourites:${user.userId}`;
   const existing = await env.YSP_USERS.get(favsKey);
   let favs = existing ? JSON.parse(existing) : [];
-
-  const idx = favs.findIndex(f => f.slug === slug);
+  const idx = favs.findIndex((f) => f.slug === slug);
   let action;
-  if (idx > -1) { favs.splice(idx, 1); action = 'removed'; }
-  else { favs.unshift({ slug, name, price, image, type, addedAt: new Date().toISOString() }); action = 'added'; }
-
+  if (idx > -1) {
+    favs.splice(idx, 1);
+    action = "removed";
+  } else {
+    favs.unshift({ slug, name, price, image, type, addedAt: new Date().toISOString() });
+    action = "added";
+  }
   await env.YSP_USERS.put(favsKey, JSON.stringify(favs));
   return json({ ok: true, action, count: favs.length });
 }
@@ -1061,65 +1125,67 @@ async function handleFavouriteToggle(request, env) {
 async function handleFavouritesGet(request, env) {
   const token = getAuthToken(request);
   const user = await getUserFromToken(token, env);
-  if (!user) return json({ error: 'Unauthorised' }, 401);
+  if (!user) return json({ error: "Unauthorised" }, 401);
   const favsKey = `favourites:${user.userId}`;
   const existing = await env.YSP_USERS.get(favsKey);
   return json({ favourites: existing ? JSON.parse(existing) : [] });
 }
 
+// ─── SYNC PRODUCT ─────────────────────────────────────────────────────────────
+
 async function handleSyncProduct(request, env) {
   const stripeKey = env.STRIPE_SECRET_KEY;
-  if (!stripeKey) return json({ error: 'Stripe not configured' }, 500);
-
+  if (!stripeKey) return json({ error: "Stripe not configured" }, 500);
   let body;
-  try { body = await request.json(); } catch (_) { return json({ error: 'Invalid JSON' }, 400); }
-
+  try {
+    body = await request.json();
+  } catch (_) {
+    return json({ error: "Invalid JSON" }, 400);
+  }
   const { name, price, description, images, metadata } = body;
-  if (!name || !price) return json({ error: 'name and price required' }, 400);
-
-  const headers = { 'Authorization': `Bearer ${stripeKey}`, 'Content-Type': 'application/x-www-form-urlencoded' };
-
+  if (!name || !price) return json({ error: "name and price required" }, 400);
+  const headers = { "Authorization": `Bearer ${stripeKey}`, "Content-Type": "application/x-www-form-urlencoded" };
   try {
     const searchRes = await fetch(`https://api.stripe.com/v1/products/search?query=name:'${encodeURIComponent(name)}'&limit=1`, { headers });
     const searchData = await searchRes.json();
-
     let productId;
     if (searchData.data && searchData.data.length > 0) {
       productId = searchData.data[0].id;
     } else {
       const productParams = new URLSearchParams({ name });
-      if (description) productParams.append('description', description);
-      if (images && images[0]) productParams.append('images[]', images[0]);
+      if (description) productParams.append("description", description);
+      if (images && images[0]) productParams.append("images[]", images[0]);
       if (metadata) Object.entries(metadata).forEach(([k, v]) => productParams.append(`metadata[${k}]`, v));
-      const productRes = await fetch('https://api.stripe.com/v1/products', { method: 'POST', headers, body: productParams.toString() });
+      const productRes = await fetch("https://api.stripe.com/v1/products", { method: "POST", headers, body: productParams.toString() });
       const productData = await productRes.json();
-      if (!productRes.ok) return json({ error: productData.error?.message || 'Product create failed' }, 502);
+      if (!productRes.ok) return json({ error: productData.error?.message || "Product create failed" }, 502);
       productId = productData.id;
     }
-
-    const priceParams = new URLSearchParams({ product: productId, currency: 'eur', unit_amount: Math.round(price * 100) });
-    const priceRes = await fetch('https://api.stripe.com/v1/prices', { method: 'POST', headers, body: priceParams.toString() });
+    const priceParams = new URLSearchParams({ product: productId, currency: "eur", unit_amount: Math.round(price * 100) });
+    const priceRes = await fetch("https://api.stripe.com/v1/prices", { method: "POST", headers, body: priceParams.toString() });
     const priceData = await priceRes.json();
-    if (!priceRes.ok) return json({ error: priceData.error?.message || 'Price create failed' }, 502);
-
+    if (!priceRes.ok) return json({ error: priceData.error?.message || "Price create failed" }, 502);
     return json({ productId, priceId: priceData.id });
   } catch (err) {
     return json({ error: err.message }, 500);
   }
 }
 
+// ─── CHAT ─────────────────────────────────────────────────────────────────────
+
 async function handleChat(request, env) {
   const apiKey = env.ANTHROPIC_API_KEY;
-  if (!apiKey) return json({ error: 'Chat not configured' }, 500);
-
+  if (!apiKey) return json({ error: "Chat not configured" }, 500);
   let body;
-  try { body = await request.json(); } catch (_) { return json({ error: 'Invalid JSON' }, 400); }
-
+  try {
+    body = await request.json();
+  } catch (_) {
+    return json({ error: "Invalid JSON" }, 400);
+  }
   const { messages } = body;
   if (!messages || !Array.isArray(messages) || messages.length === 0) {
-    return json({ error: 'messages array required' }, 400);
+    return json({ error: "messages array required" }, 400);
   }
-
   let userProfile = null;
   const token = getAuthToken(request);
   if (token) {
@@ -1128,25 +1194,21 @@ async function handleChat(request, env) {
       userProfile = { firstName: user.firstName, interests: user.interests, fragrancePrefs: user.fragrancePrefs, beautyPrefs: user.beautyPrefs };
     }
   }
-
   const cleanMessages = messages
-    .filter(m => m.role === 'user' || m.role === 'assistant')
-    .map(m => ({ role: m.role, content: String(m.content).substring(0, 2000) }));
-
-  if (cleanMessages.length === 0) return json({ error: 'No valid messages' }, 400);
-
+    .filter((m) => m.role === "user" || m.role === "assistant")
+    .map((m) => ({ role: m.role, content: String(m.content).substring(0, 2000) }));
+  if (cleanMessages.length === 0) return json({ error: "No valid messages" }, 400);
   try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01' },
-      body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: 1024, system: buildSystemPrompt(userProfile), messages: cleanMessages }),
+    const response = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-api-key": apiKey, "anthropic-version": "2023-06-01" },
+      body: JSON.stringify({ model: "claude-haiku-4-5-20251001", max_tokens: 1024, system: buildSystemPrompt(userProfile), messages: cleanMessages })
     });
-
     const data = await response.json();
-    if (!response.ok) return json({ error: data.error?.message || 'AI error' }, 502);
-    const text = data.content?.find(c => c.type === 'text')?.text || '';
+    if (!response.ok) return json({ error: data.error?.message || "AI error" }, 502);
+    const text = data.content?.find((c) => c.type === "text")?.text || "";
     return json({ content: text });
   } catch (err) {
-    return json({ error: 'Internal error' }, 500);
+    return json({ error: "Internal error" }, 500);
   }
 }
