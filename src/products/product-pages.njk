@@ -865,9 +865,10 @@ permalink: "products/{{ product.slug }}.html"
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             items: [{ id: buyBtn.dataset.slug, name: buyBtn.dataset.name, price: parseFloat(buyBtn.dataset.price), image: imageUrl, quantity: 1 }],
-            success_url: 'https://yspcollective.com/checkout-success.html',
+            success_url: 'https://yspcollective.com/checkout-success.html?session_id={CHECKOUT_SESSION_ID}',
             cancel_url: window.location.href,
             lang,
+            subtotal: parseFloat(buyBtn.dataset.price),
           })
         });
         const data = await res.json();
