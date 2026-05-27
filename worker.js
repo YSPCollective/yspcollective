@@ -814,10 +814,6 @@ async function handleCheckout(request, env) {
     ? subtotal
     : items.reduce((sum, item) => sum + ((item.price || 0) * (item.quantity || 1)), 0);
 
-  const SHIPPING_RATE_ID = cartTotal >= 50
-    ? "shr_1Tb5ySBUWm11KZzMBTAW1hRV"  // Free shipping (orders >= €50)
-    : "shr_1Tb5v1BUWm11KZzMQ6QK82fP"; // €5.00 standard shipping
-
   const origin = request.headers.get("Origin") || "https://yspcollective.com";
 
   const params = new URLSearchParams({
@@ -832,8 +828,22 @@ async function handleCheckout(request, env) {
 
   if (lang) params.append("metadata[lang]", lang);
 
-  // Shipping rate (pre-created in Stripe Dashboard)
-  params.append("shipping_options[0][shipping_rate]", SHIPPING_RATE_ID);
+  // Shipping — inline rate data (no pre-created Stripe rate needed)
+  if (cartTotal >= 50) {
+    params.append("shipping_options[0][shipping_rate_data][display_name]", "Free Shipping");
+    params.append("shipping_options[0][shipping_rate_data][type]", "fixed_amount");
+    params.append("shipping_options[0][shipping_rate_data][fixed_amount][amount]", "0");
+    params.append("shipping_options[0][shipping_rate_data][fixed_amount][currency]", "eur");
+  } else {
+    params.append("shipping_options[0][shipping_rate_data][display_name]", "Standard Shipping");
+    params.append("shipping_options[0][shipping_rate_data][type]", "fixed_amount");
+    params.append("shipping_options[0][shipping_rate_data][fixed_amount][amount]", "595");
+    params.append("shipping_options[0][shipping_rate_data][fixed_amount][currency]", "eur");
+    params.append("shipping_options[0][shipping_rate_data][delivery_estimate][minimum][unit]", "business_day");
+    params.append("shipping_options[0][shipping_rate_data][delivery_estimate][minimum][value]", "1");
+    params.append("shipping_options[0][shipping_rate_data][delivery_estimate][maximum][unit]", "business_day");
+    params.append("shipping_options[0][shipping_rate_data][delivery_estimate][maximum][value]", "4");
+  }
 
   params.append(
     "custom_text[submit][message]",
