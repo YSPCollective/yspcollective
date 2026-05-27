@@ -6,8 +6,8 @@ brand: Zimaya
 gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
-badge: ""
-stock_status: on_order
+badge: New
+stock_status: pre_order
 expected_date: June 2026
 featured: false
 published: true
