@@ -6,7 +6,7 @@ category: Moisturiser
 size: 50ml
 badge: Bestseller
 custom_badge: ""
-stock_status: pre_order
+stock_status: in_stock
 featured: true
 published: true
 skin_type: All skin types, especially dry, sensitive, and acne-prone
@@ -60,5 +60,5 @@ ebay_url: ""
 price: "26.00"
 brand: ANUA
 amazon_url: ""
-exclude_from_feed: true
+exclude_from_feed: false
 ---

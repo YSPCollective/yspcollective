@@ -10,12 +10,11 @@ projection: Strong
 best_for: Evening wear, cooler seasons, formal and smart-casual occasions
 launched: "2015"
 vegan: false
-image_main: /products/armaf/club-de-nuit-intense-man/club-de-nuit-image-1.jpeg
+image_main: /images/uploads/club-de-nuit-image-3.jpeg
 gallery:
-  - /products/armaf/club-de-nuit-intense-man/club-de-nuit-image-1.jpeg
-  - /products/armaf/club-de-nuit-intense-man/club-de-nuit-image-2.jpeg
   - /products/armaf/club-de-nuit-intense-man/club-de-nuit-image-3.jpeg
-  - /products/armaf/club-de-nuit-intense-man/club-de-nuit-image-4.jpeg
+  - /images/uploads/club-de-nuit-image-2.png
+  - /products/armaf/club-de-nuit-intense-man/club-de-nuit-image-1.jpeg
 description_short: One of the most celebrated value fragrances in men's
   perfumery. Bold citrus-fruit opening, exceptional dry-down, 8–12 hour
   longevity.
@@ -50,14 +49,14 @@ inspired_by_name: Creed Aventus
 inspired_by_note: same smoky birch, pineapple and oakmoss DNA — one of the
   closest comparisons in perfumery
 ebay_url: ""
-price: "29.55"
-brand: Armaf
-heart_notes: Rose, Birch, Jasmine
-origin: UAE
 name: Armaf Club de Nuit Intense 105ml
 slug: armaf-club-de-nuit-intense-105ml
+price: "29.55"
+brand: Armaf
 concentration: Eau de Toilette (EDT)
 featured: false
+heart_notes: Rose, Birch, Jasmine
+origin: UAE
 exclude_from_feed: true
 accords:
   - woody
