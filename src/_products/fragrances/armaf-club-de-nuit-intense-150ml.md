@@ -59,7 +59,7 @@ accords:
 base_notes: Musk, Ambergris, Patchouli, Vanilla
 amazon_url: ""
 gender_label: Men
-stock_status: on_order
+stock_status: coming_soon
 top_notes: Lemon, Pineapple, Bergamot, Black Currant, Apple
 accords_text: citrus, fructured, leather, smoked, woody, aromatic, sweet, fresh, musked
 image_main: /images/uploads/club-de-nuit-intense-man-1.jpeg
