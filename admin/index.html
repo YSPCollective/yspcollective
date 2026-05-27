@@ -13,9 +13,14 @@
    CMS.registerEventListener({
      name: 'preSave',
      handler: ({ entry }) => {
-       if (!entry.data.date_added) {
-         const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
-         return { data: { ...entry.data, date_added: today } };
+       try {
+         const data = entry.get('data');
+         if (!data.get('date_added')) {
+           const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+           return entry.set('data', data.set('date_added', today));
+         }
+       } catch(e) {
+         console.warn('[YSP] date_added auto-fill skipped:', e.message);
        }
      }
    });
