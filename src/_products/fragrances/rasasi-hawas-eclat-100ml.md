@@ -1,10 +1,14 @@
 ---
+name: Rasasi Hawas Eclat 100ml
+slug: rasasi-hawas-eclat
 price: "39"
 brand: Rasasi
 gender: Women
 size: 100ml
+concentration: Eau de Parfum (EDP)
 badge: Popular
-stock_status: in_stock
+stock_status: sold_out
+featured: false
 published: true
 fragrance_family: "Fresh Aquatic "
 top_notes: Litchi, Pear, Beramot, Pistachio
@@ -36,10 +40,6 @@ ysp_thoughts: >-
   We like it because it's genuinely easy to wear — clean, bright, never overdone. It reminded us that sometimes the most useful fragrance in your collection is the one that just works, every time, without asking anything of you.
 inspired_by_name: Delina da Parfums de Marly
 inspired_by_note: The lychee-rose DNA is classic Delina territory
-name: Rasasi Hawas Eclat 100ml
-slug: rasasi-hawas-eclat
-concentration: Eau de Parfum (EDP)
-featured: false
 gtin: "614514339206"
 exclude_from_feed: false
 accords:
