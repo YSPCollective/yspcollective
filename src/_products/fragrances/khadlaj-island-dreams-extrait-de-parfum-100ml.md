@@ -7,7 +7,7 @@ gender: Unisex
 size: 100ml
 concentration: Extrait de Parfum
 badge: Popular
-stock_status: on_order
+stock_status: pre_order
 expected_date: June 2026
 featured: false
 published: true
