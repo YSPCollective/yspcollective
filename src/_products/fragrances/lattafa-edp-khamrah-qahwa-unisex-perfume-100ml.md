@@ -3,8 +3,11 @@ rrp: ""
 gender: Unisex
 size: 100ml
 badge: Curated
-stock_status: coming_soon
+custom_badge: ""
+stock_status: sold_out
 published: true
+date_added: 2026-05-28
+fragrance_family: Oriental Vanilla / Gourmand
 longevity: 12–15 hours on skin; days on clothing
 projection: Strong (1–2 sprays recommended)
 best_for: Evening wear, autumn/winter, special occasions
@@ -15,6 +18,8 @@ gallery:
   - /products/lattafa/khamrah-qahwa/1-79.jpeg
   - /products/lattafa/khamrah-qahwa/2-79.jpeg
   - /products/lattafa/khamrah-qahwa/3-79.jpeg
+description_short: Khamrah's darker sibling — spiced coffee gourmand with
+  extraordinary longevity. Fragrantica Readers' Choice Award winner 2024.
 description_full: >
   If Khamrah is a spiced Arabian evening, Qahwa is that same evening with a
   coffee in hand — and it might be even better.
@@ -45,14 +50,14 @@ inspired_by_name: Tom Ford Tobacco Vanille
 inspired_by_note: deep coffee and tobacco gourmand — darker and more complex at
   a fraction of the price
 ebay_url: ""
-price: "34"
-brand: Lattafa
-heart_notes: Praline, Candied Fruits, White Flowers
-origin: UAE
 name: Lattafa Khamrah Qahwa 100ml
 slug: lattafa-edp-khamrah-qahwa-unisex-perfume-100ml
+price: "34"
+brand: Lattafa
 concentration: Eau de Parfum (EDP)
 featured: false
+heart_notes: Praline, Candied Fruits, White Flowers
+origin: UAE
 exclude_from_feed: true
 accords:
   - coffee
@@ -62,12 +67,8 @@ accords:
   - sweet
   - woody
   - amber
-custom_badge: ""
-fragrance_family: Oriental Vanilla / Gourmand
 base_notes: Coffee, Vanilla, Tonka Bean, Benzoin, Musk
 amazon_url: ""
 gender_label: Unisex
 top_notes: Cinnamon, Cardamom, Ginger
-description_short: Khamrah's darker sibling — spiced coffee gourmand with
-  extraordinary longevity. Fragrantica Readers' Choice Award winner 2024.
 ---
