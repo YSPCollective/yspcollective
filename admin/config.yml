@@ -87,6 +87,14 @@ collections:
       - { label: "Expected Date", name: "expected_date", widget: "string", required: false, hint: "e.g. April 2026 — shows on page when On Order or Pre-Order" }
       - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, hint: "Show in Featured Fragrances section" }
       - { label: "Published", name: "published", widget: "boolean", default: true }
+      - label: "Date Added"
+        name: "date_added"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        required: false
+        hint: "Auto-filled with today's date on first save — used for Newest sort order"
 
       # ── 4. FRAGRANCE PROFILE ──────────────────────────────────────
       - { label: "Fragrance Family", name: "fragrance_family", widget: "string", hint: "e.g. Oriental Vanilla / Amber Floral" }
@@ -222,6 +230,14 @@ collections:
       - { label: "Expected Date", name: "expected_date", widget: "string", required: false, hint: "e.g. April 2026 — shows on page when On Order or Pre-Order" }
       - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, hint: "Show in Featured Beauty section" }
       - { label: "Published", name: "published", widget: "boolean", default: true }
+      - label: "Date Added"
+        name: "date_added"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        required: false
+        hint: "Auto-filled with today's date on first save — used for Newest sort order"
 
       # ── 4. PRODUCT PROFILE ────────────────────────────────────────
       - { label: "Skin Type", name: "skin_type", widget: "string", hint: "e.g. All skin types, including sensitive" }

@@ -16,6 +16,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "images": "images" });
   eleventyConfig.addPassthroughCopy({ "products": "products" });
   eleventyConfig.addPassthroughCopy("src/*.js");
+  eleventyConfig.addPassthroughCopy({ "src/yspcart.js": "yspcart.js" });
 
   // Favicon files (root → _site root)
   eleventyConfig.addPassthroughCopy({ "favicon.ico": "favicon.ico" });
@@ -27,7 +28,7 @@ module.exports = function(eleventyConfig) {
 
   const PRODUCT_FIELDS = [
     'name','slug','badge','custom_badge','price','rrp','brand','gender',
-    'category','image_main','gallery','description_short','description_full','ysp_thoughts',
+    'category','image_main','gallery','description_short','description_full','ysp_thoughts','date_added',
     'concentration','size','fragrance_family','top_notes','heart_notes','base_notes',
     'accords','accords_text','longevity','projection','best_for','origin','launched','vegan',
     'skin_type','key_ingredients','free_from','spf_rating','amazon_url','published',
@@ -99,7 +100,12 @@ module.exports = function(eleventyConfig) {
     const beauty = col.getFilteredByGlob("src/_products/beauty/*.md")
       .filter(i => i.data.published !== false)
       .map(i => extractProduct(i, 'beauty'));
-    return [...fragrances, ...beauty];
+    return [...fragrances, ...beauty].sort((a, b) => {
+      const da = a.date_added ? new Date(a.date_added) : new Date(0);
+      const db = b.date_added ? new Date(b.date_added) : new Date(0);
+      if (db - da !== 0) return db - da; // newest first
+      return (a.name || '').localeCompare(b.name || ''); // alphabetical tiebreak
+    });
   });
 
   // Filters

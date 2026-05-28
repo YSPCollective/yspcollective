@@ -101,8 +101,9 @@
             image: item.image,
             quantity: item.quantity
           })),
-          success_url: window.location.origin + '/checkout-success.html',
-          cancel_url: window.location.href
+          success_url: window.location.origin + '/checkout-success.html?session_id={CHECKOUT_SESSION_ID}',
+          cancel_url: window.location.href,
+          subtotal: getTotal()
         })
       });
 

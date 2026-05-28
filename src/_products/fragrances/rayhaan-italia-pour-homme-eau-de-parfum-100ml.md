@@ -7,7 +7,7 @@ gender: Men
 size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
-stock_status: coming_soon
+stock_status: in_stock
 featured: false
 published: true
 fragrance_family: Oriental Woody

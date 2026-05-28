@@ -8,5 +8,22 @@
 </head>
 <body>
  <script src="https://unpkg.com/decap-cms@3.3.3/dist/decap-cms.js"></script>
+ <script>
+   // Auto-fill date_added with today's date on first save
+   CMS.registerEventListener({
+     name: 'preSave',
+     handler: ({ entry }) => {
+       try {
+         const data = entry.get('data');
+         if (!data.get('date_added')) {
+           const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+           return entry.set('data', data.set('date_added', today));
+         }
+       } catch(e) {
+         console.warn('[YSP] date_added auto-fill skipped:', e.message);
+       }
+     }
+   });
+ </script>
 </body>
 </html>

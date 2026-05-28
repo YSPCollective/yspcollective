@@ -40,7 +40,7 @@ permalink: "products/{{ product.slug }}.html"
   .product-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; padding: 2.5rem 4rem 6rem; max-width: 1400px; margin: 0 auto; }
 
   .gallery-main { aspect-ratio: 1; overflow: hidden; background: var(--cream); position: relative; }
-  .gallery-main img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease; }
+  .gallery-main img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity 0.3s ease; }
   .gallery-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 36px; height: 36px; background: rgba(255,255,255,0.92); border: 1px solid var(--sand); cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 2; transition: background 0.2s, opacity 0.2s; opacity: 0; font-size: 0.9rem; color: var(--black); }
   .gallery-main:hover .gallery-arrow { opacity: 1; }
   .gallery-arrow:hover { background: var(--white); }
@@ -327,14 +327,15 @@ permalink: "products/{{ product.slug }}.html"
 </div>
 
 <div class="product-wrap">
+  {% set galleryImages = product.gallery if (product.gallery and product.gallery.length) else [product.image_main] %}
   <div class="gallery-col">
     <div class="gallery-main" id="gallery-main">
-      <img id="main-img" src="{{ product.image_main }}" alt="{{ product.name }}" />
+      <img id="main-img" src="{{ galleryImages[0] }}" alt="{{ product.name }}" />
       <button class="gallery-arrow prev hidden" id="gallery-prev" aria-label="Previous image">&#8592;</button>
       <button class="gallery-arrow next hidden" id="gallery-next" aria-label="Next image">&#8594;</button>
     </div>
     <div class="gallery-thumbs" id="gallery-thumbs">
-      {% for img in product.gallery %}
+      {% for img in galleryImages %}
       <div class="gallery-thumb {% if loop.first %}active{% endif %}" data-src="{{ img }}" data-index="{{ loop.index0 }}">
         <img src="{{ img }}" alt="{{ product.name }} {{ loop.index }}" loading="lazy">
       </div>
@@ -865,9 +866,10 @@ permalink: "products/{{ product.slug }}.html"
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             items: [{ id: buyBtn.dataset.slug, name: buyBtn.dataset.name, price: parseFloat(buyBtn.dataset.price), image: imageUrl, quantity: 1 }],
-            success_url: 'https://yspcollective.com/checkout-success.html',
+            success_url: 'https://yspcollective.com/checkout-success.html?session_id={CHECKOUT_SESSION_ID}',
             cancel_url: window.location.href,
             lang,
+            subtotal: parseFloat(buyBtn.dataset.price),
           })
         });
         const data = await res.json();

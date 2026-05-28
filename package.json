@@ -5,7 +5,8 @@
   "scripts": {
     "build": "eleventy --config=eleventy.config.js",
     "start": "eleventy --serve --config=eleventy.config.js",
-    "dev": "eleventy --serve --watch --config=eleventy.config.js"
+    "dev": "eleventy --serve --watch --config=eleventy.config.js",
+    "deploy:api": "wrangler deploy --config wrangler.api.toml"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1"
