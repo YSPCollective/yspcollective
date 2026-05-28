@@ -3,8 +3,11 @@ rrp: ""
 gender: Unisex
 size: 100ml
 badge: Curated
-stock_status: coming_soon
+custom_badge: ""
+stock_status: sold_out
 published: true
+date_added: 2026-05-28
+fragrance_family: Oriental Spicy / Gourmand
 longevity: 8–12+ hours
 projection: Strong — use 1–2 sprays
 best_for: Evening wear, autumn/winter, special occasions
@@ -15,6 +18,8 @@ gallery:
   - /products/lattafa/khamrah/1-60.jpeg
   - /products/lattafa/khamrah/2-60.jpeg
   - /products/lattafa/khamrah/3-60.jpeg
+description_short: Rich, spiced and deeply indulgent. One of the most celebrated
+  Arabic fragrances — bold cinnamon-dates opening, extraordinary resinous base.
 description_full: >
   Rich, spiced, and deeply indulgent — Khamrah is Lattafa at their most opulent,
   and one of the most celebrated Arabic fragrances of the last few years.
@@ -40,14 +45,14 @@ ysp_thoughts: >
 inspired_by_name: Kilian Angels' Share
 inspired_by_note: same cognac-vanilla-cinnamon gourmand warmth, richer sillage
 ebay_url: ""
-price: "34"
-brand: Lattafa
-heart_notes: Dates, Praline, Tuberose, Mahonial
-origin: UAE
 name: Lattafa Khamrah 100ml
 slug: lattafa-khamrah-eau-de-parfum-100ml-unisex-fragrance
+price: "34"
+brand: Lattafa
 concentration: Eau de Parfum (EDP)
 featured: false
+heart_notes: Dates, Praline, Tuberose, Mahonial
+origin: UAE
 exclude_from_feed: true
 accords:
   - spicy
@@ -57,12 +62,8 @@ accords:
   - vanilla
   - resinous
   - smoky
-custom_badge: ""
-fragrance_family: Oriental Spicy / Gourmand
 base_notes: Vanilla, Tonka Bean, Benzoin, Myrrh, Amberwood, Akigalawood
 amazon_url: ""
 gender_label: Unisex
 top_notes: Cinnamon, Nutmeg, Bergamot
-description_short: Rich, spiced and deeply indulgent. One of the most celebrated
-  Arabic fragrances — bold cinnamon-dates opening, extraordinary resinous base.
 ---
