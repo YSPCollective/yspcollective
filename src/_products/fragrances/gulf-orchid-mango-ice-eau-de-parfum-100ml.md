@@ -7,15 +7,21 @@ gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: New
+stock_status: last_one
 featured: false
 published: true
+date_added: 2026-05-28
+top_notes: Mango, Lemon, Ginger, Rhubarb
 heart_notes: White Flowers, Amber, Licorice
+accords_text: fruity, tropical, sweet, citrus, fresh spicy, musky, fresh,
+  aromatic, terpenic, white floral
 longevity: 6-8 hours
 projection: "Moderate - Strong "
 best_for: Daytime wear
 origin: UAE
 launched: "2025"
 vegan: false
+image_main: /images/uploads/mango_ice_gulf_orchid_with_box.jpeg
 gallery:
   - /images/uploads/mango_ice__gulf_orchid_perufmes.jpeg
   - /images/uploads/mangoicewithboxopened-gulforchid.jpeg
@@ -35,6 +41,7 @@ ysp_thoughts: >-
 
 
   This does exactly that. We were drawn to it because it fills a gap in an Arabian fragrance lineup that can lean heavy and resinous — this is the palate cleanser, the warm weather option, the one that surprises people who assume Arabian perfumery is all oud and amber. It earns its place on the shelf by being genuinely different.
+inspired_by_name: God of Fire by Stéphane Humbert Lucas
 gtin: "6290362162629"
 exclude_from_feed: false
 pt:
@@ -98,15 +105,9 @@ accords:
   - aromatic
   - terpenic
   - white floral
-stock_status: sold_out
 fragrance_family: Fruity Floral
-top_notes: Mango, Lemon, Ginger, Rhubarb
 base_notes: Musk, Vanilla, Caramel, Chestnut
-accords_text: fruity, tropical, sweet, citrus, fresh spicy, musky, fresh,
-  aromatic, terpenic, white floral
-image_main: /images/uploads/mango_ice_gulf_orchid_with_box.jpeg
 description_short: A fun, fruit-forward EDP from Gulf Orchid — juicy mango and
   cooling freshness balanced over a soft, musky base. Vibrant, approachable, and
   perfect for warmer days.
-inspired_by_name: God of Fire by Stéphane Humbert Lucas
 ---
