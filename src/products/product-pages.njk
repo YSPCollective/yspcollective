@@ -166,7 +166,7 @@ permalink: "products/{{ product.slug }}.html"
 
   /* ── Inspired-by callout ── */
   .inspired-callout { margin: 1.2rem 0 1.6rem; padding: 1rem 1.2rem; background: var(--black); border-left: 3px solid var(--accent); }
-  .inspired-callout-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 0.3rem; }
+  .inspired-callout-label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 0.3rem; }
   .inspired-callout-name { font-family: var(--serif); font-size: 1.05rem; font-weight: 400; color: var(--white); margin-bottom: 0.2rem; }
   .inspired-callout-note { font-size: 0.8rem; color: rgba(255,255,255,0.55); font-style: italic; }
 
@@ -444,7 +444,7 @@ permalink: "products/{{ product.slug }}.html"
 
     {% if product.inspired_by_name %}
     <div class="inspired-callout">
-      <div class="inspired-callout-label">In the same world as</div>
+      <div class="inspired-callout-label">Inspired By</div>
       <div class="inspired-callout-name">{{ product.inspired_by_name }}</div>
       <div class="inspired-callout-note">{% if product.inspired_by_note %}{{ product.inspired_by_note }}{% else %}same DNA — at a fraction of the price{% endif %}</div>
     </div>
