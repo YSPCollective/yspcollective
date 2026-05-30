@@ -112,7 +112,6 @@ collections:
       - { label: "Main Accords", name: "accords_text", widget: "string", required: false, hint: "Comma-separated e.g. vanilla, oud, musk, amber, floral" }
       - { label: "Longevity", name: "longevity", widget: "string", required: false, hint: "e.g. 7–12 hours" }
       - { label: "Projection", name: "projection", widget: "string", required: false, hint: "e.g. Strong" }
-      - { label: "Best For", name: "best_for", widget: "string", required: false, hint: "e.g. Evening wear, autumn/winter" }
       - { label: "Origin", name: "origin", widget: "string", default: "UAE" }
       - { label: "Launched", name: "launched", widget: "string", required: false, hint: "e.g. 2020" }
       - { label: "Vegan & Cruelty-Free", name: "vegan", widget: "boolean", default: false }
