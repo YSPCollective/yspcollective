@@ -166,7 +166,7 @@ permalink: "products/{{ product.slug }}.html"
 
   /* ── Inspired-by callout ── */
   .inspired-callout { margin: 1.2rem 0 1.6rem; padding: 1rem 1.2rem; background: var(--black); border-left: 3px solid var(--accent); }
-  .inspired-callout-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem; }
+  .inspired-callout-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 0.3rem; }
   .inspired-callout-name { font-family: var(--serif); font-size: 1.05rem; font-weight: 400; color: var(--white); margin-bottom: 0.2rem; }
   .inspired-callout-note { font-size: 0.8rem; color: rgba(255,255,255,0.55); font-style: italic; }
 
@@ -175,8 +175,9 @@ permalink: "products/{{ product.slug }}.html"
   .perf-bar-label { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.35rem; }
   .perf-bar-label-text { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey); }
   .perf-bar-label-value { font-size: 0.78rem; color: var(--black); }
-  .perf-bar-track { height: 3px; background: var(--sand); }
-  .perf-bar-fill { height: 100%; background: var(--accent); transition: width 0.8s ease; }
+  .perf-segs { display: flex; gap: 3px; }
+  .perf-seg { flex: 1; height: 9px; border-radius: 1px; background: var(--sand); }
+  .perf-seg.on { background: var(--accent); }
 
   /* ── Best for / Not ideal for ── */
   .best-for-section { margin-bottom: 1.6rem; }
@@ -193,8 +194,9 @@ permalink: "products/{{ product.slug }}.html"
   .char-rows { display: flex; flex-direction: column; gap: 0.7rem; }
   .char-row { display: grid; grid-template-columns: 100px 1fr; align-items: center; gap: 0.8rem; }
   .char-row-label { font-size: 0.78rem; color: var(--black); }
-  .char-track { height: 3px; background: var(--sand); }
-  .char-fill { height: 100%; background: var(--accent); }
+  .char-segs { display: flex; gap: 3px; }
+  .char-seg { flex: 1; height: 9px; border-radius: 1px; background: var(--sand); }
+  .char-seg.on { background: var(--accent); }
 
   /* ── "What does this smell like?" section ── */
   .smell-section { background: var(--cream); padding: 1.4rem 1.6rem; margin: 1.5rem 0; border-top: 2px solid var(--accent); }
@@ -458,37 +460,38 @@ permalink: "products/{{ product.slug }}.html"
     <div class="perf-bars">
       {% if product.longevity %}
         {% set lv = product.longevity | lower %}
-        {% if "20" in lv or "24" in lv %}{% set lvPct = 100 %}
-        {% elif "16" in lv %}{% set lvPct = 96 %}
-        {% elif "14" in lv %}{% set lvPct = 90 %}
-        {% elif "12" in lv %}{% set lvPct = 83 %}
-        {% elif "10" in lv %}{% set lvPct = 72 %}
-        {% elif "8" in lv %}{% set lvPct = 58 %}
-        {% elif "6" in lv %}{% set lvPct = 44 %}
-        {% elif "4" in lv %}{% set lvPct = 30 %}
-        {% else %}{% set lvPct = 55 %}{% endif %}
+        {% if "20" in lv or "24" in lv %}{% set lvSegs = 5 %}
+        {% elif "16" in lv or "14" in lv %}{% set lvSegs = 5 %}
+        {% elif "12" in lv %}{% set lvSegs = 4 %}
+        {% elif "10" in lv %}{% set lvSegs = 4 %}
+        {% elif "8" in lv %}{% set lvSegs = 3 %}
+        {% elif "6" in lv %}{% set lvSegs = 2 %}
+        {% elif "4" in lv %}{% set lvSegs = 1 %}
+        {% else %}{% set lvSegs = 3 %}{% endif %}
         <div class="perf-bar-row">
           <div class="perf-bar-label">
             <span class="perf-bar-label-text">Longevity</span>
             <span class="perf-bar-label-value">{{ product.longevity }}</span>
           </div>
-          <div class="perf-bar-track"><div class="perf-bar-fill" style="width:{{ lvPct }}%"></div></div>
+          <div class="perf-segs">{% for i in [1,2,3,4,5] %}<div class="perf-seg{% if i <= lvSegs %} on{% endif %}"></div>{% endfor %}</div>
         </div>
       {% endif %}
       {% if product.projection %}
         {% set pj = product.projection | lower %}
-        {% if "enormous" in pj or "beast" in pj %}{% set pjPct = 100 %}
-        {% elif "very strong" in pj %}{% set pjPct = 88 %}
-        {% elif "strong" in pj %}{% set pjPct = 75 %}
-        {% elif "moderate" in pj or "medium" in pj %}{% set pjPct = 50 %}
-        {% elif "soft" in pj or "light" in pj or "subtle" in pj %}{% set pjPct = 25 %}
-        {% else %}{% set pjPct = 55 %}{% endif %}
+        {% if "enormous" in pj or "beast" in pj %}{% set pjSegs = 5 %}
+        {% elif "very strong" in pj %}{% set pjSegs = 5 %}
+        {% elif "strong +" in pj %}{% set pjSegs = 5 %}
+        {% elif "strong" in pj %}{% set pjSegs = 4 %}
+        {% elif "moderate to strong" in pj or "moderate - strong" in pj %}{% set pjSegs = 3 %}
+        {% elif "moderate" in pj or "medium" in pj %}{% set pjSegs = 2 %}
+        {% elif "soft" in pj or "light" in pj or "subtle" in pj %}{% set pjSegs = 1 %}
+        {% else %}{% set pjSegs = 3 %}{% endif %}
         <div class="perf-bar-row">
           <div class="perf-bar-label">
             <span class="perf-bar-label-text">Projection</span>
             <span class="perf-bar-label-value">{{ product.projection }}</span>
           </div>
-          <div class="perf-bar-track"><div class="perf-bar-fill" style="width:{{ pjPct }}%"></div></div>
+          <div class="perf-segs">{% for i in [1,2,3,4,5] %}<div class="perf-seg{% if i <= pjSegs %} on{% endif %}"></div>{% endfor %}</div>
         </div>
       {% endif %}
     </div>
@@ -585,11 +588,11 @@ permalink: "products/{{ product.slug }}.html"
     <div class="char-section">
       <div class="char-section-label">Fragrance Character</div>
       <div class="char-rows">
-        {% if product.char_sweet %}<div class="char-row"><div class="char-row-label">Sweet</div><div class="char-track"><div class="char-fill" style="width:{{ (product.char_sweet / 5 * 100) | round }}%"></div></div></div>{% endif %}
-        {% if product.char_fresh %}<div class="char-row"><div class="char-row-label">Fresh</div><div class="char-track"><div class="char-fill" style="width:{{ (product.char_fresh / 5 * 100) | round }}%"></div></div></div>{% endif %}
-        {% if product.char_masculine %}<div class="char-row"><div class="char-row-label">Masculine</div><div class="char-track"><div class="char-fill" style="width:{{ (product.char_masculine / 5 * 100) | round }}%"></div></div></div>{% endif %}
-        {% if product.char_unique %}<div class="char-row"><div class="char-row-label">Unique</div><div class="char-track"><div class="char-fill" style="width:{{ (product.char_unique / 5 * 100) | round }}%"></div></div></div>{% endif %}
-        {% if product.char_versatile %}<div class="char-row"><div class="char-row-label">Versatile</div><div class="char-track"><div class="char-fill" style="width:{{ (product.char_versatile / 5 * 100) | round }}%"></div></div></div>{% endif %}
+        {% if product.char_sweet %}<div class="char-row"><div class="char-row-label">Sweet</div><div class="char-segs">{% for i in [1,2,3,4,5] %}<div class="char-seg{% if i <= product.char_sweet %} on{% endif %}"></div>{% endfor %}</div></div>{% endif %}
+        {% if product.char_fresh %}<div class="char-row"><div class="char-row-label">Fresh</div><div class="char-segs">{% for i in [1,2,3,4,5] %}<div class="char-seg{% if i <= product.char_fresh %} on{% endif %}"></div>{% endfor %}</div></div>{% endif %}
+        {% if product.char_masculine %}<div class="char-row"><div class="char-row-label">Masculine</div><div class="char-segs">{% for i in [1,2,3,4,5] %}<div class="char-seg{% if i <= product.char_masculine %} on{% endif %}"></div>{% endfor %}</div></div>{% endif %}
+        {% if product.char_unique %}<div class="char-row"><div class="char-row-label">Unique</div><div class="char-segs">{% for i in [1,2,3,4,5] %}<div class="char-seg{% if i <= product.char_unique %} on{% endif %}"></div>{% endfor %}</div></div>{% endif %}
+        {% if product.char_versatile %}<div class="char-row"><div class="char-row-label">Versatile</div><div class="char-segs">{% for i in [1,2,3,4,5] %}<div class="char-seg{% if i <= product.char_versatile %} on{% endif %}"></div>{% endfor %}</div></div>{% endif %}
       </div>
     </div>
     {% endif %}
