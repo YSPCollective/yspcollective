@@ -98,6 +98,14 @@ collections:
 
       # ── 4. FRAGRANCE PROFILE ──────────────────────────────────────
       - { label: "Fragrance Family", name: "fragrance_family", widget: "string", hint: "e.g. Oriental Vanilla / Amber Floral" }
+      - { label: "Best For", name: "best_for", widget: "string", required: false, hint: "Use | to split positive and negative: 'Evening wear, winter | Hot days, summer'" }
+
+      # ── 4b. FRAGRANCE CHARACTER (1–5) ─────────────────────────────
+      - { label: "Character — Sweet (1–5)", name: "char_sweet", widget: "number", min: 1, max: 5, step: 1, required: false, hint: "1 = barely sweet, 5 = very sweet" }
+      - { label: "Character — Fresh (1–5)", name: "char_fresh", widget: "number", min: 1, max: 5, step: 1, required: false, hint: "1 = heavy/dark, 5 = very fresh" }
+      - { label: "Character — Masculine (1–5)", name: "char_masculine", widget: "number", min: 1, max: 5, step: 1, required: false, hint: "1 = very feminine, 5 = very masculine" }
+      - { label: "Character — Unique (1–5)", name: "char_unique", widget: "number", min: 1, max: 5, step: 1, required: false, hint: "1 = familiar/safe, 5 = highly distinctive" }
+      - { label: "Character — Versatile (1–5)", name: "char_versatile", widget: "number", min: 1, max: 5, step: 1, required: false, hint: "1 = occasion-specific, 5 = wearable anywhere" }
       - { label: "Top Notes", name: "top_notes", widget: "string", hint: "e.g. Orchid, Heliotrope, Tangerine" }
       - { label: "Heart Notes", name: "heart_notes", widget: "string", required: false }
       - { label: "Base Notes", name: "base_notes", widget: "string", required: false }

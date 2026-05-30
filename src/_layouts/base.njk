@@ -182,7 +182,7 @@
     .footer-bottom-links { display: flex; gap: 1.5rem; }
     .footer-bottom-links a { color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.25s; }
     .footer-bottom-links a:hover { color: var(--accent-light); }
-    .footer-trustpilot { padding: 1.5rem 0; border-top: 1px solid rgba(255,255,255,0.06); margin-top: 0; }
+    .footer-tp-inline { display: flex; align-items: center; }
 
     /* ── REVEAL ── */
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s var(--transition), transform 0.8s var(--transition); }
@@ -655,21 +655,14 @@
         <a href="https://www.trustpilot.com/review/yspcollective.com" target="_blank" rel="noopener">Trustpilot</a>
       </div>
     </div>
-    <div class="footer-trustpilot">
-      <!-- TrustBox widget - Review Collector -->
-      <div class="trustpilot-widget"
-        data-locale="en-US"
-        data-template-id="56278e9abfbbba0bdcd568bc"
-        data-businessunit-id="69cad53e01e822f8cf5bc940"
-        data-style-height="52px"
-        data-style-width="100%"
-        data-token="04e87d91-c15f-42f0-ac4b-db08788dfd70">
-        <a href="https://www.trustpilot.com/review/yspcollective.com" target="_blank" rel="noopener">Review us on Trustpilot</a>
-      </div>
-      <!-- End TrustBox widget -->
-    </div>
     <div class="footer-bottom">
       <span>© 2026 YSP Collective. All rights reserved. Portugal, EU.</span>
+      <div class="footer-tp-inline">
+        <!-- TrustBox widget - Micro Combo -->
+        <div class="trustpilot-widget" data-locale="en-US" data-template-id="5419b6ffb0d04a076446a9af" data-businessunit-id="69cad53e01e822f8cf5bc940" data-style-height="20px" data-style-width="160px" data-theme="dark">
+          <a href="https://www.trustpilot.com/review/yspcollective.com" target="_blank" rel="noopener">Trustpilot</a>
+        </div>
+      </div>
       <div class="footer-bottom-links">
         <a href="https://livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações</a>
         <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ODR Platform</a>
