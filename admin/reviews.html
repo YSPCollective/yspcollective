@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Review Approvals — YSP Collective</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #1a1916; --white: #faf8f5; --cream: #f7f7f7;
+      --sand: #e6dfd4; --accent: #9c7b56; --grey: #8a847a;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: -apple-system, 'Segoe UI', sans-serif;
+    }
+    body { background: var(--cream); color: var(--black); font-family: var(--sans); font-size: 14px; }
+
+    /* ── LOGIN ── */
+    #login-screen { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+    .login-card { background: var(--white); padding: 2.5rem; width: 100%; max-width: 380px; border-top: 3px solid var(--accent); }
+    .login-card h1 { font-family: var(--serif); font-size: 1.6rem; font-weight: 300; margin-bottom: 0.4rem; }
+    .login-card p { font-size: 0.82rem; color: var(--grey); margin-bottom: 1.5rem; line-height: 1.6; }
+    .login-card input { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--sand); background: var(--cream); font-size: 0.9rem; font-family: var(--sans); outline: none; margin-bottom: 0.8rem; }
+    .login-card input:focus { border-color: var(--accent); }
+    .error-msg { color: #c0392b; font-size: 0.82rem; margin-top: 0.5rem; display: none; }
+
+    /* ── BUTTONS ── */
+    .btn { display: inline-block; padding: 0.75rem 1.5rem; border: none; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-family: var(--sans); transition: background 0.2s; }
+    .btn-primary { background: var(--black); color: var(--white); width: 100%; }
+    .btn-primary:hover { background: var(--accent); }
+    .btn-approve { background: #2a5c2a; color: #fff; }
+    .btn-approve:hover { background: #1e421e; }
+    .btn-reject { background: #7a1e1e; color: #fff; }
+    .btn-reject:hover { background: #5a1515; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    /* ── MAIN ── */
+    #main-screen { display: none; }
+    header { background: var(--black); color: var(--white); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { font-family: var(--serif); font-size: 1.2rem; font-weight: 300; }
+    .btn-signout { background: none; border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.6); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; padding: 0.35rem 0.8rem; transition: all 0.2s; }
+    .btn-signout:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
+    .btn-refresh { background: none; border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.6); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; padding: 0.35rem 0.8rem; transition: all 0.2s; margin-right: 0.5rem; }
+    .btn-refresh:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+    .stats-bar { background: var(--white); border: 1px solid var(--sand); padding: 1rem 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+    .pending-count { font-family: var(--serif); font-size: 1.5rem; font-weight: 300; color: var(--accent); }
+    .pending-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey); margin-left: 0.5rem; }
+
+    .loading, .empty-state { text-align: center; padding: 3rem; color: var(--grey); border: 1px solid var(--sand); background: var(--white); }
+    .empty-state-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+    .empty-state p { font-size: 0.88rem; line-height: 1.6; }
+
+    /* ── REVIEW CARD ── */
+    .review-card { background: var(--white); border: 1px solid var(--sand); margin-bottom: 1.2rem; transition: opacity 0.3s; }
+    .review-card.fading { opacity: 0.3; pointer-events: none; }
+    .review-card-head { padding: 1rem 1.5rem; border-bottom: 1px solid var(--sand); display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+    .review-product { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .review-meta { font-size: 0.78rem; color: var(--grey); }
+    .review-stars { color: #c8a96e; font-size: 1.1rem; letter-spacing: 1px; flex-shrink: 0; }
+    .verified-badge { display: inline-block; font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.15rem 0.45rem; background: #2a5c2a; color: #fff; margin-left: 0.4rem; vertical-align: middle; }
+    .review-card-body { padding: 1.2rem 1.5rem; }
+    .review-title-text { font-weight: 600; margin-bottom: 0.5rem; font-size: 0.92rem; }
+    .review-body-text { font-size: 0.88rem; line-height: 1.75; color: #333; white-space: pre-line; }
+    .review-photos { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
+    .review-photo { width: 80px; height: 80px; object-fit: cover; border: 1px solid var(--sand); cursor: pointer; transition: opacity 0.2s; }
+    .review-photo:hover { opacity: 0.85; }
+    .review-card-foot { padding: 0.9rem 1.5rem; border-top: 1px solid var(--sand); display: flex; gap: 0.7rem; align-items: center; background: var(--cream); }
+    .review-key-text { font-size: 0.62rem; color: var(--grey); font-family: monospace; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    /* ── TOAST ── */
+    .toast { position: fixed; bottom: 2rem; right: 2rem; background: var(--black); color: var(--white); padding: 0.8rem 1.5rem; font-size: 0.82rem; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 9999; }
+    .toast.show { opacity: 1; }
+    .toast.success { background: #2a5c2a; }
+    .toast.error { background: #7a1e1e; }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-screen">
+  <div class="login-card">
+    <h1>Review Approvals</h1>
+    <p>Enter your admin password to view and approve pending customer reviews.</p>
+    <input type="password" id="pw-input" placeholder="Admin password" autocomplete="current-password">
+    <button class="btn btn-primary" onclick="doLogin()">Sign In</button>
+    <div class="error-msg" id="login-error">Incorrect password — please try again.</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div id="main-screen">
+  <header>
+    <h1>Review Approvals</h1>
+    <div>
+      <button class="btn-refresh" onclick="loadReviews()">↻ Refresh</button>
+      <button class="btn-signout" onclick="signOut()">Sign Out</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="stats-bar">
+      <div>
+        <span class="pending-count" id="count-pending">—</span>
+        <span class="pending-label">reviews awaiting approval</span>
+      </div>
+      <span style="font-size:0.75rem;color:var(--grey);">Approved reviews go live instantly</span>
+    </div>
+    <div id="reviews-wrap">
+      <div class="loading">Loading…</div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  const WORKER = 'https://ysp-ai-proxy.rapid-shadow-439d.workers.dev';
+  let authToken = sessionStorage.getItem('ysp_review_admin') || '';
+
+  if (authToken) { showMain(); loadReviews(); }
+
+  document.getElementById('pw-input').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+
+  function doLogin() {
+    const pw = document.getElementById('pw-input').value.trim();
+    if (!pw) return;
+    authToken = pw;
+    // Verify by attempting to load reviews
+    fetch(`${WORKER}/reviews/pending`, { headers: { 'Authorization': `Bearer ${authToken}` } })
+      .then(r => {
+        if (r.status === 401) {
+          document.getElementById('login-error').style.display = 'block';
+          authToken = '';
+        } else {
+          sessionStorage.setItem('ysp_review_admin', authToken);
+          showMain();
+          r.json().then(renderReviews);
+        }
+      })
+      .catch(() => { document.getElementById('login-error').style.display = 'block'; authToken = ''; });
+  }
+
+  function showMain() {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('main-screen').style.display = 'block';
+  }
+
+  function signOut() {
+    sessionStorage.removeItem('ysp_review_admin');
+    authToken = '';
+    document.getElementById('main-screen').style.display = 'none';
+    document.getElementById('login-screen').style.display = 'flex';
+    document.getElementById('pw-input').value = '';
+    document.getElementById('login-error').style.display = 'none';
+  }
+
+  async function loadReviews() {
+    document.getElementById('reviews-wrap').innerHTML = '<div class="loading">Loading pending reviews…</div>';
+    try {
+      const r = await fetch(`${WORKER}/reviews/pending`, { headers: { 'Authorization': `Bearer ${authToken}` } });
+      if (r.status === 401) { signOut(); return; }
+      renderReviews(await r.json());
+    } catch (e) {
+      document.getElementById('reviews-wrap').innerHTML = '<div class="empty-state"><p>Could not load reviews — check your connection.</p></div>';
+    }
+  }
+
+  function renderReviews(data) {
+    const reviews = data.reviews || [];
+    document.getElementById('count-pending').textContent = reviews.length;
+    if (!reviews.length) {
+      document.getElementById('reviews-wrap').innerHTML = `
+        <div class="empty-state">
+          <div class="empty-state-icon">✓</div>
+          <p>No pending reviews — all caught up!</p>
+          <p style="margin-top:0.5rem;font-size:0.78rem;">New submissions will appear here and you'll receive an email notification.</p>
+        </div>`;
+      return;
+    }
+    document.getElementById('reviews-wrap').innerHTML = reviews.map(r => buildCard(r)).join('');
+  }
+
+  function buildCard(r) {
+    const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+    const date = new Date(r.created_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+    const photos = (r.photos || []).map((p, i) =>
+      `<img class="review-photo" src="${esc(p)}" alt="Review photo ${i+1}" title="Click to view full size" onclick="window.open(this.src)">`
+    ).join('');
+    const verifiedBadge = r.verified_buyer ? '<span class="verified-badge">✓ Verified Buyer</span>' : '';
+    const cardId = 'card-' + safeId(r.key);
+    return `
+      <div class="review-card" id="${cardId}">
+        <div class="review-card-head">
+          <div>
+            <div class="review-product">${esc(r.product_name)}</div>
+            <div class="review-meta">${esc(r.name)}${verifiedBadge} &nbsp;·&nbsp; ${esc(r.email)} &nbsp;·&nbsp; ${date}</div>
+          </div>
+          <div class="review-stars">${stars}</div>
+        </div>
+        <div class="review-card-body">
+          ${r.title ? `<div class="review-title-text">${esc(r.title)}</div>` : ''}
+          <div class="review-body-text">${esc(r.body)}</div>
+          ${photos ? `<div class="review-photos">${photos}</div>` : ''}
+        </div>
+        <div class="review-card-foot">
+          <button class="btn btn-approve" onclick="act('approve','${esc(r.key)}','${cardId}')">✓ Approve</button>
+          <button class="btn btn-reject" onclick="act('reject','${esc(r.key)}','${cardId}')">✕ Reject</button>
+          <span class="review-key-text">${esc(r.key)}</span>
+        </div>
+      </div>`;
+  }
+
+  async function act(action, key, cardId) {
+    const card = document.getElementById(cardId);
+    if (card) card.classList.add('fading');
+    try {
+      const r = await fetch(`${WORKER}/reviews/approve`, {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${authToken}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action, key })
+      });
+      if (r.ok) {
+        if (card) card.remove();
+        const remaining = document.querySelectorAll('.review-card').length;
+        document.getElementById('count-pending').textContent = remaining;
+        if (!remaining) {
+          document.getElementById('reviews-wrap').innerHTML = `
+            <div class="empty-state">
+              <div class="empty-state-icon">✓</div>
+              <p>No pending reviews — all caught up!</p>
+            </div>`;
+        }
+        showToast(action === 'approve' ? '✓ Review approved and now live' : '✕ Review rejected', action === 'approve' ? 'success' : '');
+      } else {
+        if (card) card.classList.remove('fading');
+        showToast('Something went wrong — please try again', 'error');
+      }
+    } catch (e) {
+      if (card) card.classList.remove('fading');
+      showToast('Network error — please try again', 'error');
+    }
+  }
+
+  function showToast(msg, type) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.className = 'toast show' + (type ? ' ' + type : '');
+    setTimeout(() => t.className = 'toast', 3200);
+  }
+
+  function safeId(k) { return String(k).replace(/[^a-zA-Z0-9]/g, '_'); }
+  function esc(s) {
+    return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  }
+</script>
+</body>
+</html>
