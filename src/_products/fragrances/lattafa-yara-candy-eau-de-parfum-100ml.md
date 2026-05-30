@@ -47,4 +47,9 @@ ysp_thoughts: >-
 
   It's the kind of fragrance that gets compliments without anyone being able to quite place it. Perfect for anyone who loved the original Yara and wants something a little more summery, or for anyone new to the Lattafa world who wants an easy, crowd-pleasing entry point. At this price for this performance, it's a straightforward yes.
 exclude_from_feed: false
+char_sweet: 5
+char_fresh: 3
+char_masculine: 1
+char_unique: 2
+char_versatile: 3
 ---

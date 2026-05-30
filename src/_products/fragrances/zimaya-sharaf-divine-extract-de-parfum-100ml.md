@@ -59,4 +59,10 @@ inspired_by_name: Angels' Share Paradis by Kilian
 inspired_by_note: ""
 gtin: "6290171077213"
 exclude_from_feed: false
+best_for: Evening wear, date night, cooler seasons, formal occasions
+char_sweet: 4
+char_fresh: 2
+char_masculine: 3
+char_unique: 3
+char_versatile: 2
 ---

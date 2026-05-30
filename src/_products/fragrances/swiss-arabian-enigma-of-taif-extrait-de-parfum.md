@@ -9,7 +9,7 @@ published: true
 heart_notes: Taif Rose elevated by Saffron, Violet, Osmanthus, and Olibanum (Frankincense).
 longevity: 7-12+
 projection: Strong
-best_for: Day or night, All seasons
+best_for: Evening wear, all seasons, special occasions, date night
 origin: UAE
 launched: "2025"
 vegan: false
@@ -50,4 +50,10 @@ description_short: A warm, rosy oriental from one of Dubai's most respected
   Arabia — rich, velvety, and deeply complex. Long-lasting and distinctly
   Arabian in character.
 inspired_by_name: ""
+accords_text: rose, floral, saffron, amber, woody, spicy, incense, smoky, oriental, plum
+char_sweet: 3
+char_fresh: 2
+char_masculine: 3
+char_unique: 5
+char_versatile: 3
 ---

@@ -40,7 +40,7 @@ slug: ministry-of-gourman-coconut-lagoon
 concentration: Eau de Parfum (EDP)
 featured: false
 published: true
-best_for: Daytime wear
+best_for: Daytime wear, summer, beach, casual occasions
 gtin: "6295321475628"
 accords:
   - citrus
@@ -56,4 +56,9 @@ accords:
 fragrance_family: Gourmand Tropical Floral
 top_notes: Lemon, Mandarin, Apple
 base_notes: Coconut, Vanilla
+char_sweet: 4
+char_fresh: 4
+char_masculine: 2
+char_unique: 3
+char_versatile: 3
 ---

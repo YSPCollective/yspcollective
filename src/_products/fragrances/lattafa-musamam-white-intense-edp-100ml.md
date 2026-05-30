@@ -59,4 +59,9 @@ inspired_by_note: That same creamy, spiced-coconut warmth — richer in the base
   more assertive projection.
 gtin: "6290360593159"
 exclude_from_feed: true
+char_sweet: 3
+char_fresh: 3
+char_masculine: 2
+char_unique: 3
+char_versatile: 3
 ---

@@ -12,7 +12,7 @@ top_notes: Pineapple, Bergamot, Apple, White Flowers
 heart_notes: Birch, Amber, Orange Blossom
 longevity: 10-12 hours
 projection: Moderate - Strong
-best_for: ""
+best_for: Evening wear, formal occasions, cooler seasons, smart-casual
 origin: UAE
 vegan: false
 image_main: /images/uploads/sharaftheclub.jpeg
@@ -59,4 +59,10 @@ accords:
   - earthy
   - white floral
 base_notes: "Oak moss, Ambergis, Musk "
+accords_text: fruity, smoky, woody, birch, mossy, citrus, amber, leather, sweet
+char_sweet: 2
+char_fresh: 3
+char_masculine: 5
+char_unique: 4
+char_versatile: 3
 ---

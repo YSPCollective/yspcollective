@@ -66,4 +66,10 @@ top_notes: Orchid, Heliotrope, Tangerine
 description_short: Sweet, creamy and unapologetically feminine. One of the
   most-loved Arabic fragrances of recent years — fruity, floral and soft vanilla
   gourmand.
+accords_text: vanilla, floral, tropical, fruity, sweet, musk, sandalwood, amber
+char_sweet: 4
+char_fresh: 3
+char_masculine: 1
+char_unique: 3
+char_versatile: 4
 ---

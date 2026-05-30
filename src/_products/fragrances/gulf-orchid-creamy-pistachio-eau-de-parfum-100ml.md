@@ -68,4 +68,10 @@ description_short: A playful, gourmand oriental from Gulf Orchid — warm
   pistachio and creamy sweetness wrapped in soft woods and musk. Unique,
   comforting, and surprisingly addictive.
 inspired_by_name: Givenchy L'Interdit
+best_for: Daytime wear, spring/summer, casual occasions
+char_sweet: 4
+char_fresh: 3
+char_masculine: 2
+char_unique: 3
+char_versatile: 4
 ---

@@ -19,7 +19,7 @@ accords_text: aromatic, woody, fresh spicy, citrus, lavender, vanilla, earthy,
   powdery, mossy, animalic
 longevity: 10-12+ hours
 projection: Strong
-best_for: Anytime
+best_for: Evening wear, formal occasions, cooler seasons, statement occasions
 origin: UK
 launched: "2019"
 vegan: false
@@ -46,4 +46,9 @@ ysp_thoughts: Roja Parfums sits in a different league price-wise and Danger
   having that reference point on the shelf matters. When someone asks us what
   the best is, this is part of that answer.
 exclude_from_feed: true
+char_sweet: 2
+char_fresh: 2
+char_masculine: 5
+char_unique: 5
+char_versatile: 2
 ---

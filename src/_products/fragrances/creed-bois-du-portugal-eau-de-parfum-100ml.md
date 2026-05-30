@@ -57,4 +57,10 @@ ysp_thoughts: >-
 
   A fragrance we're proud to carry for reasons that go beyond commerce.
 exclude_from_feed: true
+best_for: Formal occasions, office, cooler seasons, evening wear
+char_sweet: 1
+char_fresh: 3
+char_masculine: 5
+char_unique: 4
+char_versatile: 3
 ---

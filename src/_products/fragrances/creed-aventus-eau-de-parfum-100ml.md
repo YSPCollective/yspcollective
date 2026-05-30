@@ -18,7 +18,7 @@ base_notes: Birch, Musk, Oak moss, Cedarwood, Ambroxan
 accords_text: fruity, sweet, woody, leather, citrus, smoky, musky, tropical, fresh, mossy
 longevity: 10-12 hours
 projection: Moderate - Strong
-best_for: All occasions
+best_for: Evening wear, smart-casual, formal occasions, cooler months
 origin: France
 launched: "2010"
 vegan: false
@@ -53,4 +53,9 @@ ysp_thoughts: >-
 
   We carry it because any serious fragrance shelf should have it, and because personal favourites earn their place here as much as commercial ones do.
 exclude_from_feed: true
+char_sweet: 2
+char_fresh: 3
+char_masculine: 5
+char_unique: 4
+char_versatile: 4
 ---

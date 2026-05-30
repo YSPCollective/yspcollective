@@ -71,4 +71,10 @@ base_notes: Coffee, Vanilla, Tonka Bean, Benzoin, Musk
 amazon_url: ""
 gender_label: Unisex
 top_notes: Cinnamon, Cardamom, Ginger
+accords_text: coffee, vanilla, gourmand, sweet, spicy, amber, cinnamon, cardamom, warm, resinous
+char_sweet: 5
+char_fresh: 1
+char_masculine: 3
+char_unique: 5
+char_versatile: 1
 ---

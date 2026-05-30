@@ -63,4 +63,10 @@ ysp_thoughts: >-
 
    We stock it because it's genuinely exceptional and because personal favourites earn their place here as much as anything else does.
 exclude_from_feed: true
+best_for: Evening wear, formal occasions, date night, cooler seasons
+char_sweet: 3
+char_fresh: 2
+char_masculine: 5
+char_unique: 4
+char_versatile: 3
 ---

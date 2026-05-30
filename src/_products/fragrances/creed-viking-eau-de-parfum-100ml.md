@@ -50,4 +50,10 @@ ysp_thoughts: >-
 
   There's an energy to Viking that makes you stand differently when you wear it. We carry it because it represents a side of Creed that doesn't get enough attention, and because the people who discover it tend to become devoted to it.
 exclude_from_feed: true
+best_for: Evening wear, cooler seasons, bold occasions, formal
+char_sweet: 1
+char_fresh: 3
+char_masculine: 5
+char_unique: 5
+char_versatile: 2
 ---

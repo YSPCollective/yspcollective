@@ -53,4 +53,9 @@ ysp_thoughts: >-
 inspired_by_name: Paco Rabanne Invictus Aqua
 inspired_by_note: Same fresh aquatic-citrus DNA, stronger projection
 exclude_from_feed: false
+char_sweet: 2
+char_fresh: 4
+char_masculine: 4
+char_unique: 2
+char_versatile: 4
 ---

@@ -53,4 +53,9 @@ ysp_thoughts: >-
 inspired_by_name: Jean Paul Gaultier Scandal Pour Homme
 inspired_by_note: Same citrus-caramel-tonka DNA, brighter mandarin opening
 exclude_from_feed: false
+char_sweet: 3
+char_fresh: 4
+char_masculine: 4
+char_unique: 2
+char_versatile: 4
 ---

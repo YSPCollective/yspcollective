@@ -65,4 +65,10 @@ top_notes: Coconut, Peach, Bergamot, Mandarin
 description_short: Sun-drenched, floral and quietly addictive. Tropical-floral
   unisex fragrance with a creamy musk dry-down. Easy daily wear for spring and
   summer.
+accords_text: floral, tropical, fruity, coconut, peach, citrus, fresh, musk
+char_sweet: 3
+char_fresh: 4
+char_masculine: 1
+char_unique: 2
+char_versatile: 4
 ---

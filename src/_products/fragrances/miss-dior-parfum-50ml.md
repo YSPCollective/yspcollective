@@ -51,4 +51,10 @@ ysp_thoughts: >-
 
   We chose the Parfum over the EDP deliberately because it's the version that does the name justice. The kind of fragrance you save for days when you want to feel like yourself at your best.
 exclude_from_feed: true
+best_for: Daytime wear, spring/summer, smart-casual, evening
+char_sweet: 3
+char_fresh: 3
+char_masculine: 1
+char_unique: 4
+char_versatile: 4
 ---

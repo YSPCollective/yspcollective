@@ -56,4 +56,10 @@ inspired_by_name: Creed Aventus
 inspired_by_note: fruity-woody Aventus family, lighter projection and more accessible
 gtin: "6291107455365"
 exclude_from_feed: false
+best_for: Evening wear, smart-casual, cooler seasons, date night
+char_sweet: 3
+char_fresh: 3
+char_masculine: 4
+char_unique: 3
+char_versatile: 3
 ---
