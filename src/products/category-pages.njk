@@ -177,6 +177,40 @@ eleventyComputed:
   }
   .cat-empty p { font-size: 0.9rem; line-height: 1.7; }
 
+  /* ── SEARCH & FILTER ── */
+  .cat-search-wrap { margin-bottom: 2.5rem; }
+  .cat-search-input {
+    width: 100%;
+    padding: 0.85rem 1.2rem;
+    border: 1px solid var(--sand);
+    background: var(--white);
+    color: var(--black);
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+  }
+  .cat-search-input::placeholder { color: var(--grey-light); }
+  .cat-search-input:focus { border-color: var(--accent); }
+  .cat-accord-chips { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
+  .cat-accord-chip {
+    padding: 0.35rem 0.9rem;
+    border: 1px solid var(--sand);
+    background: transparent;
+    color: var(--grey);
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .cat-accord-chip:hover { border-color: var(--accent); color: var(--accent); }
+  .cat-accord-chip.active { background: var(--accent); border-color: var(--accent); color: var(--white); }
+  .cat-no-results { grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--grey); font-size: 0.9rem; }
+
   @media (max-width: 1024px) { .cat-grid { grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 768px) {
     .cat-body { padding: 2.5rem 1.5rem 4rem; }
@@ -222,6 +256,23 @@ eleventyComputed:
     {% endfor %}
   {% endif %}
 
+  <!-- SEARCH & FILTERS -->
+  <div class="cat-search-wrap">
+    <input type="text" id="cat-search-input" class="cat-search-input" placeholder="Search by name or brand…" autocomplete="off">
+    {% if cat.section === 'fragrances' %}
+    <div class="cat-accord-chips">
+      <button class="cat-accord-chip" data-accord="oud">Oud</button>
+      <button class="cat-accord-chip" data-accord="floral">Floral</button>
+      <button class="cat-accord-chip" data-accord="vanilla">Vanilla</button>
+      <button class="cat-accord-chip" data-accord="woody">Woody</button>
+      <button class="cat-accord-chip" data-accord="fresh">Fresh</button>
+      <button class="cat-accord-chip" data-accord="gourmand">Gourmand</button>
+      <button class="cat-accord-chip" data-accord="spicy">Spicy</button>
+      <button class="cat-accord-chip" data-accord="musky">Musky</button>
+    </div>
+    {% endif %}
+  </div>
+
   <div class="cat-meta">
     <span class="cat-count">{{ catProducts.length }} product{% if catProducts.length !== 1 %}s{% endif %}</span>
     <div class="cat-sort-wrap">
@@ -237,9 +288,10 @@ eleventyComputed:
   </div>
 
   <div class="cat-grid" id="cat-grid">
+    <div id="cat-no-results" class="cat-no-results" style="display:none">No products found — try a different search or clear the filters.</div>
     {% if catProducts.length %}
       {% for p in catProducts %}
-      <a href="/products/{{ p.slug }}.html" class="cat-product-card" data-price="{{ p.price }}" data-name="{{ p.name }}">
+      <a href="/products/{{ p.slug }}.html" class="cat-product-card" data-price="{{ p.price }}" data-name="{{ p.name }}" data-brand="{{ p.brand }}" data-accords="{{ p.accords | join(',') if p.accords else '' }}">
         <div class="cat-product-img">
           <img src="{{ p.image_main }}" alt="{{ p.name }}" loading="lazy">
           {% set b = p.custom_badge or p.badge %}
@@ -287,6 +339,76 @@ eleventyComputed:
 
       cards.forEach(function(c) { grid.appendChild(c); });
     });
+  })();
+
+  // ── SEARCH & FILTER ───────────────────────────────────────────────────────
+  (function() {
+    var searchInput = document.getElementById('cat-search-input');
+    var countEl = document.querySelector('.cat-count');
+    var noResults = document.getElementById('cat-no-results');
+    var cards = Array.from(document.querySelectorAll('.cat-product-card'));
+    var activeAccord = null;
+
+    function filterCards() {
+      var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+      var shown = 0;
+
+      cards.forEach(function(card) {
+        var name = (card.dataset.name || '').toLowerCase();
+        var brand = (card.dataset.brand || '').toLowerCase();
+        var accords = (card.dataset.accords || '').toLowerCase();
+        var metaEl = card.querySelector('.cat-product-meta');
+        var meta = metaEl ? metaEl.textContent.toLowerCase() : '';
+
+        var matchesQuery = !query ||
+          name.includes(query) ||
+          brand.includes(query) ||
+          meta.includes(query) ||
+          accords.includes(query);
+
+        var matchesAccord = !activeAccord || accords.includes(activeAccord);
+
+        var visible = matchesQuery && matchesAccord;
+        card.style.display = visible ? '' : 'none';
+        if (visible) shown++;
+      });
+
+      if (countEl) {
+        countEl.textContent = shown + ' product' + (shown !== 1 ? 's' : '');
+      }
+      if (noResults) {
+        noResults.style.display = shown === 0 ? 'block' : 'none';
+      }
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', filterCards);
+    }
+
+    document.querySelectorAll('.cat-accord-chip').forEach(function(chip) {
+      chip.addEventListener('click', function() {
+        if (activeAccord === chip.dataset.accord) {
+          activeAccord = null;
+          chip.classList.remove('active');
+        } else {
+          activeAccord = chip.dataset.accord;
+          document.querySelectorAll('.cat-accord-chip').forEach(function(c) { c.classList.remove('active'); });
+          chip.classList.add('active');
+        }
+        filterCards();
+      });
+    });
+
+    // Re-sync card list after sort reorders DOM
+    var sortSelect = document.getElementById('cat-sort');
+    if (sortSelect) {
+      sortSelect.addEventListener('change', function() {
+        setTimeout(function() {
+          cards = Array.from(document.querySelectorAll('.cat-product-card'));
+          filterCards();
+        }, 0);
+      });
+    }
   })();
 
   // ── TITLE TRANSLATION ─────────────────────────────────────────────────────

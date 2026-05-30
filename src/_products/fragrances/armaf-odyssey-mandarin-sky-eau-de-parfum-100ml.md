@@ -10,6 +10,7 @@ badge: Popular
 stock_status: in_stock
 featured: true
 published: true
+date_added: 2026-05-28
 fragrance_family: Amber Citrus Woody
 top_notes: Mandarin Orange, Orange, Saffron, Sage
 heart_notes: Caramel, Tonka Bean, Marigold
