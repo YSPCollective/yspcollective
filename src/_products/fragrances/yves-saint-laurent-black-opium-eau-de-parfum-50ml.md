@@ -52,4 +52,10 @@ ysp_thoughts: >-
 
   We carry it because a curated fragrance shelf needs at least one fragrance that needs no explanation — the one you hand to someone who says they don't really wear perfume, and watch them change their mind.
 exclude_from_feed: true
+best_for: Evening wear, date night, cooler seasons, autumn/winter
+char_sweet: 5
+char_fresh: 2
+char_masculine: 1
+char_unique: 4
+char_versatile: 3
 ---

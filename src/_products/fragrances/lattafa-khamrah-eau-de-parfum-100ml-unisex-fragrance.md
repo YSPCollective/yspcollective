@@ -66,4 +66,10 @@ base_notes: Vanilla, Tonka Bean, Benzoin, Myrrh, Amberwood, Akigalawood
 amazon_url: ""
 gender_label: Unisex
 top_notes: Cinnamon, Nutmeg, Bergamot
+accords_text: vanilla, gourmand, sweet, spicy, amber, tonka, woody, resinous, cinnamon, warm
+char_sweet: 5
+char_fresh: 1
+char_masculine: 3
+char_unique: 4
+char_versatile: 2
 ---

@@ -69,4 +69,9 @@ description_short: "The finest concentration of one of fragrance's great value
   nuanced than the EDT or EDP, with exceptional longevity. A bold, confident
   masculine fragrance that consistently outperforms its price."
 inspired_by_name: Creed Aventus
+char_sweet: 2
+char_fresh: 3
+char_masculine: 5
+char_unique: 3
+char_versatile: 3
 ---

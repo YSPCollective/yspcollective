@@ -669,6 +669,7 @@ export default {
     if (url.pathname === "/stripe-webhook" && method === "POST") return handleStripeWebhook(request, env);
     if (url.pathname === "/chat" && method === "POST") return handleChat(request, env);
     if (url.pathname === "/subscribe" && method === "POST") return handleSubscribe(request, env);
+    if (url.pathname === "/reviews/pending" && method === "GET") return handleReviewsPending(request, env);
     if (url.pathname.startsWith("/reviews/") && method === "GET") return handleReviewsGet(url, env);
     if (url.pathname === "/reviews/submit" && method === "POST") return handleReviewSubmit(request, env);
     if (url.pathname === "/reviews/approve" && method === "POST") return handleReviewApprove(request, env);
@@ -922,6 +923,26 @@ async function handleSubscribe(request, env) {
 
 // ─── REVIEWS ──────────────────────────────────────────────────────────────────
 
+async function handleReviewsPending(request, env) {
+  const authHeader = request.headers.get("Authorization") || "";
+  const authSecret = env.AUTH_SECRET || "ysp-default-secret";
+  if (authHeader !== `Bearer ${authSecret}`) return json({ error: "Unauthorised" }, 401);
+  try {
+    const list = await env.YSP_USERS.list({ prefix: "review:pending:" });
+    const reviews = [];
+    for (const key of list.keys) {
+      const raw = await env.YSP_USERS.get(key.name);
+      if (raw) {
+        try { reviews.push({ ...JSON.parse(raw), key: key.name }); } catch (_) {}
+      }
+    }
+    reviews.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+    return json({ reviews, count: reviews.length });
+  } catch (err) {
+    return json({ error: err.message }, 500);
+  }
+}
+
 async function handleReviewsGet(url, env) {
   const slug = url.pathname.replace("/reviews/", "").replace(/\//g, "");
   if (!slug) return json({ error: "slug required" }, 400);
@@ -1078,16 +1099,10 @@ async function sendReviewAdminNotification(env, { review, pendingKey }) {
     <tr><td style="padding:6px 0;color:#888;vertical-align:top;">Review</td><td style="line-height:1.6;">${review.body}</td></tr>
     <tr><td style="padding:6px 0;color:#888;">Photos</td><td>${review.photos.length} photo${review.photos.length === 1 ? "" : "s"}</td></tr>
   </table>
-  <p style="margin-bottom:0.5rem;font-weight:bold;">To approve:</p>
-  <pre style="background:#f5f5f5;padding:12px;font-size:12px;overflow-x:auto;border-left:3px solid #9c7b56;">curl -X POST https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/reviews/approve \\
-  -H "Authorization: Bearer YOUR_AUTH_SECRET" \\
-  -H "Content-Type: application/json" \\
-  -d '{"action":"approve","key":"${pendingKey}"}'</pre>
-  <p style="margin-bottom:0.5rem;font-weight:bold;">To reject:</p>
-  <pre style="background:#f5f5f5;padding:12px;font-size:12px;overflow-x:auto;border-left:3px solid #888;">curl -X POST https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/reviews/approve \\
-  -H "Authorization: Bearer YOUR_AUTH_SECRET" \\
-  -H "Content-Type: application/json" \\
-  -d '{"action":"reject","key":"${pendingKey}"}'</pre>
+  <div style="margin-top:1.5rem;text-align:center;">
+    <a href="https://yspcollective.com/admin/reviews.html" style="display:inline-block;padding:0.9rem 2.5rem;background:#1a1916;color:#ffffff;text-decoration:none;font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;">Review &amp; Approve →</a>
+  </div>
+  <p style="margin-top:1rem;font-size:0.78rem;color:#888;text-align:center;">Sign in with your admin password at yspcollective.com/admin/reviews.html</p>
 </body>
 </html>`;
   await fetch("https://api.brevo.com/v3/smtp/email", {

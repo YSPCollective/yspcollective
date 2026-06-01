@@ -53,4 +53,9 @@ inspired_by_name: Kilian Black Phantom
 inspired_by_note: Same dark coffee-chocolate-vanilla gourmand DNA, earthier and
   woodier, exceptional value
 exclude_from_feed: false
+char_sweet: 4
+char_fresh: 1
+char_masculine: 4
+char_unique: 3
+char_versatile: 2
 ---

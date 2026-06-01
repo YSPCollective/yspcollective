@@ -34,6 +34,7 @@ module.exports = function(eleventyConfig) {
     'skin_type','key_ingredients','free_from','spf_rating','amazon_url','published',
     'stock_status','expected_date','featured',
     'inspired_by_name','inspired_by_note',
+    'char_sweet','char_fresh','char_masculine','char_unique','char_versatile',
     'gtin','exclude_from_feed','google_product_category',
     'pt','es'
   ];

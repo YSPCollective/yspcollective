@@ -64,4 +64,9 @@ inspired_by_note: The same weightless fruity-musky DNA - more depth at the base,
   considerably more accessible.
 gtin: "6290171076025"
 exclude_from_feed: true
+char_sweet: 3
+char_fresh: 4
+char_masculine: 2
+char_unique: 2
+char_versatile: 4
 ---

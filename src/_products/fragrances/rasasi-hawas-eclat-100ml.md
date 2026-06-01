@@ -15,7 +15,7 @@ top_notes: Litchi, Pear, Beramot, Pistachio
 heart_notes: Rose, Incense
 longevity: 8-10 hours
 projection: Moderate - Strong
-best_for: Anytime
+best_for: Daytime wear, spring/summer, casual occasions, office
 origin: UAE
 launched: "2025"
 vegan: false
@@ -54,4 +54,9 @@ accords:
   - fresh
   - tropical
 base_notes: Vanilla, Musk, Amber, Woodsy Notes
+char_sweet: 3
+char_fresh: 4
+char_masculine: 1
+char_unique: 3
+char_versatile: 4
 ---

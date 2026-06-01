@@ -59,4 +59,9 @@ inspired_by_note: The same sparkling bergamot-grapefruit DNA — arguably strong
   projection at a fraction of the price.
 gtin: "6291107979991"
 exclude_from_feed: true
+char_sweet: 1
+char_fresh: 5
+char_masculine: 3
+char_unique: 3
+char_versatile: 5
 ---

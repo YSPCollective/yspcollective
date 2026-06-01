@@ -59,4 +59,9 @@ ysp_thoughts: "The original Ana Abiyedh is already one of the best-loved budget
   warm, Coral delivers that without asking much in return."
 gtin: "6290362341826"
 exclude_from_feed: true
+char_sweet: 4
+char_fresh: 4
+char_masculine: 1
+char_unique: 3
+char_versatile: 4
 ---

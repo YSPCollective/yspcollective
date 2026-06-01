@@ -62,4 +62,10 @@ description_short: A bold, smoky oriental from Al Haramain — one of the Gulf's
   most established fragrance houses. Dubai Night is a dark, addictive blend of
   oud and amber with serious projection and all-night longevity.
 inspired_by_name: Tom Ford Noir
+accords_text: oud, amber, saffron, woody, smoky, floral, incense, resinous
+char_sweet: 2
+char_fresh: 1
+char_masculine: 4
+char_unique: 4
+char_versatile: 2
 ---

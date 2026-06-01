@@ -55,4 +55,9 @@ ysp_thoughts: >-
 inspired_by_name: "Creed Virgin Island Water "
 inspired_by_note: Same lime-coconut-rum DNA at a fraction of the price, with stronger projection
 exclude_from_feed: false
+char_sweet: 4
+char_fresh: 4
+char_masculine: 3
+char_unique: 3
+char_versatile: 3
 ---

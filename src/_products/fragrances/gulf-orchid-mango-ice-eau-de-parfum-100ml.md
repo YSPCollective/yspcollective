@@ -17,7 +17,7 @@ accords_text: fruity, tropical, sweet, citrus, fresh spicy, musky, fresh,
   aromatic, terpenic, white floral
 longevity: 6-8 hours
 projection: "Moderate - Strong "
-best_for: Daytime wear
+best_for: Daytime wear, summer, beach, casual occasions
 origin: UAE
 launched: "2025"
 vegan: false
@@ -110,4 +110,9 @@ base_notes: Musk, Vanilla, Caramel, Chestnut
 description_short: A fun, fruit-forward EDP from Gulf Orchid — juicy mango and
   cooling freshness balanced over a soft, musky base. Vibrant, approachable, and
   perfect for warmer days.
+char_sweet: 4
+char_fresh: 4
+char_masculine: 2
+char_unique: 3
+char_versatile: 3
 ---

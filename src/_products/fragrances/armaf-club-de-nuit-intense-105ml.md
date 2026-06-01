@@ -73,4 +73,9 @@ amazon_url: ""
 gender_label: Men
 top_notes: Lemon, Pineapple, Bergamot, Black Currant, Apple
 accords_text: citrus, fructured, leather, smoked, woody, aromatic, sweet, fresh, musked
+char_sweet: 2
+char_fresh: 3
+char_masculine: 5
+char_unique: 3
+char_versatile: 3
 ---

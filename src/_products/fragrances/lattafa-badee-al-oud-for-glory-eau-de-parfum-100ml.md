@@ -14,7 +14,7 @@ accords_text: oud, warm spicy, fresh spicy, patchouli, metallic, musky, woody,
   lavender, earthy, leather
 longevity: 10-12 hours
 projection: Strong
-best_for: Evening wear
+best_for: Evening wear, formal occasions, cooler seasons, night out
 origin: UAE
 launched: "2020"
 vegan: false
@@ -56,4 +56,9 @@ concentration: Eau de Parfum (EDP)
 featured: true
 gtin: "6291107458328"
 exclude_from_feed: false
+char_sweet: 1
+char_fresh: 1
+char_masculine: 4
+char_unique: 4
+char_versatile: 2
 ---

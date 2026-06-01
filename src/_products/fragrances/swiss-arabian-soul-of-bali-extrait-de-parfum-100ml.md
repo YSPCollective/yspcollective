@@ -50,7 +50,7 @@ slug: swiss-arabian-soul-of-bali
 concentration: Extrait de Parfum (EdP)
 featured: true
 published: true
-best_for: Daytime wear, spring/summer
+best_for: Daytime wear, spring/summer, casual occasions
 gtin: "6295124048494"
 accords:
   - aromatic
@@ -64,4 +64,10 @@ accords:
   - citrus
   - tropical
 base_notes: Sandalwood, Musk, Cypriol
+accords_text: tropical, fruity, floral, spicy, woody, musk, aquatic, fresh, saffron
+char_sweet: 3
+char_fresh: 4
+char_masculine: 3
+char_unique: 4
+char_versatile: 3
 ---

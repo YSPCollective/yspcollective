@@ -53,4 +53,11 @@ inspired_by_name: Creed Silver Mountain Water
 inspired_by_note: fresh aquatic-metallic opening, clean woody drydown
 gtin: "6290362345817"
 exclude_from_feed: false
+accords_text: woody, spicy, floral, aromatic, amber, incense, fresh spicy, lavender
+best_for: Evening wear, formal occasions, cooler seasons
+char_sweet: 2
+char_fresh: 3
+char_masculine: 4
+char_unique: 3
+char_versatile: 3
 ---

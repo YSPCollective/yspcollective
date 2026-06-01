@@ -164,6 +164,55 @@ permalink: "products/{{ product.slug }}.html"
   .ysp-thoughts-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
   .ysp-thoughts p { font-size: 0.9rem; line-height: 1.85; color: var(--grey); margin-bottom: 0.8rem; }
 
+  /* ── Inspired-by callout ── */
+  .inspired-callout { margin: 1.2rem 0 1.6rem; padding: 1rem 1.2rem; background: var(--black); border-left: 3px solid var(--accent); }
+  .inspired-callout-label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 0.3rem; }
+  .inspired-callout-name { font-family: var(--serif); font-size: 1.05rem; font-weight: 400; color: var(--white); margin-bottom: 0.2rem; }
+  .inspired-callout-note { font-size: 0.8rem; color: rgba(255,255,255,0.55); font-style: italic; }
+
+  /* ── Performance bars (longevity / projection) ── */
+  .perf-bars { margin-bottom: 1.6rem; display: flex; flex-direction: column; gap: 1rem; }
+  .perf-bar-label { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.35rem; }
+  .perf-bar-label-text { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey); }
+  .perf-bar-label-value { font-size: 0.78rem; color: var(--black); }
+  .perf-segs { display: flex; gap: 3px; }
+  .perf-seg { flex: 1; height: 9px; border-radius: 1px; background: var(--sand); }
+  .perf-seg.on { background: var(--accent); }
+
+  /* ── Best for / Not ideal for ── */
+  .best-for-section { margin-bottom: 1.6rem; }
+  .best-for-section-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey); margin-bottom: 0.7rem; }
+  .best-for-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .best-for-col-head { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--grey); margin-bottom: 0.4rem; }
+  .best-for-col, .best-for-col-single { display: flex; flex-direction: column; gap: 0.4rem; }
+  .best-for-item { font-size: 0.83rem; color: var(--black); display: flex; align-items: flex-start; gap: 0.45rem; line-height: 1.45; }
+  .best-for-item span:first-child { flex-shrink: 0; }
+
+  /* ── Fragrance character bars ── */
+  .char-section { margin-bottom: 1.6rem; }
+  .char-section-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey); margin-bottom: 0.8rem; }
+  .char-rows { display: flex; flex-direction: column; gap: 0.7rem; }
+  .char-row { display: grid; grid-template-columns: 100px 1fr; align-items: center; gap: 0.8rem; }
+  .char-row-label { font-size: 0.78rem; color: var(--black); }
+  .char-segs { display: flex; gap: 3px; }
+  .char-seg { flex: 1; height: 9px; border-radius: 1px; background: var(--sand); }
+  .char-seg.on { background: var(--accent); }
+
+  /* ── "What does this smell like?" section ── */
+  .smell-section { background: var(--cream); padding: 1.4rem 1.6rem; margin: 1.5rem 0; border-top: 2px solid var(--accent); }
+  .smell-section-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.65rem; }
+  .smell-section-text { font-family: var(--serif); font-size: 1.02rem; font-weight: 300; line-height: 1.75; color: var(--black); font-style: italic; }
+
+  /* ── Standalone reviews section ── */
+  .reviews-section { padding: 4rem; border-top: 1px solid var(--sand); }
+  .reviews-section-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--sand); }
+  .reviews-section-title { font-family: var(--serif); font-size: 1.8rem; font-weight: 300; }
+  .reviews-section-count { font-size: 0.78rem; color: var(--grey); }
+  .reviews-empty-state { text-align: center; padding: 3rem 2rem; border: 1px solid var(--sand); }
+  .reviews-empty-state p { font-size: 0.92rem; color: var(--grey); line-height: 1.7; margin-bottom: 1.5rem; }
+  .reviews-empty-cta { display: inline-block; padding: 0.85rem 2.5rem; background: var(--black); color: var(--white); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; border: none; font-family: var(--sans); transition: background 0.25s; }
+  .reviews-empty-cta:hover { background: var(--accent); }
+
   .related-section { padding: 5rem 4rem; border-top: 1px solid var(--sand); background: var(--cream); }
   .related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2rem; }
   .related-card { background: var(--white); border: 1px solid var(--sand); text-decoration: none; color: inherit; transition: border-color 0.3s, transform 0.3s; display: block; }
@@ -392,15 +441,61 @@ permalink: "products/{{ product.slug }}.html"
       <div class="product-price">€{{ product.price }}</div>
       {% if product.rrp %}<div class="product-rrp">€{{ product.rrp }}</div>{% endif %}
     </div>
-    <div class="product-desc" id="pdp-desc-short">{{ product.description_short }}</div>
+
+    {% if product.inspired_by_name %}
+    <div class="inspired-callout">
+      <div class="inspired-callout-label">Inspired By</div>
+      <div class="inspired-callout-name">{{ product.inspired_by_name }}</div>
+      <div class="inspired-callout-note">{% if product.inspired_by_note %}{{ product.inspired_by_note }}{% else %}same DNA — at a fraction of the price{% endif %}</div>
+    </div>
+    {% endif %}
 
     {% if isFragrance %}
     <div class="quick-specs">
       <div class="spec-item"><div class="spec-label">Concentration</div><div class="spec-value">{{ product.concentration }}</div></div>
       <div class="spec-item"><div class="spec-label">Size</div><div class="spec-value">{{ product.size }}</div></div>
-      <div class="spec-item"><div class="spec-label">Longevity</div><div class="spec-value">{{ product.longevity or '—' }}</div></div>
-      <div class="spec-item"><div class="spec-label">Projection</div><div class="spec-value">{{ product.projection or '—' }}</div></div>
     </div>
+
+    {% if product.longevity or product.projection %}
+    <div class="perf-bars">
+      {% if product.longevity %}
+        {% set lv = product.longevity | lower %}
+        {% if "20" in lv or "24" in lv %}{% set lvSegs = 5 %}
+        {% elif "16" in lv or "14" in lv %}{% set lvSegs = 5 %}
+        {% elif "12" in lv %}{% set lvSegs = 4 %}
+        {% elif "10" in lv %}{% set lvSegs = 4 %}
+        {% elif "8" in lv %}{% set lvSegs = 3 %}
+        {% elif "6" in lv %}{% set lvSegs = 2 %}
+        {% elif "4" in lv %}{% set lvSegs = 1 %}
+        {% else %}{% set lvSegs = 3 %}{% endif %}
+        <div class="perf-bar-row">
+          <div class="perf-bar-label">
+            <span class="perf-bar-label-text">Longevity</span>
+            <span class="perf-bar-label-value">{{ product.longevity }}</span>
+          </div>
+          <div class="perf-segs">{% for i in [1,2,3,4,5] %}<div class="perf-seg{% if i <= lvSegs %} on{% endif %}"></div>{% endfor %}</div>
+        </div>
+      {% endif %}
+      {% if product.projection %}
+        {% set pj = product.projection | lower %}
+        {% if "enormous" in pj or "beast" in pj %}{% set pjSegs = 5 %}
+        {% elif "very strong" in pj %}{% set pjSegs = 5 %}
+        {% elif "strong +" in pj %}{% set pjSegs = 5 %}
+        {% elif "strong" in pj %}{% set pjSegs = 4 %}
+        {% elif "moderate to strong" in pj or "moderate - strong" in pj %}{% set pjSegs = 3 %}
+        {% elif "moderate" in pj or "medium" in pj %}{% set pjSegs = 2 %}
+        {% elif "soft" in pj or "light" in pj or "subtle" in pj %}{% set pjSegs = 1 %}
+        {% else %}{% set pjSegs = 3 %}{% endif %}
+        <div class="perf-bar-row">
+          <div class="perf-bar-label">
+            <span class="perf-bar-label-text">Projection</span>
+            <span class="perf-bar-label-value">{{ product.projection }}</span>
+          </div>
+          <div class="perf-segs">{% for i in [1,2,3,4,5] %}<div class="perf-seg{% if i <= pjSegs %} on{% endif %}"></div>{% endfor %}</div>
+        </div>
+      {% endif %}
+    </div>
+    {% endif %}
 
     {% if isFragrance and (product.top_notes or product.heart_notes or product.base_notes) %}
     <div class="notes-pyramid notes-pyramid-mobile">
@@ -464,17 +559,41 @@ permalink: "products/{{ product.slug }}.html"
     {% endif %}
     {% endif %}
 
-    {% if product.inspired_by_name %}
-    <div class="inspired-by">
-      <span class="inspired-by-label">In the same world as</span>
-      <span class="inspired-by-name">{{ product.inspired_by_name }}</span>
-      {% if product.inspired_by_note %}
-        <span class="inspired-by-dot">·</span>
-        <span class="inspired-by-note">{{ product.inspired_by_note }}</span>
+    {% if product.best_for %}
+    <div class="best-for-section">
+      <div class="best-for-section-label">Best for</div>
+      {% if "|" in product.best_for %}
+        {% set bfParts = product.best_for.split("|") %}
+        {% set bfPos = bfParts[0].split(",") %}
+        {% set bfNeg = bfParts[1].split(",") %}
+        <div class="best-for-cols">
+          <div class="best-for-col">
+            <div class="best-for-col-head">Ideal for</div>
+            {% for bf in bfPos %}<div class="best-for-item"><span>✅</span><span>{{ bf | trim }}</span></div>{% endfor %}
+          </div>
+          <div class="best-for-col">
+            <div class="best-for-col-head">Not ideal for</div>
+            {% for bf in bfNeg %}<div class="best-for-item"><span>❌</span><span>{{ bf | trim }}</span></div>{% endfor %}
+          </div>
+        </div>
       {% else %}
-        <span class="inspired-by-dot">·</span>
-        <span class="inspired-by-note">at a fraction of the price</span>
+        <div class="best-for-col-single">
+          {% for bf in product.best_for.split(",") %}<div class="best-for-item"><span>✅</span><span>{{ bf | trim }}</span></div>{% endfor %}
+        </div>
       {% endif %}
+    </div>
+    {% endif %}
+
+    {% if product.char_sweet or product.char_fresh or product.char_masculine or product.char_unique or product.char_versatile %}
+    <div class="char-section">
+      <div class="char-section-label">Fragrance Character</div>
+      <div class="char-rows">
+        {% if product.char_sweet %}<div class="char-row"><div class="char-row-label">Sweet</div><div class="char-segs">{% for i in [1,2,3,4,5] %}<div class="char-seg{% if i <= product.char_sweet %} on{% endif %}"></div>{% endfor %}</div></div>{% endif %}
+        {% if product.char_fresh %}<div class="char-row"><div class="char-row-label">Fresh</div><div class="char-segs">{% for i in [1,2,3,4,5] %}<div class="char-seg{% if i <= product.char_fresh %} on{% endif %}"></div>{% endfor %}</div></div>{% endif %}
+        {% if product.char_masculine %}<div class="char-row"><div class="char-row-label">Masculine</div><div class="char-segs">{% for i in [1,2,3,4,5] %}<div class="char-seg{% if i <= product.char_masculine %} on{% endif %}"></div>{% endfor %}</div></div>{% endif %}
+        {% if product.char_unique %}<div class="char-row"><div class="char-row-label">Unique</div><div class="char-segs">{% for i in [1,2,3,4,5] %}<div class="char-seg{% if i <= product.char_unique %} on{% endif %}"></div>{% endfor %}</div></div>{% endif %}
+        {% if product.char_versatile %}<div class="char-row"><div class="char-row-label">Versatile</div><div class="char-segs">{% for i in [1,2,3,4,5] %}<div class="char-seg{% if i <= product.char_versatile %} on{% endif %}"></div>{% endfor %}</div></div>{% endif %}
+      </div>
     </div>
     {% endif %}
 
@@ -556,6 +675,13 @@ permalink: "products/{{ product.slug }}.html"
       </div>
     </div>
 
+    {% if product.description_short %}
+    <div class="smell-section">
+      <div class="smell-section-label">What does this smell like?</div>
+      <div class="smell-section-text" id="pdp-desc-short">{{ product.description_short }}</div>
+    </div>
+    {% endif %}
+
     {% if product.amazon_url %}
       <a href="{{ product.amazon_url }}" class="btn-shop" target="_blank" rel="noopener" data-i18n="pdp_amazon">📦 Buy on Amazon</a>
     {% endif %}
@@ -583,7 +709,7 @@ permalink: "products/{{ product.slug }}.html"
     <button class="tab-btn active" data-tab="description" data-i18n="pdp_tab_desc">Full Description</button>
     <button class="tab-btn" data-tab="details" data-i18n="pdp_tab_details">Details &amp; Specs</button>
     <button class="tab-btn" data-tab="thoughts" data-i18n="pdp_tab_thoughts">YSP Thoughts</button>
-    <button class="tab-btn" data-tab="reviews" id="tab-btn-reviews">Reviews</button>
+    <button class="tab-btn" data-tab="reviews" id="tab-btn-reviews">Write a Review</button>
     <button class="tab-btn" data-tab="shipping" data-i18n="pdp_tab_shipping">Shipping &amp; Returns</button>
   </div>
 
@@ -605,11 +731,7 @@ permalink: "products/{{ product.slug }}.html"
   </div>
 
   <div class="tab-panel" id="tab-reviews">
-    <!-- Summary (populated by JS) -->
-    <div id="reviews-summary-wrap"></div>
-    <!-- Approved reviews list (populated by JS) -->
-    <div id="reviews-list-wrap"></div>
-    <!-- Submission form -->
+    <!-- Submission form only — reviews display moved to standalone section -->
     <div class="review-form-wrap">
       <div class="review-form-title">Write a Review</div>
       <div class="review-form-row">
@@ -664,6 +786,15 @@ permalink: "products/{{ product.slug }}.html"
     <p>For questions before or after purchase, email <a href="mailto:info@yspcollective.com" style="color:var(--accent)">info@yspcollective.com</a> — we respond within 24 hours Monday to Friday.</p>
   </div>
 </div>
+
+<section class="reviews-section">
+  <div class="reviews-section-head">
+    <h2 class="reviews-section-title">Customer Reviews</h2>
+    <span class="reviews-section-count" id="reviews-section-count"></span>
+  </div>
+  <div id="reviews-summary-wrap"></div>
+  <div id="reviews-list-wrap"></div>
+</section>
 
 {% set productAccords = product | parseAccords %}
 {% set related = collections.allProducts | relatedProducts(product.slug, product.type, productAccords) %}
@@ -1148,8 +1279,8 @@ permalink: "products/{{ product.slug }}.html"
   }
 
   function updateTabLabel(count) {
-    const btn = document.getElementById('tab-btn-reviews');
-    if (btn && count > 0) btn.textContent = `Reviews (${count})`;
+    const countEl = document.getElementById('reviews-section-count');
+    if (countEl) countEl.textContent = count > 0 ? `${count} review${count === 1 ? '' : 's'}` : '';
   }
 
   function renderReviews(reviews) {
@@ -1160,7 +1291,10 @@ permalink: "products/{{ product.slug }}.html"
 
     if (!reviews.length) {
       summaryWrap.innerHTML = '';
-      listWrap.innerHTML = '<p class="review-empty">No reviews yet — be the first to share your thoughts.</p>';
+      listWrap.innerHTML = `<div class="reviews-empty-state">
+        <p>No reviews yet — be the first to share your experience with this fragrance.</p>
+        <button class="reviews-empty-cta" onclick="document.querySelector('[data-tab=reviews]').click();document.querySelector('.tabs-wrap').scrollIntoView({behavior:'smooth'})">Leave a Review</button>
+      </div>`;
       return;
     }
 

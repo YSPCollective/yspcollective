@@ -53,4 +53,9 @@ inspired_by_name: Xerjoff XJ 1861 Naxos
 inspired_by_note: Same honey-tobacco-lavender DNA, more approachable and
   wearable, exceptional longevity
 exclude_from_feed: false
+char_sweet: 3
+char_fresh: 2
+char_masculine: 4
+char_unique: 3
+char_versatile: 3
 ---

@@ -10,6 +10,7 @@ badge: Premium
 stock_status: in_stock
 featured: true
 published: true
+date_added: 2026-05-30
 fragrance_family: Floral Woody Oriental Spicy
 top_notes: Raspberry, Cinnamon, Bergamot
 heart_notes: Apple, Caramel, Rose
@@ -21,9 +22,10 @@ projection: Strong
 origin: UAE
 launched: "2025"
 vegan: false
-image_main: /images/uploads/sharaf-divine-br.png
+image_main: /images/uploads/sharaf_divine.png
 gallery:
   - /images/uploads/sharaf_divine.png
+  - /images/uploads/sharaf-divine-br.png
   - /images/uploads/sharaf_divine_1.jpeg
   - /images/uploads/sharaf_divine-1.png
 description_short: A gourmand oriental that opens with playful raspberry and
@@ -57,4 +59,10 @@ inspired_by_name: Angels' Share Paradis by Kilian
 inspired_by_note: ""
 gtin: "6290171077213"
 exclude_from_feed: false
+best_for: Evening wear, date night, cooler seasons, formal occasions
+char_sweet: 4
+char_fresh: 2
+char_masculine: 3
+char_unique: 3
+char_versatile: 2
 ---
