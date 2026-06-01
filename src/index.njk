@@ -35,6 +35,12 @@ canonical: "https://yspcollective.com/"
   .hero-dot { width: 32px; height: 2px; background: rgba(255,255,255,0.3); border: none; cursor: pointer; transition: all 0.4s; padding: 0; }
   .hero-dot.active { background: var(--white); width: 48px; }
   .hero-progress { position: absolute; bottom: 0; left: 0; height: 3px; background: var(--accent-light); z-index: 10; transition: width 0.1s linear; }
+  @media (max-width: 600px) {
+    .hero-content { padding: 0 2rem; padding-top: var(--nav-height); padding-bottom: 5rem; }
+    .hero-cta-group { flex-direction: column; align-items: flex-start; gap: 0.7rem; }
+    .btn-hero { width: auto; }
+    .hero-indicators { left: 2rem; bottom: 1.5rem; }
+  }
 
   /* STATS */
   #intro-band { padding: 3rem 3.5rem; display: flex; justify-content: center; align-items: center; gap: 4rem; border-bottom: 1px solid var(--sand); flex-wrap: wrap; }
