@@ -133,8 +133,6 @@
       .ysp-btn-save:hover{background:#1a1916;}
       .ysp-btn-accept-all{background:#1a1916;color:#faf8f5;}
       .ysp-btn-accept-all:hover{background:#9c7b56;}
-      .ysp-cookie-settings-btn{background:none;border:none;cursor:pointer;font-family:'Outfit',-apple-system,sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.35);transition:color 0.25s;padding:0;display:block;margin-bottom:0.6rem;text-align:left;}
-      .ysp-cookie-settings-btn:hover{color:#c8a87a;}
       @media(max-width:768px){
         #ysp-cookie-banner{padding:1.25rem 1.5rem;flex-direction:column;align-items:flex-start;gap:1.25rem;}
         .ysp-cookie-actions{width:100%;}
