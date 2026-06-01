@@ -6,9 +6,10 @@ category: SPF / Sunscreen
 size: 50ml
 badge: Bestseller
 custom_badge: ""
-stock_status: coming_soon
-featured: false
+stock_status: sold_out
+featured: true
 published: true
+date_added: 2026-05-30
 skin_type: All skin types, including sensitive and acne-prone
 key_ingredients: 30% Rice Extract, Niacinamide, Fermented Grain Probiotics,
   Green Tea Extract, Ginseng, Glycerin
