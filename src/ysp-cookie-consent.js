@@ -281,6 +281,7 @@
   })();
 
   // ── Init — runs immediately (script is at bottom of body, after translations) ──
+  injectStyles(); // Always inject so the footer button is styled on every page load
   const c = getConsent();
   if (c === null) {
     showBanner();
