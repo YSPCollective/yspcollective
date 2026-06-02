@@ -8,16 +8,23 @@ size: 100ml + 50ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
 stock_status: low_stock
+stock_quantity: 2
 featured: false
 published: true
+date_added: 2026-06-02
 fragrance_family: Aromatic Aquatic
+best_for: Spring, Summer, Daytime, Office, Gym
+char_sweet: 2
+char_fresh: 4
+char_masculine: 4
+char_unique: 2
+char_versatile: 4
 top_notes: Lemon, Apple, Cinnamon, Lemongrass, Bergamot
 heart_notes: Watery Notes, Lavender, Cardamom, Rosemary
 base_notes: Musk, Amber, Sandalwood, Cedar, Tobacco
 accords_text: aquatic, fresh, citrus, woody, spicy
 longevity: 8-12 hours
 projection: Moderate to Strong
-best_for: Spring, Summer, Daytime, Office, Gym
 origin: UAE
 launched: "2020"
 vegan: false
@@ -53,9 +60,4 @@ ysp_thoughts: >-
 inspired_by_name: Paco Rabanne Invictus Aqua
 inspired_by_note: Same fresh aquatic-citrus DNA, stronger projection
 exclude_from_feed: false
-char_sweet: 2
-char_fresh: 4
-char_masculine: 4
-char_unique: 2
-char_versatile: 4
 ---
