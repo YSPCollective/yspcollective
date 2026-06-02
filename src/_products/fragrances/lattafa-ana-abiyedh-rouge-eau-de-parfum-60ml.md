@@ -7,17 +7,24 @@ gender: Women
 size: 60ml
 concentration: Eau de Parfum (EDP)
 badge: Bestseller
-stock_status: sold_out
+stock_status: low_stock
+stock_quantity: 4
 featured: false
 published: true
+date_added: 2026-06-02
 fragrance_family: Woody Spicy
+best_for: Evening, Date Night, All Seasons
+char_sweet: 4
+char_fresh: 2
+char_masculine: 2
+char_unique: 3
+char_versatile: 3
 top_notes: Nashi Pear, Kumquat, Bergamot
 heart_notes: Caramel, Geranium
 base_notes: Ambergris, Musk, Oakmoss
 accords_text: sweet, amber, fruity, woody, salty
 longevity: 8-12 hours
 projection: Strong
-best_for: Evening, Date Night, All Seasons
 origin: UAE
 launched: "2016"
 vegan: false
@@ -52,9 +59,4 @@ inspired_by_name: "Maison Francis Kurkdjian Baccarat Rouge 540 "
 inspired_by_note: Shares the same warm amber-saffron-woody DNA, sweeter and
   fruitier with outstanding projection
 exclude_from_feed: false
-char_sweet: 4
-char_fresh: 2
-char_masculine: 2
-char_unique: 3
-char_versatile: 3
 ---
