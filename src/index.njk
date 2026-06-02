@@ -16,7 +16,7 @@ canonical: "https://yspcollective.com/"
   .hero-slide:nth-child(2) .hero-slide-bg { background: linear-gradient(135deg, #d4c4b0 0%, #c8b8a4 100%); }
   .hero-slide:nth-child(3) .hero-slide-bg { background: linear-gradient(135deg, #c8bfb2 0%, #bab0a0 100%); }
   .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(26,25,22,0.55) 0%, rgba(26,25,22,0.2) 50%, transparent 100%); z-index: 1; }
-  .hero-content { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; justify-content: center; padding: 0 5rem; padding-top: var(--nav-height); }
+  .hero-content { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; justify-content: center; padding: 0 5rem; padding-top: var(--nav-height); padding-bottom: 5rem; }
   .hero-tag { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 1.5rem; opacity: 0; transform: translateY(16px); transition: all 0.8s 0.3s; }
   .hero-slide.active .hero-tag { opacity: 1; transform: translateY(0); }
   .hero-title { font-family: var(--serif); font-size: clamp(2.8rem,5.5vw,5rem); font-weight: 300; line-height: 1.12; color: var(--white); max-width: 620px; margin-bottom: 1.5rem; opacity: 0; transform: translateY(24px); transition: all 0.8s 0.5s; }
@@ -35,6 +35,12 @@ canonical: "https://yspcollective.com/"
   .hero-dot { width: 32px; height: 2px; background: rgba(255,255,255,0.3); border: none; cursor: pointer; transition: all 0.4s; padding: 0; }
   .hero-dot.active { background: var(--white); width: 48px; }
   .hero-progress { position: absolute; bottom: 0; left: 0; height: 3px; background: var(--accent-light); z-index: 10; transition: width 0.1s linear; }
+  @media (max-width: 600px) {
+    .hero-content { padding: 0 2rem; padding-top: var(--nav-height); padding-bottom: 5rem; }
+    .hero-cta-group { flex-direction: column; align-items: flex-start; gap: 0.7rem; }
+    .btn-hero { width: auto; }
+    .hero-indicators { left: 2rem; bottom: 1.5rem; }
+  }
 
   /* STATS */
   #intro-band { padding: 3rem 3.5rem; display: flex; justify-content: center; align-items: center; gap: 4rem; border-bottom: 1px solid var(--sand); flex-wrap: wrap; }
@@ -223,25 +229,25 @@ canonical: "https://yspcollective.com/"
     <div class="hero-slide-bg" style="background: url('/images/hero-1.jpg') center/cover no-repeat;"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-tag" data-i18n="hero_1_tag">Beauty · Skincare · Fragrance</p>
-      <h1 class="hero-title" data-i18n="hero_1_title" data-i18n-html="true">Curated beauty,<br><em>elevated</em> living.</h1>
-      <p class="hero-sub" data-i18n="hero_1_sub">Premium skincare, fragrance and beauty products — sourced from trusted brands, delivered across Europe.</p>
+      <p class="hero-tag" data-i18n="hero_1_tag">Arabian &amp; European Fragrance</p>
+      <h1 class="hero-title" data-i18n="hero_1_title" data-i18n-html="true">Luxury Arabian Fragrances<br><em>Without the Luxury Markup</em></h1>
+      <p class="hero-sub" data-i18n="hero_1_sub">Discover iconic scents from Lattafa, Armaf, Rasasi and more — delivered across Europe from Portugal.</p>
       <div class="hero-cta-group">
-        <a href="/fragrances/all.html" class="btn-hero btn-hero-primary" data-i18n="hero_1_cta1">Shop Fragrances</a>
+        <a href="/fragrances/all.html" class="btn-hero btn-hero-primary" data-i18n="hero_1_cta1">Shop Best Sellers</a>
         <a href="#philosophy" class="btn-hero btn-hero-secondary" data-i18n="hero_1_cta2">Our Story</a>
       </div>
     </div>
   </div>
   <div class="hero-slide">
-    <div class="hero-slide-bg" style="background: url('/images/hero-2.png') center/cover no-repeat;"></div>
+    <div class="hero-slide-bg" style="background: url('/images/hero-2.jpg') center/cover no-repeat;"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-tag" data-i18n="hero_2_tag">K-Beauty · SPF · Clean Skincare</p>
-      <h1 class="hero-title" data-i18n="hero_2_title" data-i18n-html="true">The products<br>we <em>actually</em> use.</h1>
-      <p class="hero-sub" data-i18n="hero_2_sub">Every item in our range is something we'd recommend to someone we know. No filler, no grey market — just products that work.</p>
+      <p class="hero-tag" data-i18n="hero_2_tag">Oud · Amber · Saffron · Rose</p>
+      <h1 class="hero-title" data-i18n="hero_2_title" data-i18n-html="true">Centuries of Craft.<br><em>None of the Markup.</em></h1>
+      <p class="hero-sub" data-i18n="hero_2_sub">The finest Arabian fragrances — oud, amber and saffron — from €19. The same quality you'd pay €200 for elsewhere.</p>
       <div class="hero-cta-group">
-        <a href="/beauty/all.html" class="btn-hero btn-hero-primary" data-i18n="hero_2_cta1">Shop Beauty</a>
-        <a href="#contact" class="btn-hero btn-hero-secondary" data-i18n="hero_2_cta2">Get in Touch</a>
+        <a href="/fragrances/all.html" class="btn-hero btn-hero-primary" data-i18n="hero_2_cta1">Explore Arabian Fragrances</a>
+        <a href="#philosophy" class="btn-hero btn-hero-secondary" data-i18n="hero_2_cta2">Our Story</a>
       </div>
     </div>
   </div>
@@ -249,12 +255,12 @@ canonical: "https://yspcollective.com/"
     <div class="hero-slide-bg" style="background: url('/images/hero-3.jpg') center/cover no-repeat;"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-tag" data-i18n="hero_3_tag">Fragrance · Arabian Perfume · Niche Scents</p>
-      <h1 class="hero-title" data-i18n="hero_3_title" data-i18n-html="true">Discover Arabian<br><em>fragrance.</em></h1>
-      <p class="hero-sub" data-i18n="hero_3_sub">From Lattafa to Armaf — experience the scents taking Europe by storm. Rich, long-lasting compositions at a fraction of designer prices.</p>
+      <p class="hero-tag" data-i18n="hero_3_tag">K-Beauty · Seoul Science · Glass Skin</p>
+      <h1 class="hero-title" data-i18n="hero_3_title" data-i18n-html="true">The Skincare<br><em>Seoul Swears By.</em></h1>
+      <p class="hero-sub" data-i18n="hero_3_sub">COSRX, ANUA, Beauty of Joseon — the ingredient-led brands Korean women trust. Now delivered across Europe.</p>
       <div class="hero-cta-group">
-        <a href="/fragrances/all.html" class="btn-hero btn-hero-primary" data-i18n="hero_3_cta1">Explore Range</a>
-        <a href="#contact" class="btn-hero btn-hero-secondary" data-i18n="hero_3_cta2">Wholesale</a>
+        <a href="/beauty/all.html" class="btn-hero btn-hero-primary" data-i18n="hero_3_cta1">Shop K-Beauty</a>
+        <a href="#philosophy" class="btn-hero btn-hero-secondary" data-i18n="hero_3_cta2">Our Story</a>
       </div>
     </div>
   </div>
@@ -280,26 +286,26 @@ canonical: "https://yspcollective.com/"
 <!-- SHOP THE RANGE -->
 <section id="shop-range">
   <div class="shop-range-header reveal">
-    <p class="section-label">The Collection</p>
-    <h2 class="section-title">Shop the range</h2>
+    <p class="section-label" data-i18n="range_label">The Collection</p>
+    <h2 class="section-title" data-i18n="range_title">Shop the range</h2>
   </div>
   <div class="shop-range-grid">
     <a href="/fragrances/all.html" class="shop-range-card reveal">
       <div class="shop-range-card-bg" style="background-image: url('/images/home_fragrance.jpg');"></div>
       <div class="shop-range-card-overlay"></div>
       <div class="shop-range-card-content">
-        <span class="shop-range-card-label">Arabian &amp; European</span>
-        <div class="shop-range-card-title">Shop Fragrances</div>
-        <span class="shop-range-card-link">Browse the full edit</span>
+        <span class="shop-range-card-label" data-i18n="range_frag_label">Arabian &amp; European</span>
+        <div class="shop-range-card-title" data-i18n="range_frag_title">Shop Fragrances</div>
+        <span class="shop-range-card-link" data-i18n="range_link">Browse the full edit</span>
       </div>
     </a>
     <a href="/beauty/all.html" class="shop-range-card reveal">
       <div class="shop-range-card-bg" style="background-image: url('/images/home_beauty.jpg');"></div>
       <div class="shop-range-card-overlay"></div>
       <div class="shop-range-card-content">
-        <span class="shop-range-card-label">K-Beauty &amp; Skincare</span>
-        <div class="shop-range-card-title">Shop Beauty</div>
-        <span class="shop-range-card-link">Browse the full edit</span>
+        <span class="shop-range-card-label" data-i18n="range_beauty_label">K-Beauty &amp; Skincare</span>
+        <div class="shop-range-card-title" data-i18n="range_beauty_title">Shop Beauty</div>
+        <span class="shop-range-card-link" data-i18n="range_link">Browse the full edit</span>
       </div>
     </a>
   </div>

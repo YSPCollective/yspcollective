@@ -10,25 +10,34 @@ const YSP_TRANSLATIONS = {
     nav_enquire: "Enquire",
 
     // Hero 1
-    hero_1_tag: "Beauty · Skincare · Fragrance",
-    hero_1_title: "Curated beauty, <em>elevated</em> living.",
-    hero_1_sub: "Premium skincare, fragrance and beauty products — sourced from trusted brands, delivered across Europe.",
-    hero_1_cta1: "Shop Fragrances",
+    hero_1_tag: "Arabian &amp; European Fragrance",
+    hero_1_title: "Luxury Arabian Fragrances<br><em>Without the Luxury Markup</em>",
+    hero_1_sub: "Discover iconic scents from Lattafa, Armaf, Rasasi and more — delivered across Europe from Portugal.",
+    hero_1_cta1: "Shop Best Sellers",
     hero_1_cta2: "Our Story",
 
     // Hero 2
-    hero_2_tag: "K-Beauty · SPF · Clean Skincare",
-    hero_2_title: "The products we <em>actually</em> use.",
-    hero_2_sub: "Every item in our range is something we'd recommend to someone we know. No filler, no grey market — just products that work.",
-    hero_2_cta1: "Shop Beauty",
-    hero_2_cta2: "Get in Touch",
+    hero_2_tag: "Oud · Amber · Saffron · Rose",
+    hero_2_title: "Centuries of Craft.<br><em>None of the Markup.</em>",
+    hero_2_sub: "The finest Arabian fragrances — oud, amber and saffron — from €19. The same quality you'd pay €200 for elsewhere.",
+    hero_2_cta1: "Explore Arabian Fragrances",
+    hero_2_cta2: "Our Story",
 
     // Hero 3
-    hero_3_tag: "Fragrance · Arabian Perfume · Niche Scents",
-    hero_3_title: "Discover Arabian <em>fragrance.</em>",
-    hero_3_sub: "From Lattafa to Armaf — experience the scents taking Europe by storm. Rich, long-lasting compositions at a fraction of designer prices.",
-    hero_3_cta1: "Explore Range",
-    hero_3_cta2: "Wholesale",
+    hero_3_tag: "K-Beauty · Seoul Science · Glass Skin",
+    hero_3_title: "The Skincare<br><em>Seoul Swears By.</em>",
+    hero_3_sub: "COSRX, ANUA, Beauty of Joseon — the ingredient-led brands Korean women trust. Now delivered across Europe.",
+    hero_3_cta1: "Shop K-Beauty",
+    hero_3_cta2: "Our Story",
+
+    // Shop the range
+    range_label: "The Collection",
+    range_title: "Shop the range",
+    range_frag_label: "Arabian &amp; European",
+    range_frag_title: "Shop Fragrances",
+    range_beauty_label: "K-Beauty &amp; Skincare",
+    range_beauty_title: "Shop Beauty",
+    range_link: "Browse the full edit",
 
     // Stats
     stat_products: "Products Delivered",
@@ -201,25 +210,34 @@ const YSP_TRANSLATIONS = {
     nav_enquire: "Saber Mais",
 
     // Hero 1
-    hero_1_tag: "Beleza · Skincare · Fragrância",
-    hero_1_title: "Beleza selecionada, <em>vida elevada.</em>",
-    hero_1_sub: "Produtos de skincare, fragrância e beleza premium — de marcas de confiança, entregues em toda a Europa.",
-    hero_1_cta1: "Ver Fragrâncias",
+    hero_1_tag: "Fragrância Árabe &amp; Europeia",
+    hero_1_title: "Fragrâncias Árabes de Luxo<br><em>Sem o Preço de Luxo</em>",
+    hero_1_sub: "Descubra perfumes icónicos de Lattafa, Armaf, Rasasi e muito mais — entregues em toda a Europa a partir de Portugal.",
+    hero_1_cta1: "Ver Mais Vendidos",
     hero_1_cta2: "A Nossa História",
 
     // Hero 2
-    hero_2_tag: "K-Beauty · SPF · Skincare Natural",
-    hero_2_title: "Os produtos que <em>realmente</em> usamos.",
-    hero_2_sub: "Cada produto na nossa gama é algo que recomendaríamos a alguém próximo. Sem enganos, sem mercado paralelo — apenas produtos que funcionam.",
-    hero_2_cta1: "Ver Beleza",
-    hero_2_cta2: "Fale Connosco",
+    hero_2_tag: "Oud · Âmbar · Açafrão · Rosa",
+    hero_2_title: "Séculos de Arte.<br><em>Sem Margens Extra.</em>",
+    hero_2_sub: "As melhores fragrâncias árabes — oud, âmbar e açafrão — a partir de €19. A mesma qualidade que pagaria €200 noutro lugar.",
+    hero_2_cta1: "Explorar Fragrâncias Árabes",
+    hero_2_cta2: "A Nossa História",
 
     // Hero 3
-    hero_3_tag: "Fragrância · Perfume Árabe · Nicho",
-    hero_3_title: "Descubra a fragrância <em>árabe.</em>",
-    hero_3_sub: "De Lattafa a Armaf — experiencie os perfumes que conquistam a Europa. Composições ricas e duradouras a uma fração do preço das marcas de luxo.",
-    hero_3_cta1: "Ver Gama",
-    hero_3_cta2: "Grossista",
+    hero_3_tag: "K-Beauty · Ciência de Seul · Pele de Vidro",
+    hero_3_title: "O Skincare<br><em>que Seul Recomenda.</em>",
+    hero_3_sub: "COSRX, ANUA, Beauty of Joseon — as marcas de ingredientes ativos em que as mulheres coreanas confiam. Agora entregues em toda a Europa.",
+    hero_3_cta1: "Ver K-Beauty",
+    hero_3_cta2: "A Nossa História",
+
+    // Shop the range
+    range_label: "A Coleção",
+    range_title: "Ver a gama",
+    range_frag_label: "Árabe &amp; Europeia",
+    range_frag_title: "Ver Fragrâncias",
+    range_beauty_label: "K-Beauty &amp; Skincare",
+    range_beauty_title: "Ver Beleza",
+    range_link: "Ver toda a coleção",
 
     // Stats
     stat_products: "Produtos Entregues",
@@ -392,25 +410,34 @@ const YSP_TRANSLATIONS = {
     nav_enquire: "Consultar",
 
     // Hero 1
-    hero_1_tag: "Belleza · Skincare · Fragancia",
-    hero_1_title: "Belleza seleccionada, <em>vida elevada.</em>",
-    hero_1_sub: "Productos premium de skincare, fragancia y belleza — de marcas de confianza, entregados en toda Europa.",
-    hero_1_cta1: "Ver Fragancias",
+    hero_1_tag: "Fragancia Árabe &amp; Europea",
+    hero_1_title: "Fragancias Árabes de Lujo<br><em>Sin el Precio de Lujo</em>",
+    hero_1_sub: "Descubre fragancias icónicas de Lattafa, Armaf, Rasasi y más — entregadas en toda Europa desde Portugal.",
+    hero_1_cta1: "Ver Más Vendidos",
     hero_1_cta2: "Nuestra Historia",
 
     // Hero 2
-    hero_2_tag: "K-Beauty · SPF · Skincare Limpio",
-    hero_2_title: "Los productos que <em>realmente</em> usamos.",
-    hero_2_sub: "Cada artículo de nuestra gama es algo que recomendaríamos a alguien cercano. Sin relleno, sin mercado gris — solo productos que funcionan.",
-    hero_2_cta1: "Ver Belleza",
-    hero_2_cta2: "Contáctanos",
+    hero_2_tag: "Oud · Ámbar · Azafrán · Rosa",
+    hero_2_title: "Siglos de Arte.<br><em>Sin Márgenes Extra.</em>",
+    hero_2_sub: "Las mejores fragancias árabes — oud, ámbar y azafrán — desde €19. La misma calidad que pagarías €200 en otro lugar.",
+    hero_2_cta1: "Explorar Fragancias Árabes",
+    hero_2_cta2: "Nuestra Historia",
 
     // Hero 3
-    hero_3_tag: "Fragancia · Perfume Árabe · Nicho",
-    hero_3_title: "Descubre la fragancia <em>árabe.</em>",
-    hero_3_sub: "De Lattafa a Armaf — experimenta los aromas que conquistan Europa. Composiciones ricas y duraderas a una fracción del precio de las marcas de lujo.",
-    hero_3_cta1: "Ver Gama",
-    hero_3_cta2: "Mayorista",
+    hero_3_tag: "K-Beauty · Ciencia de Seúl · Piel de Cristal",
+    hero_3_title: "El Skincare<br><em>que Seúl Recomienda.</em>",
+    hero_3_sub: "COSRX, ANUA, Beauty of Joseon — las marcas de ingredientes activos en las que confían las mujeres coreanas. Ahora entregadas en toda Europa.",
+    hero_3_cta1: "Ver K-Beauty",
+    hero_3_cta2: "Nuestra Historia",
+
+    // Shop the range
+    range_label: "La Colección",
+    range_title: "Ver la gama",
+    range_frag_label: "Árabe &amp; Europea",
+    range_frag_title: "Ver Fragancias",
+    range_beauty_label: "K-Beauty &amp; Skincare",
+    range_beauty_title: "Ver Belleza",
+    range_link: "Ver toda la colección",
 
     // Stats
     stat_products: "Productos Entregados",

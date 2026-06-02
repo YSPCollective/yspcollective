@@ -859,6 +859,7 @@ async function handleCheckout(request, env) {
     "cancel_url": cancel_url || `${origin}/`,
     "payment_method_types[]": "card",
     "billing_address_collection": "required",
+    "phone_number_collection[enabled]": "true",
     "shipping_address_collection[allowed_countries][0]": "PT",
     "shipping_address_collection[allowed_countries][1]": "ES"
   });
