@@ -8,16 +8,23 @@ size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
 stock_status: in_stock
+stock_quantity: 10
 featured: false
 published: true
+date_added: 2026-06-02
 fragrance_family: Oriental Woody
+best_for: Evening, Autumn, Winter, Date Night
+char_sweet: 4
+char_fresh: 1
+char_masculine: 4
+char_unique: 3
+char_versatile: 2
 top_notes: Woody Notes, Nutmeg
 heart_notes: Patchouli, Coffee, Cacao, Sandalwood
 base_notes: Vanilla, Vetiver
 accords_text: coffee, chocolate, vanilla, woody, spicy
 longevity: 8 - 10 hours
 projection: Moderate
-best_for: Evening, Autumn, Winter, Date Night
 origin: UAE
 launched: "2022"
 vegan: false
@@ -53,9 +60,4 @@ inspired_by_name: Kilian Black Phantom
 inspired_by_note: Same dark coffee-chocolate-vanilla gourmand DNA, earthier and
   woodier, exceptional value
 exclude_from_feed: false
-char_sweet: 4
-char_fresh: 1
-char_masculine: 4
-char_unique: 3
-char_versatile: 2
 ---
