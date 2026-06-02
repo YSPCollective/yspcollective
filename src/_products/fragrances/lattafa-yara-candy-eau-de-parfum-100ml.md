@@ -8,16 +8,23 @@ size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
 stock_status: low_stock
+stock_quantity: 4
 featured: false
 published: true
+date_added: 2026-06-02
 fragrance_family: Amber Fruity
+best_for: Spring, Summer, Daytime, Casual
+char_sweet: 5
+char_fresh: 3
+char_masculine: 1
+char_unique: 2
+char_versatile: 3
 top_notes: Green Mandarin, Blackcurrant
 heart_notes: Strawberry Fizz Candy, Gardenia
 base_notes: Vanilla Syrup, Sandalwood, Amber, Musk
 accords_text: strawberry, fruity, sweet, vanilla, candy
 longevity: 8-12 hours
 projection: Moderate
-best_for: Spring, Summer, Daytime, Casual
 origin: UAE
 launched: "2024"
 vegan: false
@@ -47,9 +54,4 @@ ysp_thoughts: >-
 
   It's the kind of fragrance that gets compliments without anyone being able to quite place it. Perfect for anyone who loved the original Yara and wants something a little more summery, or for anyone new to the Lattafa world who wants an easy, crowd-pleasing entry point. At this price for this performance, it's a straightforward yes.
 exclude_from_feed: false
-char_sweet: 5
-char_fresh: 3
-char_masculine: 1
-char_unique: 2
-char_versatile: 3
 ---
