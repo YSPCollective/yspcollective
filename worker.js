@@ -194,6 +194,7 @@ var ORDER_CONFIRM_CONTENT = {
     greeting: (name) => `Olá ${name},`,
     p1: "Recebemos o seu pagamento e a sua encomenda está confirmada.",
     p2: "Iremos processar e enviar no prazo de 1 dia útil. Receberá uma notificação quando a sua encomenda for expedida.",
+    order_label: "Referência da encomenda",
     items_label: "Resumo da encomenda",
     shipping_label: "Envio",
     total_label: "Total",
@@ -208,6 +209,7 @@ var ORDER_CONFIRM_CONTENT = {
     greeting: (name) => `Hola ${name},`,
     p1: "Hemos recibido su pago y su pedido está confirmado.",
     p2: "Lo procesaremos y enviaremos en el plazo de 1 día hábil. Recibirá una notificación cuando su pedido sea enviado.",
+    order_label: "Referencia del pedido",
     items_label: "Resumen del pedido",
     shipping_label: "Envío",
     total_label: "Total",
@@ -222,6 +224,7 @@ var ORDER_CONFIRM_CONTENT = {
     greeting: (name) => `Hi ${name},`,
     p1: "We've received your payment and your order is confirmed.",
     p2: "We'll process and dispatch within 1 business day. You'll receive a notification once your order has shipped.",
+    order_label: "Order reference",
     items_label: "Order summary",
     shipping_label: "Shipping",
     total_label: "Total",
@@ -233,7 +236,7 @@ var ORDER_CONFIRM_CONTENT = {
   }
 };
 
-function buildOrderConfirmationHtml(lang, firstName, lineItems, total, shippingCost) {
+function buildOrderConfirmationHtml(lang, firstName, lineItems, total, shippingCost, orderNumber) {
   const c = ORDER_CONFIRM_CONTENT[lang] || ORDER_CONFIRM_CONTENT.en;
   const shippingDisplay = parseFloat(shippingCost) === 0 ? c.free_shipping : `€${parseFloat(shippingCost).toFixed(2)}`;
 
@@ -270,6 +273,7 @@ function buildOrderConfirmationHtml(lang, firstName, lineItems, total, shippingC
     <div style="background:#faf8f5;padding:40px 40px 32px;border:1px solid #e6dfd4;">
 
       <p style="font-size:16px;color:#1a1916;margin:0 0 20px;line-height:1.6;">${c.greeting(firstName)}</p>
+      ${orderNumber ? `<p style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#8a847a;margin:0 0 4px;">${c.order_label}</p><p style="font-size:18px;font-weight:600;color:#1a1916;letter-spacing:0.1em;margin:0 0 24px;">${orderNumber}</p>` : ""}
       <p style="font-size:15px;color:#8a847a;line-height:1.8;margin:0 0 8px;">${c.p1}</p>
       <p style="font-size:15px;color:#8a847a;line-height:1.8;margin:0 0 32px;">${c.p2}</p>
 
@@ -310,7 +314,7 @@ function buildOrderConfirmationHtml(lang, firstName, lineItems, total, shippingC
 </html>`;
 }
 
-async function sendOrderConfirmationEmail(env, session, lineItems = []) {
+async function sendOrderConfirmationEmail(env, session, lineItems = [], orderNumber = null) {
   const apiKey = env.BREVO_API_KEY;
   if (!apiKey) return;
 
@@ -324,7 +328,7 @@ async function sendOrderConfirmationEmail(env, session, lineItems = []) {
   const shippingCost = session.shipping_cost ? (session.shipping_cost.amount_total / 100).toFixed(2) : "0.00";
 
   const c = ORDER_CONFIRM_CONTENT[lang] || ORDER_CONFIRM_CONTENT.en;
-  const html = buildOrderConfirmationHtml(lang, firstName, lineItems, total, shippingCost);
+  const html = buildOrderConfirmationHtml(lang, firstName, lineItems, total, shippingCost, orderNumber);
 
   const res = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
@@ -343,7 +347,7 @@ async function sendOrderConfirmationEmail(env, session, lineItems = []) {
   }
 }
 
-async function sendOrderAdminNotification(env, session, lineItems) {
+async function sendOrderAdminNotification(env, session, lineItems, orderNumber = null) {
   const apiKey = env.BREVO_API_KEY;
   if (!apiKey) return;
 
@@ -383,6 +387,10 @@ async function sendOrderAdminNotification(env, session, lineItems) {
     </div>
 
     <table style="width:100%;border-collapse:collapse;margin-bottom:24px;">
+      ${orderNumber ? `<tr>
+        <td style="padding:6px 0;color:#8a847a;font-size:13px;width:130px;">Order Ref</td>
+        <td style="padding:6px 0;font-size:13px;color:#1a1916;font-weight:600;letter-spacing:0.06em;">${orderNumber}</td>
+      </tr>` : ""}
       <tr>
         <td style="padding:6px 0;color:#8a847a;font-size:13px;width:130px;">Customer</td>
         <td style="padding:6px 0;font-size:13px;color:#1a1916;">${customerName}</td>
@@ -434,7 +442,7 @@ async function sendOrderAdminNotification(env, session, lineItems) {
     body: JSON.stringify({
       sender: { name: "YSP Orders", email: "info@yspcollective.com" },
       to: [{ email: "info@yspcollective.com", name: "Stephen" }],
-      subject: `🛍 New order — ${customerName} — €${total}`,
+      subject: `🛍 New order ${orderNumber ? orderNumber + " — " : ""}${customerName} — €${total}`,
       htmlContent: html
     })
   });
@@ -446,6 +454,14 @@ async function sendOrderAdminNotification(env, session, lineItems) {
 }
 
 // ─── LANGUAGE DETECTION ───────────────────────────────────────────────────────
+
+function generateOrderNumber() {
+  // Excludes 0/O and 1/I to avoid confusion when reading aloud or handwriting
+  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  let id = "YSP-";
+  for (let i = 0; i < 6; i++) id += chars[Math.floor(Math.random() * chars.length)];
+  return id;
+}
 
 function detectLang(stripeSession) {
   if (stripeSession.metadata?.lang) {
@@ -729,6 +745,16 @@ async function handleStripeWebhook(request, env) {
       console.error("Failed to fetch line items:", err.message);
     }
 
+    // Generate and store order number
+    const orderNumber = generateOrderNumber();
+    if (env.YSP_USERS) {
+      await env.YSP_USERS.put(
+        `order:${orderNumber}`,
+        JSON.stringify({ sessionId: session.id, customer: customerName, email: customerEmail, total: session.amount_total, createdAt: Date.now() }),
+        { expirationTtl: 365 * 24 * 60 * 60 }
+      );
+    }
+
     // Decrement stock for each purchased item
     if (env.YSP_USERS && lineItems.length > 0) {
       for (const li of lineItems) {
@@ -744,7 +770,7 @@ async function handleStripeWebhook(request, env) {
 
     // 1. Send order confirmation to customer
     try {
-      await sendOrderConfirmationEmail(env, session, lineItems);
+      await sendOrderConfirmationEmail(env, session, lineItems, orderNumber);
       console.log(`Order confirmation sent to ${customerEmail}`);
     } catch (err) {
       console.error("Order confirmation email failed:", err.message);
@@ -752,7 +778,7 @@ async function handleStripeWebhook(request, env) {
 
     // 2. Send admin notification to Stephen
     try {
-      await sendOrderAdminNotification(env, session, lineItems);
+      await sendOrderAdminNotification(env, session, lineItems, orderNumber);
       console.log(`Admin order notification sent`);
     } catch (err) {
       console.error("Admin order notification failed:", err.message);
