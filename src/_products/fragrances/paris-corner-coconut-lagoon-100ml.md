@@ -1,22 +1,27 @@
 ---
+name: Ministry of Gourmand	Coconut Lagoon 100ml
+slug: ministry-of-gourman-coconut-lagoon
 price: "39.50"
 brand: Paris Corner
 gender: Unisex
 size: 100ml
+concentration: Eau de Parfum (EDP)
 badge: Curated
-stock_status: in_stock
+stock_status: low_stock
+featured: false
+published: true
+date_added: 2026-06-02
+best_for: Daytime wear, summer, beach, casual occasions
+char_sweet: 4
+char_fresh: 4
+char_masculine: 2
 heart_notes: Watermelon, Caramel
-accords_text: citrus, coconut, vanilla, sweet, ozonic, aquatic, caramel, fruity,
-  fresh, lactonic
 longevity: 7-9 hours
 projection: Moderate
 origin: UAE
 launched: "2024"
 vegan: false
 image_main: /images/uploads/375x500.101955.jpeg
-description_short: A sun-drenched, tropical gourmand from Paris Corner —
-  creamy coconut and warm lagoon vibes bottled into an EDP that feels like a
-  holiday you don't want to end.
 description_full: >-
   
   Ministry of Gourmand Coconut Lagoon opens with a bright, tropical burst of coconut and exotic fruits that immediately transports you somewhere warm and unhurried. 
@@ -35,12 +40,6 @@ ysp_thoughts: >-
 
 
   We picked it because it fills a very specific brief that not many fragrances do well — genuinely tropical without smelling like sunscreen, genuinely sweet without being cloying. It's joyful, and sometimes that's exactly what a fragrance should be.
-name: Ministry of Gourmand	Coconut Lagoon 100ml
-slug: ministry-of-gourman-coconut-lagoon
-concentration: Eau de Parfum (EDP)
-featured: false
-published: true
-best_for: Daytime wear, summer, beach, casual occasions
 gtin: "6295321475628"
 accords:
   - citrus
@@ -53,12 +52,15 @@ accords:
   - fruity
   - fresh
   - lactonic
+stock_quantity: 3
 fragrance_family: Gourmand Tropical Floral
-top_notes: Lemon, Mandarin, Apple
-base_notes: Coconut, Vanilla
-char_sweet: 4
-char_fresh: 4
-char_masculine: 2
 char_unique: 3
 char_versatile: 3
+top_notes: Lemon, Mandarin, Apple
+base_notes: Coconut, Vanilla
+accords_text: citrus, coconut, vanilla, sweet, ozonic, aquatic, caramel, fruity,
+  fresh, lactonic
+description_short: A sun-drenched, tropical gourmand from Paris Corner — creamy
+  coconut and warm lagoon vibes bottled into an EDP that feels like a holiday
+  you don't want to end.
 ---
