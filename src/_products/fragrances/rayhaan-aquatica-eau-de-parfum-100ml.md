@@ -8,16 +8,23 @@ size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
 stock_status: in_stock
+stock_quantity: 7
 featured: true
 published: true
+date_added: 2026-06-02
 fragrance_family: Citrus Gourmand
+best_for: Summer, Holiday, Daytime
+char_sweet: 4
+char_fresh: 4
+char_masculine: 3
+char_unique: 3
+char_versatile: 3
 top_notes: Lime, Coconut Milk, Bergamot, Mandarin
 heart_notes: Sugar Cane, Jasmine, Hibiscus, Gardenia
 base_notes: Rum, Musk, Tonka Bean, Patchouli
 accords_text: citrus, coconut, rum, tropical, sweet
 longevity: 6-8 hours
 projection: Moderate
-best_for: Summer, Holiday, Daytime
 origin: UAE
 launched: "2026"
 vegan: false
@@ -55,9 +62,4 @@ ysp_thoughts: >-
 inspired_by_name: "Creed Virgin Island Water "
 inspired_by_note: Same lime-coconut-rum DNA at a fraction of the price, with stronger projection
 exclude_from_feed: false
-char_sweet: 4
-char_fresh: 4
-char_masculine: 3
-char_unique: 3
-char_versatile: 3
 ---
