@@ -199,6 +199,7 @@ var ORDER_CONFIRM_CONTENT = {
     total_label: "Total",
     free_shipping: "Grátis",
     p3: "Se tiver alguma questão, responda directamente a este e-mail — estou aqui para ajudar.",
+    vat_note: "Precisa de uma factura com o seu NIF? Basta responder a este e-mail.",
     sign: "Stephen",
     sign_sub: "YSP Collective, Portugal"
   },
@@ -212,6 +213,7 @@ var ORDER_CONFIRM_CONTENT = {
     total_label: "Total",
     free_shipping: "Gratis",
     p3: "Si tiene alguna pregunta, responda directamente a este correo — estoy aquí para ayudar.",
+    vat_note: "¿Necesita una factura con su NIE/NIF? Solo tiene que responder a este correo.",
     sign: "Stephen",
     sign_sub: "YSP Collective, Portugal"
   },
@@ -225,6 +227,7 @@ var ORDER_CONFIRM_CONTENT = {
     total_label: "Total",
     free_shipping: "Free",
     p3: "If you have any questions, just reply to this email — I'm here to help.",
+    vat_note: "Need a VAT invoice with your NIF/NIE? Just reply to this email.",
     sign: "Stephen",
     sign_sub: "YSP Collective, Portugal"
   }
@@ -286,7 +289,8 @@ function buildOrderConfirmationHtml(lang, firstName, lineItems, total, shippingC
 
       <div style="border-top:1px solid #e6dfd4;margin:24px 0;"></div>
 
-      <p style="font-size:14px;color:#8a847a;line-height:1.8;margin:0 0 24px;">${c.p3}</p>
+      <p style="font-size:14px;color:#8a847a;line-height:1.8;margin:0 0 8px;">${c.p3}</p>
+      <p style="font-size:13px;color:#b5afa5;line-height:1.8;margin:0 0 24px;">${c.vat_note}</p>
 
       <p style="font-size:15px;color:#1a1916;margin:0;">
         ${c.sign}<br>
