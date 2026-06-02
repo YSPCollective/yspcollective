@@ -100,11 +100,11 @@ async function syncAllProducts() {
 }
 
 function parseYamlFrontmatter(content) {
-  const match = content.match(/^---\n([\s\S]*?)\n---/);
+  const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
   if (!match) return null;
   const yaml = match[1];
   const result = {};
-  yaml.split('\n').forEach(line => {
+  yaml.split(/\r?\n/).forEach(line => {
     const colonIdx = line.indexOf(':');
     if (colonIdx === -1) return;
     const key = line.slice(0, colonIdx).trim();
