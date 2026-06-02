@@ -725,6 +725,19 @@ async function handleStripeWebhook(request, env) {
       console.error("Failed to fetch line items:", err.message);
     }
 
+    // Decrement stock for each purchased item
+    if (env.YSP_USERS && lineItems.length > 0) {
+      for (const li of lineItems) {
+        const slug = li.price?.product?.metadata?.slug;
+        if (!slug) continue;
+        const stockStr = await env.YSP_USERS.get(`stock:${slug}`);
+        if (stockStr !== null) {
+          const newStock = Math.max(0, (parseInt(stockStr) || 0) - (li.quantity || 1));
+          await env.YSP_USERS.put(`stock:${slug}`, String(newStock));
+        }
+      }
+    }
+
     // 1. Send order confirmation to customer
     try {
       await sendOrderConfirmationEmail(env, session, lineItems);
@@ -794,6 +807,29 @@ async function handleCheckout(request, env) {
   const { items, success_url, cancel_url, lang, subtotal } = body;
   if (!items || !Array.isArray(items) || items.length === 0) {
     return json({ error: "items array required" }, 400);
+  }
+
+  // Check stock for each item before creating a Stripe session
+  if (env.YSP_USERS) {
+    for (const item of items) {
+      const slug = item.id || item.slug;
+      if (!slug) continue;
+      const stockStr = await env.YSP_USERS.get(`stock:${slug}`);
+      if (stockStr !== null) {
+        const available = parseInt(stockStr) || 0;
+        const requested = item.quantity || 1;
+        if (available < requested) {
+          const productName = item.name || slug;
+          return json({
+            error: available === 0
+              ? `${productName} is currently out of stock`
+              : `Only ${available} unit${available === 1 ? "" : "s"} of ${productName} available`,
+            slug,
+            available
+          }, 400);
+        }
+      }
+    }
   }
 
   const lineItems = items.map((item) => {
@@ -1266,7 +1302,7 @@ async function handleSyncProduct(request, env) {
   } catch (_) {
     return json({ error: "Invalid JSON" }, 400);
   }
-  const { name, price, description, images, metadata } = body;
+  const { name, price, description, images, metadata, slug, stock_quantity } = body;
   if (!name || !price) return json({ error: "name and price required" }, 400);
   const headers = { "Authorization": `Bearer ${stripeKey}`, "Content-Type": "application/x-www-form-urlencoded" };
   try {
@@ -1275,16 +1311,35 @@ async function handleSyncProduct(request, env) {
     let productId;
     if (searchData.data && searchData.data.length > 0) {
       productId = searchData.data[0].id;
+      // Update metadata on existing product so slug is always stored
+      if (slug) {
+        const updateParams = new URLSearchParams();
+        updateParams.append("metadata[slug]", slug);
+        await fetch(`https://api.stripe.com/v1/products/${productId}`, { method: "POST", headers, body: updateParams.toString() });
+      }
     } else {
       const productParams = new URLSearchParams({ name });
       if (description) productParams.append("description", description);
       if (images && images[0]) productParams.append("images[]", images[0]);
+      if (slug) productParams.append("metadata[slug]", slug);
       if (metadata) Object.entries(metadata).forEach(([k, v]) => productParams.append(`metadata[${k}]`, v));
       const productRes = await fetch("https://api.stripe.com/v1/products", { method: "POST", headers, body: productParams.toString() });
       const productData = await productRes.json();
       if (!productRes.ok) return json({ error: productData.error?.message || "Product create failed" }, 502);
       productId = productData.id;
     }
+
+    // Sync stock to KV — only resets available stock when the admin changes the quantity
+    if (slug && stock_quantity !== undefined && env.YSP_USERS) {
+      const qty = parseInt(stock_quantity) || 0;
+      const storedInitial = await env.YSP_USERS.get(`stock_initial:${slug}`);
+      const initialQty = storedInitial !== null ? parseInt(storedInitial) : null;
+      if (initialQty === null || qty !== initialQty) {
+        await env.YSP_USERS.put(`stock:${slug}`, String(qty));
+        await env.YSP_USERS.put(`stock_initial:${slug}`, String(qty));
+      }
+    }
+
     const priceParams = new URLSearchParams({ product: productId, currency: "eur", unit_amount: Math.round(price * 100) });
     const priceRes = await fetch("https://api.stripe.com/v1/prices", { method: "POST", headers, body: priceParams.toString() });
     const priceData = await priceRes.json();

@@ -84,6 +84,7 @@ collections:
           - { label: "📦 On Order", value: "on_order" }
           - { label: "📅 Pre-Order", value: "pre_order" }
           - { label: "🔜 Coming Soon", value: "coming_soon" }
+      - { label: "Stock Quantity", name: "stock_quantity", widget: "number", default: 0, value_type: "int", min: 0, required: false, hint: "Available units — checkout is blocked when this reaches 0. Leave at 0 to disable stock enforcement for this product." }
       - { label: "Expected Date", name: "expected_date", widget: "string", required: false, hint: "e.g. April 2026 — shows on page when On Order or Pre-Order" }
       - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, hint: "Show in Featured Fragrances section" }
       - { label: "Published", name: "published", widget: "boolean", default: true }
@@ -234,6 +235,7 @@ collections:
           - { label: "📦 On Order", value: "on_order" }
           - { label: "📅 Pre-Order", value: "pre_order" }
           - { label: "🔜 Coming Soon", value: "coming_soon" }
+      - { label: "Stock Quantity", name: "stock_quantity", widget: "number", default: 0, value_type: "int", min: 0, required: false, hint: "Available units — checkout is blocked when this reaches 0. Leave at 0 to disable stock enforcement for this product." }
       - { label: "Expected Date", name: "expected_date", widget: "string", required: false, hint: "e.g. April 2026 — shows on page when On Order or Pre-Order" }
       - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, hint: "Show in Featured Beauty section" }
       - { label: "Published", name: "published", widget: "boolean", default: true }

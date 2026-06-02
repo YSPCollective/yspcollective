@@ -24,7 +24,8 @@ async function syncProduct(product) {
         price: product.price,
         currency: 'eur',
         slug: product.slug,
-        image: product.image_main
+        image: product.image_main,
+        stock_quantity: parseInt(product.stock_quantity) || 0
       })
     });
     const data = await res.json();
@@ -73,15 +74,18 @@ async function syncAllProducts() {
 
   const results = {};
   for (const product of products) {
-    // Skip if price hasn't changed
-    if (existing[product.slug] && existing[product.slug].price === product.price) {
+    // Skip if price and stock_quantity haven't changed
+    const stockQty = parseInt(product.stock_quantity) || 0;
+    if (existing[product.slug] &&
+        existing[product.slug].price === product.price &&
+        existing[product.slug].stock_quantity === stockQty) {
       results[product.slug] = existing[product.slug];
       console.log(`→ Skipped (unchanged): ${product.name}`);
       continue;
     }
     const result = await syncProduct(product);
     if (result) {
-      results[product.slug] = { ...result, price: product.price };
+      results[product.slug] = { ...result, price: product.price, stock_quantity: stockQty };
     } else if (existing[product.slug]) {
       // Keep existing if sync failed
       results[product.slug] = existing[product.slug];
