@@ -22,7 +22,7 @@ char_versatile: 3
 top_notes: Lime, Coconut Milk, Bergamot, Mandarin
 heart_notes: Sugar Cane, Jasmine, Hibiscus, Gardenia
 base_notes: Rum, Musk, Tonka Bean, Patchouli
-accords_text: citrus, coconut, rum, tropical, sweet
+accords_text: citrus, aquatic, coconut, rum, tropical, sweet
 longevity: 6-8 hours
 projection: Moderate
 origin: UAE

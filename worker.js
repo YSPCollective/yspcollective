@@ -557,6 +557,26 @@ var PRODUCTS = [
     ysp_thoughts: "If someone wants the Creed Aventus DNA without the price tag — this is the answer."
   },
   {
+    name: "Rayhaan Aquatica EDP 100ml",
+    url: "https://yspcollective.com/products/rayhaan-aquatica-100ml.html",
+    price: "€34.90",
+    brand: "Rayhaan",
+    gender: "Men",
+    concentration: "EDP",
+    size: "100ml",
+    family: "Citrus Gourmand",
+    top: "Lime, Coconut Milk, Bergamot, Mandarin",
+    heart: "Sugar Cane, Jasmine, Hibiscus, Gardenia",
+    base: "Rum, Musk, Tonka Bean, Patchouli",
+    accords: ["citrus", "aquatic", "fresh", "coconut", "rum", "tropical", "sweet"],
+    longevity: "6–8 hours",
+    projection: "Moderate",
+    best_for: "Summer, holiday, beach, daytime",
+    inspired_by: "Creed Virgin Island Water",
+    summary: "Sun-drenched lime and coconut milk opening, drying down to a boozy rum and tonka finish. Fresh, warm and unmistakably summery.",
+    ysp_thoughts: "Same DNA as Creed Virgin Island Water at a fraction of the price. The lime-coconut-rum cocktail is spot on with arguably better projection."
+  },
+  {
     name: "Arabiyat Prestige Nyla 80ml",
     url: "https://yspcollective.com/products/arabiyat-prestige-nyla-80ml-eau-de-parfum-unisex-perfume.html",
     price: "€30",
@@ -657,12 +677,13 @@ FRAGRANCE GUIDANCE:
 - Mention longevity and projection honestly
 - For Khamrah and Khamrah Qahwa: ALWAYS mention to use 1–2 sprays only — they are very potent
 
-TONE:
+TONE & LENGTH:
 - Warm, genuine, expert — like a knowledgeable friend, not a sales script
-- Concise responses — no waffle, get to the point
+- Keep responses SHORT: 2–4 sentences per recommendation, nothing more
 - No markdown headers or bullet points — write in natural flowing sentences
-- When recommending, always mention the product name and price
-- If recommending multiple options, present them naturally in prose
+- When recommending, always mention the product name, price, and include the product URL as a clickable link in this format: [Product Name](url)
+- If recommending multiple products, one sentence each — do not write paragraphs per product
+- Never repeat information already mentioned; never summarise after recommending
 
 RECOMMENDATION RULES — READ CAREFULLY:
 - NEVER say we have "limited options", "not many options", "only one option", "our selection is small", or anything that implies scarcity or disappointment. It is never acceptable to apologise for the range.
