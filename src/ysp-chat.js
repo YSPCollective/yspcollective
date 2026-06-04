@@ -16,87 +16,138 @@
   const STATE_KEY   = 'ysp_chat_state';   // persists Q&A answers
   const OPEN_KEY    = 'ysp_chat_open';
 
+  // ─── I18N ──────────────────────────────────────────────────────────────────
+  const CHAT_STRINGS = {
+    en: {
+      welcome:        "Welcome to YSP Collective ✦ I'm your personal beauty advisor. Let me ask a few quick questions to find your perfect match — or skip straight to chat if you prefer.",
+      skip_confirm:   "No problem! Ask me anything about our fragrances or skincare and I'll help you find your perfect match. ✦",
+      restart_intro:  "Let's start fresh! I'll ask a few quick questions to find your perfect match.",
+      header_name:    'YSP Beauty Advisor',
+      header_status:  'Here to find your perfect match',
+      header_status2: 'Personalised recommendations',
+      header_status3: 'Ask me anything',
+      restart_label:  'Start over',
+      skip_label:     'Skip — let me type freely',
+      confirm_label:  'Continue →',
+      placeholder:    'Ask a follow-up question…',
+      footer:         'Powered by AI · YSP Collective',
+    },
+    pt: {
+      welcome:        "Bem-vindo à YSP Collective ✦ Sou o seu consultor de beleza pessoal. Deixe-me fazer algumas perguntas rápidas para encontrar a sua combinação perfeita — ou salte diretamente para o chat se preferir.",
+      skip_confirm:   "Sem problema! Pergunte-me qualquer coisa sobre as nossas fragrâncias ou skincare e ajudo-o a encontrar a sua combinação perfeita. ✦",
+      restart_intro:  "Vamos recomeçar! Farei algumas perguntas rápidas para encontrar a sua combinação perfeita.",
+      header_name:    'Consultor de Beleza YSP',
+      header_status:  'Aqui para encontrar a sua combinação',
+      header_status2: 'Recomendações personalizadas',
+      header_status3: 'Pergunte-me qualquer coisa',
+      restart_label:  'Recomeçar',
+      skip_label:     'Saltar — deixe-me escrever livremente',
+      confirm_label:  'Continuar →',
+      placeholder:    'Faça uma pergunta de acompanhamento…',
+      footer:         'Desenvolvido por IA · YSP Collective',
+    },
+    es: {
+      welcome:        "Bienvenido a YSP Collective ✦ Soy su asesor de belleza personal. Déjeme hacerle algunas preguntas rápidas para encontrar su combinación perfecta — o salte directamente al chat si lo prefiere.",
+      skip_confirm:   "¡Sin problema! Pregúnteme lo que quiera sobre nuestras fragancias o skincare y le ayudaré a encontrar su combinación perfecta. ✦",
+      restart_intro:  "¡Empecemos de nuevo! Le haré algunas preguntas rápidas para encontrar su combinación perfecta.",
+      header_name:    'Asesor de Belleza YSP',
+      header_status:  'Aquí para encontrar su combinación perfecta',
+      header_status2: 'Recomendaciones personalizadas',
+      header_status3: 'Pregúnteme lo que quiera',
+      restart_label:  'Volver a empezar',
+      skip_label:     'Saltar — déjeme escribir libremente',
+      confirm_label:  'Continuar →',
+      placeholder:    'Haga una pregunta de seguimiento…',
+      footer:         'Desarrollado por IA · YSP Collective',
+    },
+  };
+
+  function getLang() {
+    try { const l = localStorage.getItem('ysp_lang'); return (l && CHAT_STRINGS[l]) ? l : 'en'; } catch(e) { return 'en'; }
+  }
+  function t(key) { return CHAT_STRINGS[getLang()][key] || CHAT_STRINGS.en[key] || ''; }
+
   // ─── Q&A FLOW ──────────────────────────────────────────────────────────────
-  // Each step: { id, question, options: [{label, value}], multi? }
+  // Each step: { id, question(lang), options: [{label(lang), value}], multi? }
   // 'multi' allows picking several options before continuing.
   const QA_FLOW = [
     {
       id: 'category',
-      question: 'What are you looking for today?',
+      question: { en: 'What are you looking for today?', pt: 'O que está à procura hoje?', es: '¿Qué está buscando hoy?' },
       options: [
-        { label: '🌸 Fragrance', value: 'fragrance' },
-        { label: '✨ Skincare', value: 'skincare' },
-        { label: '💛 Both', value: 'both' },
+        { label: { en: '🌸 Fragrance', pt: '🌸 Fragrância', es: '🌸 Fragancia' }, value: 'fragrance' },
+        { label: { en: '✨ Skincare', pt: '✨ Cuidado de pele', es: '✨ Cuidado de piel' }, value: 'skincare' },
+        { label: { en: '💛 Both', pt: '💛 Ambos', es: '💛 Ambos' }, value: 'both' },
       ],
     },
     {
       id: 'gender',
-      question: 'Who is this for?',
+      question: { en: 'Who is this for?', pt: 'Para quem é?', es: '¿Para quién es?' },
       options: [
-        { label: 'For me — woman', value: 'women' },
-        { label: 'For me — man', value: 'men' },
-        { label: 'Unisex / gift', value: 'unisex' },
+        { label: { en: 'For me — woman', pt: 'Para mim — mulher', es: 'Para mí — mujer' }, value: 'women' },
+        { label: { en: 'For me — man', pt: 'Para mim — homem', es: 'Para mí — hombre' }, value: 'men' },
+        { label: { en: 'Unisex / gift', pt: 'Unissexo / presente', es: 'Unisex / regalo' }, value: 'unisex' },
       ],
       condition: (a) => a.category !== 'skincare',
     },
     {
       id: 'scentFamily',
-      question: 'What kind of scent appeals to you?',
+      question: { en: 'What kind of scent appeals to you?', pt: 'Que tipo de fragrância o/a atrai?', es: '¿Qué tipo de aroma le atrae?' },
       multi: true,
       options: [
-        { label: '🌹 Floral', value: 'floral' },
-        { label: '🪵 Woody / Oud', value: 'woody oud' },
-        { label: '🍊 Fresh / Citrus', value: 'fresh citrus' },
-        { label: '🍬 Sweet / Gourmand', value: 'sweet gourmand' },
-        { label: '🌿 Spicy / Amber', value: 'spicy amber' },
-        { label: '🌊 Aquatic / Clean', value: 'aquatic clean' },
+        { label: { en: '🌹 Floral', pt: '🌹 Floral', es: '🌹 Floral' }, value: 'floral' },
+        { label: { en: '🪵 Woody / Oud', pt: '🪵 Amadeirado / Oud', es: '🪵 Amaderado / Oud' }, value: 'woody oud' },
+        { label: { en: '🍊 Fresh / Citrus', pt: '🍊 Fresco / Cítrico', es: '🍊 Fresco / Cítrico' }, value: 'fresh citrus' },
+        { label: { en: '🍬 Sweet / Gourmand', pt: '🍬 Doce / Gourmand', es: '🍬 Dulce / Gourmand' }, value: 'sweet gourmand' },
+        { label: { en: '🌿 Spicy / Amber', pt: '🌿 Especiado / Âmbar', es: '🌿 Especiado / Ámbar' }, value: 'spicy amber' },
+        { label: { en: '🌊 Aquatic / Clean', pt: '🌊 Aquático / Limpo', es: '🌊 Acuático / Limpio' }, value: 'aquatic clean' },
       ],
       condition: (a) => a.category !== 'skincare',
     },
     {
       id: 'skinType',
-      question: 'What is your skin type?',
+      question: { en: 'What is your skin type?', pt: 'Qual é o seu tipo de pele?', es: '¿Cuál es su tipo de piel?' },
       options: [
-        { label: 'Oily', value: 'oily' },
-        { label: 'Dry', value: 'dry' },
-        { label: 'Combination', value: 'combination' },
-        { label: 'Sensitive', value: 'sensitive' },
-        { label: 'Normal', value: 'normal' },
+        { label: { en: 'Oily', pt: 'Oleosa', es: 'Grasa' }, value: 'oily' },
+        { label: { en: 'Dry', pt: 'Seca', es: 'Seca' }, value: 'dry' },
+        { label: { en: 'Combination', pt: 'Mista', es: 'Mixta' }, value: 'combination' },
+        { label: { en: 'Sensitive', pt: 'Sensível', es: 'Sensible' }, value: 'sensitive' },
+        { label: { en: 'Normal', pt: 'Normal', es: 'Normal' }, value: 'normal' },
       ],
       condition: (a) => a.category !== 'fragrance',
     },
     {
       id: 'skinConcern',
-      question: 'Any specific skin concern?',
+      question: { en: 'Any specific skin concern?', pt: 'Alguma preocupação específica com a pele?', es: '¿Alguna preocupación específica de la piel?' },
       multi: true,
       options: [
-        { label: 'SPF / Sun protection', value: 'SPF sun protection' },
-        { label: 'Hydration', value: 'hydration' },
-        { label: 'Brightening', value: 'brightening' },
-        { label: 'Pores / Cleansing', value: 'pores cleansing' },
-        { label: 'Anti-ageing', value: 'anti-ageing' },
-        { label: 'No preference', value: 'no specific concern' },
+        { label: { en: 'SPF / Sun protection', pt: 'SPF / Proteção solar', es: 'SPF / Protección solar' }, value: 'SPF sun protection' },
+        { label: { en: 'Hydration', pt: 'Hidratação', es: 'Hidratación' }, value: 'hydration' },
+        { label: { en: 'Brightening', pt: 'Luminosidade', es: 'Luminosidad' }, value: 'brightening' },
+        { label: { en: 'Pores / Cleansing', pt: 'Poros / Limpeza', es: 'Poros / Limpieza' }, value: 'pores cleansing' },
+        { label: { en: 'Anti-ageing', pt: 'Anti-envelhecimento', es: 'Antienvejecimiento' }, value: 'anti-ageing' },
+        { label: { en: 'No preference', pt: 'Sem preferência', es: 'Sin preferencia' }, value: 'no specific concern' },
       ],
       condition: (a) => a.category !== 'fragrance',
     },
     {
       id: 'budget',
-      question: 'What is your budget per product?',
+      question: { en: 'What is your budget per product?', pt: 'Qual é o seu orçamento por produto?', es: '¿Cuál es su presupuesto por producto?' },
       options: [
-        { label: 'Under €20', value: 'under €20' },
-        { label: '€20 – €35', value: '€20–35' },
-        { label: '€35 – €50', value: '€35–50' },
-        { label: 'No limit', value: 'flexible' },
+        { label: { en: 'Under €20', pt: 'Menos de €20', es: 'Menos de €20' }, value: 'under €20' },
+        { label: { en: '€20 – €35', pt: '€20 – €35', es: '€20 – €35' }, value: '€20–35' },
+        { label: { en: '€35 – €50', pt: '€35 – €50', es: '€35 – €50' }, value: '€35–50' },
+        { label: { en: 'No limit', pt: 'Sem limite', es: 'Sin límite' }, value: 'flexible' },
       ],
     },
     {
       id: 'occasion',
-      question: 'When will you use it most?',
+      question: { en: 'When will you use it most?', pt: 'Quando vai usá-lo com mais frequência?', es: '¿Cuándo lo usará más?' },
       options: [
-        { label: '🌅 Everyday', value: 'everyday' },
-        { label: '🌙 Evenings / nights out', value: 'evenings nights out' },
-        { label: '💼 Work / office', value: 'work office' },
-        { label: '🎁 Special occasion', value: 'special occasion' },
+        { label: { en: '🌅 Everyday', pt: '🌅 Dia a dia', es: '🌅 Día a día' }, value: 'everyday' },
+        { label: { en: '🌙 Evenings / nights out', pt: '🌙 Noites / saídas', es: '🌙 Noches / salidas' }, value: 'evenings nights out' },
+        { label: { en: '💼 Work / office', pt: '💼 Trabalho / escritório', es: '💼 Trabajo / oficina' }, value: 'work office' },
+        { label: { en: '🎁 Special occasion', pt: '🎁 Ocasião especial', es: '🎁 Ocasión especial' }, value: 'special occasion' },
       ],
       condition: (a) => a.category !== 'skincare',
     },
@@ -466,28 +517,28 @@
       <div class="ysp-header-left">
         <div class="ysp-avatar">✦</div>
         <div>
-          <div class="ysp-header-name">YSP Beauty Advisor</div>
-          <div class="ysp-header-status" id="ysp-status-text">Here to find your perfect match</div>
+          <div class="ysp-header-name" id="ysp-header-name">${t('header_name')}</div>
+          <div class="ysp-header-status" id="ysp-status-text">${t('header_status')}</div>
         </div>
       </div>
       <div class="ysp-header-actions">
-        <button class="ysp-restart-btn" id="ysp-restart-btn" aria-label="Start over">Start over</button>
+        <button class="ysp-restart-btn" id="ysp-restart-btn" aria-label="Start over">${t('restart_label')}</button>
         <button class="ysp-close-btn" aria-label="Close chat">✕</button>
       </div>
     </div>
     <div id="ysp-chat-messages" role="log" aria-live="polite"></div>
     <div id="ysp-qa-area">
       <div class="ysp-options-grid" id="ysp-options"></div>
-      <button class="ysp-multi-confirm" id="ysp-multi-confirm">Continue →</button>
-      <button class="ysp-skip-link" id="ysp-skip-btn">Skip — let me type freely</button>
+      <button class="ysp-multi-confirm" id="ysp-multi-confirm">${t('confirm_label')}</button>
+      <button class="ysp-skip-link" id="ysp-skip-btn">${t('skip_label')}</button>
     </div>
     <div id="ysp-chat-input-wrap">
-      <textarea id="ysp-chat-input" rows="1" placeholder="Ask a follow-up question…" aria-label="Type your message" maxlength="500"></textarea>
+      <textarea id="ysp-chat-input" rows="1" placeholder="${t('placeholder')}" aria-label="Type your message" maxlength="500"></textarea>
       <button id="ysp-chat-send" aria-label="Send message" disabled>
         <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
       </button>
     </div>
-    <p class="ysp-chat-footer">Powered by AI · YSP Collective</p>
+    <p class="ysp-chat-footer">${t('footer')}</p>
   `;
 
   document.body.appendChild(chatBtn);
@@ -594,12 +645,15 @@
     skipBtn.style.display = index === 0 ? 'block' : 'none';
 
     // Bot asks the question
-    appendMessage('assistant', step.question);
+    const lang = getLang();
+    const questionText = (typeof step.question === 'object') ? (step.question[lang] || step.question.en) : step.question;
+    appendMessage('assistant', questionText);
 
     step.options.forEach(opt => {
       const btn = document.createElement('button');
       btn.className = 'ysp-option-btn';
-      btn.textContent = opt.label;
+      const labelText = (typeof opt.label === 'object') ? (opt.label[lang] || opt.label.en) : opt.label;
+      btn.textContent = labelText;
       btn.dataset.value = opt.value;
 
       if (step.multi) {
@@ -618,8 +672,8 @@
           optionsEl.querySelectorAll('.ysp-option-btn').forEach(b => b.classList.remove('selected'));
           btn.classList.add('selected');
           qaAnswers[step.id] = opt.value;
-          // User echo
-          appendMessage('user', opt.label);
+          // User echo (translated label)
+          appendMessage('user', labelText);
           // Advance after short delay for feedback
           setTimeout(() => advanceStep(), 260);
         });
@@ -643,10 +697,11 @@
     const step = filteredSteps[qaStep];
     const selected = [...qaMultiSel];
     qaAnswers[step.id] = selected;
-    // Echo selected labels
+    // Echo selected labels (translated)
+    const lang = getLang();
     const labels = step.options
       .filter(o => selected.includes(o.value))
-      .map(o => o.label).join(', ');
+      .map(o => (typeof o.label === 'object') ? (o.label[lang] || o.label.en) : o.label).join(', ');
     appendMessage('user', labels);
     multiConfirm.classList.remove('visible');
     setTimeout(() => advanceStep(), 260);
@@ -654,12 +709,12 @@
 
   skipBtn.addEventListener('click', () => {
     // Skip Q&A entirely — go straight to free text
-    appendMessage('assistant', "No problem! Ask me anything about our fragrances or skincare and I'll help you find the perfect match. ✦");
+    appendMessage('assistant', t('skip_confirm'));
     qaAreaEl.style.display = 'none';
     inputWrap.classList.add('visible');
     qaComplete = true;
     badgeEl.style.display = 'none';
-    statusEl.textContent = 'Ask me anything';
+    statusEl.textContent = t('header_status3');
     setTimeout(() => inputEl.focus(), 200);
   });
 
@@ -669,7 +724,7 @@
     inputWrap.classList.add('visible');
     qaComplete = true;
     badgeEl.style.display = 'none';
-    statusEl.textContent = 'Personalised recommendations';
+    statusEl.textContent = t('header_status2');
     saveState({ qaAnswers });
 
     // Build prompt from answers
@@ -789,7 +844,7 @@
       qaAreaEl.style.display = 'none';
       inputWrap.classList.add('visible');
       badgeEl.style.display = 'none';
-      statusEl.textContent = 'Personalised recommendations';
+      statusEl.textContent = t('header_status2');
       setTimeout(() => inputEl.focus(), 300);
     } else if (existingHistory.length > 0) {
       // History exists but no QA state (skipped) — show in free text mode
@@ -797,11 +852,11 @@
       qaAreaEl.style.display = 'none';
       inputWrap.classList.add('visible');
       badgeEl.style.display = 'none';
-      statusEl.textContent = 'Ask me anything';
+      statusEl.textContent = t('header_status3');
       setTimeout(() => inputEl.focus(), 300);
     } else {
       // Fresh start
-      appendMessage('assistant', 'Welcome to YSP Collective ✦ I\'m your personal beauty advisor. Let me ask a few quick questions to find your perfect match — or skip straight to chat if you prefer.');
+      appendMessage('assistant', t('welcome'));
       startQA();
     }
 
@@ -816,7 +871,7 @@
 
   restartBtn.addEventListener('click', () => {
     resetChat();
-    appendMessage('assistant', 'Let\'s start fresh! I\'ll ask a few quick questions to find your perfect match.');
+    appendMessage('assistant', t('restart_intro'));
     startQA();
   });
 
@@ -840,7 +895,7 @@
       // Skip Q&A, send directly
       setTimeout(() => {
         resetChat();
-        appendMessage('assistant', 'Happy to help with that!');
+        appendMessage('assistant', t('skip_confirm'));
         qaAreaEl.style.display = 'none';
         inputWrap.classList.add('visible');
         qaComplete = true;
