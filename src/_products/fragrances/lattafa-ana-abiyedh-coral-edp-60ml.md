@@ -7,18 +7,25 @@ gender: Unisex
 size: 60ml
 concentration: Eau de Parfum (EDP)
 badge: New
-stock_status: pre_order
+stock_status: in_stock
+stock_quantity: 21
 expected_date: June 2026
 featured: false
 published: true
+date_added: 2026-06-05
 fragrance_family: Floral Fruity
+best_for: Spring, Summer, Daytime, Beach, Casual
+char_sweet: 4
+char_fresh: 4
+char_masculine: 1
+char_unique: 3
+char_versatile: 4
 top_notes: Watermelon, Peach, Orange
 heart_notes: Coconut, White Flowers
 base_notes: Vanilla, Amber, Musk
 accords_text: watermelon, peach, coconut, fruity, tropical, sweet, floral
 longevity: 5-8 hours
 projection: Moderate
-best_for: Spring, Summer, Daytime, Beach, Casual
 origin: UAE
 launched: "2025"
 vegan: false
@@ -59,9 +66,4 @@ ysp_thoughts: "The original Ana Abiyedh is already one of the best-loved budget
   warm, Coral delivers that without asking much in return."
 gtin: "6290362341826"
 exclude_from_feed: true
-char_sweet: 4
-char_fresh: 4
-char_masculine: 1
-char_unique: 3
-char_versatile: 4
 ---
