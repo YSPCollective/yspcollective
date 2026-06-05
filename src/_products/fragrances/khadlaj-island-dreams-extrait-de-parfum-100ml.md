@@ -10,7 +10,7 @@ badge: Popular
 stock_status: in_stock
 stock_quantity: 10
 expected_date: June 2026
-featured: false
+featured: true
 published: true
 date_added: 2026-06-05
 fragrance_family: Citrus Aromatic
@@ -52,18 +52,18 @@ description_full: >-
 
 
   As an Extrait de Parfum concentration, the performance is notably stronger than standard EDPs in this price range. A little goes a long way.
-ysp_thoughts: "Louis Vuitton Symphony has been one of the most talked-about
-  fragrances of the last few years — that vibrant citrus-grapefruit-ambroxan
-  combination has built a devoted following. It also costs upwards of €280.
-  Island Dreams by Khadlaj sits in exactly the same olfactive space: same
-  energising citrus character, same smooth ambroxan dry-down, arguably more
-  potent. Several people who own Symphony consider Island Dreams the better
-  daily wear. At Extrait concentration, the longevity and projection are
-  genuinely impressive for the price point. If you've been eyeing Symphony and
-  can't justify the spend, this is the most sensible starting point."
+ysp_thoughts: >-
+  Louis Vuitton Symphony has been one of the most talked-about fragrances of the
+  last few years — that vibrant citrus-grapefruit-ambroxan combination has built
+  a devoted following.
+
+
+  It also costs upwards of €280. Island Dreams by Khadlaj sits in exactly the same olfactive space: same energising citrus character, same smooth ambroxan dry-down, arguably more potent. Several people who own Symphony consider Island Dreams the better daily wear.
+
+   At Extrait concentration, the longevity and projection are genuinely impressive for the price point. If you've been eyeing Symphony and can't justify the spend, this is the most sensible starting point.
 inspired_by_name: Louis Vuitton Symphony
 inspired_by_note: The same sparkling bergamot-grapefruit DNA — arguably stronger
   projection at a fraction of the price.
 gtin: "6291107979991"
-exclude_from_feed: true
+exclude_from_feed: false
 ---
