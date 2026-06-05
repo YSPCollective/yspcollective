@@ -48,7 +48,7 @@ inspired_by_note: same smoky birch, pineapple and oakmoss DNA — one of the
 ebay_url: ""
 name: Armaf Club de Nuit Intense 150ml
 slug: armaf-club-de-nuit-intense-150ml
-price: "54.00"
+price: "49.99"
 brand: Armaf
 char_sweet: 2
 heart_notes: Rose, Birch, Jasmine
