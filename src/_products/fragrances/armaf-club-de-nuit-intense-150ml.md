@@ -2,14 +2,22 @@
 rrp: ""
 gender: Men
 size: 150ml
+concentration: Parfum
 badge: Popular
 custom_badge: ""
+stock_status: low_stock
+stock_quantity: 2
 expected_date: June 2026
+featured: false
 published: true
-fragrance_family: Woody Fruity Smoky
+date_added: 2026-06-05
+best_for: Year-round, Office, Evening, Formal, Casual
+char_fresh: 3
+char_masculine: 5
+char_unique: 3
+char_versatile: 3
 longevity: 10-14 hours
 projection: Strong
-best_for: Year-round, Office, Evening, Formal, Casual
 launched: "2022"
 vegan: false
 gallery:
@@ -42,8 +50,7 @@ name: Armaf Club de Nuit Intense 150ml
 slug: armaf-club-de-nuit-intense-150ml
 price: "54.00"
 brand: Armaf
-concentration: Parfum
-featured: false
+char_sweet: 2
 heart_notes: Rose, Birch, Jasmine
 origin: UAE
 gtin: "6294015131017"
@@ -56,10 +63,10 @@ accords:
   - musk
   - smoky
   - amber
+fragrance_family: Woody Fruity Smoky
 base_notes: Musk, Ambergris, Patchouli, Vanilla
 amazon_url: ""
 gender_label: Men
-stock_status: pre_order
 top_notes: Lemon, Pineapple, Bergamot, Black Currant, Apple
 accords_text: citrus, fructured, leather, smoked, woody, aromatic, sweet, fresh, musked
 image_main: /images/uploads/club-de-nuit-intense-man-1.jpeg
@@ -69,9 +76,4 @@ description_short: "The finest concentration of one of fragrance's great value
   nuanced than the EDT or EDP, with exceptional longevity. A bold, confident
   masculine fragrance that consistently outperforms its price."
 inspired_by_name: Creed Aventus
-char_sweet: 2
-char_fresh: 3
-char_masculine: 5
-char_unique: 3
-char_versatile: 3
 ---
