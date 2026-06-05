@@ -7,18 +7,25 @@ gender: Unisex
 size: 100ml
 concentration: Extrait de Parfum
 badge: Popular
-stock_status: pre_order
+stock_status: in_stock
+stock_quantity: 10
 expected_date: June 2026
 featured: false
 published: true
+date_added: 2026-06-05
 fragrance_family: Citrus Aromatic
+best_for: Spring, Summer, Daytime, Office, Casual
+char_sweet: 1
+char_fresh: 5
+char_masculine: 3
+char_unique: 3
+char_versatile: 5
 top_notes: Bergamot, Ginger
 heart_notes: Grapefruit
 base_notes: Ambroxan, Musk
 accords_text: citrus, grapefruit, ginger, ambroxan, fresh, clean
 longevity: 6-10 hours
 projection: Moderate to Strong
-best_for: Spring, Summer, Daytime, Office, Casual
 origin: UAE
 launched: "2025"
 vegan: false
@@ -59,9 +66,4 @@ inspired_by_note: The same sparkling bergamot-grapefruit DNA — arguably strong
   projection at a fraction of the price.
 gtin: "6291107979991"
 exclude_from_feed: true
-char_sweet: 1
-char_fresh: 5
-char_masculine: 3
-char_unique: 3
-char_versatile: 5
 ---
