@@ -7,18 +7,25 @@ gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: New
-stock_status: pre_order
+stock_status: in_stock
+stock_quantity: 10
 expected_date: June 2026
-featured: false
+featured: true
 published: true
+date_added: 2026-06-05
 fragrance_family: Aromatic Fruity
+best_for: Spring, Summer, Daytime, Office, Casual
+char_sweet: 3
+char_fresh: 4
+char_masculine: 2
+char_unique: 2
+char_versatile: 4
 top_notes: Bergamot, Orange, Ginger, Mango, Pear
 heart_notes: Orange Blossom, Cedar, Red Berries
 base_notes: Musk, Amber
 accords_text: fruity, mango, citrus, floral, amber, musk, fresh
 longevity: 5-7 hours
 projection: Moderate
-best_for: Spring, Summer, Daytime, Office, Casual
 origin: UAE
 launched: "2025"
 vegan: false
@@ -63,10 +70,5 @@ inspired_by_name: Ex Nihilo Blue Talisman
 inspired_by_note: The same weightless fruity-musky DNA - more depth at the base,
   considerably more accessible.
 gtin: "6290171076025"
-exclude_from_feed: true
-char_sweet: 3
-char_fresh: 4
-char_masculine: 2
-char_unique: 2
-char_versatile: 4
+exclude_from_feed: false
 ---
