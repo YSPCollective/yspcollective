@@ -366,6 +366,10 @@ permalink: "products/{{ product.slug }}.html"
   .review-lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 9500; display: none; align-items: center; justify-content: center; cursor: pointer; }
   .review-lightbox.open { display: flex; }
   .review-lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
+
+  /* Write a Review button in section header */
+  .btn-write-review-inline { padding: 0.5rem 1.1rem; border: 1px solid var(--accent); color: var(--accent); font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; background: none; cursor: pointer; transition: all 0.2s; white-space: nowrap; flex-shrink: 0; }
+  .btn-write-review-inline:hover { background: var(--accent); color: var(--white); }
 </style>
 {% endblock %}
 
@@ -430,11 +434,15 @@ permalink: "products/{{ product.slug }}.html"
       {% if isFragrance %}{{ product.gender }} · Fragrance{% else %}{{ product.category }}{% endif %}
     </div>
     <!-- Inline aggregate rating (populated by JS after reviews load) -->
-    <div id="pdp-inline-rating" style="display:none;margin-bottom:1.2rem;cursor:pointer;" onclick="document.querySelector('[data-tab=reviews]').click();document.querySelector('.tabs-wrap').scrollIntoView({behavior:'smooth'})">
-      <div style="display:flex;align-items:center;gap:0.5rem;">
-        <span id="pdp-inline-stars" style="display:flex;gap:0.15rem;font-size:0.95rem;color:#c8a96e;"></span>
-        <span id="pdp-inline-score" style="font-size:0.82rem;font-weight:400;color:var(--black);"></span>
-        <span id="pdp-inline-count" style="font-size:0.75rem;color:var(--grey);"></span>
+    <div id="pdp-inline-rating" style="display:none;margin-bottom:1.2rem;">
+      <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+        <span style="display:flex;align-items:center;gap:0.4rem;cursor:pointer;" onclick="document.querySelector('.reviews-section').scrollIntoView({behavior:'smooth'})">
+          <span id="pdp-inline-stars" style="display:flex;gap:0.15rem;font-size:0.95rem;color:#c8a96e;"></span>
+          <span id="pdp-inline-score" style="font-size:0.82rem;font-weight:400;color:var(--black);"></span>
+          <span id="pdp-inline-count" style="font-size:0.75rem;color:var(--grey);"></span>
+        </span>
+        <span style="color:var(--sand);font-size:0.8rem;line-height:1;">·</span>
+        <button onclick="document.querySelector('[data-tab=reviews]').click();document.querySelector('.tabs-wrap').scrollIntoView({behavior:'smooth'})" style="background:none;border:none;padding:0;font-family:var(--sans);font-size:0.75rem;color:var(--accent);cursor:pointer;letter-spacing:0.04em;text-decoration:underline;text-underline-offset:3px;">Write a Review</button>
       </div>
     </div>
     <div class="product-price-wrap">
@@ -790,7 +798,10 @@ permalink: "products/{{ product.slug }}.html"
 <section class="reviews-section">
   <div class="reviews-section-head">
     <h2 class="reviews-section-title">Customer Reviews</h2>
-    <span class="reviews-section-count" id="reviews-section-count"></span>
+    <div style="display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;">
+      <span class="reviews-section-count" id="reviews-section-count"></span>
+      <button class="btn-write-review-inline" onclick="document.querySelector('[data-tab=reviews]').click();document.querySelector('.tabs-wrap').scrollIntoView({behavior:'smooth'})">Write a Review</button>
+    </div>
   </div>
   <div id="reviews-summary-wrap"></div>
   <div id="reviews-list-wrap"></div>
