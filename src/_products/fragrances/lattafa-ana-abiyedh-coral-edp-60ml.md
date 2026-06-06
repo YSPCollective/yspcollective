@@ -10,7 +10,7 @@ badge: New
 stock_status: in_stock
 stock_quantity: 21
 expected_date: June 2026
-featured: false
+featured: true
 published: true
 date_added: 2026-06-05
 fragrance_family: Floral Fruity
@@ -43,27 +43,31 @@ description_full: >-
   Ana Abiyedh Coral opens with a wave of ripe watermelon, peach and orange —
   genuinely juicy rather than synthetic, with a freshness that immediately lifts
   the mood. The watermelon stays present throughout and is clearly the star:
-  bright, sweet and unapologetically fun. As it develops, coconut arrives at the
-  heart — not the sunscreen kind, but lighter and more milky, like coconut
-  water. White florals add a soft, powdery dimension without taking over,
-  keeping the composition feeling easy rather than heavy. The dry-down brings
-  gentle vanilla and amber that warm everything slightly without losing the
-  tropical character.
+  bright, sweet and unapologetically fun. 
+
+
+  As it develops, coconut arrives at the heart — not the sunscreen kind, but lighter and more milky, like coconut water. White florals add a soft, powdery dimension without taking over, keeping the composition feeling easy rather than heavy. The dry-down brings gentle vanilla and amber that warm everything slightly without losing the tropical character.
 
 
   Performance sits comfortably at 6–8 hours on skin, longer on clothing. Projection is friendly rather than assertive — close-range compliments rather than filling a room, which is exactly right for the profile. Wearers consistently note it gets comments without being obvious or overwhelming.
 
 
   It's a relaxed, feel-good fragrance with enough complexity to keep it interesting across a full day.
-ysp_thoughts: "The original Ana Abiyedh is already one of the best-loved budget
-  fragrances in the Lattafa lineup. Coral takes the same approachable spirit and
-  goes full summer: watermelon-forward, tropical, carefree. The fragrance
-  community has compared it to Donna Born in Roma Coral Fantasy and cited it as
-  an easy alternative to the Room 1015 Wavechild DNA — which tells you it
-  punches well above its price bracket. At this size and price, it's the kind of
-  bottle you pick up for beach holidays and warm weekends without any
-  hesitation. If you want something that makes you feel like you're somewhere
-  warm, Coral delivers that without asking much in return."
+ysp_thoughts: >-
+  The original Ana Abiyedh is already one of the best-loved budget fragrances in
+  the Lattafa lineup. Coral takes the same approachable spirit and goes full
+  summer: watermelon-forward, tropical, carefree. 
+
+
+  The fragrance community has compared it to Donna Born in Roma Coral Fantasy and cited it as an easy alternative to the Room 1015 Wavechild DNA — which tells you it punches well above its price bracket. 
+
+
+  At this size and price, it's the kind of bottle you pick up for beach holidays and warm weekends without any hesitation. If you want something that makes you feel like you're somewhere warm, Coral delivers that without asking much in return.
+inspired_by_name: Wavechild by Room 1015
+inspired_by_note: Lattafa Coral delivers a sweeter, denser punch of candy-like
+  watermelon and peach at a fraction of the cost, making it the perfect
+  budget-friendly, high-longevity alternative to the airier, sunscreen-vibes of
+  Wavechild.
 gtin: "6290362341826"
 exclude_from_feed: true
 ---
