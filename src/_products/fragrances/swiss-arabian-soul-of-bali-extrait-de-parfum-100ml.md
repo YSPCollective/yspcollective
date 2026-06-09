@@ -1,15 +1,28 @@
 ---
+name: Swiss Arabian Soul of Bali Extrait de Parfum 100ml
+slug: swiss-arabian-soul-of-bali
 price: "69"
 rrp: "89.99"
 brand: Swiss Arabian
 gender: Unisex
 size: 100ml
+concentration: Extrait de Parfum
 badge: Premium
 custom_badge: ""
 stock_status: in_stock
-fragrance_family: Floral Woody Oriental
+stock_quantity: 4
+featured: true
+published: true
+date_added: 2026-06-02
+best_for: Daytime wear, spring/summer, casual occasions
+char_sweet: 3
+char_fresh: 4
+char_masculine: 3
+char_unique: 4
+char_versatile: 3
 top_notes: Bergamot, Ginger, Pineapple, Rhubarb, Mango, Pink Pepper
 heart_notes: Aquatic notes, Saffron, Cardamom, Nutmeg, Olibanum
+accords_text: tropical, fruity, floral, spicy, woody, musk, aquatic, fresh, saffron
 longevity: 7-12 hours
 projection: Moderate - Strong
 origin: UAE
@@ -45,12 +58,6 @@ ysp_thoughts: >-
 
 
   It's a strong choice for anyone who wants something that feels premium without the three-figure niche price tag. Good for gifting too — the tropical theme travels well emotionally.
-name: Swiss Arabian Soul of Bali Extrait de Parfum 100ml
-slug: swiss-arabian-soul-of-bali
-concentration: Extrait de Parfum (EdP)
-featured: true
-published: true
-best_for: Daytime wear, spring/summer, casual occasions
 gtin: "6295124048494"
 accords:
   - aromatic
@@ -63,11 +70,6 @@ accords:
   - amber
   - citrus
   - tropical
+fragrance_family: Floral Woody Oriental
 base_notes: Sandalwood, Musk, Cypriol
-accords_text: tropical, fruity, floral, spicy, woody, musk, aquatic, fresh, saffron
-char_sweet: 3
-char_fresh: 4
-char_masculine: 3
-char_unique: 4
-char_versatile: 3
 ---

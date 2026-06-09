@@ -8,17 +8,23 @@ size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
 stock_status: in_stock
+stock_quantity: 4
 featured: true
 published: true
 date_added: 2026-05-28
 fragrance_family: Amber Citrus Woody
+best_for: Spring, Summer, Daytime, Casual
+char_sweet: 3
+char_fresh: 4
+char_masculine: 4
+char_unique: 2
+char_versatile: 4
 top_notes: Mandarin Orange, Orange, Saffron, Sage
 heart_notes: Caramel, Tonka Bean, Marigold
 base_notes: Ambroxan, Cedar, Vetiver
 accords_text: citrus, caramel, sweet, woody, amber
 longevity: 8-10 hours
 projection: Moderate to Strong
-best_for: Spring, Summer, Daytime, Casual
 origin: UAE
 launched: "2023"
 vegan: false
@@ -53,9 +59,4 @@ ysp_thoughts: >-
 inspired_by_name: Jean Paul Gaultier Scandal Pour Homme
 inspired_by_note: Same citrus-caramel-tonka DNA, brighter mandarin opening
 exclude_from_feed: false
-char_sweet: 3
-char_fresh: 4
-char_masculine: 4
-char_unique: 2
-char_versatile: 4
 ---

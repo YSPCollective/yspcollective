@@ -8,20 +8,35 @@ gender: Men
 size: 100ml
 concentration: Extrait de Parfum
 badge: Curated
-featured: false
+stock_status: in_stock
+stock_quantity: 5
+featured: true
 published: true
+date_added: 2026-06-02
+fragrance_family: Woody Oriental Oud
+best_for: Night time wear, Winter/Spring/Autumn
+char_sweet: 2
+char_fresh: 1
+char_masculine: 4
+char_unique: 4
+char_versatile: 2
+top_notes: Saffron, Bergamot, Elemi
 heart_notes: Agarwood, Bulgarian Rose, Lily of the Valley
+accords_text: oud, amber, saffron, woody, smoky, floral, incense, resinous
 longevity: 10+ hours
 projection: Strong +
-best_for: Night time wear, Winter/Spring/Autumn
 origin: UAE
 launched: "2024"
 vegan: false
+image_main: /images/uploads/ahp1485_with_box.jpeg
 gallery:
   - /images/uploads/ahp1485_.jpeg
   - /images/uploads/ahp1485_pyramid.jpeg
   - /images/uploads/ahp1485_solo_2.jpeg
   - /images/uploads/ahp1485_.jpeg
+description_short: A bold, smoky oriental from Al Haramain — one of the Gulf's
+  most established fragrance houses. Dubai Night is a dark, addictive blend of
+  oud and amber with serious projection and all-night longevity.
 description_full: >-
   
   Al Haramain Amber Oud Dubai Night Extrait de Parfum is an unapologetically opulent scent built for those who want to be noticed. 
@@ -40,6 +55,7 @@ ysp_thoughts: >-
 
 
   If you have clients who find designer fragrances too light or too fleeting, this is the answer. Strong salon performer.
+inspired_by_name: Tom Ford Noir
 inspired_by_note: dark amber-oud oriental, similar evening character
 exclude_from_feed: true
 accords:
@@ -53,19 +69,5 @@ accords:
   - vanilla
   - fresh spicy
   - metallic
-stock_status: in_stock
-fragrance_family: Woody Oriental Oud
-top_notes: Saffron, Bergamot, Elemi
 base_notes: Tonka Bean, Amber, White Must, Oakmoss
-image_main: /images/uploads/ahp1485_with_box.jpeg
-description_short: A bold, smoky oriental from Al Haramain — one of the Gulf's
-  most established fragrance houses. Dubai Night is a dark, addictive blend of
-  oud and amber with serious projection and all-night longevity.
-inspired_by_name: Tom Ford Noir
-accords_text: oud, amber, saffron, woody, smoky, floral, incense, resinous
-char_sweet: 2
-char_fresh: 1
-char_masculine: 4
-char_unique: 4
-char_versatile: 2
 ---

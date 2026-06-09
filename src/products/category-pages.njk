@@ -286,12 +286,14 @@ eleventyComputed:
     <input type="text" id="cat-search-input" class="cat-search-input" placeholder="Search by name or brand…" autocomplete="off">
     {% if cat.section === 'fragrances' %}
     <div class="cat-accord-chips">
-      <button class="cat-accord-chip" data-scent="oriental">Oriental</button>
-      <button class="cat-accord-chip" data-scent="floral">Floral</button>
-      <button class="cat-accord-chip" data-scent="woody">Woody</button>
-      <button class="cat-accord-chip" data-scent="fresh">Fresh</button>
-      <button class="cat-accord-chip" data-scent="gourmand">Gourmand</button>
-      <button class="cat-accord-chip" data-scent="spicy">Spicy</button>
+      <button class="cat-accord-chip" data-accord="oud">Oud</button>
+      <button class="cat-accord-chip" data-accord="floral">Floral</button>
+      <button class="cat-accord-chip" data-accord="vanilla">Vanilla</button>
+      <button class="cat-accord-chip" data-accord="woody">Woody</button>
+      <button class="cat-accord-chip" data-accord="fresh">Fresh</button>
+      <button class="cat-accord-chip" data-accord="gourmand">Gourmand</button>
+      <button class="cat-accord-chip" data-accord="spicy">Spicy</button>
+      <button class="cat-accord-chip" data-accord="musky">Musky</button>
     </div>
     {% endif %}
   </div>

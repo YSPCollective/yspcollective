@@ -478,145 +478,502 @@ function detectLang(stripeSession) {
 }
 
 // ─── PRODUCTS & CHAT SYSTEM ───────────────────────────────────────────────────
-
-var PRODUCTS = [
+// ── PRODUCT CATALOGUE: AUTO-GENERATED START ──
+const PRODUCTS = [
   {
-    name: "Lattafa Yara 100ml",
-    url: "https://yspcollective.com/products/lattafa-yara-100ml.html",
-    price: "€29.55",
-    brand: "Lattafa",
-    gender: "Women",
-    concentration: "EDP",
-    size: "100ml",
-    family: "Floral Fruity",
-    top: "Raspberry, Pear, Mandarin",
-    heart: "Jasmine, Iris, Muguet",
-    base: "Musk, Sandalwood, Vanilla, Praline",
-    accords: ["floral", "fruity", "sweet", "musky", "powdery"],
-    longevity: "8–10 hours",
-    projection: "Moderate–Strong",
-    best_for: "Everyday, date night, spring/summer",
-    summary: "Sweet, fruity-floral with a clean musky finish. Fresh and feminine — one of Lattafa's most popular. Viral on TikTok.",
-    ysp_thoughts: "A brilliant everyday fragrance for women who want something sweet but not heavy. Incredible value."
+    "name": "al-haramain-amber-oud-dubai-night-extrait-de-parfum-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
   },
   {
-    name: "Lattafa Khamrah Qahwa 100ml",
-    url: "https://yspcollective.com/products/lattafa-edp-khamrah-qahwa-unisex-perfume-100ml.html",
-    price: "€34",
-    brand: "Lattafa",
-    gender: "Unisex",
-    concentration: "EDP",
-    size: "100ml",
-    family: "Oriental / Coffee",
-    top: "Coffee, Saffron, Cardamom",
-    heart: "Rose, Oud, Incense",
-    base: "Amber, Vanilla, Musk",
-    accords: ["coffee", "oriental", "amber", "spicy", "smoky", "sweet"],
-    longevity: "8–12 hours",
-    projection: "Strong",
-    best_for: "Autumn/winter, evenings, office",
-    summary: "Qahwa is Arabic coffee — rich roasted coffee and saffron over deep oud and amber. Distinctive and long-lasting.",
-    ysp_thoughts: "For those who want something truly different. The coffee note is gorgeous and the amber base lasts all day."
+    "name": "arabiyat-prestige-nyla-80ml-eau-de-parfum-unisex-perfume",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
   },
   {
-    name: "Lattafa Khamrah 100ml",
-    url: "https://yspcollective.com/products/lattafa-khamrah-eau-de-parfum-100ml-unisex-fragrance.html",
-    price: "€34",
-    brand: "Lattafa",
-    gender: "Unisex",
-    concentration: "EDP",
-    size: "100ml",
-    family: "Oriental Spicy / Gourmand",
-    top: "Cinnamon, Nutmeg, Bergamot",
-    heart: "Dates, Praline, Tuberose",
-    base: "Vanilla, Tonka Bean, Benzoin, Myrrh, Amberwood",
-    accords: ["spicy", "gourmand", "amber", "woody", "vanilla", "resinous"],
-    longevity: "8–12+ hours",
-    projection: "Strong",
-    best_for: "Evening, autumn/winter, special occasions",
-    summary: "Rich, spiced and deeply indulgent. Cinnamon-dates opening over a stunning resinous amber base. Fragrantica Readers' Choice 2024.",
-    ysp_thoughts: "One of the most impressive value fragrances we stock. The cinnamon-date combination is extraordinary."
+    "name": "armaf-club-de-nuit-intense-105ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
   },
   {
-    name: "Armaf Club de Nuit Intense Man 105ml",
-    url: "https://yspcollective.com/products/armaf-club-de-nuit-intense-105ml.html",
-    price: "€29.55",
-    brand: "Armaf",
-    gender: "Men",
-    concentration: "EDP",
-    size: "105ml",
-    family: "Woody Aromatic",
-    top: "Lemon, Pineapple, Blackcurrant, Apple",
-    heart: "Rose, Jasmine, Birch",
-    base: "Ambergris, Musk, Vanilla, Patchouli",
-    accords: ["woody", "fresh", "citrus", "smoky", "ambergris"],
-    longevity: "8–12 hours",
-    projection: "Moderate–Strong",
-    best_for: "Office, evenings, year-round",
-    summary: "The famous Aventus clone. Pineapple-citrus opening with distinctive smoky birch and ambergris drydown.",
-    ysp_thoughts: "If someone wants the Creed Aventus DNA without the price tag — this is the answer."
+    "name": "armaf-club-de-nuit-intense-150ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
   },
   {
-    name: "Arabiyat Prestige Nyla 80ml",
-    url: "https://yspcollective.com/products/arabiyat-prestige-nyla-80ml-eau-de-parfum-unisex-perfume.html",
-    price: "€30",
-    brand: "Arabiyat Prestige",
-    gender: "Unisex",
-    concentration: "EDP",
-    size: "80ml",
-    family: "Floral Oriental",
-    accords: ["floral", "oriental", "warm", "sweet", "musky"],
-    longevity: "6–8 hours",
-    projection: "Moderate",
-    best_for: "Everyday, all seasons",
-    summary: "Warm, floral and approachable. A beautiful everyday unisex EDP with Middle Eastern elegance.",
-    ysp_thoughts: "Arabiyat Prestige consistently delivers quality at a great price point. Nyla is a crowd-pleaser."
+    "name": "armaf-odyssey-mandarin-sky-eau-de-parfum-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
   },
   {
-    name: "Beauty of Joseon Relief Sun SPF50+",
-    url: "https://yspcollective.com/products/beauty-of-joseon-relief-sun-spf50.html",
-    price: "€16",
-    brand: "Beauty of Joseon",
-    type: "beauty",
-    category: "SPF / Sunscreen",
-    size: "50ml",
-    summary: "The K-beauty SPF that broke the internet. Lightweight, no white cast, dewy finish. Fragrance-free, reef-safe, all skin types.",
-    ysp_thoughts: "Arguably the best affordable SPF on the market. No white cast, no greasy finish."
+    "name": "creed-aventus-eau-de-parfum-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
   },
   {
-    name: "Anua PDRN Hyaluronic Acid Capsule 100 Serum",
-    url: "https://yspcollective.com/products/anua-pdrn-hyaluronic-acid-capsule-100-serum.html",
-    price: "€27.50",
-    brand: "ANUA",
-    type: "beauty",
-    category: "Serum",
-    size: "30ml",
-    summary: "Clinical-grade PDRN serum with 11 types of hyaluronic acid. Dewy glass-skin finish.",
-    ysp_thoughts: "PDRN is a next-level ingredient for hydration and skin repair. This is the real deal."
+    "name": "creed-bois-du-portugal-eau-de-parfum-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
   },
   {
-    name: "Anua Heartleaf Pore Control Cleansing Oil",
-    url: "https://yspcollective.com/products/anua-heartleaf-control-cleansing-oil.html",
-    price: "€18.30",
-    brand: "ANUA",
-    type: "beauty",
-    category: "Cleanser",
-    size: "200ml",
-    summary: "Plant-based cleansing oil with 65% heartleaf extract. Removes makeup and SPF cleanly without stripping.",
-    ysp_thoughts: "Best cleansing oil for sensitive or acne-prone skin. The heartleaf calms while it cleans."
+    "name": "creed-viking-eau-de-parfum-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
   },
   {
-    name: "Anua Heartleaf 70% Intense Calming Cream",
-    url: "https://yspcollective.com/products/heartleaf-70-intense-calming-cream.html",
-    price: "€26",
-    brand: "ANUA",
-    type: "beauty",
-    category: "Moisturiser",
-    size: "50ml",
-    summary: "70% heartleaf extract moisturiser for sensitive and reactive skin. Rich but absorbs cleanly.",
-    ysp_thoughts: "Perfect for anyone with redness or sensitivity. The high heartleaf concentration is genuinely effective."
+    "name": "gulf-orchid-creamy-pistachio-eau-de-parfum-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "gulf-orchid-mango-ice-eau-de-parfum-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "khadlaj-island-dreams-extrait-de-parfum-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "lattafa-ana-abiyedh-coral-edp-60ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "lattafa-ana-abiyedh-rouge-eau-de-parfum-60ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "lattafa-badee-al-oud-for-glory-eau-de-parfum-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "lattafa-edp-khamrah-qahwa-unisex-perfume-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "lattafa-khamrah-eau-de-parfum-100ml-unisex-fragrance",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "lattafa-musamam-white-intense-edp-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "lattafa-najdia-edp-100ml-deodorant-spray-50ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "lattafa-pride-fakhar-platin-eau-de-parfum-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "lattafa-qaed-al-fursan-eau-de-parfum-90ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "lattafa-yara-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "lattafa-yara-candy-eau-de-parfum-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "maison-alhambra-kismet-for-men-edp-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "miss-dior-parfum-50ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "paris-corner-coconut-lagoon-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "rasasi-hawas-eclat-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "rasasi-hawas-elixir-eau-de-parfum-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "rayhaan-aquatica-eau-de-parfum-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "rayhaan-italia-pour-homme-eau-de-parfum-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "roja-parfums-danger-parfum-cologne-spray-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "swiss-arabian-enigma-of-taif-extrait-de-parfum",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "swiss-arabian-soul-of-bali-extrait-de-parfum-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "tom-ford-noir-eau-de-parfum-spray-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "yves-saint-laurent-black-opium-eau-de-parfum-50ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "zimaya-al-barari-coral-edp-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "zimaya-sharaf-divine-extract-de-parfum-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "zimaya-sharaf-the-club-extrait-de-parfum-100ml",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "fragrances",
+    "size": ""
+  },
+  {
+    "name": "anua-heartleaf-control-cleansing-oil",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "beauty",
+    "size": ""
+  },
+  {
+    "name": "anua-pdrn-hyaluronic-acid-capsule-100-serum",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "beauty",
+    "size": ""
+  },
+  {
+    "name": "beauty-of-joseon-relief-sun-spf50",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "beauty",
+    "size": ""
+  },
+  {
+    "name": "heartleaf-70-intense-calming-cream",
+    "slug": "",
+    "url": "https://yspcollective.com/products/.html",
+    "price": "€undefined",
+    "brand": "",
+    "gender": "",
+    "accords": [],
+    "type": "beauty",
+    "category": "beauty",
+    "size": ""
   }
 ];
+// ── PRODUCT CATALOGUE: AUTO-GENERATED END ──
 
 function buildSystemPrompt(userProfile = null) {
   let profileSection = "";
@@ -657,12 +1014,21 @@ FRAGRANCE GUIDANCE:
 - Mention longevity and projection honestly
 - For Khamrah and Khamrah Qahwa: ALWAYS mention to use 1–2 sprays only — they are very potent
 
-TONE:
+TONE & LENGTH:
 - Warm, genuine, expert — like a knowledgeable friend, not a sales script
-- Concise responses — no waffle, get to the point
+- Keep responses SHORT: 2–4 sentences per recommendation, nothing more
 - No markdown headers or bullet points — write in natural flowing sentences
-- When recommending, always mention the product name and price
-- If recommending multiple options, present them naturally in prose
+- When recommending, always mention the product name, price, and include the product URL as a clickable link in this format: [Product Name](url)
+- If recommending multiple products, one sentence each — do not write paragraphs per product
+- Never repeat information already mentioned; never summarise after recommending
+
+RECOMMENDATION RULES — READ CAREFULLY:
+- NEVER say we have "limited options", "not many options", "only one option", "our selection is small", or anything that implies scarcity or disappointment. It is never acceptable to apologise for the range.
+- If even one product matches, go ALL IN on it. Present it as a deliberate, curated choice: "We've selected the very best in this category and here's why this is perfect for you."
+- Always explain WHY each recommendation suits them specifically — mention the accords, the occasion, the longevity — make them feel like this is made for them.
+- If you recommend one product, make it sound like the definitive answer, not a compromise. If two or three fit, present each as a strong, confident recommendation.
+- Lean into the brand story: YSP Collective curates the best of Arabian niche fragrance and K-beauty — everything we stock is there for a reason.
+- Only acknowledge a genuine gap (e.g. truly nothing in the catalogue fits at all) if no product can be stretched to work. Even then, suggest the closest match and explain what makes it interesting.
 
 If asked something outside your knowledge, direct to info@yspcollective.com`;
 }

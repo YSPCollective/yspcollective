@@ -11,13 +11,17 @@ stock_status: last_one
 featured: false
 published: true
 date_added: 2026-05-28
+best_for: Daytime wear, summer, beach, casual occasions
+char_sweet: 4
+char_fresh: 4
+char_masculine: 2
+char_unique: 3
 top_notes: Mango, Lemon, Ginger, Rhubarb
 heart_notes: White Flowers, Amber, Licorice
 accords_text: fruity, tropical, sweet, citrus, fresh spicy, musky, fresh,
   aromatic, terpenic, white floral
 longevity: 6-8 hours
 projection: "Moderate - Strong "
-best_for: Daytime wear, summer, beach, casual occasions
 origin: UAE
 launched: "2025"
 vegan: false
@@ -25,6 +29,9 @@ image_main: /images/uploads/mango_ice_gulf_orchid_with_box.jpeg
 gallery:
   - /images/uploads/mango_ice__gulf_orchid_perufmes.jpeg
   - /images/uploads/mangoicewithboxopened-gulforchid.jpeg
+description_short: A fun, fruit-forward EDP from Gulf Orchid — juicy mango and
+  cooling freshness balanced over a soft, musky base. Vibrant, approachable, and
+  perfect for warmer days.
 description_full: >-
   
   Gulf Orchid Mango Ice Eau de Parfum opens with an immediate burst of ripe, sun-warmed mango and tropical fruit, lifted by an icy, almost mentholic freshness that gives the fragrance its signature cooling effect.
@@ -105,14 +112,8 @@ accords:
   - aromatic
   - terpenic
   - white floral
+stock_quantity: 1
 fragrance_family: Fruity Floral
-base_notes: Musk, Vanilla, Caramel, Chestnut
-description_short: A fun, fruit-forward EDP from Gulf Orchid — juicy mango and
-  cooling freshness balanced over a soft, musky base. Vibrant, approachable, and
-  perfect for warmer days.
-char_sweet: 4
-char_fresh: 4
-char_masculine: 2
-char_unique: 3
 char_versatile: 3
+base_notes: Musk, Vanilla, Caramel, Chestnut
 ---

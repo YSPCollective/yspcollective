@@ -8,16 +8,23 @@ size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
 stock_status: in_stock
+stock_quantity: 10
 featured: false
 published: true
+date_added: 2026-06-02
 fragrance_family: Oriental Woody
+best_for: Evening, Date night, Autumn/Winter
+char_sweet: 3
+char_fresh: 2
+char_masculine: 4
+char_unique: 3
+char_versatile: 3
 top_notes: Lavender, Lemon, Bergamot
 heart_notes: Honey, Cinnamon, Cashmeran, Jasmine
 base_notes: Vanilla, Tobacco Leaf, Tonka Bean
 accords_text: honey, tobacco, vanilla, lavender, spicy
 longevity: 8-12 hours
 projection: Moderate - Strong
-best_for: Evening, Date night, Autumn/Winter
 origin: UAE
 launched: "2025"
 vegan: false
@@ -53,9 +60,4 @@ inspired_by_name: Xerjoff XJ 1861 Naxos
 inspired_by_note: Same honey-tobacco-lavender DNA, more approachable and
   wearable, exceptional longevity
 exclude_from_feed: false
-char_sweet: 3
-char_fresh: 2
-char_masculine: 4
-char_unique: 3
-char_versatile: 3
 ---

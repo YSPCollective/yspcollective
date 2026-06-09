@@ -1,0 +1,25 @@
+name: Deploy Worker
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build product catalogue
+        run: node scripts/build-worker-products.js
+
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: b6bc2dfe06ac5c3ce5d1223777e1be41
+          command: deploy --config wrangler-api.toml --keep-vars

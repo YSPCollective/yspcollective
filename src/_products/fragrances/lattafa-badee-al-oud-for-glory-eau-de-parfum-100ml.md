@@ -1,12 +1,24 @@
 ---
+name: Lattafa Bade'e Al Oud For Glory Eau de Parfum 100ml
+slug: lattafa-badee-al-oud-for-glory
 price: "27.50"
 brand: Lattafa
 gender: Unisex
 size: 100ml
+concentration: Eau de Parfum (EDP)
 badge: Premium
 stock_status: in_stock
+stock_quantity: 4
+featured: true
 published: true
+date_added: 2026-06-02
 fragrance_family: Woody Oriental Oud
+best_for: Evening wear, formal occasions, cooler seasons, night out
+char_sweet: 1
+char_fresh: 1
+char_masculine: 4
+char_unique: 4
+char_versatile: 2
 top_notes: Saffron, Nutmeg, Lavender
 heart_notes: Agarwood, Pathcouli
 base_notes: Agarwood, Pathouli, Musk
@@ -14,7 +26,6 @@ accords_text: oud, warm spicy, fresh spicy, patchouli, metallic, musky, woody,
   lavender, earthy, leather
 longevity: 10-12 hours
 projection: Strong
-best_for: Evening wear, formal occasions, cooler seasons, night out
 origin: UAE
 launched: "2020"
 vegan: false
@@ -50,15 +61,6 @@ ysp_thoughts: >-
    If someone comes to us wanting to understand what all the fuss is about with oud fragrances, this is one of the first bottles we'd point them to.
 inspired_by_name: Tom Ford Oud Wood
 inspired_by_note: same dark resinous oud-rose foundation, bolder projection
-name: Lattafa Bade'e Al Oud For Glory Eau de Parfum 100ml
-slug: lattafa-badee-al-oud-for-glory
-concentration: Eau de Parfum (EDP)
-featured: true
 gtin: "6291107458328"
 exclude_from_feed: false
-char_sweet: 1
-char_fresh: 1
-char_masculine: 4
-char_unique: 4
-char_versatile: 2
 ---

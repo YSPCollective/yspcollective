@@ -5,13 +5,20 @@ price: "39.99"
 brand: Zimaya
 gender: Unisex
 size: 100ml
-concentration: Eau de Parfum (EDP)
+concentration: Extrait de Parfum
 badge: Premium
-stock_status: in_stock
+stock_status: low_stock
+stock_quantity: 2
 featured: true
 published: true
 date_added: 2026-05-30
 fragrance_family: Floral Woody Oriental Spicy
+best_for: Evening wear, date night, cooler seasons, formal occasions
+char_sweet: 4
+char_fresh: 2
+char_masculine: 3
+char_unique: 3
+char_versatile: 2
 top_notes: Raspberry, Cinnamon, Bergamot
 heart_notes: Apple, Caramel, Rose
 base_notes: Cognac, Vanilla, Amber, Tonka Beans, Moss
@@ -59,10 +66,4 @@ inspired_by_name: Angels' Share Paradis by Kilian
 inspired_by_note: ""
 gtin: "6290171077213"
 exclude_from_feed: false
-best_for: Evening wear, date night, cooler seasons, formal occasions
-char_sweet: 4
-char_fresh: 2
-char_masculine: 3
-char_unique: 3
-char_versatile: 2
 ---

@@ -8,12 +8,21 @@ size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Premium
 stock_status: low_stock
+stock_quantity: 5
 featured: true
 published: true
+date_added: 2026-06-02
 fragrance_family: Floral Woody Oriental
+best_for: Evening wear, formal occasions, cooler seasons
+char_sweet: 2
+char_fresh: 3
+char_masculine: 4
+char_unique: 3
+char_versatile: 3
 top_notes: Bergamot, Pink Pepper, Cardamom
 heart_notes: Ginger, Lavender, Guava
 base_notes: Palo Santo, Incense, Sandalwood
+accords_text: woody, spicy, floral, aromatic, amber, incense, fresh spicy, lavender
 longevity: 10-12 hours
 projection: Moderate
 origin: UAE
@@ -53,11 +62,4 @@ inspired_by_name: Creed Silver Mountain Water
 inspired_by_note: fresh aquatic-metallic opening, clean woody drydown
 gtin: "6290362345817"
 exclude_from_feed: false
-accords_text: woody, spicy, floral, aromatic, amber, incense, fresh spicy, lavender
-best_for: Evening wear, formal occasions, cooler seasons
-char_sweet: 2
-char_fresh: 3
-char_masculine: 4
-char_unique: 3
-char_versatile: 3
 ---
