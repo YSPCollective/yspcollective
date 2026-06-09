@@ -1,12 +1,16 @@
 ---
 layout: post.njk
-title: "Lattafa Ana Abiyedh Coral: The Best Summer Watermelon Scent Under €20"
-description: "Lattafa Ana Abiyedh Coral is a juicy, sun-drenched EDP with watermelon, peach and coconut that sits in the same world as Room 1015 Wavechild — at a fraction of the price. Here's why it's made our summer shelf."
+description: Lattafa Ana Abiyedh Coral is a juicy, sun-drenched EDP with
+  watermelon, peach and coconut that sits in the same world as Room 1015
+  Wavechild — at a fraction of the price. Here's why it's made our summer shelf.
 date: 2026-06-14
 category: arabian
-category_label: "Arabian Perfume"
-author: "YSP Collective"
+author: YSP Collective
+date_added: 2026-06-09
+title: "Lattafa Ana Abiyedh Coral: The Best Summer Watermelon Scent Under €20"
+category_label: Arabian Perfume
 read_time: 5
+image: /images/uploads/lattafa_coral_hero.png
 tags:
   - posts
   - lattafa

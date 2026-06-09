@@ -8,8 +8,8 @@ size: 100ml
 concentration: Extrait de Parfum
 badge: null
 custom_badge: Night Out
-stock_status: last_one
-stock_quantity: 1
+stock_status: sold_out
+stock_quantity: 0
 featured: false
 published: true
 date_added: 2026-06-02

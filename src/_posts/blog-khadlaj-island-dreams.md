@@ -1,12 +1,16 @@
 ---
 layout: post.njk
-title: "Island Dreams by Khadlaj: The Summer Scent Worth Knowing About"
-description: "Khadlaj Island Dreams is a fresh citrus extrait that sits in the same world as Louis Vuitton Symphony — and arguably does summer better. Here's why it's on our shelves."
+description: Khadlaj Island Dreams is a fresh citrus extrait that sits in the
+  same world as Louis Vuitton Symphony — and arguably does summer better. Here's
+  why it's on our shelves.
 date: 2026-06-07
 category: arabian
-category_label: "Arabian Perfume"
-author: "YSP Collective"
+author: YSP Collective
+date_added: 2026-06-09
+title: "Island Dreams by Khadlaj: The Summer Scent Worth Knowing About"
+category_label: Arabian Perfume
 read_time: 5
+image: /images/uploads/khadlaj_island_dreams_hero.png
 tags:
   - posts
   - khadlaj
