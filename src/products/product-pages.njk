@@ -797,7 +797,7 @@ permalink: "products/{{ product.slug }}.html"
 </section>
 
 {% set productAccords = product | parseAccords %}
-{% set related = collections.allProducts | relatedProducts(product.slug, product.type, productAccords) %}
+{% set related = collections.allProducts | relatedProducts(product.slug, product.type, productAccords, product.brand, product.fragrance_family) %}
 {% if related.length %}
 <section class="related-section">
   <p class="section-label" data-i18n="pdp_related_label">You May Also Like</p>
