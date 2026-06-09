@@ -1,10 +1,11 @@
 ---
+layout: post.njk
 title: "Island Dreams by Khadlaj: The Summer Scent Worth Knowing About"
 description: "Khadlaj Island Dreams is a fresh citrus extrait that sits in the same world as Louis Vuitton Symphony — and arguably does summer better. Here's why it's on our shelves."
 date: 2026-06-07
 category: arabian
 category_label: "Arabian Perfume"
-author: YSP Collective
+author: "YSP Collective"
 read_time: 5
 image: /images/uploads/khadlaj-island-dreams-hero.jpg
 tags:
@@ -20,8 +21,6 @@ Summer has a scent. Not sunscreen — not that kind. The kind you reach for when
 
 We've been stocking it as part of our summer series and we wanted to give it the proper write-up it deserves — because this one has a story worth telling.
 
----
-
 ## The Brand Behind It
 
 Khadlaj was founded in the UAE in 1997, a family-owned house built by master perfumer Mohamed Iqbal Abdul Sattar — a man with over 45 years in the craft. The brand's foundation is traditional Arabian perfumery: oud, musk, rose, and the rich blending culture of the Gulf. But Khadlaj has never been content to stay in one lane. Their catalogue spans deep orientals and airy contemporaries, and they do both well.
@@ -31,8 +30,6 @@ Island Dreams sits firmly in the contemporary camp. It's Khadlaj stepping out of
 ---
 
 ## The Bottle
-
-<!-- [IMAGE 1: Khadlaj Island Dreams bottle — close-up, ideally on a light surface or near water/natural light] -->
 
 This is where it genuinely surprises. Arabian fragrance bottles can occasionally feel a little maximalist — lots of gold, ornate caps, the works. Island Dreams takes a different direction entirely. The bottle is sleek, architectural, and modern — a thick glass rectangular form with a clean metallic cap that wouldn't look out of place on a shelf next to anything from a European niche house. It photographs beautifully. It feels expensive for what it costs.
 
@@ -63,8 +60,6 @@ It's an all-day warm-weather fragrance. Morning commute, Sunday terrace, beach b
 ---
 
 ## The Inspired-By Angle: LV Symphony
-
-<!-- [IMAGE 2: Flat lay or lifestyle shot — bottle alongside summer objects, perhaps on a white surface] -->
 
 Here's the conversation everyone in the fragrance community is having about Island Dreams: it shares its DNA with Louis Vuitton Symphony.
 

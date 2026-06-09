@@ -1,10 +1,11 @@
 ---
+layout: post.njk
 title: "Lattafa Ana Abiyedh Coral: The Best Summer Watermelon Scent Under €20"
 description: "Lattafa Ana Abiyedh Coral is a juicy, sun-drenched EDP with watermelon, peach and coconut that sits in the same world as Room 1015 Wavechild — at a fraction of the price. Here's why it's made our summer shelf."
 date: 2026-06-14
 category: arabian
 category_label: "Arabian Perfume"
-author: YSP Collective
+author: "YSP Collective"
 read_time: 5
 image: /images/uploads/lattafa-ana-abiyedh-coral-hero.jpg
 tags:
@@ -20,8 +21,6 @@ There are summer fragrances that try to smell like summer. And then there's Ana 
 
 We restocked it for the summer and it's already moving. Here's the full picture.
 
----
-
 ## Lattafa and the Ana Abiyedh Line
 
 Lattafa needs little introduction if you've been following Arabian fragrance over the last few years. The Dubai-based house has built one of the most prolific and consistently well-received catalogues in the accessible fragrance world — and the Ana Abiyedh line is one of their crown jewels.
@@ -31,8 +30,6 @@ Ana Abiyedh (meaning "I am white" in Arabic) started as a soft, musky floral and
 ---
 
 ## The Bottle
-
-<!-- [IMAGE 1: Lattafa Ana Abiyedh Coral bottle — the coral/pink-toned bottle, ideally on a light warm surface or with some natural summer context] -->
 
 The presentation is exactly what you'd want from a summer fragrance. The bottle takes the Ana Abiyedh signature form — clean, feminine, with that warm coral-pink tint to the glass that immediately tells you what you're in for. It looks considerably more expensive than its price. On a dressing table or in a beach bag, it photographs beautifully.
 
@@ -59,8 +56,6 @@ The overall effect is best described this way: juicy, happy, carefree — like a
 ## Who It's For
 
 Coral is unambiguously a warm-weather fragrance. Poolside, beach, festivals, summer evenings, daily daywear from May through September. It's not a fragrance for boardrooms or winter. It knows what it is, and that clarity is part of its appeal.
-
-<!-- [IMAGE 2: Lifestyle shot — bottle alongside summer objects: sunglasses, a towel, fruit, something warm and evocative of the season] -->
 
 If you loved D&G L'Impératrice, the Escada summer editions, or anything that plays in the juicy-fruit-with-warmth territory — Coral will feel immediately familiar and better-executed than most of what you've tried at three times the price.
 
