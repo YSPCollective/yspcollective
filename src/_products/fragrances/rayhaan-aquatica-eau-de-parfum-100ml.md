@@ -8,7 +8,7 @@ size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
 stock_status: in_stock
-stock_quantity: 7
+stock_quantity: 4
 featured: true
 published: true
 date_added: 2026-06-02
