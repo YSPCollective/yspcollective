@@ -196,6 +196,8 @@ module.exports = function(eleventyConfig) {
     const b = badge.toLowerCase();
     if (b === 'bestseller') return 'badge-bestseller';
     if (b === 'popular') return 'badge-popular';
+    if (b === 'trending') return 'badge-trending';
+    if (b === 'viral') return 'badge-viral';
     if (b === 'curated') return 'badge-curated';
     if (b === 'new') return 'badge-new';
     if (b === 'premium') return 'badge-premium';
