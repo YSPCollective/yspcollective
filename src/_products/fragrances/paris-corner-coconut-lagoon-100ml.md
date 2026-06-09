@@ -52,7 +52,7 @@ accords:
   - fruity
   - fresh
   - lactonic
-stock_quantity: 3
+stock_quantity: 2
 fragrance_family: Gourmand Tropical Floral
 char_unique: 3
 char_versatile: 3

@@ -8,8 +8,8 @@ size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: New
 stock_status: in_stock
-stock_quantity: 10
-expected_date: June 2026
+stock_quantity: 9
+expected_date: ""
 featured: true
 published: true
 date_added: 2026-06-05
@@ -54,18 +54,15 @@ description_full: >-
 
 
   Part of Zimaya's nature-inspired Al Barari collection — 'Al Barari' translates as 'wilderness' in Arabic, and the line is designed to capture the organic warmth of the Emirates. Zimaya operates under the established Afnan Perfumes group, which guarantees consistent quality.
-ysp_thoughts: "Ex Nihilo Blue Talisman has been one of the most talked-about
-  niche releases in recent years.  That weightless fruity-musky-floral
-  combination has attracted serious attention and a price tag to match (£230+).
-  Al Barari Coral by Zimaya works in exactly the same olfactive territory: same
-  effortless, light-touch tropical-fruity profile, same versatile wearability.
-  The Fragrantica community flagged this connection immediately on release.
-  Where some inspired-by fragrances flatten the original, Coral actually adds
-  something — the mango and pear feel slightly more vivid, the base slightly
-  warmer. Zimaya is one of the most consistent value houses in the Arabian
-  fragrance space right now, and this is a strong argument for why. If your
-  customers are reaching for Blue Talisman or anything in that fresh,
-  fruity-niche space, Al Barari Coral is the most logical recommendation."
+ysp_thoughts: >-
+  Ex Nihilo Blue Talisman has been one of the most talked-about niche releases
+  in recent years.  
+
+
+  That weightless fruity-musky-floral combination has attracted serious attention and a price tag to match (£230+). Al Barari Coral by Zimaya works in exactly the same olfactive territory: same effortless, light-touch tropical-fruity profile, same versatile wearability. 
+
+
+  The Fragrantica community flagged this connection immediately on release. Where some inspired-by fragrances flatten the original, Coral actually adds something — the mango and pear feel slightly more vivid, the base slightly warmer. Zimaya is one of the most consistent value houses in the Arabian fragrance space right now, and this is a strong argument for why.
 inspired_by_name: Ex Nihilo Blue Talisman
 inspired_by_note: The same weightless fruity-musky DNA - more depth at the base,
   considerably more accessible.

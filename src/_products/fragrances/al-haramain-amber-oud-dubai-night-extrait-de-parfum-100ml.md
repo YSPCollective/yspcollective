@@ -9,17 +9,14 @@ size: 100ml
 concentration: Extrait de Parfum
 badge: Curated
 stock_status: in_stock
-stock_quantity: 5
 featured: true
 published: true
 date_added: 2026-06-02
-fragrance_family: Woody Oriental Oud
 best_for: Night time wear, Winter/Spring/Autumn
 char_sweet: 2
 char_fresh: 1
 char_masculine: 4
 char_unique: 4
-char_versatile: 2
 top_notes: Saffron, Bergamot, Elemi
 heart_notes: Agarwood, Bulgarian Rose, Lily of the Valley
 accords_text: oud, amber, saffron, woody, smoky, floral, incense, resinous
@@ -57,7 +54,8 @@ ysp_thoughts: >-
   If you have clients who find designer fragrances too light or too fleeting, this is the answer. Strong salon performer.
 inspired_by_name: Tom Ford Noir
 inspired_by_note: dark amber-oud oriental, similar evening character
-exclude_from_feed: true
+gtin: "6291106814910 "
+exclude_from_feed: false
 accords:
   - amber
   - warm spicy
@@ -69,5 +67,8 @@ accords:
   - vanilla
   - fresh spicy
   - metallic
+stock_quantity: 5
+fragrance_family: Woody Oriental Oud
+char_versatile: 2
 base_notes: Tonka Bean, Amber, White Must, Oakmoss
 ---

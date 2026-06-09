@@ -8,8 +8,8 @@ size: 60ml
 concentration: Eau de Parfum (EDP)
 badge: New
 stock_status: in_stock
-stock_quantity: 21
-expected_date: June 2026
+stock_quantity: 17
+expected_date: ""
 featured: true
 published: true
 date_added: 2026-06-05
@@ -69,5 +69,5 @@ inspired_by_note: Lattafa Coral delivers a sweeter, denser punch of candy-like
   budget-friendly, high-longevity alternative to the airier, sunscreen-vibes of
   Wavechild.
 gtin: "6290362341826"
-exclude_from_feed: true
+exclude_from_feed: false
 ---

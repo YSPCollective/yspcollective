@@ -59,5 +59,6 @@ ysp_thoughts: >-
   If you're looking for a reliable, everyday crowd-pleaser that won't drain your wallet, this is exactly where to start. We reach for this one when we need something versatile, clean and effortlessly wearable.
 inspired_by_name: Paco Rabanne Invictus Aqua
 inspired_by_note: Same fresh aquatic-citrus DNA, stronger projection
+gtin: "6291106063233"
 exclude_from_feed: false
 ---

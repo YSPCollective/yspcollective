@@ -8,7 +8,7 @@ size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
 stock_status: low_stock
-stock_quantity: 4
+stock_quantity: 3
 featured: false
 published: true
 date_added: 2026-06-02
@@ -53,5 +53,6 @@ ysp_thoughts: >-
 
 
   It's the kind of fragrance that gets compliments without anyone being able to quite place it. Perfect for anyone who loved the original Yara and wants something a little more summery, or for anyone new to the Lattafa world who wants an easy, crowd-pleasing entry point. At this price for this performance, it's a straightforward yes.
+gtin: "6290360599168"
 exclude_from_feed: false
 ---

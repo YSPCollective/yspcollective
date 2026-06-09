@@ -58,5 +58,6 @@ ysp_thoughts: >-
   At this price for this level of performance, it's one of the easiest recommendations in the Armaf range. If you haven't tried the Odyssey line yet, this is an excellent place to start.
 inspired_by_name: Jean Paul Gaultier Scandal Pour Homme
 inspired_by_note: Same citrus-caramel-tonka DNA, brighter mandarin opening
+gtin: "6294015149371"
 exclude_from_feed: false
 ---

@@ -2,7 +2,7 @@
 name: Swiss Arabian Enigma of Taif Extrait de Parfum
 slug: swiss-arabian-enigma-of-taif
 price: "63.50"
-rrp: "122.00"
+rrp: ""
 brand: Swiss Arabian
 gender: Unisex
 size: 100ml

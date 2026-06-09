@@ -211,6 +211,31 @@ eleventyComputed:
   .cat-accord-chip.active { background: var(--accent); border-color: var(--accent); color: var(--white); }
   .cat-no-results { grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--grey); font-size: 0.9rem; }
 
+  .cat-product-badge.badge-bestseller { background: #c09a8a; }
+  .cat-product-badge.badge-popular { background: var(--grey); }
+  .cat-product-badge.badge-curated { background: var(--black); }
+  .cat-product-badge.badge-new { background: #6a9a6a; }
+  .cat-product-badge.badge-premium { background: #7a6a5a; }
+  .cat-product-badge.badge-limited { background: var(--black); }
+
+  .cat-stock-flag {
+    position: absolute;
+    bottom: 0.7rem;
+    left: 0.7rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.55rem;
+    background: rgba(122, 85, 0, 0.85);
+    color: var(--white);
+    z-index: 1;
+  }
+  .cat-stock-flag.flag-last { background: rgba(140, 50, 30, 0.85); }
+
+  .cat-product-rating { display: flex; align-items: center; gap: 0.35rem; margin-top: 0.3rem; }
+  .rating-stars { font-size: 0.72rem; color: #c8a96e; letter-spacing: 0.02em; }
+  .rating-count { font-size: 0.65rem; color: var(--grey-light); }
+
   @media (max-width: 1024px) { .cat-grid { grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 768px) {
     .cat-body { padding: 2.5rem 1.5rem 4rem; }
@@ -266,8 +291,6 @@ eleventyComputed:
       <button class="cat-accord-chip" data-accord="vanilla">Vanilla</button>
       <button class="cat-accord-chip" data-accord="woody">Woody</button>
       <button class="cat-accord-chip" data-accord="fresh">Fresh</button>
-      <button class="cat-accord-chip" data-accord="citrus">Citrus</button>
-      <button class="cat-accord-chip" data-accord="aquatic">Aquatic</button>
       <button class="cat-accord-chip" data-accord="gourmand">Gourmand</button>
       <button class="cat-accord-chip" data-accord="spicy">Spicy</button>
       <button class="cat-accord-chip" data-accord="musky">Musky</button>
@@ -293,15 +316,18 @@ eleventyComputed:
     <div id="cat-no-results" class="cat-no-results" style="display:none">No products found — try a different search or clear the filters.</div>
     {% if catProducts.length %}
       {% for p in catProducts %}
-      <a href="/products/{{ p.slug }}.html" class="cat-product-card" data-price="{{ p.price }}" data-name="{{ p.name }}" data-brand="{{ p.brand }}" data-accords="{{ p.accords | join(',') if p.accords else '' }}">
+      <a href="/products/{{ p.slug }}.html" class="cat-product-card" data-price="{{ p.price }}" data-name="{{ p.name }}" data-brand="{{ p.brand }}" data-accords="{{ p.accords | join(',') if p.accords else '' }}" data-scent-family="{{ p.fragrance_family | lower if p.fragrance_family else '' }}" data-stock="{{ p.stock_status }}">
         <div class="cat-product-img">
           <img src="{{ p.image_main }}" alt="{{ p.name }}" loading="lazy">
           {% set b = p.custom_badge or p.badge %}
-          {% if b %}<span class="cat-product-badge">{{ b }}</span>{% endif %}
+          {% if b %}<span class="cat-product-badge {{ b | badgeClass }}">{{ b }}</span>{% endif %}
+          {% if p.stock_status === 'low_stock' %}<span class="cat-stock-flag">Low Stock</span>
+          {% elif p.stock_status === 'last_one' %}<span class="cat-stock-flag flag-last">Last One</span>{% endif %}
         </div>
         <div class="cat-product-meta">{{ p.brand }} · {{ p.concentration or p.category }}</div>
         <div class="cat-product-name">{{ p.name }}</div>
         <div class="cat-product-price">€{{ p.price }}</div>
+        {% if p.avg_rating %}<div class="cat-product-rating"><span class="rating-stars">★ {{ p.avg_rating }}</span><span class="rating-count">({{ p.review_count }})</span></div>{% endif %}
       </a>
       {% endfor %}
     {% else %}
@@ -349,7 +375,7 @@ eleventyComputed:
     var countEl = document.querySelector('.cat-count');
     var noResults = document.getElementById('cat-no-results');
     var cards = Array.from(document.querySelectorAll('.cat-product-card'));
-    var activeAccord = null;
+    var activeScentFamily = null;
 
     function filterCards() {
       var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
@@ -358,7 +384,7 @@ eleventyComputed:
       cards.forEach(function(card) {
         var name = (card.dataset.name || '').toLowerCase();
         var brand = (card.dataset.brand || '').toLowerCase();
-        var accords = (card.dataset.accords || '').toLowerCase();
+        var scentFamily = (card.dataset.scentFamily || '').toLowerCase();
         var metaEl = card.querySelector('.cat-product-meta');
         var meta = metaEl ? metaEl.textContent.toLowerCase() : '';
 
@@ -366,11 +392,11 @@ eleventyComputed:
           name.includes(query) ||
           brand.includes(query) ||
           meta.includes(query) ||
-          accords.includes(query);
+          scentFamily.includes(query);
 
-        var matchesAccord = !activeAccord || accords.includes(activeAccord);
+        var matchesFamily = !activeScentFamily || scentFamily.includes(activeScentFamily);
 
-        var visible = matchesQuery && matchesAccord;
+        var visible = matchesQuery && matchesFamily;
         card.style.display = visible ? '' : 'none';
         if (visible) shown++;
       });
@@ -389,11 +415,12 @@ eleventyComputed:
 
     document.querySelectorAll('.cat-accord-chip').forEach(function(chip) {
       chip.addEventListener('click', function() {
-        if (activeAccord === chip.dataset.accord) {
-          activeAccord = null;
+        var scent = chip.dataset.scent;
+        if (activeScentFamily === scent) {
+          activeScentFamily = null;
           chip.classList.remove('active');
         } else {
-          activeAccord = chip.dataset.accord;
+          activeScentFamily = scent;
           document.querySelectorAll('.cat-accord-chip').forEach(function(c) { c.classList.remove('active'); });
           chip.classList.add('active');
         }

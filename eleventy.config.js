@@ -32,7 +32,7 @@ module.exports = function(eleventyConfig) {
     'concentration','size','fragrance_family','top_notes','heart_notes','base_notes',
     'accords','accords_text','longevity','projection','best_for','origin','launched','vegan',
     'skin_type','key_ingredients','free_from','spf_rating','amazon_url','published',
-    'stock_status','expected_date','featured',
+    'stock_status','expected_date','featured','avg_rating','review_count',
     'inspired_by_name','inspired_by_note',
     'char_sweet','char_fresh','char_masculine','char_unique','char_versatile',
     'gtin','exclude_from_feed','google_product_category',
@@ -141,7 +141,7 @@ module.exports = function(eleventyConfig) {
     return parseAccords(data);
   });
 
-  eleventyConfig.addFilter("relatedProducts", function(allProducts, currentSlug, currentType, currentAccords) {
+  eleventyConfig.addFilter("relatedProducts", function(allProducts, currentSlug, currentType, currentAccords, currentBrand, currentScentFamily) {
     const sameType = allProducts.filter(p => p.type === currentType && p.slug !== currentSlug);
     let accordsList = [];
     if (Array.isArray(currentAccords)) {
@@ -149,13 +149,16 @@ module.exports = function(eleventyConfig) {
     } else if (typeof currentAccords === 'string') {
       accordsList = currentAccords.split(',').map(a => a.trim().toLowerCase()).filter(Boolean);
     }
-    if (currentType === 'fragrance' && accordsList.length) {
-      return sameType.map(p => ({
-        ...p,
-        score: (p.accords||[]).filter(a => accordsList.includes(a)).length
-      })).sort((a,b) => b.score - a.score).slice(0,4);
-    }
-    return sameType.slice(0,4);
+    const scentFamilyLower = (currentScentFamily || '').toLowerCase();
+    return sameType.map(p => {
+      let score = 0;
+      if (currentType === 'fragrance' && accordsList.length) {
+        score += (p.accords||[]).filter(a => accordsList.includes(a)).length;
+      }
+      if (currentBrand && p.brand === currentBrand) score += 3;
+      if (scentFamilyLower && (p.fragrance_family||'').toLowerCase() === scentFamilyLower) score += 2;
+      return { ...p, score };
+    }).sort((a, b) => b.score - a.score).slice(0, 4);
   });
 
   eleventyConfig.addFilter("detailsJson", function(data) {
@@ -191,6 +194,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("badgeClass", badge => {
     if (!badge) return '';
     const b = badge.toLowerCase();
+    if (b === 'bestseller') return 'badge-bestseller';
     if (b === 'popular') return 'badge-popular';
     if (b === 'curated') return 'badge-curated';
     if (b === 'new') return 'badge-new';

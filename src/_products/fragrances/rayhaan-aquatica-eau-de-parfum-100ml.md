@@ -8,7 +8,7 @@ size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
 stock_status: in_stock
-stock_quantity: 7
+stock_quantity: 4
 featured: true
 published: true
 date_added: 2026-06-02
@@ -61,5 +61,6 @@ ysp_thoughts: >-
   If you've ever smelled Virgin Island Water and balked at the price tag, this is the one to reach for. Perfect for summer, holidays, beach days, or any time you want to smell like you're somewhere better than you are.
 inspired_by_name: "Creed Virgin Island Water "
 inspired_by_note: Same lime-coconut-rum DNA at a fraction of the price, with stronger projection
+gtin: "6297001571330 "
 exclude_from_feed: false
 ---

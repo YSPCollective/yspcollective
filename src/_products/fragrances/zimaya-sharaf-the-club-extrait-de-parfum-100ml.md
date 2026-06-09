@@ -6,10 +6,10 @@ brand: Zimaya
 gender: Men
 size: 100ml
 concentration: Extrait de Parfum
-badge: ""
+badge: null
 custom_badge: Night Out
-stock_status: low_stock
-stock_quantity: 2
+stock_status: last_one
+stock_quantity: 1
 featured: false
 published: true
 date_added: 2026-06-02

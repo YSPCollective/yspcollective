@@ -7,18 +7,25 @@ gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
-stock_status: on_order
-expected_date: June 2026
+stock_status: in_stock
+stock_quantity: 9
+expected_date: ""
 featured: false
 published: true
+date_added: 2026-06-09
 fragrance_family: Oriental Floral
+best_for: Evening, Date night, Autumn, Winter, Year-round
+char_sweet: 3
+char_fresh: 3
+char_masculine: 2
+char_unique: 3
+char_versatile: 3
 top_notes: Bergamot, Orange, Spices
 heart_notes: Coconut, Ylang Ylang, Ambroxan, Mahonial
 base_notes: Sandalwood, Benzoin, Musk
 accords_text: coconut, spicy, floral, oriental, sandalwood, creamy, woody
 longevity: 6-10 hours
 projection: Moderate
-best_for: Evening, Date night, Autumn, Winter, Year-round
 origin: UAE
 launched: "2023"
 vegan: false
@@ -58,10 +65,5 @@ inspired_by_name: BDK Parfums Gris Charnel
 inspired_by_note: That same creamy, spiced-coconut warmth — richer in the base,
   more assertive projection.
 gtin: "6290360593159"
-exclude_from_feed: true
-char_sweet: 3
-char_fresh: 3
-char_masculine: 2
-char_unique: 3
-char_versatile: 3
+exclude_from_feed: false
 ---
