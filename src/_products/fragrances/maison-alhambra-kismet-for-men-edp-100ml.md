@@ -59,5 +59,6 @@ ysp_thoughts: >-
 inspired_by_name: Kilian Black Phantom
 inspired_by_note: Same dark coffee-chocolate-vanilla gourmand DNA, earthier and
   woodier, exceptional value
+gtin: "6291107459257"
 exclude_from_feed: false
 ---
