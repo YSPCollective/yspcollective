@@ -58,5 +58,6 @@ ysp_thoughts: >-
 inspired_by_name: "Maison Francis Kurkdjian Baccarat Rouge 540 "
 inspired_by_note: Shares the same warm amber-saffron-woody DNA, sweeter and
   fruitier with outstanding projection
+gtin: "6291107454412"
 exclude_from_feed: false
 ---
