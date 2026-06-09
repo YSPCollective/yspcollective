@@ -7,7 +7,6 @@ category: arabian
 category_label: "Arabian Perfume"
 author: "YSP Collective"
 read_time: 5
-image: /images/uploads/khadlaj-island-dreams-hero.jpg
 tags:
   - posts
   - khadlaj
