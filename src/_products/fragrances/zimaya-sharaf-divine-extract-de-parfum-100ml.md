@@ -7,9 +7,9 @@ gender: Unisex
 size: 100ml
 concentration: Extrait de Parfum
 badge: Premium
-stock_status: low_stock
-stock_quantity: 2
-featured: true
+stock_status: sold_out
+stock_quantity: 0
+featured: false
 published: true
 date_added: 2026-05-30
 fragrance_family: Floral Woody Oriental Spicy
