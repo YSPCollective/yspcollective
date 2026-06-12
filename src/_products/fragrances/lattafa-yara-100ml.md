@@ -16,24 +16,21 @@ gallery:
   - /products/lattafa/yara/2-78.jpeg
   - /products/lattafa/yara/3-78.jpeg
 description_full: |
-  Yara is the fragrance that put Lattafa on the map for a generation of perfume lovers — and once you smell it, it's obvious why.
-
-  Released in 2020, it opens with a luminous blend of orchid, heliotrope and tangerine: soft, slightly powdery, and immediately appealing. The heart opens into gourmand accords and tropical fruits — warm and creamy rather than heavy, with an exotic sweetness that feels modern without being cloying. The dry-down is where Yara earns its reputation: vanilla, musk and sandalwood settle into a skin scent that lasts hours and lingers on fabric well beyond that.
-
-  **Performance**
-  Longevity runs 6–8 hours on skin, with the opening projecting well for the first 2–3 hours before pulling closer. On clothing it holds through to the next day. Not a beast-mode fragrance — confidently noticeable in a way that works for the office, a night out, or anything in between.
-
-  **Fragrance profile**
-  - **Family:** Oriental Vanilla / Gourmand Floral
-  - **Top:** Orchid, Heliotrope, Tangerine
-  - **Heart:** Gourmand Accord, Tropical Fruits
-  - **Base:** Vanilla, Musk, Sandalwood
-  - **Season:** Spring / Summer / Year-round
-  - **Occasion:** Day or casual evening wear
+  <p>Yara is the fragrance that put Lattafa on the map for a generation of perfume lovers — and once you smell it, it's obvious why.</p>
+  <p>Released in 2020, it opens with a luminous blend of orchid, heliotrope and tangerine: soft, slightly powdery, and immediately appealing. The heart opens into gourmand accords and tropical fruits — warm and creamy rather than heavy, with an exotic sweetness that feels modern without being cloying. The dry-down is where Yara earns its reputation: vanilla, musk and sandalwood settle into a skin scent that lasts hours and lingers on fabric well beyond that.</p>
+  <p><strong>Performance</strong><br>Longevity runs 6–8 hours on skin, with the opening projecting well for the first 2–3 hours before pulling closer. On clothing it holds through to the next day. Not a beast-mode fragrance — confidently noticeable in a way that works for the office, a night out, or anything in between.</p>
+  <p><strong>Fragrance profile</strong></p>
+  <ul>
+    <li><strong>Family:</strong> Oriental Vanilla / Gourmand Floral</li>
+    <li><strong>Top:</strong> Orchid, Heliotrope, Tangerine</li>
+    <li><strong>Heart:</strong> Gourmand Accord, Tropical Fruits</li>
+    <li><strong>Base:</strong> Vanilla, Musk, Sandalwood</li>
+    <li><strong>Season:</strong> Spring / Summer / Year-round</li>
+    <li><strong>Occasion:</strong> Day or casual evening wear</li>
+  </ul>
 ysp_thoughts: |
-  Yara doesn't need a designer comparison — it earned its reputation on its own terms. Since 2020 it's become one of the most recognised feminine fragrances to come out of the Arabian perfume world, driven entirely by word of mouth and a composition that just works.
-
-  Sweet without being juvenile. Versatile enough for daily wear, distinctive enough to get compliments. At this price it's one of the easiest recommendations we make.
+  <p>Yara doesn't need a designer comparison — it earned its reputation on its own terms. Since 2020 it's become one of the most recognised feminine fragrances to come out of the Arabian perfume world, driven entirely by word of mouth and a composition that just works.</p>
+  <p>Sweet without being juvenile. Versatile enough for daily wear, distinctive enough to get compliments. At this price it's one of the easiest recommendations we make.</p>
 inspired_by_name: ""
 inspired_by_note: ""
 ebay_url: ""

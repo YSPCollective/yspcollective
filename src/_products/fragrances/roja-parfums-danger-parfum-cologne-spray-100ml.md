@@ -26,25 +26,11 @@ vegan: false
 image_main: /images/uploads/dangeredppourhommefront-_1.png
 gallery:
   - /images/uploads/5056663802265-2.png
-description_short: A powerhouse masculine from one of Britain's most celebrated
-  niche perfumers. Danger is bold, leather-forward, and unmistakably Roja — a
-  fragrance that commands attention without seeking it.
-description_full: Roja Parfums Danger Parfum Cologne opens with a sharp,
-  aromatic blast of citrus and spice before revealing its true character — a
-  rich, animalic heart of leather, tobacco, and dark florals that is distinctly,
-  unapologetically masculine. Roja Dove's compositions are known for their
-  complexity and depth, and Danger delivers both in abundance. The base of
-  woods, musks, and resins is seamlessly constructed, giving the dry-down a
-  warmth and authority that lingers effortlessly for 12+ hours. This is a
-  fragrance with genuine heritage and craft behind it — not a house chasing
-  trends but one setting them. Suited to cooler months, evening wear, and
-  occasions where presence matters.
-ysp_thoughts: Roja Parfums sits in a different league price-wise and Danger
-  justifies every penny of it. There's a confidence to this fragrance that's
-  rare — it knows exactly what it is and makes no concessions. We carry it
-  because it represents the ceiling of what masculine perfumery can be, and
-  having that reference point on the shelf matters. When someone asks us what
-  the best is, this is part of that answer.
+description_short: A powerhouse masculine from one of Britain's most celebrated niche perfumers. Danger is bold, leather-forward, and unmistakably Roja — a fragrance that commands attention without seeking it.
+description_full: |
+  <p>Roja Parfums Danger Parfum Cologne opens with a sharp, aromatic blast of citrus and spice before revealing its true character — a rich, animalic heart of leather, tobacco, and dark florals that is distinctly, unapologetically masculine. Roja Dove's compositions are known for their complexity and depth, and Danger delivers both in abundance. The base of woods, musks, and resins is seamlessly constructed, giving the dry-down a warmth and authority that lingers effortlessly for 12+ hours. This is a fragrance with genuine heritage and craft behind it — not a house chasing trends but one setting them. Suited to cooler months, evening wear, and occasions where presence matters.</p>
+ysp_thoughts: |
+  <p>Roja Parfums sits in a different league price-wise and Danger justifies every penny of it. There's a confidence to this fragrance that's rare — it knows exactly what it is and makes no concessions. We carry it because it represents the ceiling of what masculine perfumery can be, and having that reference point on the shelf matters. When someone asks us what the best is, this is part of that answer.</p>
 exclude_from_feed: true
 char_sweet: 2
 char_fresh: 2

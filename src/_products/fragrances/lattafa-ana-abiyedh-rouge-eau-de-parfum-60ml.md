@@ -29,32 +29,16 @@ origin: UAE
 launched: "2016"
 vegan: false
 image_main: /images/uploads/ana-abiyedh-rouge1.jpeg
-description_short: A warm, sweet and slightly salty composition of pear, caramel
-  and ambergris — one of the most complimented fragrances in the Lattafa range.
-  Loud, long-lasting and genuinely addictive.
-description_full: >-
-  Ana Abiyedh Rouge opens with a juicy, slightly tart burst of nashi pear,
-  kumquat and bergamot before quickly settling into its true character: warm
-  caramel and soft geranium in the heart, underpinned by a deep, salty-sweet
-  base of ambergris, oakmoss and musk. 
-
-
-  It's the kind of fragrance that announces itself, the projection is significant and the longevity consistently exceeds 8 hours on skin.
-
-   It's sweet but grounded, with that distinctive salty ambergris note preventing it from tipping into cloying territory. A small amount goes a long way.
-ysp_thoughts: >-
-  Ana Abiyedh Rouge sits in the same warm amber-saffron family as Maison Francis
-  Kurkdjian's Baccarat Rouge 540, one of the most recognisable and beloved
-  fragrances of the last decade, retailing at around €380. 
-
-
-  Rouge shares that same DNA: the sweet warmth, the salty-woody depth, the skin-close intimacy. It's not identical, it leans sweeter and fruitier, but the family resemblance is unmistakable, and people consistently report being asked what they're wearing. 
-
-
-  Reviews are divided on whether it's a close match or its own thing entirely, and we think that's actually the most honest way to put it: it's inspired by that world, but it has its own personality. 
-
-
-  Either way, it's been one of the most consistent sellers in the Lattafa range for years, and at this price point, the risk of trying it is basically zero.
+description_short: A warm, sweet and slightly salty composition of pear, caramel and ambergris — one of the most complimented fragrances in the Lattafa range. Loud, long-lasting and genuinely addictive.
+description_full: |
+  <p>Ana Abiyedh Rouge opens with a juicy, slightly tart burst of nashi pear, kumquat and bergamot before quickly settling into its true character: warm caramel and soft geranium in the heart, underpinned by a deep, salty-sweet base of ambergris, oakmoss and musk.</p>
+  <p>It's the kind of fragrance that announces itself — the projection is significant and the longevity consistently exceeds 8 hours on skin.</p>
+  <p>It's sweet but grounded, with that distinctive salty ambergris note preventing it from tipping into cloying territory. A small amount goes a long way.</p>
+ysp_thoughts: |
+  <p>Ana Abiyedh Rouge sits in the same warm amber-saffron family as Maison Francis Kurkdjian's Baccarat Rouge 540, one of the most recognisable and beloved fragrances of the last decade, retailing at around €380.</p>
+  <p>Rouge shares that same DNA: the sweet warmth, the salty-woody depth, the skin-close intimacy. It's not identical — it leans sweeter and fruitier, but the family resemblance is unmistakable, and people consistently report being asked what they're wearing.</p>
+  <p>Reviews are divided on whether it's a close match or its own thing entirely, and we think that's actually the most honest way to put it: it's inspired by that world, but it has its own personality.</p>
+  <p>Either way, it's been one of the most consistent sellers in the Lattafa range for years, and at this price point, the risk of trying it is basically zero.</p>
 inspired_by_name: "Maison Francis Kurkdjian Baccarat Rouge 540 "
 inspired_by_note: Shares the same warm amber-saffron-woody DNA, sweeter and
   fruitier with outstanding projection

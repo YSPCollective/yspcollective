@@ -31,31 +31,16 @@ vegan: false
 image_main: /images/uploads/kismet1.png
 gallery:
   - /images/uploads/kismet2.png
-description_short: A rich, dark gourmand of nutmeg and woody spice opening into
-  coffee, cacao and patchouli, settling into a warm vanilla and vetiver base.
-  Sophisticated, masculine and deeply addictive.
-description_full: >-
-  Kismet opens with a warm, spiced burst of nutmeg and woody notes, immediately
-  dark and intriguing. 
-
-
-  The heart is where it earns its reputation: coffee and cacao sit alongside patchouli and sandalwood, creating a rich gourmand depth that feels genuinely luxurious without tipping into sweetness. 
-
-
-  The dry-down brings vanilla and vetiver together in a smooth, earthy finish that anchors the fragrance beautifully and lingers for hours. It's a complex, layered composition that rewards patience, give it 20 minutes and it reveals itself fully.
-ysp_thoughts: >-
-  Kilian's Black Phantom is one of the most celebrated dark gourmands in niche
-  perfumery, coffee, rum, chocolate and vanilla in a composition that retails at
-  around €255. 
-
-
-  Kismet works in the same territory: dark, rich, coffee-forward, with a woody depth that gives it a more masculine edge than the Kilian. 
-
-
-  Several reviewers who own both consider Kismet the better daily wear, it's more grounded and less sweet, which makes it easier to reach for. 
-
-
-  Performance is consistently strong at 8+ hours, and it's one of those fragrances that draws genuine compliments without anyone being able to quite identify it. For the price, it's one of the most rewarding bottles in the Maison Alhambra range.
+description_short: A rich, dark gourmand of nutmeg and woody spice opening into coffee, cacao and patchouli, settling into a warm vanilla and vetiver base. Sophisticated, masculine and deeply addictive.
+description_full: |
+  <p>Kismet opens with a warm, spiced burst of nutmeg and woody notes, immediately dark and intriguing.</p>
+  <p>The heart is where it earns its reputation: coffee and cacao sit alongside patchouli and sandalwood, creating a rich gourmand depth that feels genuinely luxurious without tipping into sweetness.</p>
+  <p>The dry-down brings vanilla and vetiver together in a smooth, earthy finish that anchors the fragrance beautifully and lingers for hours. It's a complex, layered composition that rewards patience — give it 20 minutes and it reveals itself fully.</p>
+ysp_thoughts: |
+  <p>Kilian's Black Phantom is one of the most celebrated dark gourmands in niche perfumery — coffee, rum, chocolate and vanilla in a composition that retails at around €255.</p>
+  <p>Kismet works in the same territory: dark, rich, coffee-forward, with a woody depth that gives it a more masculine edge than the Kilian.</p>
+  <p>Several reviewers who own both consider Kismet the better daily wear — it's more grounded and less sweet, which makes it easier to reach for.</p>
+  <p>Performance is consistently strong at 8+ hours, and it's one of those fragrances that draws genuine compliments without anyone being able to quite identify it. For the price, it's one of the most rewarding bottles in the Maison Alhambra range.</p>
 inspired_by_name: Kilian Black Phantom
 inspired_by_note: Same dark coffee-chocolate-vanilla gourmand DNA, earthier and
   woodier, exceptional value

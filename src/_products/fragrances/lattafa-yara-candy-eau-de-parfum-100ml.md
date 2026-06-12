@@ -31,28 +31,15 @@ vegan: false
 image_main: /images/uploads/yaracandy1.jpeg
 gallery:
   - /images/uploads/yaracandy3.webp
-description_short: A fizzy, playful burst of green mandarin and blackcurrant
-  opening into a heart of strawberry candy and gardenia, finishing with warm
-  vanilla syrup and amber. Sweet, fun and surprisingly long-lasting.
-description_full: >-
-  Yara Candy opens with a bright, juicy pop of green mandarin and blackcurrant,
-  fresh and slightly tart, giving it an immediate energy that stops it becoming
-  cloying. 
-
-
-  The heart is where the name earns its place: a fizzy strawberry candy note sits alongside soft gardenia, creating something genuinely fun without being one-dimensional. 
-
-
-  The dry-down softens everything into a warm, creamy vanilla and amber base that lingers on the skin for hours. Multiple wearers report 10–12 hours longevity from a single application. It's a mood in a bottle, happy, carefree and completely wearable.
-ysp_thoughts: >-
-  Yara was already one of our bestsellers. Yara Candy is its more playful,
-  fruity sister, and if anything, the longevity is even better. 
-
-
-  Where Yara leans warm and powdery, Candy goes brighter and more gourmand, with that distinctive strawberry fizz note that makes it genuinely addictive. 
-
-
-  It's the kind of fragrance that gets compliments without anyone being able to quite place it. Perfect for anyone who loved the original Yara and wants something a little more summery, or for anyone new to the Lattafa world who wants an easy, crowd-pleasing entry point. At this price for this performance, it's a straightforward yes.
+description_short: A fizzy, playful burst of green mandarin and blackcurrant opening into a heart of strawberry candy and gardenia, finishing with warm vanilla syrup and amber. Sweet, fun and surprisingly long-lasting.
+description_full: |
+  <p>Yara Candy opens with a bright, juicy pop of green mandarin and blackcurrant, fresh and slightly tart, giving it an immediate energy that stops it becoming cloying.</p>
+  <p>The heart is where the name earns its place: a fizzy strawberry candy note sits alongside soft gardenia, creating something genuinely fun without being one-dimensional.</p>
+  <p>The dry-down softens everything into a warm, creamy vanilla and amber base that lingers on the skin for hours. Multiple wearers report 10–12 hours longevity from a single application. It's a mood in a bottle — happy, carefree and completely wearable.</p>
+ysp_thoughts: |
+  <p>Yara was already one of our bestsellers. Yara Candy is its more playful, fruity sister, and if anything, the longevity is even better.</p>
+  <p>Where Yara leans warm and powdery, Candy goes brighter and more gourmand, with that distinctive strawberry fizz note that makes it genuinely addictive.</p>
+  <p>It's the kind of fragrance that gets compliments without anyone being able to quite place it. Perfect for anyone who loved the original Yara and wants something a little more summery, or for anyone new to the Lattafa world who wants an easy, crowd-pleasing entry point. At this price for this performance, it's a straightforward yes.</p>
 gtin: "6290360599168"
 exclude_from_feed: false
 ---

@@ -32,33 +32,16 @@ image_main: /images/uploads/rayhaan-aquatica-100ml-eau-de-parfum-vista-lateral.p
 gallery:
   - /images/uploads/rayhaan-aquatica-detalle-botella-perfume-acuatico.png
   - /images/uploads/rayhaan-aquatica-perfume-unisex-100ml-eau-de-parfum-frontal.png
-description_short: >
-  A sun-soaked citrus gourmand opening with zesty lime and coconut milk, drying
-  down to a boozy, creamy tropical finish. Fresh, warm, and unmistakably summery
-  — 6–8 hours longevity on skin.
-description_full: >-
-  Rayhaan Aquatica opens with a sparkling burst of bergamot, lime and mandarin,
-  softened immediately by creamy coconut milk, the kind of opening that makes
-  you feel like you've just arrived somewhere warm. 
-
-
-  As it develops, the heart introduces sugarcane, jasmine, gardenia and hibiscus, lending a lightly floral tropical character without ever tipping into feminine territory. 
-
-
-  The dry-down is where it earns its reputation: rum, tonka bean, musk and patchouli settle into a smooth, boozy, skin-close finish that lingers for 6–8 hours.
-ysp_thoughts: >-
-  We stocked Aquatica because it solves a very specific problem: Creed Virgin
-  Island Water is one of the most loved summer fragrances in the world, and it
-  retails for around €350. 
-
-
-  Aquatica captures the same DNA. The lime-coconut-rum cocktail, the tropical warmth, the creamy dry-down,  at a fraction of the price. 
-
-
-  It's not a lazy copy; Rayhaan have made something that stands on its own with arguably better projection and comparable longevity. 
-
-
-  If you've ever smelled Virgin Island Water and balked at the price tag, this is the one to reach for. Perfect for summer, holidays, beach days, or any time you want to smell like you're somewhere better than you are.
+description_short: A sun-soaked citrus gourmand opening with zesty lime and coconut milk, drying down to a boozy, creamy tropical finish. Fresh, warm, and unmistakably summery — 6–8 hours longevity on skin.
+description_full: |
+  <p>Rayhaan Aquatica opens with a sparkling burst of bergamot, lime and mandarin, softened immediately by creamy coconut milk — the kind of opening that makes you feel like you've just arrived somewhere warm.</p>
+  <p>As it develops, the heart introduces sugarcane, jasmine, gardenia and hibiscus, lending a lightly floral tropical character without ever tipping into feminine territory.</p>
+  <p>The dry-down is where it earns its reputation: rum, tonka bean, musk and patchouli settle into a smooth, boozy, skin-close finish that lingers for 6–8 hours.</p>
+ysp_thoughts: |
+  <p>We stocked Aquatica because it solves a very specific problem: Creed Virgin Island Water is one of the most loved summer fragrances in the world, and it retails for around €350.</p>
+  <p>Aquatica captures the same DNA — the lime-coconut-rum cocktail, the tropical warmth, the creamy dry-down — at a fraction of the price.</p>
+  <p>It's not a lazy copy; Rayhaan have made something that stands on its own with arguably better projection and comparable longevity.</p>
+  <p>If you've ever smelled Virgin Island Water and balked at the price tag, this is the one to reach for. Perfect for summer, holidays, beach days, or any time you want to smell like you're somewhere better than you are.</p>
 inspired_by_name: "Creed Virgin Island Water "
 inspired_by_note: Same lime-coconut-rum DNA at a fraction of the price, with stronger projection
 gtin: "6297001571330 "
