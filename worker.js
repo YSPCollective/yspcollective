@@ -1232,7 +1232,17 @@ async function handleCheckout(request, env) {
     }
   }
 
-  const lineItems = items.map((item) => {
+  // Look up authoritative priceIds from KV — overrides anything the client sends
+  const lineItems = await Promise.all(items.map(async (item) => {
+    const slug = item.id || item.slug;
+    if (slug && env.YSP_USERS) {
+      const kvRaw = await env.YSP_USERS.get(`price:${slug}`);
+      if (kvRaw) {
+        const { priceId } = JSON.parse(kvRaw);
+        if (priceId) return { price: priceId, quantity: item.quantity || 1 };
+      }
+    }
+    // Fall back to client-provided priceId, then dynamic price_data
     if (item.priceId) {
       return { price: item.priceId, quantity: item.quantity || 1 };
     }
@@ -1241,18 +1251,28 @@ async function handleCheckout(request, env) {
         currency: "eur",
         product_data: {
           name: item.name || "Product",
-          metadata: { slug: item.id || item.slug || "" }
+          metadata: { slug: slug || "" }
         },
         unit_amount: Math.round((item.price || 0) * 100)
       },
       quantity: item.quantity || 1
     };
-  });
+  }));
 
-  // Select shipping rate based on cart total
-  const cartTotal = typeof subtotal === "number"
-    ? subtotal
-    : items.reduce((sum, item) => sum + ((item.price || 0) * (item.quantity || 1)), 0);
+  // Compute cart total from KV prices (authoritative) for shipping threshold
+  let cartTotal = 0;
+  for (const item of items) {
+    const slug = item.id || item.slug;
+    let unitPrice = item.price || 0;
+    if (slug && env.YSP_USERS) {
+      const kvRaw = await env.YSP_USERS.get(`price:${slug}`);
+      if (kvRaw) {
+        const kv = JSON.parse(kvRaw);
+        if (kv.price) unitPrice = parseFloat(kv.price) || unitPrice;
+      }
+    }
+    cartTotal += unitPrice * (item.quantity || 1);
+  }
 
   const origin = request.headers.get("Origin") || "https://yspcollective.com";
 
@@ -1748,6 +1768,12 @@ async function handleSyncProduct(request, env) {
     const priceRes = await fetch("https://api.stripe.com/v1/prices", { method: "POST", headers, body: priceParams.toString() });
     const priceData = await priceRes.json();
     if (!priceRes.ok) return json({ error: priceData.error?.message || "Price create failed" }, 502);
+
+    // Store the authoritative priceId and price in KV so checkout can enforce it instantly
+    if (slug && env.YSP_USERS) {
+      await env.YSP_USERS.put(`price:${slug}`, JSON.stringify({ priceId: priceData.id, price: String(price), productId }));
+    }
+
     return json({ productId, priceId: priceData.id });
   } catch (err) {
     return json({ error: err.message }, 500);
