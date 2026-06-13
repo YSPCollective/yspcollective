@@ -10,6 +10,7 @@ const path = require('path');
 
 const WORKER_URL = 'https://ysp-ai-proxy.rapid-shadow-439d.workers.dev';
 const PRICES_FILE = path.join(__dirname, 'src/_data/stripe_prices.json');
+const AUTH_SECRET = process.env.AUTH_SECRET || 'ysp-default-secret';
 
 async function syncProduct(product) {
   try {
@@ -95,7 +96,32 @@ async function syncAllProducts() {
   // Save prices file
   fs.mkdirSync(path.dirname(PRICES_FILE), { recursive: true });
   fs.writeFileSync(PRICES_FILE, JSON.stringify(results, null, 2));
-  console.log(`\n✓ Stripe prices saved to ${PRICES_FILE}\n`);
+  console.log(`\n✓ Stripe prices saved to ${PRICES_FILE}`);
+
+  // Seed all prices into KV so checkout enforcement covers every product
+  try {
+    const seedItems = Object.entries(results)
+      .filter(([, v]) => v.priceId)
+      .map(([slug, v]) => ({ slug, priceId: v.priceId, price: v.price, productId: v.productId || "" }));
+    const seedRes = await fetch(`${WORKER_URL}/admin/seed-prices`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${AUTH_SECRET}`,
+        'Origin': 'https://yspcollective.com'
+      },
+      body: JSON.stringify({ items: seedItems })
+    });
+    const seedData = await seedRes.json();
+    if (seedData.ok) {
+      console.log(`✓ KV price cache seeded: ${seedData.seeded} products\n`);
+    } else {
+      console.warn(`⚠ KV seed failed: ${JSON.stringify(seedData)}\n`);
+    }
+  } catch (err) {
+    console.warn(`⚠ KV seed error: ${err.message}\n`);
+  }
+
   return results;
 }
 

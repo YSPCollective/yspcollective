@@ -67,6 +67,8 @@ async function verifyStripeSignature(payload, sigHeader, secret) {
   const timestamp = parts.find((p) => p.startsWith("t="))?.slice(2);
   const signature = parts.find((p) => p.startsWith("v1="))?.slice(3);
   if (!timestamp || !signature) return false;
+  // Reject webhooks older than 5 minutes to prevent replay attacks
+  if (Math.abs(Date.now() / 1000 - parseInt(timestamp)) > 300) return false;
   const signedPayload = `${timestamp}.${payload}`;
   const encoder = new TextEncoder();
   const key = await crypto.subtle.importKey(
@@ -1063,6 +1065,7 @@ export default {
     if (url.pathname === "/admin/stock" && method === "GET") return handleAdminGetAllStock(request, env);
     if (url.pathname === "/admin/stock/set" && method === "POST") return handleAdminSetStock(request, env);
     if (url.pathname === "/admin/stock/bulk" && method === "POST") return handleAdminBulkSetStock(request, env);
+    if (url.pathname === "/admin/seed-prices" && method === "POST") return handleAdminSeedPrices(request, env);
     return json({ error: "Not found" }, 404);
   },
 
@@ -1878,4 +1881,25 @@ async function handleAdminBulkSetStock(request, env) {
     updated++;
   }
   return json({ ok: true, updated });
+}
+
+async function handleAdminSeedPrices(request, env) {
+  const authHeader = request.headers.get("Authorization") || "";
+  const authSecret = env.AUTH_SECRET || "ysp-default-secret";
+  if (authHeader !== `Bearer ${authSecret}`) return json({ error: "Unauthorised" }, 401);
+  let body;
+  try { body = await request.json(); } catch (_) { return json({ error: "Invalid JSON" }, 400); }
+  const { items } = body;
+  if (!Array.isArray(items)) return json({ error: "items array required" }, 400);
+  let seeded = 0;
+  for (const item of items) {
+    if (!item.slug || !item.priceId) continue;
+    await env.YSP_USERS.put(`price:${item.slug}`, JSON.stringify({
+      priceId: item.priceId,
+      price: String(item.price || "0"),
+      productId: item.productId || ""
+    }));
+    seeded++;
+  }
+  return json({ ok: true, seeded });
 }
