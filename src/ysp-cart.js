@@ -105,6 +105,7 @@
           })),
           success_url: window.location.origin + '/checkout-success.html?session_id={CHECKOUT_SESSION_ID}',
           cancel_url: window.location.href,
+          lang: window.YSP_LANG ? window.YSP_LANG.get() : 'en',
           subtotal: getTotal()
         })
       });
