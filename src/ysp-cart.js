@@ -46,12 +46,13 @@
   }
 
   /* ─── CART OPERATIONS ───────────────────────────────────────────────── */
-  function addItem({ id, name, price, image, quantity = 1 }) {
+  function addItem({ id, name, price, priceId, image, quantity = 1 }) {
     const existing = cart.find(i => i.id === id);
     if (existing) {
       existing.quantity += quantity;
+      if (priceId) existing.priceId = priceId;
     } else {
-      cart.push({ id, name, price: parseFloat(price), image: image || '', quantity });
+      cart.push({ id, name, price: parseFloat(price), priceId: priceId || undefined, image: image || '', quantity });
     }
     saveCart();
     renderItems();
@@ -98,6 +99,7 @@
             id: item.id,
             name: item.name,
             price: item.price,
+            priceId: item.priceId || undefined,
             image: item.image,
             quantity: item.quantity
           })),
@@ -504,12 +506,12 @@
 
     /** Called by data-attribute buttons on product pages */
     addFromButton(btn) {
-      const { id, name, price, image } = btn.dataset;
+      const { id, name, price, priceId, image } = btn.dataset;
       if (!id || !name || !price) {
         console.warn('[YSP Cart] Button missing data-id, data-name or data-price');
         return;
       }
-      addItem({ id, name, price: parseFloat(price), image: image || '' });
+      addItem({ id, name, price: parseFloat(price), priceId: priceId || undefined, image: image || '' });
     }
   };
 

@@ -1059,6 +1059,10 @@ export default {
     if (url.pathname.startsWith("/reviews/") && method === "GET") return handleReviewsGet(url, env);
     if (url.pathname === "/reviews/submit" && method === "POST") return handleReviewSubmit(request, env);
     if (url.pathname === "/reviews/approve" && method === "POST") return handleReviewApprove(request, env);
+    if (url.pathname.startsWith("/stock/") && method === "GET") return handleGetStock(url, env);
+    if (url.pathname === "/admin/stock" && method === "GET") return handleAdminGetAllStock(request, env);
+    if (url.pathname === "/admin/stock/set" && method === "POST") return handleAdminSetStock(request, env);
+    if (url.pathname === "/admin/stock/bulk" && method === "POST") return handleAdminBulkSetStock(request, env);
     return json({ error: "Not found" }, 404);
   },
 
@@ -1235,7 +1239,10 @@ async function handleCheckout(request, env) {
     return {
       price_data: {
         currency: "eur",
-        product_data: { name: item.name || "Product" },
+        product_data: {
+          name: item.name || "Product",
+          metadata: { slug: item.id || item.slug || "" }
+        },
         unit_amount: Math.round((item.price || 0) * 100)
       },
       quantity: item.quantity || 1
@@ -1787,4 +1794,62 @@ async function handleChat(request, env) {
   } catch (err) {
     return json({ error: "Internal error" }, 500);
   }
+}
+
+// ─── STOCK ────────────────────────────────────────────────────────────────────
+
+async function handleGetStock(url, env) {
+  const slug = url.pathname.slice("/stock/".length);
+  if (!slug) return json({ error: "slug required" }, 400);
+  const stockStr = await env.YSP_USERS.get(`stock:${slug}`);
+  if (stockStr === null) return json({ stock: null });
+  return json({ stock: parseInt(stockStr) || 0 });
+}
+
+async function handleAdminGetAllStock(request, env) {
+  const authHeader = request.headers.get("Authorization") || "";
+  const authSecret = env.AUTH_SECRET || "ysp-default-secret";
+  if (authHeader !== `Bearer ${authSecret}`) return json({ error: "Unauthorised" }, 401);
+  const list = await env.YSP_USERS.list({ prefix: "stock:" });
+  const stock = {};
+  for (const key of list.keys) {
+    const slug = key.name.slice("stock:".length);
+    const val = await env.YSP_USERS.get(key.name);
+    stock[slug] = parseInt(val) || 0;
+  }
+  return json({ stock });
+}
+
+async function handleAdminSetStock(request, env) {
+  const authHeader = request.headers.get("Authorization") || "";
+  const authSecret = env.AUTH_SECRET || "ysp-default-secret";
+  if (authHeader !== `Bearer ${authSecret}`) return json({ error: "Unauthorised" }, 401);
+  let body;
+  try { body = await request.json(); } catch (_) { return json({ error: "Invalid JSON" }, 400); }
+  const { slug, stock } = body;
+  if (!slug) return json({ error: "slug required" }, 400);
+  const qty = parseInt(stock);
+  if (isNaN(qty) || qty < 0) return json({ error: "stock must be a non-negative integer" }, 400);
+  await env.YSP_USERS.put(`stock:${slug}`, String(qty));
+  await env.YSP_USERS.put(`stock_initial:${slug}`, String(qty));
+  return json({ ok: true, slug, stock: qty });
+}
+
+async function handleAdminBulkSetStock(request, env) {
+  const authHeader = request.headers.get("Authorization") || "";
+  const authSecret = env.AUTH_SECRET || "ysp-default-secret";
+  if (authHeader !== `Bearer ${authSecret}`) return json({ error: "Unauthorised" }, 401);
+  let body;
+  try { body = await request.json(); } catch (_) { return json({ error: "Invalid JSON" }, 400); }
+  const { items } = body;
+  if (!Array.isArray(items)) return json({ error: "items array required" }, 400);
+  let updated = 0;
+  for (const item of items) {
+    if (!item.slug || typeof item.stock !== "number") continue;
+    const qty = Math.max(0, Math.round(item.stock));
+    await env.YSP_USERS.put(`stock:${item.slug}`, String(qty));
+    await env.YSP_USERS.put(`stock_initial:${item.slug}`, String(qty));
+    updated++;
+  }
+  return json({ ok: true, updated });
 }

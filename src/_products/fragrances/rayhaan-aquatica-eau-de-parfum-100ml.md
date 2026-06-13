@@ -1,7 +1,7 @@
 ---
 name: Rayhaan Aquatica Eau de Parfum 100ml
 slug: rayhaan-aquatica-100ml
-price: "34.90"
+price: "39.90"
 brand: Rayhaan
 gender: Men
 size: 100ml
