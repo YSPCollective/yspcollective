@@ -1,14 +1,15 @@
 ---
 name: Fragrance World Classy Chic Girl Eau de Parfum 90ml
 slug: fragrance-world-classy-chic-girl-eau-de-parfum-90ml
-price: ""
-brand: Other
+price: "19.90"
+brand: Fragrance World
 gender: Women
 size: 90ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
-stock_status: in_stock
+stock_status: on_order
 stock_quantity: 0
+expected_date: June 2026
 featured: false
 published: true
 date_added: 2026-06-17
@@ -28,10 +29,19 @@ projection: Moderate
 origin: UAE
 launched: "2023"
 vegan: false
-image_main: ""
-description_short: The bold dual-character scent made famous by Carolina Herrera Good Girl, reimagined by Fragrance World at an accessible price. Almond and coffee over a lush tuberose and jasmine heart, with an addictive tonka, cacao and praline dry-down.
+image_main: /images/uploads/fragrance-world-classy-chic-1.webp
+gallery:
+  - /images/uploads/fragrance-world-classy-chic-1.webp
+  - /images/uploads/fragrance-world-classy-chic-2.webp
+description_short: The bold dual-character scent made famous by Carolina Herrera
+  Good Girl, reimagined by Fragrance World at an accessible price. Almond and
+  coffee over a lush tuberose and jasmine heart, with an addictive tonka, cacao
+  and praline dry-down.
 description_full: >
-  <p>Classy Chic Girl is built around one of the most recognisable note pyramids in modern perfumery — the same DNA that made Carolina Herrera Good Girl a global bestseller. If you love that fragrance but not the price tag, this is the conversation you've been waiting to have.</p>
+  <p>Classy Chic Girl is built around one of the most recognisable note pyramids
+  in modern perfumery — the same DNA that made Carolina Herrera Good Girl a
+  global bestseller. If you love that fragrance but not the price tag, this is
+  the conversation you've been waiting to have.</p>
 
   <p>The opening is confident and distinctive: bitter almond and roasted coffee cut through bright bergamot and lemon, creating that instantly recognisable contrast of edgy darkness and fresh citrus. It doesn't smell cheap — it smells deliberate.</p>
 
@@ -41,10 +51,14 @@ description_full: >
 
   <p>A standout choice for evenings, autumn wear, or anyone who wants to smell expensive without paying designer prices.</p>
 ysp_thoughts: >
-  <p>Classy Chic Girl sits in one of our favourite value spots — a note pyramid that the fragrance community knows and loves, at a price that makes it an easy yes. The Good Girl DNA (tuberose + tonka + cacao) is very much present and accounted for.</p>
+  <p>Classy Chic Girl sits in one of our favourite value spots — a note pyramid
+  that the fragrance community knows and loves, at a price that makes it an easy
+  yes. The Good Girl DNA (tuberose + tonka + cacao) is very much present and
+  accounted for.</p>
 
   <p>We'd recommend this to anyone looking for a confident, evening-ready feminine that won't disappear after an hour. Bottle design is clean and presentable — perfectly gift-worthy.</p>
 inspired_by_name: Carolina Herrera Good Girl
-inspired_by_note: Same iconic note pyramid — almond and coffee opening, tuberose and jasmine heart, tonka and cacao dry-down — at a fraction of the price.
+inspired_by_note: Same iconic note pyramid — almond and coffee opening, tuberose
+  and jasmine heart, tonka and cacao dry-down — at a fraction of the price.
 exclude_from_feed: false
 ---
