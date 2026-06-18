@@ -7,9 +7,9 @@ gender: Men
 size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
-stock_status: sold_out
-stock_quantity: 0
-featured: true
+stock_status: last_one
+stock_quantity: 1
+featured: false
 published: true
 date_added: 2026-06-02
 fragrance_family: Citrus Gourmand
@@ -56,5 +56,5 @@ ysp_thoughts: >
 inspired_by_name: "Creed Virgin Island Water "
 inspired_by_note: Same lime-coconut-rum DNA at a fraction of the price, with stronger projection
 gtin: "6297001571330 "
-exclude_from_feed: false
+exclude_from_feed: true
 ---
