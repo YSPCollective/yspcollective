@@ -4,12 +4,31 @@ layout: base.njk
 
 <style>
   .post-hero {
-    padding: calc(var(--nav-height, 80px) + 3rem) 3.5rem 3rem;
+    padding: calc(var(--nav-height, 80px) + 4rem) 3.5rem 4rem;
     background: var(--black);
     position: relative; overflow: hidden;
+    min-height: 420px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .post-hero-bg {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover; object-position: center;
+    display: block;
+  }
+  .post-hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.35) 0%,
+      rgba(0,0,0,0.55) 50%,
+      rgba(0,0,0,0.82) 100%
+    );
+  }
+  .post-hero-content {
+    position: relative; z-index: 1;
   }
   .post-hero::after {
-    content: ''; position: absolute; top: 0; right: 0;
+    content: ''; position: absolute; top: 0; right: 0; z-index: 2;
     width: 1px; height: 100%;
     background: linear-gradient(to bottom, transparent, rgba(200,168,122,0.25), transparent);
   }
@@ -37,14 +56,6 @@ layout: base.njk
   }
   .post-meta-divider { opacity: 0.3; }
 
-  .post-hero-img {
-    aspect-ratio: 21/9;
-    overflow: hidden; position: relative;
-    max-height: 520px;
-  }
-  .post-hero-img img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-  }
 
   .post-layout {
     display: grid;
@@ -205,35 +216,34 @@ layout: base.njk
     .post-sidebar { position: static; }
   }
   @media (max-width: 768px) {
-    .post-hero { padding: calc(var(--nav-height, 80px) + 2rem) 1.5rem 2rem; }
+    .post-hero { padding: calc(var(--nav-height, 80px) + 2.5rem) 1.5rem 2.5rem; min-height: 340px; }
     .post-layout { padding: 3rem 1.5rem 4rem; }
     .post-nav-item { padding: 1.5rem; }
-    .post-hero-img { aspect-ratio: 4/3; }
   }
 </style>
 
 <article>
   <header class="post-hero">
-    <div class="post-breadcrumb">
-      <a href="/">Home</a> <span>›</span>
-      <a href="/blog.html">Blog</a> <span>›</span>
-      <span>{{ category_label or category }}</span>
-    </div>
-    <p class="post-cat">{{ category_label or category }}</p>
-    <h1 class="post-title">{{ title }}</h1>
-    <div class="post-meta">
-      <span>{{ date | date("d MMMM yyyy") }}</span>
-      <span class="post-meta-divider">·</span>
-      <span>{{ read_time or '5' }} min read</span>
-      {% if author %}<span class="post-meta-divider">·</span><span>By {{ author }}</span>{% endif %}
+    {% if image %}
+    <img class="post-hero-bg" src="{{ image }}" alt="">
+    <div class="post-hero-overlay"></div>
+    {% endif %}
+    <div class="post-hero-content">
+      <div class="post-breadcrumb">
+        <a href="/">Home</a> <span>›</span>
+        <a href="/blog.html">Blog</a> <span>›</span>
+        <span>{{ category_label or category }}</span>
+      </div>
+      <p class="post-cat">{{ category_label or category }}</p>
+      <h1 class="post-title">{{ title }}</h1>
+      <div class="post-meta">
+        <span>{{ date | date("d MMMM yyyy") }}</span>
+        <span class="post-meta-divider">·</span>
+        <span>{{ read_time or '5' }} min read</span>
+        {% if author %}<span class="post-meta-divider">·</span><span>By {{ author }}</span>{% endif %}
+      </div>
     </div>
   </header>
-
-  {% if image %}
-  <div class="post-hero-img">
-    <img src="{{ image }}" alt="{{ title }}">
-  </div>
-  {% endif %}
 
   <div class="post-layout">
     <div class="post-body">

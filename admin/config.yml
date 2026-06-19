@@ -335,7 +335,7 @@ collections:
       - { label: "Category Label", name: "category_label", widget: "string", hint: "Display label e.g. 'Arabian Perfume'" }
       - { label: "Author", name: "author", widget: "string", default: "YSP Collective", required: false }
       - { label: "Read Time (minutes)", name: "read_time", widget: "number", default: 5, required: false }
-      - { label: "Hero Image", name: "image", widget: "image", required: false, hint: "Recommended 1200x630px" }
+      - { label: "Hero Image", name: "image", widget: "image", required: false, hint: "Recommended 1600x900px (16:9) or wider. Image fills the header — ensure the main subject is centred." }
       - label: "Post Images (Gallery)"
         name: "gallery"
         widget: "list"
