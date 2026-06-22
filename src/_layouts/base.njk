@@ -13,6 +13,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
   <meta name="theme-color" content="#1a1916">
   <link rel="canonical" href="{{ canonical or 'https://yspcollective.com/' }}">
+  {% if product and product.exclude_from_feed %}<meta name="robots" content="noindex, nofollow">{% endif %}
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

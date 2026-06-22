@@ -1933,7 +1933,7 @@ async function handleSubscribe(request, env) {
 
 async function handleReviewsPending(request, env) {
   const authHeader = request.headers.get("Authorization") || "";
-  const authSecret = env.AUTH_SECRET || "ysp-default-secret";
+  const authSecret = env.AUTH_SECRET;
   if (authHeader !== `Bearer ${authSecret}`) return json({ error: "Unauthorised" }, 401);
   try {
     const list = await env.YSP_USERS.list({ prefix: "review:pending:" });
@@ -2050,7 +2050,7 @@ async function handleReviewSubmit(request, env) {
 
 async function handleReviewApprove(request, env) {
   const authHeader = request.headers.get("Authorization") || "";
-  const authSecret = env.AUTH_SECRET || "ysp-default-secret";
+  const authSecret = env.AUTH_SECRET;
   if (authHeader !== `Bearer ${authSecret}`) return json({ error: "Unauthorised" }, 401);
 
   let body;
@@ -2153,7 +2153,7 @@ async function handleRegister(request, env) {
   await env.YSP_USERS.put(`user:${userId}`, JSON.stringify(user));
   await env.YSP_USERS.put(emailKey, userId);
 
-  const token = await generateToken(userId, env.AUTH_SECRET || "ysp-default-secret");
+  const token = await generateToken(userId, env.AUTH_SECRET);
   const session = { userId, expires: Date.now() + 30 * 24 * 60 * 60 * 1000 };
   await env.YSP_USERS.put(`session:${token}`, JSON.stringify(session), { expirationTtl: 30 * 24 * 60 * 60 });
   return json({ token, user: { userId, email: user.email, firstName, lastName: user.lastName, profileComplete: false } });
@@ -2179,7 +2179,7 @@ async function handleLogin(request, env) {
   const passwordHash = await hashPassword(password);
   if (passwordHash !== user.passwordHash) return json({ error: "Invalid email or password" }, 401);
 
-  const token = await generateToken(userId, env.AUTH_SECRET || "ysp-default-secret");
+  const token = await generateToken(userId, env.AUTH_SECRET);
   const session = { userId, expires: Date.now() + 30 * 24 * 60 * 60 * 1000 };
   await env.YSP_USERS.put(`session:${token}`, JSON.stringify(session), { expirationTtl: 30 * 24 * 60 * 60 });
   return json({ token, user: { userId: user.userId, email: user.email, firstName: user.firstName, lastName: user.lastName, profileComplete: user.profileComplete, interests: user.interests, fragrancePrefs: user.fragrancePrefs, beautyPrefs: user.beautyPrefs, createdAt: user.createdAt || null } });
@@ -2382,7 +2382,7 @@ async function handleGetStock(url, env) {
 
 async function handleAdminGetAllStock(request, env) {
   const authHeader = request.headers.get("Authorization") || "";
-  const authSecret = env.AUTH_SECRET || "ysp-default-secret";
+  const authSecret = env.AUTH_SECRET;
   if (authHeader !== `Bearer ${authSecret}`) return json({ error: "Unauthorised" }, 401);
   const list = await env.YSP_USERS.list({ prefix: "stock:" });
   const stock = {};
@@ -2396,7 +2396,7 @@ async function handleAdminGetAllStock(request, env) {
 
 async function handleAdminSetStock(request, env) {
   const authHeader = request.headers.get("Authorization") || "";
-  const authSecret = env.AUTH_SECRET || "ysp-default-secret";
+  const authSecret = env.AUTH_SECRET;
   if (authHeader !== `Bearer ${authSecret}`) return json({ error: "Unauthorised" }, 401);
   let body;
   try { body = await request.json(); } catch (_) { return json({ error: "Invalid JSON" }, 400); }
@@ -2411,7 +2411,7 @@ async function handleAdminSetStock(request, env) {
 
 async function handleAdminBulkSetStock(request, env) {
   const authHeader = request.headers.get("Authorization") || "";
-  const authSecret = env.AUTH_SECRET || "ysp-default-secret";
+  const authSecret = env.AUTH_SECRET;
   if (authHeader !== `Bearer ${authSecret}`) return json({ error: "Unauthorised" }, 401);
   let body;
   try { body = await request.json(); } catch (_) { return json({ error: "Invalid JSON" }, 400); }
@@ -2430,7 +2430,7 @@ async function handleAdminBulkSetStock(request, env) {
 
 async function handleAdminSeedPrices(request, env) {
   const authHeader = request.headers.get("Authorization") || "";
-  const authSecret = env.AUTH_SECRET || "ysp-default-secret";
+  const authSecret = env.AUTH_SECRET;
   if (authHeader !== `Bearer ${authSecret}`) return json({ error: "Unauthorised" }, 401);
   let body;
   try { body = await request.json(); } catch (_) { return json({ error: "Invalid JSON" }, 400); }

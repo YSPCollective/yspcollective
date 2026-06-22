@@ -1,20 +1,17 @@
 /**
  * seed-stock.js
  *
- * Reads all product markdown files and seeds initial stock counts via the
- * Worker's /admin/stock/bulk endpoint.
+ * Reads all product markdown files and syncs stock_quantity to the Worker KV
+ * via the /admin/stock/bulk endpoint. Run automatically by GitHub Actions on
+ * every push to main, making the CMS the single source of truth for stock.
  *
  * Usage:
- *   node scripts/seed-stock.js --token <AUTH_SECRET> [--default <qty>] [--dry-run]
+ *   node scripts/seed-stock.js --token <AUTH_SECRET> [--dry-run] [--force]
  *
  * Options:
  *   --token   Your AUTH_SECRET (required). Find it in Cloudflare Worker env vars.
- *   --default Stock count to set for each product (default: 1).
  *   --dry-run Print what would be sent without calling the API.
- *
- * Products with stock_status: sold_out in their frontmatter are seeded at 0.
- * Products already in KV are NOT overwritten (use --force to override).
- *   --force   Overwrite existing KV stock entries.
+ *   --force   Overwrite existing KV entries (always used in CI).
  */
 
 const fs   = require('fs');
@@ -30,10 +27,9 @@ function getArg(name) {
   const i = args.indexOf(name);
   return i !== -1 ? args[i + 1] : null;
 }
-const token      = getArg('--token');
-const defaultQty = parseInt(getArg('--default') || '1', 10);
-const dryRun     = args.includes('--dry-run');
-const force      = args.includes('--force');
+const token  = getArg('--token');
+const dryRun = args.includes('--dry-run');
+const force  = args.includes('--force');
 
 if (!token && !dryRun) {
   console.error('Error: --token is required (your AUTH_SECRET).');
@@ -71,8 +67,8 @@ function collectSlugs() {
       if (data.published === false) continue;
       const slug = data.slug || file.replace('.md', '');
       if (!slug) continue;
-      const isSoldOut = data.stock_status === 'sold_out';
-      items.push({ slug, stock: isSoldOut ? 0 : defaultQty, soldOut: isSoldOut });
+      const stock = parseInt(data.stock_quantity) || 0;
+      items.push({ slug, stock });
     }
   }
   return items;

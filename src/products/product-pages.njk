@@ -1559,41 +1559,4 @@ permalink: "products/{{ product.slug }}.html"
   // Kick off
   loadReviews();
 })();
-
-// ── LIVE STOCK BADGE ──────────────────────────────────────────────────────────
-(function() {
-  const slug = '{{ product.slug }}';
-  if (!slug) return;
-  fetch('https://ysp-ai-proxy.rapid-shadow-439d.workers.dev/stock/' + slug)
-    .then(function(r) { return r.ok ? r.json() : null; })
-    .then(function(data) {
-      if (!data || data.stock === null) return;
-      const stock = data.stock;
-      const ctaWrap = document.querySelector('.product-cta');
-      if (!ctaWrap) return;
-      const existing = ctaWrap.querySelector('.low-stock-notice');
-      if (existing) existing.remove();
-      const addBtn = document.getElementById('btn-add-to-cart');
-      const buyBtn = document.getElementById('btn-buy-now');
-      if (stock === 0) {
-        if (addBtn) { addBtn.disabled = true; addBtn.textContent = 'Sold Out'; addBtn.classList.add('btn-sold-out'); }
-        if (buyBtn) { buyBtn.disabled = true; buyBtn.textContent = 'Sold Out'; buyBtn.classList.add('btn-sold-out'); }
-      } else {
-        const notice = document.createElement('span');
-        notice.className = 'low-stock-notice';
-        if (stock === 1) {
-          notice.className += ' stock-last';
-          notice.textContent = '🔴 Last one in stock!';
-        } else if (stock <= 5) {
-          notice.className += ' stock-low';
-          notice.textContent = '⚠ Only ' + stock + ' left';
-        }
-        if (notice.textContent) {
-          const favBtn = document.getElementById('btn-fav-pdp');
-          favBtn ? ctaWrap.insertBefore(notice, favBtn) : ctaWrap.appendChild(notice);
-        }
-      }
-    })
-    .catch(function() {});
-})();
 </script>

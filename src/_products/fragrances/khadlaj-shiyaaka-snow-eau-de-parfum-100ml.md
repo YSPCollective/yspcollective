@@ -7,7 +7,7 @@ gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
-stock_status: in_stock
+stock_status: sold_out
 stock_quantity: 0
 featured: false
 published: true
