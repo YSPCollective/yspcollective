@@ -145,7 +145,7 @@ async function main() {
     return;
   }
 
-  console.log(`\nSeeding ${toSeed.length} product(s) (default qty: ${defaultQty}):\n`);
+  console.log(`\nSeeding ${toSeed.length} product(s):\n`);
   toSeed.forEach(p => {
     const note = p.soldOut ? ' [sold_out → 0]' : '';
     console.log(`  · ${p.slug}  →  ${p.stock}${note}`);
