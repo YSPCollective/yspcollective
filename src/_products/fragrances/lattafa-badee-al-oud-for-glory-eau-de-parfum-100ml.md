@@ -9,7 +9,7 @@ concentration: Eau de Parfum (EDP)
 badge: Premium
 stock_status: sold_out
 stock_quantity: 0
-featured: true
+featured: false
 published: true
 date_added: 2026-06-02
 fragrance_family: Woody Oriental Oud
