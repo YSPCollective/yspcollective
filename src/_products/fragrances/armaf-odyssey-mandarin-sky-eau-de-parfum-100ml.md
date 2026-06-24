@@ -9,7 +9,7 @@ concentration: Eau de Parfum (EDP)
 badge: Popular
 stock_status: sold_out
 stock_quantity: 0
-featured: true
+featured: false
 published: true
 date_added: 2026-05-28
 fragrance_family: Amber Citrus Woody
