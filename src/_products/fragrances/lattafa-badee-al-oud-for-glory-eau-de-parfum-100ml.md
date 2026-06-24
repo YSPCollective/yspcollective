@@ -7,8 +7,8 @@ gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Premium
-stock_status: last_one
-stock_quantity: 1
+stock_status: sold_out
+stock_quantity: 0
 featured: true
 published: true
 date_added: 2026-06-02
@@ -33,16 +33,27 @@ image_main: /images/uploads/1-96.jpeg
 gallery:
   - /images/uploads/2-96.jpeg
   - /images/uploads/3-96.jpeg
-description_short: A rich, celebratory oud from Lattafa — one of Dubai's most trusted fragrance houses. Bade'e Al Oud For Glory is bold, resinous, and unmistakably Arabian in character.
-description_full: |
-  <p>Lattafa Bade'e Al Oud For Glory Eau de Parfum opens with a powerful declaration of oud and rose — a classic pairing in Arabian perfumery executed with Lattafa's characteristic generosity.</p>
+description_short: A rich, celebratory oud from Lattafa — one of Dubai's most
+  trusted fragrance houses. Bade'e Al Oud For Glory is bold, resinous, and
+  unmistakably Arabian in character.
+description_full: >
+  <p>Lattafa Bade'e Al Oud For Glory Eau de Parfum opens with a powerful
+  declaration of oud and rose — a classic pairing in Arabian perfumery executed
+  with Lattafa's characteristic generosity.</p>
+
   <p>Saffron adds a warm, spiced dimension in the opening before the heart settles into a rich, woody-floral core of oud, patchouli, and jasmine. The base is deep and resinous — amber, musk, and sandalwood creating a foundation that's both grounding and long-lasting.</p>
+
   <p>As an EDP the projection is confident and far-reaching, filling a space without effort.</p>
+
   <p>Longevity regularly exceeds 10–12 hours. This is a fragrance built for occasions that matter — formal events, celebrations, and moments where presence counts. Best suited to evenings and cooler months.</p>
-ysp_thoughts: |
-  <p>Lattafa has earned its reputation by consistently delivering at a price point that feels almost unfair for the quality.</p>
+ysp_thoughts: >
+  <p>Lattafa has earned its reputation by consistently delivering at a price
+  point that feels almost unfair for the quality.</p>
+
   <p>For Glory is one of their more celebratory compositions — there's a grandeur to it that you feel immediately.</p>
+
   <p>We chose it because it represents exactly what Arabian perfumery does best: oud and rose done with real confidence and craftsmanship.</p>
+
   <p>If someone comes to us wanting to understand what all the fuss is about with oud fragrances, this is one of the first bottles we'd point them to.</p>
 inspired_by_name: Tom Ford Oud Wood
 inspired_by_note: same dark resinous oud-rose foundation, bolder projection
