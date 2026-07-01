@@ -7,8 +7,8 @@ gender: Men
 size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: New
-stock_status: on_order
-stock_quantity: 0
+stock_status: in_stock
+stock_quantity: 9
 expected_date: June 2026
 featured: false
 published: true
