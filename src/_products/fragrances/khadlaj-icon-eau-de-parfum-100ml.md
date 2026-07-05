@@ -52,6 +52,11 @@ ysp_thoughts: >
   refresh.</p>
 
   <p>The bergamot opening is quality, the labdanum heart has real depth, and that suede/sandalwood base is the kind of dry-down that gets compliments. Strong longevity for the price point, and the bottle presentation is genuinely impressive. A solid addition to any masculine collection.</p>
+inspired_by_name: "Bleu de Chanel L'Exclusif "
+inspired_by_note: Khadlaj Icon delivers an impressively close 85-90% match to
+  the luxury Bleu de Chanel DNA, offering a slightly brighter, fresher citrus
+  opening that seamlessly dries down into that signature smoky, warm, and
+  sophisticated leathery-amber base at a fraction of the cost.
 gtin: "6298043071215"
 exclude_from_feed: false
 ---
