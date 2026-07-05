@@ -21,6 +21,7 @@ const END_MARKER   = '// ── PRODUCT CATALOGUE: AUTO-GENERATED END ──';
 
 // ── Minimal frontmatter parser ───────────────────────────────────────────────
 function parseFrontmatter(content) {
+  content = content.replace(/\r\n/g, '\n'); // normalise Windows CRLF
   const match = content.match(/^---\n([\s\S]*?)\n---/);
   if (!match) return {};
   const data = {};
