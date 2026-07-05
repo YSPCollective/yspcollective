@@ -53,5 +53,11 @@ ysp_thoughts: >-
   ones.</p>
 
   <p>Good longevity for a fresh scent, and the sandalwood base stops it from going flat. Strong value for warm-weather wear.</p>
+inspired_by_name: Dries Van Noten Santal Greenery
+inspired_by_note: Rayhaan Jungle Vibe captures the ultra-luxurious, $350 DNA of
+  Dries Van Noten’s Santal Greenery, blending a crisp burst of grapefruit and
+  rain-soaked green notes with a beautifully creamy fig and smooth sandalwood
+  finish.
+gtin: "6297001571286"
 exclude_from_feed: false
 ---
