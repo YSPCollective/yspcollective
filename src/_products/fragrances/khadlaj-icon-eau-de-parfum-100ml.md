@@ -52,5 +52,6 @@ ysp_thoughts: >
   refresh.</p>
 
   <p>The bergamot opening is quality, the labdanum heart has real depth, and that suede/sandalwood base is the kind of dry-down that gets compliments. Strong longevity for the price point, and the bottle presentation is genuinely impressive. A solid addition to any masculine collection.</p>
+gtin: "6298043071215"
 exclude_from_feed: false
 ---
