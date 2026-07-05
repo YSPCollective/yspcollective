@@ -60,5 +60,6 @@ inspired_by_name: Louis Vuitton Pacific Chill
 inspired_by_note: Shares the same coastal citrus-mint-fig DNA, but with
   noticeably stronger projection and longevity — and at a fraction of the LV
   price.
+gtin: "6297001571170"
 exclude_from_feed: false
 ---
