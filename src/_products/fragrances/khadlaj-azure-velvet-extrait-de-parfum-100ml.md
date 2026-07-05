@@ -58,5 +58,6 @@ inspired_by_name: Parfums de Marly Layton
 inspired_by_note: Widely cited by the Fragrantica community as one of the
   closest interpretations of Layton — the same apple-lavender-vanilla DNA, with
   a slightly fresher, mintier opening and extrait concentration.
+gtin: "6291107978802"
 exclude_from_feed: false
 ---
