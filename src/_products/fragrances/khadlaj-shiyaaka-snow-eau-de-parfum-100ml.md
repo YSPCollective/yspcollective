@@ -61,5 +61,6 @@ inspired_by_name: Louis Vuitton Météore
 inspired_by_note: Strong community consensus placing Shiyaaka Snow in Météore's
   DNA — bright citrus, subtle spice, clean woody base — at a significantly lower
   price point.
+gtin: "6291107979335"
 exclude_from_feed: false
 ---
