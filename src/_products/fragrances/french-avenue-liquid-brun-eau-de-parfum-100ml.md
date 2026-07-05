@@ -61,5 +61,6 @@ inspired_by_name: Parfums de Marly Althaïr
 inspired_by_note: Near-identical spiced vanilla profile — the Fragrantica
   community has widely called it one of the closest clones available, with the
   niche original retailing at over 10x the price.
+gtin: "6290360375694"
 exclude_from_feed: false
 ---
