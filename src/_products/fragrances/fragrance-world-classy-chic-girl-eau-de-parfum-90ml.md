@@ -60,5 +60,6 @@ ysp_thoughts: >
 inspired_by_name: Carolina Herrera Good Girl
 inspired_by_note: Same iconic note pyramid — almond and coffee opening, tuberose
   and jasmine heart, tonka and cacao dry-down — at a fraction of the price.
+gtin: "6291106486513"
 exclude_from_feed: false
 ---
