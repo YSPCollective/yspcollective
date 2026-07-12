@@ -97,6 +97,7 @@ function collectProducts() {
         price:      `€${data.price}` || '',
         brand:      data.brand       || '',
         gender:     data.gender      || '',
+        stock:      data.stock_status || 'in_stock',
         accords,
       };
 

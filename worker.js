@@ -489,6 +489,7 @@ const PRODUCTS = [
     "price": "€49.99",
     "brand": "Al Haramain",
     "gender": "Men",
+    "stock": "in_stock",
     "accords": [
       "oud",
       "amber",
@@ -519,6 +520,7 @@ const PRODUCTS = [
     "price": "€29.55",
     "brand": "Armaf",
     "gender": "Men",
+    "stock": "sold_out",
     "accords": [
       "citrus",
       "fructured",
@@ -550,6 +552,7 @@ const PRODUCTS = [
     "price": "€49.99",
     "brand": "Armaf",
     "gender": "Men",
+    "stock": "low_stock",
     "accords": [
       "citrus",
       "fructured",
@@ -581,6 +584,7 @@ const PRODUCTS = [
     "price": "€25",
     "brand": "Armaf",
     "gender": "Men",
+    "stock": "sold_out",
     "accords": [
       "citrus",
       "caramel",
@@ -608,6 +612,7 @@ const PRODUCTS = [
     "price": "€310",
     "brand": "Creed",
     "gender": "Men",
+    "stock": "sold_out",
     "accords": [
       "fruity",
       "sweet",
@@ -639,6 +644,7 @@ const PRODUCTS = [
     "price": "€295",
     "brand": "Creed",
     "gender": "Men",
+    "stock": "sold_out",
     "accords": [
       "woody",
       "aromatic",
@@ -667,6 +673,7 @@ const PRODUCTS = [
     "price": "€310",
     "brand": "Creed",
     "gender": "Men",
+    "stock": "sold_out",
     "accords": [
       "aromatic",
       "fresh spicy",
@@ -695,6 +702,7 @@ const PRODUCTS = [
     "price": "€19.90",
     "brand": "Fragrance World",
     "gender": "Women",
+    "stock": "in_stock",
     "accords": [
       "floral",
       "gourmand",
@@ -723,6 +731,7 @@ const PRODUCTS = [
     "price": "€37.90",
     "brand": "French Avenue",
     "gender": "Unisex",
+    "stock": "in_stock",
     "accords": [
       "vanilla",
       "woody",
@@ -751,6 +760,7 @@ const PRODUCTS = [
     "price": "€33.50",
     "brand": "Gulf Orchid",
     "gender": "Unisex",
+    "stock": "in_stock",
     "accords": [
       "citrus",
       "woody",
@@ -780,6 +790,7 @@ const PRODUCTS = [
     "price": "€39.99",
     "brand": "Gulf Orchid",
     "gender": "Unisex",
+    "stock": "last_one",
     "accords": [
       "fruity",
       "tropical",
@@ -809,6 +820,7 @@ const PRODUCTS = [
     "price": "€33",
     "brand": "Khadlaj",
     "gender": "Unisex",
+    "stock": "in_stock",
     "accords": [
       "woody",
       "aromatic",
@@ -837,6 +849,7 @@ const PRODUCTS = [
     "price": "€35",
     "brand": "Khadlaj",
     "gender": "Men",
+    "stock": "in_stock",
     "accords": [
       "woody",
       "aromatic",
@@ -853,6 +866,7 @@ const PRODUCTS = [
     "longevity": "6-10 hours",
     "projection": "Moderate to Strong",
     "best_for": "Office, Evening, Special Occasions",
+    "inspired_by": "Bleu de Chanel L'Exclusif ",
     "summary": "A bold, modern masculine from Khadlaj that opens with",
     "ysp_thoughts": "<p>We added Icon because it fills a gap we kept hearing about from customers — a confident men's fragrance that works from 9am to midnight without needing a refresh.</p>"
   },
@@ -863,6 +877,7 @@ const PRODUCTS = [
     "price": "€39.90",
     "brand": "Other",
     "gender": "Unisex",
+    "stock": "sold_out",
     "accords": [
       "citrus",
       "grapefruit",
@@ -881,8 +896,8 @@ const PRODUCTS = [
     "projection": "Moderate to Strong",
     "best_for": "Spring, Summer, Daytime, Office, Casual",
     "inspired_by": "Louis Vuitton Symphony",
-    "summary": "A bright, citrus-forward extrait that opens with sparkling bergamot and spicy ginger, evolving into a juicy grapefruit heart before settling into a smooth, skin-close base of ambroxan and musk. Effortlessly modern, long-lasting and constantly complimented.",
-    "ysp_thoughts": "|"
+    "summary": "A bright, citrus-forward extrait that opens with sparkling",
+    "ysp_thoughts": "<p>Louis Vuitton Symphony has been one of the most talked-about fragrances of the last few years — that vibrant citrus-grapefruit-ambroxan combination has built a devoted following.</p>"
   },
   {
     "name": "Khadlaj Shiyaaka Snow Eau de Parfum 100ml",
@@ -891,6 +906,7 @@ const PRODUCTS = [
     "price": "€34.99",
     "brand": "Khadlaj",
     "gender": "Unisex",
+    "stock": "in_stock",
     "accords": [
       "citrus",
       "aromatic",
@@ -918,6 +934,7 @@ const PRODUCTS = [
     "price": "€19.50",
     "brand": "Lattafa",
     "gender": "Unisex",
+    "stock": "in_stock",
     "accords": [
       "watermelon",
       "peach",
@@ -947,6 +964,7 @@ const PRODUCTS = [
     "price": "€16.70",
     "brand": "Lattafa",
     "gender": "Women",
+    "stock": "low_stock",
     "accords": [
       "sweet",
       "amber",
@@ -974,6 +992,7 @@ const PRODUCTS = [
     "price": "€27.50",
     "brand": "Lattafa",
     "gender": "Unisex",
+    "stock": "sold_out",
     "accords": [
       "oud",
       "warm spicy",
@@ -993,8 +1012,8 @@ const PRODUCTS = [
     "projection": "Strong",
     "best_for": "Evening wear, formal occasions, cooler seasons, night out",
     "inspired_by": "Tom Ford Oud Wood",
-    "summary": "A rich, celebratory oud from Lattafa — one of Dubai's most trusted fragrance houses. Bade'e Al Oud For Glory is bold, resinous, and unmistakably Arabian in character.",
-    "ysp_thoughts": "|"
+    "summary": "A rich, celebratory oud from Lattafa — one of Dubai's most",
+    "ysp_thoughts": "<p>Lattafa has earned its reputation by consistently delivering at a price point that feels almost unfair for the quality.</p>"
   },
   {
     "name": "Lattafa Khamrah Qahwa 100ml",
@@ -1003,6 +1022,7 @@ const PRODUCTS = [
     "price": "€34",
     "brand": "Lattafa",
     "gender": "Unisex",
+    "stock": "sold_out",
     "accords": [
       "coffee",
       "vanilla",
@@ -1035,6 +1055,7 @@ const PRODUCTS = [
     "price": "€34",
     "brand": "Lattafa",
     "gender": "Unisex",
+    "stock": "sold_out",
     "accords": [
       "vanilla",
       "gourmand",
@@ -1067,6 +1088,7 @@ const PRODUCTS = [
     "price": "€39.50",
     "brand": "Lattafa",
     "gender": "Unisex",
+    "stock": "in_stock",
     "accords": [
       "coconut",
       "spicy",
@@ -1096,6 +1118,7 @@ const PRODUCTS = [
     "price": "€16.50",
     "brand": "Lattafa",
     "gender": "Men",
+    "stock": "sold_out",
     "accords": [
       "aquatic",
       "fresh",
@@ -1123,6 +1146,7 @@ const PRODUCTS = [
     "price": "€26.75",
     "brand": "Lattafa",
     "gender": "Men",
+    "stock": "low_stock",
     "accords": [
       "woody",
       "spicy",
@@ -1153,6 +1177,7 @@ const PRODUCTS = [
     "price": "€19.95",
     "brand": "Lattafa",
     "gender": "Men",
+    "stock": "in_stock",
     "accords": [
       "fruity",
       "sweet",
@@ -1183,6 +1208,7 @@ const PRODUCTS = [
     "price": "€19.55",
     "brand": "Lattafa",
     "gender": "Women",
+    "stock": "sold_out",
     "accords": [
       "vanilla",
       "gourmand",
@@ -1210,6 +1236,7 @@ const PRODUCTS = [
     "price": "€19.50",
     "brand": "Lattafa",
     "gender": "Women",
+    "stock": "low_stock",
     "accords": [
       "strawberry",
       "fruity",
@@ -1236,6 +1263,7 @@ const PRODUCTS = [
     "price": "€25",
     "brand": "Maison Alhambra",
     "gender": "Men",
+    "stock": "in_stock",
     "accords": [
       "coffee",
       "chocolate",
@@ -1253,8 +1281,8 @@ const PRODUCTS = [
     "projection": "Moderate",
     "best_for": "Evening, Autumn, Winter, Date Night",
     "inspired_by": "Kilian Black Phantom",
-    "summary": "A rich, dark gourmand of nutmeg and woody spice opening into coffee, cacao and patchouli, settling into a warm vanilla and vetiver base. Sophisticated, masculine and deeply addictive.",
-    "ysp_thoughts": "|"
+    "summary": "A rich, dark gourmand of nutmeg and woody spice opening into",
+    "ysp_thoughts": "<p>Kilian's Black Phantom is one of the most celebrated dark gourmands in niche perfumery — coffee, rum, chocolate and vanilla in a composition that retails at around €255.</p>"
   },
   {
     "name": "Ministry of Gourmand\tCoconut Lagoon 100ml",
@@ -1263,6 +1291,7 @@ const PRODUCTS = [
     "price": "€39.50",
     "brand": "Paris Corner",
     "gender": "Unisex",
+    "stock": "last_one",
     "accords": [
       "citrus",
       "coconut",
@@ -1292,6 +1321,7 @@ const PRODUCTS = [
     "price": "€99.95",
     "brand": "Dior",
     "gender": "Women",
+    "stock": "sold_out",
     "accords": [
       "woody",
       "fruity",
@@ -1321,6 +1351,7 @@ const PRODUCTS = [
     "price": "€39",
     "brand": "Rasasi",
     "gender": "Women",
+    "stock": "sold_out",
     "accords": [],
     "concentration": "Eau de Parfum (EDP)",
     "size": "100ml",
@@ -1342,6 +1373,7 @@ const PRODUCTS = [
     "price": "€37.00",
     "brand": "Rasasi",
     "gender": "Unisex",
+    "stock": "sold_out",
     "accords": [
       "aquatic",
       "vanilla",
@@ -1364,8 +1396,8 @@ const PRODUCTS = [
     "projection": "Strong",
     "best_for": "Evening wear, cooler seasons, date night, autumn/winter",
     "inspired_by": "Jean Paul Gaultier Le Male Elixir",
-    "summary": "A modern aquatic-oriental from Dubai's Rasasi — fresh and magnetic in equal measure. Hawas Elixir takes the wildly popular original Hawas and deepens it into something richer, more seductive, and longer-lasting.",
-    "ysp_thoughts": "|"
+    "summary": "A modern aquatic-oriental from Dubai's Rasasi — fresh and",
+    "ysp_thoughts": "<p>Hawas already had our attention — it's one of those fragrances that genuinely surprised us when we first tried it.</p>"
   },
   {
     "name": "Rayhaan Aquatica Eau de Parfum 100ml",
@@ -1374,6 +1406,7 @@ const PRODUCTS = [
     "price": "€39.90",
     "brand": "Rayhaan",
     "gender": "Men",
+    "stock": "last_one",
     "accords": [
       "citrus",
       "aquatic",
@@ -1402,6 +1435,7 @@ const PRODUCTS = [
     "price": "€34.90",
     "brand": "Rayhaan",
     "gender": "Men",
+    "stock": "in_stock",
     "accords": [
       "honey",
       "tobacco",
@@ -1429,6 +1463,7 @@ const PRODUCTS = [
     "price": "€34.90",
     "brand": "Rayhaan",
     "gender": "Men",
+    "stock": "in_stock",
     "accords": [
       "green",
       "woody",
@@ -1446,6 +1481,7 @@ const PRODUCTS = [
     "longevity": "6-8 hours",
     "projection": "Moderate",
     "best_for": "Daily, Warm Weather, Office, Casual",
+    "inspired_by": "Dries Van Noten Santal Greenery",
     "summary": "A vibrant, nature-inspired fresh from Rayhaan. Bergamot and",
     "ysp_thoughts": "<p>Jungle Vibe impressed us with how wearable it is, clean and fresh but with enough character in the fig and violet leaf heart to avoid feeling generic. It's the kind of daily driver that gets quiet compliments rather than loud ones.</p>"
   },
@@ -1456,6 +1492,7 @@ const PRODUCTS = [
     "price": "€34.90",
     "brand": "Rayhaan",
     "gender": "Men",
+    "stock": "in_stock",
     "accords": [
       "citrus",
       "fresh",
@@ -1484,6 +1521,7 @@ const PRODUCTS = [
     "price": "€335",
     "brand": "Roja Parfums",
     "gender": "Men",
+    "stock": "sold_out",
     "accords": [
       "aromatic",
       "woody",
@@ -1512,6 +1550,7 @@ const PRODUCTS = [
     "price": "€63.50",
     "brand": "Swiss Arabian",
     "gender": "Unisex",
+    "stock": "in_stock",
     "accords": [
       "rose",
       "floral",
@@ -1543,6 +1582,7 @@ const PRODUCTS = [
     "price": "€69",
     "brand": "Swiss Arabian",
     "gender": "Unisex",
+    "stock": "in_stock",
     "accords": [
       "tropical",
       "fruity",
@@ -1573,6 +1613,7 @@ const PRODUCTS = [
     "price": "€139.95",
     "brand": "Tom Ford",
     "gender": "Men",
+    "stock": "sold_out",
     "accords": [
       "amber",
       "powdery",
@@ -1601,6 +1642,7 @@ const PRODUCTS = [
     "price": "€85",
     "brand": "YSL",
     "gender": "Women",
+    "stock": "sold_out",
     "accords": [
       "vanilla",
       "coffee",
@@ -1629,6 +1671,7 @@ const PRODUCTS = [
     "price": "€29.90",
     "brand": "Zimaya",
     "gender": "Unisex",
+    "stock": "in_stock",
     "accords": [
       "fruity",
       "mango",
@@ -1658,6 +1701,7 @@ const PRODUCTS = [
     "price": "€39.99",
     "brand": "Zimaya",
     "gender": "Unisex",
+    "stock": "in_stock",
     "accords": [
       "fruity",
       "sweet",
@@ -1688,6 +1732,7 @@ const PRODUCTS = [
     "price": "€29.99",
     "brand": "Zimaya",
     "gender": "Men",
+    "stock": "sold_out",
     "accords": [
       "fruity",
       "smoky",
@@ -1719,6 +1764,7 @@ const PRODUCTS = [
     "price": "€18.71",
     "brand": "ANUA",
     "gender": "",
+    "stock": "sold_out",
     "accords": [],
     "type": "beauty",
     "category": "Cleanser",
@@ -1733,6 +1779,7 @@ const PRODUCTS = [
     "price": "€24.69",
     "brand": "ANUA",
     "gender": "",
+    "stock": "sold_out",
     "accords": [],
     "type": "beauty",
     "category": "Serum",
@@ -1747,6 +1794,7 @@ const PRODUCTS = [
     "price": "€16",
     "brand": "Beauty of Joseon",
     "gender": "",
+    "stock": "sold_out",
     "accords": [],
     "type": "beauty",
     "category": "SPF / Sunscreen",
@@ -1761,6 +1809,7 @@ const PRODUCTS = [
     "price": "€26.00",
     "brand": "ANUA",
     "gender": "",
+    "stock": "in_stock",
     "accords": [],
     "type": "beauty",
     "category": "Moisturiser",
@@ -1820,6 +1869,8 @@ TONE & LENGTH — STRICT RULES:
 - Never write bullet points, never write headers, never write paragraphs about a product.
 
 RECOMMENDATION RULES — READ CAREFULLY:
+- NEVER recommend a product where stock is "sold_out". Skip it entirely — act as if it doesn't exist.
+- If stock is "last_one", recommend it but add "last one in stock" so they know to move fast.
 - NEVER say we have "limited options", "not many options", "only one option", "our selection is small", or anything that implies scarcity or disappointment. It is never acceptable to apologise for the range.
 - If even one product matches, go ALL IN on it. Present it as a deliberate, curated choice: "We've selected the very best in this category and here's why this is perfect for you."
 - Always explain WHY each recommendation suits them specifically — mention the accords, the occasion, the longevity — make them feel like this is made for them.
