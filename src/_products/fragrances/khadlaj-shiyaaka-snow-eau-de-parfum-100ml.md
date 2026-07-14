@@ -8,8 +8,8 @@ size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
 stock_status: in_stock
-stock_quantity: 10
-featured: false
+stock_quantity: 9
+featured: true
 published: true
 date_added: 2026-06-17
 fragrance_family: Citrus Aromatic
