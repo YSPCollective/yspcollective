@@ -9,7 +9,7 @@ concentration: Eau de Parfum (EDP)
 badge: Popular
 stock_status: in_stock
 stock_quantity: 9
-featured: true
+featured: false
 published: true
 date_added: 2026-06-02
 fragrance_family: Oriental Woody
