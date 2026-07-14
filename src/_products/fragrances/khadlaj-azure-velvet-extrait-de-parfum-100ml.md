@@ -8,7 +8,7 @@ size: 100ml
 concentration: Extrait de Parfum
 badge: New
 stock_status: in_stock
-stock_quantity: 10
+stock_quantity: 9
 expected_date: June 2026
 featured: false
 published: true
