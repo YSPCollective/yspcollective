@@ -1,7 +1,7 @@
 ---
 name: Armaf Odyssey Mandarin Sky Eau de Parfum 100ml
 slug: armaf-odyssey-mandarin-sky-edp-100ml
-price: "25"
+price: "28.50"
 brand: Armaf
 gender: Men
 size: 100ml
