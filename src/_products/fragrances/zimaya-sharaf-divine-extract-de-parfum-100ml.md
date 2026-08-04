@@ -30,7 +30,7 @@ projection: Strong
 origin: UAE
 launched: "2025"
 vegan: false
-image_main: /images/uploads/sharaf_divine.png
+image_main: /images/uploads/sharaf_divine-no-border.png
 gallery:
   - /images/uploads/sharaf_divine.png
   - /images/uploads/sharaf-divine-br.png
