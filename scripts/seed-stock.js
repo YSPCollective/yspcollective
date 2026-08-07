@@ -75,9 +75,12 @@ function collectSlugs() {
 }
 
 // ── Fetch existing KV stock (to avoid overwriting) ──────────────────────────
+// NOTE: fetched even in --force mode now, so we can diff against it and only
+// write products whose stock actually changed, instead of rewriting every
+// published product on every push (see toSeed filter in main()).
 function fetchExistingStock() {
   return new Promise((resolve) => {
-    if (force || dryRun) { resolve({}); return; }
+    if (dryRun) { resolve({}); return; }
     const url = new URL(API_URL + '/admin/stock');
     const opts = {
       hostname: url.hostname,
@@ -138,7 +141,15 @@ async function main() {
     console.log(`${existingCount} slugs already in KV — skipping those (use --force to overwrite).`);
   }
 
-  const toSeed = products.filter(p => force || existing[p.slug] === undefined);
+  // New products always get seeded. With --force, existing products are only
+  // re-sent if their stock actually differs from what's in KV — this is what
+  // keeps a normal push (one product's stock changed) to ~1 write instead of
+  // rewriting every published product's KV entry on every single push.
+  const toSeed = products.filter(p => {
+    if (existing[p.slug] === undefined) return true;
+    if (!force) return false;
+    return existing[p.slug] !== p.stock;
+  });
 
   if (!toSeed.length) {
     console.log('Nothing to seed — all products already have stock entries. Use --force to reset.');
