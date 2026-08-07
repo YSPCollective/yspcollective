@@ -6,7 +6,7 @@ concentration: Extrait de Parfum
 badge: Curated
 custom_badge: ""
 stock_status: on_order
-stock_quantity: 11
+stock_quantity: 0
 expected_date: August 2026
 featured: false
 published: true
