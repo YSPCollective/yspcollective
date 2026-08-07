@@ -12,7 +12,7 @@ eleventyExcludeFromCollections: true
     {% set productUrl %}https://yspcollective.com/products/{{ product.slug }}.html{% endset %}
     {% set imageUrl %}https://yspcollective.com{{ product.image_main }}{% endset %}
     {% set stockStatus = product.stock_status or "in_stock" %}
-    {% if stockStatus != "sold_out" and stockStatus != "coming_soon" and not product.exclude_from_feed %}
+    {% if stockStatus != "sold_out" and stockStatus != "coming_soon" and stockStatus != "on_order" and not product.exclude_from_feed %}
     <item>
       <g:id>{{ product.slug }}</g:id>
       <g:title>{{ product.name }}</g:title>

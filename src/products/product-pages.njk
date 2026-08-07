@@ -612,7 +612,7 @@ permalink: "products/{{ product.slug }}.html"
     <div class="product-cta">
       {% if stockStatus == "sold_out" %}
         <button class="btn-buy-now btn-sold-out" disabled>Sold Out</button>
-      {% elif stockStatus == "coming_soon" %}
+      {% elif stockStatus == "coming_soon" or stockStatus == "on_order" %}
         <button class="btn-buy-now btn-coming-soon" id="btn-notify">Notify Me When Available</button>
       {% elif stockStatus == "pre_order" %}
         <button class="btn-buy-now btn-preorder" id="btn-buy-now"
