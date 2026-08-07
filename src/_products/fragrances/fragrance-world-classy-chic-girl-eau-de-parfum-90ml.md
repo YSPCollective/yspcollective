@@ -7,10 +7,10 @@ gender: Women
 size: 90ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
-stock_status: in_stock
-stock_quantity: 9
-expected_date: June 2026
-featured: true
+stock_status: sold_out
+stock_quantity: 0
+expected_date: ""
+featured: false
 published: true
 date_added: 2026-06-17
 fragrance_family: Amber Floral Gourmand
