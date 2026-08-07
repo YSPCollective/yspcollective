@@ -28,14 +28,14 @@ projection: Moderate - Strong
 origin: UAE
 launched: "2025"
 vegan: false
-image_main: /images/uploads/soul-of-bali-pack-shot_e6a61c85-369f-413b-8781-24b2b2e6ea33.png
+image_main: /images/uploads/swiss-arabian-soul-of-bali-1.png
 gallery:
   - /images/uploads/soul-of-bali.png
-  - /images/uploads/b0f8v55pxx.pt03.jpeg
-  - /images/uploads/b0f8v55pxx.pt04.jpeg
-  - /images/uploads/b0f8v55pxx.pt01.jpeg
-  - /images/uploads/b0f8v55pxx.pt02.jpeg
-  - /images/uploads/b0f8v55pxx.pt03.jpeg
+  - /images/uploads/swiss-arabian-soul-of-bali-4.jpeg
+  - /images/uploads/swiss-arabian-soul-of-bali-5.jpeg
+  - /images/uploads/swiss-arabian-soul-of-bali-2.jpeg
+  - /images/uploads/swiss-arabian-soul-of-bali-3.jpeg
+  - /images/uploads/swiss-arabian-soul-of-bali-4.jpeg
 description_short: >-
   
   A lush, tropical escape bottled in an extrait. Soul of Bali blends exotic florals with warm, creamy woods — an escapist fragrance that's rich enough to wear as a signature scent.

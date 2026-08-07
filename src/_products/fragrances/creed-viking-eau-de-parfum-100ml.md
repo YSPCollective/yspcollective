@@ -22,10 +22,10 @@ projection: Strong
 origin: France
 launched: "2017"
 vegan: false
-image_main: /images/uploads/1110042_1.png
+image_main: /images/uploads/creed-viking-1.png
 gallery:
-  - /images/uploads/1110096-2.png
-  - /images/uploads/1110096.png
+  - /images/uploads/creed-viking-3.png
+  - /images/uploads/creed-viking-2.png
 description_short: A bold, aromatic powerhouse from Creed — Viking is the house
   at its most intense and masculine. Spiced, woody, and built for those who wear
   fragrance with conviction.

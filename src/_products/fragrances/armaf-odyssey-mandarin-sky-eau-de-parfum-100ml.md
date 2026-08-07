@@ -28,9 +28,9 @@ projection: Moderate to Strong
 origin: UAE
 launched: "2023"
 vegan: false
-image_main: /images/uploads/4769_1.webp
+image_main: /images/uploads/armaf-odyssey-mandarin-sky-1.webp
 gallery:
-  - /images/uploads/4769_2.webp
+  - /images/uploads/armaf-odyssey-mandarin-sky-2.webp
 description_short: A bright, juicy burst of mandarin and orange that dries down
   into a smooth caramel and tonka bean heart, fresh, addictive and endlessly
   wearable. One of the most talked-about releases in the Armaf Odyssey line.

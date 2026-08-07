@@ -29,10 +29,10 @@ projection: Strong
 origin: UAE
 launched: "2020"
 vegan: false
-image_main: /images/uploads/1-96.jpeg
+image_main: /images/uploads/lattafa-badee-al-oud-glory-1.jpeg
 gallery:
-  - /images/uploads/2-96.jpeg
-  - /images/uploads/3-96.jpeg
+  - /images/uploads/lattafa-badee-al-oud-glory-2.jpeg
+  - /images/uploads/lattafa-badee-al-oud-glory-3.jpeg
 description_short: A rich, celebratory oud from Lattafa — one of Dubai's most
   trusted fragrance houses. Bade'e Al Oud For Glory is bold, resinous, and
   unmistakably Arabian in character.

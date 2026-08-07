@@ -28,12 +28,12 @@ projection: Strong +
 origin: UAE
 launched: "2024"
 vegan: false
-image_main: /images/uploads/ahp1485_with_box.jpeg
+image_main: /images/uploads/al-haramain-amber-oud-dubai-night-1.jpeg
 gallery:
-  - /images/uploads/ahp1485_.jpeg
-  - /images/uploads/ahp1485_pyramid.jpeg
-  - /images/uploads/ahp1485_solo_2.jpeg
-  - /images/uploads/ahp1485_.jpeg
+  - /images/uploads/al-haramain-amber-oud-dubai-night-2.jpeg
+  - /images/uploads/al-haramain-amber-oud-dubai-night-pyramid.jpeg
+  - /images/uploads/al-haramain-amber-oud-dubai-night-3.jpeg
+  - /images/uploads/al-haramain-amber-oud-dubai-night-2.jpeg
 description_short: A bold, smoky oriental from Al Haramain — one of the Gulf's
   most established fragrance houses. Dubai Night is a dark, addictive blend of
   oud and amber with serious projection and all-night longevity.

@@ -22,10 +22,10 @@ best_for: Evening wear, smart-casual, formal occasions, cooler months
 origin: France
 launched: "2010"
 vegan: false
-image_main: /images/uploads/12852836-4705318355680121.webp
+image_main: /images/uploads/creed-aventus-1.webp
 gallery:
-  - /images/uploads/12852836-3425241119242413.webp
-  - /images/uploads/12852836-1455241119297013.webp
+  - /images/uploads/creed-aventus-2.webp
+  - /images/uploads/creed-aventus-3.webp
 description_short: The benchmark masculine. Creed Aventus EDP needs no
   introduction — smoky, fruity, and iconic, it remains the fragrance that every
   other masculine is measured against.

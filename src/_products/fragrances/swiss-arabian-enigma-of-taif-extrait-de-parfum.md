@@ -26,13 +26,13 @@ projection: Strong
 origin: UAE
 launched: "2025"
 vegan: false
-image_main: /images/uploads/sap_cities-enigma-of-taif-box_1_jpg_e269beec-901a-49f4-ae86-76ae93c08257.jpeg
+image_main: /images/uploads/swiss-arabian-enigma-of-taif-1.jpeg
 gallery:
-  - /images/uploads/eot-02_f756c14f-b476-4ec2-8205-92cc9b485379.jpeg
-  - /images/uploads/whatsapp_image_2025-10-29_at_6.41.04_pm_1.jpeg
-  - /images/uploads/whatsapp_image_2025-10-29_at_6.41.06_pm.jpeg
-  - /images/uploads/whatsapp_image_2025-11-13_at_9.09.08_am.jpeg
-  - /images/uploads/whatsapp_image_2025-11-13_at_9.09.09_am_1.jpeg
+  - /images/uploads/swiss-arabian-enigma-of-taif-2.jpeg
+  - /images/uploads/swiss-arabian-enigma-of-taif-3.jpeg
+  - /images/uploads/swiss-arabian-enigma-of-taif-4.jpeg
+  - /images/uploads/swiss-arabian-enigma-of-taif-5.jpeg
+  - /images/uploads/swiss-arabian-enigma-of-taif-6.jpeg
 description_short: A warm, rosy oriental from one of Dubai's most respected
   fragrance houses. Enigma of Taif captures the legendary Taif rose of Saudi
   Arabia — rich, velvety, and deeply complex. Long-lasting and distinctly

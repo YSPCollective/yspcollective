@@ -21,10 +21,10 @@ projection: "Moderate/Strong "
 origin: France
 launched: "2014"
 vegan: false
-image_main: /images/uploads/70452-media_swatch.jpeg
+image_main: /images/uploads/ysl-black-opium-1.jpeg
 gallery:
-  - /images/uploads/23512-media_1.jpeg
-  - /images/uploads/23512-media_3.jpeg
+  - /images/uploads/ysl-black-opium-2.jpeg
+  - /images/uploads/ysl-black-opium-3.jpeg
 description_short: The modern classic that turned an entire generation onto
   fragrance. Black Opium is bold, addictive, and as relevant today as the day it
   launched — coffee, vanilla, and white florals in perfect balance.

@@ -21,10 +21,10 @@ projection: Strong
 origin: France
 launched: "1987"
 vegan: false
-image_main: /images/uploads/1110030-100ml-millesime-bois-du-portugal.png
+image_main: /images/uploads/creed-bois-du-portugal-1.png
 gallery:
-  - /images/uploads/1110030-2.png
-  - /images/uploads/1110030-3.png
+  - /images/uploads/creed-bois-du-portugal-2.png
+  - /images/uploads/creed-bois-du-portugal-3.png
 description_short: A timeless aromatic classic from Creed with a direct
   connection to Portugal. Bois du Portugal is refined, understated, and deeply
   rooted in the landscape that inspired it — a fragrance we couldn't not carry.

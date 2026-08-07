@@ -29,10 +29,10 @@ projection: Moderate - Strong
 origin: UAE
 launched: "2016"
 vegan: false
-image_main: /images/uploads/1-102.jpeg
+image_main: /images/uploads/lattafa-qaed-al-fursan-1.jpeg
 gallery:
-  - /images/uploads/2-96.jpeg
-  - /images/uploads/1-96.jpeg
+  - /images/uploads/lattafa-badee-al-oud-glory-2.jpeg
+  - /images/uploads/lattafa-badee-al-oud-glory-1.jpeg
 description_short: >-
   
   A fresh, sophisticated masculine fragrance from Lattafa — Qaed Al Fursan translates to "leader of the knights", and the fragrance lives up to the name. Polished, confident, and built for everyday excellence.

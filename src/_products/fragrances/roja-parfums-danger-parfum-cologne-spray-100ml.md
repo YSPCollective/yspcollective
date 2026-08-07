@@ -23,9 +23,9 @@ best_for: Evening wear, formal occasions, cooler seasons, statement occasions
 origin: UK
 launched: "2019"
 vegan: false
-image_main: /images/uploads/dangeredppourhommefront-_1.png
+image_main: /images/uploads/roja-parfums-danger-1.png
 gallery:
-  - /images/uploads/5056663802265-2.png
+  - /images/uploads/roja-parfums-danger-2.png
 description_short: A powerhouse masculine from one of Britain's most celebrated
   niche perfumers. Danger is bold, leather-forward, and unmistakably Roja — a
   fragrance that commands attention without seeking it.

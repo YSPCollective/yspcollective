@@ -19,7 +19,7 @@ best_for: Daytime wear, spring/summer, casual occasions, office
 origin: UAE
 launched: "2025"
 vegan: false
-image_main: /images/uploads/ed50f04b3598c40c1912a86c3b86598c0y.png_.webp
+image_main: /images/uploads/rasasi-hawas-eclat-1.webp
 description_short: A lighter, brighter interpretation of the beloved Hawas line.
   Hawas Eclat brings a sparkling, citrus-led freshness that's effortlessly
   wearable and built for warmer days.

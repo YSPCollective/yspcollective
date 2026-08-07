@@ -2,7 +2,7 @@
 name: Khadlaj Island Dreams Extrait de Parfum 100ml
 slug: khadlaj-island-dreams-extrait-100ml
 price: "39.90"
-brand: Other
+brand: Khadlaj
 gender: Unisex
 size: 100ml
 concentration: Extrait de Parfum
