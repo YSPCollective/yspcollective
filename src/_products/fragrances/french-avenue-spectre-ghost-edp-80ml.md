@@ -6,7 +6,7 @@ concentration: Eau de Parfum (EDP)
 badge: Bestseller
 custom_badge: ""
 stock_status: on_order
-stock_quantity: 6
+stock_quantity: 0
 expected_date: August 2026
 featured: false
 published: true
