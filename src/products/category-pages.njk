@@ -219,6 +219,16 @@ eleventyComputed:
   .cat-product-badge.badge-new { background: #6a9a6a; }
   .cat-product-badge.badge-premium { background: #7a6a5a; }
   .cat-product-badge.badge-limited { background: var(--black); }
+  .cat-product-badge.badge-soldout {
+    background: var(--black);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+  }
+
+  .cat-product-img.is-sold-out img {
+    filter: grayscale(0.9);
+    opacity: 0.45;
+  }
 
   .cat-stock-flag {
     position: absolute;
@@ -319,10 +329,14 @@ eleventyComputed:
     {% if catProducts.length %}
       {% for p in catProducts %}
       <a href="/products/{{ p.slug }}.html" class="cat-product-card" data-price="{{ p.price }}" data-name="{{ p.name }}" data-brand="{{ p.brand }}" data-accords="{{ p.accords | join(',') if p.accords else '' }}" data-scent-family="{{ p.fragrance_family | lower if p.fragrance_family else '' }}" data-stock="{{ p.stock_status }}">
-        <div class="cat-product-img">
+        <div class="cat-product-img{{ ' is-sold-out' if p.stock_status === 'sold_out' else '' }}">
           <img src="{{ p.image_main }}" alt="{{ p.name }}" loading="lazy">
           {% set b = p.custom_badge or p.badge %}
-          {% if b %}<span class="cat-product-badge {{ b | badgeClass }}">{{ b }}</span>{% endif %}
+          {% if p.stock_status === 'sold_out' %}
+            <span class="cat-product-badge badge-soldout">Sold Out</span>
+          {% elif b %}
+            <span class="cat-product-badge {{ b | badgeClass }}">{{ b }}</span>
+          {% endif %}
           {% if p.stock_status === 'low_stock' %}<span class="cat-stock-flag">Low Stock</span>
           {% elif p.stock_status === 'last_one' %}<span class="cat-stock-flag flag-last">Last One</span>{% endif %}
         </div>
