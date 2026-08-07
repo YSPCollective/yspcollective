@@ -1,12 +1,10 @@
 ---
-layout: post.njk
-title: "What is Oud? The Complete Guide to Perfumery's Most Precious Ingredient"
-description: "Oud — sometimes called liquid gold — is the most expensive and sought-after ingredient in perfumery. Here's everything you need to know: what it is, where it comes from, how it smells, and how to find it in Europe without paying a fortune."
-date: 2026-04-03
+description: "Oud — sometimes called liquid gold — is the most expensive and
+  sought-after ingredient in perfumery. Here's everything you need to know: what
+  it is, where it comes from, how it smells, and how to find it in Europe
+  without paying a fortune."
 category: arabian
-category_label: "Arabian Perfume"
-author: "YSP Collective"
-read_time: 7
+image: /images/uploads/what-is-oud-blog.png
 tags:
   - posts
   - oud
@@ -18,6 +16,13 @@ toc: |
   <a href="#types-of-oud">Types of oud</a>
   <a href="#oud-in-perfumery">Oud in perfumery</a>
   <a href="#finding-oud">Finding good oud in Europe</a>
+layout: post.njk
+date: 2026-04-03
+author: YSP Collective
+date_added: 2026-06-19
+title: What is Oud? The Complete Guide to Perfumery's Most Precious Ingredient
+category_label: Arabian Perfume
+read_time: 7
 ---
 
 Oud. Agarwood. Liquid gold. The most expensive raw material in perfumery, sometimes costing more than gold by weight. And yet — if you've smelled any of the popular Arabian fragrances circulating in Europe right now — you've already encountered it.

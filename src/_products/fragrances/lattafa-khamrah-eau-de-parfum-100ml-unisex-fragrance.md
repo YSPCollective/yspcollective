@@ -18,30 +18,16 @@ gallery:
   - /products/lattafa/khamrah/1-60.jpeg
   - /products/lattafa/khamrah/2-60.jpeg
   - /products/lattafa/khamrah/3-60.jpeg
-description_short: Rich, spiced and deeply indulgent. One of the most celebrated
-  Arabic fragrances — bold cinnamon-dates opening, extraordinary resinous base.
-description_full: >
-  Rich, spiced, and deeply indulgent — Khamrah is Lattafa at their most opulent,
-  and one of the most celebrated Arabic fragrances of the last few years.
-
-
-  The name draws from the Arabic word for something intoxicating, and the fragrance lives up to it. The opening delivers citrusy bergamot framed by warm, velvety cinnamon and nutmeg — immediate, confident, and impossible to ignore. The heart deepens into dates, praline, and tuberose: a creamy, almost edible warmth that sits somewhere between a spiced Arabian pastry and a fine cognac. The base then delivers a sumptuous trail of vanilla, tonka bean, myrrh, benzoin, and precious amberwood — resinous, smoky, and extraordinarily long-lasting.
-
-
-  This is unambiguously a cold-weather, evening fragrance. It's bold, it projects, and it demands a little restraint — one or two sprays is genuinely enough. In fragrance circles it's often compared to Kilian's Angels' Share, with Khamrah being spicier and fruitier, carrying that cinnamon-dates signature over a rich resinous amber base — at a fraction of the price.
-
-
-  If you want a fragrance that makes people stop and ask what you're wearing, this is it.
-ysp_thoughts: >
-  Khamrah is one of those fragrances you smell once and immediately understand
-  the hype. We tried it, fully expected it to be overhyped, and came away
-  genuinely impressed.
-
-
-  The spiced opening is bold and the dry-down is extraordinary — deep, resinous, and the kind of warmth that stays with you for hours. It lasts days on clothing. Performance-wise, it comfortably beats fragrances costing five times the price.
-
-
-  A word of warning we pass on to every customer: go easy with it. This is not a five-spray fragrance. One or two on pulse points is all you need — it will do the rest. Get that right and it's one of the best things you'll smell all winter.
+description_short: Rich, spiced and deeply indulgent. One of the most celebrated Arabic fragrances — bold cinnamon-dates opening, extraordinary resinous base.
+description_full: |
+  <p>Rich, spiced, and deeply indulgent — Khamrah is Lattafa at their most opulent, and one of the most celebrated Arabic fragrances of the last few years.</p>
+  <p>The name draws from the Arabic word for something intoxicating, and the fragrance lives up to it. The opening delivers citrusy bergamot framed by warm, velvety cinnamon and nutmeg — immediate, confident, and impossible to ignore. The heart deepens into dates, praline, and tuberose: a creamy, almost edible warmth that sits somewhere between a spiced Arabian pastry and a fine cognac. The base then delivers a sumptuous trail of vanilla, tonka bean, myrrh, benzoin, and precious amberwood — resinous, smoky, and extraordinarily long-lasting.</p>
+  <p>This is unambiguously a cold-weather, evening fragrance. It's bold, it projects, and it demands a little restraint — one or two sprays is genuinely enough. In fragrance circles it's often compared to Kilian's Angels' Share, with Khamrah being spicier and fruitier, carrying that cinnamon-dates signature over a rich resinous amber base — at a fraction of the price.</p>
+  <p>If you want a fragrance that makes people stop and ask what you're wearing, this is it.</p>
+ysp_thoughts: |
+  <p>Khamrah is one of those fragrances you smell once and immediately understand the hype. We tried it, fully expected it to be overhyped, and came away genuinely impressed.</p>
+  <p>The spiced opening is bold and the dry-down is extraordinary — deep, resinous, and the kind of warmth that stays with you for hours. It lasts days on clothing. Performance-wise, it comfortably beats fragrances costing five times the price.</p>
+  <p>A word of warning we pass on to every customer: go easy with it. This is not a five-spray fragrance. One or two on pulse points is all you need — it will do the rest. Get that right and it's one of the best things you'll smell all winter.</p>
 inspired_by_name: Kilian Angels' Share
 inspired_by_note: same cognac-vanilla-cinnamon gourmand warmth, richer sillage
 ebay_url: ""

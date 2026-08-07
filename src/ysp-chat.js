@@ -560,11 +560,12 @@
 
   // ─── MESSAGE HELPERS ───────────────────────────────────────────────────────
   function renderBotText(text) {
-    // Simple markdown: **bold**, *italic*, bullet lists, product blocks
+    // Simple markdown: **bold**, *italic*, [links](url), bullet lists, product blocks
     let html = text
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-      .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+      .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+      .replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:inherit;font-weight:600;text-decoration:underline">$1</a>');
 
     // Convert lines starting with - or • or number. to a product block
     const lines = html.split('\n');

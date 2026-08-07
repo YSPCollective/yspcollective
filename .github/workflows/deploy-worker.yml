@@ -23,3 +23,8 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: b6bc2dfe06ac5c3ce5d1223777e1be41
           command: deploy --config wrangler-api.toml --keep-vars
+
+      - name: Sync stock from CMS to Worker
+        env:
+          YSP_AUTH_TOKEN: ${{ secrets.YSP_AUTH_TOKEN }}
+        run: node scripts/seed-stock.js --token "$YSP_AUTH_TOKEN" --force

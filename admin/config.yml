@@ -53,7 +53,7 @@ collections:
       - label: "Brand"
         name: "brand"
         widget: "select"
-        options: ["Lattafa", "Armaf", "Arabiyat Prestige", "Swiss Arabian", "Maison Alhambra", "Rasasi", "Gulf Orchid", "Paris Corner", "Zimaya", "Al Haramain", "Rayhaan", "Khadlaj", "Tom Ford", "Creed", "Dior", "Chanel", "Roja Parfums", "YSL", "Other"]
+        options: ["Lattafa", "Armaf", "Arabiyat Prestige", "Swiss Arabian", "Maison Alhambra", "Rasasi", "Gulf Orchid", "Paris Corner", "Zimaya", "Al Haramain", "Rayhaan", "Khadlaj", "Fragrance World", "French Avenue", "Ministry of Oud", "Tom Ford", "Creed", "Dior", "Chanel", "Roja Parfums", "YSL", "Other"]
       - label: "Gender"
         name: "gender"
         widget: "select"
@@ -335,7 +335,7 @@ collections:
       - { label: "Category Label", name: "category_label", widget: "string", hint: "Display label e.g. 'Arabian Perfume'" }
       - { label: "Author", name: "author", widget: "string", default: "YSP Collective", required: false }
       - { label: "Read Time (minutes)", name: "read_time", widget: "number", default: 5, required: false }
-      - { label: "Hero Image", name: "image", widget: "image", required: false, hint: "Recommended 1200x630px" }
+      - { label: "Hero Image", name: "image", widget: "image", required: false, hint: "Recommended 1600x900px (16:9) or wider. Image fills the header — ensure the main subject is centred." }
       - label: "Post Images (Gallery)"
         name: "gallery"
         widget: "list"

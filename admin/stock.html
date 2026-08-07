@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Manager — YSP Collective</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #f3efe8; color: #1a1916; min-height: 100vh; }
+    .header { background: #1a1916; color: #fff; padding: 1.2rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .header-brand { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: #b5afa5; }
+    .header-title { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; }
+    .header-right { font-size: 0.72rem; color: #8a847a; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 2rem; }
+
+    /* Auth */
+    .auth-panel { background: #faf8f5; border: 1px solid #e6dfd4; padding: 2.5rem; max-width: 400px; margin: 4rem auto; }
+    .auth-panel h2 { font-size: 1rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.5rem; color: #1a1916; }
+    .form-row { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+    .form-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: #8a847a; }
+    .form-input { background: #fff; border: 1px solid #e6dfd4; padding: 0.75rem 1rem; font-family: inherit; font-size: 0.88rem; color: #1a1916; outline: none; transition: border-color 0.2s; }
+    .form-input:focus { border-color: #9c7b56; }
+    .btn { padding: 0.85rem 2rem; background: #1a1916; color: #fff; border: none; font-family: inherit; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+    .btn:hover { background: #9c7b56; }
+    .btn-sm { padding: 0.45rem 1rem; font-size: 0.65rem; }
+    .btn-accent { background: #9c7b56; }
+    .btn-accent:hover { background: #7a5e3e; }
+    .btn-danger { background: #8b3a3a; }
+    .btn-danger:hover { background: #6b2a2a; }
+    .btn-ghost { background: transparent; border: 1px solid #e6dfd4; color: #8a847a; }
+    .btn-ghost:hover { border-color: #9c7b56; color: #9c7b56; background: transparent; }
+    .error-msg { font-size: 0.8rem; color: #8b3a3a; margin-top: 0.5rem; display: none; }
+
+    /* Stock table */
+    .toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
+    .toolbar-title { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: #8a847a; }
+    .toolbar-actions { display: flex; gap: 0.5rem; }
+    .filter-input { background: #fff; border: 1px solid #e6dfd4; padding: 0.55rem 0.9rem; font-family: inherit; font-size: 0.82rem; color: #1a1916; outline: none; min-width: 200px; transition: border-color 0.2s; }
+    .filter-input:focus { border-color: #9c7b56; }
+
+    table { width: 100%; border-collapse: collapse; background: #faf8f5; border: 1px solid #e6dfd4; }
+    thead tr { background: #1a1916; color: #fff; }
+    thead th { padding: 0.75rem 1rem; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; text-align: left; font-weight: 400; }
+    tbody tr { border-bottom: 1px solid #e6dfd4; transition: background 0.15s; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: #f5f0e8; }
+    tbody td { padding: 0.65rem 1rem; font-size: 0.84rem; vertical-align: middle; }
+    .slug-cell { font-family: monospace; font-size: 0.78rem; color: #8a847a; max-width: 320px; word-break: break-all; }
+    .stock-cell { display: flex; align-items: center; gap: 0.6rem; }
+    .stock-input { width: 72px; background: #fff; border: 1px solid #e6dfd4; padding: 0.4rem 0.6rem; font-family: inherit; font-size: 0.88rem; color: #1a1916; outline: none; text-align: center; transition: border-color 0.2s; }
+    .stock-input:focus { border-color: #9c7b56; }
+    .stock-badge { display: inline-block; padding: 0.2rem 0.55rem; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 2px; }
+    .badge-ok { background: rgba(90,138,90,0.1); color: #3a7a3a; border: 1px solid rgba(90,138,90,0.25); }
+    .badge-low { background: rgba(184,92,56,0.1); color: #b85c38; border: 1px solid rgba(184,92,56,0.25); }
+    .badge-last { background: rgba(192,58,58,0.1); color: #c03a3a; border: 1px solid rgba(192,58,58,0.25); }
+    .badge-out { background: rgba(26,25,22,0.07); color: #8a847a; border: 1px solid rgba(26,25,22,0.12); }
+    .badge-unset { background: rgba(100,100,100,0.07); color: #b5afa5; border: 1px dashed #d5cfc5; font-style: italic; }
+    .save-status { font-size: 0.72rem; color: #5a8a5a; display: none; }
+    .save-error { font-size: 0.72rem; color: #8b3a3a; display: none; }
+
+    /* Add new row */
+    .add-row { background: #faf8f5; border: 1px solid #e6dfd4; padding: 1.5rem; margin-top: 1.5rem; }
+    .add-row-title { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: #8a847a; margin-bottom: 1rem; }
+    .add-row-fields { display: flex; gap: 0.75rem; align-items: flex-end; flex-wrap: wrap; }
+    .add-row-field { display: flex; flex-direction: column; gap: 0.3rem; }
+
+    .summary-bar { display: flex; gap: 2rem; padding: 1rem 1.5rem; background: #faf8f5; border: 1px solid #e6dfd4; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .summary-item { display: flex; flex-direction: column; gap: 0.2rem; }
+    .summary-val { font-family: Georgia, serif; font-size: 1.6rem; font-weight: 300; color: #1a1916; line-height: 1; }
+    .summary-lbl { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: #8a847a; }
+
+    .toast { position: fixed; bottom: 1.5rem; right: 1.5rem; background: #1a1916; color: #fff; padding: 0.75rem 1.4rem; font-size: 0.78rem; letter-spacing: 0.06em; transform: translateY(20px); opacity: 0; transition: all 0.3s; pointer-events: none; z-index: 999; }
+    .toast.show { transform: translateY(0); opacity: 1; }
+    .toast.error { background: #8b3a3a; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="header-brand">YSP Collective</div>
+    <div class="header-title">Stock Manager</div>
+  </div>
+  <div class="header-right" id="header-user" style="display:none"></div>
+</div>
+
+<!-- Auth panel -->
+<div id="auth-panel" class="auth-panel">
+  <h2>Sign In</h2>
+  <div class="form-row">
+    <label class="form-label">Admin Password</label>
+    <input class="form-input" type="password" id="token-input" placeholder="Enter admin password" autocomplete="current-password">
+  </div>
+  <button class="btn" onclick="doLogin()">Sign In</button>
+  <div class="error-msg" id="auth-error">Incorrect password</div>
+</div>
+
+<!-- Stock panel -->
+<div id="stock-panel" style="display:none">
+  <div class="wrap">
+
+    <div class="summary-bar" id="summary-bar">
+      <div class="summary-item"><div class="summary-val" id="sum-total">—</div><div class="summary-lbl">Products tracked</div></div>
+      <div class="summary-item"><div class="summary-val" id="sum-in-stock">—</div><div class="summary-lbl">In stock</div></div>
+      <div class="summary-item"><div class="summary-val" id="sum-low">—</div><div class="summary-lbl">Low (≤ 5)</div></div>
+      <div class="summary-item"><div class="summary-val" id="sum-out">—</div><div class="summary-lbl">Sold out</div></div>
+    </div>
+
+    <div class="toolbar">
+      <input class="filter-input" type="text" id="filter-input" placeholder="Filter by slug…" oninput="filterTable()">
+      <div class="toolbar-actions">
+        <button class="btn btn-ghost btn-sm" onclick="loadStock()">↺ Refresh</button>
+        <button class="btn btn-accent btn-sm" onclick="saveAll()">Save All Changes</button>
+      </div>
+    </div>
+
+    <table id="stock-table">
+      <thead>
+        <tr>
+          <th>Slug</th>
+          <th>Status</th>
+          <th>Stock</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="stock-tbody"></tbody>
+    </table>
+
+    <div class="add-row">
+      <div class="add-row-title">Add / Set a Product</div>
+      <div class="add-row-fields">
+        <div class="add-row-field">
+          <label class="form-label">Slug</label>
+          <input class="form-input" type="text" id="new-slug" placeholder="e.g. lattafa-yara-100ml" style="min-width:280px;">
+        </div>
+        <div class="add-row-field">
+          <label class="form-label">Stock</label>
+          <input class="form-input" type="number" id="new-stock" value="1" min="0" style="width:80px;">
+        </div>
+        <button class="btn btn-sm" onclick="addProduct()">Set Stock</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  const API = 'https://ysp-ai-proxy.rapid-shadow-439d.workers.dev';
+  let token = sessionStorage.getItem('ysp_admin_token') || '';
+  let stockData = {};
+  let pendingChanges = {};
+
+  if (token) tryAutoLogin();
+
+  document.getElementById('token-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') doLogin();
+  });
+
+  async function doLogin() {
+    const input = document.getElementById('token-input').value.trim();
+    if (!input) return;
+    try {
+      const res = await fetch(API + '/admin/stock', {
+        headers: { 'Authorization': 'Bearer ' + input }
+      });
+      if (!res.ok) {
+        document.getElementById('auth-error').style.display = 'block';
+        return;
+      }
+      token = input;
+      sessionStorage.setItem('ysp_admin_token', token);
+      const data = await res.json();
+      stockData = data.stock || {};
+      showStockPanel();
+    } catch (e) {
+      document.getElementById('auth-error').textContent = 'Network error. Try again.';
+      document.getElementById('auth-error').style.display = 'block';
+    }
+  }
+
+  async function tryAutoLogin() {
+    try {
+      const res = await fetch(API + '/admin/stock', {
+        headers: { 'Authorization': 'Bearer ' + token }
+      });
+      if (!res.ok) { token = ''; sessionStorage.removeItem('ysp_admin_token'); return; }
+      const data = await res.json();
+      stockData = data.stock || {};
+      showStockPanel();
+    } catch (e) {}
+  }
+
+  function showStockPanel() {
+    document.getElementById('auth-panel').style.display = 'none';
+    document.getElementById('stock-panel').style.display = 'block';
+    document.getElementById('header-user').style.display = 'block';
+    document.getElementById('header-user').textContent = 'Signed in';
+    renderTable();
+    updateSummary();
+  }
+
+  async function loadStock() {
+    try {
+      const res = await fetch(API + '/admin/stock', { headers: { 'Authorization': 'Bearer ' + token } });
+      if (!res.ok) return;
+      const data = await res.json();
+      stockData = data.stock || {};
+      pendingChanges = {};
+      renderTable();
+      updateSummary();
+      toast('Refreshed');
+    } catch (e) { toast('Refresh failed', true); }
+  }
+
+  function renderTable() {
+    const tbody = document.getElementById('stock-tbody');
+    const filter = document.getElementById('filter-input').value.toLowerCase();
+    const slugs = Object.keys(stockData).sort();
+    tbody.innerHTML = '';
+    slugs.filter(s => s.includes(filter)).forEach(slug => {
+      const qty = pendingChanges[slug] !== undefined ? pendingChanges[slug] : stockData[slug];
+      const row = document.createElement('tr');
+      row.dataset.slug = slug;
+      row.innerHTML = `
+        <td class="slug-cell">${slug}</td>
+        <td>${badgeHtml(qty)}</td>
+        <td class="stock-cell">
+          <input class="stock-input" type="number" min="0" value="${qty}"
+            oninput="onStockChange('${slug}', this.value)"
+            onchange="onStockChange('${slug}', this.value)">
+        </td>
+        <td>
+          <button class="btn btn-accent btn-sm" onclick="saveSingle('${slug}')">Save</button>
+        </td>`;
+      tbody.appendChild(row);
+    });
+    if (!slugs.length) {
+      tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:#8a847a;padding:2rem;font-size:0.85rem;">No products tracked yet. Add one below.</td></tr>';
+    }
+  }
+
+  function badgeHtml(qty) {
+    if (qty === 0) return '<span class="stock-badge badge-out">Sold out</span>';
+    if (qty === 1) return '<span class="stock-badge badge-last">Last one</span>';
+    if (qty <= 5) return '<span class="stock-badge badge-low">Low stock</span>';
+    return '<span class="stock-badge badge-ok">In stock</span>';
+  }
+
+  function onStockChange(slug, val) {
+    const qty = parseInt(val);
+    if (!isNaN(qty) && qty >= 0) {
+      pendingChanges[slug] = qty;
+      // Update badge in this row
+      const row = document.querySelector(`tr[data-slug="${slug}"]`);
+      if (row) row.cells[1].innerHTML = badgeHtml(qty);
+    }
+  }
+
+  function filterTable() { renderTable(); }
+
+  function updateSummary() {
+    const vals = Object.values(stockData);
+    const total = vals.length;
+    const inStock = vals.filter(v => v > 0).length;
+    const low = vals.filter(v => v > 0 && v <= 5).length;
+    const out = vals.filter(v => v === 0).length;
+    document.getElementById('sum-total').textContent = total;
+    document.getElementById('sum-in-stock').textContent = inStock;
+    document.getElementById('sum-low').textContent = low;
+    document.getElementById('sum-out').textContent = out;
+  }
+
+  async function saveSingle(slug) {
+    const qty = pendingChanges[slug] !== undefined ? pendingChanges[slug] : stockData[slug];
+    try {
+      const res = await fetch(API + '/admin/stock/set', {
+        method: 'POST',
+        headers: { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug, stock: qty })
+      });
+      if (!res.ok) throw new Error();
+      stockData[slug] = qty;
+      delete pendingChanges[slug];
+      updateSummary();
+      toast('Saved: ' + slug);
+    } catch (e) { toast('Save failed', true); }
+  }
+
+  async function saveAll() {
+    const changes = Object.entries(pendingChanges);
+    if (!changes.length) { toast('No pending changes'); return; }
+    const items = changes.map(([slug, stock]) => ({ slug, stock }));
+    try {
+      const res = await fetch(API + '/admin/stock/bulk', {
+        method: 'POST',
+        headers: { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items })
+      });
+      if (!res.ok) throw new Error();
+      changes.forEach(([slug, qty]) => { stockData[slug] = qty; });
+      pendingChanges = {};
+      updateSummary();
+      toast('Saved ' + items.length + ' product' + (items.length === 1 ? '' : 's'));
+    } catch (e) { toast('Save failed', true); }
+  }
+
+  async function addProduct() {
+    const slug = document.getElementById('new-slug').value.trim();
+    const qty = parseInt(document.getElementById('new-stock').value) || 0;
+    if (!slug) { toast('Enter a slug', true); return; }
+    try {
+      const res = await fetch(API + '/admin/stock/set', {
+        method: 'POST',
+        headers: { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug, stock: qty })
+      });
+      if (!res.ok) throw new Error();
+      stockData[slug] = qty;
+      delete pendingChanges[slug];
+      document.getElementById('new-slug').value = '';
+      document.getElementById('new-stock').value = '1';
+      renderTable();
+      updateSummary();
+      toast('Added: ' + slug);
+    } catch (e) { toast('Failed to add product', true); }
+  }
+
+  function toast(msg, isError) {
+    const el = document.getElementById('toast');
+    el.textContent = msg;
+    el.className = 'toast' + (isError ? ' error' : '');
+    el.classList.add('show');
+    setTimeout(() => el.classList.remove('show'), 2500);
+  }
+</script>
+
+</body>
+</html>

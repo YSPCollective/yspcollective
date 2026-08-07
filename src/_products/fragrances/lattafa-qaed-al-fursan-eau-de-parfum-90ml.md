@@ -8,7 +8,7 @@ size: 90ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
 stock_status: in_stock
-stock_quantity: 13
+stock_quantity: 12
 featured: true
 published: true
 date_added: 2026-06-02
@@ -31,35 +31,29 @@ launched: "2016"
 vegan: false
 image_main: /images/uploads/lattafa-qaed-al-fursan-1.jpeg
 gallery:
-  - /images/uploads/lattafa-badee-al-oud-glory-2.jpeg
-  - /images/uploads/lattafa-badee-al-oud-glory-1.jpeg
-description_short: >-
-  
-  A fresh, sophisticated masculine fragrance from Lattafa — Qaed Al Fursan translates to "leader of the knights", and the fragrance lives up to the name. Polished, confident, and built for everyday excellence.
-description_full: >-
-  
-  Lattafa Qaed Al Fursan Eau de Parfum opens with a crisp, aromatic freshness — bergamot and lavender setting a clean, distinguished tone from the first spray. 
+  - /images/uploads/lattafa-qaed-al-fursan-1.jpeg
+description_short: A fresh, sophisticated masculine fragrance from Lattafa —
+  Qaed Al Fursan translates to "leader of the knights", and the fragrance lives
+  up to the name. Polished, confident, and built for everyday excellence.
+description_full: >
+  <p>Lattafa Qaed Al Fursan Eau de Parfum opens with a crisp, aromatic freshness
+  — bergamot and lavender setting a clean, distinguished tone from the first
+  spray.</p>
 
+  <p>The heart brings a subtle floral and spice dimension that adds character without disrupting the overall freshness, while the base of cedarwood, vetiver, and musk gives it a dry, woody depth that anchors the composition beautifully.</p>
 
-  The heart brings a subtle floral and spice dimension that adds character without disrupting the overall freshness, while the base of cedarwood, vetiver, and musk gives it a dry, woody depth that anchors the composition beautifully. 
+  <p>The result is a fragrance that sits firmly in the modern masculine tradition — office-appropriate, versatile, and consistently well-received.</p>
 
+  <p>Projection is moderate and well-mannered, sillage clean and lasting. Longevity delivers a reliable 8–10 hours.</p>
 
-  The result is a fragrance that sits firmly in the modern masculine tradition — office-appropriate, versatile, and consistently well-received. 
+  <p>A year-round performer that works equally well in a boardroom or a casual setting. One of Lattafa's most broadly appealing releases.</p>
+ysp_thoughts: >
+  <p>Some fragrances have a specific occasion, and some just work everywhere —
+  Qaed Al Fursan is firmly in the second category.</p>
 
+  <p>It has that quality that well-dressed, understated people tend to reach for: nothing to prove, everything to offer.</p>
 
-  Projection is moderate and well-mannered, sillage clean and lasting. Longevity delivers a reliable 8–10 hours. 
-
-
-  A year-round performer that works equally well in a boardroom or a casual setting. One of Lattafa's most broadly appealing releases.
-ysp_thoughts: >-
-  
-  Some fragrances have a specific occasion, and some just work everywhere — Qaed Al Fursan is firmly in the second category. 
-
-
-  It has that quality that well-dressed, understated people tend to reach for: nothing to prove, everything to offer. 
-
-
-  We picked it because it's the kind of fragrance that builds quiet loyalty. People don't rave about it the first time they smell it — they just keep coming back to it. That consistency is worth a lot.
+  <p>We picked it because it's the kind of fragrance that builds quiet loyalty. People don't rave about it the first time they smell it — they just keep coming back to it. That consistency is worth a lot.</p>
 inspired_by_name: Creed Aventus
 inspired_by_note: fruity-woody Aventus family, lighter projection and more accessible
 gtin: "6291107455365"

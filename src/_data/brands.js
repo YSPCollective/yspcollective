@@ -190,6 +190,40 @@ module.exports = [
     ysp_take: "Paris Corner is one of the most underrated houses in Arabian perfumery. The Ministry of Gourmand collection alone is worth exploring if you love rich, indulgent scents — and the breadth of their wider catalogue means there's something here for everyone, at prices that remove every excuse not to try."
   },
 
+  {
+    slug: "fragrance-world",
+    name: "Fragrance World",
+    type: "fragrance",
+    origin: "Arabian Fragrance · Dubai, UAE",
+    origin_city: "Dubai",
+    founded: "2008",
+    tagline: "Designer DNA. Fraction of the price.",
+    stat_value: "UAE",
+    stat_label: "Heritage",
+    story_heading: "The house that perfected the art of the inspired-by.",
+    story: `<p>Fragrance World is a Dubai-based house that has built its reputation on one of the most compelling propositions in modern perfumery: take the note pyramids of the world's most celebrated fragrances, recreate them with genuine quality ingredients, and make them accessible to everyone. It sounds simple. Executing it well — without producing pale imitations — is anything but.</p>
+<p>Where many houses in this space cut corners on raw materials, Fragrance World invests in the quality of their bases and fixatives. The result is compositions that don't just smell like their inspirations at first spray — they evolve, project, and last in ways that make the comparison genuinely flattering. Classy Chic Girl is a perfect example: the same almond-coffee-tuberose-tonka DNA that made Carolina Herrera Good Girl a global bestseller, rendered with enough fidelity and quality to hold its own.</p>
+<p>For fragrance lovers who know what they love but not what they can afford to spend, Fragrance World represents one of the most honest value propositions in the market.</p>`,
+    ysp_take: "Fragrance World earns its place in our catalogue because they get the fundamentals right: the quality of the ingredients matters, the longevity is genuine, and the inspired-by framing is honest. Classy Chic Girl in particular is one of the strongest value finds in the feminine gourmand space."
+  },
+
+  {
+    slug: "french-avenue",
+    name: "French Avenue",
+    type: "fragrance",
+    origin: "Arabian Fragrance · Dubai, UAE",
+    origin_city: "Dubai",
+    founded: "2018",
+    tagline: "Niche quality. Accessible price. Community-validated.",
+    stat_value: "Readers' Choice",
+    stat_label: "Fragrantica 2024",
+    story_heading: "The house the fragrance community awarded.",
+    story: `<p>French Avenue is a Dubai-based fragrance house whose reputation was built not through advertising but through the fragrance community itself. When Liquid Brun won a Fragrantica Readers' Choice Award in 2024 — voted by tens of thousands of fragrance enthusiasts worldwide — it confirmed what those in the know had already discovered: this house is doing something genuinely impressive at their price point.</p>
+<p>The French Avenue aesthetic leans into warmth and sophistication — spiced vanillas, creamy orientals, compositions with real depth and character. Their perfumers work with quality raw materials and take the craft seriously, producing fragrances that earn comparison to niche houses at ten times the price. Liquid Brun's positioning alongside Parfums de Marly Althaïr is not marketing; it's a community consensus built over thousands of individual reviews.</p>
+<p>For the fragrance enthusiast who knows the niche world but not its price tags, French Avenue is an increasingly essential discovery.</p>`,
+    ysp_take: "French Avenue is on our shelves because of Liquid Brun — full stop. A Fragrantica Readers' Choice Award is not a fluke; it reflects genuine community consensus from people who own and wear the fragrances being compared. The vanilla quality here is exceptional for the price. We'd put this up against fragrances at five times the cost."
+  },
+
   // ── EUROPEAN BRANDS ─────────────────────────────────────────────────────
 
   {
