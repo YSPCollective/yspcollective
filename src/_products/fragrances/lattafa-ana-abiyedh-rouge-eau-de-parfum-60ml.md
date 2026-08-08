@@ -7,8 +7,8 @@ gender: Women
 size: 60ml
 concentration: Eau de Parfum (EDP)
 badge: Bestseller
-stock_status: last_one
-stock_quantity: 1
+stock_status: sold_out
+stock_quantity: 0
 featured: false
 published: true
 date_added: 2026-06-02
