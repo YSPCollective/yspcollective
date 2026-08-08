@@ -8,7 +8,7 @@ badge: Curated
 custom_badge: ""
 stock_status: sold_out
 featured: true
-published: true
+published: false
 skin_type: All skin types, including sensitive
 key_ingredients: PDRN (Sodium DNA), 11-type Hyaluronic Acid Complex, Hydrolyzed
   Collagen, Niacinamide, Glutathione, Adenosine, Glycerin

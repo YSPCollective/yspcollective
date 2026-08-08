@@ -9,7 +9,7 @@ concentration: Eau de Parfum (EDP)
 badge: Premium
 stock_status: sold_out
 featured: false
-published: true
+published: false
 fragrance_family: Oriental Woody Spicy
 top_notes: Violet, Caraway, Bergamot, Verbena, Pink Pepper
 heart_notes: Bulgarian Rose, Tuscan Iris, Black Pepper, Nutmeg, Clary Sage, Geranium

@@ -10,7 +10,7 @@ badge: Premium
 custom_badge: ""
 stock_status: sold_out
 featured: false
-published: true
+published: false
 fragrance_family: Aromatic Spicy Woody
 top_notes: Bergamot, Orange, Absinthe, Pink Pepper, Peppermint, Lemon
 heart_notes: Clove, Allspice, Jasmine, Orris Root, Bulgarian Rose, Lavender

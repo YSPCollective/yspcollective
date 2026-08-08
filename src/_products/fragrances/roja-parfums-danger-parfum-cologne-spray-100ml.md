@@ -10,7 +10,7 @@ badge: ""
 custom_badge: Premium
 stock_status: sold_out
 featured: false
-published: true
+published: false
 fragrance_family: Aromatic Leather Oriental
 top_notes: Lavender, Lemon, Begamot, Tarragon
 heart_notes: Violet, Jasmine, Lily of the Valley

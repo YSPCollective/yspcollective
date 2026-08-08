@@ -10,7 +10,7 @@ badge: ""
 custom_badge: Our Home
 stock_status: sold_out
 featured: false
-published: true
+published: false
 fragrance_family: Aromatic Spicy Woody
 top_notes: Bergamot
 heart_notes: Lavender

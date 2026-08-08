@@ -9,7 +9,7 @@ concentration: Eau de Parfum (EDP)
 badge: Popular
 stock_status: sold_out
 featured: false
-published: true
+published: false
 fragrance_family: Floral Gourmand Oriental
 top_notes: Pink Pepper, Pear, Orange Blossom
 heart_notes: Licorice, Coffee, Jasmine, Bitter Almond

@@ -8,7 +8,7 @@ badge: Popular
 custom_badge: ""
 stock_status: sold_out
 featured: true
-published: true
+published: false
 skin_type: All skin types, including sensitive and acne-prone
 key_ingredients: Heartleaf Extract (Houttuynia Cordata), Jojoba Oil, Olive Fruit
   Oil, Grape Seed Oil, Sunflower Seed Oil, Macadamia Oil, Moringa Oil,

@@ -9,7 +9,7 @@ concentration: Parfum
 badge: Premium
 stock_status: sold_out
 featured: false
-published: true
+published: false
 fragrance_family: Floral Chypre
 top_notes: Peach, Apricot, Mandarin Orange
 heart_notes: Floral notes, Jasmine, Wild Strawberry

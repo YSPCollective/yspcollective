@@ -8,7 +8,7 @@ badge: Bestseller
 custom_badge: ""
 stock_status: in_stock
 featured: true
-published: true
+published: false
 skin_type: All skin types, especially dry, sensitive, and acne-prone
 key_ingredients: 70% Heartleaf Extract (Houttuynia Cordata), Ceramide NP,
   Panthenol, Adenosine, Glycerin, Cholesterol

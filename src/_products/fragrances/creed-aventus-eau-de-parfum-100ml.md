@@ -10,7 +10,7 @@ badge: Premium
 custom_badge: ""
 stock_status: sold_out
 featured: false
-published: true
+published: false
 fragrance_family: Fruity Chypre
 top_notes: Bergamot, Black Currant, Apple, Lemon, Pink Pepper
 heart_notes: Pineapple, Patchouli, Moroccan Jasmine
