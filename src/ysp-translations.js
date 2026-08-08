@@ -2,7 +2,6 @@ const YSP_TRANSLATIONS = {
   en: {
     // Nav
     nav_fragrances: "Fragrances",
-    nav_beauty: "Beauty",
     nav_brands: "Brands",
     nav_about: "About",
     nav_faq: "FAQ",
@@ -10,7 +9,7 @@ const YSP_TRANSLATIONS = {
     nav_enquire: "Enquire",
 
     // Hero 1
-    hero_1_tag: "Arabian &amp; European Fragrance",
+    hero_1_tag: "Arabian &amp; Niche Fragrance",
     hero_1_title: "Luxury Arabian Fragrances<br><em>Without the Luxury Markup</em>",
     hero_1_sub: "Discover iconic scents from Lattafa, Armaf, Rasasi and more — delivered across Europe from Portugal.",
     hero_1_cta1: "Shop Best Sellers",
@@ -23,20 +22,11 @@ const YSP_TRANSLATIONS = {
     hero_2_cta1: "Explore Arabian Fragrances",
     hero_2_cta2: "Our Story",
 
-    // Hero 3
-    hero_3_tag: "K-Beauty · Seoul Science · Glass Skin",
-    hero_3_title: "The Skincare<br><em>Seoul Swears By.</em>",
-    hero_3_sub: "COSRX, ANUA, Beauty of Joseon — the ingredient-led brands Korean women trust. Now delivered across Europe.",
-    hero_3_cta1: "Shop K-Beauty",
-    hero_3_cta2: "Our Story",
-
     // Shop the range
     range_label: "The Collection",
     range_title: "Shop the range",
-    range_frag_label: "Arabian &amp; European",
+    range_frag_label: "Lattafa · Armaf · Rasasi &amp; More",
     range_frag_title: "Shop Fragrances",
-    range_beauty_label: "K-Beauty &amp; Skincare",
-    range_beauty_title: "Shop Beauty",
     range_link: "Browse the full edit",
 
     // Stats
@@ -46,12 +36,11 @@ const YSP_TRANSLATIONS = {
     stat_dispatch: "Average Dispatch",
 
     // Search
-    search_label: "Find Your Scent or Skincare",
+    search_label: "Find Your Scent",
     search_title: "Search our range",
-    search_placeholder: "Search by name, brand, accord, or ingredient...",
+    search_placeholder: "Search by name, brand, accord, or note...",
     filter_all: "All",
     filter_fragrance: "Fragrance",
-    filter_beauty: "Beauty",
     filter_vanilla: "Vanilla",
     filter_oud: "Oud",
     filter_floral: "Floral",
@@ -66,14 +55,12 @@ const YSP_TRANSLATIONS = {
     // Featured
     frag_label: "Arabian & Niche Fragrance",
     frag_title: "Featured fragrances",
-    beauty_label: "K-Beauty & Skincare",
-    beauty_title: "Featured beauty",
 
     // Philosophy
     phil_label: "Our Philosophy",
-    phil_title: "Three lines. One standard.",
-    phil_p1: "YSP Collective is a curated beauty and fragrance brand based in Portugal, bringing together premium skincare, sought-after Arabian perfumes and trusted beauty products under one roof. We started with a simple principle: only carry products we'd genuinely recommend.",
-    phil_p2: "Whether it's a K-beauty SPF that actually works, a viral Lattafa fragrance, or a niche scent you won't find on the high street — everything here is chosen for quality, described accurately, and backed by real support.",
+    phil_title: "One focus. One standard.",
+    phil_p1: "YSP Collective is an Arabian fragrance specialist based in Portugal, bringing together the finest oud-based, oriental and niche scents from Dubai and the Gulf. We started with a simple principle: only carry fragrances we'd genuinely wear ourselves.",
+    phil_p2: "Whether it's a viral Lattafa release, a long-lasting Armaf classic, or a rare oud you won't find on the high street — everything here is chosen for quality, described accurately, and backed by real support.",
     val_1_title: "Carefully Sourced",
     val_1_desc: "Every product from trusted suppliers and authorised EU distributors.",
     val_2_title: "Honestly Described",
@@ -84,12 +71,9 @@ const YSP_TRANSLATIONS = {
     val_4_desc: "Prompt responses and we stand behind every sale.",
 
     // Categories
-    cat_label: "Shop by Category",
-    cat_title: "Find what you're looking for",
-    cat_desc: "From daily skincare essentials to premium Arabian fragrance — browse our curated categories.",
-    cat_beauty: "Beauty & Skincare",
-    cat_fragrance: "Fragrance",
-    cat_arabian: "Arabian Fragrance",
+    cat_label: "Shop by Gender",
+    cat_title: "Find your fragrance",
+    cat_desc: "Browse our Arabian fragrance collection by gender — from masculine ouds to feminine florals and versatile unisex scents.",
     cat_explore: "Explore Collection →",
 
     // Brands
@@ -100,22 +84,18 @@ const YSP_TRANSLATIONS = {
     // Testimonials
     test_label: "What People Say",
     test_title: "Trusted by our customers",
-    test_1_quote: "Ordered the Beauty of Joseon SPF and it arrived within 3 days. Genuine product, beautifully packaged. Will definitely order again.",
-    test_1_author: "Sofia M. — Lisbon, PT",
-    test_2_quote: "The skincare bundle was excellent value. Everything sealed, within date, and exactly as described. Really impressed with the selection.",
-    test_2_author: "Anna K. — Berlin, DE",
     test_3_quote: "The Lattafa Khamrah is incredible — lasts all day and I get compliments every time I wear it. Authentic product, fast shipping from Portugal.",
     test_3_author: "Marco L. — Milan, IT",
 
     // FAQ
     faq_label: "Common Questions",
     faq_title: "Everything you need to know",
-    faq_1_q: "What condition are your beauty products in?",
-    faq_1_a: "All beauty, skincare and fragrance products are brand new, sealed, and within date. We source exclusively from authorised EU distributors — no grey market stock.",
+    faq_1_q: "What condition are your fragrances in?",
+    faq_1_a: "All fragrances are brand new, factory sealed, and in original packaging. We source exclusively through authorised EU distributors — no grey market, no decants, no fakes.",
     faq_2_q: "Where do you ship to?",
     faq_2_a: "We ship across Europe from our base in Portugal. Most orders dispatch within 24 hours. Delivery is typically 2–5 business days. No hidden import costs within the EU.",
-    faq_3_q: "Are your K-beauty products authentic?",
-    faq_3_a: "100%. We source from authorised distributors who import directly and legally into the EU. Every product is genuine, correctly labelled, and within its stated shelf life.",
+    faq_3_q: "Are your Arabian fragrances authentic?",
+    faq_3_a: "100%. We source from authorised distributors who import directly and legally into the EU. Every bottle is genuine, correctly labelled, and comes with its original packaging and seals intact.",
     faq_4_q: "Why Arabian fragrances?",
     faq_4_a: "Arabian fragrance houses like Lattafa and Armaf create rich, long-lasting compositions that rival designer fragrances at a fraction of the price. Original, expertly crafted scents sourced through official EU distributors — every bottle guaranteed authentic.",
     faq_5_q: "Do you offer returns?",
@@ -141,7 +121,7 @@ const YSP_TRANSLATIONS = {
     form_error: "Something went wrong — please email info@yspcollective.com",
 
     // Footer
-    footer_desc: "Curated beauty, fragrance and lifestyle products. Sourced from authorised distributors, delivered across Europe.",
+    footer_desc: "Arabian fragrance specialists. Premium oud and oriental scents, delivered across Europe from Portugal.",
     footer_shop: "Shop",
     footer_company: "Company",
     footer_find: "Also Find Us",
@@ -168,16 +148,15 @@ const YSP_TRANSLATIONS = {
     pdp_accords: "Main Accords",
     pdp_home: "Home",
     pdp_back_frag: "Fragrance",
-    pdp_back_beauty: "Skincare",
 
     // Chat widget
     chat_header: "YSP Advisor",
-    chat_subheader: "Fragrance & Beauty",
-    chat_welcome: "Hello! I'm your YSP fragrance and beauty advisor. I can help you find your perfect scent, answer questions about our skincare range, or help with anything else — delivery, ordering, you name it. What can I help you with today?",
+    chat_subheader: "Fragrance",
+    chat_welcome: "Hello! I'm your YSP fragrance advisor. I can help you find your perfect scent, answer questions about our Arabian fragrances, or help with anything else — delivery, ordering, you name it. What can I help you with today?",
     chat_placeholder: "Ask me anything...",
     chat_suggest_1: "Find me a fragrance",
     chat_suggest_2: "What's popular?",
-    chat_suggest_3: "Skincare advice",
+    chat_suggest_3: "Oud explained",
     chat_suggest_4: "Shipping info",
     chat_error: "I'm having a little trouble connecting right now. For immediate help, please email info@yspcollective.com and we'll get back to you within 24 hours.",
 
@@ -202,7 +181,6 @@ const YSP_TRANSLATIONS = {
   pt: {
     // Nav
     nav_fragrances: "Fragrâncias",
-    nav_beauty: "Beleza",
     nav_brands: "Marcas",
     nav_about: "Sobre",
     nav_faq: "FAQ",
@@ -210,7 +188,7 @@ const YSP_TRANSLATIONS = {
     nav_enquire: "Saber Mais",
 
     // Hero 1
-    hero_1_tag: "Fragrância Árabe &amp; Europeia",
+    hero_1_tag: "Fragrância Árabe &amp; Nicho",
     hero_1_title: "Fragrâncias Árabes de Luxo<br><em>Sem o Preço de Luxo</em>",
     hero_1_sub: "Descubra perfumes icónicos de Lattafa, Armaf, Rasasi e muito mais — entregues em toda a Europa a partir de Portugal.",
     hero_1_cta1: "Ver Mais Vendidos",
@@ -223,20 +201,11 @@ const YSP_TRANSLATIONS = {
     hero_2_cta1: "Explorar Fragrâncias Árabes",
     hero_2_cta2: "A Nossa História",
 
-    // Hero 3
-    hero_3_tag: "K-Beauty · Ciência de Seul · Pele de Vidro",
-    hero_3_title: "O Skincare<br><em>que Seul Recomenda.</em>",
-    hero_3_sub: "COSRX, ANUA, Beauty of Joseon — as marcas de ingredientes ativos em que as mulheres coreanas confiam. Agora entregues em toda a Europa.",
-    hero_3_cta1: "Ver K-Beauty",
-    hero_3_cta2: "A Nossa História",
-
     // Shop the range
     range_label: "A Coleção",
     range_title: "Ver a gama",
-    range_frag_label: "Árabe &amp; Europeia",
+    range_frag_label: "Lattafa · Armaf · Rasasi &amp; Mais",
     range_frag_title: "Ver Fragrâncias",
-    range_beauty_label: "K-Beauty &amp; Skincare",
-    range_beauty_title: "Ver Beleza",
     range_link: "Ver toda a coleção",
 
     // Stats
@@ -246,12 +215,11 @@ const YSP_TRANSLATIONS = {
     stat_dispatch: "Expedição Média",
 
     // Search
-    search_label: "Encontre o Seu Perfume ou Skincare",
+    search_label: "Encontre o Seu Perfume",
     search_title: "Pesquise na nossa gama",
-    search_placeholder: "Pesquise por nome, marca, acorde ou ingrediente...",
+    search_placeholder: "Pesquise por nome, marca, acorde ou nota...",
     filter_all: "Todos",
     filter_fragrance: "Fragrância",
-    filter_beauty: "Beleza",
     filter_vanilla: "Baunilha",
     filter_oud: "Oud",
     filter_floral: "Floral",
@@ -266,14 +234,12 @@ const YSP_TRANSLATIONS = {
     // Featured
     frag_label: "Fragrância Árabe & Nicho",
     frag_title: "Fragrâncias em destaque",
-    beauty_label: "K-Beauty & Skincare",
-    beauty_title: "Beleza em destaque",
 
     // Philosophy
     phil_label: "A Nossa Filosofia",
-    phil_title: "Três linhas. Um padrão.",
-    phil_p1: "A YSP Collective é uma marca de beleza e fragrância curada, baseada em Portugal, que reúne skincare premium, perfumes árabes e produtos de beleza de confiança sob o mesmo teto. Começámos com um princípio simples: apenas comercializar produtos que recomendaríamos genuinamente.",
-    phil_p2: "Seja um SPF de K-beauty que realmente funciona, uma fragrância Lattafa viral, ou um perfume de nicho que não encontrará nas lojas tradicionais — tudo aqui é escolhido pela qualidade, descrito com rigor e apoiado por suporte real.",
+    phil_title: "Um foco. Um padrão.",
+    phil_p1: "A YSP Collective é uma especialista em fragrâncias árabes baseada em Portugal, reunindo os melhores perfumes à base de oud, orientais e de nicho de Dubai e do Golfo. Começámos com um princípio simples: apenas comercializar fragrâncias que genuinamente usaríamos nós próprios.",
+    phil_p2: "Seja um lançamento viral da Lattafa, um clássico duradouro da Armaf, ou um oud raro que não encontrará nas lojas tradicionais — tudo aqui é escolhido pela qualidade, descrito com rigor e apoiado por suporte real.",
     val_1_title: "Cuidadosamente Selecionado",
     val_1_desc: "Todos os produtos de fornecedores de confiança e distribuidores autorizados na UE.",
     val_2_title: "Descrito com Honestidade",
@@ -284,12 +250,9 @@ const YSP_TRANSLATIONS = {
     val_4_desc: "Respostas rápidas e garantia em cada venda.",
 
     // Categories
-    cat_label: "Comprar por Categoria",
-    cat_title: "Encontre o que procura",
-    cat_desc: "Desde essenciais de skincare diário a fragrâncias árabes premium — explore as nossas categorias.",
-    cat_beauty: "Beleza & Skincare",
-    cat_fragrance: "Fragrância",
-    cat_arabian: "Fragrância Árabe",
+    cat_label: "Comprar por Género",
+    cat_title: "Encontre a sua fragrância",
+    cat_desc: "Explore a nossa coleção de fragrâncias árabes por género — de ouds masculinos a florais femininos e perfumes versáteis unissexo.",
     cat_explore: "Explorar Coleção →",
 
     // Brands
@@ -300,22 +263,18 @@ const YSP_TRANSLATIONS = {
     // Testimonials
     test_label: "O Que Dizem",
     test_title: "A confiança dos nossos clientes",
-    test_1_quote: "Encomendei o SPF da Beauty of Joseon e chegou em 3 dias. Produto genuíno, embalado com cuidado. Vou certamente repetir.",
-    test_1_author: "Sofia M. — Lisboa, PT",
-    test_2_quote: "O conjunto de skincare tinha uma relação qualidade-preço excelente. Tudo selado, dentro do prazo e exatamente como descrito. Muito impressionada.",
-    test_2_author: "Anna K. — Berlim, DE",
     test_3_quote: "O Lattafa Khamrah é incrível — dura o dia todo e recebo elogios sempre que o uso. Produto autêntico, envio rápido de Portugal.",
     test_3_author: "Marco L. — Milão, IT",
 
     // FAQ
     faq_label: "Perguntas Frequentes",
     faq_title: "Tudo o que precisa de saber",
-    faq_1_q: "Em que estado estão os seus produtos de beleza?",
-    faq_1_a: "Todos os produtos de beleza, skincare e fragrância são novos, selados e dentro do prazo de validade. Fornecemos exclusivamente através de distribuidores autorizados na UE — sem mercado paralelo.",
+    faq_1_q: "Em que estado estão as suas fragrâncias?",
+    faq_1_a: "Todas as fragrâncias são novas, seladas de fábrica e em embalagem original. Fornecemos exclusivamente através de distribuidores autorizados na UE — sem mercado paralelo, sem decants, sem falsificações.",
     faq_2_q: "Para onde fazem entregas?",
     faq_2_a: "Enviamos para toda a Europa a partir da nossa base em Portugal. A maioria das encomendas é expedida em 24 horas. A entrega demora normalmente 2 a 5 dias úteis. Sem custos de importação ocultos na UE.",
-    faq_3_q: "Os produtos K-beauty são autênticos?",
-    faq_3_a: "100%. Fornecemos através de distribuidores autorizados que importam direta e legalmente para a UE. Todos os produtos são genuínos, corretamente rotulados e dentro do prazo de validade.",
+    faq_3_q: "As suas fragrâncias árabes são autênticas?",
+    faq_3_a: "100%. Fornecemos através de distribuidores autorizados que importam direta e legalmente para a UE. Cada frasco é genuíno, corretamente rotulado e vem com embalagem original e selos intactos.",
     faq_4_q: "Porquê fragrâncias árabes?",
     faq_4_a: "As casas de fragrâncias árabes como a Lattafa e a Armaf criam composições ricas e duradouras que rivalizam com as fragrâncias de designer a uma fração do preço. Perfumes originais e especializados, fornecidos através de distribuidores oficiais na UE — cada frasco garantidamente autêntico.",
     faq_5_q: "Oferecem devoluções?",
@@ -341,7 +300,7 @@ const YSP_TRANSLATIONS = {
     form_error: "Algo correu mal — por favor envie email para info@yspcollective.com",
 
     // Footer
-    footer_desc: "Produtos de beleza, fragrância e lifestyle curados. Fornecidos por distribuidores autorizados, entregues em toda a Europa.",
+    footer_desc: "Especialistas em fragrâncias árabes. Perfumes premium de oud e orientais, entregues em toda a Europa a partir de Portugal.",
     footer_shop: "Loja",
     footer_company: "Empresa",
     footer_find: "Encontre-nos também",
@@ -368,16 +327,15 @@ const YSP_TRANSLATIONS = {
     pdp_accords: "Acordes Principais",
     pdp_home: "Início",
     pdp_back_frag: "Fragrância",
-    pdp_back_beauty: "Skincare",
 
     // Chat
     chat_header: "Conselheiro YSP",
-    chat_subheader: "Fragrância & Beleza",
-    chat_welcome: "Olá! Sou o seu conselheiro de fragrâncias e beleza YSP. Posso ajudá-lo a encontrar o perfume perfeito, responder a questões sobre a nossa gama de skincare, ou ajudar com qualquer outra coisa. Em que posso ajudar hoje?",
+    chat_subheader: "Fragrância",
+    chat_welcome: "Olá! Sou o seu conselheiro de fragrâncias YSP. Posso ajudá-lo a encontrar o perfume perfeito, responder a questões sobre as nossas fragrâncias árabes, ou ajudar com qualquer outra coisa. Em que posso ajudar hoje?",
     chat_placeholder: "Pergunte-me qualquer coisa...",
     chat_suggest_1: "Encontrar uma fragrância",
     chat_suggest_2: "O que é popular?",
-    chat_suggest_3: "Conselhos de skincare",
+    chat_suggest_3: "O que é oud?",
     chat_suggest_4: "Informação de envio",
     chat_error: "Estou com dificuldades de ligação. Para ajuda imediata, envie email para info@yspcollective.com e responderemos em 24 horas.",
 
@@ -402,7 +360,6 @@ const YSP_TRANSLATIONS = {
   es: {
     // Nav
     nav_fragrances: "Fragancias",
-    nav_beauty: "Belleza",
     nav_brands: "Marcas",
     nav_about: "Nosotros",
     nav_faq: "FAQ",
@@ -410,7 +367,7 @@ const YSP_TRANSLATIONS = {
     nav_enquire: "Consultar",
 
     // Hero 1
-    hero_1_tag: "Fragancia Árabe &amp; Europea",
+    hero_1_tag: "Fragancia Árabe &amp; Nicho",
     hero_1_title: "Fragancias Árabes de Lujo<br><em>Sin el Precio de Lujo</em>",
     hero_1_sub: "Descubre fragancias icónicas de Lattafa, Armaf, Rasasi y más — entregadas en toda Europa desde Portugal.",
     hero_1_cta1: "Ver Más Vendidos",
@@ -423,20 +380,11 @@ const YSP_TRANSLATIONS = {
     hero_2_cta1: "Explorar Fragancias Árabes",
     hero_2_cta2: "Nuestra Historia",
 
-    // Hero 3
-    hero_3_tag: "K-Beauty · Ciencia de Seúl · Piel de Cristal",
-    hero_3_title: "El Skincare<br><em>que Seúl Recomienda.</em>",
-    hero_3_sub: "COSRX, ANUA, Beauty of Joseon — las marcas de ingredientes activos en las que confían las mujeres coreanas. Ahora entregadas en toda Europa.",
-    hero_3_cta1: "Ver K-Beauty",
-    hero_3_cta2: "Nuestra Historia",
-
     // Shop the range
     range_label: "La Colección",
     range_title: "Ver la gama",
-    range_frag_label: "Árabe &amp; Europea",
+    range_frag_label: "Lattafa · Armaf · Rasasi &amp; Más",
     range_frag_title: "Ver Fragancias",
-    range_beauty_label: "K-Beauty &amp; Skincare",
-    range_beauty_title: "Ver Belleza",
     range_link: "Ver toda la colección",
 
     // Stats
@@ -446,12 +394,11 @@ const YSP_TRANSLATIONS = {
     stat_dispatch: "Envío Promedio",
 
     // Search
-    search_label: "Encuentra Tu Perfume o Skincare",
+    search_label: "Encuentra Tu Perfume",
     search_title: "Busca en nuestra gama",
-    search_placeholder: "Busca por nombre, marca, acorde o ingrediente...",
+    search_placeholder: "Busca por nombre, marca, acorde o nota...",
     filter_all: "Todos",
     filter_fragrance: "Fragancia",
-    filter_beauty: "Belleza",
     filter_vanilla: "Vainilla",
     filter_oud: "Oud",
     filter_floral: "Floral",
@@ -466,14 +413,12 @@ const YSP_TRANSLATIONS = {
     // Featured
     frag_label: "Fragancia Árabe & Nicho",
     frag_title: "Fragancias destacadas",
-    beauty_label: "K-Beauty & Skincare",
-    beauty_title: "Belleza destacada",
 
     // Philosophy
     phil_label: "Nuestra Filosofía",
-    phil_title: "Tres líneas. Un estándar.",
-    phil_p1: "YSP Collective es una marca de belleza y fragancia curada con base en Portugal, que reúne skincare premium, perfumes árabes y productos de belleza de confianza bajo un mismo techo. Empezamos con un principio simple: solo comercializar productos que recomendaríamos genuinamente.",
-    phil_p2: "Ya sea un SPF de K-beauty que realmente funciona, una fragancia Lattafa viral, o un perfume de nicho que no encontrarás en las tiendas habituales — todo aquí se elige por calidad, se describe con precisión y está respaldado por soporte real.",
+    phil_title: "Un enfoque. Un estándar.",
+    phil_p1: "YSP Collective es una especialista en fragancias árabes con base en Portugal, que reúne los mejores perfumes a base de oud, orientales y de nicho de Dubái y el Golfo. Empezamos con un principio simple: solo comercializar fragancias que genuinamente usaríamos nosotros mismos.",
+    phil_p2: "Ya sea un lanzamiento viral de Lattafa, un clásico duradero de Armaf, o un oud raro que no encontrarás en las tiendas habituales — todo aquí se elige por calidad, se describe con precisión y está respaldado por soporte real.",
     val_1_title: "Cuidadosamente Seleccionado",
     val_1_desc: "Todos los productos de proveedores de confianza y distribuidores autorizados en la UE.",
     val_2_title: "Descrito con Honestidad",
@@ -484,12 +429,9 @@ const YSP_TRANSLATIONS = {
     val_4_desc: "Respuestas rápidas y respaldo en cada venta.",
 
     // Categories
-    cat_label: "Comprar por Categoría",
-    cat_title: "Encuentra lo que buscas",
-    cat_desc: "Desde esenciales de skincare diario hasta fragancias árabes premium — explora nuestras categorías.",
-    cat_beauty: "Belleza & Skincare",
-    cat_fragrance: "Fragancia",
-    cat_arabian: "Fragancia Árabe",
+    cat_label: "Comprar por Género",
+    cat_title: "Encuentra tu fragancia",
+    cat_desc: "Explora nuestra colección de fragancias árabes por género — desde ouds masculinos hasta florales femeninos y fragancias versátiles unisex.",
     cat_explore: "Explorar Colección →",
 
     // Brands
@@ -500,22 +442,18 @@ const YSP_TRANSLATIONS = {
     // Testimonials
     test_label: "Lo Que Dicen",
     test_title: "La confianza de nuestros clientes",
-    test_1_quote: "Pedí el SPF de Beauty of Joseon y llegó en 3 días. Producto genuino, empaquetado con cuidado. Definitivamente repetiré.",
-    test_1_author: "Sofia M. — Lisboa, PT",
-    test_2_quote: "El set de skincare tenía una relación calidad-precio excelente. Todo sellado, dentro de fecha y exactamente como se describía. Muy impresionada.",
-    test_2_author: "Anna K. — Berlín, DE",
     test_3_quote: "El Lattafa Khamrah es increíble — dura todo el día y recibo cumplidos cada vez que lo uso. Producto auténtico, envío rápido desde Portugal.",
     test_3_author: "Marco L. — Milán, IT",
 
     // FAQ
     faq_label: "Preguntas Frecuentes",
     faq_title: "Todo lo que necesitas saber",
-    faq_1_q: "¿En qué estado están sus productos de belleza?",
-    faq_1_a: "Todos los productos de belleza, skincare y fragancia son nuevos, sellados y dentro de fecha. Suministramos exclusivamente a través de distribuidores autorizados en la UE — sin mercado gris.",
+    faq_1_q: "¿En qué estado están sus fragancias?",
+    faq_1_a: "Todas las fragancias son nuevas, selladas de fábrica y en embalaje original. Suministramos exclusivamente a través de distribuidores autorizados en la UE — sin mercado gris, sin decants, sin falsificaciones.",
     faq_2_q: "¿A dónde realizan envíos?",
     faq_2_a: "Enviamos a toda Europa desde nuestra base en Portugal. La mayoría de pedidos se envían en 24 horas. La entrega tarda normalmente 2–5 días hábiles. Sin costes de importación ocultos en la UE.",
-    faq_3_q: "¿Los productos K-beauty son auténticos?",
-    faq_3_a: "100%. Suministramos a través de distribuidores autorizados que importan directa y legalmente a la UE. Todos los productos son genuinos, correctamente etiquetados y dentro de su fecha de caducidad.",
+    faq_3_q: "¿Sus fragancias árabes son auténticas?",
+    faq_3_a: "100%. Suministramos a través de distribuidores autorizados que importan directa y legalmente a la UE. Cada botella es genuina, correctamente etiquetada y viene con su embalaje original y precintos intactos.",
     faq_4_q: "¿Por qué fragancias árabes?",
     faq_4_a: "Las casas de fragancias árabes como Lattafa y Armaf crean composiciones ricas y duraderas que rivalizan con fragancias de diseñador a una fracción del precio. Perfumes originales y artesanales, suministrados a través de distribuidores oficiales en la UE — cada botella garantizada como auténtica.",
     faq_5_q: "¿Ofrecen devoluciones?",
@@ -541,7 +479,7 @@ const YSP_TRANSLATIONS = {
     form_error: "Algo salió mal — por favor envía un email a info@yspcollective.com",
 
     // Footer
-    footer_desc: "Productos de belleza, fragancia y lifestyle curados. Suministrados por distribuidores autorizados, entregados en toda Europa.",
+    footer_desc: "Especialistas en fragancias árabes. Perfumes premium de oud y orientales, entregados en toda Europa desde Portugal.",
     footer_shop: "Tienda",
     footer_company: "Empresa",
     footer_find: "Encuéntranos también en",
@@ -568,16 +506,15 @@ const YSP_TRANSLATIONS = {
     pdp_accords: "Acordes Principales",
     pdp_home: "Inicio",
     pdp_back_frag: "Fragancia",
-    pdp_back_beauty: "Skincare",
 
     // Chat
     chat_header: "Asesor YSP",
-    chat_subheader: "Fragancia & Belleza",
-    chat_welcome: "¡Hola! Soy tu asesor de fragancias y belleza YSP. Puedo ayudarte a encontrar tu perfume perfecto, responder preguntas sobre nuestra gama de skincare, o ayudarte con cualquier otra cosa. ¿En qué puedo ayudarte hoy?",
+    chat_subheader: "Fragancia",
+    chat_welcome: "¡Hola! Soy tu asesor de fragancias YSP. Puedo ayudarte a encontrar tu perfume perfecto, responder preguntas sobre nuestras fragancias árabes, o ayudarte con cualquier otra cosa. ¿En qué puedo ayudarte hoy?",
     chat_placeholder: "Pregúntame lo que quieras...",
     chat_suggest_1: "Encontrar una fragancia",
     chat_suggest_2: "¿Qué es popular?",
-    chat_suggest_3: "Consejos de skincare",
+    chat_suggest_3: "¿Qué es el oud?",
     chat_suggest_4: "Info de envío",
     chat_error: "Tengo problemas de conexión. Para ayuda inmediata, envía un email a info@yspcollective.com y te responderemos en 24 horas.",
 
