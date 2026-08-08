@@ -1,7 +1,7 @@
 ---
 layout: base.njk
-title: "YSP Collective — Beauty, Fragrance & Curated Lifestyle"
-description: "Curated beauty, skincare, fragrance and premium lifestyle products. Sourced with care, delivered across Europe from Portugal."
+title: "YSP Collective — Arabian Fragrance Specialists"
+description: "Curated Arabian fragrances from Lattafa, Armaf, Rasasi and more. Expertly sourced, honestly described, delivered across Europe from Portugal."
 canonical: "https://yspcollective.com/"
 ---
 
@@ -231,7 +231,7 @@ canonical: "https://yspcollective.com/"
     <div class="hero-slide-bg" style="background: url('/images/hero-1.jpg') center/cover no-repeat;"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-tag" data-i18n="hero_1_tag">Arabian &amp; European Fragrance</p>
+      <p class="hero-tag" data-i18n="hero_1_tag">Arabian &amp; Niche Fragrance</p>
       <h1 class="hero-title" data-i18n="hero_1_title" data-i18n-html="true">Luxury Arabian Fragrances<br><em>Without the Luxury Markup</em></h1>
       <p class="hero-sub" data-i18n="hero_1_sub">Discover iconic scents from Lattafa, Armaf, Rasasi and more — delivered across Europe from Portugal.</p>
       <div class="hero-cta-group">
@@ -253,23 +253,9 @@ canonical: "https://yspcollective.com/"
       </div>
     </div>
   </div>
-  <div class="hero-slide">
-    <div class="hero-slide-bg" style="background: url('/images/hero-3.jpg') center/cover no-repeat;"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <p class="hero-tag" data-i18n="hero_3_tag">K-Beauty · Seoul Science · Glass Skin</p>
-      <h1 class="hero-title" data-i18n="hero_3_title" data-i18n-html="true">The Skincare<br><em>Seoul Swears By.</em></h1>
-      <p class="hero-sub" data-i18n="hero_3_sub">COSRX, ANUA, Beauty of Joseon — the ingredient-led brands Korean women trust. Now delivered across Europe.</p>
-      <div class="hero-cta-group">
-        <a href="/beauty/all.html" class="btn-hero btn-hero-primary" data-i18n="hero_3_cta1">Shop K-Beauty</a>
-        <a href="#philosophy" class="btn-hero btn-hero-secondary" data-i18n="hero_3_cta2">Our Story</a>
-      </div>
-    </div>
-  </div>
   <div class="hero-indicators">
     <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
     <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
-    <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
   </div>
   <div class="hero-progress"></div>
 </section>
@@ -296,18 +282,18 @@ canonical: "https://yspcollective.com/"
       <div class="shop-range-card-bg" style="background-image: url('/images/home_fragrance.jpg');"></div>
       <div class="shop-range-card-overlay"></div>
       <div class="shop-range-card-content">
-        <span class="shop-range-card-label" data-i18n="range_frag_label">Arabian &amp; European</span>
+        <span class="shop-range-card-label" data-i18n="range_frag_label">Lattafa · Armaf · Rasasi &amp; More</span>
         <div class="shop-range-card-title" data-i18n="range_frag_title">Shop Fragrances</div>
         <span class="shop-range-card-link" data-i18n="range_link">Browse the full edit</span>
       </div>
     </a>
-    <a href="/beauty/all.html" class="shop-range-card reveal">
-      <div class="shop-range-card-bg" style="background-image: url('/images/home_beauty.jpg');"></div>
+    <a href="/brands/" class="shop-range-card reveal">
+      <div class="shop-range-card-bg" style="background-image: url('/images/categories-arabian.jpg');"></div>
       <div class="shop-range-card-overlay"></div>
       <div class="shop-range-card-content">
-        <span class="shop-range-card-label" data-i18n="range_beauty_label">K-Beauty &amp; Skincare</span>
-        <div class="shop-range-card-title" data-i18n="range_beauty_title">Shop Beauty</div>
-        <span class="shop-range-card-link" data-i18n="range_link">Browse the full edit</span>
+        <span class="shop-range-card-label">Lattafa · Khadlaj · Zimaya &amp; More</span>
+        <div class="shop-range-card-title">Explore by Brand</div>
+        <span class="shop-range-card-link">Meet the houses</span>
       </div>
     </a>
   </div>
@@ -353,46 +339,6 @@ canonical: "https://yspcollective.com/"
   </div>
 </section>
 
-<!-- FEATURED BEAUTY -->
-<section class="featured-section bg-cream" id="featured-beauty">
-  <div class="featured-header reveal">
-    <div>
-      <p class="section-label" data-i18n="beauty_label">K-Beauty &amp; Skincare</p>
-      <h2 class="section-title" data-i18n="beauty_title">Featured beauty</h2>
-    </div>
-  </div>
-  <div class="products-grid">
-    {% set featuredBeauty = collections.beauty | selectattr("data.featured") | list %}
-    {% set displayBeauty = featuredBeauty if featuredBeauty.length else collections.beauty %}
-    {% for product in displayBeauty %}
-    <a href="/products/{{ product.data.slug }}.html" class="product-card reveal">
-      <div class="product-card-image{{ ' is-sold-out' if product.data.stock_status === 'sold_out' else '' }}">
-        <img src="{{ product.data.image_main }}" alt="{{ product.data.name }}" loading="lazy">
-        {% set badgeText = product.data.custom_badge or product.data.badge %}
-        {% if product.data.stock_status === 'sold_out' %}
-        <span class="product-badge badge-soldout">Sold Out</span>
-        {% elif badgeText %}
-        <span class="product-badge {{ badgeText | badgeClass }}">{{ badgeText }}</span>
-        {% endif %}
-        <button class="btn-favourite"
-          data-fav-slug="{{ product.data.slug }}"
-          data-fav-name="{{ product.data.name }}"
-          data-fav-price="{{ product.data.price }}"
-          data-fav-image="{{ product.data.image_main }}"
-          data-fav-type="beauty"
-          aria-label="Save to favourites">&#9825;</button>
-      </div>
-      <div class="product-card-cat">{{ product.data.brand }} · {{ product.data.category }}</div>
-      <div class="product-card-name">{{ product.data.name }}</div>
-      <div class="product-card-price">
-        €{{ product.data.price }}
-        {% if product.data.rrp %}<span class="product-card-rrp">€{{ product.data.rrp }}</span>{% endif %}
-      </div>
-    </a>
-    {% endfor %}
-  </div>
-</section>
-
 <!-- PHILOSOPHY -->
 <section id="philosophy">
   <div class="philosophy-image reveal">
@@ -400,9 +346,9 @@ canonical: "https://yspcollective.com/"
   </div>
   <div class="philosophy-text reveal">
     <p class="section-label" data-i18n="phil_label">Our Philosophy</p>
-    <h2 class="section-title" data-i18n="phil_title">Three lines. One standard.</h2>
-    <p data-i18n="phil_p1">YSP Collective is a curated beauty and fragrance brand based in Portugal, bringing together premium skincare, sought-after Arabian perfumes and trusted beauty products under one roof. We started with a simple principle: only carry products we'd genuinely recommend.</p>
-    <p data-i18n="phil_p2">Whether it's a K-beauty SPF that actually works, a viral Lattafa fragrance, or a niche scent you won't find on the high street — everything here is chosen for quality, described accurately, and backed by real support.</p>
+    <h2 class="section-title" data-i18n="phil_title">One focus. One standard.</h2>
+    <p data-i18n="phil_p1">YSP Collective is an Arabian fragrance specialist based in Portugal, bringing together the finest oud-based, oriental and niche scents from Dubai and the Gulf. We started with a simple principle: only carry fragrances we'd genuinely wear ourselves.</p>
+    <p data-i18n="phil_p2">Whether it's a viral Lattafa release, a long-lasting Armaf classic, or a rare oud you won't find on the high street — everything here is chosen for quality, described accurately, and backed by real support.</p>
     <div class="philosophy-values">
       <div class="pv-item"><div class="pv-num">01</div><div class="pv-title" data-i18n="val_1_title">Carefully Sourced</div><div class="pv-desc" data-i18n="val_1_desc">Every product from trusted suppliers and authorised EU distributors.</div></div>
       <div class="pv-item"><div class="pv-num">02</div><div class="pv-title" data-i18n="val_2_title">Honestly Described</div><div class="pv-desc" data-i18n="val_2_desc">Accurate condition, spec and provenance. No surprises.</div></div>
@@ -415,32 +361,32 @@ canonical: "https://yspcollective.com/"
 <!-- CATEGORIES -->
 <section id="categories">
   <div class="categories-header reveal">
-    <p class="section-label" data-i18n="cat_label">Shop by Category</p>
-    <h2 class="section-title" data-i18n="cat_title">Find what you're looking for</h2>
-    <p class="section-desc" data-i18n="cat_desc">From daily skincare essentials to premium Arabian fragrance — browse our curated categories.</p>
+    <p class="section-label" data-i18n="cat_label">Shop by Gender</p>
+    <h2 class="section-title" data-i18n="cat_title">Find your fragrance</h2>
+    <p class="section-desc" data-i18n="cat_desc">Browse our Arabian fragrance collection by gender — from masculine ouds to feminine florals and versatile unisex scents.</p>
   </div>
   <div class="categories-grid reveal">
-    <a href="/beauty/all.html" class="category-card">
-      <img src="/images/home_beauty.jpg" alt="Beauty &amp; Skincare">
+    <a href="/fragrances/men.html" class="category-card">
+      <img src="/images/home_fragrance.jpg" alt="Men's Fragrance">
       <div class="category-card-overlay"></div>
       <div class="category-card-content">
-        <div class="category-card-name" data-i18n="cat_beauty">Beauty &amp; Skincare</div>
+        <div class="category-card-name">Men</div>
         <div class="category-card-count">Explore Collection →</div>
       </div>
     </a>
-    <a href="/fragrances/all.html" class="category-card">
-      <img src="/images/home_fragrance.jpg" alt="Fragrance">
+    <a href="/fragrances/women.html" class="category-card">
+      <img src="/images/categories-arabian.jpg" alt="Women's Fragrance">
       <div class="category-card-overlay"></div>
       <div class="category-card-content">
-        <div class="category-card-name" data-i18n="cat_fragrance">Fragrance</div>
+        <div class="category-card-name">Women</div>
         <div class="category-card-count">Explore Collection →</div>
       </div>
     </a>
-    <a href="/fragrances/all.html" class="category-card">
-      <img src="/images/categories-arabian.jpg" alt="Arabian Fragrance">
+    <a href="/fragrances/unisex.html" class="category-card">
+      <img src="/images/home_beauty.jpg" alt="Unisex Fragrance">
       <div class="category-card-overlay"></div>
       <div class="category-card-content">
-        <div class="category-card-name" data-i18n="cat_arabian">Arabian Fragrance</div>
+        <div class="category-card-name">Unisex</div>
         <div class="category-card-count">Explore Collection →</div>
       </div>
     </a>
@@ -454,38 +400,22 @@ canonical: "https://yspcollective.com/"
     <h2 class="section-title" style="color:var(--white);margin-bottom:0.5rem" data-i18n="brands_title">Carefully selected partners</h2>
     <p style="font-size:0.9rem;color:rgba(255,255,255,0.4);max-width:480px;margin:0 auto" data-i18n="brands_desc">Sourced through authorised EU distribution channels. Every product guaranteed authentic.</p>
   </div>
-  <div style="margin-top:2rem;margin-bottom:0.8rem">
-    <p style="font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.3);text-align:center;margin-bottom:1.2rem">Arabian Fragrance</p>
-  </div>
   <div class="brands-grid reveal">
     <a href="/brands/al-haramain.html" class="brand-item"><div class="brand-name">Al Haramain</div><div class="brand-origin">UAE · KSA</div></a>
     <a href="/brands/arabiyat-prestige.html" class="brand-item"><div class="brand-name">Arabiyat Prestige</div><div class="brand-origin">Dubai, UAE</div></a>
     <a href="/brands/armaf.html" class="brand-item"><div class="brand-name">Armaf</div><div class="brand-origin">Dubai, UAE</div></a>
+    <a href="/brands/fragrance-world.html" class="brand-item"><div class="brand-name">Fragrance World</div><div class="brand-origin">Dubai, UAE</div></a>
+    <a href="/brands/french-avenue.html" class="brand-item"><div class="brand-name">French Avenue</div><div class="brand-origin">Dubai, UAE</div></a>
     <a href="/brands/gulf-orchid.html" class="brand-item"><div class="brand-name">Gulf Orchid</div><div class="brand-origin">Dubai, UAE</div></a>
+    <a href="/brands/khadlaj.html" class="brand-item"><div class="brand-name">Khadlaj</div><div class="brand-origin">Dubai, UAE</div></a>
     <a href="/brands/lattafa.html" class="brand-item"><div class="brand-name">Lattafa</div><div class="brand-origin">Dubai, UAE</div></a>
     <a href="/brands/maison-alhambra.html" class="brand-item"><div class="brand-name">Maison Alhambra</div><div class="brand-origin">Dubai, UAE</div></a>
-    <a href="/brands/paris-corner.html" class="brand-item"><div class="brand-name">Ministry of Gourmand</div><div class="brand-origin">Dubai, UAE</div></a>
+    <a href="/brands/ministry-of-oud.html" class="brand-item"><div class="brand-name">Ministry of Oud</div><div class="brand-origin">Dubai, UAE</div></a>
+    <a href="/brands/paris-corner.html" class="brand-item"><div class="brand-name">Paris Corner</div><div class="brand-origin">Dubai, UAE</div></a>
     <a href="/brands/rasasi.html" class="brand-item"><div class="brand-name">Rasasi</div><div class="brand-origin">Dubai, UAE</div></a>
+    <a href="/brands/rayhaan.html" class="brand-item"><div class="brand-name">Rayhaan</div><div class="brand-origin">Dubai, UAE</div></a>
     <a href="/brands/swiss-arabian.html" class="brand-item"><div class="brand-name">Swiss Arabian</div><div class="brand-origin">Dubai, UAE</div></a>
     <a href="/brands/zimaya.html" class="brand-item"><div class="brand-name">Zimaya</div><div class="brand-origin">Dubai, UAE</div></a>
-  </div>
-  <div style="margin-top:2.5rem;margin-bottom:0.8rem">
-    <p style="font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.3);text-align:center;margin-bottom:1.2rem">European Fragrance</p>
-  </div>
-  <div class="brands-grid reveal">
-    <a href="/brands/creed.html" class="brand-item"><div class="brand-name">Creed</div><div class="brand-origin">London, UK</div></a>
-    <a href="/brands/dior.html" class="brand-item"><div class="brand-name">Dior</div><div class="brand-origin">Paris, France</div></a>
-    <a href="/brands/roja-parfums.html" class="brand-item"><div class="brand-name">Roja Parfums</div><div class="brand-origin">London, UK</div></a>
-    <a href="/brands/tom-ford.html" class="brand-item"><div class="brand-name">Tom Ford</div><div class="brand-origin">New York · Milan</div></a>
-    <a href="/brands/ysl.html" class="brand-item"><div class="brand-name">Yves Saint Laurent</div><div class="brand-origin">Paris, France</div></a>
-  </div>
-  <div style="margin-top:2.5rem;margin-bottom:0.8rem">
-    <p style="font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.3);text-align:center;margin-bottom:1.2rem">K-Beauty</p>
-  </div>
-  <div class="brands-grid reveal">
-    <a href="/brands/anua.html" class="brand-item"><div class="brand-name">ANUA</div><div class="brand-origin">Seoul, Korea</div></a>
-    <a href="/brands/beauty-of-joseon.html" class="brand-item"><div class="brand-name">Beauty of Joseon</div><div class="brand-origin">Seoul, Korea</div></a>
-    <a href="/brands/cosrx.html" class="brand-item"><div class="brand-name">COSRX</div><div class="brand-origin">Seoul, Korea</div></a>
   </div>
 </section>
 
@@ -497,16 +427,16 @@ canonical: "https://yspcollective.com/"
   </div>
   <div class="testimonial-track reveal">
     <div class="testimonial-item active">
-      <p class="testimonial-quote"><span data-i18n="test_1_quote">Ordered the Beauty of Joseon SPF and it arrived within 3 days. Genuine product, beautifully packaged. Will definitely order again.</span></p>
-      <p class="testimonial-author" data-i18n="test_1_author">Sofia M. — Lisbon, PT</p>
+      <p class="testimonial-quote"><span>Ordered the Armaf Club de Nuit and it arrived within 3 days. Genuine product, beautifully packaged. Incredible scent for the price.</span></p>
+      <p class="testimonial-author">James T. — Dublin, IE</p>
     </div>
     <div class="testimonial-item">
-      <p class="testimonial-quote"><span data-i18n="test_2_quote">The skincare bundle was excellent value. Everything sealed, within date, and exactly as described. Really impressed with the selection.</span></p>
-      <p class="testimonial-author" data-i18n="test_2_author">Anna K. — Berlin, DE</p>
+      <p class="testimonial-quote"><span>Found a Rasasi fragrance I'd been hunting for months. Everything sealed, fast shipping from Portugal, and exactly as described. Will be back.</span></p>
+      <p class="testimonial-author">Elena R. — Madrid, ES</p>
     </div>
     <div class="testimonial-item">
-      <p class="testimonial-quote"><span data-i18n="test_3_quote">The Lattafa Khamrah is incredible — lasts all day and I get compliments every time I wear it. Authentic product, fast shipping from Portugal.</span></p>
-      <p class="testimonial-author" data-i18n="test_3_author">Marco L. — Milan, IT</p>
+      <p class="testimonial-quote"><span>The Lattafa Khamrah is incredible — lasts all day and I get compliments every time I wear it. Authentic product, fast shipping from Portugal.</span></p>
+      <p class="testimonial-author">Marco L. — Milan, IT</p>
     </div>
   </div>
   <div class="testimonial-dots reveal">
@@ -522,9 +452,9 @@ canonical: "https://yspcollective.com/"
     <p class="section-label" data-i18n="faq_label">Common Questions</p>
     <h2 class="section-title" data-i18n="faq_title">Everything you need to know</h2>
   </div>
-  <div class="faq-item reveal"><div class="faq-question" data-i18n="faq_1_q">What condition are your beauty products in?<span class="faq-icon">+</span></div><div class="faq-answer" data-i18n="faq_1_a">All beauty, skincare and fragrance products are brand new, sealed, and within date. We source exclusively from authorised EU distributors — no grey market stock.</div></div>
+  <div class="faq-item reveal"><div class="faq-question">What condition are your fragrances in?<span class="faq-icon">+</span></div><div class="faq-answer">All fragrances are brand new, factory sealed, and in original packaging. We source exclusively through authorised EU distributors — no grey market, no decants, no fakes.</div></div>
   <div class="faq-item reveal"><div class="faq-question" data-i18n="faq_2_q">Where do you ship to?<span class="faq-icon">+</span></div><div class="faq-answer" data-i18n="faq_2_a">We ship across Europe from our base in Portugal. Most orders dispatch within 24 hours. Delivery is typically 2–5 business days. No hidden import costs within the EU.</div></div>
-  <div class="faq-item reveal"><div class="faq-question" data-i18n="faq_3_q">Are your K-beauty products authentic?<span class="faq-icon">+</span></div><div class="faq-answer" data-i18n="faq_3_a">100%. We source from authorised distributors who import directly and legally into the EU. Every product is genuine, correctly labelled, and within its stated shelf life.</div></div>
+  <div class="faq-item reveal"><div class="faq-question">Are your Arabian fragrances authentic?<span class="faq-icon">+</span></div><div class="faq-answer">100%. We source from authorised distributors who import directly and legally into the EU. Every bottle is genuine, correctly labelled, and comes with its original packaging and seals intact.</div></div>
   <div class="faq-item reveal"><div class="faq-question" data-i18n="faq_4_q">Why Arabian fragrances?<span class="faq-icon">+</span></div><div class="faq-answer">Arabian fragrance houses like Lattafa and Armaf create rich, long-lasting compositions that rival designer fragrances at a fraction of the price. These are original, expertly crafted scents sourced through official EU distributors — every bottle guaranteed authentic.</div></div>
   <div class="faq-item reveal"><div class="faq-question" data-i18n="faq_5_q">Do you offer returns?<span class="faq-icon">+</span></div><div class="faq-answer" data-i18n="faq_5_a">Yes. If there's any issue with your order, get in touch within 14 days and we'll arrange a return or replacement. We stand behind everything we sell.</div></div>
  </section>
