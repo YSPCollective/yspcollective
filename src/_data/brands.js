@@ -224,6 +224,23 @@ module.exports = [
     ysp_take: "French Avenue is on our shelves because of Liquid Brun — full stop. A Fragrantica Readers' Choice Award is not a fluke; it reflects genuine community consensus from people who own and wear the fragrances being compared. The vanilla quality here is exceptional for the price. We'd put this up against fragrances at five times the cost."
   },
 
+  {
+    slug: "ministry-of-oud",
+    name: "Ministry of Oud",
+    type: "fragrance",
+    origin: "Arabian Fragrance · Dubai, UAE",
+    origin_city: "Dubai",
+    founded: "2019",
+    tagline: "Oud perfumery distilled to its purest, most accessible form.",
+    stat_value: "UAE",
+    stat_label: "Heritage",
+    story_heading: "Oud without compromise.",
+    story: `<p>Ministry of Oud was built around a single obsession: oud. Not as a supporting note or a marketing buzzword, but as the centrepiece of every composition — handled with the care and expertise that one of perfumery's most precious ingredients deserves. The house launched from Dubai, the global capital of oud culture, and draws on centuries of Arabian olfactory tradition to build fragrances that feel both ancient and contemporary.</p>
+<p>What sets Ministry of Oud apart is their willingness to use quality oud at an accessible price point. In a market where genuine oud commands a significant premium, they've worked to close that gap — producing Extraits and EDPs that carry real oud depth without the eye-watering price tags of the niche houses. The compositions reflect a thorough understanding of how oud interacts with other materials: the woods, musks and resins that complement it rather than compete with it.</p>
+<p>Their range spans the breadth of what oud can do — from dark, resinous orientals built for evenings and special occasions, to lighter, fresher constructions that make oud wearable day-to-day. Oud Royal, their signature, is widely regarded as one of the most convincing affordable takes on Creed Royal Oud — a benchmark comparison that speaks to the quality of what they're producing.</p>`,
+    ysp_take: "Ministry of Oud earns their place on our shelves because they take oud seriously and price it fairly. Oud Royal has a proven track record — it's been around since 2021 and reviewers consistently call it one of the best affordable Creed Royal Oud alternatives. For anyone curious about real oud, this is where we'd point them first."
+  },
+
   // ── EUROPEAN BRANDS ─────────────────────────────────────────────────────
 
   {
