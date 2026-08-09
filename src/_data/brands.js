@@ -41,7 +41,7 @@ module.exports = [
     type: "fragrance",
     origin: "Arabian Fragrance · Dubai, UAE",
     origin_city: "Dubai",
-    founded: "2015",
+    founded: "2020",
     tagline: "The warmth of Arabian tradition in every bottle.",
     stat_value: "UAE",
     stat_label: "Heritage",
@@ -56,8 +56,8 @@ module.exports = [
     slug: "swiss-arabian",
     name: "Swiss Arabian",
     type: "fragrance",
-    origin: "Arabian Fragrance · Dubai, UAE",
-    origin_city: "Dubai",
+    origin: "Arabian Fragrance · Sharjah, UAE",
+    origin_city: "Sharjah",
     founded: "1974",
     tagline: "Half a century of mastering the art of Arabian scent.",
     stat_value: "1974",
@@ -97,7 +97,7 @@ module.exports = [
     stat_value: "1979",
     stat_label: "Founded",
     story_heading: "A pioneer of Gulf perfumery.",
-    story: `<p>Rasasi has been a cornerstone of Gulf perfumery since 1979, when founder Abdul Rasaq founded the company in Dubai with a vision to create world-class fragrances rooted in Arabian tradition. Over four decades, Rasasi has built a catalogue of over 200 fragrances that spans traditional attars, modern EDPs, and everything in between.</p>
+    story: `<p>Rasasi has been a cornerstone of Gulf perfumery since 1979, when founder Abdul Razzak Kalsekar founded the company in Dubai with a vision to create world-class fragrances rooted in Arabian tradition. Over four decades, Rasasi has built a catalogue of over 200 fragrances that spans traditional attars, modern EDPs, and everything in between.</p>
 <p>Their perfumers have an encyclopaedic knowledge of Arabian ingredients and a talent for constructing complex compositions that evolve beautifully on skin. Rasasi fragrances are known for their exceptional longevity — often 12 hours or more — and their generous sillage.</p>
 <p>While less marketed internationally than some newer houses, Rasasi maintains a devoted following among fragrance enthusiasts who prioritise substance over hype. Their commitment to quality raw materials and traditional craftsmanship is evident in every bottle.</p>`,
     ysp_take: "Rasasi is a house that rewards the curious. Less hyped than some contemporaries but consistently excellent — this is serious Arabian perfumery from people who have been doing it longer than most."
@@ -167,7 +167,7 @@ module.exports = [
     stat_value: "UAE",
     stat_label: "Heritage",
     story_heading: "Modern Arabian fragrance with attitude.",
-    story: `<p>Zimaya is one of the newer names in Arabian perfumery, but what they lack in heritage they more than compensate for in ambition and execution. Part of the Ard Al Zaafaran group — one of Dubai's most respected fragrance manufacturers — Zimaya benefits from world-class production facilities and an exceptional team of perfumers.</p>
+    story: `<p>Zimaya is one of the newer names in Arabian perfumery, but what they lack in heritage they more than compensate for in ambition and execution. Part of the Afnan Perfumes group — founded in Dubai in 2007 by Imran Fazlani — Zimaya benefits from world-class production facilities and an exceptional team of perfumers.</p>
 <p>Their fragrances are bold, unapologetic, and built for impact. Zimaya compositions tend towards rich orientals, spicy ambers, and deep musks — fragrances that announce themselves and leave an impression. They're not for the faint-hearted, and they're not trying to be.</p>
 <p>At their price point, Zimaya represents extraordinary value for those who want a powerful, memorable fragrance without the designer price tag. Their longevity is consistently exceptional.</p>`,
     ysp_take: "Zimaya is for customers who want to be remembered. These are big, confident fragrances that punch well above their weight. If you want something that lasts all day and gets noticed — this is it."
@@ -235,10 +235,10 @@ module.exports = [
     stat_value: "UAE",
     stat_label: "Heritage",
     story_heading: "Oud without compromise.",
-    story: `<p>Ministry of Oud was built around a single obsession: oud. Not as a supporting note or a marketing buzzword, but as the centrepiece of every composition — handled with the care and expertise that one of perfumery's most precious ingredients deserves. The house launched from Dubai, the global capital of oud culture, and draws on centuries of Arabian olfactory tradition to build fragrances that feel both ancient and contemporary.</p>
-<p>What sets Ministry of Oud apart is their willingness to use quality oud at an accessible price point. In a market where genuine oud commands a significant premium, they've worked to close that gap — producing Extraits and EDPs that carry real oud depth without the eye-watering price tags of the niche houses. The compositions reflect a thorough understanding of how oud interacts with other materials: the woods, musks and resins that complement it rather than compete with it.</p>
-<p>Their range spans the breadth of what oud can do — from dark, resinous orientals built for evenings and special occasions, to lighter, fresher constructions that make oud wearable day-to-day. Oud Royal, their signature, is widely regarded as one of the most convincing affordable takes on Creed Royal Oud — a benchmark comparison that speaks to the quality of what they're producing.</p>`,
-    ysp_take: "Ministry of Oud earns their place on our shelves because they take oud seriously and price it fairly. Oud Royal has a proven track record — it's been around since 2021 and reviewers consistently call it one of the best affordable Creed Royal Oud alternatives. For anyone curious about real oud, this is where we'd point them first."
+    story: `<p>Ministry of Oud is Paris Corner's dedicated oud line — a focused collection built around a single obsession: oud. Not as a supporting note or a marketing buzzword, but as the centrepiece of every composition, handled with the care and expertise that one of perfumery's most precious ingredients deserves. Drawing on Paris Corner's decades of Arabian fragrance craft, the line was developed specifically to celebrate oud in all its forms.</p>
+<p>What sets Ministry of Oud apart is a willingness to use quality oud at an accessible price point. In a market where genuine oud commands a significant premium, they've worked to close that gap — producing Extraits and EDPs that carry real oud depth without the eye-watering price tags of the niche houses. The compositions reflect a thorough understanding of how oud interacts with other materials: the woods, musks and resins that complement it rather than compete with it.</p>
+<p>The range spans the breadth of what oud can do — from dark, resinous orientals built for evenings and special occasions, to lighter, fresher constructions that make oud wearable day-to-day. Oud Royal is widely regarded as one of the most convincing affordable takes on Creed Royal Oud — a benchmark comparison that speaks to the quality of what Paris Corner's perfumers are producing.</p>`,
+    ysp_take: "Ministry of Oud earns their place on our shelves because they take oud seriously and price it fairly. Oud Royal has a proven track record — reviewers consistently call it one of the best affordable Creed Royal Oud alternatives. For anyone curious about real oud, this is where we'd point them first."
   },
 
   // ── EUROPEAN BRANDS ─────────────────────────────────────────────────────
