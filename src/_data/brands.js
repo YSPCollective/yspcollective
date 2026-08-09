@@ -7,12 +7,12 @@ module.exports = [
     type: "fragrance",
     origin: "Arabian Fragrance · Dubai, UAE",
     origin_city: "Dubai",
-    founded: "2005",
+    founded: "1980",
     tagline: "The house that made Arabian fragrance a global obsession.",
     stat_value: "100M+",
     stat_label: "Bottles Sold",
     story_heading: "Dubai's most talked-about fragrance house.",
-    story: `<p>Founded in Dubai in 2005, Lattafa Perfumes has grown into one of the most recognised fragrance houses in the world — not through advertising budgets or celebrity endorsements, but through the sheer quality and longevity of their scents. Their fragrances went viral on TikTok and Instagram as perfume enthusiasts discovered that a €30 bottle could outperform €300 designer alternatives in both longevity and compliments.</p>
+    story: `<p>Founded in Dubai in 1980, Lattafa Perfumes has grown into one of the most recognised fragrance houses in the world — not through advertising budgets or celebrity endorsements, but through the sheer quality and longevity of their scents. Their fragrances went viral on TikTok and Instagram as perfume enthusiasts discovered that a €30 bottle could outperform €300 designer alternatives in both longevity and compliments.</p>
 <p>Lattafa's approach is rooted in the Middle Eastern tradition of heavy, oil-rich compositions built to last. Their bases are extraordinary — deep ambers, resins, musks and woods that cling to skin and fabric for hours. Yet they balance this richness with modern structures that appeal to Western tastes, making them uniquely cross-cultural.</p>
 <p>Khamrah, Yara, and the Qahwa series have each built their own cult followings globally. These aren't imitations of anything — they're original compositions that happen to represent extraordinary value.</p>`,
     ysp_take: "We carry Lattafa because they're genuinely exceptional. Khamrah is one of the most impressive fragrances at any price point. When customers smell it, they're always surprised — that's the Lattafa effect."
@@ -24,7 +24,7 @@ module.exports = [
     type: "fragrance",
     origin: "Arabian Fragrance · Dubai, UAE",
     origin_city: "Dubai",
-    founded: "2014",
+    founded: "2010",
     tagline: "World-class compositions at a fraction of designer prices.",
     stat_value: "50+",
     stat_label: "Countries Sold",
@@ -41,7 +41,7 @@ module.exports = [
     type: "fragrance",
     origin: "Arabian Fragrance · Dubai, UAE",
     origin_city: "Dubai",
-    founded: "2010",
+    founded: "2015",
     tagline: "The warmth of Arabian tradition in every bottle.",
     stat_value: "UAE",
     stat_label: "Heritage",
@@ -75,12 +75,12 @@ module.exports = [
     type: "fragrance",
     origin: "Arabian Fragrance · Dubai, UAE",
     origin_city: "Dubai",
-    founded: "2018",
+    founded: "2020",
     tagline: "Inspired by the world's finest fragrances. Priced for everyone.",
     stat_value: "200+",
     stat_label: "Fragrances",
     story_heading: "The fragrance house making luxury accessible.",
-    story: `<p>Maison Alhambra launched in 2018 with an audacious proposition: create fragrances inspired by the world's most celebrated perfumes, with quality ingredients, and make them available at a fraction of the price. They've delivered on that promise spectacularly, building one of the most extensive catalogues in modern Arabian perfumery.</p>
+    story: `<p>Maison Alhambra launched in 2020 with an audacious proposition: create fragrances inspired by the world's most celebrated perfumes, with quality ingredients, and make them available at a fraction of the price. They've delivered on that promise spectacularly, building one of the most extensive catalogues in modern Arabian perfumery.</p>
 <p>What makes Maison Alhambra stand out is their transparency. They openly acknowledge their inspirations and focus on delivering the core olfactory experience — the accord, the mood, the feeling — without the brand premium. The result is a range that has attracted both fragrance beginners and seasoned collectors.</p>
 <p>Their quality control is impressive for the price point. Longevity is consistently strong, projection is well-calibrated, and the bottles are beautifully presented. For anyone wanting to explore a wide range of fragrance families without committing to designer prices, Maison Alhambra is an excellent starting point.</p>`,
     ysp_take: "Maison Alhambra is perfect for fragrance exploration. They let you discover what you love at a price that makes experimentation risk-free. We think that's genuinely valuable."
@@ -145,12 +145,12 @@ module.exports = [
     type: "fragrance",
     origin: "Arabian Fragrance · Dubai, UAE",
     origin_city: "Dubai",
-    founded: "1990",
+    founded: "2016",
     tagline: "The art of Arabian perfumery, refined.",
-    stat_value: "1990",
+    stat_value: "2016",
     stat_label: "Founded",
-    story_heading: "Crafting Arabian scents since 1990.",
-    story: `<p>Gulf Orchid has been producing high-quality Arabian fragrances from their Dubai base since 1990. With over three decades of experience, they have developed deep expertise in both traditional Arabian perfumery and contemporary fragrance construction — producing scents that appeal to both regional tastes and international audiences.</p>
+    story_heading: "Arabian perfumery from the Al Masmoum Group.",
+    story: `<p>Gulf Orchid is part of the Al Masmoum Group, a UAE family-owned business with roots in cosmetics and beauty manufacturing dating back to 1987. The Gulf Orchid brand was established in 2016, bringing that manufacturing heritage to bear on premium Arabian fragrance. With backing from one of the region's established manufacturing groups, they have developed deep expertise in both traditional Arabian perfumery and contemporary fragrance construction — producing scents that appeal to both regional tastes and international audiences.</p>
 <p>Their approach balances the richness of Arabian ingredients — oud, amber, musk, rose — with clean, well-structured compositions that wear beautifully in all climates. Gulf Orchid fragrances are known for their balance: never overwhelming, always present, consistently elegant.</p>
 <p>Less well-known outside the Gulf than some peers, Gulf Orchid represents genuine quality that fragrance enthusiasts who discover them tend to return to consistently.</p>`,
     ysp_take: "Gulf Orchid is one of those houses that quietly delivers every time. No hype, just well-made fragrances from people who clearly love what they do."
@@ -162,7 +162,7 @@ module.exports = [
     type: "fragrance",
     origin: "Arabian Fragrance · Dubai, UAE",
     origin_city: "Dubai",
-    founded: "2018",
+    founded: "2023",
     tagline: "Bold compositions for those who refuse to go unnoticed.",
     stat_value: "UAE",
     stat_label: "Heritage",
@@ -196,7 +196,7 @@ module.exports = [
     type: "fragrance",
     origin: "Arabian Fragrance · Dubai, UAE",
     origin_city: "Dubai",
-    founded: "2008",
+    founded: "2004",
     tagline: "Designer DNA. Fraction of the price.",
     stat_value: "UAE",
     stat_label: "Heritage",
@@ -213,7 +213,7 @@ module.exports = [
     type: "fragrance",
     origin: "Arabian Fragrance · Dubai, UAE",
     origin_city: "Dubai",
-    founded: "2018",
+    founded: "2012",
     tagline: "Niche quality. Accessible price. Community-validated.",
     stat_value: "Readers' Choice",
     stat_label: "Fragrantica 2024",
@@ -410,8 +410,8 @@ module.exports = [
     type: "fragrance",
     origin: "Arabian Fragrance · Dubai, UAE",
     origin_city: "Dubai",
-    founded: "1974",
-    tagline: "Five decades of Arabian craftsmanship, built into every bottle.",
+    founded: "1997",
+    tagline: "Bespoke Arabic and French perfumery from the heart of Dubai.",
     stat_value: "50+",
     stat_label: "Years of Heritage",
     story_heading: "One of the Arab world's oldest and most trusted fragrance houses.",
