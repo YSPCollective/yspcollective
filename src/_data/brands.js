@@ -412,10 +412,10 @@ module.exports = [
     origin_city: "Dubai",
     founded: "1997",
     tagline: "Bespoke Arabic and French perfumery from the heart of Dubai.",
-    stat_value: "50+",
-    stat_label: "Years of Heritage",
-    story_heading: "One of the Arab world's oldest and most trusted fragrance houses.",
-    story: `<p>Founded in 1974, Khadlaj Perfumes is one of the UAE's longest-standing fragrance houses — a brand built on decades of quiet excellence rather than trend-chasing. While newer names have come and gone, Khadlaj has remained a consistent presence in homes across the Gulf, a sign of deep-rooted trust earned over generations.</p>
+    stat_value: "1997",
+    stat_label: "Founded",
+    story_heading: "A trusted name in Dubai's fragrance world.",
+    story: `<p>Founded in Dubai in 1997, Khadlaj Perfumes has spent nearly three decades building a reputation for quiet excellence across the Arabian fragrance world. While trend-chasing houses have come and gone, Khadlaj has remained a consistent presence in homes across the Gulf — a sign of deep-rooted trust earned one customer at a time.</p>
 <p>Their catalogue spans the full breadth of Arabian perfumery: rich oud compositions, warm ambered musks, cooling aquatics, and modern Western-style interpretations. The Khashab &amp; Oud series has developed a devoted following for its masterful use of one of perfumery's most precious ingredients. The Oud Ma Doud and Hareem collections showcase the house's ability to craft complex, long-lasting orientals at an accessible price point.</p>
 <p>Khadlaj's approach is unapologetically traditional — they make fragrances for people who wear scent as a statement, not a whisper. That means generous projection, impressive longevity, and compositions that leave a room knowing you've been there.</p>`,
     ysp_take: "Khadlaj is one of those brands that rewards patience. Once you get past the unfamiliar names, you find some genuinely outstanding compositions — particularly in the oud and amber space. We carry them because they offer something the European houses simply can't replicate at this price: real Arabian depth."
