@@ -40,8 +40,9 @@ ysp_thoughts: |
   <p>Al Haramain has been in the oud and amber space since 1970 — this isn't a brand chasing trends, it's one that set them.</p>
   <p>Dubai Night is one of their darkest, most intense releases, and that's precisely why it sells. Customers who want something that genuinely performs — longevity, projection, presence — consistently come back to this one. It's not a subtle fragrance, and it doesn't try to be.</p>
   <p>If you have clients who find designer fragrances too light or too fleeting, this is the answer. Strong salon performer.</p>
-inspired_by_name: Tom Ford Noir
-inspired_by_note: dark amber-oud oriental, similar evening character
+inspired_by_name: Montale Arabians Tonka
+inspired_by_note: Same dark amber-tonka oriental territory, noticeably fresher
+  and lighter than the Montale original
 gtin: "6291106814910 "
 exclude_from_feed: false
 accords:
