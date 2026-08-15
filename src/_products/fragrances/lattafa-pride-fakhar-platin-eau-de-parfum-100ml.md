@@ -44,8 +44,9 @@ ysp_thoughts: |
   <p>Lattafa Pride is where the house shows what it's really capable of when the brief is purely about quality.</p>
   <p>Fakhar Platin has a finished, considered quality that genuinely competes with fragrances at two or three times the price.</p>
   <p>We chose it because it's the bottle you reach for when the occasion actually demands something special — and it never lets you down. The platinum positioning isn't just marketing; you can smell the difference.</p>
-inspired_by_name: ""
-inspired_by_note: ""
+inspired_by_name: YSL Y Elixir
+inspired_by_note: Same vibrant, spicy-woody freshness as YSL's Y Elixir,
+  with a warmer, more exotic oriental twist and a juicy guava heart
 gtin: "6290362345817"
 exclude_from_feed: false
 ---
