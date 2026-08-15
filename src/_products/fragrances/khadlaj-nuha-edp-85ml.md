@@ -47,9 +47,8 @@ ysp_thoughts: >-
 
   We're bringing it in as a lighter, easy option to round out the Khadlaj range alongside Island Dreams and Cloud Candy.
 amazon_url: ""
-inspired_by_name: Lattafa Yara
-inspired_by_note: Same coconut-vanilla-floral sweetness as Yara, often
-  described as its more sophisticated, better-performing older sister
+inspired_by_name: ""
+inspired_by_note: ""
 ebay_url: ""
 name: Khadlaj Nuha Eau de Parfum 85ml
 slug: khadlaj-nuha-edp-85ml
