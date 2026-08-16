@@ -20,16 +20,31 @@ self-contained — safe to email, print, or open with no internet connection.
 
 ## Regenerating
 
-Run from anywhere inside the repo:
+Run from the repo root:
 
 ```bash
-node marketing/tester-guide/build-tester-guide.js          # English, 4 pages
-node marketing/tester-guide/build-tester-guide.js . pt      # Portuguese, 4 pages
+node marketing/tester-guide/build-tester-guide.js               # English HTML, 4 pages
+node marketing/tester-guide/build-tester-guide.js marketing/tester-guide pt   # Portuguese HTML, 4 pages
 ```
 
 Re-run whenever stock changes meaningfully (new arrivals, restocks going
 live, prices changing) — it always reflects whatever's currently in
 `src/_products/fragrances/`.
+
+## PDF version
+
+`ysp-tester-guide-en.pdf` / `ysp-tester-guide-pt.pdf` — single-file, 4-page
+A4 PDFs, easiest thing to just download and print. Regenerate after the HTML
+pages above with:
+
+```bash
+node marketing/tester-guide/build-pdf.js       # English PDF
+node marketing/tester-guide/build-pdf.js pt    # Portuguese PDF
+```
+
+Uses whatever Chrome or Edge is already installed on the machine (headless
+print-to-PDF) — no extra dependencies. If it can't find one, set a
+`CHROME_PATH` environment variable pointing at the browser executable.
 
 ## What counts as "in the guide"
 

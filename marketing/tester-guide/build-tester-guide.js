@@ -249,7 +249,9 @@ const CSS = `
     padding:14mm 13mm 11mm;
     position:relative;
   }
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
   @media print{
+    @page{size:A4;margin:0;}
     body{background:#fff;}
     .page{margin:0;box-shadow:none;}
   }
