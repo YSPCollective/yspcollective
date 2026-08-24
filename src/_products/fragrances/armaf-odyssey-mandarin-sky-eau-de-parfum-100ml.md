@@ -7,10 +7,10 @@ gender: Men
 size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
-stock_status: on_order
-stock_quantity: 0
-expected_date: September 2026
-featured: false
+stock_status: in_stock
+stock_quantity: 10
+expected_date: ""
+featured: true
 published: true
 date_added: 2026-05-28
 fragrance_family: Amber Citrus Woody
