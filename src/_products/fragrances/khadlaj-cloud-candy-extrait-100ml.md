@@ -5,10 +5,10 @@ size: 100ml
 concentration: Extrait de Parfum
 badge: Trending
 custom_badge: ""
-stock_status: on_order
-stock_quantity: 0
-expected_date: August 2026
-featured: false
+stock_status: in_stock
+stock_quantity: 11
+expected_date: ""
+featured: true
 published: true
 date_added: 2026-08-07
 fragrance_family: Sweet Gourmand Fruity
@@ -37,11 +37,11 @@ description_full: >-
   smells genuinely edible without tipping into artificial or cloying territory.
 
 
-  The base rounds things out with white musk, vanilla, sugar and raspberry, with ambroxan adding just enough depth to stop it feeling flat. It's a fun, unapologetically sweet fragrance — reviewers frequently describe the opening as reminiscent of a Campino strawberry cream sweet.
+  The base rounds things out with white musk, vanilla, sugar and raspberry, with ambroxan adding just enough depth to stop it feeling flat. It's a fun, unapologetically sweet fragrance, reviewers frequently describe the opening as reminiscent of a Campino strawberry cream sweet.
 ysp_thoughts: >-
   This is squarely in the sweet-gourmand lane that's exploded in popularity over
   the last couple of years, and reviewers have repeatedly pointed to Dolce &
-  Gabbana's Devotion as the closest comparison — the same creamy,
+  Gabbana's Devotion as the closest comparison - the same creamy,
   strawberry-musk signature, at a completely different price point.
 
 
@@ -60,5 +60,5 @@ char_sweet: 5
 heart_notes: Marshmallow, Coconut, Whipped Cream
 origin: UAE
 gtin: "6291107979557"
-exclude_from_feed: true
+exclude_from_feed: false
 ---
