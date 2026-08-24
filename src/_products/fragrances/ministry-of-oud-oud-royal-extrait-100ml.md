@@ -5,10 +5,10 @@ size: 100ml
 concentration: Extrait de Parfum
 badge: Curated
 custom_badge: ""
-stock_status: on_order
-stock_quantity: 0
-expected_date: August 2026
-featured: false
+stock_status: in_stock
+stock_quantity: 11
+expected_date: ""
+featured: true
 published: true
 date_added: 2026-08-07
 fragrance_family: Oriental Fougère Woody
@@ -37,7 +37,7 @@ description_full: "Oud Royal opens bright and sharp — lemon, pink berry and
 ysp_thoughts: This is a well-known, well-regarded dupe of Creed's Royal Oud, and
   it's been around long enough (since 2021) to have a solid track record rather
   than being untested. Reviewers consistently call it one of the more convincing
-  affordable takes on Creed's original — drier and more cedar-forward, with a
+  affordable takes on Creed's original, drier and more cedar-forward, with a
   lighter, more transparent oud than the real thing, but genuinely impressive
   for the price.
 amazon_url: ""
@@ -53,5 +53,5 @@ char_sweet: 2
 heart_notes: Cedar, Galbanum, Angelica Root
 origin: UAE
 gtin: "6294650987253"
-exclude_from_feed: true
+exclude_from_feed: false
 ---
