@@ -6,11 +6,11 @@ brand: Khadlaj
 gender: Unisex
 size: 100ml
 concentration: Extrait de Parfum
-badge: Popular
-stock_status: on_order
-stock_quantity: 0
-expected_date: September 2026
-featured: false
+badge: Bestseller
+stock_status: in_stock
+stock_quantity: 15
+expected_date: ""
+featured: true
 published: true
 date_added: 2026-06-05
 fragrance_family: Citrus Aromatic
@@ -60,7 +60,7 @@ ysp_thoughts: >
 
   <p>At Extrait concentration, the longevity and projection are genuinely impressive for the price point. If you've been eyeing Symphony and can't justify the spend, this is the most sensible starting point.</p>
 inspired_by_name: Louis Vuitton Symphony
-inspired_by_note: The same sparkling bergamot-grapefruit DNA — arguably stronger
+inspired_by_note: The same sparkling bergamot-grapefruit DNA, arguably stronger
   projection at a fraction of the price.
 gtin: "6291107979991"
 exclude_from_feed: false
