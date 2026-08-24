@@ -2575,7 +2575,7 @@ async function handleSyncProduct(request, env) {
   } catch (_) {
     return json({ error: "Invalid JSON" }, 400);
   }
-  const { name, price, description, images, metadata, slug, stock_quantity } = body;
+  const { name, price, description, images, metadata, slug } = body;
   if (!name || !price) return json({ error: "name and price required" }, 400);
   const headers = { "Authorization": `Bearer ${stripeKey}`, "Content-Type": "application/x-www-form-urlencoded" };
   try {
@@ -2602,16 +2602,11 @@ async function handleSyncProduct(request, env) {
       productId = productData.id;
     }
 
-    // Sync stock to KV — only resets available stock when the admin changes the quantity
-    if (slug && stock_quantity !== undefined && env.YSP_USERS) {
-      const qty = parseInt(stock_quantity) || 0;
-      const storedInitial = await env.YSP_USERS.get(`stock_initial:${slug}`);
-      const initialQty = storedInitial !== null ? parseInt(storedInitial) : null;
-      if (initialQty === null || qty !== initialQty) {
-        await env.YSP_USERS.put(`stock:${slug}`, String(qty));
-        await env.YSP_USERS.put(`stock_initial:${slug}`, String(qty));
-      }
-    }
+    // NOTE: stock is intentionally NOT touched here. The build-time product/price sync
+    // has no real inventory count to report (the CMS only tracks a stock_status label,
+    // not a quantity), so writing here used to stomp the live `stock:{slug}` KV value to 0
+    // on every price change or first sync — silently blocking checkout for in-stock items.
+    // Real numeric stock is only ever set via the /admin/stock endpoints below.
 
     const priceParams = new URLSearchParams({ product: productId, currency: "eur", unit_amount: Math.round(price * 100) });
     const priceRes = await fetch("https://api.stripe.com/v1/prices", { method: "POST", headers, body: priceParams.toString() });

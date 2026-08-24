@@ -15,6 +15,20 @@
   <link rel="canonical" href="{{ canonical or 'https://yspcollective.com/' }}">
   {% if product and product.exclude_from_feed %}<meta name="robots" content="noindex, nofollow">{% endif %}
 
+  <!-- Open Graph -->
+  <meta property="og:type" content="{{ ogType or 'website' }}">
+  <meta property="og:site_name" content="YSP Collective">
+  <meta property="og:title" content="{{ title or 'YSP Collective — Arabian Fragrance Specialists' }}">
+  <meta property="og:description" content="{{ description or 'YSP Collective — Arabian fragrance specialists based in Portugal. Premium oud, oriental and niche scents from Dubai and the Gulf. Authentic, sealed, delivered across Europe.' }}">
+  <meta property="og:image" content="{{ ogImage or 'https://yspcollective.com/images/hero-1.jpg' }}">
+  <meta property="og:url" content="{{ canonical or 'https://yspcollective.com/' }}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title or 'YSP Collective — Arabian Fragrance Specialists' }}">
+  <meta name="twitter:description" content="{{ description or 'YSP Collective — Arabian fragrance specialists based in Portugal. Premium oud, oriental and niche scents from Dubai and the Gulf. Authentic, sealed, delivered across Europe.' }}">
+  <meta name="twitter:image" content="{{ ogImage or 'https://yspcollective.com/images/hero-1.jpg' }}">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">

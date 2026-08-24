@@ -5,6 +5,12 @@ pagination:
   size: 1
   alias: product
 permalink: "products/{{ product.slug }}.html"
+eleventyComputed:
+  title: "{{ product.name }} | YSP Collective"
+  description: "{{ product.description_short }}"
+  canonical: "https://yspcollective.com/products/{{ product.slug }}.html"
+  ogImage: "https://yspcollective.com{{ product.image_main }}"
+  ogType: "product"
 ---
 
 {% set badgeText = product.custom_badge or product.badge %}
