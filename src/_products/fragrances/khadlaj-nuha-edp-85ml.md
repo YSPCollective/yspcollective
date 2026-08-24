@@ -24,7 +24,7 @@ longevity: 3-5 hours (soft, close to skin)
 projection: Light to Moderate
 launched: "2023"
 vegan: false
-image_main: /images/uploads/nuha.webp
+image_main: /images/uploads/khadlaj-nuha-edp-85ml-main.jpg
 gallery:
   - /images/uploads/nuha___2.webp
 description_short: A soft, fruity-floral scent opening with coconut and apple,

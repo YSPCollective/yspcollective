@@ -24,7 +24,7 @@ longevity: 6-8 hours
 projection: Moderate to Strong
 launched: "2025"
 vegan: false
-image_main: /images/uploads/cloud-candy.webp
+image_main: /images/uploads/khadlaj-cloud-candy-extrait-100ml-main.jpg
 gallery:
   - /images/uploads/cloud-candy___2.webp
 description_short: A creamy, candy-sweet gourmand — strawberry, green tangerine

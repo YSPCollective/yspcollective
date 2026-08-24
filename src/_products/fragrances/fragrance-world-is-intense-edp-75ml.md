@@ -24,7 +24,7 @@ longevity: 6-8 hours
 projection: Moderate to Strong
 launched: "2021"
 vegan: false
-image_main: /images/uploads/is-intense-perfume-75ml-edp-fragrance-world2.webp
+image_main: /images/uploads/fragrance-world-is-intense-edp-75ml-main.jpg
 gallery:
   - /images/uploads/is-intense-perfume-75ml-edp-fragrance-world.webp
 description_short: A rich, rosy oriental opening with sparkling black currant

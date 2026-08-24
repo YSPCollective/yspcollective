@@ -21,7 +21,7 @@ projection: Moderate
 origin: UAE
 launched: "2024"
 vegan: false
-image_main: /images/uploads/paris-corner-coconut-lagoon-1.jpeg
+image_main: /images/uploads/ministry-of-gourman-coconut-lagoon-main.jpg
 description_full: >
   <p>Ministry of Gourmand Coconut Lagoon opens with a bright, tropical burst of
   coconut and exotic fruits that immediately transports you somewhere warm and

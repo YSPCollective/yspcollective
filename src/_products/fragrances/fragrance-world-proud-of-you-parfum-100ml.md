@@ -24,7 +24,7 @@ longevity: 6-8 hours
 projection: Moderate to Strong
 launched: "2026"
 vegan: false
-image_main: /images/uploads/proud-of-you-parfum-100ml-edp-fragrance-world1.webp
+image_main: /images/uploads/fragrance-world-proud-of-you-parfum-100ml-main.png
 gallery:
   - /images/uploads/proud-of-you-parfum-100ml-edp-fragrance-world.webp
 description_short: A warm, sweet-spicy oriental opening with pink pepper and

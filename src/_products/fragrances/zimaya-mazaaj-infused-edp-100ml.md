@@ -24,7 +24,7 @@ longevity: 4-6 hours (reports vary)
 projection: Moderate, settles close to the skin
 launched: "2023"
 vegan: false
-image_main: /images/uploads/mazaaj-infused-perfume-100ml-edp-zimaya.webp
+image_main: /images/uploads/zimaya-mazaaj-infused-edp-100ml-main.jpg
 gallery:
   - /images/uploads/mazaaj-infused-perfume-100ml-edp-zimaya-2.webp
 description_short: A fresh, citrus-led fragrance opening with citron, orange and

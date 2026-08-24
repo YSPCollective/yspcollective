@@ -29,7 +29,7 @@ projection: Moderate
 origin: UAE
 launched: "2023"
 vegan: false
-image_main: /images/uploads/musamam-white-intense-1.jpg
+image_main: /images/uploads/lattafa-musamam-white-intense-edp-100ml-main.png
 gallery:
   - /images/uploads/musamam-white-intense-2.jpg
   - /images/uploads/musamam-white-intense-3.jpg

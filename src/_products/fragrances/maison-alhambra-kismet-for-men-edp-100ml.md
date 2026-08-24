@@ -28,7 +28,7 @@ projection: Moderate
 origin: UAE
 launched: "2022"
 vegan: false
-image_main: /images/uploads/kismet1.png
+image_main: /images/uploads/maison-alhambra-kismet-for-men-edp-100ml-main.jpg
 gallery:
   - /images/uploads/kismet2.png
 description_short: A rich, dark gourmand of nutmeg and woody spice opening into

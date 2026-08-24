@@ -28,7 +28,7 @@ projection: Strong
 origin: UAE
 launched: "2016"
 vegan: false
-image_main: /images/uploads/ana-abiyedh-rouge1.jpeg
+image_main: /images/uploads/lattafa-ana-abiyedh-rouge-edp-60ml-main.png
 description_short: A warm, sweet and slightly salty composition of pear, caramel
   and ambergris — one of the most complimented fragrances in the Lattafa range.
   Loud, long-lasting and genuinely addictive.

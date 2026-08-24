@@ -23,7 +23,7 @@ accords_text: gourmand, sweet, vanilla, tonka, aromatic, warm
 longevity: 4-6 hours (reports vary)
 projection: Light to Moderate
 vegan: false
-image_main: /images/uploads/rayhaan-elixir-perfume-100ml-edp-by-rayhaan.webp
+image_main: /images/uploads/rayhaan-elixir-edp-100ml-main.webp
 gallery: []
 description_short: A warm, sweet aromatic fragrance opening with mint and
   bergamot, softened by benzoin and lavender, and finished with a rich

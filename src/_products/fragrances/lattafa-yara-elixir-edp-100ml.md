@@ -24,7 +24,7 @@ longevity: 6-8 hours
 projection: Moderate
 launched: "2025"
 vegan: false
-image_main: /images/uploads/yara-elixir_.webp
+image_main: /images/uploads/lattafa-yara-elixir-edp-100ml-main.png
 gallery:
   - /images/uploads/yara-elixir___2.webp
 description_short: A 2025 flanker to Lattafa's best-selling Yara, pushing

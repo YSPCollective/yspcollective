@@ -29,7 +29,7 @@ projection: Moderate
 origin: UAE
 launched: "2025"
 vegan: false
-image_main: /images/uploads/lattafa-ana-coral-1.jpg
+image_main: /images/uploads/lattafa-ana-abiyedh-coral-edp-60ml-main.png
 gallery:
   - /images/uploads/lattafa-ana-coral-2.jpg
   - /images/uploads/lattafa-ana-coral-3.jpg

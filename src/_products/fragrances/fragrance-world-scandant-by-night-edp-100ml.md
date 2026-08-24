@@ -23,7 +23,7 @@ accords_text: honey, fruity, floral, sweet, tuberose, amber, musk
 longevity: 6-8 hours
 projection: Strong
 vegan: false
-image_main: /images/uploads/scandant-by-night-perfume-100ml-edp-fragrance-world.webp
+image_main: /images/uploads/fragrance-world-scandant-by-night-edp-100ml-main.jpg
 gallery:
   - /images/uploads/scandant-by-night-perfume-100ml-edp-fragrance-world.jpg
 description_short: A seductive, honeyed fruity-floral opening with bitter orange
