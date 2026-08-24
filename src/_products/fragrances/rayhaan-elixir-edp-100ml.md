@@ -3,11 +3,11 @@ rrp: ""
 gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
-badge: ""
+badge: Curated
 custom_badge: ""
-stock_status: on_order
-stock_quantity: 0
-expected_date: August 2026
+stock_status: in_stock
+stock_quantity: 11
+expected_date: ""
 featured: false
 published: true
 date_added: 2026-08-07
@@ -41,7 +41,7 @@ ysp_thoughts: >-
   oversell it on that front.
 
 
-  It's a genuinely well-regarded gourmand for the price, and a nice unisex option to round out the range. On order now — we'll share our own notes on performance once it's in.
+  It's a genuinely well-regarded gourmand for the price, and a nice unisex option to round out the range.
 amazon_url: ""
 inspired_by_name: Jean Paul Gaultier Le Male Elixir
 inspired_by_note: Same warm vanilla-tonka backbone, with the syrupy top note
@@ -55,5 +55,5 @@ char_sweet: 4
 heart_notes: Benzoin, Lavender
 origin: UAE
 gtin: "6297001571002"
-exclude_from_feed: true
+exclude_from_feed: false
 ---
