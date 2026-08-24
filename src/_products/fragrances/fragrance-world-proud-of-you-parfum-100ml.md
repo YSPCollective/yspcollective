@@ -5,10 +5,10 @@ size: 100ml
 concentration: Parfum
 badge: New
 custom_badge: ""
-stock_status: on_order
-stock_quantity: 0
-expected_date: August 2026
-featured: false
+stock_status: in_stock
+stock_quantity: 11
+expected_date: ""
+featured: true
 published: true
 date_added: 2026-08-07
 fragrance_family: Oriental Spicy Sweet
