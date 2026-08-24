@@ -5,9 +5,9 @@ size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
 custom_badge: ""
-stock_status: on_order
-stock_quantity: 0
-expected_date: August 2026
+stock_status: in_stock
+stock_quantity: 11
+expected_date: ""
 featured: false
 published: true
 date_added: 2026-08-07
@@ -60,5 +60,5 @@ char_sweet: 3
 heart_notes: Rose, Black Pepper, Lily-of-the-Valley
 origin: UAE
 gtin: "6290360373393"
-exclude_from_feed: true
+exclude_from_feed: false
 ---
