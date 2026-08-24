@@ -5,9 +5,9 @@ size: 85ml
 concentration: Eau de Parfum (EDP)
 badge: Curated
 custom_badge: ""
-stock_status: on_order
-stock_quantity: 0
-expected_date: August 2026
+stock_status: in_stock
+stock_quantity: 11
+expected_date: ""
 featured: false
 published: true
 date_added: 2026-08-07
@@ -37,7 +37,7 @@ description_full: >-
   smooth, creamy close.
 
 
-  It's a gentle, close-to-skin fragrance rather than a big projection statement — reviewers describe it as cute, feminine and easy to wear day to day, particularly in warmer months.
+  It's a gentle, close-to-skin fragrance rather than a big projection statement. Reviewers describe it as cute, feminine and easy to wear day to day, particularly in warmer months.
 ysp_thoughts: >-
   We'll be upfront: reviews on longevity are mixed, with several wearers noting
   it stays fairly close to the skin and doesn't run especially long. What people
@@ -58,5 +58,5 @@ char_sweet: 4
 heart_notes: Heliotrope, Jasmine, Rose
 origin: UAE
 gtin: "6291107976150"
-exclude_from_feed: true
+exclude_from_feed: false
 ---
