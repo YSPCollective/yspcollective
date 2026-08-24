@@ -49,8 +49,9 @@ ysp_thoughts: >-
 
   We're bringing it in as an easy daytime option rather than a big projection statement piece. It's on order now — full notes from us once we've had it in hand.
 amazon_url: ""
-inspired_by_name: ""
-inspired_by_note: ""
+inspired_by_name: Louis Vuitton Imagination
+inspired_by_note: Same fresh citrus-ambroxan DNA as Imagination, at a
+  fraction of the price — the cheapest well-known Imagination dupe
 ebay_url: ""
 name: Zimaya Mazaaj Infused Eau de Parfum 100ml
 slug: zimaya-mazaaj-infused-edp-100ml

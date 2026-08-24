@@ -5,14 +5,14 @@ size: 105ml
 concentration: Eau de Toilette (EDT)
 badge: Popular
 custom_badge: ""
-stock_status: coming_soon
-featured: false
+stock_status: in_stock
+expected_date: ""
+featured: true
 published: true
 date_added: 2026-08-07
 best_for: Evening wear, cooler seasons, formal and smart-casual occasions
 char_fresh: 3
 char_masculine: 5
-char_unique: 3
 char_versatile: 3
 longevity: 8–12 hours
 projection: Strong
@@ -62,11 +62,12 @@ accords:
   - musk
   - smoky
   - amber
-expected_date: August 2026
+stock_quantity: 10
 fragrance_family: Woody Spicy
 base_notes: Musk, Ambergris, Patchouli, Vanilla
 amazon_url: ""
 gender_label: Men
+char_unique: 3
 top_notes: Lemon, Pineapple, Bergamot, Black Currant, Apple
 accords_text: citrus, fructured, leather, smoked, woody, aromatic, sweet, fresh, musked
 image_main: /images/uploads/club-de-nuit-image-3.jpeg

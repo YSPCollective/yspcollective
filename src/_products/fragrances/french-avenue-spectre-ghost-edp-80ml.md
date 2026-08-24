@@ -5,10 +5,10 @@ size: 80ml
 concentration: Eau de Parfum (EDP)
 badge: Bestseller
 custom_badge: ""
-stock_status: on_order
-stock_quantity: 0
-expected_date: August 2026
-featured: false
+stock_status: in_stock
+stock_quantity: 6
+expected_date: ""
+featured: true
 published: true
 date_added: 2026-08-07
 fragrance_family: Woody Aromatic Spicy
@@ -62,5 +62,5 @@ char_sweet: 3
 heart_notes: Pink Pepper, Blackcurrant, Rose
 origin: UAE
 gtin: "6290360372723"
-exclude_from_feed: true
+exclude_from_feed: false
 ---

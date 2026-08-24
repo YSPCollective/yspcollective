@@ -29,9 +29,9 @@ ysp_thoughts: |
   <p>We carry Khamrah already, and Qahwa felt like the natural companion — same DNA, different twist. Where the original leans into dates and amber, Qahwa goes darker with the coffee note, and for a lot of people that makes it the better of the two.</p>
   <p>The dry-down on this one is genuinely special. The coffee doesn't announce itself immediately — it creeps in as the spices settle, and by the time it arrives the whole thing has become this warm, slightly boozy, spiced coffee gourmand that's incredibly hard to stop smelling on your own wrist.</p>
   <p>Performance is absurd for the price. It's the kind of fragrance that makes you wonder what you've been spending money on. If you're buying Khamrah, honestly consider getting both — they're different enough to earn separate space in any collection.</p>
-inspired_by_name: Tom Ford Tobacco Vanille
-inspired_by_note: deep coffee and tobacco gourmand — darker and more complex at
-  a fraction of the price
+inspired_by_name: Kilian Black Phantom
+inspired_by_note: Same coffee-chocolate-vanilla gourmand DNA as Kilian's
+  cult favourite, at a fraction of the price
 ebay_url: ""
 name: Lattafa Khamrah Qahwa 100ml
 slug: lattafa-edp-khamrah-qahwa-unisex-perfume-100ml

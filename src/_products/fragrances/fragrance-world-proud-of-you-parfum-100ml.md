@@ -5,10 +5,10 @@ size: 100ml
 concentration: Parfum
 badge: New
 custom_badge: ""
-stock_status: on_order
-stock_quantity: 0
-expected_date: August 2026
-featured: false
+stock_status: in_stock
+stock_quantity: 11
+expected_date: ""
+featured: true
 published: true
 date_added: 2026-08-07
 fragrance_family: Oriental Spicy Sweet
@@ -35,15 +35,11 @@ description_full: "Proud of You opens with pink pepper and mandarin — a
   cardamom and sage. The base is the standout: vanilla, leather and chestnut
   combine into a warm, slightly nutty, sweet-leathery finish that's distinctive
   without being overpowering."
-ysp_thoughts: >-
-  This is clearly built as an affordable take on Emporio Armani's Stronger With
-  You Absolutely — that warm, sweet chestnut-vanilla signature is front and
-  centre here too. It's one of Fragrance World's newer releases (2026), so it
-  hasn't built up years of reviews yet, but the note profile and early feedback
-  line up well with the fragrance it's inspired by.
-
-
-  A strong, cosy option for the men's range heading into autumn/winter. On order now — we'll add our own thoughts once it's in.
+ysp_thoughts: This is clearly built as an affordable take on Emporio Armani's
+  Stronger With You Absolutely — that warm, sweet chestnut-vanilla signature is
+  front and centre here too. It's one of Fragrance World's newer releases
+  (2026), so it hasn't built up years of reviews yet, but the note profile and
+  early feedback line up well with the fragrance it's inspired by.
 amazon_url: ""
 inspired_by_name: Emporio Armani Stronger With You Absolutely
 inspired_by_note: Carries the same warm, sweet chestnut-vanilla signature as

@@ -43,8 +43,9 @@ ysp_thoughts: |
   <p>This one genuinely surprised us. Pistachio as a fragrance note sounds like a gimmick until you actually smell it — and then it just makes sense.</p>
   <p>It's warm, it's different, and it has a quality that makes people ask what you're wearing.</p>
   <p>We picked it because it stands out in a lineup without being weird about it. If you're the kind of person who's bored with smelling like everyone else, Creamy Pistachio is a quiet statement that does the job perfectly.</p>
-inspired_by_name: Givenchy L'Interdit
-inspired_by_note: sweet creamy floral, similar skin-close warmth
+inspired_by_name: Kayali Yum Pistachio Gelato
+inspired_by_note: Same creamy pistachio-gourmand idea at a fraction of the
+  price — a looser interpretation rather than a 1:1 match
 gtin: "6290362162940"
 exclude_from_feed: false
 accords:

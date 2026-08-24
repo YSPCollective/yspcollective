@@ -38,8 +38,9 @@ description_full: |
 ysp_thoughts: |
   <p>The name tells you everything you need to know about the intention here — and it delivers.</p>
   <p>We picked this because it has an energy to it that's hard to manufacture. It's the fragrance you choose when the evening actually matters. Zimaya sits under the Afnan umbrella, which has serious perfumery credentials behind it, and that quality shows in the composition. Dark, unapologetic, and genuinely excellent for the price point.</p>
-inspired_by_name: Dior Sauvage Elixir
-inspired_by_note: spicy-woody masculine, similar intensity and projection
+inspired_by_name: Creed Aventus
+inspired_by_note: A softer, sweeter take on Aventus's fruity-smoky-woody
+  signature — pineapple and birch up top, ambery and musky underneath
 gtin: "6290171074199"
 exclude_from_feed: false
 accords:

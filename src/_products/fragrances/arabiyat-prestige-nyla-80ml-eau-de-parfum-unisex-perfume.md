@@ -22,8 +22,8 @@ ysp_thoughts: |
   <p>Nyla caught our attention because it does something a lot of fragrances at this price point don't — it smells considered. The coconut-peach opening is bright without being loud, the white floral heart has genuine elegance to it, and the musk dry-down is soft and skin-close in a way that feels more expensive than the price tag suggests.</p>
   <p>It's also genuinely unisex in a way that makes it useful. It sits in that sweet spot between tropical freshness and floral warmth that works on anyone, which makes it a reliable recommendation when customers aren't sure what they're looking for.</p>
   <p>A solid warm-weather fragrance that earns its place in the lineup.</p>
-inspired_by_name: Maison Margiela Replica Flower Market
-inspired_by_note: light floral-musky, similar airy softness
+inspired_by_name: ""
+inspired_by_note: ""
 ebay_url: ""
 name: Arabiyat Prestige Nyla 80ml
 slug: arabiyat-prestige-nyla-80ml-eau-de-parfum-unisex-perfume
