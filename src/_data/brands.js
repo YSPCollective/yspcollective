@@ -329,6 +329,8 @@ module.exports = [
   },
 
   // ── BEAUTY BRANDS ────────────────────────────────────────────────────────
+  // Beauty/K-beauty brands hidden while that product range is offline. Un-comment to restore.
+  /*
 
   {
     slug: "anua",
@@ -439,4 +441,5 @@ module.exports = [
 <p><em>Note: not all Medicube products are vegan — some contain hydrolyzed collagen. Check individual product pages for certified vegan options.</em></p>`,
     ysp_take: "Medicube is where K-beauty meets beauty tech, and the results are hard to argue with. The Collagen Lifting Mask is genuinely one of the most impressive overnight treatments I've tried — the kind of product that makes you do a double-take in the mirror the next morning. If your customer is serious about their skin and willing to invest slightly more, this is the brand to point them towards."
   }
+  */
 ];

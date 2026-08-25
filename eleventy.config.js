@@ -72,6 +72,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addCollection("posts", function(col) {
     return col.getFilteredByGlob("src/_posts/*.md")
+      .filter(p => p.data.published !== false)
       .sort((a, b) => b.date - a.date);
   });
 

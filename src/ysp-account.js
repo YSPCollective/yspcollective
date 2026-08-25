@@ -274,8 +274,10 @@ window.YSPAccount = (function () {
         sub: 'What are you most interested in?',
         options: [
           { label: '🌹 Fragrance', value: 'fragrance' },
-          { label: '✨ Beauty & Skincare', value: 'beauty' },
-          { label: '💛 Both', value: 'both' },
+          // Beauty/Both options hidden while the beauty range is offline (products unpublished).
+          // Restore alongside the beauty products, categories and account beauty-recs tab.
+          // { label: '✨ Beauty & Skincare', value: 'beauty' },
+          // { label: '💛 Both', value: 'both' },
         ],
         multi: false,
       },

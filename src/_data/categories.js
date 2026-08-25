@@ -55,6 +55,8 @@ module.exports = [
     description_es: "La selección completa de fragancias YSP Collective — casas árabes y europeas, todos los géneros, todas las ocasiones.",
     hero_image: "/images/categories/fragrances-all-hero.jpg"
   },
+  /* Beauty/K-beauty categories hidden while that product range is offline (all beauty
+     products are unpublished). Un-comment to bring back once beauty products return.
   {
     slug: "all-beauty",
     section: "beauty",
@@ -125,4 +127,5 @@ module.exports = [
     description_es: "La base de cualquier buena rutina. Limpiadores coreanos suaves y eficaces.",
     hero_image: "/images/categories/beauty-cleansers-hero.jpg"
   }
+  */
 ];

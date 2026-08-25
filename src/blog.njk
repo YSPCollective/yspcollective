@@ -1,7 +1,7 @@
 ---
 layout: base.njk
-title: "Blog — Fragrance & Beauty | YSP Collective"
-description: "Fragrance guides, K-beauty skincare tips, brand spotlights and expert advice from YSP Collective. Curated from Portugal for Europe."
+title: "Blog — Fragrance | YSP Collective"
+description: "Fragrance guides, brand spotlights and expert advice from YSP Collective. Curated from Portugal for Europe."
 permalink: /blog.html
 ---
 
@@ -135,8 +135,8 @@ permalink: /blog.html
 
 <section class="blog-hero">
   <p class="blog-hero-eyebrow" id="blog-eyebrow">YSP Collective</p>
-  <h1 class="blog-hero-title" id="blog-title">Fragrance &amp; beauty,<br><em>explored.</em></h1>
-  <p class="blog-hero-desc" id="blog-desc">Expert guides, brand deep-dives and skincare education — written for fragrance lovers and beauty enthusiasts across Portugal, Spain and Europe.</p>
+  <h1 class="blog-hero-title" id="blog-title">Fragrance,<br><em>explored.</em></h1>
+  <p class="blog-hero-desc" id="blog-desc">Expert guides and brand deep-dives — written for fragrance lovers across Portugal, Spain and Europe.</p>
 </section>
 
 <div class="blog-main">
@@ -144,7 +144,9 @@ permalink: /blog.html
     <button class="blog-filter-btn active" data-cat="all" onclick="filterPosts('all', this)" id="filter-all">All Posts</button>
     <button class="blog-filter-btn" data-cat="fragrance" onclick="filterPosts('fragrance', this)" id="filter-fragrance">Fragrance Guides</button>
     <button class="blog-filter-btn" data-cat="arabian" onclick="filterPosts('arabian', this)" id="filter-arabian">Arabian Perfume</button>
+    <!-- K-Beauty & Skincare filter hidden while that product range/blog post is offline — see published:false on k-beauty-skincare-routine-beginners.md
     <button class="blog-filter-btn" data-cat="skincare" onclick="filterPosts('skincare', this)" id="filter-skincare">K-Beauty &amp; Skincare</button>
+    -->
     <button class="blog-filter-btn" data-cat="brands" onclick="filterPosts('brands', this)" id="filter-brands">Brand Spotlights</button>
   </div>
 
@@ -210,24 +212,24 @@ permalink: /blog.html
   const blogI18n = {
     en: {
       eyebrow: 'YSP Collective',
-      title: 'Fragrance &amp; beauty,<br><em>explored.</em>',
-      desc: 'Expert guides, brand deep-dives and skincare education — written for fragrance lovers and beauty enthusiasts across Portugal, Spain and Europe.',
+      title: 'Fragrance,<br><em>explored.</em>',
+      desc: 'Expert guides and brand deep-dives — written for fragrance lovers across Portugal, Spain and Europe.',
       all: 'All Posts', fragrance: 'Fragrance Guides', arabian: 'Arabian Perfume',
       skincare: 'K-Beauty &amp; Skincare', brands: 'Brand Spotlights',
       read: 'Read article →'
     },
     pt: {
       eyebrow: 'YSP Collective',
-      title: 'Perfumaria &amp; beleza,<br><em>exploradas.</em>',
-      desc: 'Guias especializados, análises de marcas e educação sobre skincare — escritos para amantes de perfumaria e entusiastas de beleza em Portugal, Espanha e Europa.',
+      title: 'Perfumaria,<br><em>explorada.</em>',
+      desc: 'Guias especializados e análises de marcas — escritos para amantes de perfumaria em Portugal, Espanha e Europa.',
       all: 'Todos os Artigos', fragrance: 'Guias de Perfumaria', arabian: 'Perfume Árabe',
       skincare: 'K-Beauty &amp; Skincare', brands: 'Marcas em Destaque',
       read: 'Ler artigo →'
     },
     es: {
       eyebrow: 'YSP Collective',
-      title: 'Perfumería &amp; belleza,<br><em>exploradas.</em>',
-      desc: 'Guías especializadas, análisis de marcas y educación sobre skincare — escritas para amantes de la perfumería y entusiastas de la belleza en Portugal, España y Europa.',
+      title: 'Perfumería,<br><em>explorada.</em>',
+      desc: 'Guías especializadas y análisis de marcas — escritas para amantes de la perfumería en Portugal, España y Europa.',
       all: 'Todos los Artículos', fragrance: 'Guías de Perfumería', arabian: 'Perfume Árabe',
       skincare: 'K-Beauty &amp; Skincare', brands: 'Marcas Destacadas',
       read: 'Leer artículo →'
@@ -242,7 +244,6 @@ permalink: /blog.html
     document.getElementById('filter-all').innerHTML = t.all;
     document.getElementById('filter-fragrance').innerHTML = t.fragrance;
     document.getElementById('filter-arabian').innerHTML = t.arabian;
-    document.getElementById('filter-skincare').innerHTML = t.skincare;
     document.getElementById('filter-brands').innerHTML = t.brands;
     document.querySelectorAll('[id^="read-more-label"]').forEach(el => { el.textContent = t.read.replace(' →',''); el.innerHTML += ' →'; });
   }

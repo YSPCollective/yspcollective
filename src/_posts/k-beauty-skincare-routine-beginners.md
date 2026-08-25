@@ -5,6 +5,10 @@ description: "Korean skincare doesn't have to be complicated. Here's how to buil
 date: 2026-04-05
 category: skincare
 category_label: "K-Beauty & Skincare"
+# Hidden while the beauty/K-beauty product range is offline. Set back to true (and drop
+# permalink) to restore — matches the same published:false convention used on products.
+published: false
+permalink: false
 author: "YSP Collective"
 read_time: 7
 tags:

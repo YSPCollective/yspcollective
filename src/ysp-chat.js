@@ -19,10 +19,10 @@
   // ─── I18N ──────────────────────────────────────────────────────────────────
   const CHAT_STRINGS = {
     en: {
-      welcome:        "Welcome to YSP Collective ✦ I'm your personal beauty advisor. Let me ask a few quick questions to find your perfect match — or skip straight to chat if you prefer.",
-      skip_confirm:   "No problem! Ask me anything about our fragrances or skincare and I'll help you find your perfect match. ✦",
+      welcome:        "Welcome to YSP Collective ✦ I'm your personal fragrance advisor. Let me ask a few quick questions to find your perfect match — or skip straight to chat if you prefer.",
+      skip_confirm:   "No problem! Ask me anything about our fragrances and I'll help you find your perfect match. ✦",
       restart_intro:  "Let's start fresh! I'll ask a few quick questions to find your perfect match.",
-      header_name:    'YSP Beauty Advisor',
+      header_name:    'YSP Fragrance Advisor',
       header_status:  'Here to find your perfect match',
       header_status2: 'Personalised recommendations',
       header_status3: 'Ask me anything',
@@ -33,10 +33,10 @@
       footer:         'Powered by AI · YSP Collective',
     },
     pt: {
-      welcome:        "Bem-vindo à YSP Collective ✦ Sou o seu consultor de beleza pessoal. Deixe-me fazer algumas perguntas rápidas para encontrar a sua combinação perfeita — ou salte diretamente para o chat se preferir.",
-      skip_confirm:   "Sem problema! Pergunte-me qualquer coisa sobre as nossas fragrâncias ou skincare e ajudo-o a encontrar a sua combinação perfeita. ✦",
+      welcome:        "Bem-vindo à YSP Collective ✦ Sou o seu consultor de perfumaria pessoal. Deixe-me fazer algumas perguntas rápidas para encontrar a sua combinação perfeita — ou salte diretamente para o chat se preferir.",
+      skip_confirm:   "Sem problema! Pergunte-me qualquer coisa sobre as nossas fragrâncias e ajudo-o a encontrar a sua combinação perfeita. ✦",
       restart_intro:  "Vamos recomeçar! Farei algumas perguntas rápidas para encontrar a sua combinação perfeita.",
-      header_name:    'Consultor de Beleza YSP',
+      header_name:    'Consultor de Perfumaria YSP',
       header_status:  'Aqui para encontrar a sua combinação',
       header_status2: 'Recomendações personalizadas',
       header_status3: 'Pergunte-me qualquer coisa',
@@ -47,10 +47,10 @@
       footer:         'Desenvolvido por IA · YSP Collective',
     },
     es: {
-      welcome:        "Bienvenido a YSP Collective ✦ Soy su asesor de belleza personal. Déjeme hacerle algunas preguntas rápidas para encontrar su combinación perfecta — o salte directamente al chat si lo prefiere.",
-      skip_confirm:   "¡Sin problema! Pregúnteme lo que quiera sobre nuestras fragancias o skincare y le ayudaré a encontrar su combinación perfecta. ✦",
+      welcome:        "Bienvenido a YSP Collective ✦ Soy su asesor de perfumería personal. Déjeme hacerle algunas preguntas rápidas para encontrar su combinación perfecta — o salte directamente al chat si lo prefiere.",
+      skip_confirm:   "¡Sin problema! Pregúnteme lo que quiera sobre nuestras fragancias y le ayudaré a encontrar su combinación perfecta. ✦",
       restart_intro:  "¡Empecemos de nuevo! Le haré algunas preguntas rápidas para encontrar su combinación perfecta.",
-      header_name:    'Asesor de Belleza YSP',
+      header_name:    'Asesor de Perfumería YSP',
       header_status:  'Aquí para encontrar su combinación perfecta',
       header_status2: 'Recomendaciones personalizadas',
       header_status3: 'Pregúnteme lo que quiera',
@@ -76,8 +76,10 @@
       question: { en: 'What are you looking for today?', pt: 'O que está à procura hoje?', es: '¿Qué está buscando hoy?' },
       options: [
         { label: { en: '🌸 Fragrance', pt: '🌸 Fragrância', es: '🌸 Fragancia' }, value: 'fragrance' },
-        { label: { en: '✨ Skincare', pt: '✨ Cuidado de pele', es: '✨ Cuidado de piel' }, value: 'skincare' },
-        { label: { en: '💛 Both', pt: '💛 Ambos', es: '💛 Ambos' }, value: 'both' },
+        // Skincare/Both options hidden while the beauty range is offline (products unpublished).
+        // Restore alongside the beauty products and category pages.
+        // { label: { en: '✨ Skincare', pt: '✨ Cuidado de pele', es: '✨ Cuidado de piel' }, value: 'skincare' },
+        // { label: { en: '💛 Both', pt: '💛 Ambos', es: '💛 Ambos' }, value: 'both' },
       ],
     },
     {
@@ -502,7 +504,7 @@
   // ─── BUILD HTML ────────────────────────────────────────────────────────────
   const chatBtn = document.createElement('button');
   chatBtn.id = 'ysp-chat-btn';
-  chatBtn.setAttribute('aria-label', 'Open beauty & fragrance advisor');
+  chatBtn.setAttribute('aria-label', 'Open fragrance advisor');
   chatBtn.innerHTML = `
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
     <span class="ysp-btn-badge"></span>
@@ -511,7 +513,7 @@
   const chatWindow = document.createElement('div');
   chatWindow.id = 'ysp-chat-window';
   chatWindow.setAttribute('role', 'dialog');
-  chatWindow.setAttribute('aria-label', 'YSP Collective beauty advisor');
+  chatWindow.setAttribute('aria-label', 'YSP Collective fragrance advisor');
   chatWindow.innerHTML = `
     <div id="ysp-chat-header">
       <div class="ysp-header-left">

@@ -509,18 +509,18 @@ const PRODUCTS = [
     "longevity": "10+ hours",
     "projection": "Strong +",
     "best_for": "Night time wear, Winter/Spring/Autumn",
-    "inspired_by": "Tom Ford Noir",
-    "summary": "A bold, smoky oriental from Al Haramain — one of the Gulf's most established fragrance houses. Dubai Night is a dark, addictive blend of oud and amber with serious projection and all-night longevity.",
-    "ysp_thoughts": "|"
+    "inspired_by": "Montale Arabians Tonka",
+    "summary": "A bold, smoky oriental from Al Haramain — one of the Gulf's",
+    "ysp_thoughts": "<p>Al Haramain has been in the oud and amber space since 1970 — this isn't a brand chasing trends, it's one that set them.</p>"
   },
   {
     "name": "Armaf Club de Nuit Intense 105ml",
     "slug": "armaf-club-de-nuit-intense-105ml",
     "url": "https://yspcollective.com/products/armaf-club-de-nuit-intense-105ml.html",
-    "price": "€29.55",
+    "price": "€33.00",
     "brand": "Armaf",
     "gender": "Men",
-    "stock": "sold_out",
+    "stock": "in_stock",
     "accords": [
       "citrus",
       "fructured",
@@ -542,8 +542,8 @@ const PRODUCTS = [
     "projection": "Strong",
     "best_for": "Evening wear, cooler seasons, formal and smart-casual occasions",
     "inspired_by": "Creed Aventus",
-    "summary": "One of the most celebrated value fragrances in men's perfumery. Bold citrus-fruit opening, exceptional dry-down, 8–12 hour longevity.",
-    "ysp_thoughts": "|"
+    "summary": "One of the most celebrated value fragrances in men's",
+    "ysp_thoughts": "<p>We carry a lot of fragrances, but Club de Nuit Intense Man is in a different category. It's one of those bottles that gets brought up every time someone asks \"what's the best value men's fragrance you can buy?\" — and the answer is almost always this.</p>"
   },
   {
     "name": "Armaf Club de Nuit Intense 150ml",
@@ -552,7 +552,7 @@ const PRODUCTS = [
     "price": "€49.99",
     "brand": "Armaf",
     "gender": "Men",
-    "stock": "low_stock",
+    "stock": "on_order",
     "accords": [
       "citrus",
       "fructured",
@@ -574,17 +574,46 @@ const PRODUCTS = [
     "projection": "Strong",
     "best_for": "Year-round, Office, Evening, Formal, Casual",
     "inspired_by": "Creed Aventus",
-    "summary": "The finest concentration of one of fragrance's great value stories. The 150ml Parfum takes Club de Nuit Intense Man's legendary smoky birch and blackcurrant profile and refines it: smoother, earthier and more nuanced than the EDT or EDP, with exceptional longevity. A bold, confident masculine fragrance that consistently outperforms its price.",
-    "ysp_thoughts": "|"
+    "summary": "\"The finest concentration of one of fragrance's great value",
+    "ysp_thoughts": "<p>Creed Aventus is a genuine icon — smoky birch, blackcurrant, pineapple and that warm base that follows you around all day. It also costs upwards of €300 for 100ml and has had well-documented consistency issues over the years.</p>"
+  },
+  {
+    "name": "Armaf Odyssey Limoni Fresh Edition Eau de Parfum 100ml",
+    "slug": "armaf-odyssey-limoni-fresh-edition-edp-100ml",
+    "url": "https://yspcollective.com/products/armaf-odyssey-limoni-fresh-edition-edp-100ml.html",
+    "price": "€25",
+    "brand": "Armaf",
+    "gender": "Unisex",
+    "stock": "in_stock",
+    "accords": [
+      "citrus",
+      "marine",
+      "fresh",
+      "aromatic",
+      "musk",
+      "amber"
+    ],
+    "concentration": "Eau de Parfum (EDP)",
+    "size": "100ml",
+    "family": "Citrus Aromatic Marine",
+    "top": "Lemon, Sweet Orange, Bergamot, Mandarin",
+    "heart": "Ginger, Orange Blossom, Marine Notes",
+    "base": "Amber, Musk, Blue Tea",
+    "longevity": "5-7 hours",
+    "projection": "Moderate to Strong",
+    "best_for": "Spring/Summer, Daytime, Poolside/Beach",
+    "inspired_by": "Louis Vuitton Afternoon Swim",
+    "summary": "A zesty, sun-drenched citrus explosion - lemon, orange and",
+    "ysp_thoughts": "The fragrance community has been vocal about this one - it's widely discussed as Armaf's own twist on Louis Vuitton's Afternoon Swim, sharing that same bright citrus-into-marine progression that made the LV original a cult favourite. Reviewers note the floral-salty middle keeps it interesting rather than one-note."
   },
   {
     "name": "Armaf Odyssey Mandarin Sky Eau de Parfum 100ml",
     "slug": "armaf-odyssey-mandarin-sky-edp-100ml",
     "url": "https://yspcollective.com/products/armaf-odyssey-mandarin-sky-edp-100ml.html",
-    "price": "€25",
+    "price": "€28.50",
     "brand": "Armaf",
     "gender": "Men",
-    "stock": "sold_out",
+    "stock": "in_stock",
     "accords": [
       "citrus",
       "caramel",
@@ -606,103 +635,13 @@ const PRODUCTS = [
     "ysp_thoughts": "<p>Mandarin Sky sits in the same territory as Jean Paul Gaultier's Scandal Pour Homme, that citrus-caramel-tonka DNA that's become one of the most crowd-pleasing fragrance profiles of recent years.</p>"
   },
   {
-    "name": "Creed Aventus Eau de Parfum 100ml",
-    "slug": "creed-aventus-eau-de-parfum",
-    "url": "https://yspcollective.com/products/creed-aventus-eau-de-parfum.html",
-    "price": "€310",
-    "brand": "Creed",
-    "gender": "Men",
-    "stock": "sold_out",
-    "accords": [
-      "fruity",
-      "sweet",
-      "woody",
-      "leather",
-      "citrus",
-      "smoky",
-      "musky",
-      "tropical",
-      "fresh",
-      "mossy"
-    ],
-    "concentration": "Eau de Parfum (EDP)",
-    "size": "100ml",
-    "family": "Fruity Chypre",
-    "top": "Bergamot, Black Currant, Apple, Lemon, Pink Pepper",
-    "heart": "Pineapple, Patchouli, Moroccan Jasmine",
-    "base": "Birch, Musk, Oak moss, Cedarwood, Ambroxan",
-    "longevity": "10-12 hours",
-    "projection": "Moderate - Strong",
-    "best_for": "Evening wear, smart-casual, formal occasions, cooler months",
-    "summary": "The benchmark masculine. Creed Aventus EDP needs no introduction — smoky, fruity, and iconic, it remains the fragrance that every other masculine is measured against.",
-    "ysp_thoughts": "|"
-  },
-  {
-    "name": "Creed Bois Du Portugal Eau De Parfum 100ml",
-    "slug": "creed-bois-de-portugal",
-    "url": "https://yspcollective.com/products/creed-bois-de-portugal.html",
-    "price": "€295",
-    "brand": "Creed",
-    "gender": "Men",
-    "stock": "sold_out",
-    "accords": [
-      "woody",
-      "aromatic",
-      "lavender",
-      "citrus",
-      "powdery",
-      "fresh spicy",
-      "amber"
-    ],
-    "concentration": "Eau de Parfum (EDP)",
-    "size": "100ml",
-    "family": "Aromatic Spicy Woody",
-    "top": "Bergamot",
-    "heart": "Lavender",
-    "base": "Vetiver, Cedar, Ambergris, Sandalwood",
-    "longevity": "10-12 hours",
-    "projection": "Strong",
-    "best_for": "Formal occasions, office, cooler seasons, evening wear",
-    "summary": "A timeless aromatic classic from Creed with a direct connection to Portugal. Bois du Portugal is refined, understated, and deeply rooted in the landscape that inspired it — a fragrance we couldn't not carry.",
-    "ysp_thoughts": "|"
-  },
-  {
-    "name": "Creed Viking Eau de Parfum 100ml",
-    "slug": "creed-viking-eau-de-parfum",
-    "url": "https://yspcollective.com/products/creed-viking-eau-de-parfum.html",
-    "price": "€310",
-    "brand": "Creed",
-    "gender": "Men",
-    "stock": "sold_out",
-    "accords": [
-      "aromatic",
-      "fresh spicy",
-      "green",
-      "citrus",
-      "soft spicy",
-      "lavender",
-      "woody"
-    ],
-    "concentration": "Eau de Parfum (EDP)",
-    "size": "100ml",
-    "family": "Aromatic Spicy Woody",
-    "top": "Bergamot, Orange, Absinthe, Pink Pepper, Peppermint, Lemon",
-    "heart": "Clove, Allspice, Jasmine, Orris Root, Bulgarian Rose, Lavender",
-    "base": "White Musk, Tonka Bean, Cedar, Vetiver",
-    "longevity": "10-12 hours",
-    "projection": "Strong",
-    "best_for": "Evening wear, cooler seasons, bold occasions, formal",
-    "summary": "A bold, aromatic powerhouse from Creed — Viking is the house at its most intense and masculine. Spiced, woody, and built for those who wear fragrance with conviction.",
-    "ysp_thoughts": "|"
-  },
-  {
     "name": "Fragrance World Classy Chic Girl Eau de Parfum 90ml",
     "slug": "fragrance-world-classy-chic-girl-eau-de-parfum-90ml",
     "url": "https://yspcollective.com/products/fragrance-world-classy-chic-girl-eau-de-parfum-90ml.html",
     "price": "€19.90",
     "brand": "Fragrance World",
     "gender": "Women",
-    "stock": "in_stock",
+    "stock": "sold_out",
     "accords": [
       "floral",
       "gourmand",
@@ -723,6 +662,123 @@ const PRODUCTS = [
     "inspired_by": "Carolina Herrera Good Girl",
     "summary": "The bold dual-character scent made famous by Carolina Herrera",
     "ysp_thoughts": "<p>Classy Chic Girl sits in one of our favourite value spots — a note pyramid that the fragrance community knows and loves, at a price that makes it an easy yes. The Good Girl DNA (tuberose + tonka + cacao) is very much present and accounted for.</p>"
+  },
+  {
+    "name": "Fragrance World iS Intense Eau de Parfum 75ml",
+    "slug": "fragrance-world-is-intense-edp-75ml",
+    "url": "https://yspcollective.com/products/fragrance-world-is-intense-edp-75ml.html",
+    "price": "€19.50",
+    "brand": "Fragrance World",
+    "gender": "Women",
+    "stock": "in_stock",
+    "accords": [
+      "floral",
+      "fruity",
+      "sweet",
+      "vanilla",
+      "woody",
+      "amber"
+    ],
+    "concentration": "Eau de Parfum (EDP)",
+    "size": "75ml",
+    "family": "Oriental Floral Fruity",
+    "top": "Black Currant, Bergamot, Mandarin",
+    "heart": "Artemisia, Osmanthus, May Rose, Neroli",
+    "base": "Vanilla, Patchouli, Ambroxan",
+    "longevity": "6-8 hours",
+    "projection": "Moderate to Strong",
+    "best_for": "Evening, Date night, Autumn/Winter",
+    "inspired_by": "Giorgio Armani Sì Intense",
+    "summary": "A rich, rosy oriental opening with sparkling black currant",
+    "ysp_thoughts": "This is a well-established dupe of Giorgio Armani's Sì Intense — the blackcurrant-rose-vanilla structure is unmistakably the same DNA, and it's been around since 2021, so it's had plenty of time to build a track record rather than being an untested new release. Reviewers rate the performance well for the price point."
+  },
+  {
+    "name": "Fragrance World Proud of You Parfum 100ml",
+    "slug": "fragrance-world-proud-of-you-parfum-100ml",
+    "url": "https://yspcollective.com/products/fragrance-world-proud-of-you-parfum-100ml.html",
+    "price": "€24.50",
+    "brand": "Fragrance World",
+    "gender": "Men",
+    "stock": "in_stock",
+    "accords": [
+      "sweet",
+      "spicy",
+      "vanilla",
+      "leather",
+      "aromatic",
+      "warm"
+    ],
+    "concentration": "Parfum",
+    "size": "100ml",
+    "family": "Oriental Spicy Sweet",
+    "top": "Pink Pepper, Mandarin",
+    "heart": "Lavender, Cardamom, Sage",
+    "base": "Vanilla, Leather, Chestnut",
+    "longevity": "6-8 hours",
+    "projection": "Moderate to Strong",
+    "best_for": "Evening, Autumn/Winter, Date night",
+    "inspired_by": "Emporio Armani Stronger With You Absolutely",
+    "summary": "A warm, sweet-spicy oriental opening with pink pepper and",
+    "ysp_thoughts": "This is clearly built as an affordable take on Emporio Armani's"
+  },
+  {
+    "name": "Fragrance World Scandant by Night Eau de Parfum 100ml",
+    "slug": "fragrance-world-scandant-by-night-edp-100ml",
+    "url": "https://yspcollective.com/products/fragrance-world-scandant-by-night-edp-100ml.html",
+    "price": "€19.90",
+    "brand": "Fragrance World",
+    "gender": "Women",
+    "stock": "in_stock",
+    "accords": [
+      "honey",
+      "fruity",
+      "floral",
+      "sweet",
+      "tuberose",
+      "amber",
+      "musk"
+    ],
+    "concentration": "Eau de Parfum (EDP)",
+    "size": "100ml",
+    "family": "Fruity Floral Oriental",
+    "top": "Honey, Bitter Orange, Citruses",
+    "heart": "Cherry, Tuberose, Orange Blossom, Pear, Himalayan Nard (Jatamansi)",
+    "base": "Tonka Bean, Vanilla, Patchouli, Sandalwood, Amberwood, White Musk",
+    "longevity": "6-8 hours",
+    "projection": "Strong",
+    "best_for": "Evening, Date night, Cooler seasons, Special occasions",
+    "inspired_by": "Jean Paul Gaultier Scandal by Night",
+    "summary": "A seductive, honeyed fruity-floral opening with bitter orange",
+    "ysp_thoughts": "The name is a pretty direct nod to Jean Paul Gaultier's Scandal by Night, and the honeyed-tuberose gourmand character backs that up — it sits in the same seductive, strong-projecting territory as the JPG flanker."
+  },
+  {
+    "name": "Fragrance World Suits Eau de Parfum 100ml",
+    "slug": "fragrance-world-suits-edp-100ml",
+    "url": "https://yspcollective.com/products/fragrance-world-suits-edp-100ml.html",
+    "price": "€19.70",
+    "brand": "Fragrance World",
+    "gender": "Unisex",
+    "stock": "in_stock",
+    "accords": [
+      "woody",
+      "spicy",
+      "floral",
+      "powdery",
+      "amber",
+      "vanilla"
+    ],
+    "concentration": "Eau de Parfum (EDP)",
+    "size": "100ml",
+    "family": "Woody Spicy Floral",
+    "top": "Violet Leaf, Coriander, Bergamot",
+    "heart": "Rose, Black Pepper, Lily-of-the-Valley",
+    "base": "Patchouli, Ambergris, Bourbon Vanilla",
+    "longevity": "4-5 hours",
+    "projection": "Moderate",
+    "best_for": "Office, Smart-casual, Year-round",
+    "inspired_by": "YSL Tuxedo",
+    "summary": "A sharp, sophisticated woody-spicy fragrance opening with",
+    "ysp_thoughts": "This one is widely discussed as Fragrance World's take on YSL's Tuxedo — reviewers put the resemblance at around 95%, with Suits landing slightly fresher on top and a touch more amber and vanilla in the dry-down. Longevity reports sit around 4-5 hours, which tracks with typical EDP performance in this style."
   },
   {
     "name": "French Avenue Liquid Brun Eau de Parfum 100ml",
@@ -754,6 +810,35 @@ const PRODUCTS = [
     "ysp_thoughts": "<p>Liquid Brun is one of the easiest recommends in our catalogue for autumn/winter. The vanilla here is genuinely quality — not sharp or synthetic — and the ambroxan base gives it that addictive skin-scent quality that the best fragrances share.</p>"
   },
   {
+    "name": "French Avenue Spectre Ghost Eau de Parfum 80ml",
+    "slug": "french-avenue-spectre-ghost-edp-80ml",
+    "url": "https://yspcollective.com/products/french-avenue-spectre-ghost-edp-80ml.html",
+    "price": "€39.90",
+    "brand": "French Avenue",
+    "gender": "Men",
+    "stock": "in_stock",
+    "accords": [
+      "woody",
+      "spicy",
+      "aromatic",
+      "vanilla",
+      "amber",
+      "musk"
+    ],
+    "concentration": "Eau de Parfum (EDP)",
+    "size": "80ml",
+    "family": "Woody Aromatic Spicy",
+    "top": "Ginger, Cardamom, Bergamot",
+    "heart": "Pink Pepper, Blackcurrant, Rose",
+    "base": "Vanilla, Cedarwood, Patchouli",
+    "longevity": "5-7 hours",
+    "projection": "Soft — a true \"skin scent\" by design",
+    "best_for": "Office, Casual, Close-wear/personal scent",
+    "inspired_by": "Nishane Ani ",
+    "summary": "A refined, close-wearing fragrance opening with ginger,",
+    "ysp_thoughts": "We want to set the right expectation on this one: reviewers are honest that it's a subtle, close-to-skin fragrance rather than a big-projection scent — some describe needing to be within a couple of inches to really pick it up. Reviewers also generally agree the dry-down (vanilla, cedar, patchouli) is genuinely well done and worth wearing for."
+  },
+  {
     "name": "Gulf Orchid Creamy Pistachio Eau de Parfum 100ml",
     "slug": "gulf-orchid-creamy-pistachio",
     "url": "https://yspcollective.com/products/gulf-orchid-creamy-pistachio.html",
@@ -779,7 +864,7 @@ const PRODUCTS = [
     "longevity": "6-8 hours",
     "projection": "Moderate",
     "best_for": "Daytime wear, spring/summer, casual occasions",
-    "inspired_by": "Givenchy L'Interdit",
+    "inspired_by": "Kayali Yum Pistachio Gelato",
     "summary": "A playful, gourmand oriental from Gulf Orchid — warm pistachio and creamy sweetness wrapped in soft woods and musk. Unique, comforting, and surprisingly addictive.",
     "ysp_thoughts": "|"
   },
@@ -843,6 +928,35 @@ const PRODUCTS = [
     "ysp_thoughts": "<p>Azure Velvet is one of the most impressive value propositions in our entire catalogue. Layton by Parfums de Marly has a near-cult following in the fragrance community — it's routinely listed among the greatest aromatic woodys of the modern era.</p>"
   },
   {
+    "name": "Khadlaj Cloud Candy Extrait de Parfum 100ml",
+    "slug": "khadlaj-cloud-candy-extrait-100ml",
+    "url": "https://yspcollective.com/products/khadlaj-cloud-candy-extrait-100ml.html",
+    "price": "€28.00",
+    "brand": "Khadlaj",
+    "gender": "Women",
+    "stock": "in_stock",
+    "accords": [
+      "gourmand",
+      "sweet",
+      "strawberry",
+      "creamy",
+      "musk",
+      "vanilla"
+    ],
+    "concentration": "Extrait de Parfum",
+    "size": "100ml",
+    "family": "Sweet Gourmand Fruity",
+    "top": "Strawberry, Green Tangerine, Freesia",
+    "heart": "Marshmallow, Coconut, Whipped Cream",
+    "base": "White Musk, Vanilla, Sugar, Raspberry, Ambroxan",
+    "longevity": "6-8 hours",
+    "projection": "Moderate to Strong",
+    "best_for": "Everyday wear, Autumn/Winter, Younger/playful tastes",
+    "inspired_by": " Kayali Yum Boujee Marshmallow | 81",
+    "summary": "A creamy, candy-sweet gourmand — strawberry, green tangerine",
+    "ysp_thoughts": "This is squarely in the sweet-gourmand lane that's exploded in popularity over the last couple of years, and reviewers have repeatedly pointed to Dolce & Gabbana's Devotion as the closest comparison - the same creamy, strawberry-musk signature, at a completely different price point."
+  },
+  {
     "name": "Khadlaj Icon Eau de Parfum 100ml",
     "slug": "khadlaj-icon-eau-de-parfum-100ml",
     "url": "https://yspcollective.com/products/khadlaj-icon-eau-de-parfum-100ml.html",
@@ -875,9 +989,9 @@ const PRODUCTS = [
     "slug": "khadlaj-island-dreams-extrait-100ml",
     "url": "https://yspcollective.com/products/khadlaj-island-dreams-extrait-100ml.html",
     "price": "€39.90",
-    "brand": "Other",
+    "brand": "Khadlaj",
     "gender": "Unisex",
-    "stock": "sold_out",
+    "stock": "in_stock",
     "accords": [
       "citrus",
       "grapefruit",
@@ -898,6 +1012,34 @@ const PRODUCTS = [
     "inspired_by": "Louis Vuitton Symphony",
     "summary": "A bright, citrus-forward extrait that opens with sparkling",
     "ysp_thoughts": "<p>Louis Vuitton Symphony has been one of the most talked-about fragrances of the last few years — that vibrant citrus-grapefruit-ambroxan combination has built a devoted following.</p>"
+  },
+  {
+    "name": "Khadlaj Nuha Eau de Parfum 85ml",
+    "slug": "khadlaj-nuha-edp-85ml",
+    "url": "https://yspcollective.com/products/khadlaj-nuha-edp-85ml.html",
+    "price": "€19.95",
+    "brand": "Khadlaj",
+    "gender": "Women",
+    "stock": "in_stock",
+    "accords": [
+      "fruity",
+      "floral",
+      "sweet",
+      "coconut",
+      "creamy",
+      "musk"
+    ],
+    "concentration": "Eau de Parfum (EDP)",
+    "size": "85ml",
+    "family": "Fruity Floral Sweet",
+    "top": "Coconut, Apple",
+    "heart": "Heliotrope, Jasmine, Rose",
+    "base": "Vanilla, Cashmeran, Sandalwood",
+    "longevity": "3-5 hours (soft, close to skin)",
+    "projection": "Light to Moderate",
+    "best_for": "Daytime, Spring/Summer, Everyday wear",
+    "summary": "A soft, fruity-floral scent opening with coconut and apple,",
+    "ysp_thoughts": "We'll be upfront: reviews on longevity are mixed, with several wearers noting it stays fairly close to the skin and doesn't run especially long. What people do consistently like is the character itself — a soft, strawberry-coconut-milk kind of prettiness that reads as younger and playful rather than serious."
   },
   {
     "name": "Khadlaj Shiyaaka Snow Eau de Parfum 100ml",
@@ -934,7 +1076,7 @@ const PRODUCTS = [
     "price": "€19.50",
     "brand": "Lattafa",
     "gender": "Unisex",
-    "stock": "in_stock",
+    "stock": "sold_out",
     "accords": [
       "watermelon",
       "peach",
@@ -954,8 +1096,8 @@ const PRODUCTS = [
     "projection": "Moderate",
     "best_for": "Spring, Summer, Daytime, Beach, Casual",
     "inspired_by": "Wavechild by Room 1015",
-    "summary": "A joyful, sun-drenched summer fragrance opening with juicy watermelon, peach and orange, evolving into a creamy tropical heart of coconut and white flowers, finishing softly with vanilla and amber. Ana Abiyedh Coral is sunshine in a bottle.",
-    "ysp_thoughts": "|"
+    "summary": "A joyful, sun-drenched summer fragrance opening with juicy",
+    "ysp_thoughts": "<p>The original Ana Abiyedh is already one of the best-loved budget fragrances in the Lattafa lineup. Coral takes the same approachable spirit and goes full summer: watermelon-forward, tropical, carefree.</p>"
   },
   {
     "name": "Lattafa Ana Abiyedh Rouge Eau de Parfum 60ml",
@@ -964,7 +1106,7 @@ const PRODUCTS = [
     "price": "€16.70",
     "brand": "Lattafa",
     "gender": "Women",
-    "stock": "low_stock",
+    "stock": "sold_out",
     "accords": [
       "sweet",
       "amber",
@@ -982,8 +1124,8 @@ const PRODUCTS = [
     "projection": "Strong",
     "best_for": "Evening, Date Night, All Seasons",
     "inspired_by": "Maison Francis Kurkdjian Baccarat Rouge 540 ",
-    "summary": "A warm, sweet and slightly salty composition of pear, caramel and ambergris — one of the most complimented fragrances in the Lattafa range. Loud, long-lasting and genuinely addictive.",
-    "ysp_thoughts": "|"
+    "summary": "A warm, sweet and slightly salty composition of pear, caramel",
+    "ysp_thoughts": "<p>Ana Abiyedh Rouge sits in the same warm amber-saffron family as Maison Francis Kurkdjian's Baccarat Rouge 540, one of the most recognisable and beloved fragrances of the last decade, retailing at around €380.</p>"
   },
   {
     "name": "Lattafa Bade'e Al Oud For Glory Eau de Parfum 100ml",
@@ -1044,7 +1186,7 @@ const PRODUCTS = [
     "longevity": "12–15 hours on skin; days on clothing",
     "projection": "Strong (1–2 sprays recommended)",
     "best_for": "Evening wear, autumn/winter, special occasions",
-    "inspired_by": "Tom Ford Tobacco Vanille",
+    "inspired_by": "Kilian Black Phantom",
     "summary": "Khamrah's darker sibling — spiced coffee gourmand with extraordinary longevity. Fragrantica Readers' Choice Award winner 2024.",
     "ysp_thoughts": "|"
   },
@@ -1088,7 +1230,7 @@ const PRODUCTS = [
     "price": "€39.50",
     "brand": "Lattafa",
     "gender": "Unisex",
-    "stock": "in_stock",
+    "stock": "low_stock",
     "accords": [
       "coconut",
       "spicy",
@@ -1108,8 +1250,8 @@ const PRODUCTS = [
     "projection": "Moderate",
     "best_for": "Evening, Date night, Autumn, Winter, Year-round",
     "inspired_by": "BDK Parfums Gris Charnel",
-    "summary": "An exotic, seductive unisex EDP opening with spiced bergamot and orange, revealing a rich heart of creamy coconut and ylang ylang over ambroxan, and settling into warm sandalwood and benzoin. Addictive, sophisticated and consistently complimented — the snake bottle earns every bit of its reputation.",
-    "ysp_thoughts": "|"
+    "summary": "An exotic, seductive unisex EDP opening with spiced bergamot",
+    "ysp_thoughts": "<p>Musamam White Intense blew up on fragrance communities in 2023–2024 for good reason. The combination of creamy spiced coconut, ylang ylang and ambroxan is genuinely compelling — it sits in the territory of BDK's Gris Charnel, a fragrance that costs over €175 and has earned serious niche credibility. Several reviewers who own both consider Musamam their go-to daily wear alternative. The snake bottle photos made it famous on social media, but the fragrance would have found its audience anyway. At 100ml for this price, it's exceptional value for something this distinctive. If you want an oriental that feels expensive and gets noticed, this is the most direct route.</p>"
   },
   {
     "name": "Lattafa Najdia EDP 100ml + Deodorant Spray 50ml",
@@ -1166,7 +1308,7 @@ const PRODUCTS = [
     "longevity": "10-12 hours",
     "projection": "Moderate",
     "best_for": "Evening wear, formal occasions, cooler seasons",
-    "inspired_by": "Creed Silver Mountain Water",
+    "inspired_by": "YSL Y Elixir",
     "summary": "A gleaming, luxury-coded oriental from Lattafa Pride — Fakhar Platin is polished, powerful, and positioned firmly at the prestige end of the Arabian fragrance spectrum.",
     "ysp_thoughts": "|"
   },
@@ -1236,7 +1378,7 @@ const PRODUCTS = [
     "price": "€19.50",
     "brand": "Lattafa",
     "gender": "Women",
-    "stock": "low_stock",
+    "stock": "sold_out",
     "accords": [
       "strawberry",
       "fruity",
@@ -1253,8 +1395,36 @@ const PRODUCTS = [
     "longevity": "8-12 hours",
     "projection": "Moderate",
     "best_for": "Spring, Summer, Daytime, Casual",
-    "summary": "A fizzy, playful burst of green mandarin and blackcurrant opening into a heart of strawberry candy and gardenia, finishing with warm vanilla syrup and amber. Sweet, fun and surprisingly long-lasting.",
-    "ysp_thoughts": "|"
+    "summary": "A fizzy, playful burst of green mandarin and blackcurrant",
+    "ysp_thoughts": "<p>Yara was already one of our bestsellers. Yara Candy is its more playful, fruity sister, and if anything, the longevity is even better.</p>"
+  },
+  {
+    "name": "Lattafa Yara Elixir Eau de Parfum 100ml",
+    "slug": "lattafa-yara-elixir-edp-100ml",
+    "url": "https://yspcollective.com/products/lattafa-yara-elixir-edp-100ml.html",
+    "price": "€26.50",
+    "brand": "Lattafa",
+    "gender": "Women",
+    "stock": "on_order",
+    "accords": [
+      "gourmand",
+      "vanilla",
+      "caramel",
+      "fruity",
+      "sweet",
+      "amber"
+    ],
+    "concentration": "Eau de Parfum (EDP)",
+    "size": "100ml",
+    "family": "Oriental Vanilla / Gourmand",
+    "top": "Strawberry S'mores, Black Currant",
+    "heart": "Jasmine, Orange Blossom",
+    "base": "Vanilla, Caramel, Amber, Musk",
+    "longevity": "6-8 hours",
+    "projection": "Moderate",
+    "best_for": "Evening, Date night, Autumn/Winter",
+    "summary": "A 2025 flanker to Lattafa's best-selling Yara, pushing",
+    "ysp_thoughts": "Yara Elixir is the sultry, intense older sister to Lattafa's bestselling pink Yara. While the original captured hearts with its soft, fluffy sweetness, the Elixir edition leans heavily into an addictive, boozy-caramel and strawberry s’mores profile."
   },
   {
     "name": "Maison Alhambra Kismet for Men EDP 100ml",
@@ -1280,9 +1450,9 @@ const PRODUCTS = [
     "longevity": "8 - 10 hours",
     "projection": "Moderate",
     "best_for": "Evening, Autumn, Winter, Date Night",
-    "inspired_by": "Kilian Black Phantom",
+    "inspired_by": "YSL Tuxedo",
     "summary": "A rich, dark gourmand of nutmeg and woody spice opening into",
-    "ysp_thoughts": "<p>Kilian's Black Phantom is one of the most celebrated dark gourmands in niche perfumery — coffee, rum, chocolate and vanilla in a composition that retails at around €255.</p>"
+    "ysp_thoughts": "<p>YSL's Tuxedo, from the Vestiaire des Parfums line, is built around a refined patchouli-ambergris-rose accord — sophisticated, hard to find outside YSL boutiques, and priced well over €150.</p>"
   },
   {
     "name": "Ministry of Gourmand\tCoconut Lagoon 100ml",
@@ -1315,34 +1485,33 @@ const PRODUCTS = [
     "ysp_thoughts": "<p>Ministry of Gourmand does exactly what the name suggests — they specialise in this space and it shows. Coconut Lagoon is the kind of fragrance that puts you in a good mood before you've even left the house.</p>"
   },
   {
-    "name": "Miss Dior Parfum 50ml",
-    "slug": "miss-dior-parfum",
-    "url": "https://yspcollective.com/products/miss-dior-parfum.html",
-    "price": "€99.95",
-    "brand": "Dior",
-    "gender": "Women",
-    "stock": "sold_out",
+    "name": "Ministry of Oud Oud Royal Extrait de Parfum 100ml",
+    "slug": "ministry-of-oud-oud-royal-extrait-100ml",
+    "url": "https://yspcollective.com/products/ministry-of-oud-oud-royal-extrait-100ml.html",
+    "price": "€27",
+    "brand": "Ministry of Oud",
+    "gender": "Unisex",
+    "stock": "in_stock",
     "accords": [
       "woody",
-      "fruity",
-      "amber",
-      "sweet",
-      "earthy",
-      "patchouli",
-      "floral",
-      "warm"
+      "oud",
+      "aromatic",
+      "spicy",
+      "green",
+      "musk"
     ],
-    "concentration": "Parfum",
-    "size": "50ml",
-    "family": "Floral Chypre",
-    "top": "Peach, Apricot, Mandarin Orange",
-    "heart": "Floral notes, Jasmine, Wild Strawberry",
-    "base": "Patchouli, Amberwood, Amber, Moss, Atlas Cedar",
-    "longevity": "12+",
-    "projection": "Moderate/Strong",
-    "best_for": "Daytime wear, spring/summer, smart-casual, evening",
-    "summary": "A timeless feminine icon reinvented. Miss Dior Parfum is the most intense, most intimate expression of the house's signature floral — refined, sensual, and unmistakably Dior.",
-    "ysp_thoughts": "|"
+    "concentration": "Extrait de Parfum",
+    "size": "100ml",
+    "family": "Oriental Fougère Woody",
+    "top": "Lemon, Pink Berry, Bergamot",
+    "heart": "Cedar, Galbanum, Angelica Root",
+    "base": "Oud, Sandalwood, Tonkin Musk",
+    "longevity": "7-9 hours",
+    "projection": "Moderate to Strong",
+    "best_for": "Evening, Autumn/Winter, Special occasions",
+    "inspired_by": "Creed Royal Oud",
+    "summary": "A stylish, oriental fougère opening with sharp lemon and pink",
+    "ysp_thoughts": "This is a well-known, well-regarded dupe of Creed's Royal Oud, and"
   },
   {
     "name": "Rasasi Hawas Eclat 100ml",
@@ -1427,6 +1596,35 @@ const PRODUCTS = [
     "inspired_by": "Creed Virgin Island Water ",
     "summary": "A sun-soaked citrus gourmand opening with zesty lime and",
     "ysp_thoughts": "<p>We stocked Aquatica because it solves a very specific problem: Creed Virgin Island Water is one of the most loved summer fragrances in the world, and it retails for around €350.</p>"
+  },
+  {
+    "name": "Rayhaan Elixir Eau de Parfum 100ml",
+    "slug": "rayhaan-elixir-edp-100ml",
+    "url": "https://yspcollective.com/products/rayhaan-elixir-edp-100ml.html",
+    "price": "€29.90",
+    "brand": "Rayhaan",
+    "gender": "Unisex",
+    "stock": "in_stock",
+    "accords": [
+      "gourmand",
+      "sweet",
+      "vanilla",
+      "tonka",
+      "aromatic",
+      "warm"
+    ],
+    "concentration": "Eau de Parfum (EDP)",
+    "size": "100ml",
+    "family": "Aromatic Gourmand",
+    "top": "Mint, Bergamot",
+    "heart": "Benzoin, Lavender",
+    "base": "Vanilla, Tonka Bean",
+    "longevity": "4-6 hours (reports vary)",
+    "projection": "Light to Moderate",
+    "best_for": "Evening, Date night, Cooler seasons",
+    "inspired_by": "Jean Paul Gaultier Le Male Elixir",
+    "summary": "A warm, sweet aromatic fragrance opening with mint and",
+    "ysp_thoughts": "Reviewers repeatedly point to Jean Paul Gaultier's Le Male Elixir as the reference point here, with several noting Rayhaan's version actually refines on the original — dialling back the sticky maple-syrup top note for a more balanced, easier-to-wear result. Longevity reports are mixed, so we won't oversell it on that front."
   },
   {
     "name": "Rayhaan Italia Pour Homme Eau de Parfum 100ml",
@@ -1515,35 +1713,6 @@ const PRODUCTS = [
     "ysp_thoughts": "<p>Pacific Aura is one of the strongest value-for-performance propositions in the fresh/aquatic category right now. The comparison to LV Pacific Chill is widely cited by the fragrance community — same DNA, same vibe — but Pacific Aura beats the original on projection and longevity, which matters for day-to-day wear.</p>"
   },
   {
-    "name": "Roja Parfums Danger Parfum Cologne Spray 100ml",
-    "slug": "roja-parfums-danger-parfum",
-    "url": "https://yspcollective.com/products/roja-parfums-danger-parfum.html",
-    "price": "€335",
-    "brand": "Roja Parfums",
-    "gender": "Men",
-    "stock": "sold_out",
-    "accords": [
-      "aromatic",
-      "woody",
-      "fresh spicy",
-      "citrus",
-      "lavender",
-      "vanilla",
-      "earthy"
-    ],
-    "concentration": "Eau de Parfum (EDP)",
-    "size": "100ml",
-    "family": "Aromatic Leather Oriental",
-    "top": "Lavender, Lemon, Begamot, Tarragon",
-    "heart": "Violet, Jasmine, Lily of the Valley",
-    "base": "Cumin, Oakmoss, Tonka Bean, Leather, Woody Notes, Vetiver, Galbanum",
-    "longevity": "10-12+ hours",
-    "projection": "Strong",
-    "best_for": "Evening wear, formal occasions, cooler seasons, statement occasions",
-    "summary": "A powerhouse masculine from one of Britain's most celebrated niche perfumers. Danger is bold, leather-forward, and unmistakably Roja — a fragrance that commands attention without seeking it.",
-    "ysp_thoughts": "|"
-  },
-  {
     "name": "Swiss Arabian Enigma of Taif Extrait de Parfum",
     "slug": "swiss-arabian-enigma-of-taif",
     "url": "https://yspcollective.com/products/swiss-arabian-enigma-of-taif.html",
@@ -1572,8 +1741,8 @@ const PRODUCTS = [
     "longevity": "7-12+",
     "projection": "Strong",
     "best_for": "Evening wear, all seasons, special occasions, date night",
-    "summary": "A warm, rosy oriental from one of Dubai's most respected fragrance houses. Enigma of Taif captures the legendary Taif rose of Saudi Arabia — rich, velvety, and deeply complex. Long-lasting and distinctly Arabian in character.",
-    "ysp_thoughts": "|"
+    "summary": "A warm, rosy oriental from one of Dubai's most respected",
+    "ysp_thoughts": "<p>Taif rose is to Arabian perfumery what Grasse is to French — it's the benchmark. Swiss Arabian has been crafting in Dubai since 1974 and this is one of their most refined expressions. If you're curious about true Arabian rose perfumery without paying niche European prices, this is the one to start with. We chose it because it converts — customers who smell it, buy it.</p>"
   },
   {
     "name": "Swiss Arabian Soul of Bali Extrait de Parfum 100ml",
@@ -1607,71 +1776,13 @@ const PRODUCTS = [
     "ysp_thoughts": "|"
   },
   {
-    "name": "Tom Ford Noir Eau de Parfum Spray 100ml",
-    "slug": "tom-ford-noir-eau-de-parfum-spray",
-    "url": "https://yspcollective.com/products/tom-ford-noir-eau-de-parfum-spray.html",
-    "price": "€139.95",
-    "brand": "Tom Ford",
-    "gender": "Men",
-    "stock": "sold_out",
-    "accords": [
-      "amber",
-      "powdery",
-      "fresh spicy",
-      "woody",
-      "violet",
-      "patchouli",
-      "earthy"
-    ],
-    "concentration": "Eau de Parfum (EDP)",
-    "size": "100ml",
-    "family": "Oriental Woody Spicy",
-    "top": "Violet, Caraway, Bergamot, Verbena, Pink Pepper",
-    "heart": "Bulgarian Rose, Tuscan Iris, Black Pepper, Nutmeg, Clary Sage, Geranium",
-    "base": "Amber, Vanilla, Civet, Styrax, Vetiver, Indonesian Pathouli Leaf,",
-    "longevity": "10-12 hours",
-    "projection": "Strong",
-    "best_for": "Evening wear, formal occasions, date night, cooler seasons",
-    "summary": "A dark, sophisticated oriental from one of fashion's most uncompromising creative forces. Tom Ford Noir is brooding, complex, and deeply masculine — a fragrance that means business.",
-    "ysp_thoughts": "|"
-  },
-  {
-    "name": "Yves Saint Laurent Black Opium Eau de Parfum 50ml",
-    "slug": "yves-saint-laurent-black-opium-eau-de-pafrum",
-    "url": "https://yspcollective.com/products/yves-saint-laurent-black-opium-eau-de-pafrum.html",
-    "price": "€85",
-    "brand": "YSL",
-    "gender": "Women",
-    "stock": "sold_out",
-    "accords": [
-      "vanilla",
-      "coffee",
-      "swet",
-      "white floral",
-      "warm spicy",
-      "woody",
-      "fruity"
-    ],
-    "concentration": "Eau de Parfum (EDP)",
-    "size": "50ml",
-    "family": "Floral Gourmand Oriental",
-    "top": "Pink Pepper, Pear, Orange Blossom",
-    "heart": "Licorice, Coffee, Jasmine, Bitter Almond",
-    "base": "Patchouli, Vanilla, Cashmere Wood, Cedar",
-    "longevity": "8-10 hours",
-    "projection": "Moderate/Strong ",
-    "best_for": "Evening wear, date night, cooler seasons, autumn/winter",
-    "summary": "The modern classic that turned an entire generation onto fragrance. Black Opium is bold, addictive, and as relevant today as the day it launched — coffee, vanilla, and white florals in perfect balance.",
-    "ysp_thoughts": "|"
-  },
-  {
     "name": "Zimaya Al Barari Coral EDP 100ml",
     "slug": "zimaya-al-barari-coral-edp-100ml",
     "url": "https://yspcollective.com/products/zimaya-al-barari-coral-edp-100ml.html",
     "price": "€29.90",
     "brand": "Zimaya",
     "gender": "Unisex",
-    "stock": "in_stock",
+    "stock": "sold_out",
     "accords": [
       "fruity",
       "mango",
@@ -1691,8 +1802,36 @@ const PRODUCTS = [
     "projection": "Moderate",
     "best_for": "Spring, Summer, Daytime, Office, Casual",
     "inspired_by": "Ex Nihilo Blue Talisman",
-    "summary": "A vibrant, sun-drenched unisex EDP opening with juicy mango, pear and bergamot sharpened with ginger, evolving into a soft floral-berry heart of orange blossom and red berries, finishing on warm amber and musk. Light, modern, effortlessly wearable.",
-    "ysp_thoughts": "|"
+    "summary": "A vibrant, sun-drenched unisex EDP opening with juicy mango,",
+    "ysp_thoughts": "<p>Ex Nihilo Blue Talisman has been one of the most talked-about niche releases in recent years.</p>"
+  },
+  {
+    "name": "Zimaya Mazaaj Infused Eau de Parfum 100ml",
+    "slug": "zimaya-mazaaj-infused-edp-100ml",
+    "url": "https://yspcollective.com/products/zimaya-mazaaj-infused-edp-100ml.html",
+    "price": "€25",
+    "brand": "Zimaya",
+    "gender": "Men",
+    "stock": "on_order",
+    "accords": [
+      "citrus",
+      "spicy",
+      "woody",
+      "fresh",
+      "ambroxan"
+    ],
+    "concentration": "Eau de Parfum (EDP)",
+    "size": "100ml",
+    "family": "Fresh Spicy Woody",
+    "top": "Citron, Orange, Bergamot",
+    "heart": "Neroli, Ginger",
+    "base": "Ambroxan, Olibanum, Wood",
+    "longevity": "4-6 hours (reports vary)",
+    "projection": "Moderate, settles close to the skin",
+    "best_for": "Daytime, Spring/Summer, Casual wear",
+    "inspired_by": "Louis Vuitton Imagination",
+    "summary": "A fresh, citrus-led fragrance opening with citron, orange and",
+    "ysp_thoughts": "Reviews on this one are a little mixed on staying power — some wearers get a full day out of it, others find it settles into a skin scent within a few hours. What's consistent across reviews is that people like the character while it's there: the citrus-ginger-ambroxan combination is described as genuinely pleasant and easy to wear, not a fragrance that tries too hard."
   },
   {
     "name": "Zimaya Sharaf Divine Extract de parfum 100ml",
@@ -1753,69 +1892,9 @@ const PRODUCTS = [
     "longevity": "10-12 hours",
     "projection": "Moderate - Strong",
     "best_for": "Evening wear, formal occasions, cooler seasons, smart-casual",
-    "inspired_by": "Dior Sauvage Elixir",
+    "inspired_by": "Creed Aventus",
     "summary": "A bold, clubby oriental from Zimaya — dark, spiced, and magnetic. Sharaf the Club is built for nights out and makes no apologies for it.",
     "ysp_thoughts": "|"
-  },
-  {
-    "name": "Anua Heartleaf Pore Control Cleansing Oil",
-    "slug": "anua-heartleaf-control-cleansing-oil",
-    "url": "https://yspcollective.com/products/anua-heartleaf-control-cleansing-oil.html",
-    "price": "€18.71",
-    "brand": "ANUA",
-    "gender": "",
-    "stock": "sold_out",
-    "accords": [],
-    "type": "beauty",
-    "category": "Cleanser",
-    "size": "200ml",
-    "summary": "The ideal first-step cleanser. Plant-based oils emulsify on",
-    "ysp_thoughts": "We needed a cleansing oil that could sit confidently next to the rest of the Anua lineup — and this does exactly that. It does its job without any fuss: it removes everything, rinses clean, and leaves skin feeling like skin, not like it's just been scrubbed."
-  },
-  {
-    "name": "Anua PDRN Hyaluronic Acid Capsule 100 Serum",
-    "slug": "anua-pdrn-hyaluronic-acid-capsule-100-serum",
-    "url": "https://yspcollective.com/products/anua-pdrn-hyaluronic-acid-capsule-100-serum.html",
-    "price": "€24.69",
-    "brand": "ANUA",
-    "gender": "",
-    "stock": "sold_out",
-    "accords": [],
-    "type": "beauty",
-    "category": "Serum",
-    "size": "30ml",
-    "summary": "Clinical-grade PDRN in a daily serum. 11 types of hyaluronic",
-    "ysp_thoughts": "This one caught our attention for the ingredient story alone. PDRN — the same compound used in clinical skin treatments — showing up in an affordable daily serum felt worth paying attention to. So we tried it."
-  },
-  {
-    "name": "Beauty of Joseon Relief Sun SPF50+",
-    "slug": "beauty-of-joseon-relief-sun-spf50",
-    "url": "https://yspcollective.com/products/beauty-of-joseon-relief-sun-spf50.html",
-    "price": "€16",
-    "brand": "Beauty of Joseon",
-    "gender": "",
-    "stock": "sold_out",
-    "accords": [],
-    "type": "beauty",
-    "category": "SPF / Sunscreen",
-    "size": "50ml",
-    "summary": "The K-beauty sunscreen that broke the internet. SPF50+ PA++++",
-    "ysp_thoughts": "This is one of those products that genuinely lives up to the hype. We tried the Beauty of Joseon Relief Sun ourselves before ever listing it, and it immediately became a daily staple. It's the SPF that made us stop dreading sunscreen."
-  },
-  {
-    "name": "Anua Heartleaf 70% Intense Calming Cream",
-    "slug": "heartleaf-70-intense-calming-cream",
-    "url": "https://yspcollective.com/products/heartleaf-70-intense-calming-cream.html",
-    "price": "€26.00",
-    "brand": "ANUA",
-    "gender": "",
-    "stock": "in_stock",
-    "accords": [],
-    "type": "beauty",
-    "category": "Moisturiser",
-    "size": "50ml",
-    "summary": "70% heartleaf extract moisturiser for sensitive and reactive",
-    "ysp_thoughts": "The Heartleaf 70% Intense Calming Cream was one of those additions that felt like a no-brainer the moment we tried it. We have a rule — nothing goes on the site unless we've used it — and this one passed immediately."
   }
 ];
 // ── PRODUCT CATALOGUE: AUTO-GENERATED END ──
@@ -1833,18 +1912,19 @@ CUSTOMER PROFILE (use this to personalise all recommendations):
 Always address them by first name. Lead recommendations with what matches their profile before exploring alternatives.
 `;
   }
-  return `You are the YSP Collective fragrance and beauty advisor — a warm, knowledgeable assistant for a curated lifestyle brand based in Portugal. You have the personality of an expert friend who genuinely loves fragrance and skincare: enthusiastic, honest, and never pushy.
+  // Beauty/K-beauty bullet ("K-beauty skincare: Beauty of Joseon, ANUA") hidden while that
+  // product range is offline — restore it here once beauty products are published again.
+  return `You are the YSP Collective fragrance advisor — a warm, knowledgeable assistant for a curated lifestyle brand based in Portugal. You have the personality of an expert friend who genuinely loves fragrance: enthusiastic, honest, and never pushy.
 
 YSP Collective sells:
 - Arabian/niche fragrances: Lattafa, Armaf, Arabiyat Prestige (and sourcing from Swiss Arabian, Rasasi, Gulf Orchid, Zimaya, Al Haramain)
-- K-beauty skincare: Beauty of Joseon, ANUA
 ${profileSection}
 CURRENT PRODUCT CATALOGUE:
 ${JSON.stringify(PRODUCTS, null, 2)}
 
 YOUR ROLE:
-1. Help customers find the perfect fragrance or skincare product through friendly conversation
-2. Answer questions about products, ingredients, how to wear fragrances, skincare routines
+1. Help customers find the perfect fragrance through friendly conversation
+2. Answer questions about products, ingredients, how to wear fragrances
 3. Handle basic customer queries:
    - Shipping: 2–5 days EU, dispatched within 24 hours, from Portugal
    - Returns: 14 days, no hassle
@@ -1875,7 +1955,7 @@ RECOMMENDATION RULES — READ CAREFULLY:
 - If even one product matches, go ALL IN on it. Present it as a deliberate, curated choice: "We've selected the very best in this category and here's why this is perfect for you."
 - Always explain WHY each recommendation suits them specifically — mention the accords, the occasion, the longevity — make them feel like this is made for them.
 - If you recommend one product, make it sound like the definitive answer, not a compromise. If two or three fit, present each as a strong, confident recommendation.
-- Lean into the brand story: YSP Collective curates the best of Arabian niche fragrance and K-beauty — everything we stock is there for a reason.
+- Lean into the brand story: YSP Collective curates the best of Arabian niche fragrance — everything we stock is there for a reason.
 - Only acknowledge a genuine gap (e.g. truly nothing in the catalogue fits at all) if no product can be stretched to work. Even then, suggest the closest match and explain what makes it interesting.
 
 If asked something outside your knowledge, direct to info@yspcollective.com`;
