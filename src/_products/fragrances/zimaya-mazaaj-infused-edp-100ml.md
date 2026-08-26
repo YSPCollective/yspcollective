@@ -3,12 +3,12 @@ rrp: ""
 gender: Men
 size: 100ml
 concentration: Eau de Parfum (EDP)
-badge: Popular
+badge: Viral
 custom_badge: ""
-stock_status: on_order
-stock_quantity: 0
-expected_date: August 2026
-featured: false
+stock_status: in_stock
+stock_quantity: 10
+expected_date: ""
+featured: true
 published: true
 date_added: 2026-08-07
 fragrance_family: Fresh Spicy Woody
@@ -40,18 +40,18 @@ description_full: >-
 
   It's a genuinely wearable, unisex-leaning composition — reviewers describe the balance of fresh, spicy and woody notes as harmonious rather than loud, with a bottle design that reads as easily unisex.
 ysp_thoughts: >-
-  Reviews on this one are a little mixed on staying power — some wearers get a
+  Reviews on this one are a little mixed on staying power - some wearers get a
   full day out of it, others find it settles into a skin scent within a few
   hours. What's consistent across reviews is that people like the character
   while it's there: the citrus-ginger-ambroxan combination is described as
   genuinely pleasant and easy to wear, not a fragrance that tries too hard.
 
 
-  We're bringing it in as an easy daytime option rather than a big projection statement piece. It's on order now — full notes from us once we've had it in hand.
+  We're bringing it in as an easy daytime option rather than a big projection statement piece.
 amazon_url: ""
 inspired_by_name: Louis Vuitton Imagination
-inspired_by_note: Same fresh citrus-ambroxan DNA as Imagination, at a
-  fraction of the price — the cheapest well-known Imagination dupe
+inspired_by_note: Same fresh citrus-ambroxan DNA as Imagination, at a fraction
+  of the price — the cheapest well-known Imagination dupe
 ebay_url: ""
 name: Zimaya Mazaaj Infused Eau de Parfum 100ml
 slug: zimaya-mazaaj-infused-edp-100ml
@@ -61,5 +61,5 @@ char_sweet: 2
 heart_notes: Neroli, Ginger
 origin: UAE
 gtin: "6290171074731"
-exclude_from_feed: true
+exclude_from_feed: false
 ---
