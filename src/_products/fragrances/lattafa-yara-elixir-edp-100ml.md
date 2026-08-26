@@ -5,10 +5,10 @@ size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Trending
 custom_badge: ""
-stock_status: on_order
-stock_quantity: 0
-expected_date: August 2026
-featured: false
+stock_status: in_stock
+stock_quantity: 10
+expected_date: ""
+featured: true
 published: true
 date_added: 2026-08-07
 fragrance_family: Oriental Vanilla / Gourmand
@@ -61,5 +61,5 @@ char_sweet: 5
 heart_notes: Jasmine, Orange Blossom
 origin: UAE
 gtin: "6290362346531"
-exclude_from_feed: true
+exclude_from_feed: false
 ---
