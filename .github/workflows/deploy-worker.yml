@@ -17,11 +17,18 @@ jobs:
       - name: Build product catalogue
         run: node scripts/build-worker-products.js
 
+      # The catalogue is rebuilt again via preCommands, inside the action's own
+      # context. Without this, wrangler shipped the *committed* worker.js and
+      # ignored the step above — so CMS-only commits deployed green and left the
+      # chatbot serving a stale catalogue (frozen 25 Aug – 3 Sep 2026).
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: b6bc2dfe06ac5c3ce5d1223777e1be41
+          preCommands: |
+            node scripts/build-worker-products.js
+            node -e "const s=require('fs').readFileSync('worker.js','utf8');const a=s.indexOf('const PRODUCTS = ')+17;const b=s.indexOf('// ── PRODUCT CATALOGUE: AUTO-GENERATED END ──');console.log('Deploying catalogue:',JSON.parse(s.slice(a,b).trim().replace(/;$/,'')).length,'products')"
           command: deploy --config wrangler-api.toml --keep-vars
 
       - name: Sync stock from CMS to Worker
