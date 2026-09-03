@@ -7,6 +7,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -30,6 +32,24 @@ jobs:
             node scripts/build-worker-products.js
             node -e "const s=require('fs').readFileSync('worker.js','utf8');const a=s.indexOf('const PRODUCTS = ')+17;const b=s.indexOf('// ── PRODUCT CATALOGUE: AUTO-GENERATED END ──');console.log('Deploying catalogue:',JSON.parse(s.slice(a,b).trim().replace(/;$/,'')).length,'products')"
           command: deploy --config wrangler-api.toml --keep-vars
+
+      # A Cloudflare-side build is also wired to this repo and deploys
+      # ysp-ai-proxy straight from the committed source, without running the
+      # catalogue build. It finishes after this job, so it used to overwrite
+      # the deploy above with a stale catalogue (observed 2026-09-03: correct
+      # at 13:00:16, overwritten at 13:00:47). Committing the rebuilt file back
+      # means both deployers ship the same thing, whichever one lands last.
+      - name: Commit rebuilt catalogue
+        run: |
+          if git diff --quiet -- worker.js; then
+            echo "Catalogue already up to date — nothing to commit."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add worker.js
+          git commit -m "Rebuild bot catalogue [skip ci]"
+          git push
 
       - name: Sync stock from CMS to Worker
         env:
