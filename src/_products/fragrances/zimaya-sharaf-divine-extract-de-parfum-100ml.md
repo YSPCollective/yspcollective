@@ -1,5 +1,5 @@
 ---
-name: Zimaya Sharaf Divine Extract de parfum 100ml
+name: Zimaya Sharaf Divine Extrait de Parfum 100ml
 slug: zimaya-sharaf-divine
 price: "39.99"
 brand: Zimaya
