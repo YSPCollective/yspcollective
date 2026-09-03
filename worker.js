@@ -1801,7 +1801,7 @@ const PRODUCTS = [
     "ysp_thoughts": "Reviews on this one are a little mixed on staying power - some wearers get a full day out of it, others find it settles into a skin scent within a few hours. What's consistent across reviews is that people like the character while it's there: the citrus-ginger-ambroxan combination is described as genuinely pleasant and easy to wear, not a fragrance that tries too hard."
   },
   {
-    "name": "Zimaya Sharaf Divine Extract de parfum 100ml",
+    "name": "Zimaya Sharaf Divine Extrait de Parfum 100ml",
     "slug": "zimaya-sharaf-divine",
     "url": "https://yspcollective.com/products/zimaya-sharaf-divine.html",
     "price": "€39.99",
