@@ -552,7 +552,7 @@ const PRODUCTS = [
     "price": "€49.99",
     "brand": "Armaf",
     "gender": "Men",
-    "stock": "on_order",
+    "stock": "sold_out",
     "accords": [
       "citrus",
       "fructured",
@@ -1158,39 +1158,6 @@ const PRODUCTS = [
     "ysp_thoughts": "<p>Lattafa has earned its reputation by consistently delivering at a price point that feels almost unfair for the quality.</p>"
   },
   {
-    "name": "Lattafa Khamrah Qahwa 100ml",
-    "slug": "lattafa-edp-khamrah-qahwa-unisex-perfume-100ml",
-    "url": "https://yspcollective.com/products/lattafa-edp-khamrah-qahwa-unisex-perfume-100ml.html",
-    "price": "€34",
-    "brand": "Lattafa",
-    "gender": "Unisex",
-    "stock": "sold_out",
-    "accords": [
-      "coffee",
-      "vanilla",
-      "gourmand",
-      "sweet",
-      "spicy",
-      "amber",
-      "cinnamon",
-      "cardamom",
-      "warm",
-      "resinous"
-    ],
-    "concentration": "Eau de Parfum (EDP)",
-    "size": "100ml",
-    "family": "Oriental Vanilla / Gourmand",
-    "top": "Cinnamon, Cardamom, Ginger",
-    "heart": "Praline, Candied Fruits, White Flowers",
-    "base": "Coffee, Vanilla, Tonka Bean, Benzoin, Musk",
-    "longevity": "12–15 hours on skin; days on clothing",
-    "projection": "Strong (1–2 sprays recommended)",
-    "best_for": "Evening wear, autumn/winter, special occasions",
-    "inspired_by": "Kilian Black Phantom",
-    "summary": "Khamrah's darker sibling — spiced coffee gourmand with extraordinary longevity. Fragrantica Readers' Choice Award winner 2024.",
-    "ysp_thoughts": "|"
-  },
-  {
     "name": "Lattafa Khamrah 100ml",
     "slug": "lattafa-khamrah-eau-de-parfum-100ml-unisex-fragrance",
     "url": "https://yspcollective.com/products/lattafa-khamrah-eau-de-parfum-100ml-unisex-fragrance.html",
@@ -1405,7 +1372,7 @@ const PRODUCTS = [
     "price": "€26.50",
     "brand": "Lattafa",
     "gender": "Women",
-    "stock": "on_order",
+    "stock": "in_stock",
     "accords": [
       "gourmand",
       "vanilla",
@@ -1455,7 +1422,7 @@ const PRODUCTS = [
     "ysp_thoughts": "<p>YSL's Tuxedo, from the Vestiaire des Parfums line, is built around a refined patchouli-ambergris-rose accord — sophisticated, hard to find outside YSL boutiques, and priced well over €150.</p>"
   },
   {
-    "name": "Ministry of Gourmand\tCoconut Lagoon 100ml",
+    "name": "Ministry of Gourmand Coconut Lagoon 100ml",
     "slug": "ministry-of-gourman-coconut-lagoon",
     "url": "https://yspcollective.com/products/ministry-of-gourman-coconut-lagoon.html",
     "price": "€39.50",
@@ -1736,8 +1703,8 @@ const PRODUCTS = [
     "size": "100ml",
     "family": "Floral Oriental",
     "top": "Cardamom, Black Pepper, Pink Pepper, Elemi, Plum",
-    "heart": "Taif Rose elevated by Saffron, Violet, Osmanthus, and Olibanum (Frankincense).",
-    "base": "It settles into a warm, smoky trail of Oakwood, Molasses, Vetiver,",
+    "heart": "Taif Rose, Saffron, Violet, Osmanthus, Olibanum",
+    "base": "Oakwood, Molasses, Vetiver, Amber, Labdanum",
     "longevity": "7-12+",
     "projection": "Strong",
     "best_for": "Evening wear, all seasons, special occasions, date night",
@@ -1812,7 +1779,7 @@ const PRODUCTS = [
     "price": "€25",
     "brand": "Zimaya",
     "gender": "Men",
-    "stock": "on_order",
+    "stock": "in_stock",
     "accords": [
       "citrus",
       "spicy",
@@ -1831,7 +1798,7 @@ const PRODUCTS = [
     "best_for": "Daytime, Spring/Summer, Casual wear",
     "inspired_by": "Louis Vuitton Imagination",
     "summary": "A fresh, citrus-led fragrance opening with citron, orange and",
-    "ysp_thoughts": "Reviews on this one are a little mixed on staying power — some wearers get a full day out of it, others find it settles into a skin scent within a few hours. What's consistent across reviews is that people like the character while it's there: the citrus-ginger-ambroxan combination is described as genuinely pleasant and easy to wear, not a fragrance that tries too hard."
+    "ysp_thoughts": "Reviews on this one are a little mixed on staying power - some wearers get a full day out of it, others find it settles into a skin scent within a few hours. What's consistent across reviews is that people like the character while it's there: the citrus-ginger-ambroxan combination is described as genuinely pleasant and easy to wear, not a fragrance that tries too hard."
   },
   {
     "name": "Zimaya Sharaf Divine Extract de parfum 100ml",
@@ -1945,12 +1912,14 @@ TONE & LENGTH — STRICT RULES:
 - Max 2 products per response. One sentence per product — tight, specific, no padding.
 - Format each recommendation EXACTLY like this (one line, nothing before or after):
   [Product Name](url) — €price — one sentence on why it fits them.
+- This applies to EVERY message that names a product, not only recommendations. If you mention a product at all — answering "do you have X", "what's new", "tell me about X", or any other question — its FIRST mention must use that exact [Product Name](url) — €price form. Never write a product name as plain text or in **bold**: the site turns only the link form into a clickable link, so a plain name is a dead end for the customer.
 - NO closing question. NO summary. Stop after the last recommendation.
 - Never write bullet points, never write headers, never write paragraphs about a product.
 
 RECOMMENDATION RULES — READ CAREFULLY:
-- NEVER recommend a product where stock is "sold_out". Skip it entirely — act as if it doesn't exist.
+- NEVER recommend a product where stock is "sold_out" or "on_order". Skip both entirely — act as if they don't exist. Neither can be bought: checkout will reject the order, so recommending one loses the sale and the customer's trust.
 - If stock is "last_one", recommend it but add "last one in stock" so they know to move fast.
+- If stock is "low_stock", recommend it normally but add "only a few left".
 - NEVER say we have "limited options", "not many options", "only one option", "our selection is small", or anything that implies scarcity or disappointment. It is never acceptable to apologise for the range.
 - If even one product matches, go ALL IN on it. Present it as a deliberate, curated choice: "We've selected the very best in this category and here's why this is perfect for you."
 - Always explain WHY each recommendation suits them specifically — mention the accords, the occasion, the longevity — make them feel like this is made for them.

@@ -1,5 +1,5 @@
 ---
-name: Ministry of Gourmand	Coconut Lagoon 100ml
+name: Ministry of Gourmand Coconut Lagoon 100ml
 slug: ministry-of-gourman-coconut-lagoon
 price: "39.50"
 brand: Paris Corner

@@ -1,338 +1,290 @@
 {
   "al-haramain-amber-oud-dubai-night": {
     "slug": "al-haramain-amber-oud-dubai-night",
-    "priceId": "price_1ThpvmBUWm11KZzMegc4lPdW",
+    "priceId": "price_1U7zsABUWm11KZzMu6WPjBCj",
     "productId": "prod_UEN734hlf4efT1",
-    "price": "49.99",
-    "stock_quantity": 5
+    "price": "49.99"
   },
   "armaf-club-de-nuit-intense-105ml": {
     "slug": "armaf-club-de-nuit-intense-105ml",
-    "priceId": "price_1U7xu7BUWm11KZzMyAr3aS7E",
+    "priceId": "price_1U7zsBBUWm11KZzMIaracZv6",
     "productId": "prod_UEN7ZrOptdUca2",
-    "price": "33.00",
-    "stock_quantity": 0
+    "price": "33.00"
   },
   "armaf-club-de-nuit-intense-150ml": {
     "slug": "armaf-club-de-nuit-intense-150ml",
-    "priceId": "price_1U7xu8BUWm11KZzMAFIdyYyQ",
+    "priceId": "price_1U7zsCBUWm11KZzMF2qyIist",
     "productId": "prod_UatV08uIQa4cM7",
-    "price": "49.99",
-    "stock_quantity": 0
+    "price": "49.99"
   },
   "armaf-odyssey-limoni-fresh-edition-edp-100ml": {
     "slug": "armaf-odyssey-limoni-fresh-edition-edp-100ml",
-    "priceId": "price_1U7xuABUWm11KZzMwYJ2g60T",
+    "priceId": "price_1U7zsDBUWm11KZzMZnkJk8V7",
     "productId": "prod_V1sADhff0pcgqb",
-    "price": "25",
-    "stock_quantity": 0
+    "price": "25"
   },
   "armaf-odyssey-mandarin-sky-edp-100ml": {
     "slug": "armaf-odyssey-mandarin-sky-edp-100ml",
-    "priceId": "price_1U7xuBBUWm11KZzMpNzwA0KJ",
+    "priceId": "price_1U7zsEBUWm11KZzMUtDgw4FF",
     "productId": "prod_UaGkjKejL82wEb",
-    "price": "28.50",
-    "stock_quantity": 0
+    "price": "28.50"
   },
   "fragrance-world-classy-chic-girl-eau-de-parfum-90ml": {
     "slug": "fragrance-world-classy-chic-girl-eau-de-parfum-90ml",
-    "priceId": "price_1U7xuCBUWm11KZzMUs0Jw85J",
+    "priceId": "price_1U7zsFBUWm11KZzMYgbdno6n",
     "productId": "prod_UioH1R0P4VlUuf",
-    "price": "19.90",
-    "stock_quantity": 0
+    "price": "19.90"
   },
   "fragrance-world-is-intense-edp-75ml": {
     "slug": "fragrance-world-is-intense-edp-75ml",
-    "priceId": "price_1U7xuDBUWm11KZzM21wO7Hkk",
+    "priceId": "price_1U7zsGBUWm11KZzMhawb8Fun",
     "productId": "prod_V1sKwG3qUiPbA8",
-    "price": "19.50",
-    "stock_quantity": 0
+    "price": "19.50"
   },
   "fragrance-world-proud-of-you-parfum-100ml": {
     "slug": "fragrance-world-proud-of-you-parfum-100ml",
-    "priceId": "price_1U7xuFBUWm11KZzMUKgajFoi",
+    "priceId": "price_1U7zsHBUWm11KZzMMr4m7wYX",
     "productId": "prod_V1sPxBPscj66Ox",
-    "price": "24.50",
-    "stock_quantity": 0
+    "price": "24.50"
   },
   "fragrance-world-scandant-by-night-edp-100ml": {
     "slug": "fragrance-world-scandant-by-night-edp-100ml",
-    "priceId": "price_1U7xuGBUWm11KZzMc2uuzSGA",
+    "priceId": "price_1U7zsIBUWm11KZzM2DNNsRxk",
     "productId": "prod_V1sVcUVMkc59EM",
-    "price": "19.90",
-    "stock_quantity": 0
+    "price": "19.90"
   },
   "fragrance-world-suits-edp-100ml": {
     "slug": "fragrance-world-suits-edp-100ml",
-    "priceId": "price_1U7xuHBUWm11KZzMccHwmfe6",
+    "priceId": "price_1U7zsJBUWm11KZzMpC2vPrQB",
     "productId": "prod_V1sace0BxKEX4l",
-    "price": "19.70",
-    "stock_quantity": 0
+    "price": "19.70"
   },
   "french-avenue-liquid-brun-eau-de-parfum-100ml": {
     "slug": "french-avenue-liquid-brun-eau-de-parfum-100ml",
-    "priceId": "price_1U7xuIBUWm11KZzMpJfjZKww",
+    "priceId": "price_1U7zsKBUWm11KZzMJUFluOPN",
     "productId": "prod_UioLSwnPFzJMnt",
-    "price": "37.90",
-    "stock_quantity": 5
+    "price": "37.90"
   },
   "french-avenue-spectre-ghost-edp-80ml": {
     "slug": "french-avenue-spectre-ghost-edp-80ml",
-    "priceId": "price_1U7xuKBUWm11KZzMEgWRRqzT",
+    "priceId": "price_1U7zsLBUWm11KZzMbiZ9YIjk",
     "productId": "prod_V1sdh8wyV0R8eQ",
-    "price": "39.90",
-    "stock_quantity": 0
+    "price": "39.90"
   },
   "gulf-orchid-creamy-pistachio": {
     "slug": "gulf-orchid-creamy-pistachio",
-    "priceId": "price_1ThpvqBUWm11KZzMyLPpsc1N",
+    "priceId": "price_1U7zsMBUWm11KZzMOc9GVVrA",
     "productId": "prod_UeTVFGMNbKXoa4",
-    "price": "33.50",
-    "stock_quantity": 5
+    "price": "33.50"
   },
   "gulf-orchid-mango-ice": {
     "slug": "gulf-orchid-mango-ice",
-    "priceId": "price_1ThpvrBUWm11KZzMAuZzt8zX",
+    "priceId": "price_1U7zsNBUWm11KZzMw2QUYJ35",
     "productId": "prod_UEN7Es7esAjZWC",
-    "price": "39.99",
-    "stock_quantity": 1
+    "price": "39.99"
   },
   "khadlaj-azure-velvet-extrait-de-parfum-100ml": {
     "slug": "khadlaj-azure-velvet-extrait-de-parfum-100ml",
-    "priceId": "price_1U7xuLBUWm11KZzMpnX0lxFJ",
+    "priceId": "price_1U7zsOBUWm11KZzM0R5mVOTp",
     "productId": "prod_UioZHri1g7fywE",
-    "price": "33",
-    "stock_quantity": 9
+    "price": "33"
   },
   "khadlaj-cloud-candy-extrait-100ml": {
     "slug": "khadlaj-cloud-candy-extrait-100ml",
-    "priceId": "price_1U7xuMBUWm11KZzMszc7yhX5",
+    "priceId": "price_1U7zsOBUWm11KZzMLrnM409v",
     "productId": "prod_V1sjJSvVIpaee5",
-    "price": "28.00",
-    "stock_quantity": 0
+    "price": "28.00"
   },
   "khadlaj-icon-eau-de-parfum-100ml": {
     "slug": "khadlaj-icon-eau-de-parfum-100ml",
-    "priceId": "price_1U7xuNBUWm11KZzMpW5l9aHI",
+    "priceId": "price_1U7zsPBUWm11KZzMPCf4J3aT",
     "productId": "prod_UiqeHgkNnxaXTI",
-    "price": "35",
-    "stock_quantity": 9
+    "price": "35"
   },
   "khadlaj-island-dreams-extrait-100ml": {
     "slug": "khadlaj-island-dreams-extrait-100ml",
-    "priceId": "price_1U7xuOBUWm11KZzMdkjEFEsP",
+    "priceId": "price_1U7zsQBUWm11KZzM1qoC07Cq",
     "productId": "prod_UeMSoY8NSymkn5",
-    "price": "39.90",
-    "stock_quantity": 0
+    "price": "39.90"
   },
   "khadlaj-nuha-edp-85ml": {
     "slug": "khadlaj-nuha-edp-85ml",
-    "priceId": "price_1U7xuPBUWm11KZzMVE04aq26",
+    "priceId": "price_1U7zsRBUWm11KZzMzB8fSv3f",
     "productId": "prod_V1smjr8p0QnE42",
-    "price": "19.95",
-    "stock_quantity": 0
+    "price": "19.95"
   },
   "khadlaj-shiyaaka-snow-eau-de-parfum-100ml": {
     "slug": "khadlaj-shiyaaka-snow-eau-de-parfum-100ml",
-    "priceId": "price_1U7xuQBUWm11KZzMhbfBTEpw",
+    "priceId": "price_1U7zsSBUWm11KZzMDfYM1RaT",
     "productId": "prod_UiqkCdupAVseDI",
-    "price": "34.99",
-    "stock_quantity": 6
+    "price": "34.99"
   },
   "lattafa-ana-abiyedh-coral-edp-60ml": {
     "slug": "lattafa-ana-abiyedh-coral-edp-60ml",
-    "priceId": "price_1U7xuRBUWm11KZzMox6b7QHG",
+    "priceId": "price_1U7zsTBUWm11KZzMHyGJrHtb",
     "productId": "prod_UasyPkMzB4L7In",
-    "price": "19.50",
-    "stock_quantity": 0
+    "price": "19.50"
   },
   "lattafa-ana-abiyedh-rouge-edp-60ml": {
     "slug": "lattafa-ana-abiyedh-rouge-edp-60ml",
-    "priceId": "price_1U7xuTBUWm11KZzM8NO5bcT2",
+    "priceId": "price_1U7zsUBUWm11KZzM5n3sqYXU",
     "productId": "prod_UN0GXViPlhaEtt",
-    "price": "16.70",
-    "stock_quantity": 0
+    "price": "16.70"
   },
   "lattafa-badee-al-oud-for-glory": {
     "slug": "lattafa-badee-al-oud-for-glory",
-    "priceId": "price_1U7xuUBUWm11KZzMDuHOp4Yj",
-    "productId": "prod_V8ENOMrVf2MnSQ",
-    "price": "27.50",
-    "stock_quantity": 0
+    "priceId": "price_1U7zsVBUWm11KZzMVQcfQcOW",
+    "productId": "prod_V8GPzTJfQOaXkP",
+    "price": "27.50"
   },
   "lattafa-edp-khamrah-qahwa-unisex-perfume-100ml": {
     "slug": "lattafa-edp-khamrah-qahwa-unisex-perfume-100ml",
-    "priceId": "price_1Tdnm8BUWm11KZzMbuvvfDWp",
+    "priceId": "price_1U7zsWBUWm11KZzMxqm0sIOJ",
     "productId": "prod_UEN7S6HUZjsLw9",
-    "price": "34",
-    "stock_quantity": 0
+    "price": "34"
   },
   "lattafa-khamrah-eau-de-parfum-100ml-unisex-fragrance": {
     "slug": "lattafa-khamrah-eau-de-parfum-100ml-unisex-fragrance",
-    "priceId": "price_1Tdnm9BUWm11KZzMDuLpHthA",
+    "priceId": "price_1U7zsXBUWm11KZzMeSD0jzrw",
     "productId": "prod_UEN76UFP7e8wqA",
-    "price": "34",
-    "stock_quantity": 0
+    "price": "34"
   },
   "lattafa-musamam-white-intense-edp-100ml": {
     "slug": "lattafa-musamam-white-intense-edp-100ml",
-    "priceId": "price_1U7xuVBUWm11KZzM8JJyTAag",
+    "priceId": "price_1U7zsYBUWm11KZzM4B74Ir21",
     "productId": "prod_UeTUi3hdDDsNkr",
-    "price": "39.50",
-    "stock_quantity": 2
+    "price": "39.50"
   },
   "lattafa-najdia-edp-100ml-deodorant-spray-50ml": {
     "slug": "lattafa-najdia-edp-100ml-deodorant-spray-50ml",
-    "priceId": "price_1U7xuWBUWm11KZzMed2RwP7Z",
+    "priceId": "price_1U7zsZBUWm11KZzMzc1HqrUl",
     "productId": "prod_UN08wdvcdo9k1e",
-    "price": "16.50",
-    "stock_quantity": 0
+    "price": "16.50"
   },
   "lattafa-pride-fakhar-platin": {
     "slug": "lattafa-pride-fakhar-platin",
-    "priceId": "price_1ThpvzBUWm11KZzMFyVgZILj",
+    "priceId": "price_1U7zsaBUWm11KZzM0XdBw9Wo",
     "productId": "prod_UaGn1OVqkEfePq",
-    "price": "26.75",
-    "stock_quantity": 5
+    "price": "26.75"
   },
   "lattafa-qaed-al-fursan": {
     "slug": "lattafa-qaed-al-fursan",
-    "priceId": "price_1U7xuXBUWm11KZzMyZmHq6SN",
+    "priceId": "price_1U7zsbBUWm11KZzMHjt3vftT",
     "productId": "prod_UiQ0nMvKZVGNV7",
-    "price": "19.95",
-    "stock_quantity": 12
+    "price": "19.95"
   },
   "lattafa-yara-100ml": {
     "slug": "lattafa-yara-100ml",
-    "priceId": "price_1TdnmBBUWm11KZzM3X2rQnMw",
+    "priceId": "price_1U7zscBUWm11KZzMs5z4jU6g",
     "productId": "prod_UEN7iGw7pv9ayG",
-    "price": "19.55",
-    "stock_quantity": 0
+    "price": "19.55"
   },
   "lattafa-yara-candy-100ml": {
     "slug": "lattafa-yara-candy-100ml",
-    "priceId": "price_1U7xuYBUWm11KZzMbsuB0cv4",
+    "priceId": "price_1U7zsdBUWm11KZzMaawSBcTK",
     "productId": "prod_UMzLqqNnWYVGkX",
-    "price": "19.50",
-    "stock_quantity": 0
+    "price": "19.50"
   },
   "lattafa-yara-elixir-edp-100ml": {
     "slug": "lattafa-yara-elixir-edp-100ml",
-    "priceId": "price_1U7xuZBUWm11KZzMHlalBKOe",
+    "priceId": "price_1U7zseBUWm11KZzMpUtJHJZj",
     "productId": "prod_V1stw40poB4MW8",
-    "price": "26.50",
-    "stock_quantity": 0
+    "price": "26.50"
   },
   "maison-alhambra-kismet-for-men-edp-100ml": {
     "slug": "maison-alhambra-kismet-for-men-edp-100ml",
-    "priceId": "price_1U7xuaBUWm11KZzMvVbH3pRZ",
+    "priceId": "price_1U7zsfBUWm11KZzMoQljQm8I",
     "productId": "prod_UN0gZpICh3Id76",
-    "price": "25",
-    "stock_quantity": 9
+    "price": "25"
   },
   "ministry-of-oud-oud-royal-extrait-100ml": {
     "slug": "ministry-of-oud-oud-royal-extrait-100ml",
-    "priceId": "price_1U7xucBUWm11KZzMLbhVGOTX",
+    "priceId": "price_1U7zsgBUWm11KZzMLjmzDDkS",
     "productId": "prod_V1szjHoYAgcprF",
-    "price": "27",
-    "stock_quantity": 0
+    "price": "27"
   },
   "ministry-of-gourman-coconut-lagoon": {
     "slug": "ministry-of-gourman-coconut-lagoon",
-    "priceId": "price_1U7xudBUWm11KZzM9AaUI7yg",
+    "priceId": "price_1U7zshBUWm11KZzMRqIovfXF",
     "productId": "prod_UEN7PgDIoszhWH",
-    "price": "39.50",
-    "stock_quantity": 1
+    "price": "39.50"
   },
   "rasasi-hawas-eclat": {
     "slug": "rasasi-hawas-eclat",
-    "priceId": "price_1TdnmEBUWm11KZzMwb4zq7wu",
+    "priceId": "price_1U7zsiBUWm11KZzMZrrXtBUq",
     "productId": "prod_UEN7EMg4MXdLEP",
-    "price": "39",
-    "stock_quantity": 0
+    "price": "39"
   },
   "rasasi-hawas-elixir": {
     "slug": "rasasi-hawas-elixir",
-    "priceId": "price_1U7xueBUWm11KZzMbS5YbH8x",
+    "priceId": "price_1U7zsjBUWm11KZzMx3YFl12w",
     "productId": "prod_UEN7wiJHFlUSKV",
-    "price": "37.00",
-    "stock_quantity": 0
+    "price": "37.00"
   },
   "rayhaan-aquatica-100ml": {
     "slug": "rayhaan-aquatica-100ml",
-    "priceId": "price_1U7xufBUWm11KZzMgB2GzO4A",
+    "priceId": "price_1U7zskBUWm11KZzMpFhYjTAr",
     "productId": "prod_UeMQOdhT175Uuv",
-    "price": "39.90",
-    "stock_quantity": 1
+    "price": "39.90"
   },
   "rayhaan-elixir-edp-100ml": {
     "slug": "rayhaan-elixir-edp-100ml",
-    "priceId": "price_1U7xugBUWm11KZzMXVGbTiD7",
+    "priceId": "price_1U7zslBUWm11KZzMv55L4TSp",
     "productId": "prod_V1t2nErON0pcY2",
-    "price": "29.90",
-    "stock_quantity": 0
+    "price": "29.90"
   },
   "rayhaan-italia-pour-homme-100ml": {
     "slug": "rayhaan-italia-pour-homme-100ml",
-    "priceId": "price_1Thpw9BUWm11KZzMN6kn35H3",
+    "priceId": "price_1U7zsmBUWm11KZzMYW8lqqKH",
     "productId": "prod_UMyzFJqZOQcc7g",
-    "price": "34.90",
-    "stock_quantity": 10
+    "price": "34.90"
   },
   "rayhaan-jungle-vibe-eau-de-parfum-100ml": {
     "slug": "rayhaan-jungle-vibe-eau-de-parfum-100ml",
-    "priceId": "price_1U7xuhBUWm11KZzMcjzzVnEI",
+    "priceId": "price_1U7zsnBUWm11KZzMj3ghlFCV",
     "productId": "prod_UiqoDb501Asxnz",
-    "price": "34.90",
-    "stock_quantity": 5
+    "price": "34.90"
   },
   "rayhaan-pacific-aura-eau-de-parfum-100ml": {
     "slug": "rayhaan-pacific-aura-eau-de-parfum-100ml",
-    "priceId": "price_1U7xuiBUWm11KZzMBvmQGy3x",
+    "priceId": "price_1U7zsoBUWm11KZzM0qGWUgPZ",
     "productId": "prod_UiqvdQbxG9mYrI",
-    "price": "34.90",
-    "stock_quantity": 10
+    "price": "34.90"
   },
   "swiss-arabian-enigma-of-taif": {
     "slug": "swiss-arabian-enigma-of-taif",
-    "priceId": "price_1ThpwABUWm11KZzM5UR3n8mV",
+    "priceId": "price_1U7zspBUWm11KZzMoxNJbNIN",
     "productId": "prod_UaROVEWy6syG56",
-    "price": "63.50",
-    "stock_quantity": 3
+    "price": "63.50"
   },
   "swiss-arabian-soul-of-bali": {
     "slug": "swiss-arabian-soul-of-bali",
-    "priceId": "price_1ThpwCBUWm11KZzMwExcheib",
+    "priceId": "price_1U7zsqBUWm11KZzMw3JxejkC",
     "productId": "prod_UEN7wLdQVBb8NY",
-    "price": "69",
-    "stock_quantity": 4
+    "price": "69"
   },
   "zimaya-al-barari-coral-edp-100ml": {
     "slug": "zimaya-al-barari-coral-edp-100ml",
-    "priceId": "price_1U7xujBUWm11KZzMl8awmskp",
+    "priceId": "price_1U7zsrBUWm11KZzMdssvp5Kw",
     "productId": "prod_UatLkdhqCo9bGu",
-    "price": "29.90",
-    "stock_quantity": 0
+    "price": "29.90"
   },
   "zimaya-mazaaj-infused-edp-100ml": {
     "slug": "zimaya-mazaaj-infused-edp-100ml",
-    "priceId": "price_1U7xukBUWm11KZzMLzQYSMWG",
+    "priceId": "price_1U7zssBUWm11KZzMOiEzXtAS",
     "productId": "prod_V1t5xN62HhDzSu",
-    "price": "25",
-    "stock_quantity": 0
+    "price": "25"
   },
   "zimaya-sharaf-divine": {
     "slug": "zimaya-sharaf-divine",
-    "priceId": "price_1U7xulBUWm11KZzM3YF7rz31",
+    "priceId": "price_1U7zssBUWm11KZzMWXPZW4dB",
     "productId": "prod_UEN7JWY6BSfF06",
-    "price": "39.99",
-    "stock_quantity": 10
+    "price": "39.99"
   },
   "zimaya-sharaf-the-club": {
     "slug": "zimaya-sharaf-the-club",
-    "priceId": "price_1TdnmKBUWm11KZzMguK4uTf9",
+    "priceId": "price_1U7zstBUWm11KZzMDP8DuOQR",
     "productId": "prod_UEN7DIaeA5lWHX",
-    "price": "29.99",
-    "stock_quantity": 0
+    "price": "29.99"
   }
 }

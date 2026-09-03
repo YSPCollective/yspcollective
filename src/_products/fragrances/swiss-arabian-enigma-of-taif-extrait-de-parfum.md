@@ -19,7 +19,7 @@ char_masculine: 3
 char_unique: 5
 char_versatile: 3
 top_notes: Cardamom, Black Pepper, Pink Pepper, Elemi, Plum
-heart_notes: Taif Rose elevated by Saffron, Violet, Osmanthus, and Olibanum (Frankincense).
+heart_notes: Taif Rose, Saffron, Violet, Osmanthus, Olibanum
 accords_text: rose, floral, saffron, amber, woody, spicy, incense, smoky, oriental, plum
 longevity: 7-12+
 projection: Strong
@@ -65,6 +65,5 @@ accords:
 custom_badge: ""
 stock_quantity: 3
 fragrance_family: Floral Oriental
-base_notes: It settles into a warm, smoky trail of Oakwood, Molasses, Vetiver,
-  Amber, and Labdanum
+base_notes: Oakwood, Molasses, Vetiver, Amber, Labdanum
 ---

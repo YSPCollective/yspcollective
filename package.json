@@ -10,6 +10,7 @@
     "deploy:api": "node scripts/build-worker-products.js && wrangler deploy --config wrangler-api.toml --keep-vars"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^2.0.1",
+    "qrcode": "^1.5.4"
   }
 }
