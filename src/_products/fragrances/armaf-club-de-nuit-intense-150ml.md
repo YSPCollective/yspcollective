@@ -5,9 +5,9 @@ size: 150ml
 concentration: Parfum
 badge: Popular
 custom_badge: ""
-stock_status: on_order
+stock_status: sold_out
 stock_quantity: 0
-expected_date: September 2026
+expected_date: ""
 featured: false
 published: true
 date_added: 2026-06-05
