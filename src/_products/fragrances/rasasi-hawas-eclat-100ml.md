@@ -51,6 +51,24 @@ char_unique: 3
 char_versatile: 4
 pt:
   inspired_by_note_pt: O ADN de lichia e rosa é território clássico do Delina
+  name_pt: Rasasi Hawas Eclat 100ml
+  description_short_pt: 'Uma interpretação mais leve e mais luminosa da adorada linha Hawas. O Hawas Eclat traz uma frescura efervescente e conduzida pelos cítricos, fácil de usar e feita para os dias mais quentes.'
+  description_full_pt: |-
+    <p>O Rasasi Hawas Eclat é a expressão mais luminosa da família Hawas, um perfume fresco e centrado nos cítricos que abre com uma explosão de bergamota e notas de topo efervescentes, antes de assentar num coração floral limpo com subtons aquáticos subtis.</p>
+    <p>A base traz um calor leve de madeiras e almíscar suave, que o mantém ancorado sem perder o seu carácter arejado.</p>
+    <p>Sendo o ponto de entrada mais acessível da gama Hawas, o Eclat foi pensado para o uso diário, no escritório, em saídas informais e no tempo quente. A duração fica numas sólidas 6 a 8 horas com projeção moderada, o que faz dele o tipo de perfume que se aplica e se esquece, no melhor sentido possível. Um masculino confiante e limpo, de apelo alargado.</p>
+  ysp_thoughts_pt: |-
+    <p>Nem todos os perfumes precisam de ser uma afirmação. O Hawas Eclat é aquele a que se recorre numa manhã quente, quando só se quer cheirar bem sem pensar muito no assunto.</p>
+    <p>Gostamos dele porque é genuinamente fácil de usar, limpo, luminoso e nunca exagerado. Lembrou-nos que às vezes o perfume mais útil da coleção é aquele que simplesmente funciona, sempre, sem nos pedir nada.</p>
 es:
   inspired_by_note_es: El ADN de lichi y rosa es territorio clásico de Delina
+  name_es: Rasasi Hawas Eclat 100ml
+  description_short_es: 'Una interpretación más ligera y más luminosa de la querida línea Hawas. Hawas Eclat trae un frescor chispeante y guiado por los cítricos, fácil de llevar y hecho para los días cálidos.'
+  description_full_es: |-
+    <p>Rasasi Hawas Eclat es la expresión más luminosa de la familia Hawas, un perfume fresco y centrado en los cítricos que abre con una explosión de bergamota y notas de salida chispeantes, antes de asentarse en un corazón floral limpio con matices acuáticos sutiles.</p>
+    <p>El fondo trae una calidez ligera de maderas y almizcle suave, que lo mantiene anclado sin perder su carácter aireado.</p>
+    <p>Al ser el punto de entrada más accesible de la gama Hawas, Eclat está pensado para el uso diario, en la oficina, en salidas informales y en tiempo cálido. La duración queda en unas sólidas 6 a 8 horas con proyección moderada, lo que lo convierte en el tipo de perfume que te pones y olvidas, en el mejor sentido posible. Un masculino seguro y limpio, de atractivo amplio.</p>
+  ysp_thoughts_es: |-
+    <p>No todos los perfumes tienen que ser una afirmación. Hawas Eclat es al que recurres una mañana cálida, cuando solo quieres oler bien sin pensarlo demasiado.</p>
+    <p>Nos gusta porque es genuinamente fácil de llevar, limpio, luminoso y nunca exagerado. Nos recordó que a veces el perfume más útil de la colección es el que sencillamente funciona, siempre, sin pedirte nada.</p>
 ---

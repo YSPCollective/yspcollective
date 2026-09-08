@@ -65,7 +65,29 @@ exclude_from_feed: true
 pt:
   blind_buy_note_pt: 'Lima cítrica e leite de coco sobre cana-de-açúcar e rum quente. Um tropical a sério, por isso compre com confiança se o coco de praia é a sua praia.'
   inspired_by_note_pt: 'O mesmo ADN de lima, coco e rum por uma fração do preço, com projeção mais forte'
+  name_pt: Rayhaan Aquatica Eau de Parfum 100ml
+  description_short_pt: 'Um gourmand cítrico cheio de sol, que abre com lima ácida e leite de coco e seca para um final tropical cremoso e alcoólico. Fresco, quente e inconfundivelmente de verão, com 6 a 8 horas de duração na pele.'
+  description_full_pt: |-
+    <p>O Rayhaan Aquatica abre com uma explosão efervescente de bergamota, lima e tangerina, suavizada de imediato por leite de coco cremoso, o tipo de abertura que dá a sensação de se ter acabado de chegar a algum sítio quente.</p>
+    <p>À medida que se desenvolve, o coração introduz cana-de-açúcar, jasmim, gardénia e hibisco, o que lhe dá um carácter tropical levemente floral sem nunca cair no território feminino.</p>
+    <p>É na secagem que ganha a sua reputação: rum, fava tonka, almíscar e patchouli assentam num final suave, alcoólico e rente à pele, que permanece durante 6 a 8 horas.</p>
+  ysp_thoughts_pt: |-
+    <p>Trouxemos o Aquatica porque resolve um problema muito concreto: o Virgin Island Water da Creed é um dos perfumes de verão mais adorados do mundo, e custa cerca de 350 €.</p>
+    <p>O Aquatica capta o mesmo ADN, com o cocktail de lima, coco e rum, o calor tropical e a secagem cremosa, por uma fração do preço.</p>
+    <p>Não é uma cópia preguiçosa. A Rayhaan fez algo que se aguenta por si, com uma projeção possivelmente melhor e uma duração comparável.</p>
+    <p>Se alguma vez cheirou o Virgin Island Water e recuou perante o preço, é a este que deve recorrer. Perfeito para o verão, para férias, para dias de praia, ou para qualquer altura em que queira cheirar como se estivesse num sítio melhor do que aquele onde está.</p>
 es:
   blind_buy_note_es: 'Lima cítrica y leche de coco sobre caña de azúcar y ron cálido. Un tropical de verdad, así que cómpralo con confianza si el coco de playa es lo tuyo.'
   inspired_by_note_es: 'El mismo ADN de lima, coco y ron por una fracción del precio, con una proyección más fuerte'
+  name_es: Rayhaan Aquatica Eau de Parfum 100ml
+  description_short_es: 'Un gourmand cítrico lleno de sol, que abre con lima ácida y leche de coco y baja hacia un final tropical cremoso y licoroso. Fresco, cálido e inconfundiblemente veraniego, con 6 a 8 horas de duración en piel.'
+  description_full_es: |-
+    <p>Rayhaan Aquatica abre con una explosión chispeante de bergamota, lima y mandarina, suavizada de inmediato por leche de coco cremosa, el tipo de salida que da la sensación de acabar de llegar a algún sitio cálido.</p>
+    <p>A medida que se desarrolla, el corazón introduce caña de azúcar, jazmín, gardenia e hibisco, lo que le da un carácter tropical levemente floral sin caer nunca en territorio femenino.</p>
+    <p>Es en la bajada donde se gana su reputación: ron, haba tonka, almizcle y pachulí se asientan en un final suave, licoroso y pegado a la piel, que permanece durante 6 a 8 horas.</p>
+  ysp_thoughts_es: |-
+    <p>Trajimos Aquatica porque resuelve un problema muy concreto: el Virgin Island Water de Creed es uno de los perfumes de verano más queridos del mundo, y cuesta unos 350 €.</p>
+    <p>Aquatica capta el mismo ADN, con el cóctel de lima, coco y ron, la calidez tropical y la bajada cremosa, por una fracción del precio.</p>
+    <p>No es una copia perezosa. Rayhaan ha hecho algo que se sostiene por sí solo, con una proyección posiblemente mejor y una duración comparable.</p>
+    <p>Si alguna vez has olido el Virgin Island Water y has retrocedido ante el precio, es a este al que debes recurrir. Perfecto para el verano, para las vacaciones, para los días de playa, o para cualquier momento en el que quieras oler como si estuvieras en un sitio mejor del que estás.</p>
 ---

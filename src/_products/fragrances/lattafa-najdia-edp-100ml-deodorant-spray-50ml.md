@@ -58,6 +58,30 @@ gtin: "6291106063233"
 exclude_from_feed: false
 pt:
   inspired_by_note_pt: 'O mesmo ADN fresco de cítricos aquáticos, com projeção mais forte'
+  name_pt: Lattafa Najdia Eau de Parfum 100ml e Spray Desodorizante 50ml
+  description_short_pt: 'Uma explosão fresca e enérgica de notas cítricas e aquáticas com uma base quente e amadeirada, um dos perfumes de uso diário mais elogiados do mundo da perfumaria árabe. Vem com um spray desodorizante de 50ml a condizer.'
+  description_full_pt: |-
+    <p>O Najdia abre com uma mistura viva e revigorante de bergamota, limão, erva-príncipe, maçã e canela, imediatamente fresca e dinâmica sem ser afiada.</p>
+    <p>O coração desenvolve-se por notas aquosas, alfazema, cardamomo e alecrim, dando-lhe uma profundidade aquática limpa que funciona muito bem em tempo quente.</p>
+    <p>A base assenta num alicerce quente e ligeiramente fumado de cedro, sândalo, tabaco, âmbar e almíscar, que ancora a frescura com resistência a sério.</p>
+    <p>A duração ultrapassa de forma consistente as 8 horas na pele e vai bem além das 12 horas na roupa.</p>
+    <p>Este conjunto inclui um spray desodorizante de 50ml a condizer, o que faz dele um valor excecional para uma rotina de perfumaria completa.</p>
+  ysp_thoughts_pt: |-
+    <p>O Najdia fica no mesmo mundo do Invictus Aqua da Paco Rabanne e do Hawas da Rasasi, aquele perfil limpo e fresco de cítricos aquáticos que assenta em toda a gente e recolhe elogios tanto de homens como de mulheres.</p>
+    <p>Tem sido um dos perfumes acessíveis mais consistentemente elogiados desde que foi lançado, e o facto de vir com um spray desodorizante faz deste conjunto uma verdadeira pechincha.</p>
+    <p>Se procura um perfume diário fiável e do agrado geral que não lhe esvazie a carteira, é exatamente por aqui que se começa. Recorremos a este quando precisamos de algo versátil, limpo e fácil de usar.</p>
 es:
   inspired_by_note_es: 'El mismo ADN fresco de cítricos acuáticos, con una proyección más fuerte'
+  name_es: Lattafa Najdia Eau de Parfum 100ml y Spray Desodorante 50ml
+  description_short_es: 'Una explosión fresca y enérgica de notas cítricas y acuáticas con un fondo cálido y amaderado, uno de los perfumes de uso diario más elogiados del mundo de la perfumería árabe. Viene con un spray desodorante de 50ml a juego.'
+  description_full_es: |-
+    <p>Najdia abre con una mezcla viva y vigorizante de bergamota, limón, hierba limón, manzana y canela, fresca y dinámica de inmediato sin ser afilada.</p>
+    <p>El corazón se desarrolla a través de notas acuosas, lavanda, cardamomo y romero, dándole una profundidad acuática limpia que funciona de maravilla en tiempo cálido.</p>
+    <p>El fondo se asienta en una base cálida y ligeramente ahumada de cedro, sándalo, tabaco, ámbar y almizcle, que ancla el frescor con resistencia de verdad.</p>
+    <p>La duración supera de forma constante las 8 horas en piel y va bastante más allá de las 12 horas en la ropa.</p>
+    <p>Este conjunto incluye un spray desodorante de 50ml a juego, lo que lo convierte en un valor excepcional para una rutina de perfumería completa.</p>
+  ysp_thoughts_es: |-
+    <p>Najdia se sitúa en el mismo mundo que el Invictus Aqua de Paco Rabanne y el Hawas de Rasasi, ese perfil limpio y fresco de cítricos acuáticos que sienta bien a todo el mundo y recibe elogios tanto de hombres como de mujeres.</p>
+    <p>Ha sido uno de los perfumes asequibles más elogiados desde que se lanzó, y el hecho de que venga con un spray desodorante convierte este conjunto en una verdadera ganga.</p>
+    <p>Si buscas un perfume diario fiable y del gusto general que no te vacíe la cartera, es exactamente aquí donde se empieza. Recurrimos a este cuando necesitamos algo versátil, limpio y fácil de llevar.</p>
 ---

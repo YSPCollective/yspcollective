@@ -70,6 +70,30 @@ gtin: "6290171077213"
 exclude_from_feed: false
 pt:
   blind_buy_note_pt: 'Licor de framboesa e canela a derreter em maçã assada com caramelo, conhaque e baunilha. Um perfume de sobremesa a sério, por isso compre com confiança se é isso que procura.'
+  name_pt: Zimaya Sharaf Divine Extrait de Parfum 100ml
+  description_short_pt: Um oriental gourmand que abre com framboesa divertida e especiarias antes de revelar um coração quente com conhaque. O Sharaf Divine é o lançamento mais indulgente da Zimaya até hoje.
+  description_full_pt: |-
+    <p>O Zimaya Sharaf Divine Extrait de Parfum abre com uma explosão vibrante de framboesa, canela e bergamota, luminosa, especiada e cativante desde o primeiro instante.</p>
+    <p>O coração aprofunda-se em caramelo, maçã e rosa, acrescentando um doce rico que parece luxuoso em vez de enjoativo. É na base que faz jus ao nome: conhaque, fava tonka, baunilha, âmbar e musgo criam uma secagem quente, suave e quase alcoólica, que permanece muito depois de a abertura se ter desvanecido.</p>
+    <p>A concentração extrait dá a tudo um peso e uma duração excecionais. A projeção é ousada sem ser esmagadora.</p>
+    <p>No mundo da perfumaria, isto fica firmemente na família do Angels' Share. Se o icónico acorde de conhaque e baunilha da Kilian lhe agrada, o Divine entrega a mesma sofisticação por uma fração do preço.</p>
+  ysp_thoughts_pt: |-
+    <p>Este é o que surpreende as pessoas. Framboesa e conhaque soa a cocktail, e, no melhor sentido possível, é isso mesmo.</p>
+    <p>A Zimaya joga sistematicamente acima do seu patamar de preço, e o Divine não é exceção.</p>
+    <p>Escolhemo-lo porque preenche uma lacuna específica: o gourmand de ocasião especial que parece genuinamente luxuoso sem custar 280 €.</p>
+    <p>É o ponto de partida da conversa sobre o Angels' Share, a um preço que faz sentido.</p>
 es:
   blind_buy_note_es: 'Licor de frambuesa y canela fundiéndose en manzana asada con caramelo, coñac y vainilla. Un perfume de postre de verdad, así que cómpralo con confianza si es lo que buscas.'
+  name_es: Zimaya Sharaf Divine Extrait de Parfum 100ml
+  description_short_es: Un oriental gourmand que abre con frambuesa desenfadada y especias antes de revelar un corazón cálido con coñac. Sharaf Divine es el lanzamiento más goloso de Zimaya hasta la fecha.
+  description_full_es: |-
+    <p>Zimaya Sharaf Divine Extrait de Parfum abre con una explosión vibrante de frambuesa, canela y bergamota, luminosa, especiada y cautivadora desde el primer instante.</p>
+    <p>El corazón se profundiza en caramelo, manzana y rosa, añadiendo un dulzor rico que resulta lujoso en lugar de empalagoso. Es en el fondo donde hace honor a su nombre: coñac, haba tonka, vainilla, ámbar y musgo crean una bajada cálida, suave y casi licorosa, que permanece mucho después de que la salida se haya desvanecido.</p>
+    <p>La concentración extrait da a todo un peso y una duración excepcionales. La proyección es atrevida sin resultar abrumadora.</p>
+    <p>En el mundo de la perfumería, esto se sitúa firmemente en la familia de Angels' Share. Si el icónico acorde de coñac y vainilla de Kilian te atrae, Divine entrega esa misma sofisticación por una fracción del precio.</p>
+  ysp_thoughts_es: |-
+    <p>Este es el que sorprende a la gente. Frambuesa y coñac suena a cóctel, y, en el mejor sentido posible, lo es.</p>
+    <p>Zimaya juega sistemáticamente por encima de su rango de precio, y Divine no es la excepción.</p>
+    <p>Lo elegimos porque llena un hueco concreto: el gourmand de ocasión especial que se siente genuinamente lujoso sin costar 280 €.</p>
+    <p>Es el punto de partida de la conversación sobre Angels' Share, a un precio que tiene sentido.</p>
 ---

@@ -51,4 +51,26 @@ ysp_thoughts: >
   <p>It's the kind of fragrance that gets compliments without anyone being able to quite place it. Perfect for anyone who loved the original Yara and wants something a little more summery, or for anyone new to the Lattafa world who wants an easy, crowd-pleasing entry point. At this price for this performance, it's a straightforward yes.</p>
 gtin: "6290360599168"
 exclude_from_feed: false
+pt:
+  name_pt: Lattafa Yara Candy Eau de Parfum 100ml
+  description_short_pt: 'Uma explosão efervescente e divertida de tangerina verde e groselha preta que abre para um coração de rebuçado de morango e gardénia, e termina com xarope de baunilha quente e âmbar. Doce, divertido e surpreendentemente duradouro.'
+  description_full_pt: |-
+    <p>O Yara Candy abre com um rebentar luminoso e sumarento de tangerina verde e groselha preta, fresco e ligeiramente ácido, dando-lhe uma energia imediata que o impede de se tornar enjoativo.</p>
+    <p>É no coração que o nome faz sentido: uma nota efervescente de rebuçado de morango fica ao lado de uma gardénia suave, criando algo genuinamente divertido sem ser unidimensional.</p>
+    <p>A secagem suaviza tudo numa base quente e cremosa de baunilha e âmbar, que permanece na pele durante horas. Vários utilizadores relatam 10 a 12 horas de duração com uma única aplicação. É um estado de espírito engarrafado: alegre, despreocupado e completamente usável.</p>
+  ysp_thoughts_pt: |-
+    <p>O Yara já era um dos nossos maiores êxitos. O Yara Candy é a sua irmã mais divertida e frutada e, se alguma coisa, a duração é ainda melhor.</p>
+    <p>Onde o Yara aposta no quente e no apolvilhado, o Candy vai para o mais luminoso e mais gourmand, com aquela nota distinta de morango efervescente que o torna genuinamente viciante.</p>
+    <p>É o tipo de perfume que recolhe elogios sem que ninguém consiga identificá-lo bem. Perfeito para quem adorou o Yara original e quer algo um pouco mais de verão, ou para quem chega agora ao mundo da Lattafa e quer um ponto de entrada fácil e do agrado geral. Por este preço e com este desempenho, é um sim sem rodeios.</p>
+es:
+  name_es: Lattafa Yara Candy Eau de Parfum 100ml
+  description_short_es: 'Una explosión chispeante y desenfadada de mandarina verde y grosella negra que abre hacia un corazón de caramelo de fresa y gardenia, y termina con sirope de vainilla cálido y ámbar. Dulce, divertido y sorprendentemente duradero.'
+  description_full_es: |-
+    <p>Yara Candy abre con un estallido luminoso y jugoso de mandarina verde y grosella negra, fresco y algo ácido, dándole una energía inmediata que evita que se vuelva empalagoso.</p>
+    <p>Es en el corazón donde el nombre cobra sentido: una nota chispeante de caramelo de fresa se sitúa junto a una gardenia suave, creando algo genuinamente divertido sin ser plano.</p>
+    <p>La bajada suaviza todo en un fondo cálido y cremoso de vainilla y ámbar, que permanece en la piel durante horas. Varios usuarios informan de 10 a 12 horas de duración con una sola aplicación. Es un estado de ánimo embotellado: alegre, despreocupado y completamente llevable.</p>
+  ysp_thoughts_es: |-
+    <p>Yara ya era uno de nuestros mayores éxitos. Yara Candy es su hermana más desenfadada y afrutada y, si acaso, la duración es todavía mejor.</p>
+    <p>Donde Yara apuesta por lo cálido y lo empolvado, Candy va hacia lo más luminoso y más gourmand, con esa nota distintiva de fresa efervescente que lo hace genuinamente adictivo.</p>
+    <p>Es el tipo de perfume que recibe elogios sin que nadie logre identificarlo del todo. Perfecto para quien adoró el Yara original y quiere algo un poco más veraniego, o para quien llega ahora al mundo de Lattafa y quiere un punto de entrada fácil y del gusto general. A este precio y con este rendimiento, es un sí sin rodeos.</p>
 ---
