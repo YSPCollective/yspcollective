@@ -14,6 +14,14 @@ published: true
 date_added: 2026-06-17
 fragrance_family: Citrus Aromatic
 best_for: Daily, Spring, Summer, Office
+season:
+  - Spring
+  - Summer
+blind_buy_rating: Universal Crowd-Pleaser
+blind_buy_note: A flawless crowd-pleaser and crisp summer blind buy, this
+  ultra-clean masterpiece unleashes a frosty wave of sparkling bergamot and
+  juicy mandarin before settling into a sophisticated, luxury-soap dry down of
+  elegant neroli and fresh vetiver.
 char_sweet: 1
 char_fresh: 5
 char_masculine: 2
