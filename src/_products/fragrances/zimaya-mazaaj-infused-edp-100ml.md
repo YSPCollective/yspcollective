@@ -70,7 +70,27 @@ exclude_from_feed: false
 pt:
   blind_buy_note_pt: 'Cidra efervescente e bergamota a evoluir para gengibre, néroli e ambroxan moderno. Limpo, contemporâneo e difícil de não gostar.'
   inspired_by_note_pt: 'O mesmo ADN fresco de cítricos e ambroxan do Imagination, por uma fração do preço, e a alternativa mais barata entre as conhecidas'
+  name_pt: Zimaya Mazaaj Infused Eau de Parfum 100ml
+  description_short_pt: 'Um perfume fresco e conduzido pelos cítricos, que abre com cidra, laranja e bergamota, aquece com néroli e gengibre e assenta numa base suave de ambroxan e olíbano. Um amadeirado especiado fácil, para todos os dias.'
+  description_full_pt: |-
+    O Mazaaj Infused abre com uma mistura viva de cítricos, com cidra, laranja e bergamota, antes de o gengibre e o néroli acrescentarem um toque de especiaria e calor ao coração. É na base que ganha carácter: o ambroxan e o olíbano criam um rasto suave, resinoso e ligeiramente amadeirado, que se lê como limpo e moderno em vez de pesado.
+
+    É uma composição genuinamente usável e de tendência unissexo. Os críticos descrevem o equilíbrio entre as notas frescas, especiadas e amadeiradas como harmonioso em vez de ruidoso, com um frasco que também se lê facilmente como unissexo.
+  ysp_thoughts_pt: |-
+    As críticas a este são um pouco mistas quanto à duração. Há quem consiga um dia inteiro, e há quem sinta que assenta rente à pele ao fim de algumas horas. O que é consistente em todas as críticas é que as pessoas gostam do carácter enquanto ele lá está: a combinação de cítricos, gengibre e ambroxan é descrita como genuinamente agradável e fácil de usar, um perfume que não se esforça demais.
+
+    Trazemo-lo como uma opção fácil para o dia, e não como uma peça de grande projeção.
 es:
   blind_buy_note_es: 'Cidra chispeante y bergamota evolucionando hacia jengibre, neroli y ambroxan moderno. Limpio, contemporáneo y difícil de que no guste.'
   inspired_by_note_es: 'El mismo ADN fresco de cítricos y ambroxan de Imagination, por una fracción del precio, y la alternativa más barata entre las conocidas'
+  name_es: Zimaya Mazaaj Infused Eau de Parfum 100ml
+  description_short_es: 'Un perfume fresco y guiado por los cítricos, que abre con cidra, naranja y bergamota, se templa con neroli y jengibre y se asienta en un fondo suave de ambroxan y olíbano. Un amaderado especiado fácil, para el día a día.'
+  description_full_es: |-
+    Mazaaj Infused abre con una mezcla viva de cítricos, con cidra, naranja y bergamota, antes de que el jengibre y el neroli añadan un toque de especia y calidez al corazón. Es en el fondo donde gana carácter: el ambroxan y el olíbano crean una estela suave, resinosa y ligeramente amaderada, que se lee como limpia y moderna en lugar de pesada.
+
+    Es una composición genuinamente llevable y de tendencia unisex. Los reseñadores describen el equilibrio entre las notas frescas, especiadas y amaderadas como armonioso en lugar de ruidoso, con un frasco que también se lee fácilmente como unisex.
+  ysp_thoughts_es: |-
+    Las reseñas de este son algo dispares en cuanto a la duración. Hay quien saca un día entero, y hay quien nota que se pega a la piel al cabo de unas horas. Lo que sí es constante en todas las reseñas es que a la gente le gusta el carácter mientras está ahí: la combinación de cítricos, jengibre y ambroxan se describe como genuinamente agradable y fácil de llevar, un perfume que no se esfuerza de más.
+
+    Lo traemos como una opción fácil para el día, y no como una pieza de gran proyección.
 ---

@@ -68,7 +68,27 @@ exclude_from_feed: true
 pt:
   blind_buy_note_pt: 'Mel espesso e tuberosa, ricos sem pedir desculpa. Feito para quem já adora florais doces e pesados.'
   inspired_by_note_pt: O mesmo carácter gourmand amelado e com tuberosa do flanker Scandal by Night da JPG.
+  name_pt: Fragrance World Scandant by Night Eau de Parfum 100ml
+  description_short_pt: 'Uma abertura sedutora, amelada e frutada-floral, com laranja amarga e cítricos, um coração de cereja e tuberosa e uma base quente de tonka, baunilha e patchouli. Uso noturno ousado e de forte projeção.'
+  description_full_pt: |-
+    O Scandant by Night abre com um acorde distinto de mel e laranja amarga, elevado por cítricos, doce e ligeiramente ácido ao mesmo tempo. É no coração que fica interessante: cereja, tuberosa, flor de laranjeira e pera constroem um ramo exuberante, frutado e floral, com um toque verde e terroso invulgar dado pelo nardo dos Himalaias. Fecha numa base quente e sensual de fava tonka, baunilha, patchouli, sândalo, amberwood e almíscar branco.
+
+    É um perfume forte e confiante, feito para a noite. Os críticos descrevem-no como ideal para encontros e para ocasiões especiais das estações mais frias, em vez do uso diurno do dia a dia.
+  ysp_thoughts_pt: |-
+    O nome é um aceno bastante direto ao Scandal by Night da Jean Paul Gaultier, e o carácter gourmand de mel e tuberosa confirma-o, porque fica no mesmo território sedutor e de forte projeção do flanker da JPG.
+
+    É um perfume ousado, do tipo que se usa para dar nas vistas, em vez de uma opção diária discreta, e preenche uma lacuna na nossa gama exatamente para essa ocasião.
 es:
   blind_buy_note_es: 'Miel espesa y nardo, ricos sin pedir perdón. Hecho para quien ya adora los florales dulces y pesados.'
   inspired_by_note_es: El mismo carácter gourmand amielado y con nardo del flanker Scandal by Night de JPG.
+  name_es: Fragrance World Scandant by Night Eau de Parfum 100ml
+  description_short_es: 'Una salida seductora, amielada y frutal-floral, con naranja amarga y cítricos, un corazón de cereza y nardo y un fondo cálido de tonka, vainilla y pachulí. Uso de noche atrevido y de fuerte proyección.'
+  description_full_es: |-
+    Scandant by Night abre con un acorde distintivo de miel y naranja amarga, realzado por cítricos, dulce y algo ácido a la vez. Es en el corazón donde se pone interesante: cereza, nardo, azahar y pera construyen un ramo exuberante, afrutado y floral, con un toque verde y terroso poco habitual aportado por el nardo del Himalaya. Cierra en un fondo cálido y sensual de haba tonka, vainilla, pachulí, sándalo, amberwood y almizcle blanco.
+
+    Es un perfume fuerte y seguro, hecho para la noche. Los reseñadores lo describen como ideal para citas y para ocasiones especiales de las estaciones más frías, más que para el uso diurno del día a día.
+  ysp_thoughts_es: |-
+    El nombre es un guiño bastante directo al Scandal by Night de Jean Paul Gaultier, y el carácter gourmand de miel y nardo lo confirma, porque se sitúa en el mismo territorio seductor y de fuerte proyección que el flanker de JPG.
+
+    Es un perfume atrevido, del tipo que se lleva para llamar la atención, más que una opción diaria discreta, y llena un hueco en nuestra gama exactamente para esa ocasión.
 ---

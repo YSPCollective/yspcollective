@@ -72,7 +72,27 @@ exclude_from_feed: false
 pt:
   blind_buy_note_pt: Gengibre intenso e bergamota sobre baunilha cremosa e cedro. Fácil de usar quase todo o ano e difícil de errar.
   inspired_by_note_pt: 'O Spectre Ghost traz a mesma assinatura de gengibre rico, especiarias quentes e baunilha cremosa do Ani da Nishane, mas dispensa a abertura verde e afiada do original a favor de um primeiro spray mais suave.'
+  name_pt: French Avenue Spectre Ghost Eau de Parfum 80ml
+  description_short_pt: 'Um perfume refinado e de uso rente à pele, que abre com gengibre, cardamomo e bergamota, tem um coração frutado e floral de pimenta rosa e assenta numa base suave de baunilha, cedro e patchouli. Discreto por opção.'
+  description_full_pt: |-
+    O Spectre Ghost abre com uma explosão especiada de gengibre, cardamomo e bergamota, viva sem ser afiada. O coração suaviza-se em pimenta rosa, groselha preta e rosa turca, uma combinação frutada e floral que mantém o interesse na fase intermédia. Assenta numa base cremosa e amadeirada de baunilha, cedro e patchouli, arredondada com âmbar, benjoim e almíscar.
+
+    Fiel ao nome, este é um perfume fantasma. Vive rente à pele em vez de encher uma sala. Recompensa quem gosta de um perfume pessoal, que só se nota de perto, em vez de algo construído para projetar por todo o espaço.
+  ysp_thoughts_pt: |-
+    Queremos criar a expectativa certa sobre este: os críticos são honestos e dizem que é um perfume discreto e rente à pele, e não um perfume de grande projeção. Há quem descreva ser preciso estar a poucos centímetros para o apanhar bem. Os críticos também concordam, de forma geral, que a secagem de baunilha, cedro e patchouli está genuinamente bem feita e justifica o uso.
+
+    É uma recomendação fácil para quem prefere um perfume diário pessoal e discreto a algo ruidoso.
 es:
   blind_buy_note_es: Jengibre intenso y bergamota sobre vainilla cremosa y cedro. Fácil de llevar casi todo el año y difícil de errar.
   inspired_by_note_es: 'Spectre Ghost trae la misma firma de jengibre rico, especias cálidas y vainilla cremosa del Ani de Nishane, pero prescinde de la salida verde y afilada del original a favor de un primer vaporizado más suave.'
+  name_es: French Avenue Spectre Ghost Eau de Parfum 80ml
+  description_short_es: 'Un perfume refinado y de uso pegado a la piel, que abre con jengibre, cardamomo y bergamota, despliega un corazón frutal y floral de pimienta rosa y descansa sobre un fondo suave de vainilla, cedro y pachulí. Discreto por decisión.'
+  description_full_es: |-
+    Spectre Ghost abre con una explosión especiada de jengibre, cardamomo y bergamota, viva sin ser afilada. El corazón se suaviza con pimienta rosa, grosella negra y rosa turca, una combinación frutal y floral que mantiene el interés en la fase intermedia. Se asienta en un fondo cremoso y amaderado de vainilla, cedro y pachulí, redondeado con ámbar, benjuí y almizcle.
+
+    Fiel a su nombre, este es un perfume fantasma. Vive pegado a la piel en lugar de llenar una sala. Recompensa a quien disfruta de un perfume personal, que solo se nota de cerca, en lugar de algo construido para proyectar por todo el espacio.
+  ysp_thoughts_es: |-
+    Queremos crear la expectativa correcta sobre este: los reseñadores son honestos y dicen que es un perfume discreto y pegado a la piel, y no uno de gran proyección. Hay quien describe que hay que estar a pocos centímetros para captarlo bien. Los reseñadores también coinciden, en general, en que el fondo de vainilla, cedro y pachulí está genuinamente bien hecho y justifica llevarlo.
+
+    Es una recomendación fácil para quien prefiere un perfume diario personal y discreto antes que algo ruidoso.
 ---

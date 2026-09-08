@@ -71,7 +71,29 @@ exclude_from_feed: false
 pt:
   blind_buy_note_pt: 'Bergamota efervescente e tangerina a evoluir para néroli limpo e vetiver. Lê-se como sabonete caro, coisa de que quase toda a gente gosta.'
   inspired_by_note_pt: 'Há um forte consenso na comunidade a colocar o Shiyaaka Snow no ADN do Météore, com cítricos luminosos, especiaria subtil e uma base amadeirada limpa, por um preço bastante mais baixo.'
+  name_pt: Khadlaj Shiyaaka Snow Eau de Parfum 100ml
+  description_short_pt: 'Um fresco unissexo limpo e nítido, no mundo do Louis Vuitton Météore. Tangerina e bergamota abrem com luminosidade antes de o néroli, a noz-moscada e a pimenta rosa acrescentarem um calor especiado e refinado. Vetiver da Indonésia e cardamomo fecham com uma profundidade amadeirada suave e duradoura.'
+  description_full_pt: |-
+    <p>O Shiyaaka Snow é uma edição especial da coleção Shiyaaka da Khadlaj, um perfume unissexo limpo e sofisticado que a comunidade da perfumaria associou amplamente ao Louis Vuitton Météore. A comparação aguenta-se: ambos partilham aquela qualidade rara de parecerem limpos sem esforço e sem serem aborrecidos, e sofisticados sem serem exigentes.</p>
+    <p>A abertura é luminosa e refinada: tangerina, bergamota e notas cítricas nítidas criam uma introdução revigorante que parece genuinamente fresca, nada sintética e nada afiada. É o tipo de abertura que se nota dentro de um elevador.</p>
+    <p>O coração acrescenta calor e carácter. O néroli traz uma qualidade floral suave e ligeiramente amelada que faz a transição dos cítricos de forma bonita, a noz-moscada acrescenta profundidade especiada e a pimenta rosa introduz uma nitidez discreta que impede a composição de parecer pesada. Juntos, criam um núcleo aromático refinado, classicamente masculino mas na prática inteiramente unissexo.</p>
+    <p>A base assenta tudo num calor suave e duradouro. O óleo de vetiver da Indonésia, raro neste segmento de preço, dá um alicerce terroso e cremoso, enquanto o cardamomo acrescenta um toque de especiaria aromática que se prolonga agradavelmente na pele.</p>
+    <p>Usa-se o ano todo e é adequado em qualquer lado. Se o Météore é a sua referência mas não o seu orçamento, é desta conversa que se trata.</p>
+  ysp_thoughts_pt: |-
+    <p>O Shiyaaka Snow é um daqueles perfumes que joga muito acima da sua categoria. A comparação com o Météore é forte na comunidade, com a mesma energia cítrica limpa e o mesmo coração aromático refinado, mas o Shiyaaka Snow é um perfume de qualidade por direito próprio, independentemente disso.</p>
+    <p>O vetiver da Indonésia na base é um toque premium, a embalagem é elegante e usa-se lindamente em tempo quente. Uma recomendação fácil para quem gosta de perfumes limpos.</p>
 es:
   blind_buy_note_es: 'Bergamota chispeante y mandarina evolucionando hacia neroli limpio y vetiver. Se lee como jabón caro, algo que gusta a casi todo el mundo.'
   inspired_by_note_es: 'Hay un fuerte consenso en la comunidad que sitúa a Shiyaaka Snow en el ADN de Météore, con cítricos luminosos, especia sutil y un fondo amaderado limpio, a un precio bastante más bajo.'
+  name_es: Khadlaj Shiyaaka Snow Eau de Parfum 100ml
+  description_short_es: 'Un fresco unisex limpio y nítido, en el mundo del Louis Vuitton Météore. Mandarina y bergamota abren con luminosidad antes de que el neroli, la nuez moscada y la pimienta rosa añadan una calidez especiada y refinada. Vetiver de Indonesia y cardamomo cierran con una profundidad amaderada suave y duradera.'
+  description_full_es: |-
+    <p>Shiyaaka Snow es una edición especial de la colección Shiyaaka de Khadlaj, un perfume unisex limpio y sofisticado que la comunidad de la perfumería ha asociado ampliamente con el Louis Vuitton Météore. La comparación se sostiene: ambos comparten esa cualidad rara de parecer limpios sin esfuerzo y sin resultar aburridos, y sofisticados sin ser exigentes.</p>
+    <p>La salida es luminosa y refinada: mandarina, bergamota y notas cítricas nítidas crean una introducción vigorizante que parece genuinamente fresca, nada sintética y nada afilada. Es el tipo de salida que se nota dentro de un ascensor.</p>
+    <p>El corazón añade calidez y carácter. El neroli aporta una cualidad floral suave y ligeramente amielada que hace la transición de los cítricos de forma preciosa, la nuez moscada añade profundidad especiada y la pimienta rosa introduce una nitidez discreta que evita que la composición resulte pesada. Juntos crean un núcleo aromático refinado, clásicamente masculino pero en la práctica enteramente unisex.</p>
+    <p>El fondo asienta todo en una calidez suave y duradera. El aceite de vetiver de Indonesia, raro en este segmento de precio, da una base terrosa y cremosa, mientras que el cardamomo añade un toque de especia aromática que se prolonga agradablemente en la piel.</p>
+    <p>Se lleva todo el año y es apropiado en cualquier sitio. Si Météore es tu referencia pero no tu presupuesto, de esta conversación se trata.</p>
+  ysp_thoughts_es: |-
+    <p>Shiyaaka Snow es uno de esos perfumes que juega muy por encima de su categoría. La comparación con Météore es fuerte en la comunidad, con la misma energía cítrica limpia y el mismo corazón aromático refinado, pero Shiyaaka Snow es un perfume de calidad por derecho propio, al margen de eso.</p>
+    <p>El vetiver de Indonesia en el fondo es un toque premium, el empaque es elegante y se lleva de maravilla en tiempo cálido. Una recomendación fácil para quien disfruta de los perfumes limpios.</p>
 ---

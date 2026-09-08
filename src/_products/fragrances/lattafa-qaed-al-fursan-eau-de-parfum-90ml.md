@@ -67,7 +67,31 @@ exclude_from_feed: false
 pt:
   blind_buy_note_pt: 'Ananás sumarento e açafrão sobre âmbar quente e cedro. Um agrada a todos na órbita do Aventus, que serve para quase todas as ocasiões.'
   inspired_by_note_pt: 'família Aventus frutada e amadeirada, com projeção mais leve e mais acessível'
+  name_pt: Lattafa Qaed al Fursan Eau de Parfum 90ml
+  description_short_pt: 'Um perfume masculino fresco e sofisticado da Lattafa. Qaed Al Fursan traduz-se por líder dos cavaleiros, e o perfume faz jus ao nome. Polido, confiante e feito para a excelência do dia a dia.'
+  description_full_pt: |-
+    <p>O Lattafa Qaed Al Fursan Eau de Parfum abre com uma frescura nítida e aromática, com bergamota e alfazema a definir um tom limpo e distinto desde a primeira borrifadela.</p>
+    <p>O coração traz uma dimensão subtil de flores e especiarias que acrescenta carácter sem perturbar a frescura geral, enquanto a base de cedro, vetiver e almíscar lhe dá uma profundidade seca e amadeirada que ancora lindamente a composição.</p>
+    <p>O resultado é um perfume que assenta com firmeza na tradição masculina moderna: adequado ao escritório, versátil e sempre bem recebido.</p>
+    <p>A projeção é moderada e bem-educada, e o rasto é limpo e duradouro. A duração garante umas fiáveis 8 a 10 horas.</p>
+    <p>Funciona o ano todo e serve tanto numa sala de reuniões como num contexto informal. É um dos lançamentos mais consensuais da Lattafa.</p>
+  ysp_thoughts_pt: |-
+    <p>Há perfumes com uma ocasião específica, e há outros que simplesmente funcionam em todo o lado. O Qaed Al Fursan está firmemente na segunda categoria.</p>
+    <p>Tem aquela qualidade que as pessoas bem vestidas e discretas costumam procurar: nada a provar, tudo a oferecer.</p>
+    <p>Escolhemo-lo porque é o tipo de perfume que constrói uma lealdade silenciosa. As pessoas não se desfazem em elogios da primeira vez que o cheiram, simplesmente voltam sempre a ele. Essa consistência vale muito.</p>
 es:
   blind_buy_note_es: 'Piña jugosa y azafrán sobre ámbar cálido y cedro. Un gusta a todos en la órbita de Aventus, que sirve para casi cualquier ocasión.'
   inspired_by_note_es: 'familia Aventus afrutada y amaderada, con una proyección más ligera y más accesible'
+  name_es: Lattafa Qaed al Fursan Eau de Parfum 90ml
+  description_short_es: 'Un perfume masculino fresco y sofisticado de Lattafa. Qaed Al Fursan se traduce como líder de los caballeros, y el perfume hace honor al nombre. Pulido, seguro y hecho para la excelencia del día a día.'
+  description_full_es: |-
+    <p>Lattafa Qaed Al Fursan Eau de Parfum abre con un frescor nítido y aromático, con bergamota y lavanda marcando un tono limpio y distinguido desde el primer vaporizado.</p>
+    <p>El corazón trae una dimensión sutil de flores y especias que añade carácter sin alterar el frescor general, mientras que el fondo de cedro, vetiver y almizcle le da una profundidad seca y amaderada que ancla maravillosamente la composición.</p>
+    <p>El resultado es un perfume que se asienta con firmeza en la tradición masculina moderna: apto para la oficina, versátil y siempre bien recibido.</p>
+    <p>La proyección es moderada y educada, y la estela es limpia y duradera. La duración garantiza unas fiables 8 a 10 horas.</p>
+    <p>Funciona todo el año y sirve tanto en una sala de reuniones como en un contexto informal. Es uno de los lanzamientos más consensuados de Lattafa.</p>
+  ysp_thoughts_es: |-
+    <p>Hay perfumes con una ocasión concreta, y hay otros que sencillamente funcionan en todas partes. Qaed Al Fursan está firmemente en la segunda categoría.</p>
+    <p>Tiene esa cualidad que la gente bien vestida y discreta suele buscar: nada que demostrar, todo que ofrecer.</p>
+    <p>Lo elegimos porque es el tipo de perfume que construye una lealtad silenciosa. La gente no se deshace en elogios la primera vez que lo huele, simplemente vuelve a él una y otra vez. Esa constancia vale mucho.</p>
 ---

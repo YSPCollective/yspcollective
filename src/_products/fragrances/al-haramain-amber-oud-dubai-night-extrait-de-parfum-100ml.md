@@ -76,7 +76,27 @@ base_notes: Tonka Bean, Amber, White Must, Oakmoss
 pt:
   blind_buy_note_pt: 'Oud grande e resinoso, com açafrão e fumo, e projeta com força. Se já usa oud, compre com confiança. Se não usa, experimente uma amostra antes de avançar para um frasco.'
   inspired_by_note_pt: 'O mesmo território oriental escuro de âmbar e tonka, visivelmente mais fresco e leve do que o original da Montale'
+  name_pt: Al Haramain Amber Oud Dubai Night Extrait de Parfum 100ml
+  description_short_pt: 'Um oriental ousado e fumado da Al Haramain, uma das casas de perfumaria mais estabelecidas do Golfo. O Dubai Night é uma mistura escura e viciante de oud e âmbar, com projeção a sério e duração para a noite toda.'
+  description_full_pt: |-
+    <p>O Al Haramain Amber Oud Dubai Night Extrait de Parfum é um perfume assumidamente opulento, feito para quem quer ser notado.</p>
+    <p>Abrindo com um âmbar escuro e resinoso fundido com oud rico, o perfume assenta rapidamente num coração profundo e fumado, com camadas de especiaria e facetas de couro. A concentração extrait amplifica tudo, desde a profundidade ao rasto e à duração, o que faz deste um perfume que impõe atenção desde o momento em que é aplicado.</p>
+    <p>As notas de fundo de almíscar e resinas amadeiradas ancoram a composição e mantêm-na a evoluir durante horas. É mais indicado para a noite e para os meses mais frios, embora, na tradição árabe, funcione também como uma afirmação ousada durante o dia. Conte com mais de 12 horas de uso e um rasto que enche uma sala.</p>
+  ysp_thoughts_pt: |-
+    <p>A Al Haramain trabalha no território do oud e do âmbar desde 1970. Não é uma marca a perseguir tendências, é uma marca que as definiu.</p>
+    <p>O Dubai Night é um dos seus lançamentos mais escuros e intensos, e é precisamente por isso que vende. Quem quer algo que tenha desempenho a sério, em duração, projeção e presença, volta sempre a este. Não é um perfume discreto, e não tenta sê-lo.</p>
+    <p>Se acha os perfumes de designer demasiado leves ou demasiado passageiros, a resposta é esta.</p>
 es:
   blind_buy_note_es: 'Oud grande y resinoso, con azafrán y humo, y proyecta con fuerza. Si ya llevas oud, cómpralo con confianza. Si no, prueba una muestra antes de ir a por el frasco.'
   inspired_by_note_es: 'El mismo territorio oriental oscuro de ámbar y tonka, notablemente más fresco y ligero que el original de Montale'
+  name_es: Al Haramain Amber Oud Dubai Night Extrait de Parfum 100ml
+  description_short_es: 'Un oriental atrevido y ahumado de Al Haramain, una de las casas de perfumería más asentadas del Golfo. Dubai Night es una mezcla oscura y adictiva de oud y ámbar, con proyección de verdad y duración para toda la noche.'
+  description_full_es: |-
+    <p>Al Haramain Amber Oud Dubai Night Extrait de Parfum es un perfume abiertamente opulento, hecho para quien quiere que lo noten.</p>
+    <p>Abriendo con un ámbar oscuro y resinoso fundido con oud rico, el perfume se asienta enseguida en un corazón profundo y ahumado, con capas de especia y facetas de cuero. La concentración extrait lo amplifica todo, desde la profundidad hasta la estela y la duración, lo que hace de este un perfume que impone atención desde el momento en que se aplica.</p>
+    <p>Las notas de fondo de almizcle y resinas amaderadas anclan la composición y la mantienen evolucionando durante horas. Es más indicado para la noche y para los meses fríos, aunque, en la tradición árabe, funciona también como una afirmación atrevida durante el día. Cuenta con más de 12 horas de uso y una estela que llena una sala.</p>
+  ysp_thoughts_es: |-
+    <p>Al Haramain trabaja en el territorio del oud y el ámbar desde 1970. No es una marca que persiga tendencias, es una marca que las marcó.</p>
+    <p>Dubai Night es uno de sus lanzamientos más oscuros e intensos, y es precisamente por eso que vende. Quien quiere algo con rendimiento de verdad, en duración, proyección y presencia, vuelve siempre a este. No es un perfume discreto, y no pretende serlo.</p>
+    <p>Si los perfumes de diseñador te parecen demasiado ligeros o demasiado fugaces, la respuesta es esta.</p>
 ---

@@ -71,6 +71,28 @@ fragrance_family: Aquatic Oriental
 base_notes: Vanilla, Tonka Bean, White Musk
 pt:
   inspired_by_note_pt: 'partilha o mesmo ADN sofisticado do JPG Le Male Elixir, mas com uma volta do Médio Oriente muito própria e desempenho superior.'
+  name_pt: Rasasi Hawas Elixir Eau de Parfum 100ml
+  description_short_pt: 'Um aquático oriental moderno da Rasasi, do Dubai, fresco e magnético em igual medida. O Hawas Elixir pega no Hawas original, imensamente popular, e aprofunda-o em algo mais rico, mais sedutor e mais duradouro.'
+  description_full_pt: |-
+    <p>O Rasasi Hawas Elixir Eau de Parfum é o companheiro elevado de um dos perfumes árabes mais comentados dos últimos anos.</p>
+    <p>Onde o Hawas original apostava no fresco e no aquático, a versão Elixir acrescenta uma dimensão mais escura e sensual. Especiarias quentes e âmbar cinzento aprofundam a abertura marinha, enquanto uma base de madeiras, almíscar e uma baunilha subtil cria uma secagem suave, moderna e genuinamente cativante.</p>
+    <p>O resultado é um perfume que faz a ponte entre os frescos masculinos de estilo ocidental e o calor da perfumaria árabe. A projeção é confiante sem ser agressiva, e a duração entrega de forma consistente 8 a 10 horas ou mais.</p>
+    <p>Versátil o suficiente para o dia, mas com profundidade suficiente para seguir pela noite. Funciona em todas as estações, e é particularmente forte na primavera e no outono.</p>
+  ysp_thoughts_pt: |-
+    <p>O Hawas já tinha a nossa atenção. É um daqueles perfumes que nos surpreendeu genuinamente quando o experimentámos pela primeira vez.</p>
+    <p>O Elixir pega em tudo aquilo de que gostámos no original e acrescenta um calor e uma profundidade que o fazem parecer mais pensado e mais adulto.</p>
+    <p>Fica naquele ponto raro em que é fresco o suficiente para usar de forma casual mas rico o suficiente para parecer um perfume de noite a sério. Trouxemo-lo porque nós próprios o usaríamos, e esse é sempre o ponto de partida para o que acaba nas nossas prateleiras.</p>
 es:
   inspired_by_note_es: 'comparte el mismo ADN sofisticado del JPG Le Male Elixir, pero con un giro de Oriente Medio muy propio y un rendimiento superior.'
+  name_es: Rasasi Hawas Elixir Eau de Parfum 100ml
+  description_short_es: 'Un acuático oriental moderno de Rasasi, de Dubái, fresco y magnético a partes iguales. Hawas Elixir toma el Hawas original, enormemente popular, y lo profundiza en algo más rico, más seductor y más duradero.'
+  description_full_es: |-
+    <p>Rasasi Hawas Elixir Eau de Parfum es el compañero elevado de uno de los perfumes árabes más comentados de los últimos años.</p>
+    <p>Donde el Hawas original apostaba por lo fresco y lo acuático, la versión Elixir añade una dimensión más oscura y sensual. Especias cálidas y ámbar gris profundizan la salida marina, mientras que un fondo de maderas, almizcle y una vainilla sutil crea una bajada suave, moderna y genuinamente cautivadora.</p>
+    <p>El resultado es un perfume que tiende un puente entre los frescos masculinos de estilo occidental y la calidez de la perfumería árabe. La proyección es segura sin ser agresiva, y la duración entrega de forma constante 8 a 10 horas o más.</p>
+    <p>Versátil para el día, pero con profundidad suficiente para continuar por la noche. Funciona en todas las estaciones, y es especialmente fuerte en primavera y otoño.</p>
+  ysp_thoughts_es: |-
+    <p>Hawas ya tenía nuestra atención. Es uno de esos perfumes que nos sorprendió de verdad cuando lo probamos por primera vez.</p>
+    <p>El Elixir toma todo lo que nos gustaba del original y añade una calidez y una profundidad que lo hacen parecer más meditado y más adulto.</p>
+    <p>Se sitúa en ese punto raro en el que es lo bastante fresco para llevarlo de forma casual pero lo bastante rico para sentirse como un perfume de noche de verdad. Lo trajimos porque nosotros mismos lo llevaríamos, y ese es siempre el punto de partida de lo que acaba en nuestras estanterías.</p>
 ---
