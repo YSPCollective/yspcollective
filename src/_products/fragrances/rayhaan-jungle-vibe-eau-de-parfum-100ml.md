@@ -19,10 +19,7 @@ season:
   - Spring
   - Summer
 blind_buy_rating: Know Your Notes
-blind_buy_note: A breathtakingly unique escape for warm weather, this
-  captivating blind buy opens with a crisp wave of zesty grapefruit and green
-  fig leaf before evolving into a luxurious, ultra-creamy base of rain-soaked
-  aquatic notes and smooth sandalwood.
+blind_buy_note: 'Grapefruit and green fig leaf over rain-soaked aquatic notes and sandalwood. Green rather than sweet, so sample first if that is new to you.'
 char_sweet: 1
 char_fresh: 5
 char_masculine: 4

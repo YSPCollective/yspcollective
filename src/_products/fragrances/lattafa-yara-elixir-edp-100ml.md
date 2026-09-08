@@ -21,10 +21,7 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Universal Crowd-Pleaser
-blind_buy_note: An addictive crowd-pleaser and seductive blind buy, this viral
-  autumn and winter masterpiece opens with a mouth-watering burst of strawberry
-  s'mores and rich black currant before melting into a luxurious bed of gooey
-  caramel, warm vanilla, and velvety musk.
+blind_buy_note: 'Strawberry, gooey caramel and vanilla. Sweet, comforting and widely loved, so a reliable gift.'
 char_sweet: 5
 char_fresh: 1
 char_masculine: 1

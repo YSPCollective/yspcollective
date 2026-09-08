@@ -18,9 +18,7 @@ season:
   - Spring
   - Summer
 blind_buy_rating: Know Your Notes
-blind_buy_note: The ultimate luxury beach vacation in a bottle, this stunning
-  spring and summer release blends zesty lime and creamy coconut milk with a
-  smooth, viciating dry-down of sweet sugarcane and warm Caribbean rum.
+blind_buy_note: 'Zesty lime and coconut milk over sugarcane and warm rum. A proper tropical scent, so buy confidently if beachy coconut is your thing.'
 char_sweet: 4
 char_fresh: 4
 char_masculine: 3

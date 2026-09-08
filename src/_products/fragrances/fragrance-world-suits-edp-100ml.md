@@ -23,9 +23,7 @@ season:
   - Summer
   - Winter
 blind_buy_rating: Know Your Notes
-blind_buy_note: An elite autumn and winter masterpiece, this sophisticated blind
-  buy captures pure luxury, balancing crisp violet leaf and sharp black pepper
-  over a rich base of earthy patchouli and smooth bourbon vanilla.
+blind_buy_note: 'Violet leaf and black pepper over patchouli and bourbon vanilla. Smart rather than loud, and wearable most of the year if you like a powdery woody.'
 char_sweet: 3
 char_fresh: 3
 char_masculine: 3

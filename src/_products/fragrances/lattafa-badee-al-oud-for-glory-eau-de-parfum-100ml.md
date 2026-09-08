@@ -13,6 +13,8 @@ featured: false
 published: true
 date_added: 2026-06-02
 fragrance_family: Woody Oriental Oud
+blind_buy_note: 'Oud, leather and patchouli, and a proper grower. Deservedly popular, but it takes a few wears to click, so sample first if oud is new to you.'
+blind_buy_rating: Niche & Specific
 best_for: Evening wear, formal occasions, cooler seasons, night out
 char_sweet: 1
 char_fresh: 1

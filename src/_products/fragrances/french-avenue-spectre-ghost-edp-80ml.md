@@ -22,10 +22,7 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Universal Crowd-Pleaser
-blind_buy_note: A universal crowd-pleaser for any cozy day or night out, this
-  mouth-watering blind buy blends sharp ginger and bright bergamot with a
-  luxurious heart of creamy bourbon vanilla, rich black currant, and smooth
-  cedar.
+blind_buy_note: Sharp ginger and bergamot over creamy vanilla and cedar. Easy to wear across most of the year and hard to get wrong.
 char_sweet: 3
 char_fresh: 3
 char_masculine: 4

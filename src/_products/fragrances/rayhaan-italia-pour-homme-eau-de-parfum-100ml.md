@@ -19,10 +19,7 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Know Your Notes
-blind_buy_note: An ultra-sophisticated choice for cooler weather, this
-  captivating blind buy opens with a crisp wave of Mediterranean lavender and
-  bright bergamot before wrapping you in a luxurious heart of golden honey, warm
-  cinnamon, and smooth tobacco leaf.
+blind_buy_note: 'Mediterranean lavender and bergamot into golden honey, cinnamon and tobacco leaf. Rich and grown up, and one for honey and tobacco fans.'
 char_sweet: 3
 char_fresh: 2
 char_masculine: 4

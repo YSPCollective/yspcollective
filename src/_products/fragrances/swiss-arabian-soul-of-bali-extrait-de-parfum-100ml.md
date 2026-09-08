@@ -17,10 +17,7 @@ season:
   - Spring
   - Summer
 blind_buy_rating: Know Your Notes
-blind_buy_note: An exquisite year-round tropical masterpiece, this complex,
-  high-performing blind buy blends a sparkling opening of juicy mango, tangy
-  rhubarb, and fresh pineapple with a luxury oceanic breeze and a rich, creamy
-  base of warm sandalwood and ambergris.
+blind_buy_note: 'Mango, rhubarb and pineapple over an oceanic breeze and creamy sandalwood. Fruity but not simple, and it rewards warm weather.'
 char_sweet: 3
 char_fresh: 4
 char_masculine: 3

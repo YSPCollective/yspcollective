@@ -17,10 +17,8 @@ best_for: Night time wear, Winter/Spring/Autumn
 season:
   - Autumn
   - Winter
-blind_buy_rating: Know Your Notes
-blind_buy_note: A thrilling blind buy for the bold, this is a rich, nuclear
-  powerhouse crafted exclusively for those who adore luxurious saffron, creamy
-  tonka, and opulent oud.
+blind_buy_rating: Niche & Specific
+blind_buy_note: 'Big, resinous oud with saffron and smoke, and it projects hard. If you already wear oud, buy with confidence. If you don''t, sample before you commit to a bottle.'
 char_sweet: 2
 char_fresh: 1
 char_masculine: 4

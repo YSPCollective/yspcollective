@@ -21,9 +21,7 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Know Your Notes
-blind_buy_note: The ultimate luxury vacation in a bottle, this stunning spring
-  and summer release blends zesty bergamot and fresh orange with a creamy, solar
-  heart of silky coconut, exotic ylang-ylang, and warm, soothing sandalwood.
+blind_buy_note: 'Bergamot and orange over creamy coconut, ylang-ylang and sandalwood. Warm and solar rather than fresh, so check you like coconut before committing.'
 char_sweet: 3
 char_fresh: 3
 char_masculine: 2

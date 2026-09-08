@@ -8,6 +8,8 @@ stock_status: sold_out
 published: true
 date_added: 2026-05-28
 fragrance_family: Oriental Spicy / Gourmand
+blind_buy_note: 'Bold cinnamon and dates over a thick resinous amber. Buy confidently if spiced gourmands are your world, and go easy with it, one or two sprays is genuinely enough.'
+blind_buy_rating: Niche & Specific
 longevity: 8–12+ hours
 projection: Strong — use 1–2 sprays
 best_for: Evening wear, autumn/winter, special occasions

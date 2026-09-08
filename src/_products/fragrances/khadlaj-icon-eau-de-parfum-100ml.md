@@ -20,10 +20,7 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Universal Crowd-Pleaser
-blind_buy_note: A flawlessly sophisticated crowd-pleaser, this magnetic blind
-  buy opens with a crisp burst of zesty bergamot and fresh lavender before
-  melting into a luxurious, highly addictive heart of smoky incense, smooth
-  amber, and rich velvet suede
+blind_buy_note: 'Bergamot and lavender into smoky amber and suede. Smart, familiar and comfortable almost anywhere.'
 char_sweet: 1
 char_fresh: 2
 char_masculine: 5

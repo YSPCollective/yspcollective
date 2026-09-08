@@ -20,11 +20,8 @@ season:
   - Summer
   - Autumn
   - Winter
-blind_buy_rating: Know Your Notes
-blind_buy_note: An opulent autumn and winter masterpiece celebrating the
-  legendary Taif rose, this complex blind buy weaves dark juicy plum, hot
-  cardamom, and rich saffron over a deeply comforting base of smoky incense,
-  oakwood, and dark syrupy molasses
+blind_buy_rating: Niche & Specific
+blind_buy_note: 'Taif rose with dark plum, saffron and smoky incense. Rose this dominant divides a room, so it is one for people who already wear rose.'
 char_sweet: 3
 char_fresh: 2
 char_masculine: 3

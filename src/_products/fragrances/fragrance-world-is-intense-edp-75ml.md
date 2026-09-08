@@ -21,10 +21,7 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Universal Crowd-Pleaser
-blind_buy_note: A universal crowd-pleaser with an elegant edge, this captivating
-  blind buy opens with a rich burst of sweet black currant liqueur before
-  settling into a warm, sophisticated bed of velvety vanilla and smooth
-  patchouli
+blind_buy_note: 'Blackcurrant and vanilla, warm and easy to wear. Low risk, and a good choice if you are buying for someone else.'
 char_sweet: 4
 char_fresh: 3
 char_masculine: 2

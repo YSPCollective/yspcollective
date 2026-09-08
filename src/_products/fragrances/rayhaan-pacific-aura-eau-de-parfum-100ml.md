@@ -19,10 +19,7 @@ season:
   - Spring
   - Summer
 blind_buy_rating: Know Your Notes
-blind_buy_note: An ultra-luxurious, garden-fresh escape for hot summer days,
-  this radiant blind buy brings a coastal breeze to life, blending a frosty wave
-  of crisp mint and sparkling mandarin with an aromatic heart of green basil,
-  sweet black currant, and exotic fig.
+blind_buy_note: 'Cold mint and sparkling mandarin over basil, blackcurrant and fig. Genuinely refreshing, and it comes alive in real heat.'
 char_sweet: 2
 char_fresh: 5
 char_masculine: 4

@@ -19,10 +19,7 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Universal Crowd-Pleaser
-blind_buy_note: A flawless crowd-pleaser and tropical blind buy, this viral
-  sensation explodes with an incredibly juicy burst of ripe pineapple and rich
-  saffron before settling into a smooth, magnetic base of warm amber and fresh
-  cedar
+blind_buy_note: Juicy pineapple and saffron over warm amber and cedar. An Aventus-adjacent crowd-pleaser that suits most occasions.
 char_sweet: 3
 char_fresh: 3
 char_masculine: 4

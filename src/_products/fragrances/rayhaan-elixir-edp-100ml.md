@@ -22,9 +22,7 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Know Your Notes
-blind_buy_note: An addictive autumn and winter powerhouse, this viral date-night
-  sensation masterfully balances a fresh burst of mint and lavender with a
-  deeply rich heart of sweet honey, warm tobacco, and creamy bourbon vanilla.
+blind_buy_note: 'Mint and lavender over honey, tobacco and bourbon vanilla. Sweet and quite loud, and at its best on a night out.'
 char_sweet: 4
 char_fresh: 3
 char_masculine: 3

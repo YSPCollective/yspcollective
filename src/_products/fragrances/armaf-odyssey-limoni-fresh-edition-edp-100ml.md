@@ -21,9 +21,7 @@ season:
   - Spring
   - Summer
 blind_buy_rating: Universal Crowd-Pleaser
-blind_buy_note: A universal crowd-pleaser and flawless blind buy, this vibrant
-  blend of sparkling Mediterranean citrus, crisp marine notes, and clean musk is
-  impossible not to love.
+blind_buy_note: Clean citrus and sea air with nothing challenging in it. An easy first bottle and a safe gift.
 char_sweet: 2
 char_fresh: 5
 char_masculine: 3

@@ -21,9 +21,7 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Know Your Notes
-blind_buy_note: " ☁️ The ultimate dream for sweet tooth lovers, this viral
-  autumn, winter, and spring masterpiece wraps fluffy marshmallow and whipped
-  cream around juicy strawberries and sweet vanilla sugar"
+blind_buy_note: 'Marshmallow, whipped cream and strawberry, and very sweet indeed. A safe buy if you love dessert scents, too much if you don''t.'
 char_sweet: 5
 char_fresh: 2
 char_masculine: 1

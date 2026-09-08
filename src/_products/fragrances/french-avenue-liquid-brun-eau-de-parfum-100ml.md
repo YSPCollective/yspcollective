@@ -19,9 +19,7 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Universal Crowd-Pleaser
-blind_buy_note: A universal crowd-pleaser for cold weather, this irresistible
-  blind buy blends warm cinnamon and fresh cardamom with a rich heart of
-  luxurious bourbon vanilla and sweet chocolate praline.
+blind_buy_note: 'Cinnamon, bourbon vanilla and chocolate praline. Cosy and broadly liked, so a low-risk cold weather buy.'
 char_sweet: 4
 char_fresh: 1
 char_masculine: 2

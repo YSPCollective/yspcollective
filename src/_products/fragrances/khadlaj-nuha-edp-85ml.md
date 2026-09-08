@@ -23,10 +23,7 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Know Your Notes
-blind_buy_note: A luxurious cream dream for gourmand lovers, this unique autumn,
-  winter, and spring standout blends a smooth explosion of lactonic coconut milk
-  and crisp apple with velvety vanilla, powdery heliotrope, and warm cashmere
-  wood.
+blind_buy_note: 'Coconut milk and crisp apple over vanilla and cashmere wood. Creamy and distinctive, so worth knowing you get on with lactonic scents first.'
 char_sweet: 4
 char_fresh: 3
 char_masculine: 1

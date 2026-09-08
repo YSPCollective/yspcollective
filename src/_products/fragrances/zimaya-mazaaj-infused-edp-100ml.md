@@ -21,10 +21,7 @@ season:
   - Spring
   - Summer
 blind_buy_rating: Universal Crowd-Pleaser
-blind_buy_note: A flawless crowd-pleaser and crisp summer blind buy, this viral
-  sensation explodes with sparkling citron and zesty bergamot before evolving
-  into an ultra-clean, sophisticated heart of fresh ginger, elegant neroli, and
-  modern ambroxan.
+blind_buy_note: 'Sparkling citron and bergamot into ginger, neroli and modern ambroxan. Clean, contemporary and difficult to dislike.'
 char_sweet: 2
 char_fresh: 4
 char_masculine: 4

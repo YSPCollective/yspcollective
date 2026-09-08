@@ -18,10 +18,7 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Know Your Notes
-blind_buy_note: An elite autumn and winter masterpiece, this sophisticated blind
-  buy captures pure high-class luxury, balancing sharp nutmeg and fresh woody
-  notes over a rich, smooth base of earthy patchouli, dark cacao, and warm
-  vanilla.
+blind_buy_note: 'Nutmeg and fresh woods over patchouli, dark cacao and vanilla. Rich and after-dark, so best if you already like gourmand woods.'
 char_sweet: 4
 char_fresh: 1
 char_masculine: 4

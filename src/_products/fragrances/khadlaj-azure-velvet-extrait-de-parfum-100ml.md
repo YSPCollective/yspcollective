@@ -21,10 +21,7 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Universal Crowd-Pleaser
-blind_buy_note: A flawless crowd-pleaser and magnetic blind buy, this versatile
-  masterpiece opens with a refreshing burst of zesty bergamot, calming lavender,
-  and crisp mint before settling into a sophisticated base of juicy orchard
-  fruits, warm woods, and smooth, subtle incense.
+blind_buy_note: 'Bergamot, lavender and mint settling into soft woods and incense. The most versatile bottle we carry, and it genuinely works year round.'
 char_sweet: 2
 char_fresh: 3
 char_masculine: 3

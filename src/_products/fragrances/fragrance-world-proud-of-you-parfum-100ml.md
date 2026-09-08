@@ -21,9 +21,7 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Know Your Notes
-blind_buy_note: A rich autumn and winter powerhouse, this captivating scent
-  relies on a dense, cozy blend of caramelized chestnut, smoky vanilla, and
-  aromatic sage. Best for those who love heavy, warm gourmand
+blind_buy_note: 'A sweet, spicy vanilla with real weight behind it. Buy confidently if you like warm gourmands. Sample first if you usually wear fresh.'
 char_sweet: 4
 char_fresh: 2
 char_masculine: 4

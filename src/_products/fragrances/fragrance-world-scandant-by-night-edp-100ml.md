@@ -21,10 +21,7 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Know Your Notes
-blind_buy_note: An intoxicating autumn and winter indulgence, this seductive
-  evening blend is crafted specifically for lovers of heavy gourmands, wrapping
-  thick golden honey and sweet cherry around a rich bed of creamy white florals
-  and warm vanilla
+blind_buy_note: 'Thick honey and tuberose, unapologetically rich. Made for people who already love heavy sweet florals.'
 char_sweet: 4
 char_fresh: 2
 char_masculine: 1

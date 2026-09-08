@@ -135,9 +135,7 @@ eleventyComputed:
     padding: 0.26rem 0.7rem;
     border: 1px solid var(--sand); background: var(--cream);
     font-size: 0.68rem; letter-spacing: 0.06em; color: var(--grey);
-    text-decoration: none; transition: border-color 0.2s, color 0.2s;
   }
-  .season-tag:hover { border-color: var(--accent); color: var(--accent); }
 
   /* ── Inspired-by comparison ── */
   .inspired-by {
@@ -483,7 +481,7 @@ eleventyComputed:
     {% if isFragrance and productSeasons.length %}
     <div class="season-tags">
       {% for season in productSeasons %}
-      <a class="season-tag" href="/fragrances/by-season.html#{{ season }}">{{ season | seasonLabel }}</a>
+      <span class="season-tag">{{ season | seasonLabel }}</span>
       {% endfor %}
     </div>
     {% endif %}

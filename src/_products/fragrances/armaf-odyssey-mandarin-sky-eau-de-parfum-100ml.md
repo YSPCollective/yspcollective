@@ -19,9 +19,7 @@ season:
   - Spring
   - Summer
 blind_buy_rating: Universal Crowd-Pleaser
-blind_buy_note: A mouth-watering, universal crowd-pleaser, this irresistible
-  blind buy perfectly balances a burst of juicy mandarin orange with a rich,
-  creamy caramel and warm amber dry-down.
+blind_buy_note: 'Juicy mandarin over soft caramel. Sweet without being heavy, and very hard to dislike.'
 char_sweet: 3
 char_fresh: 4
 char_masculine: 4

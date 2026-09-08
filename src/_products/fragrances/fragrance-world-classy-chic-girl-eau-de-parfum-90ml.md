@@ -19,9 +19,7 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Universal Crowd-Pleaser
-blind_buy_note: A universal crowd-pleaser and seductive blind buy, this viral
-  feminine favorite masterfully contrasts addictive roasted coffee and creamy
-  almond with an opulent bouquet of white florals and warm velvet cacao.
+blind_buy_note: 'Roasted coffee, almond and cacao, done the crowd-pleasing way. A safe buy for anyone who likes the Good Girl family.'
 char_sweet: 4
 char_fresh: 1
 char_masculine: 1

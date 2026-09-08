@@ -18,10 +18,7 @@ season:
   - Spring
   - Summer
 blind_buy_rating: Universal Crowd-Pleaser
-blind_buy_note: A flawless crowd-pleaser and crisp summer blind buy, this
-  ultra-clean masterpiece unleashes a frosty wave of sparkling bergamot and
-  juicy mandarin before settling into a sophisticated, luxury-soap dry down of
-  elegant neroli and fresh vetiver.
+blind_buy_note: 'Sparkling bergamot and mandarin into clean neroli and vetiver. Reads like expensive soap, which almost everyone likes.'
 char_sweet: 1
 char_fresh: 5
 char_masculine: 2

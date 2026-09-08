@@ -20,10 +20,7 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Know Your Notes
-blind_buy_note: An absolute dream for luxury winter gourmand lovers—this
-  intoxicating blind buy opens with a juicy burst of raspberry liqueur and warm
-  cinnamon before melting into a decadent heart of caramel-baked apples, rich
-  cognac, and creamy vanilla.
+blind_buy_note: 'Raspberry liqueur and cinnamon melting into caramel-baked apple, cognac and vanilla. A proper dessert scent, so buy confidently if that is what you are after.'
 char_sweet: 4
 char_fresh: 2
 char_masculine: 3
