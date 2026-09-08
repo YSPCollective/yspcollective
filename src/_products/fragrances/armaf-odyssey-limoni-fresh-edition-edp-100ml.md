@@ -1,5 +1,9 @@
 ---
+name: Armaf Odyssey Limoni Fresh Edition Eau de Parfum 100ml
+slug: armaf-odyssey-limoni-fresh-edition-edp-100ml
+price: "25"
 rrp: ""
+brand: Armaf
 gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
@@ -13,11 +17,20 @@ published: true
 date_added: 2026-08-07
 fragrance_family: Citrus Aromatic Marine
 best_for: Spring/Summer, Daytime, Poolside/Beach
+season:
+  - Spring
+  - Summer
+blind_buy_rating: Universal Crowd-Pleaser
+blind_buy_note: A universal crowd-pleaser and flawless blind buy, this vibrant
+  blend of sparkling Mediterranean citrus, crisp marine notes, and clean musk is
+  impossible not to love.
+char_sweet: 2
 char_fresh: 5
 char_masculine: 3
 char_unique: 2
 char_versatile: 5
 top_notes: Lemon, Sweet Orange, Bergamot, Mandarin
+heart_notes: Ginger, Orange Blossom, Marine Notes
 base_notes: Amber, Musk, Blue Tea
 accords_text: citrus, marine, fresh, aromatic, musk, amber
 longevity: 5-7 hours
@@ -52,12 +65,6 @@ inspired_by_name: Louis Vuitton Afternoon Swim
 inspired_by_note: Same bright citrus-into-marine progression as the LV cult
   favourite, at a fraction of the price.
 ebay_url: ""
-name: Armaf Odyssey Limoni Fresh Edition Eau de Parfum 100ml
-slug: armaf-odyssey-limoni-fresh-edition-edp-100ml
-price: "25"
-brand: Armaf
-char_sweet: 2
-heart_notes: Ginger, Orange Blossom, Marine Notes
 origin: UAE
 gtin: "6294015188639"
 exclude_from_feed: true
