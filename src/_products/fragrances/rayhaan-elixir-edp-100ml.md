@@ -1,5 +1,9 @@
 ---
+name: Rayhaan Elixir Eau de Parfum 100ml
+slug: rayhaan-elixir-edp-100ml
+price: "29.90"
 rrp: ""
+brand: Rayhaan
 gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
@@ -13,11 +17,21 @@ published: true
 date_added: 2026-08-07
 fragrance_family: Aromatic Gourmand
 best_for: Evening, Date night, Cooler seasons
+season:
+  - Spring
+  - Autumn
+  - Winter
+blind_buy_rating: Know Your Notes
+blind_buy_note: An addictive autumn and winter powerhouse, this viral date-night
+  sensation masterfully balances a fresh burst of mint and lavender with a
+  deeply rich heart of sweet honey, warm tobacco, and creamy bourbon vanilla.
+char_sweet: 4
 char_fresh: 3
 char_masculine: 3
 char_unique: 3
 char_versatile: 4
 top_notes: Mint, Bergamot
+heart_notes: Benzoin, Lavender
 base_notes: Vanilla, Tonka Bean
 accords_text: gourmand, sweet, vanilla, tonka, aromatic, warm
 longevity: 4-6 hours (reports vary)
@@ -47,12 +61,6 @@ inspired_by_name: Jean Paul Gaultier Le Male Elixir
 inspired_by_note: Same warm vanilla-tonka backbone, with the syrupy top note
   dialled back for more balanced everyday wear.
 ebay_url: ""
-name: Rayhaan Elixir Eau de Parfum 100ml
-slug: rayhaan-elixir-edp-100ml
-price: "29.90"
-brand: Rayhaan
-char_sweet: 4
-heart_notes: Benzoin, Lavender
 origin: UAE
 gtin: "6297001571002"
 exclude_from_feed: false
