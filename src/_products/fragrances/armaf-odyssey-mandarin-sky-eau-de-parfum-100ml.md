@@ -15,6 +15,13 @@ published: true
 date_added: 2026-05-28
 fragrance_family: Amber Citrus Woody
 best_for: Spring, Summer, Daytime, Casual
+season:
+  - Spring
+  - Summer
+blind_buy_rating: Universal Crowd-Pleaser
+blind_buy_note: A mouth-watering, universal crowd-pleaser, this irresistible
+  blind buy perfectly balances a burst of juicy mandarin orange with a rich,
+  creamy caramel and warm amber dry-down.
 char_sweet: 3
 char_fresh: 4
 char_masculine: 4
