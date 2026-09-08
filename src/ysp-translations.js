@@ -150,6 +150,8 @@ const YSP_TRANSLATIONS = {
     pdp_back_frag: "Fragrance",
     // PDP labels
     pdp_fragrance: "Fragrance",
+    post_toc_title: "In this article",
+    blog_read: "Read article →",
     pdp_notes_title: "Fragrance Notes",
     pdp_notes_top: "Top notes",
     pdp_notes_heart: "Heart notes",
@@ -399,6 +401,8 @@ const YSP_TRANSLATIONS = {
     pdp_back_frag: "Fragrância",
     // PDP labels
     pdp_fragrance: "Fragrância",
+    post_toc_title: "Neste artigo",
+    blog_read: "Ler artigo →",
     pdp_notes_title: "Notas Olfativas",
     pdp_notes_top: "Notas de topo",
     pdp_notes_heart: "Notas de coração",
@@ -655,6 +659,8 @@ const YSP_TRANSLATIONS = {
     pdp_back_frag: "Fragancia",
     // PDP labels
     pdp_fragrance: "Fragancia",
+    post_toc_title: "En este artículo",
+    blog_read: "Leer artículo →",
     pdp_notes_title: "Notas Olfativas",
     pdp_notes_top: "Notas de salida",
     pdp_notes_heart: "Notas de corazón",

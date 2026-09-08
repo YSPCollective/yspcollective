@@ -147,6 +147,11 @@ module.exports = function(eleventyConfig) {
 
   // Coerce undefined/null to "" so a missing key never emits a bare hole into
   // inline JS (e.g. "name_es: ," which is a syntax error and kills the script).
+  // Renders a markdown string to HTML. Post translations are stored as
+  // markdown in frontmatter, so they need the same treatment the body gets.
+  const md = require('markdown-it')({ html: true, breaks: false, linkify: true });
+  eleventyConfig.addFilter("markdown", value => (value ? md.render(String(value)) : ''));
+
   eleventyConfig.addFilter("jsonify", value => JSON.stringify(value === undefined || value === null ? '' : value));
   eleventyConfig.addFilter("limit", (arr, n) => arr.slice(0, n));
 

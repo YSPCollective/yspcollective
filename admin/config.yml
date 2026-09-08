@@ -371,3 +371,30 @@ collections:
         hint: "Always include 'posts'. Add topic tags e.g. oud, lattafa, k-beauty"
       - { label: "Table of Contents (HTML)", name: "toc", widget: "text", required: false, hint: "Optional anchor links for sidebar TOC" }
       - { label: "Body", name: "body", widget: "markdown" }
+
+      # ── TRANSLATIONS ──────────────────────────────────────────────────
+      - label: "🇵🇹 Portuguese Translation"
+        name: "pt"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "Optional — leave blank to show English"
+        fields:
+          - { label: "Title (PT)", name: "title_pt", widget: "string", required: false }
+          - { label: "Description (PT)", name: "description_pt", widget: "text", required: false }
+          - { label: "Category Label (PT)", name: "category_label_pt", widget: "string", required: false }
+          - { label: "Table of Contents (PT)", name: "toc_pt", widget: "text", required: false, hint: "Keep the same #anchors as the English version" }
+          - { label: "Body (PT)", name: "body_pt", widget: "markdown", required: false }
+
+      - label: "🇪🇸 Spanish Translation"
+        name: "es"
+        widget: "object"
+        collapsed: true
+        required: false
+        hint: "Optional — leave blank to show English"
+        fields:
+          - { label: "Title (ES)", name: "title_es", widget: "string", required: false }
+          - { label: "Description (ES)", name: "description_es", widget: "text", required: false }
+          - { label: "Category Label (ES)", name: "category_label_es", widget: "string", required: false }
+          - { label: "Table of Contents (ES)", name: "toc_es", widget: "text", required: false, hint: "Keep the same #anchors as the English version" }
+          - { label: "Body (ES)", name: "body_es", widget: "markdown", required: false }

@@ -234,8 +234,8 @@ layout: base.njk
         <a href="/blog.html">Blog</a> <span>›</span>
         <span>{{ category_label or category }}</span>
       </div>
-      <p class="post-cat">{{ category_label or category }}</p>
-      <h1 class="post-title">{{ title }}</h1>
+      <p class="post-cat" id="post-cat">{{ category_label or category }}</p>
+      <h1 class="post-title" id="post-title">{{ title }}</h1>
       <div class="post-meta">
         <span>{{ date | date("d MMMM yyyy") }}</span>
         <span class="post-meta-divider">·</span>
@@ -246,7 +246,7 @@ layout: base.njk
   </header>
 
   <div class="post-layout">
-    <div class="post-body">
+    <div class="post-body" id="post-body">
       {{ content | safe }}
 
       {% if tags %}
@@ -263,8 +263,8 @@ layout: base.njk
     <aside class="post-sidebar">
       {% if toc %}
       <div class="sidebar-toc">
-        <div class="sidebar-toc-title">In this article</div>
-        {{ toc | safe }}
+        <div class="sidebar-toc-title" data-i18n="post_toc_title">In this article</div>
+        <div id="post-toc">{{ toc | safe }}</div>
       </div>
       {% endif %}
 
@@ -291,6 +291,71 @@ layout: base.njk
 {% for p in postList %}
   {% if p.url == page.url %}{% set currentIndex = loop.index0 %}{% endif %}
 {% endfor %}
+
+<script>
+  // Posts carry optional pt/es blocks. Anything left blank falls back to the
+  // English original rather than showing a gap.
+  (function () {
+    const postI18n = {
+      title: {
+        en: {{ title | jsonify | safe }},
+        pt: {{ (pt.title_pt if pt else '') | jsonify | safe }},
+        es: {{ (es.title_es if es else '') | jsonify | safe }}
+      },
+      cat: {
+        en: {{ (category_label or category) | jsonify | safe }},
+        pt: {{ (pt.category_label_pt if pt else '') | jsonify | safe }},
+        es: {{ (es.category_label_es if es else '') | jsonify | safe }}
+      },
+      toc: {
+        en: {{ (toc or '') | jsonify | safe }},
+        pt: {{ (pt.toc_pt if pt else '') | jsonify | safe }},
+        es: {{ (es.toc_es if es else '') | jsonify | safe }}
+      },
+      body: {
+        en: null,
+        pt: {{ (pt.body_pt if pt else '') | markdown | jsonify | safe }},
+        es: {{ (es.body_es if es else '') | markdown | jsonify | safe }}
+      },
+      desc: {
+        en: {{ (description or '') | jsonify | safe }},
+        pt: {{ (pt.description_pt if pt else '') | jsonify | safe }},
+        es: {{ (es.description_es if es else '') | jsonify | safe }}
+      }
+    };
+
+    const englishBody = document.getElementById('post-body') ? document.getElementById('post-body').innerHTML : '';
+
+    function pick(field, lang) {
+      const f = postI18n[field] || {};
+      const v = f[lang];
+      return (v && String(v).trim()) ? v : f.en;
+    }
+
+    function applyPostLang(lang) {
+      const t = document.getElementById('post-title');
+      if (t) t.textContent = pick('title', lang);
+      const c = document.getElementById('post-cat');
+      if (c) c.textContent = pick('cat', lang);
+      const toc = document.getElementById('post-toc');
+      if (toc) toc.innerHTML = pick('toc', lang) || '';
+      const body = document.getElementById('post-body');
+      if (body) {
+        const translated = postI18n.body[lang];
+        body.innerHTML = (translated && String(translated).trim()) ? translated : englishBody;
+      }
+      const d = pick('desc', lang);
+      const meta = document.querySelector('meta[name="description"]');
+      if (meta && d) meta.setAttribute('content', d);
+      document.title = pick('title', lang) + ' | YSP Collective';
+    }
+
+    let initial = 'en';
+    try { initial = localStorage.getItem('ysp_lang') || 'en'; } catch (e) {}
+    if (initial !== 'en') applyPostLang(initial);
+    document.addEventListener('ysp:langchange', e => applyPostLang(e.detail.lang));
+  })();
+</script>
 
 <div class="post-nav-wrap">
   <div class="post-nav">

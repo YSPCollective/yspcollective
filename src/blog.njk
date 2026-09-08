@@ -171,9 +171,9 @@ permalink: /blog.html
               <span>·</span>
               <span>{{ post.data.read_time or '5' }} min read</span>
             </div>
-            <div class="blog-card-title">{{ post.data.title }}</div>
-            <p class="blog-card-excerpt">{{ post.data.description }}</p>
-            <span class="blog-card-read" id="read-more-label">Read article →</span>
+            <div class="blog-card-title" data-post-title="{{ post.data.title }}" data-post-title-pt="{{ post.data.pt.title_pt if post.data.pt else '' }}" data-post-title-es="{{ post.data.es.title_es if post.data.es else '' }}">{{ post.data.title }}</div>
+            <p class="blog-card-excerpt" data-post-desc="{{ post.data.description }}" data-post-desc-pt="{{ post.data.pt.description_pt if post.data.pt else '' }}" data-post-desc-es="{{ post.data.es.description_es if post.data.es else '' }}">{{ post.data.description }}</p>
+            <span class="blog-card-read" id="read-more-label" data-i18n="blog_read">Read article →</span>
           </div>
         </a>
         {% else %}
@@ -192,9 +192,9 @@ permalink: /blog.html
               <span>·</span>
               <span>{{ post.data.read_time or '5' }} min read</span>
             </div>
-            <div class="blog-card-title">{{ post.data.title }}</div>
-            <p class="blog-card-excerpt">{{ post.data.description }}</p>
-            <span class="blog-card-read" id="read-more-label-{{ loop.index }}">Read article →</span>
+            <div class="blog-card-title" data-post-title="{{ post.data.title }}" data-post-title-pt="{{ post.data.pt.title_pt if post.data.pt else '' }}" data-post-title-es="{{ post.data.es.title_es if post.data.es else '' }}">{{ post.data.title }}</div>
+            <p class="blog-card-excerpt" data-post-desc="{{ post.data.description }}" data-post-desc-pt="{{ post.data.pt.description_pt if post.data.pt else '' }}" data-post-desc-es="{{ post.data.es.description_es if post.data.es else '' }}">{{ post.data.description }}</p>
+            <span class="blog-card-read" id="read-more-label-{{ loop.index }}" data-i18n="blog_read">Read article →</span>
           </div>
         </a>
         {% endif %}
@@ -271,4 +271,25 @@ permalink: /blog.html
       }
     });
   }
+</script>
+
+<script>
+  // Blog card titles and excerpts come from post frontmatter, so they swap
+  // from data attributes rather than through the shared translation keys.
+  (function () {
+    function applyCards(lang) {
+      document.querySelectorAll('[data-post-title]').forEach(function (el) {
+        var t = el.getAttribute('data-post-title-' + lang);
+        el.textContent = (t && t.trim()) ? t : el.getAttribute('data-post-title');
+      });
+      document.querySelectorAll('[data-post-desc]').forEach(function (el) {
+        var d = el.getAttribute('data-post-desc-' + lang);
+        el.textContent = (d && d.trim()) ? d : el.getAttribute('data-post-desc');
+      });
+    }
+    var initial = 'en';
+    try { initial = localStorage.getItem('ysp_lang') || 'en'; } catch (e) {}
+    if (initial !== 'en') applyCards(initial);
+    document.addEventListener('ysp:langchange', function (e) { applyCards(e.detail.lang); });
+  })();
 </script>
