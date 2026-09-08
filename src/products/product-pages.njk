@@ -441,24 +441,24 @@ eleventyComputed:
 
     {% if isFragrance and (product.top_notes or product.heart_notes or product.base_notes) %}
     <div class="notes-pyramid notes-pyramid-desktop">
-      <div class="notes-pyramid-label">Fragrance Notes</div>
+      <div class="notes-pyramid-label" data-i18n="pdp_notes_title">Fragrance Notes</div>
       {% if product.top_notes %}
       <div class="pyr-tier">
-        <div class="pyr-tier-label">Top notes</div>
+        <div class="pyr-tier-label" data-i18n="pdp_notes_top">Top notes</div>
         <div class="pyr-notes">{% set topList = product.top_notes.split(',') %}{% for note in topList %}<span class="pyr-note top-note">{{ note | trim }}</span>{% endfor %}</div>
       </div>
       <div class="pyr-connector"></div>
       {% endif %}
       {% if product.heart_notes %}
       <div class="pyr-tier">
-        <div class="pyr-tier-label">Heart notes</div>
+        <div class="pyr-tier-label" data-i18n="pdp_notes_heart">Heart notes</div>
         <div class="pyr-notes">{% set heartList = product.heart_notes.split(',') %}{% for note in heartList %}<span class="pyr-note heart-note">{{ note | trim }}</span>{% endfor %}</div>
       </div>
       <div class="pyr-connector"></div>
       {% endif %}
       {% if product.base_notes %}
       <div class="pyr-tier">
-        <div class="pyr-tier-label">Base notes</div>
+        <div class="pyr-tier-label" data-i18n="pdp_notes_base">Base notes</div>
         <div class="pyr-notes">{% set baseList = product.base_notes.split(',') %}{% for note in baseList %}<span class="pyr-note base-note">{{ note | trim }}</span>{% endfor %}</div>
       </div>
       {% endif %}
@@ -475,13 +475,13 @@ eleventyComputed:
     <div class="product-brand">{{ product.brand }}</div>
     <h1 class="product-name">{{ product.name }}</h1>
     <div class="product-meta">
-      {% if isFragrance %}{{ product.gender }} · Fragrance{% else %}{{ product.category }}{% endif %}
+      {% if isFragrance %}<span data-i18n="gender_{{ product.gender | lower }}">{{ product.gender }}</span> · <span data-i18n="pdp_fragrance">Fragrance</span>{% else %}{{ product.category }}{% endif %}
     </div>
     {% set productSeasons = product | parseSeasons %}
     {% if isFragrance and productSeasons.length %}
     <div class="season-tags">
       {% for season in productSeasons %}
-      <span class="season-tag">{{ season | seasonLabel }}</span>
+      <span class="season-tag" data-i18n="{{ season | seasonKey }}">{{ season | seasonLabel }}</span>
       {% endfor %}
     </div>
     {% endif %}
@@ -504,16 +504,16 @@ eleventyComputed:
 
     {% if product.inspired_by_name %}
     <div class="inspired-callout">
-      <div class="inspired-callout-label">Inspired By</div>
+      <div class="inspired-callout-label" data-i18n="pdp_inspired_by">Inspired By</div>
       <div class="inspired-callout-name">{{ product.inspired_by_name }}</div>
-      <div class="inspired-callout-note">{% if product.inspired_by_note %}{{ product.inspired_by_note }}{% else %}same DNA — at a fraction of the price{% endif %}</div>
+      <div class="inspired-callout-note"{% if not product.inspired_by_note %} data-i18n="pdp_inspired_default"{% endif %}>{% if product.inspired_by_note %}{{ product.inspired_by_note }}{% else %}same DNA — at a fraction of the price{% endif %}</div>
     </div>
     {% endif %}
 
     {% if isFragrance %}
     <div class="quick-specs">
-      <div class="spec-item"><div class="spec-label">Concentration</div><div class="spec-value">{{ product.concentration }}</div></div>
-      <div class="spec-item"><div class="spec-label">Size</div><div class="spec-value">{{ product.size }}</div></div>
+      <div class="spec-item"><div class="spec-label" data-i18n="pdp_concentration">Concentration</div><div class="spec-value">{{ product.concentration }}</div></div>
+      <div class="spec-item"><div class="spec-label" data-i18n="pdp_size">Size</div><div class="spec-value">{{ product.size }}</div></div>
     </div>
 
     {% if product.longevity or product.projection %}
@@ -530,8 +530,8 @@ eleventyComputed:
         {% else %}{% set lvSegs = 3 %}{% endif %}
         <div class="perf-bar-row">
           <div class="perf-bar-label">
-            <span class="perf-bar-label-text">Longevity</span>
-            <span class="perf-bar-label-value">{{ product.longevity }}</span>
+            <span class="perf-bar-label-text" data-i18n="pdp_longevity">Longevity</span>
+            <span class="perf-bar-label-value" data-perf="{{ product.longevity }}">{{ product.longevity }}</span>
           </div>
           <div class="perf-segs">{% for i in [1,2,3,4,5] %}<div class="perf-seg{% if i <= lvSegs %} on{% endif %}"></div>{% endfor %}</div>
         </div>
@@ -548,8 +548,8 @@ eleventyComputed:
         {% else %}{% set pjSegs = 3 %}{% endif %}
         <div class="perf-bar-row">
           <div class="perf-bar-label">
-            <span class="perf-bar-label-text">Projection</span>
-            <span class="perf-bar-label-value">{{ product.projection }}</span>
+            <span class="perf-bar-label-text" data-i18n="pdp_projection">Projection</span>
+            <span class="perf-bar-label-value" data-perf="{{ product.projection }}">{{ product.projection }}</span>
           </div>
           <div class="perf-segs">{% for i in [1,2,3,4,5] %}<div class="perf-seg{% if i <= pjSegs %} on{% endif %}"></div>{% endfor %}</div>
         </div>
@@ -559,24 +559,24 @@ eleventyComputed:
 
     {% if isFragrance and (product.top_notes or product.heart_notes or product.base_notes) %}
     <div class="notes-pyramid notes-pyramid-mobile">
-      <div class="notes-pyramid-label">Fragrance Notes</div>
+      <div class="notes-pyramid-label" data-i18n="pdp_notes_title">Fragrance Notes</div>
       {% if product.top_notes %}
       <div class="pyr-tier">
-        <div class="pyr-tier-label">Top notes</div>
+        <div class="pyr-tier-label" data-i18n="pdp_notes_top">Top notes</div>
         <div class="pyr-notes">{% set topListM = product.top_notes.split(',') %}{% for note in topListM %}<span class="pyr-note top-note">{{ note | trim }}</span>{% endfor %}</div>
       </div>
       <div class="pyr-connector"></div>
       {% endif %}
       {% if product.heart_notes %}
       <div class="pyr-tier">
-        <div class="pyr-tier-label">Heart notes</div>
+        <div class="pyr-tier-label" data-i18n="pdp_notes_heart">Heart notes</div>
         <div class="pyr-notes">{% set heartListM = product.heart_notes.split(',') %}{% for note in heartListM %}<span class="pyr-note heart-note">{{ note | trim }}</span>{% endfor %}</div>
       </div>
       <div class="pyr-connector"></div>
       {% endif %}
       {% if product.base_notes %}
       <div class="pyr-tier">
-        <div class="pyr-tier-label">Base notes</div>
+        <div class="pyr-tier-label" data-i18n="pdp_notes_base">Base notes</div>
         <div class="pyr-notes">{% set baseListM = product.base_notes.split(',') %}{% for note in baseListM %}<span class="pyr-note base-note">{{ note | trim }}</span>{% endfor %}</div>
       </div>
       {% endif %}
@@ -620,10 +620,10 @@ eleventyComputed:
 
     {% if product.blind_buy_rating %}
     <div class="blind-buy">
-      <div class="blind-buy-label">Blind Buy Rating</div>
+      <div class="blind-buy-label" data-i18n="pdp_blind_buy">Blind Buy Rating</div>
       <div class="blind-buy-row">
-        <span class="blind-buy-badge {{ product.blind_buy_rating | blindBuyClass }}">{{ product.blind_buy_rating }}</span>
-        <a class="blind-buy-explain" href="/_posts/what-does-blind-buy-safe-mean/">What does this mean?</a>
+        <span class="blind-buy-badge {{ product.blind_buy_rating | blindBuyClass }}" data-i18n="{{ product.blind_buy_rating | blindBuyKey }}">{{ product.blind_buy_rating }}</span>
+        <a class="blind-buy-explain" href="/_posts/what-does-blind-buy-safe-mean/" data-i18n="pdp_blind_buy_explain">What does this mean?</a>
       </div>
       {% if product.blind_buy_note %}<div class="blind-buy-note">{{ product.blind_buy_note }}</div>{% endif %}
     </div>
@@ -632,18 +632,18 @@ eleventyComputed:
 
     {% if product.best_for %}
     <div class="best-for-section">
-      <div class="best-for-section-label">Best for</div>
+      <div class="best-for-section-label" data-i18n="pdp_best_for">Best for</div>
       {% if "|" in product.best_for %}
         {% set bfParts = product.best_for.split("|") %}
         {% set bfPos = bfParts[0].split(",") %}
         {% set bfNeg = bfParts[1].split(",") %}
         <div class="best-for-cols">
           <div class="best-for-col">
-            <div class="best-for-col-head">Ideal for</div>
+            <div class="best-for-col-head" data-i18n="pdp_best_ideal">Ideal for</div>
             {% for bf in bfPos %}<div class="best-for-item"><span>✅</span><span>{{ bf | trim }}</span></div>{% endfor %}
           </div>
           <div class="best-for-col">
-            <div class="best-for-col-head">Not ideal for</div>
+            <div class="best-for-col-head" data-i18n="pdp_best_not_ideal">Not ideal for</div>
             {% for bf in bfNeg %}<div class="best-for-item"><span>❌</span><span>{{ bf | trim }}</span></div>{% endfor %}
           </div>
         </div>
@@ -657,13 +657,13 @@ eleventyComputed:
 
     {% if product.char_sweet or product.char_fresh or product.char_masculine or product.char_unique or product.char_versatile %}
     <div class="char-section">
-      <div class="char-section-label">Fragrance Character</div>
+      <div class="char-section-label" data-i18n="pdp_character">Fragrance Character</div>
       <div class="char-rows">
-        {% if product.char_sweet %}<div class="char-row"><div class="char-row-label">Sweet</div><div class="char-segs">{% for i in [1,2,3,4,5] %}<div class="char-seg{% if i <= product.char_sweet %} on{% endif %}"></div>{% endfor %}</div></div>{% endif %}
-        {% if product.char_fresh %}<div class="char-row"><div class="char-row-label">Fresh</div><div class="char-segs">{% for i in [1,2,3,4,5] %}<div class="char-seg{% if i <= product.char_fresh %} on{% endif %}"></div>{% endfor %}</div></div>{% endif %}
-        {% if product.char_masculine %}<div class="char-row"><div class="char-row-label">Masculine</div><div class="char-segs">{% for i in [1,2,3,4,5] %}<div class="char-seg{% if i <= product.char_masculine %} on{% endif %}"></div>{% endfor %}</div></div>{% endif %}
-        {% if product.char_unique %}<div class="char-row"><div class="char-row-label">Unique</div><div class="char-segs">{% for i in [1,2,3,4,5] %}<div class="char-seg{% if i <= product.char_unique %} on{% endif %}"></div>{% endfor %}</div></div>{% endif %}
-        {% if product.char_versatile %}<div class="char-row"><div class="char-row-label">Versatile</div><div class="char-segs">{% for i in [1,2,3,4,5] %}<div class="char-seg{% if i <= product.char_versatile %} on{% endif %}"></div>{% endfor %}</div></div>{% endif %}
+        {% if product.char_sweet %}<div class="char-row"><div class="char-row-label" data-i18n="pdp_char_sweet">Sweet</div><div class="char-segs">{% for i in [1,2,3,4,5] %}<div class="char-seg{% if i <= product.char_sweet %} on{% endif %}"></div>{% endfor %}</div></div>{% endif %}
+        {% if product.char_fresh %}<div class="char-row"><div class="char-row-label" data-i18n="pdp_char_fresh">Fresh</div><div class="char-segs">{% for i in [1,2,3,4,5] %}<div class="char-seg{% if i <= product.char_fresh %} on{% endif %}"></div>{% endfor %}</div></div>{% endif %}
+        {% if product.char_masculine %}<div class="char-row"><div class="char-row-label" data-i18n="pdp_char_masculine">Masculine</div><div class="char-segs">{% for i in [1,2,3,4,5] %}<div class="char-seg{% if i <= product.char_masculine %} on{% endif %}"></div>{% endfor %}</div></div>{% endif %}
+        {% if product.char_unique %}<div class="char-row"><div class="char-row-label" data-i18n="pdp_char_unique">Unique</div><div class="char-segs">{% for i in [1,2,3,4,5] %}<div class="char-seg{% if i <= product.char_unique %} on{% endif %}"></div>{% endfor %}</div></div>{% endif %}
+        {% if product.char_versatile %}<div class="char-row"><div class="char-row-label" data-i18n="pdp_char_versatile">Versatile</div><div class="char-segs">{% for i in [1,2,3,4,5] %}<div class="char-seg{% if i <= product.char_versatile %} on{% endif %}"></div>{% endfor %}</div></div>{% endif %}
       </div>
     </div>
     {% endif %}
@@ -974,14 +974,63 @@ eleventyComputed:
 
   // ── DETAILS TABLE ────────────────────────────────────────────────────────
   const detailsData = {{ product | detailsJson | safe }};
-  const tbody = document.getElementById('details-tbody');
-  if (tbody && detailsData) {
+
+  // Longevity and projection are product data, not UI chrome, so they are
+  // translated here rather than through data-i18n. Whole-value matches first,
+  // then phrase swaps, then the word "hours".
+  function translatePerf(raw, lang) {
+    if (!raw || lang === 'en') return raw;
+    const t = (window.YSP_TRANSLATIONS || {})[lang];
+    if (!t) return raw;
+    const exact = t.perf_values && t.perf_values[raw.trim()];
+    if (exact) return exact;
+    let out = raw;
+    if (t.perf_phrases) {
+      Object.keys(t.perf_phrases).sort((a, b) => b.length - a.length)
+        .forEach(k => { out = out.split(k).join(t.perf_phrases[k]); });
+    }
+    if (t.perf_hours) out = out.replace(/\bhours?\b/gi, t.perf_hours);
+    return out;
+  }
+
+  function currentLang() {
+    if (window.YSP_LANG) return window.YSP_LANG.get();
+    try { return localStorage.getItem('ysp_lang') || 'en'; } catch (e) { return 'en'; }
+  }
+
+  function renderDetails(lang) {
+    const tbody = document.getElementById('details-tbody');
+    if (!tbody || !detailsData) return;
+    const t = (window.YSP_TRANSLATIONS || {})[lang] || {};
+    tbody.innerHTML = '';
     detailsData.forEach(row => {
+      const label = (row.key && t[row.key]) || row.label;
+      let value = row.value;
+      if (row.perf) value = translatePerf(value, lang);
+      else if (row.vkey && t[row.vkey]) value = t[row.vkey];
       const tr = document.createElement('tr');
-      tr.innerHTML = `<td>${row.label}</td><td>${row.value}</td>`;
+      const tdL = document.createElement('td');
+      const tdV = document.createElement('td');
+      tdL.textContent = label;
+      tdV.textContent = value;
+      tr.appendChild(tdL); tr.appendChild(tdV);
       tbody.appendChild(tr);
     });
   }
+
+  function applyPerfBars(lang) {
+    document.querySelectorAll('[data-perf]').forEach(el => {
+      el.textContent = translatePerf(el.getAttribute('data-perf'), lang);
+    });
+  }
+
+  function applyProductChrome(lang) {
+    renderDetails(lang);
+    applyPerfBars(lang);
+  }
+
+  applyProductChrome(currentLang());
+  document.addEventListener('ysp:langchange', e => applyProductChrome(e.detail.lang));
 
   // ── LANGUAGE ─────────────────────────────────────────────────────────────
   (function() {

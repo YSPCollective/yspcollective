@@ -148,6 +148,76 @@ const YSP_TRANSLATIONS = {
     pdp_accords: "Main Accords",
     pdp_home: "Home",
     pdp_back_frag: "Fragrance",
+    // PDP labels
+    pdp_fragrance: "Fragrance",
+    pdp_notes_title: "Fragrance Notes",
+    pdp_notes_top: "Top notes",
+    pdp_notes_heart: "Heart notes",
+    pdp_notes_base: "Base notes",
+    pdp_inspired_by: "Inspired By",
+    pdp_inspired_default: "same DNA — at a fraction of the price",
+    pdp_concentration: "Concentration",
+    pdp_size: "Size",
+    pdp_longevity: "Longevity",
+    pdp_projection: "Projection",
+    pdp_blind_buy: "Blind Buy Rating",
+    pdp_blind_buy_explain: "What does this mean?",
+    pdp_best_for: "Best for",
+    pdp_best_ideal: "Ideal for",
+    pdp_best_not_ideal: "Not ideal for",
+    pdp_character: "Fragrance Character",
+    pdp_char_sweet: "Sweet",
+    pdp_char_fresh: "Fresh",
+    pdp_char_masculine: "Masculine",
+    pdp_char_unique: "Unique",
+    pdp_char_versatile: "Versatile",
+
+    // Gender
+    gender_men: "Men",
+    gender_women: "Women",
+    gender_unisex: "Unisex",
+
+    // Seasons
+    season_spring: "🌱 Spring",
+    season_summer: "☀️ Summer",
+    season_autumn: "🍂 Autumn",
+    season_winter: "❄️ Winter",
+
+    // Blind buy tiers
+    bb_universal: "Universal Crowd-Pleaser",
+    bb_know: "Know Your Notes",
+    bb_niche: "Niche & Specific",
+
+    // Details table
+    det_name: "Product Name",
+    det_family: "Fragrance Family",
+    det_best_for: "Best For",
+    det_gender: "Gender",
+    det_origin: "Origin",
+    det_launched: "Launched",
+    det_vegan: "Vegan & Cruelty-Free",
+    det_skin_type: "Skin Type",
+    det_key_ingredients: "Key Ingredients",
+    det_free_from: "Free From",
+    det_spf: "SPF Rating",
+    val_yes: "Yes",
+    val_no: "No",
+
+    // Longevity / projection values, matched whole
+    perf_values: {
+      "Soft — a true \"skin scent\" by design": "Soft — a true \"skin scent\" by design",
+      "Strong — use 1–2 sprays": "Strong — use 1–2 sprays",
+      "Light to Moderate": "Light to Moderate",
+      "Moderate": "Moderate",
+      "Moderate - Strong": "Moderate - Strong",
+      "Moderate to Strong": "Moderate to Strong",
+      "Moderate, settles close to the skin": "Moderate, settles close to the skin",
+      "Strong": "Strong",
+      "Strong +": "Strong +"
+    },
+    perf_phrases: {},
+    perf_hours: "hours",
+
 
     // Chat widget
     chat_header: "YSP Advisor",
@@ -327,6 +397,83 @@ const YSP_TRANSLATIONS = {
     pdp_accords: "Acordes Principais",
     pdp_home: "Início",
     pdp_back_frag: "Fragrância",
+    // PDP labels
+    pdp_fragrance: "Fragrância",
+    pdp_notes_title: "Notas Olfativas",
+    pdp_notes_top: "Notas de topo",
+    pdp_notes_heart: "Notas de coração",
+    pdp_notes_base: "Notas de fundo",
+    pdp_inspired_by: "Inspirado Em",
+    pdp_inspired_default: "o mesmo ADN, por uma fração do preço",
+    pdp_concentration: "Concentração",
+    pdp_size: "Tamanho",
+    pdp_longevity: "Duração",
+    pdp_projection: "Projeção",
+    pdp_blind_buy: "Compra às Cegas",
+    pdp_blind_buy_explain: "O que significa isto?",
+    pdp_best_for: "Ideal para",
+    pdp_best_ideal: "Recomendado",
+    pdp_best_not_ideal: "Menos indicado",
+    pdp_character: "Carácter da Fragrância",
+    pdp_char_sweet: "Doce",
+    pdp_char_fresh: "Fresco",
+    pdp_char_masculine: "Masculino",
+    pdp_char_unique: "Distinto",
+    pdp_char_versatile: "Versátil",
+
+    // Gender
+    gender_men: "Homem",
+    gender_women: "Mulher",
+    gender_unisex: "Unissexo",
+
+    // Seasons
+    season_spring: "🌱 Primavera",
+    season_summer: "☀️ Verão",
+    season_autumn: "🍂 Outono",
+    season_winter: "❄️ Inverno",
+
+    // Blind buy tiers
+    bb_universal: "Agrada a Todos",
+    bb_know: "Conheça as Notas",
+    bb_niche: "Nicho e Específico",
+
+    // Details table
+    det_name: "Nome do Produto",
+    det_family: "Família Olfativa",
+    det_best_for: "Ideal Para",
+    det_gender: "Género",
+    det_origin: "Origem",
+    det_launched: "Lançamento",
+    det_vegan: "Vegan e Sem Testes em Animais",
+    det_skin_type: "Tipo de Pele",
+    det_key_ingredients: "Ingredientes Principais",
+    det_free_from: "Sem",
+    det_spf: "Fator de Proteção",
+    val_yes: "Sim",
+    val_no: "Não",
+
+    // Longevity / projection values, matched whole
+    perf_values: {
+      "Soft — a true \"skin scent\" by design": "Suave, um verdadeiro perfume de pele por design",
+      "Strong — use 1–2 sprays": "Forte, use 1 a 2 borrifadelas",
+      "Light to Moderate": "Ligeira a Moderada",
+      "Moderate": "Moderada",
+      "Moderate - Strong": "Moderada a Forte",
+      "Moderate to Strong": "Moderada a Forte",
+      "Moderate, settles close to the skin": "Moderada, fica rente à pele",
+      "Strong": "Forte",
+      "Strong +": "Forte +"
+    },
+    perf_phrases: {
+      "use 1–2 sprays": "use 1 a 2 borrifadelas",
+      "use 1-2 sprays": "use 1 a 2 borrifadelas",
+      "a true \"skin scent\" by design": "um verdadeiro perfume de pele, por design",
+      "soft, close to skin": "suave, rente à pele",
+      "reports vary": "os relatos variam",
+      "Soft": "Suave"
+    },
+    perf_hours: "horas",
+
 
     // Chat
     chat_header: "Conselheiro YSP",
@@ -506,6 +653,83 @@ const YSP_TRANSLATIONS = {
     pdp_accords: "Acordes Principales",
     pdp_home: "Inicio",
     pdp_back_frag: "Fragancia",
+    // PDP labels
+    pdp_fragrance: "Fragancia",
+    pdp_notes_title: "Notas Olfativas",
+    pdp_notes_top: "Notas de salida",
+    pdp_notes_heart: "Notas de corazón",
+    pdp_notes_base: "Notas de fondo",
+    pdp_inspired_by: "Inspirado En",
+    pdp_inspired_default: "el mismo ADN, por una fracción del precio",
+    pdp_concentration: "Concentración",
+    pdp_size: "Tamaño",
+    pdp_longevity: "Duración",
+    pdp_projection: "Proyección",
+    pdp_blind_buy: "Compra a Ciegas",
+    pdp_blind_buy_explain: "¿Qué significa esto?",
+    pdp_best_for: "Ideal para",
+    pdp_best_ideal: "Recomendado",
+    pdp_best_not_ideal: "Menos indicado",
+    pdp_character: "Carácter de la Fragancia",
+    pdp_char_sweet: "Dulce",
+    pdp_char_fresh: "Fresco",
+    pdp_char_masculine: "Masculino",
+    pdp_char_unique: "Distintivo",
+    pdp_char_versatile: "Versátil",
+
+    // Gender
+    gender_men: "Hombre",
+    gender_women: "Mujer",
+    gender_unisex: "Unisex",
+
+    // Seasons
+    season_spring: "🌱 Primavera",
+    season_summer: "☀️ Verano",
+    season_autumn: "🍂 Otoño",
+    season_winter: "❄️ Invierno",
+
+    // Blind buy tiers
+    bb_universal: "Gusta a Todos",
+    bb_know: "Conoce las Notas",
+    bb_niche: "Nicho y Específico",
+
+    // Details table
+    det_name: "Nombre del Producto",
+    det_family: "Familia Olfativa",
+    det_best_for: "Ideal Para",
+    det_gender: "Género",
+    det_origin: "Origen",
+    det_launched: "Lanzamiento",
+    det_vegan: "Vegano y Sin Crueldad",
+    det_skin_type: "Tipo de Piel",
+    det_key_ingredients: "Ingredientes Principales",
+    det_free_from: "Sin",
+    det_spf: "Factor de Protección",
+    val_yes: "Sí",
+    val_no: "No",
+
+    // Longevity / projection values, matched whole
+    perf_values: {
+      "Soft — a true \"skin scent\" by design": "Suave, un verdadero perfume de piel por diseño",
+      "Strong — use 1–2 sprays": "Fuerte, usa 1 o 2 vaporizaciones",
+      "Light to Moderate": "Ligera a Moderada",
+      "Moderate": "Moderada",
+      "Moderate - Strong": "Moderada a Fuerte",
+      "Moderate to Strong": "Moderada a Fuerte",
+      "Moderate, settles close to the skin": "Moderada, se queda pegada a la piel",
+      "Strong": "Fuerte",
+      "Strong +": "Fuerte +"
+    },
+    perf_phrases: {
+      "use 1–2 sprays": "usa 1 o 2 vaporizaciones",
+      "use 1-2 sprays": "usa 1 o 2 vaporizaciones",
+      "a true \"skin scent\" by design": "un verdadero perfume de piel, por diseño",
+      "soft, close to skin": "suave, pegada a la piel",
+      "reports vary": "los informes varían",
+      "Soft": "Suave"
+    },
+    perf_hours: "horas",
+
 
     // Chat
     chat_header: "Asesor YSP",

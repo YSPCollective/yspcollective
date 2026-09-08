@@ -183,30 +183,32 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("detailsJson", function(data) {
     const rows = [];
+    // key: i18n key for the label. vkey: i18n key for the value. perf: value
+    // goes through the longevity/projection translation map.
     if (data.concentration) {
-      if (data.name) rows.push({label:'Product Name',value:data.name});
-      if (data.concentration) rows.push({label:'Concentration',value:data.concentration});
-      if (data.size) rows.push({label:'Size',value:data.size});
-      if (data.fragrance_family) rows.push({label:'Fragrance Family',value:data.fragrance_family});
-      if (data.top_notes) rows.push({label:'Top Notes',value:data.top_notes});
-      if (data.heart_notes) rows.push({label:'Heart Notes',value:data.heart_notes});
-      if (data.base_notes) rows.push({label:'Base Notes',value:data.base_notes});
-      if (data.longevity) rows.push({label:'Longevity',value:data.longevity});
-      if (data.projection) rows.push({label:'Projection',value:data.projection});
-      if (data.best_for) rows.push({label:'Best For',value:data.best_for});
-      if (data.gender) rows.push({label:'Gender',value:data.gender});
-      if (data.origin) rows.push({label:'Origin',value:data.origin});
-      if (data.launched) rows.push({label:'Launched',value:data.launched});
-      rows.push({label:'Vegan & Cruelty-Free',value:data.vegan?'Yes':'No'});
+      if (data.name) rows.push({key:'det_name',label:'Product Name',value:data.name});
+      if (data.concentration) rows.push({key:'pdp_concentration',label:'Concentration',value:data.concentration});
+      if (data.size) rows.push({key:'pdp_size',label:'Size',value:data.size});
+      if (data.fragrance_family) rows.push({key:'det_family',label:'Fragrance Family',value:data.fragrance_family});
+      if (data.top_notes) rows.push({key:'pdp_notes_top',label:'Top Notes',value:data.top_notes});
+      if (data.heart_notes) rows.push({key:'pdp_notes_heart',label:'Heart Notes',value:data.heart_notes});
+      if (data.base_notes) rows.push({key:'pdp_notes_base',label:'Base Notes',value:data.base_notes});
+      if (data.longevity) rows.push({key:'pdp_longevity',label:'Longevity',value:data.longevity,perf:true});
+      if (data.projection) rows.push({key:'pdp_projection',label:'Projection',value:data.projection,perf:true});
+      if (data.best_for) rows.push({key:'det_best_for',label:'Best For',value:data.best_for});
+      if (data.gender) rows.push({key:'det_gender',label:'Gender',value:data.gender,vkey:'gender_'+String(data.gender).toLowerCase()});
+      if (data.origin) rows.push({key:'det_origin',label:'Origin',value:data.origin});
+      if (data.launched) rows.push({key:'det_launched',label:'Launched',value:data.launched});
+      rows.push({key:'det_vegan',label:'Vegan & Cruelty-Free',value:data.vegan?'Yes':'No',vkey:data.vegan?'val_yes':'val_no'});
     } else {
-      if (data.name) rows.push({label:'Product Name',value:data.name});
-      if (data.size) rows.push({label:'Size',value:data.size});
-      if (data.skin_type) rows.push({label:'Skin Type',value:data.skin_type});
-      if (data.key_ingredients) rows.push({label:'Key Ingredients',value:data.key_ingredients});
-      if (data.free_from) rows.push({label:'Free From',value:data.free_from});
-      if (data.spf_rating) rows.push({label:'SPF Rating',value:data.spf_rating});
-      rows.push({label:'Origin',value:data.origin||'South Korea'});
-      rows.push({label:'Vegan & Cruelty-Free',value:data.vegan?'Yes':'No'});
+      if (data.name) rows.push({key:'det_name',label:'Product Name',value:data.name});
+      if (data.size) rows.push({key:'pdp_size',label:'Size',value:data.size});
+      if (data.skin_type) rows.push({key:'det_skin_type',label:'Skin Type',value:data.skin_type});
+      if (data.key_ingredients) rows.push({key:'det_key_ingredients',label:'Key Ingredients',value:data.key_ingredients});
+      if (data.free_from) rows.push({key:'det_free_from',label:'Free From',value:data.free_from});
+      if (data.spf_rating) rows.push({key:'det_spf',label:'SPF Rating',value:data.spf_rating});
+      rows.push({key:'det_origin',label:'Origin',value:data.origin||'South Korea'});
+      rows.push({key:'det_vegan',label:'Vegan & Cruelty-Free',value:data.vegan?'Yes':'No',vkey:data.vegan?'val_yes':'val_no'});
     }
     return JSON.stringify(rows);
   });
@@ -247,6 +249,22 @@ module.exports = function(eleventyConfig) {
   // Normalised, lowercased season list for a product
   eleventyConfig.addFilter("parseSeasons", function(data) {
     return parseSeasons(data);
+  });
+
+  // "summer" -> "season_summer", the i18n key for that badge
+  eleventyConfig.addFilter("seasonKey", function(season) {
+    const s = String(season || '').trim().toLowerCase();
+    return s ? 'season_' + s : '';
+  });
+
+  // blind buy rating -> i18n key
+  eleventyConfig.addFilter("blindBuyKey", function(rating) {
+    if (!rating) return '';
+    const r = rating.toLowerCase();
+    if (r.indexOf('universal') === 0) return 'bb_universal';
+    if (r.indexOf('know') === 0) return 'bb_know';
+    if (r.indexOf('niche') === 0) return 'bb_niche';
+    return '';
   });
 
   // "summer" → "☀️ Summer" for the season badges
