@@ -8,12 +8,21 @@ size: 90ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
 stock_status: in_stock
-stock_quantity: 12
+stock_quantity: 5
 featured: true
 published: true
 date_added: 2026-06-02
 fragrance_family: Aromatic Fresh Woody
 best_for: Evening wear, smart-casual, cooler seasons, date night
+season:
+  - Spring
+  - Autumn
+  - Winter
+blind_buy_rating: Universal Crowd-Pleaser
+blind_buy_note: A flawless crowd-pleaser and tropical blind buy, this viral
+  sensation explodes with an incredibly juicy burst of ripe pineapple and rich
+  saffron before settling into a smooth, magnetic base of warm amber and fresh
+  cedar
 char_sweet: 3
 char_fresh: 3
 char_masculine: 4
