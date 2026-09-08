@@ -15,6 +15,13 @@ published: true
 date_added: 2026-06-17
 fragrance_family: Amber Floral Gourmand
 best_for: Evening, Autumn, Winter, Date Night
+season:
+  - Autumn
+  - Winter
+blind_buy_rating: Universal Crowd-Pleaser
+blind_buy_note: A universal crowd-pleaser and seductive blind buy, this viral
+  feminine favorite masterfully contrasts addictive roasted coffee and creamy
+  almond with an opulent bouquet of white florals and warm velvet cacao.
 char_sweet: 4
 char_fresh: 1
 char_masculine: 1
