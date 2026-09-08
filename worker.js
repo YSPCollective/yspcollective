@@ -510,7 +510,7 @@ const PRODUCTS = [
     "projection": "Strong +",
     "best_for": "Night time wear, Winter/Spring/Autumn",
     "inspired_by": "Montale Arabians Tonka",
-    "summary": "A bold, smoky oriental from Al Haramain — one of the Gulf's",
+    "summary": "A bold, smoky oriental from Al Haramain - one of the Gulf's",
     "ysp_thoughts": "<p>Al Haramain has been in the oud and amber space since 1970 — this isn't a brand chasing trends, it's one that set them.</p>"
   },
   {
