@@ -1,19 +1,34 @@
 ---
+name: Armaf Club de Nuit Intense 105ml
+slug: armaf-club-de-nuit-intense-105ml
+price: "33.00"
 rrp: ""
+brand: Armaf
 gender: Men
 size: 105ml
 concentration: Eau de Toilette (EDT)
 badge: Popular
 custom_badge: ""
 stock_status: in_stock
+stock_quantity: 10
 expected_date: ""
 featured: true
 published: true
 date_added: 2026-08-07
+fragrance_family: Woody Spicy
 best_for: Evening wear, cooler seasons, formal and smart-casual occasions
+season:
+  - Spring
+  - Autumn
+  - Winter
+blind_buy_rating: Universal Crowd-Pleaser
+blind_buy_note: "A universally loved fragrance, that you can blind buy with confidence. "
+char_sweet: 2
 char_fresh: 3
 char_masculine: 5
+char_unique: 3
 char_versatile: 3
+heart_notes: Rose, Birch, Jasmine
 longevity: 8–12 hours
 projection: Strong
 launched: "2015"
@@ -46,12 +61,6 @@ ysp_thoughts: >
 inspired_by_note: same smoky birch, pineapple and oakmoss DNA — one of the
   closest comparisons in perfumery
 ebay_url: ""
-name: Armaf Club de Nuit Intense 105ml
-slug: armaf-club-de-nuit-intense-105ml
-price: "33.00"
-brand: Armaf
-char_sweet: 2
-heart_notes: Rose, Birch, Jasmine
 origin: UAE
 exclude_from_feed: true
 accords:
@@ -62,12 +71,9 @@ accords:
   - musk
   - smoky
   - amber
-stock_quantity: 10
-fragrance_family: Woody Spicy
 base_notes: Musk, Ambergris, Patchouli, Vanilla
 amazon_url: ""
 gender_label: Men
-char_unique: 3
 top_notes: Lemon, Pineapple, Bergamot, Black Currant, Apple
 accords_text: citrus, fructured, leather, smoked, woody, aromatic, sweet, fresh, musked
 image_main: /images/uploads/club-de-nuit-image-3.jpeg
