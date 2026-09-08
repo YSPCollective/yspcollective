@@ -58,4 +58,28 @@ char_fresh: 1
 char_masculine: 3
 char_unique: 4
 char_versatile: 2
+pt:
+  name_pt: Lattafa Khamrah 100ml
+  description_short_pt: 'Rico, especiado e profundamente indulgente. Um dos perfumes árabes mais aclamados, com uma abertura intensa de canela e tâmaras e uma base resinosa extraordinária.'
+  description_full_pt: |-
+    <p>Rico, especiado e profundamente indulgente, o Khamrah é a Lattafa no seu registo mais opulento e um dos perfumes árabes mais aclamados dos últimos anos.</p>
+    <p>O nome vem da palavra árabe para algo inebriante, e o perfume faz jus a isso. A abertura traz bergamota cítrica enquadrada por canela e noz-moscada quentes e aveludadas: imediata, confiante e impossível de ignorar. O coração aprofunda-se em tâmaras, praliné e tuberosa, um calor cremoso e quase comestível, algures entre um doce árabe especiado e um bom conhaque. A base entrega depois um rasto sumptuoso de baunilha, fava tonka, mirra, benjoim e amberwood precioso: resinoso, fumado e de duração extraordinária.</p>
+    <p>É, sem margem para dúvidas, um perfume de tempo frio e de noite. É intenso, projeta bem e exige alguma contenção: uma ou duas borrifadelas são genuinamente suficientes. Nos meios da perfumaria é frequentemente comparado ao Angels’ Share da Kilian, sendo o Khamrah mais especiado e mais frutado, com aquela assinatura de canela e tâmaras sobre uma base rica de âmbar resinoso, por uma fração do preço.</p>
+    <p>Se procura um perfume que faça as pessoas pararem para perguntar o que está a usar, é este.</p>
+  ysp_thoughts_pt: |-
+    <p>O Khamrah é um daqueles perfumes que se cheira uma vez e se percebe logo o entusiasmo à volta dele. Experimentámo-lo à espera de o achar sobrevalorizado e ficámos genuinamente impressionados.</p>
+    <p>A abertura especiada é intensa e a secagem é extraordinária: profunda, resinosa, com aquele tipo de calor que fica connosco durante horas. Na roupa dura dias. Em termos de desempenho, supera com folga perfumes que custam cinco vezes mais.</p>
+    <p>Um aviso que damos a todos os clientes: vá com calma. Este não é um perfume de cinco borrifadelas. Uma ou duas nos pontos de pulsação são tudo o que precisa, o resto faz-se sozinho. Acerte nisso e será das melhores coisas que vai cheirar durante todo o inverno.</p>
+es:
+  name_es: Lattafa Khamrah 100ml
+  description_short_es: 'Rico, especiado y profundamente goloso. Uno de los perfumes árabes más aclamados, con una salida intensa de canela y dátiles y un fondo resinoso extraordinario.'
+  description_full_es: |-
+    <p>Rico, especiado y profundamente goloso, Khamrah es Lattafa en su versión más opulenta y uno de los perfumes árabes más aclamados de los últimos años.</p>
+    <p>El nombre procede de la palabra árabe que designa algo embriagador, y el perfume le hace justicia. La salida trae bergamota cítrica enmarcada por canela y nuez moscada cálidas y aterciopeladas: inmediata, segura e imposible de ignorar. El corazón se ahonda en dátiles, praliné y nardo, un calor cremoso y casi comestible que se sitúa entre un dulce árabe especiado y un buen coñac. El fondo despliega después una estela suntuosa de vainilla, haba tonka, mirra, benjuí y amberwood precioso: resinoso, ahumado y de una duración extraordinaria.</p>
+    <p>Es, sin lugar a dudas, un perfume de tiempo frío y de noche. Es intenso, proyecta bien y pide cierta contención: con una o dos vaporizaciones basta de sobra. En los círculos de perfumería se compara a menudo con Angels’ Share de Kilian, siendo Khamrah más especiado y más afrutado, con esa firma de canela y dátiles sobre un fondo rico de ámbar resinoso, y por una fracción del precio.</p>
+    <p>Si buscas un perfume que haga que la gente se pare a preguntarte qué llevas puesto, es este.</p>
+  ysp_thoughts_es: |-
+    <p>Khamrah es uno de esos perfumes que hueles una vez y entiendes al momento tanto revuelo. Lo probamos esperando que estuviera sobrevalorado y nos dejó realmente impresionados.</p>
+    <p>La salida especiada es intensa y el fondo es extraordinario: profundo, resinoso, con ese tipo de calidez que te acompaña durante horas. En la ropa aguanta días. En rendimiento, supera con holgura a perfumes que cuestan cinco veces más.</p>
+    <p>Un aviso que damos a todos nuestros clientes: ve con calma. Este no es un perfume de cinco vaporizaciones. Con una o dos en los puntos de pulso tienes de sobra, el resto lo hace solo. Acierta con eso y será de lo mejor que huelas en todo el invierno.</p>
 ---

@@ -17,9 +17,7 @@ season:
   - Spring
   - Summer
 blind_buy_rating: Universal Crowd-Pleaser
-blind_buy_note: An absolute summer essential and foolproof blind buy, this
-  vibrant fragrance serves up a refreshing burst of juicy sun-ripened mango and
-  zesty iced lemon over a deliciously smooth base of vanilla and sweet caramel.
+blind_buy_note: 'Ripe mango and iced lemon over vanilla and caramel. Uncomplicated and refreshing, and about as safe as a summer blind buy gets.'
 char_sweet: 4
 char_fresh: 4
 char_masculine: 2
@@ -60,56 +58,6 @@ ysp_thoughts: >
 inspired_by_name: God of Fire by Stéphane Humbert Lucas
 gtin: "6290362162629"
 exclude_from_feed: false
-pt:
-  description_short_pt: Uma fragrância EDP divertida e frutada da Gulf Orchid —
-    manga sumarenta e uma frescura gelada equilibrada sobre uma base suave de
-    almíscar. Vibrante, acessível e perfeita para dias mais quentes.
-  description_full_pt: >-
-    O Gulf Orchid Mango Ice Eau de Parfum abre com uma explosão imediata de
-    manga madura e frutas tropicais, elevada por uma frescura gelada que confere
-    à fragrância o seu efeito refrescante de assinatura. O contraste funciona
-    lindamente: doce e suculento no topo, nítido e arejado por baixo. À medida
-    que seca, o brilho tropical suaviza-se num coração floral limpo antes de
-    assentar numa base leve de almíscar e madeiras suaves.
-
-
-
-
-    O efeito geral é lúdico e refrescante, mas com estrutura suficiente para ser um perfume sério e não apenas uma novidade frutada. A longevidade ronda as 6–8 horas com uma projeção de leve a moderada. Ideal para a primavera e verão, dias de praia e uso casual.
-  ysp_thoughts_pt: >-
-    O Mango Ice é assumidamente divertido. Nem tudo precisa de ser complexo — às
-    vezes, apenas queremos algo que nos faça sorrir ao aplicar. 
-
-
-    Este perfume faz exatamente isso. Escolhemo-lo porque preenche uma lacuna nas linhas de perfumes árabes, que podem ser pesadas e resinosas; este é o "limpa-palato", a opção para o tempo quente, aquela que surpreende quem assume que a perfumaria árabe é apenas oud e âmbar. 
-
-
-    Merece o seu lugar na prateleira por ser genuinamente diferente.
-  name_pt: Gulf Orchid Mango Ice Eau de Parfum 100ml
-es:
-  description_short_es: "Una fragancia EDP divertida y frutal de Gulf Orchid:
-    mango jugoso y un frescor gélido equilibrado sobre una base suave de
-    almizcle. Vibrante, accesible y perfecta para los días más calurosos."
-  description_full_es: >-
-    Gulf Orchid Mango Ice Eau de Parfum abre con una explosión inmediata de
-    mango maduro y frutas tropicales, realzada por un frescor helado que otorga
-    a la fragrancia su firma refrescante. El contraste funciona de maravilla:
-    dulce y jugoso en la salida, nítido y aireado en el fondo. A medida que se
-    asienta, el brillo tropical se suaviza en un corazón floral limpio antes de
-    descansar sobre una base ligera de almizcle y maderas suaves.
-
-
-
-
-    El efecto general es jovial y refrescante, pero con la estructura suficiente para ser un perfume de verdad y no solo una novedad frutal. La longevidad es de unas 6 a 8 horas con una proyección de ligera a moderada. Ideal para primavera y verano, días de playa y uso casual.
-  ysp_thoughts_es: >-
-    Mango Ice es puramente divertido. No todo tiene que ser complejo; a veces
-    solo quieres algo que te haga sonreír al usarlo.
-
-     Este perfume logra exactamente eso. Lo elegimos porque llena un vacío en las colecciones de perfumes árabes, que suelen ser pesadas y resinosas; este es el "limpiador de paladar", la opción para el buen tiempo, la que sorprende a quienes piensan que la perfumería árabe es solo oud y ámbar. 
-
-    Se gana su lugar en el estante por ser genuinamente diferente.
-  name_es: Gulf Orchid Mango Ice Eau de Parfum 100ml
 accords:
   - fruity
   - tropical
@@ -123,4 +71,26 @@ accords:
   - white floral
 fragrance_family: Fruity Floral
 base_notes: Musk, Vanilla, Caramel, Chestnut
+pt:
+  name_pt: Gulf Orchid Mango Ice Eau de Parfum 100ml
+  description_short_pt: 'Uma fragrância EDP divertida e frutada da Gulf Orchid, com manga sumarenta e uma frescura gelada equilibrada sobre uma base suave de almíscar. Vibrante, acessível e perfeita para os dias mais quentes.'
+  description_full_pt: |-
+    <p>O Gulf Orchid Mango Ice Eau de Parfum abre com uma explosão imediata de manga madura, aquecida pelo sol, e fruta tropical, elevada por uma frescura gelada, quase mentolada, que dá ao perfume o seu efeito refrescante característico.</p>
+    <p>O contraste funciona lindamente: doce e sumarento no topo, nítido e arejado por baixo. À medida que seca, o brilho tropical suaviza-se num coração floral limpo antes de assentar numa base leve de almíscar e madeiras suaves, que o impede de parecer passageiro.</p>
+    <p>O efeito geral é lúdico e refrescante sem ser superficial. Há aqui estrutura suficiente para fazer dele um perfume a sério, e não apenas uma novidade frutada.</p>
+    <p>A duração ronda as 6 a 8 horas, com projeção de leve a moderada. Encaixa naturalmente na primavera e no verão, em dias de praia e no uso casual.</p>
+  ysp_thoughts_pt: |-
+    <p>O Mango Ice é assumidamente divertido, e por nós tudo bem. Nem tudo precisa de ser complexo. Às vezes só queremos algo que nos faça sorrir quando o aplicamos.</p>
+    <p>Este faz exatamente isso. Chamou-nos a atenção porque preenche uma lacuna numa linha de perfumes árabes que tende a ser pesada e resinosa. Este é o limpa-palato, a opção para o tempo quente, aquele que surpreende quem parte do princípio de que a perfumaria árabe é só oud e âmbar. Merece o seu lugar na prateleira por ser genuinamente diferente.</p>
+es:
+  name_es: Gulf Orchid Mango Ice Eau de Parfum 100ml
+  description_short_es: 'Una fragancia EDP divertida y afrutada de Gulf Orchid, con mango jugoso y un frescor gélido equilibrado sobre una base suave de almizcle. Vibrante, accesible y perfecta para los días más calurosos.'
+  description_full_es: |-
+    <p>Gulf Orchid Mango Ice Eau de Parfum abre con una explosión inmediata de mango maduro, madurado al sol, y fruta tropical, realzada por un frescor helado, casi mentolado, que le da al perfume su efecto refrescante característico.</p>
+    <p>El contraste funciona de maravilla: dulce y jugoso en la salida, nítido y aireado por debajo. A medida que se asienta, el brillo tropical se suaviza en un corazón floral limpio antes de descansar sobre una base ligera de almizcle y maderas suaves que evita que resulte fugaz.</p>
+    <p>El efecto general es jovial y refrescante sin ser superficial. Hay aquí estructura suficiente para que sea un perfume de verdad, y no solo una novedad afrutada.</p>
+    <p>La duración ronda las 6 a 8 horas, con una proyección de ligera a moderada. Encaja de forma natural en primavera y verano, en días de playa y en el uso diario.</p>
+  ysp_thoughts_es: |-
+    <p>Mango Ice es abiertamente divertido, y nos parece bien. No todo tiene que ser complejo. A veces solo quieres algo que te haga sonreír al ponértelo.</p>
+    <p>Este lo consigue. Nos llamó la atención porque llena un hueco en una gama de perfumes árabes que tiende a ser pesada y resinosa. Este es el limpiador de paladar, la opción para el buen tiempo, el que sorprende a quien da por hecho que la perfumería árabe es solo oud y ámbar. Se gana su sitio en la estantería por ser genuinamente diferente.</p>
 ---

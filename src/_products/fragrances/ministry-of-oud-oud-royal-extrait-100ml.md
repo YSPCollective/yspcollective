@@ -22,10 +22,7 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Know Your Notes
-blind_buy_note: An elite autumn and winter masterpiece for true connoisseurs,
-  this regal blind buy blends a sharp burst of spicy lemon and red berries with
-  an opulent heart of green galbanum, dry cedarwood, and a smooth, sophisticated
-  bed of majestic Indian oud.
+blind_buy_note: 'Sharp lemon and red berries into dry cedar and a light, transparent oud. Approachable as ouds go, but it is still an oud.'
 char_sweet: 2
 char_fresh: 3
 char_masculine: 4
@@ -63,4 +60,14 @@ ebay_url: ""
 origin: UAE
 gtin: "6294650987253"
 exclude_from_feed: false
+pt:
+  name_pt: Ministry of Oud Oud Royal Extrait de Parfum 100ml
+  description_short_pt: 'Um fougère oriental elegante, que abre com limão intenso e bagas rosadas, tem um coração verde de cedro e gálbano e assenta numa base quente de oud, sândalo e almíscar. Um dos ouds acessíveis mais convincentes.'
+  description_full_pt: 'O Oud Royal abre luminoso e afiado, com limão, bagas rosadas e bergamota, antes de o cedro, o gálbano e a raiz de angélica trazerem ao coração um carácter verde e ligeiramente amargo. A base transporta a nota que dá nome ao perfume: oud, acompanhado de sândalo e almíscar Tonkin, para um final quente, amadeirado e especiado, mais refinado do que a maioria dos perfumes nesta gama de preço.'
+  ysp_thoughts_pt: 'Esta é uma alternativa conhecida e bem considerada ao Royal Oud da Creed, e já existe há tempo suficiente (desde 2021) para ter um historial sólido em vez de ser uma aposta por testar. Os críticos classificam-na de forma consistente como uma das versões acessíveis mais convincentes do original da Creed: mais seca e com o cedro mais em evidência, com um oud mais leve e transparente do que o verdadeiro, mas genuinamente impressionante pelo preço.'
+es:
+  name_es: Ministry of Oud Oud Royal Extrait de Parfum 100ml
+  description_short_es: 'Un fougère oriental con estilo, que abre con limón intenso y bayas rosas, despliega un corazón verde de cedro y gálbano y descansa sobre una base cálida de oud, sándalo y almizcle. Uno de los oud asequibles más convincentes.'
+  description_full_es: 'Oud Royal abre luminoso y afilado, con limón, bayas rosas y bergamota, antes de que el cedro, el gálbano y la raíz de angélica aporten al corazón un matiz verde y ligeramente amargo. El fondo lleva la nota que da nombre al perfume: oud, junto a sándalo y almizcle Tonkin, para un final cálido, amaderado y especiado, más refinado que el de la mayoría de fragancias en esta franja de precio.'
+  ysp_thoughts_es: 'Es una alternativa conocida y muy bien valorada al Royal Oud de Creed, y lleva el tiempo suficiente en el mercado (desde 2021) como para tener un historial sólido en lugar de ser una apuesta sin probar. Los reseñadores coinciden en señalarla como una de las versiones asequibles más convincentes del original de Creed: más seca y con el cedro más presente, con un oud más ligero y transparente que el auténtico, pero realmente impresionante para lo que cuesta.'
 ---

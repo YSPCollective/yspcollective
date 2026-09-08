@@ -22,7 +22,7 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Universal Crowd-Pleaser
-blind_buy_note: "A universally loved fragrance, that you can blind buy with confidence. "
+blind_buy_note: 'The safest blind buy we stock. Fruity, smoky and widely loved, and we have yet to meet anyone who dislikes it.'
 char_sweet: 2
 char_fresh: 3
 char_masculine: 5
@@ -81,4 +81,30 @@ description_short: One of the most celebrated value fragrances in men's
   perfumery. Bold citrus-fruit opening, exceptional dry-down, 8–12 hour
   longevity.
 inspired_by_name: Creed Aventus
+pt:
+  name_pt: Armaf Club de Nuit Intense 105ml
+  description_short_pt: 'Um dos perfumes masculinos com melhor relação qualidade-preço do mercado. Abertura intensa de cítricos e fruta, secagem excecional e 8 a 12 horas de duração.'
+  description_full_pt: |-
+    <p>Há uma razão para o Club de Nuit Intense Man se ter tornado um dos perfumes mais comentados da internet, e não tem nada a ver com o preço.</p>
+    <p>Lançado em 2015, este perfume amadeirado e especiado abre com uma explosão luminosa e enérgica de limão, ananás, bergamota, groselha preta e maçã. É uma abertura cítrica e frutada, confiante e que chama a atenção de imediato.</p>
+    <p>O coração suaviza-se em bétula, jasmim e rosa, acrescentando uma profundidade masculina que impede o conjunto de alguma vez soar agressivo ou unidimensional. Depois entra a base: um alicerce suave e encorpado de âmbar cinzento, almíscar, patchouli e baunilha, que permanece muito depois de tudo o resto ter assentado.</p>
+    <p>É no desempenho que este perfume construiu a sua reputação. A projeção é forte nas primeiras horas, a duração atinge regularmente as 8 a 12 horas na pele, e a secagem, fumada, quente e discretamente sofisticada, é genuinamente excelente.</p>
+    <p>O CDNIM, como é conhecido nos meios da perfumaria, é amplamente considerado uma das melhores propostas de valor da perfumaria masculina. Por este preço, é quase bom demais para ser verdade. Indicado para a noite, para tempo mais fresco e para qualquer ocasião em que queira deixar marca.</p>
+  ysp_thoughts_pt: |-
+    <p>Temos muitos perfumes, mas o Club de Nuit Intense Man está noutra categoria. É um daqueles frascos que aparece sempre que alguém pergunta qual é o melhor perfume masculino pelo dinheiro, e a resposta é quase sempre esta.</p>
+    <p>A secagem é genuinamente especial. Demora 20 a 30 minutos a assentar por completo, mas quando assenta revela uma base quente, fumada e amadeirada muito acima do seu escalão de preço. Dura o dia todo, projeta como deve ser e recolhe elogios com regularidade.</p>
+    <p>Experimentámo-lo antes de o colocar à venda. Hoje faz parte do uso regular cá de casa. Normalmente, é tudo o que precisamos de saber.</p>
+es:
+  name_es: Armaf Club de Nuit Intense 105ml
+  description_short_es: 'Uno de los perfumes masculinos con mejor relación calidad-precio del mercado. Salida intensa de cítricos y fruta, fondo excepcional y entre 8 y 12 horas de duración.'
+  description_full_es: |-
+    <p>Hay un motivo por el que Club de Nuit Intense Man se ha convertido en uno de los perfumes más comentados de internet, y no tiene nada que ver con su precio.</p>
+    <p>Lanzado en 2015, este perfume amaderado y especiado abre con una explosión luminosa y enérgica de limón, piña, bergamota, grosella negra y manzana. Es una salida cítrica y afrutada, segura de sí misma y que llama la atención de inmediato.</p>
+    <p>El corazón se suaviza con abedul, jazmín y rosa, y aporta una profundidad masculina que evita en todo momento que el conjunto resulte agresivo o plano. Después toma el relevo el fondo: una base suave y con cuerpo de ámbar gris, almizcle, pachulí y vainilla que permanece mucho después de que todo lo demás se haya asentado.</p>
+    <p>El rendimiento es lo que ha dado fama a este perfume. La proyección es fuerte durante las primeras horas, la duración alcanza con regularidad las 8 a 12 horas en piel, y el fondo, ahumado, cálido y discretamente sofisticado, es realmente excelente.</p>
+    <p>El CDNIM, como se lo conoce en los círculos de perfumería, está considerado una de las mejores relaciones calidad-precio de la perfumería masculina. A este precio, resulta casi demasiado bueno. Ideal para la noche, para el tiempo fresco y para cualquier ocasión en la que quieras dejar huella.</p>
+  ysp_thoughts_es: |-
+    <p>Trabajamos con muchos perfumes, pero Club de Nuit Intense Man juega en otra liga. Es uno de esos frascos que sale a relucir cada vez que alguien pregunta cuál es el mejor perfume masculino por su precio, y la respuesta casi siempre es esta.</p>
+    <p>El fondo es realmente especial. Tarda entre 20 y 30 minutos en asentarse del todo, pero cuando lo hace aparece una base cálida, ahumada y amaderada muy por encima de su rango de precio. Dura todo el día, proyecta como es debido y recibe elogios constantemente.</p>
+    <p>Lo probamos nosotros mismos antes de ponerlo a la venta. Hoy forma parte del uso habitual de la casa. Normalmente, con eso nos basta.</p>
 ---
