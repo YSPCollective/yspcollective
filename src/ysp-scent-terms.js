@@ -111,6 +111,23 @@
         "Green": "Verde", "Marine": "Marinho", "Oriental": "Oriental",
         "Oud": "Oud", "Smoky": "Fumado", "Spicy": "Especiado", "Sweet": "Doce",
         "Tropical": "Tropical", "Vanilla": "Baunilha", "Woody": "Amadeirado"
+      },
+      bestfor: {
+        "Daily": "Uso diário", "Everyday wear": "Uso diário", "Office": "Escritório",
+        "All Seasons": "Todas as estações", "Year-round": "Todo o ano",
+        "Spring": "Primavera", "Summer": "Verão", "Autumn": "Outono", "Winter": "Inverno",
+        "Warm Weather": "Tempo quente", "Cold Weather": "Tempo frio",
+        "Casual": "Casual", "Casual wear": "Uso casual", "Casual occasions": "Ocasiões casuais",
+        "Casual evenings": "Noites casuais", "Daytime": "De dia", "Daytime wear": "Uso diurno",
+        "Evening": "Noite", "Evening wear": "Uso à noite", "Night time wear": "Uso noturno",
+        "Night out": "Noites fora", "Date night": "Encontros",
+        "Special occasions": "Ocasiões especiais", "Cooler seasons": "Estações mais frias",
+        "Formal": "Formal", "Formal occasions": "Ocasiões formais",
+        "Formal and smart-casual occasions": "Ocasiões formais e smart casual",
+        "Smart-casual": "Smart casual", "Beach": "Praia", "Poolside": "Piscina",
+        "Gym": "Ginásio", "Holiday": "Férias",
+        "Younger/playful tastes": "Gostos mais jovens e divertidos",
+        "Close-wear/personal scent": "Uso rente à pele, perfume pessoal"
       }
     },
 
@@ -208,6 +225,23 @@
         "Green": "Verde", "Marine": "Marino", "Oriental": "Oriental",
         "Oud": "Oud", "Smoky": "Ahumado", "Spicy": "Especiado", "Sweet": "Dulce",
         "Tropical": "Tropical", "Vanilla": "Vainilla", "Woody": "Amaderado"
+      },
+      bestfor: {
+        "Daily": "Uso diario", "Everyday wear": "Uso diario", "Office": "Oficina",
+        "All Seasons": "Todas las estaciones", "Year-round": "Todo el año",
+        "Spring": "Primavera", "Summer": "Verano", "Autumn": "Otoño", "Winter": "Invierno",
+        "Warm Weather": "Tiempo cálido", "Cold Weather": "Tiempo frío",
+        "Casual": "Casual", "Casual wear": "Uso casual", "Casual occasions": "Ocasiones casuales",
+        "Casual evenings": "Noches informales", "Daytime": "De día", "Daytime wear": "Uso diurno",
+        "Evening": "Noche", "Evening wear": "Uso de noche", "Night time wear": "Uso nocturno",
+        "Night out": "Salidas nocturnas", "Date night": "Citas",
+        "Special occasions": "Ocasiones especiales", "Cooler seasons": "Estaciones más frías",
+        "Formal": "Formal", "Formal occasions": "Ocasiones formales",
+        "Formal and smart-casual occasions": "Ocasiones formales y smart casual",
+        "Smart-casual": "Smart casual", "Beach": "Playa", "Poolside": "Piscina",
+        "Gym": "Gimnasio", "Holiday": "Vacaciones",
+        "Younger/playful tastes": "Gustos más jóvenes y desenfadados",
+        "Close-wear/personal scent": "Uso pegado a la piel, perfume personal"
       }
     }
   };
@@ -244,6 +278,26 @@
         }
         return tok;
       }).join('');
+    },
+    // "Evening wear, autumn/winter" -> translated. Comma separated items, each
+    // matched whole first, then split on slashes if that misses.
+    bestFor: function (v, lang) {
+      if (!v || lang === 'en' || !TERMS[lang]) return v;
+      var self = this;
+      return String(v).split('|').map(function (half) {
+        return half.split(',').map(function (item) {
+          var t = item.trim();
+          if (!t) return '';
+          var whole = lookup('bestfor', t, lang);
+          if (whole !== t) return whole;
+          if (t.indexOf('/') !== -1) {
+            return t.split('/').map(function (part) {
+              return lookup('bestfor', part.trim(), lang);
+            }).join('/');
+          }
+          return t;
+        }).filter(Boolean).join(', ');
+      }).join(' | ');
     },
     // "Saffron, Bergamot, Elemi" -> translated, comma separated
     noteList: function (v, lang) {

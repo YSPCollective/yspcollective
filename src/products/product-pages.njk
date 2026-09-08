@@ -1087,7 +1087,14 @@ eleventyComputed:
     function renderBestFor(lang) {
       const wrap = document.getElementById('pdp-best-for');
       if (!wrap) return;
-      const raw = ft('best_for', lang);
+      // A hand-written translation wins; otherwise fall back to translating the
+      // English through the shared best_for term map.
+      const f = freeText.best_for || {};
+      let raw = (f[lang] && String(f[lang]).trim()) || '';
+      if (!raw) {
+        raw = f.en || '';
+        if (raw && window.YSP_SCENT) raw = window.YSP_SCENT.bestFor(raw, lang);
+      }
       if (!raw) return;
       const t = (window.YSP_TRANSLATIONS || {})[lang] || {};
       const old = wrap.querySelector('.best-for-cols, .best-for-col-single');
