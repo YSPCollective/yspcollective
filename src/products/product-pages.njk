@@ -506,7 +506,7 @@ eleventyComputed:
     <div class="inspired-callout">
       <div class="inspired-callout-label" data-i18n="pdp_inspired_by">Inspired By</div>
       <div class="inspired-callout-name">{{ product.inspired_by_name }}</div>
-      <div class="inspired-callout-note"{% if not product.inspired_by_note %} data-i18n="pdp_inspired_default"{% endif %}>{% if product.inspired_by_note %}{{ product.inspired_by_note }}{% else %}same DNA — at a fraction of the price{% endif %}</div>
+      <div class="inspired-callout-note" id="pdp-inspired-note"{% if not product.inspired_by_note %} data-i18n="pdp_inspired_default"{% endif %}>{% if product.inspired_by_note %}{{ product.inspired_by_note }}{% else %}same DNA — at a fraction of the price{% endif %}</div>
     </div>
     {% endif %}
 
@@ -625,13 +625,13 @@ eleventyComputed:
         <span class="blind-buy-badge {{ product.blind_buy_rating | blindBuyClass }}" data-i18n="{{ product.blind_buy_rating | blindBuyKey }}">{{ product.blind_buy_rating }}</span>
         <a class="blind-buy-explain" href="/_posts/what-does-blind-buy-safe-mean/" data-i18n="pdp_blind_buy_explain">What does this mean?</a>
       </div>
-      {% if product.blind_buy_note %}<div class="blind-buy-note">{{ product.blind_buy_note }}</div>{% endif %}
+      {% if product.blind_buy_note %}<div class="blind-buy-note" id="pdp-blind-buy-note">{{ product.blind_buy_note }}</div>{% endif %}
     </div>
     {% endif %}
     {% endif %}
 
     {% if product.best_for %}
-    <div class="best-for-section">
+    <div class="best-for-section" id="pdp-best-for">
       <div class="best-for-section-label" data-i18n="pdp_best_for">Best for</div>
       {% if "|" in product.best_for %}
         {% set bfParts = product.best_for.split("|") %}
@@ -1058,7 +1058,89 @@ eleventyComputed:
       ysp_thoughts_es: {{ (product.es.ysp_thoughts_es if product.es else '') | jsonify | safe }}
     };
 
+    const freeText = {
+      inspired_by_note: {
+        en: {{ (product.inspired_by_note or '') | jsonify | safe }},
+        pt: {{ (product.pt.inspired_by_note_pt if product.pt else '') | jsonify | safe }},
+        es: {{ (product.es.inspired_by_note_es if product.es else '') | jsonify | safe }}
+      },
+      blind_buy_note: {
+        en: {{ (product.blind_buy_note or '') | jsonify | safe }},
+        pt: {{ (product.pt.blind_buy_note_pt if product.pt else '') | jsonify | safe }},
+        es: {{ (product.es.blind_buy_note_es if product.es else '') | jsonify | safe }}
+      },
+      best_for: {
+        en: {{ (product.best_for or '') | jsonify | safe }},
+        pt: {{ (product.pt.best_for_pt if product.pt else '') | jsonify | safe }},
+        es: {{ (product.es.best_for_es if product.es else '') | jsonify | safe }}
+      }
+    };
+
+    // Fall back to English whenever a translation has not been written yet.
+    function ft(field, lang) {
+      const f = freeText[field] || {};
+      return (f[lang] && String(f[lang]).trim()) || f.en || '';
+    }
+
+    // best_for uses "positive | negative" with comma separated items, so the
+    // section is rebuilt rather than swapped as a single string.
+    function renderBestFor(lang) {
+      const wrap = document.getElementById('pdp-best-for');
+      if (!wrap) return;
+      const raw = ft('best_for', lang);
+      if (!raw) return;
+      const t = (window.YSP_TRANSLATIONS || {})[lang] || {};
+      const old = wrap.querySelector('.best-for-cols, .best-for-col-single');
+      if (!old) return;
+      const items = list => list.split(',').map(x => x.trim()).filter(Boolean);
+      let el;
+      if (raw.indexOf('|') !== -1) {
+        const parts = raw.split('|');
+        el = document.createElement('div');
+        el.className = 'best-for-cols';
+        [[parts[0], t.pdp_best_ideal || 'Ideal for', '\u2705'],
+         [parts[1] || '', t.pdp_best_not_ideal || 'Not ideal for', '\u274C']].forEach(([src, head, icon]) => {
+          const col = document.createElement('div');
+          col.className = 'best-for-col';
+          const h = document.createElement('div');
+          h.className = 'best-for-col-head';
+          h.textContent = head;
+          col.appendChild(h);
+          items(src).forEach(txt => {
+            const row = document.createElement('div');
+            row.className = 'best-for-item';
+            const a = document.createElement('span'); a.textContent = icon;
+            const b = document.createElement('span'); b.textContent = txt;
+            row.appendChild(a); row.appendChild(b);
+            col.appendChild(row);
+          });
+          el.appendChild(col);
+        });
+      } else {
+        el = document.createElement('div');
+        el.className = 'best-for-col-single';
+        items(raw).forEach(txt => {
+          const row = document.createElement('div');
+          row.className = 'best-for-item';
+          const a = document.createElement('span'); a.textContent = '\u2705';
+          const b = document.createElement('span'); b.textContent = txt;
+          row.appendChild(a); row.appendChild(b);
+          el.appendChild(row);
+        });
+      }
+      old.replaceWith(el);
+    }
+
+    function applyFreeText(lang) {
+      const insp = document.getElementById('pdp-inspired-note');
+      if (insp && freeText.inspired_by_note.en) insp.textContent = ft('inspired_by_note', lang);
+      const bb = document.getElementById('pdp-blind-buy-note');
+      if (bb) bb.textContent = ft('blind_buy_note', lang);
+      renderBestFor(lang);
+    }
+
     function applyProductLang(lang) {
+      applyFreeText(lang);
       const suffix = lang === 'pt' ? '_pt' : lang === 'es' ? '_es' : null;
       const shortEl = document.getElementById('pdp-desc-short');
       const fullEl = document.getElementById('pdp-desc-full');

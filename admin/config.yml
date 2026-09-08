@@ -168,6 +168,9 @@ collections:
           - { label: "Short Description (PT)", name: "description_short_pt", widget: "text", required: false }
           - { label: "Full Description (PT)", name: "description_full_pt", widget: "markdown", required: false }
           - { label: "YSP Thoughts (PT)", name: "ysp_thoughts_pt", widget: "markdown", required: false }
+          - { label: "Blind Buy Note (PT)", name: "blind_buy_note_pt", widget: "string", required: false }
+          - { label: "Best For (PT)", name: "best_for_pt", widget: "string", required: false, hint: "Same | and , format as the English field" }
+          - { label: "Comparison Note (PT)", name: "inspired_by_note_pt", widget: "string", required: false }
 
       - label: "🇪🇸 Spanish Translation"
         name: "es"
@@ -180,6 +183,9 @@ collections:
           - { label: "Short Description (ES)", name: "description_short_es", widget: "text", required: false }
           - { label: "Full Description (ES)", name: "description_full_es", widget: "markdown", required: false }
           - { label: "YSP Thoughts (ES)", name: "ysp_thoughts_es", widget: "markdown", required: false }
+          - { label: "Blind Buy Note (ES)", name: "blind_buy_note_es", widget: "string", required: false }
+          - { label: "Best For (ES)", name: "best_for_es", widget: "string", required: false, hint: "Same | and , format as the English field" }
+          - { label: "Comparison Note (ES)", name: "inspired_by_note_es", widget: "string", required: false }
 
   # ─── SKINCARE / BEAUTY PRODUCTS ───────────────────────────────────
   - name: "beauty"
