@@ -8,11 +8,23 @@ gender: Unisex
 size: 100ml
 concentration: Extrait de Parfum
 badge: Premium
+custom_badge: ""
 stock_status: in_stock
+stock_quantity: 3
 featured: false
 published: true
 date_added: 2026-06-02
 best_for: Evening wear, all seasons, special occasions, date night
+season:
+  - Spring
+  - Summer
+  - Autumn
+  - Winter
+blind_buy_rating: Know Your Notes
+blind_buy_note: An opulent autumn and winter masterpiece celebrating the
+  legendary Taif rose, this complex blind buy weaves dark juicy plum, hot
+  cardamom, and rich saffron over a deeply comforting base of smoky incense,
+  oakwood, and dark syrupy molasses
 char_sweet: 3
 char_fresh: 2
 char_masculine: 3
@@ -62,8 +74,6 @@ accords:
   - rose
   - aromatic
   - warm spicy
-custom_badge: ""
-stock_quantity: 3
 fragrance_family: Floral Oriental
 base_notes: Oakwood, Molasses, Vetiver, Amber, Labdanum
 ---
