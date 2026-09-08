@@ -895,8 +895,8 @@ const PRODUCTS = [
     "projection": "Moderate - Strong ",
     "best_for": "Daytime wear, summer, beach, casual occasions",
     "inspired_by": "God of Fire by Stéphane Humbert Lucas",
-    "summary": "A fun, fruit-forward EDP from Gulf Orchid — juicy mango and cooling freshness balanced over a soft, musky base. Vibrant, approachable, and perfect for warmer days.",
-    "ysp_thoughts": "|"
+    "summary": "A fun, fruit-forward EDP from Gulf Orchid — juicy mango and",
+    "ysp_thoughts": "<p>Mango Ice is unashamedly fun, and we're fine with that. Not everything needs to be complex — sometimes you want something that makes you smile when you spray it.</p>"
   },
   {
     "name": "Khadlaj Azure Velvet Extrait de Parfum 100ml",
