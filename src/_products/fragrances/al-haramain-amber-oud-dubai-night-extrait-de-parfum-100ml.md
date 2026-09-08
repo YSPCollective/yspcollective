@@ -64,7 +64,7 @@ accords:
   - vanilla
   - fresh spicy
   - metallic
-stock_quantity: 5
+stock_quantity: 2
 fragrance_family: Woody Oriental Oud
 char_versatile: 2
 base_notes: Tonka Bean, Amber, White Must, Oakmoss
