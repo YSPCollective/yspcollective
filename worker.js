@@ -1739,8 +1739,8 @@ const PRODUCTS = [
     "longevity": "7-12 hours",
     "projection": "Moderate - Strong",
     "best_for": "Daytime wear, spring/summer, casual occasions",
-    "summary": "A lush, tropical escape bottled in an extrait. Soul of Bali blends exotic florals with warm, creamy woods — an escapist fragrance that's rich enough to wear as a signature scent.",
-    "ysp_thoughts": "|"
+    "summary": "A lush, tropical escape bottled in an extrait. Soul of Bali",
+    "ysp_thoughts": "<p>The extrait concentration is the key selling point here — this isn't a standard EDP dressed up in fancier packaging.</p>"
   },
   {
     "name": "Zimaya Al Barari Coral EDP 100ml",
