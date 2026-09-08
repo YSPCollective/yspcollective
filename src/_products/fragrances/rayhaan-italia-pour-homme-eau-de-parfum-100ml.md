@@ -62,4 +62,10 @@ inspired_by_note: Same honey-tobacco-lavender DNA, more approachable and
   wearable, exceptional longevity
 gtin: "6297001571279 "
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: 'Alfazema mediterrânica e bergamota a evoluir para mel dourado, canela e folha de tabaco. Rico e adulto, e um perfume para quem gosta de mel e tabaco.'
+  inspired_by_note_pt: 'O mesmo ADN de mel, tabaco e alfazema, mais acessível e mais fácil de usar, com duração excecional'
+es:
+  blind_buy_note_es: 'Lavanda mediterránea y bergamota evolucionando hacia miel dorada, canela y hoja de tabaco. Rico y adulto, y un perfume para quien disfrute de la miel y el tabaco.'
+  inspired_by_note_es: 'El mismo ADN de miel, tabaco y lavanda, más accesible y más fácil de llevar, con una duración excepcional'
 ---

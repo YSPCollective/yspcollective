@@ -64,4 +64,8 @@ inspired_by_note: The same weightless fruity-musky DNA - more depth at the base,
   considerably more accessible.
 gtin: "6290171076025"
 exclude_from_feed: false
+pt:
+  inspired_by_note_pt: 'O mesmo ADN frutado e almiscarado sem peso, com mais profundidade na base e consideravelmente mais acessível.'
+es:
+  inspired_by_note_es: 'El mismo ADN afrutado y almizclado sin peso, con más profundidad en el fondo y considerablemente más accesible.'
 ---

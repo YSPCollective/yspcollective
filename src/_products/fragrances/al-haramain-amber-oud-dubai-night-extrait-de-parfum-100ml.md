@@ -73,4 +73,10 @@ accords:
   - metallic
 fragrance_family: Woody Oriental Oud
 base_notes: Tonka Bean, Amber, White Must, Oakmoss
+pt:
+  blind_buy_note_pt: 'Oud grande e resinoso, com açafrão e fumo, e projeta com força. Se já usa oud, compre com confiança. Se não usa, experimente uma amostra antes de avançar para um frasco.'
+  inspired_by_note_pt: 'O mesmo território oriental escuro de âmbar e tonka, visivelmente mais fresco e leve do que o original da Montale'
+es:
+  blind_buy_note_es: 'Oud grande y resinoso, con azafrán y humo, y proyecta con fuerza. Si ya llevas oud, cómpralo con confianza. Si no, prueba una muestra antes de ir a por el frasco.'
+  inspired_by_note_es: 'El mismo territorio oriental oscuro de ámbar y tonka, notablemente más fresco y ligero que el original de Montale'
 ---

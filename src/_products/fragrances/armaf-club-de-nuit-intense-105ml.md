@@ -94,6 +94,8 @@ pt:
     <p>Temos muitos perfumes, mas o Club de Nuit Intense Man está noutra categoria. É um daqueles frascos que aparece sempre que alguém pergunta qual é o melhor perfume masculino pelo dinheiro, e a resposta é quase sempre esta.</p>
     <p>A secagem é genuinamente especial. Demora 20 a 30 minutos a assentar por completo, mas quando assenta revela uma base quente, fumada e amadeirada muito acima do seu escalão de preço. Dura o dia todo, projeta como deve ser e recolhe elogios com regularidade.</p>
     <p>Experimentámo-lo antes de o colocar à venda. Hoje faz parte do uso regular cá de casa. Normalmente, é tudo o que precisamos de saber.</p>
+  blind_buy_note_pt: 'A compra às cegas mais segura que temos. Frutado, fumado e amplamente adorado, e ainda não conhecemos ninguém que não goste.'
+  inspired_by_note_pt: 'O mesmo ADN de bétula fumada, ananás e musgo de carvalho, uma das comparações mais próximas de toda a perfumaria'
 es:
   name_es: Armaf Club de Nuit Intense 105ml
   description_short_es: 'Uno de los perfumes masculinos con mejor relación calidad-precio del mercado. Salida intensa de cítricos y fruta, fondo excepcional y entre 8 y 12 horas de duración.'
@@ -107,4 +109,6 @@ es:
     <p>Trabajamos con muchos perfumes, pero Club de Nuit Intense Man juega en otra liga. Es uno de esos frascos que sale a relucir cada vez que alguien pregunta cuál es el mejor perfume masculino por su precio, y la respuesta casi siempre es esta.</p>
     <p>El fondo es realmente especial. Tarda entre 20 y 30 minutos en asentarse del todo, pero cuando lo hace aparece una base cálida, ahumada y amaderada muy por encima de su rango de precio. Dura todo el día, proyecta como es debido y recibe elogios constantemente.</p>
     <p>Lo probamos nosotros mismos antes de ponerlo a la venta. Hoy forma parte del uso habitual de la casa. Normalmente, con eso nos basta.</p>
+  blind_buy_note_es: 'La compra a ciegas más segura que tenemos. Afrutado, ahumado y ampliamente querido, y todavía no hemos conocido a nadie a quien no le guste.'
+  inspired_by_note_es: 'El mismo ADN de abedul ahumado, piña y musgo de roble, una de las comparaciones más cercanas de toda la perfumería'
 ---

@@ -56,4 +56,8 @@ accords:
   - white floral
 fragrance_family: Woody Oriental Spicy
 base_notes: "Oak moss, Ambergis, Musk "
+pt:
+  inspired_by_note_pt: 'Uma leitura mais suave e mais doce da assinatura frutada, fumada e amadeirada do Aventus, com ananás e bétula no topo e âmbar e almíscar por baixo'
+es:
+  inspired_by_note_es: 'Una lectura más suave y más dulce de la firma afrutada, ahumada y amaderada de Aventus, con piña y abedul en la salida y ámbar y almizcle por debajo'
 ---

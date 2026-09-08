@@ -59,4 +59,10 @@ ebay_url: ""
 origin: UAE
 gtin: "6298042002197"
 exclude_from_feed: true
+pt:
+  blind_buy_note_pt: 'Uma baunilha doce e especiada, com peso a sério. Compre com confiança se gosta de gourmands quentes. Experimente primeiro se costuma usar frescos.'
+  inspired_by_note_pt: Traz a mesma assinatura quente e doce de castanha e baunilha do Stronger With You Absolutely da Armani.
+es:
+  blind_buy_note_es: 'Una vainilla dulce y especiada, con peso de verdad. Cómpralo con confianza si te gustan los gourmand cálidos. Prueba antes si sueles llevar frescos.'
+  inspired_by_note_es: Lleva la misma firma cálida y dulce de castaña y vainilla del Stronger With You Absolutely de Armani.
 ---

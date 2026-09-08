@@ -67,4 +67,10 @@ inspired_by_note: Same iconic note pyramid — almond and coffee opening, tubero
   and jasmine heart, tonka and cacao dry-down — at a fraction of the price.
 gtin: "6291106486513"
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: 'Café torrado, amêndoa e cacau, na versão que agrada a toda a gente. Compra segura para quem gosta da família do Good Girl.'
+  inspired_by_note_pt: 'A mesma pirâmide olfativa icónica, com abertura de amêndoa e café, coração de tuberosa e jasmim e secagem de tonka e cacau, por uma fração do preço.'
+es:
+  blind_buy_note_es: 'Café tostado, almendra y cacao, en la versión que gusta a todo el mundo. Compra segura para quien disfrute de la familia de Good Girl.'
+  inspired_by_note_es: 'La misma pirámide olfativa icónica, con salida de almendra y café, corazón de nardo y jazmín y fondo de tonka y cacao, por una fracción del precio.'
 ---

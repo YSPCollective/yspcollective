@@ -62,4 +62,10 @@ inspired_by_name: Jean Paul Gaultier Scandal Pour Homme
 inspired_by_note: Same citrus-caramel-tonka DNA, brighter mandarin opening
 gtin: "6294015149371"
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: 'Tangerina sumarenta sobre caramelo suave. Doce sem ser pesado, e muito difícil de não gostar.'
+  inspired_by_note_pt: 'O mesmo ADN de cítricos, caramelo e tonka, com uma abertura de tangerina mais luminosa'
+es:
+  blind_buy_note_es: 'Mandarina jugosa sobre caramelo suave. Dulce sin ser pesado, y muy difícil de que no guste.'
+  inspired_by_note_es: 'El mismo ADN de cítricos, caramelo y tonka, con una salida de mandarina más luminosa'
 ---

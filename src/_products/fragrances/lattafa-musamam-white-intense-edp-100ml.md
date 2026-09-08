@@ -74,4 +74,10 @@ inspired_by_note: That same creamy, spiced-coconut warmth — richer in the base
   more assertive projection.
 gtin: "6290360593159"
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: 'Bergamota e laranja sobre coco cremoso, ylang-ylang e sândalo. Quente e solar em vez de fresco, por isso confirme que gosta de coco antes de avançar.'
+  inspired_by_note_pt: 'Aquele mesmo calor cremoso de coco especiado, mais rico na base e com projeção mais assertiva.'
+es:
+  blind_buy_note_es: 'Bergamota y naranja sobre coco cremoso, ylang-ylang y sándalo. Cálido y solar en lugar de fresco, así que confirma que te gusta el coco antes de decidirte.'
+  inspired_by_note_es: 'Ese mismo calor cremoso de coco especiado, más rico en el fondo y con una proyección más rotunda.'
 ---

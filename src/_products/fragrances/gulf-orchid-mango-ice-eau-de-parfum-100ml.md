@@ -82,6 +82,7 @@ pt:
   ysp_thoughts_pt: |-
     <p>O Mango Ice é assumidamente divertido, e por nós tudo bem. Nem tudo precisa de ser complexo. Às vezes só queremos algo que nos faça sorrir quando o aplicamos.</p>
     <p>Este faz exatamente isso. Chamou-nos a atenção porque preenche uma lacuna numa linha de perfumes árabes que tende a ser pesada e resinosa. Este é o limpa-palato, a opção para o tempo quente, aquele que surpreende quem parte do princípio de que a perfumaria árabe é só oud e âmbar. Merece o seu lugar na prateleira por ser genuinamente diferente.</p>
+  blind_buy_note_pt: 'Manga madura e limão gelado sobre baunilha e caramelo. Descomplicado e refrescante, e o mais seguro que uma compra às cegas de verão consegue ser.'
 es:
   name_es: Gulf Orchid Mango Ice Eau de Parfum 100ml
   description_short_es: 'Una fragancia EDP divertida y afrutada de Gulf Orchid, con mango jugoso y un frescor gélido equilibrado sobre una base suave de almizcle. Vibrante, accesible y perfecta para los días más calurosos.'
@@ -93,4 +94,5 @@ es:
   ysp_thoughts_es: |-
     <p>Mango Ice es abiertamente divertido, y nos parece bien. No todo tiene que ser complejo. A veces solo quieres algo que te haga sonreír al ponértelo.</p>
     <p>Este lo consigue. Nos llamó la atención porque llena un hueco en una gama de perfumes árabes que tiende a ser pesada y resinosa. Este es el limpiador de paladar, la opción para el buen tiempo, el que sorprende a quien da por hecho que la perfumería árabe es solo oud y ámbar. Se gana su sitio en la estantería por ser genuinamente diferente.</p>
+  blind_buy_note_es: 'Mango maduro y limón helado sobre vainilla y caramelo. Sencillo y refrescante, y lo más seguro que puede ser una compra a ciegas de verano.'
 ---

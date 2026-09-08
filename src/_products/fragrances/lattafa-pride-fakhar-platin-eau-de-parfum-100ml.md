@@ -49,4 +49,8 @@ inspired_by_note: Same vibrant, spicy-woody freshness as YSL's Y Elixir,
   with a warmer, more exotic oriental twist and a juicy guava heart
 gtin: "6290362345817"
 exclude_from_feed: false
+pt:
+  inspired_by_note_pt: 'A mesma frescura vibrante, especiada e amadeirada do Y Elixir da YSL, com uma volta oriental mais quente e exótica e um coração sumarento de goiaba'
+es:
+  inspired_by_note_es: 'La misma frescura vibrante, especiada y amaderada del Y Elixir de YSL, con un giro oriental más cálido y exótico y un corazón jugoso de guayaba'
 ---

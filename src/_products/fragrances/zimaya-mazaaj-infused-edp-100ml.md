@@ -67,4 +67,10 @@ ebay_url: ""
 origin: UAE
 gtin: "6290171074731"
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: 'Cidra efervescente e bergamota a evoluir para gengibre, néroli e ambroxan moderno. Limpo, contemporâneo e difícil de não gostar.'
+  inspired_by_note_pt: 'O mesmo ADN fresco de cítricos e ambroxan do Imagination, por uma fração do preço, e a alternativa mais barata entre as conhecidas'
+es:
+  blind_buy_note_es: 'Cidra chispeante y bergamota evolucionando hacia jengibre, neroli y ambroxan moderno. Limpio, contemporáneo y difícil de que no guste.'
+  inspired_by_note_es: 'El mismo ADN fresco de cítricos y ambroxan de Imagination, por una fracción del precio, y la alternativa más barata entre las conocidas'
 ---

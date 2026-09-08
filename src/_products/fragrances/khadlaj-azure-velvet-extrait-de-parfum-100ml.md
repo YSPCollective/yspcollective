@@ -67,4 +67,10 @@ inspired_by_note: Widely cited by the Fragrantica community as one of the
   a slightly fresher, mintier opening and extrait concentration.
 gtin: "6291107978802"
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: 'Bergamota, alfazema e hortelã a assentar em madeiras suaves e incenso. O frasco mais versátil que temos, e funciona mesmo o ano todo.'
+  inspired_by_note_pt: 'Amplamente citado pela comunidade da Fragrantica como uma das interpretações mais próximas do Layton, com o mesmo ADN de maçã, alfazema e baunilha, uma abertura ligeiramente mais fresca e mentolada e concentração extrait.'
+es:
+  blind_buy_note_es: 'Bergamota, lavanda y menta asentándose en maderas suaves e incienso. El frasco más versátil que tenemos, y funciona de verdad todo el año.'
+  inspired_by_note_es: 'Ampliamente citado por la comunidad de Fragrantica como una de las interpretaciones más cercanas de Layton, con el mismo ADN de manzana, lavanda y vainilla, una salida algo más fresca y mentolada y concentración extrait.'
 ---

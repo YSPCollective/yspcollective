@@ -56,4 +56,8 @@ inspired_by_note: Shares the same warm amber-saffron-woody DNA, sweeter and
   fruitier with outstanding projection
 gtin: "6291107454412"
 exclude_from_feed: false
+pt:
+  inspired_by_note_pt: 'Partilha o mesmo ADN quente de âmbar, açafrão e madeiras, mais doce e mais frutado e com projeção excelente'
+es:
+  inspired_by_note_es: 'Comparte el mismo ADN cálido de ámbar, azafrán y maderas, más dulce y más afrutado y con una proyección excelente'
 ---

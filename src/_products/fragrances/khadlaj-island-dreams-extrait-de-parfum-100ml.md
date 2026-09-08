@@ -79,6 +79,8 @@ pt:
     <p>O Louis Vuitton Symphony tem sido um dos perfumes mais comentados dos últimos anos, e essa combinação vibrante de cítricos, toranja e ambroxan criou um público fiel.</p>
     <p>Também custa a partir de 280 €. O Island Dreams da Khadlaj situa-se exatamente no mesmo espaço olfativo: o mesmo carácter cítrico energizante, a mesma secagem suave de ambroxan e, possivelmente, mais potência. Várias pessoas que têm o Symphony consideram o Island Dreams a melhor opção para o dia a dia.</p>
     <p>Em concentração Extrait, a duração e a projeção são genuinamente impressionantes para o preço. Se anda de olho no Symphony e não consegue justificar o gasto, este é o ponto de partida mais sensato.</p>
+  blind_buy_note_pt: 'Toranja luminosa e gengibre sobre ambroxan limpo. Moderno, fresco e muito fácil de gostar.'
+  inspired_by_note_pt: 'O mesmo ADN efervescente de bergamota e toranja, com projeção possivelmente superior e por uma fração do preço.'
 es:
   name_es: Khadlaj Island Dreams Extrait de Parfum 100ml
   description_short_es: 'Un extrait luminoso y de marcado carácter cítrico: abre con bergamota chispeante y jengibre especiado, evoluciona hacia un corazón jugoso de pomelo y se asienta en una base suave de ambroxan y almizcle, muy pegada a la piel. Moderno sin esfuerzo, duradero y siempre halagado.'
@@ -89,4 +91,6 @@ es:
     <p>Louis Vuitton Symphony ha sido uno de los perfumes más comentados de los últimos años, y esa combinación vibrante de cítricos, pomelo y ambroxan se ha ganado un público entregado.</p>
     <p>También cuesta a partir de 280 €. Island Dreams de Khadlaj se mueve exactamente en el mismo terreno olfativo: el mismo carácter cítrico energizante, la misma bajada suave de ambroxan y, probablemente, más potencia. Varias personas que tienen Symphony consideran que Island Dreams funciona mejor para el día a día.</p>
     <p>En concentración Extrait, la duración y la proyección son realmente notables para lo que cuesta. Si llevas tiempo mirando el Symphony y no te compensa el desembolso, este es el punto de partida más sensato.</p>
+  blind_buy_note_es: 'Pomelo luminoso y jengibre sobre ambroxan limpio. Moderno, fresco y muy fácil de que guste.'
+  inspired_by_note_es: 'El mismo ADN chispeante de bergamota y pomelo, con una proyección posiblemente superior y por una fracción del precio.'
 ---

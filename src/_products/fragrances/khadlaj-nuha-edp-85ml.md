@@ -66,4 +66,8 @@ ebay_url: ""
 origin: UAE
 gtin: "6291107976150"
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: 'Leite de coco e maçã crocante sobre baunilha e cashmere wood. Cremoso e distinto, por isso vale a pena confirmar que se dá bem com perfumes lactónicos.'
+es:
+  blind_buy_note_es: 'Leche de coco y manzana crujiente sobre vainilla y madera de cachemira. Cremoso y distintivo, así que conviene confirmar que te llevas bien con los perfumes lactónicos.'
 ---

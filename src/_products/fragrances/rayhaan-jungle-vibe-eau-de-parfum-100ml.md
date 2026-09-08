@@ -65,4 +65,10 @@ inspired_by_note: Rayhaan Jungle Vibe captures the ultra-luxurious, $350 DNA of
   finish.
 gtin: "6297001571286"
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: 'Toranja e folha de figueira verde sobre notas aquáticas de chuva e sândalo. Verde em vez de doce, por isso experimente primeiro se isso lhe for novo.'
+  inspired_by_note_pt: 'O Rayhaan Jungle Vibe capta o ADN ultra luxuoso do Santal Greenery de Dries Van Noten, que custa cerca de 350 dólares, juntando uma explosão nítida de toranja e notas verdes molhadas de chuva a um final lindamente cremoso de figo e sândalo suave.'
+es:
+  blind_buy_note_es: 'Pomelo y hoja de higuera verde sobre notas acuáticas de lluvia y sándalo. Verde en lugar de dulce, así que prueba antes si eso te resulta nuevo.'
+  inspired_by_note_es: 'Rayhaan Jungle Vibe capta el ADN ultra lujoso del Santal Greenery de Dries Van Noten, que cuesta unos 350 dólares, uniendo una explosión nítida de pomelo y notas verdes mojadas de lluvia a un final bellamente cremoso de higo y sándalo suave.'
 ---

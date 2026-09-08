@@ -61,4 +61,10 @@ inspired_by_name: Tom Ford Oud Wood
 inspired_by_note: same dark resinous oud-rose foundation, bolder projection
 gtin: "6291107458328"
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: 'Oud, couro e patchouli, e um perfume que cresce em nós. Merecidamente popular, mas precisa de algumas utilizações para encaixar, por isso experimente primeiro se o oud lhe for novo.'
+  inspired_by_note_pt: 'a mesma base escura e resinosa de oud e rosa, com projeção mais ousada'
+es:
+  blind_buy_note_es: 'Oud, cuero y pachulí, y un perfume que va creciendo. Merecidamente popular, pero necesita unas cuantas puestas para encajar, así que prueba antes si el oud te resulta nuevo.'
+  inspired_by_note_es: 'la misma base oscura y resinosa de oud y rosa, con una proyección más atrevida'
 ---

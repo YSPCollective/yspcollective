@@ -66,4 +66,10 @@ ebay_url: ""
 origin: UAE
 gtin: "6291107979557"
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: 'Marshmallow, chantilly e morango, e muito doce mesmo. Compra segura se adora perfumes de sobremesa, demasiado se não adora.'
+  inspired_by_note_pt: 'Uma alternativa sofisticada ao Kayali Yum Boujee Marshmallow 81, o Khadlaj Cloud Candy envolve a pele numa mistura requintada de marshmallow rosa fofo, morango maduro ao sol e creme de baunilha batido.'
+es:
+  blind_buy_note_es: 'Malvavisco, nata montada y fresa, y muy dulce de verdad. Compra segura si adoras los perfumes de postre, demasiado si no.'
+  inspired_by_note_es: 'Una alternativa sofisticada al Kayali Yum Boujee Marshmallow 81, Khadlaj Cloud Candy envuelve la piel en una mezcla exquisita de malvavisco rosa esponjoso, fresa madurada al sol y crema de vainilla batida.'
 ---

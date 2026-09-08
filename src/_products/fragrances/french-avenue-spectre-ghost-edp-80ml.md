@@ -69,4 +69,10 @@ ebay_url: ""
 origin: UAE
 gtin: "6290360372723"
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: Gengibre intenso e bergamota sobre baunilha cremosa e cedro. Fácil de usar quase todo o ano e difícil de errar.
+  inspired_by_note_pt: 'O Spectre Ghost traz a mesma assinatura de gengibre rico, especiarias quentes e baunilha cremosa do Ani da Nishane, mas dispensa a abertura verde e afiada do original a favor de um primeiro spray mais suave.'
+es:
+  blind_buy_note_es: Jengibre intenso y bergamota sobre vainilla cremosa y cedro. Fácil de llevar casi todo el año y difícil de errar.
+  inspired_by_note_es: 'Spectre Ghost trae la misma firma de jengibre rico, especias cálidas y vainilla cremosa del Ani de Nishane, pero prescinde de la salida verde y afilada del original a favor de un primer vaporizado más suave.'
 ---

@@ -72,6 +72,8 @@ pt:
     <p>O Khamrah é um daqueles perfumes que se cheira uma vez e se percebe logo o entusiasmo à volta dele. Experimentámo-lo à espera de o achar sobrevalorizado e ficámos genuinamente impressionados.</p>
     <p>A abertura especiada é intensa e a secagem é extraordinária: profunda, resinosa, com aquele tipo de calor que fica connosco durante horas. Na roupa dura dias. Em termos de desempenho, supera com folga perfumes que custam cinco vezes mais.</p>
     <p>Um aviso que damos a todos os clientes: vá com calma. Este não é um perfume de cinco borrifadelas. Uma ou duas nos pontos de pulsação são tudo o que precisa, o resto faz-se sozinho. Acerte nisso e será das melhores coisas que vai cheirar durante todo o inverno.</p>
+  blind_buy_note_pt: 'Canela intensa e tâmaras sobre um âmbar resinoso e espesso. Compre com confiança se os gourmands especiados são o seu mundo, e vá com calma, uma ou duas borrifadelas chegam mesmo.'
+  inspired_by_note_pt: 'o mesmo calor gourmand de conhaque, baunilha e canela, com sillage mais rico'
 es:
   name_es: Lattafa Khamrah 100ml
   description_short_es: 'Rico, especiado y profundamente goloso. Uno de los perfumes árabes más aclamados, con una salida intensa de canela y dátiles y un fondo resinoso extraordinario.'
@@ -84,4 +86,6 @@ es:
     <p>Khamrah es uno de esos perfumes que hueles una vez y entiendes al momento tanto revuelo. Lo probamos esperando que estuviera sobrevalorado y nos dejó realmente impresionados.</p>
     <p>La salida especiada es intensa y el fondo es extraordinario: profundo, resinoso, con ese tipo de calidez que te acompaña durante horas. En la ropa aguanta días. En rendimiento, supera con holgura a perfumes que cuestan cinco veces más.</p>
     <p>Un aviso que damos a todos nuestros clientes: ve con calma. Este no es un perfume de cinco vaporizaciones. Con una o dos en los puntos de pulso tienes de sobra, el resto lo hace solo. Acierta con eso y será de lo mejor que huelas en todo el invierno.</p>
+  blind_buy_note_es: 'Canela intensa y dátiles sobre un ámbar resinoso y espeso. Cómpralo con confianza si los gourmand especiados son lo tuyo, y ve con calma, con una o dos vaporizaciones basta.'
+  inspired_by_note_es: 'el mismo calor gourmand de coñac, vainilla y canela, con una estela más rica'
 ---

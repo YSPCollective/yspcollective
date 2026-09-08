@@ -49,4 +49,8 @@ char_fresh: 4
 char_masculine: 1
 char_unique: 3
 char_versatile: 4
+pt:
+  inspired_by_note_pt: O ADN de lichia e rosa é território clássico do Delina
+es:
+  inspired_by_note_es: El ADN de lichi y rosa es territorio clásico de Delina
 ---

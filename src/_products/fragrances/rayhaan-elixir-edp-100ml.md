@@ -62,4 +62,10 @@ ebay_url: ""
 origin: UAE
 gtin: "6297001571002"
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: 'Hortelã e alfazema sobre mel, tabaco e baunilha bourbon. Doce e bastante ruidoso, e no seu melhor numa noite fora.'
+  inspired_by_note_pt: 'A mesma espinha quente de baunilha e tonka, com a nota de topo xaroposa contida para um uso diário mais equilibrado.'
+es:
+  blind_buy_note_es: 'Menta y lavanda sobre miel, tabaco y vainilla bourbon. Dulce y bastante ruidoso, y en su mejor momento en una noche fuera.'
+  inspired_by_note_es: 'La misma columna cálida de vainilla y tonka, con la nota de salida almibarada contenida para un uso diario más equilibrado.'
 ---

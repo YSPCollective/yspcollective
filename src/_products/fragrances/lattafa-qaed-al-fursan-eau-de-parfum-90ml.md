@@ -64,4 +64,10 @@ inspired_by_name: Creed Aventus
 inspired_by_note: fruity-woody Aventus family, lighter projection and more accessible
 gtin: "6291107455365"
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: 'Ananás sumarento e açafrão sobre âmbar quente e cedro. Um agrada a todos na órbita do Aventus, que serve para quase todas as ocasiões.'
+  inspired_by_note_pt: 'família Aventus frutada e amadeirada, com projeção mais leve e mais acessível'
+es:
+  blind_buy_note_es: 'Piña jugosa y azafrán sobre ámbar cálido y cedro. Un gusta a todos en la órbita de Aventus, que sirve para casi cualquier ocasión.'
+  inspired_by_note_es: 'familia Aventus afrutada y amaderada, con una proyección más ligera y más accesible'
 ---

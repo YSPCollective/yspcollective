@@ -67,4 +67,8 @@ ebay_url: ""
 origin: UAE
 gtin: "6290362346531"
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: 'Morango, caramelo pegajoso e baunilha. Doce, reconfortante e muito querido, por isso um presente de confiança.'
+es:
+  blind_buy_note_es: 'Fresa, caramelo pegajoso y vainilla. Dulce, reconfortante y muy querido, así que un regalo de confianza.'
 ---

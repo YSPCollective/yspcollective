@@ -56,4 +56,8 @@ inspired_by_name: Paco Rabanne Invictus Aqua
 inspired_by_note: Same fresh aquatic-citrus DNA, stronger projection
 gtin: "6291106063233"
 exclude_from_feed: false
+pt:
+  inspired_by_note_pt: 'O mesmo ADN fresco de cítricos aquáticos, com projeção mais forte'
+es:
+  inspired_by_note_es: 'El mismo ADN fresco de cítricos acuáticos, con una proyección más fuerte'
 ---

@@ -66,4 +66,10 @@ ebay_url: ""
 origin: UAE
 gtin: "6294015188639"
 exclude_from_feed: true
+pt:
+  blind_buy_note_pt: 'Cítricos limpos e ar do mar, sem nada de difícil. Um primeiro frasco fácil e um presente seguro.'
+  inspired_by_note_pt: 'A mesma progressão de cítricos luminosos para notas marinhas do êxito de culto da LV, por uma fração do preço.'
+es:
+  blind_buy_note_es: 'Cítricos limpios y aire de mar, sin nada complicado. Un primer frasco fácil y un regalo seguro.'
+  inspired_by_note_es: 'La misma progresión de cítricos luminosos hacia notas marinas del éxito de culto de LV, por una fracción del precio.'
 ---

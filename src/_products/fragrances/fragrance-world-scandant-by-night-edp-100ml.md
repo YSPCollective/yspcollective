@@ -65,4 +65,10 @@ ebay_url: ""
 origin: UAE
 gtin: "6291108322178"
 exclude_from_feed: true
+pt:
+  blind_buy_note_pt: 'Mel espesso e tuberosa, ricos sem pedir desculpa. Feito para quem já adora florais doces e pesados.'
+  inspired_by_note_pt: O mesmo carácter gourmand amelado e com tuberosa do flanker Scandal by Night da JPG.
+es:
+  blind_buy_note_es: 'Miel espesa y nardo, ricos sin pedir perdón. Hecho para quien ya adora los florales dulces y pesados.'
+  inspired_by_note_es: El mismo carácter gourmand amielado y con nardo del flanker Scandal by Night de JPG.
 ---

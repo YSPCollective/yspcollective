@@ -68,4 +68,10 @@ ebay_url: ""
 origin: UAE
 gtin: "6290360373393"
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: 'Folha de violeta e pimenta preta sobre patchouli e baunilha bourbon. Elegante em vez de ruidoso, e usável quase todo o ano se gosta de amadeirados apolvilhados.'
+  inspired_by_note_pt: 'Os críticos falam de uma correspondência de 95%, um pouco mais fresca no topo e com mais âmbar e baunilha na secagem.'
+es:
+  blind_buy_note_es: 'Hoja de violeta y pimienta negra sobre pachulí y vainilla bourbon. Elegante en lugar de ruidoso, y llevable casi todo el año si te gustan los amaderados empolvados.'
+  inspired_by_note_es: 'Los reseñadores hablan de una coincidencia del 95%, algo más fresca en la salida y con más ámbar y vainilla en el fondo.'
 ---

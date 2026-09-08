@@ -73,4 +73,8 @@ accords:
   - warm spicy
 fragrance_family: Floral Oriental
 base_notes: Oakwood, Molasses, Vetiver, Amber, Labdanum
+pt:
+  blind_buy_note_pt: 'Rosa de Taif com ameixa escura, açafrão e incenso fumado. Uma rosa tão dominante divide qualquer sala, por isso é um perfume para quem já usa rosa.'
+es:
+  blind_buy_note_es: 'Rosa de Taif con ciruela oscura, azafrán e incienso ahumado. Una rosa tan dominante divide cualquier sala, así que es un perfume para quien ya lleva rosa.'
 ---

@@ -65,4 +65,10 @@ inspired_by_note: Khadlaj Icon delivers an impressively close 85-90% match to
   sophisticated leathery-amber base at a fraction of the cost.
 gtin: "6298043071215"
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: 'Bergamota e alfazema a evoluir para âmbar fumado e camurça. Elegante, familiar e confortável em quase qualquer lado.'
+  inspired_by_note_pt: 'O Khadlaj Icon consegue uma correspondência impressionante de 85 a 90% ao ADN de luxo do Bleu de Chanel, com uma abertura cítrica ligeiramente mais luminosa e fresca que seca de forma fluida para aquela base fumada, quente e sofisticada de couro e âmbar, por uma fração do custo.'
+es:
+  blind_buy_note_es: 'Bergamota y lavanda evolucionando hacia ámbar ahumado y ante. Elegante, familiar y cómodo en casi cualquier sitio.'
+  inspired_by_note_es: 'Khadlaj Icon logra una coincidencia impresionante del 85 al 90% con el ADN de lujo de Bleu de Chanel, con una salida cítrica algo más luminosa y fresca que baja de forma fluida hacia ese fondo ahumado, cálido y sofisticado de cuero y ámbar, por una fracción del coste.'
 ---

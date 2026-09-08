@@ -69,4 +69,8 @@ accords:
   - powdery
 fragrance_family: Aquatic Oriental
 base_notes: Vanilla, Tonka Bean, White Musk
+pt:
+  inspired_by_note_pt: 'partilha o mesmo ADN sofisticado do JPG Le Male Elixir, mas com uma volta do Médio Oriente muito própria e desempenho superior.'
+es:
+  inspired_by_note_es: 'comparte el mismo ADN sofisticado del JPG Le Male Elixir, pero con un giro de Oriente Medio muy propio y un rendimiento superior.'
 ---

@@ -75,4 +75,8 @@ custom_badge: ""
 stock_quantity: 4
 fragrance_family: Floral Woody Oriental
 base_notes: Sandalwood, Musk, Cypriol
+pt:
+  blind_buy_note_pt: 'Manga, ruibarbo e ananás sobre uma brisa oceânica e sândalo cremoso. Frutado mas não simples, e recompensa o tempo quente.'
+es:
+  blind_buy_note_es: 'Mango, ruibarbo y piña sobre una brisa oceánica y sándalo cremoso. Afrutado pero no simple, y agradece el tiempo cálido.'
 ---

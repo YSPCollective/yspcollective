@@ -73,4 +73,8 @@ description_short: "The finest concentration of one of fragrance's great value
   nuanced than the EDT or EDP, with exceptional longevity. A bold, confident
   masculine fragrance that consistently outperforms its price."
 inspired_by_name: Creed Aventus
+pt:
+  inspired_by_note_pt: 'O mesmo ADN de bétula fumada, ananás e musgo de carvalho, uma das comparações mais próximas de toda a perfumaria'
+es:
+  inspired_by_note_es: 'El mismo ADN de abedul ahumado, piña y musgo de roble, una de las comparaciones más cercanas de toda la perfumería'
 ---

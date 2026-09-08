@@ -70,4 +70,8 @@ accords:
   - fresh
   - fruity
 base_notes: Vanilla, Milk, Musk
+pt:
+  inspired_by_note_pt: 'A mesma ideia gourmand de pistácio cremoso por uma fração do preço, mais uma interpretação livre do que uma correspondência exata'
+es:
+  inspired_by_note_es: 'La misma idea gourmand de pistacho cremoso por una fracción del precio, más una interpretación libre que una coincidencia exacta'
 ---

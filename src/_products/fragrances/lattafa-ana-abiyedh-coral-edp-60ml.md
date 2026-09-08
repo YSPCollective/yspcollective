@@ -65,4 +65,8 @@ inspired_by_note: Lattafa Coral delivers a sweeter, denser punch of candy-like
   Wavechild.
 gtin: "6290362341826"
 exclude_from_feed: false
+pt:
+  inspired_by_note_pt: 'O Lattafa Coral entrega uma versão mais doce e densa de melancia e pêssego acaramelados por uma fração do custo, o que faz dele a alternativa acessível e de grande duração ao lado mais arejado e solar do Wavechild.'
+es:
+  inspired_by_note_es: 'Lattafa Coral entrega una versión más dulce y densa de sandía y melocotón acaramelados por una fracción del coste, lo que lo convierte en la alternativa asequible y de gran duración al lado más aireado y solar de Wavechild.'
 ---

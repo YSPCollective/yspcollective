@@ -68,4 +68,10 @@ inspired_by_note: Strong community consensus placing Shiyaaka Snow in Météore'
   price point.
 gtin: "6291107979335"
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: 'Bergamota efervescente e tangerina a evoluir para néroli limpo e vetiver. Lê-se como sabonete caro, coisa de que quase toda a gente gosta.'
+  inspired_by_note_pt: 'Há um forte consenso na comunidade a colocar o Shiyaaka Snow no ADN do Météore, com cítricos luminosos, especiaria subtil e uma base amadeirada limpa, por um preço bastante mais baixo.'
+es:
+  blind_buy_note_es: 'Bergamota chispeante y mandarina evolucionando hacia neroli limpio y vetiver. Se lee como jabón caro, algo que gusta a casi todo el mundo.'
+  inspired_by_note_es: 'Hay un fuerte consenso en la comunidad que sitúa a Shiyaaka Snow en el ADN de Météore, con cítricos luminosos, especia sutil y un fondo amaderado limpio, a un precio bastante más bajo.'
 ---

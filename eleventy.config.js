@@ -145,7 +145,9 @@ module.exports = function(eleventyConfig) {
     return d.toLocaleDateString();
   });
 
-  eleventyConfig.addFilter("jsonify", value => JSON.stringify(value));
+  // Coerce undefined/null to "" so a missing key never emits a bare hole into
+  // inline JS (e.g. "name_es: ," which is a syntax error and kills the script).
+  eleventyConfig.addFilter("jsonify", value => JSON.stringify(value === undefined || value === null ? '' : value));
   eleventyConfig.addFilter("limit", (arr, n) => arr.slice(0, n));
 
   eleventyConfig.addFilter("selectattr", (arr, attr) => {

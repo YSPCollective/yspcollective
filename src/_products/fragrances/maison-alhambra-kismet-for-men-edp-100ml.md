@@ -62,4 +62,10 @@ inspired_by_note: Shares the same warm patchouli-ambergris backbone, pushed into
   same DNA at a fraction of the price
 gtin: "6291107459257"
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: 'Noz-moscada e madeiras frescas sobre patchouli, cacau escuro e baunilha. Rico e de fim de noite, por isso melhor se já gosta de amadeirados gourmand.'
+  inspired_by_note_pt: 'Partilha a mesma espinha quente de patchouli e âmbar cinzento, empurrada para uma direção gourmand mais escura de café e cacau. Não é uma correspondência nota a nota, mas é o mesmo ADN por uma fração do preço'
+es:
+  blind_buy_note_es: 'Nuez moscada y maderas frescas sobre pachulí, cacao oscuro y vainilla. Rico y de después de anochecer, así que mejor si ya te gustan los amaderados gourmand.'
+  inspired_by_note_es: 'Comparte la misma columna cálida de pachulí y ámbar gris, llevada hacia una dirección gourmand más oscura de café y cacao. No es una coincidencia nota a nota, pero es el mismo ADN por una fracción del precio'
 ---

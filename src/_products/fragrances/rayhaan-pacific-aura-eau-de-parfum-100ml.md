@@ -67,4 +67,10 @@ inspired_by_note: Shares the same coastal citrus-mint-fig DNA, but with
   price.
 gtin: "6297001571170"
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: 'Hortelã fria e tangerina efervescente sobre manjericão, groselha preta e figo. Genuinamente refrescante, e ganha vida no calor a sério.'
+  inspired_by_note_pt: 'Partilha o mesmo ADN costeiro de cítricos, hortelã e figo, mas com projeção e duração visivelmente superiores, e por uma fração do preço da LV.'
+es:
+  blind_buy_note_es: 'Menta fría y mandarina chispeante sobre albahaca, grosella negra e higo. Genuinamente refrescante, y cobra vida en el calor de verdad.'
+  inspired_by_note_es: 'Comparte el mismo ADN costero de cítricos, menta e higo, pero con una proyección y duración notablemente superiores, y por una fracción del precio de LV.'
 ---

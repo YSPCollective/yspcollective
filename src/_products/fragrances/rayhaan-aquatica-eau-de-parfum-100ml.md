@@ -62,4 +62,10 @@ inspired_by_name: "Creed Virgin Island Water "
 inspired_by_note: Same lime-coconut-rum DNA at a fraction of the price, with stronger projection
 gtin: "6297001571330 "
 exclude_from_feed: true
+pt:
+  blind_buy_note_pt: 'Lima cítrica e leite de coco sobre cana-de-açúcar e rum quente. Um tropical a sério, por isso compre com confiança se o coco de praia é a sua praia.'
+  inspired_by_note_pt: 'O mesmo ADN de lima, coco e rum por uma fração do preço, com projeção mais forte'
+es:
+  blind_buy_note_es: 'Lima cítrica y leche de coco sobre caña de azúcar y ron cálido. Un tropical de verdad, así que cómpralo con confianza si el coco de playa es lo tuyo.'
+  inspired_by_note_es: 'El mismo ADN de lima, coco y ron por una fracción del precio, con una proyección más fuerte'
 ---

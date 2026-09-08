@@ -68,4 +68,8 @@ inspired_by_name: Angels' Share Paradis by Kilian
 inspired_by_note: ""
 gtin: "6290171077213"
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: 'Licor de framboesa e canela a derreter em maçã assada com caramelo, conhaque e baunilha. Um perfume de sobremesa a sério, por isso compre com confiança se é isso que procura.'
+es:
+  blind_buy_note_es: 'Licor de frambuesa y canela fundiéndose en manzana asada con caramelo, coñac y vainilla. Un perfume de postre de verdad, así que cómpralo con confianza si es lo que buscas.'
 ---

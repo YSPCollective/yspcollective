@@ -62,4 +62,10 @@ ebay_url: ""
 origin: UAE
 gtin: "6290360379609"
 exclude_from_feed: true
+pt:
+  blind_buy_note_pt: 'Groselha preta e baunilha, quente e fácil de usar. Risco baixo, e boa escolha se for para oferecer.'
+  inspired_by_note_pt: 'A mesma estrutura de groselha preta, rosa e baunilha do Sì Intense da Armani.'
+es:
+  blind_buy_note_es: 'Grosella negra y vainilla, cálido y fácil de llevar. Riesgo bajo, y buena opción si es para regalar.'
+  inspired_by_note_es: 'La misma estructura de grosella negra, rosa y vainilla del Sì Intense de Armani.'
 ---

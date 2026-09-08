@@ -68,4 +68,10 @@ inspired_by_note: Near-identical spiced vanilla profile - the Fragrantica
   niche original retailing at over 10x the price.
 gtin: "6290360375694"
 exclude_from_feed: false
+pt:
+  blind_buy_note_pt: 'Canela, baunilha bourbon e praliné de chocolate. Acolhedor e do agrado geral, por isso uma compra de baixo risco para o frio.'
+  inspired_by_note_pt: 'Perfil de baunilha especiada quase idêntico. A comunidade da Fragrantica considera-o um dos clones mais próximos disponíveis, com o original de nicho a custar mais de dez vezes mais.'
+es:
+  blind_buy_note_es: 'Canela, vainilla bourbon y praliné de chocolate. Acogedor y del gusto general, así que una compra de bajo riesgo para el frío.'
+  inspired_by_note_es: 'Perfil de vainilla especiada casi idéntico. La comunidad de Fragrantica lo considera uno de los clones más cercanos disponibles, con el original de nicho costando más de diez veces más.'
 ---
