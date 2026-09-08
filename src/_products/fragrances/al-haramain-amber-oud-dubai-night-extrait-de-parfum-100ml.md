@@ -7,16 +7,25 @@ brand: Al Haramain
 gender: Men
 size: 100ml
 concentration: Extrait de Parfum
-badge: Curated
+badge: Premium
 stock_status: in_stock
+stock_quantity: 2
 featured: true
 published: true
 date_added: 2026-06-02
 best_for: Night time wear, Winter/Spring/Autumn
+season:
+  - Autumn
+  - Winter
+blind_buy_rating: Know Your Notes
+blind_buy_note: A thrilling blind buy for the bold, this is a rich, nuclear
+  powerhouse crafted exclusively for those who adore luxurious saffron, creamy
+  tonka, and opulent oud.
 char_sweet: 2
 char_fresh: 1
 char_masculine: 4
 char_unique: 4
+char_versatile: 2
 top_notes: Saffron, Bergamot, Elemi
 heart_notes: Agarwood, Bulgarian Rose, Lily of the Valley
 accords_text: oud, amber, saffron, woody, smoky, floral, incense, resinous
@@ -31,7 +40,7 @@ gallery:
   - /images/uploads/al-haramain-amber-oud-dubai-night-pyramid.jpeg
   - /images/uploads/al-haramain-amber-oud-dubai-night-3.jpeg
   - /images/uploads/al-haramain-amber-oud-dubai-night-2.jpeg
-description_short: A bold, smoky oriental from Al Haramain — one of the Gulf's
+description_short: A bold, smoky oriental from Al Haramain - one of the Gulf's
   most established fragrance houses. Dubai Night is a dark, addictive blend of
   oud and amber with serious projection and all-night longevity.
 description_full: >
@@ -64,8 +73,6 @@ accords:
   - vanilla
   - fresh spicy
   - metallic
-stock_quantity: 2
 fragrance_family: Woody Oriental Oud
-char_versatile: 2
 base_notes: Tonka Bean, Amber, White Must, Oakmoss
 ---
