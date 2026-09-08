@@ -1,5 +1,9 @@
 ---
+name: Khadlaj Cloud Candy Extrait de Parfum 100ml
+slug: khadlaj-cloud-candy-extrait-100ml
+price: "28.00"
 rrp: ""
+brand: Khadlaj
 gender: Women
 size: 100ml
 concentration: Extrait de Parfum
@@ -13,11 +17,20 @@ published: true
 date_added: 2026-08-07
 fragrance_family: Sweet Gourmand Fruity
 best_for: Everyday wear, Autumn/Winter, Younger/playful tastes
+season:
+  - Autumn
+  - Winter
+blind_buy_rating: Know Your Notes
+blind_buy_note: " ☁️ The ultimate dream for sweet tooth lovers, this viral
+  autumn, winter, and spring masterpiece wraps fluffy marshmallow and whipped
+  cream around juicy strawberries and sweet vanilla sugar"
+char_sweet: 5
 char_fresh: 2
 char_masculine: 1
 char_unique: 2
 char_versatile: 3
 top_notes: Strawberry, Green Tangerine, Freesia
+heart_notes: Marshmallow, Coconut, Whipped Cream
 base_notes: White Musk, Vanilla, Sugar, Raspberry, Ambroxan
 accords_text: gourmand, sweet, strawberry, creamy, musk, vanilla
 longevity: 6-8 hours
@@ -52,12 +65,6 @@ inspired_by_note: A sophisticated alternative to Kayali Yum Boujee Marshmallow |
   81, Khadlaj Cloud Candy envelops the skin in an exquisite blend of fluffy pink
   marshmallow, sun-ripened strawberry, and whipped vanilla cream.
 ebay_url: ""
-name: Khadlaj Cloud Candy Extrait de Parfum 100ml
-slug: khadlaj-cloud-candy-extrait-100ml
-price: "28.00"
-brand: Khadlaj
-char_sweet: 5
-heart_notes: Marshmallow, Coconut, Whipped Cream
 origin: UAE
 gtin: "6291107979557"
 exclude_from_feed: false
