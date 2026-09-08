@@ -14,6 +14,14 @@ published: true
 date_added: 2026-06-02
 fragrance_family: Oriental Woody
 best_for: Evening, Autumn, Winter, Date Night
+season:
+  - Autumn
+  - Winter
+blind_buy_rating: Know Your Notes
+blind_buy_note: An elite autumn and winter masterpiece, this sophisticated blind
+  buy captures pure high-class luxury, balancing sharp nutmeg and fresh woody
+  notes over a rich, smooth base of earthy patchouli, dark cacao, and warm
+  vanilla.
 char_sweet: 4
 char_fresh: 1
 char_masculine: 4
@@ -43,26 +51,18 @@ description_full: >
   <p>The dry-down brings vanilla and vetiver together in a smooth, earthy finish that anchors the fragrance beautifully and lingers for hours. It's a complex, layered composition that rewards patience — give it 20 minutes and it reveals itself fully.</p>
 ysp_thoughts: >
   <p>YSL's Tuxedo, from the Vestiaire des Parfums line, is built around a
-  refined patchouli-ambergris-rose accord — sophisticated, hard to find
-  outside YSL boutiques, and priced well over €150.</p>
+  refined patchouli-ambergris-rose accord — sophisticated, hard to find outside
+  YSL boutiques, and priced well over €150.</p>
 
-  <p>Kismet isn't a note-for-note match, but it shares that same warm,
-  earthy patchouli backbone and pushes it in a darker, more gourmand
-  direction — coffee and cacao add a rich depth the original doesn't have,
-  while vetiver and vanilla keep the base grounded rather than sweet.</p>
+  <p>Kismet isn't a note-for-note match, but it shares that same warm, earthy patchouli backbone and pushes it in a darker, more gourmand direction — coffee and cacao add a rich depth the original doesn't have, while vetiver and vanilla keep the base grounded rather than sweet.</p>
 
-  <p>For anyone who likes Tuxedo's mood but wants something warmer, darker
-  and far more affordable for daily wear, Kismet is a genuinely solid
-  alternative.</p>
+  <p>For anyone who likes Tuxedo's mood but wants something warmer, darker and far more affordable for daily wear, Kismet is a genuinely solid alternative.</p>
 
-  <p>Performance is consistently good — around 8-10 hours with a moderate
-  projection that settles close to the skin after the first hour. For the
-  price, it's one of the most rewarding bottles in the Maison Alhambra
-  range.</p>
+  <p>Performance is consistently good — around 8-10 hours with a moderate projection that settles close to the skin after the first hour. For the price, it's one of the most rewarding bottles in the Maison Alhambra range.</p>
 inspired_by_name: YSL Tuxedo
-inspired_by_note: Shares the same warm patchouli-ambergris backbone, pushed
-  into a darker coffee-cacao gourmand direction — not a note-for-note match,
-  but the same DNA at a fraction of the price
+inspired_by_note: Shares the same warm patchouli-ambergris backbone, pushed into
+  a darker coffee-cacao gourmand direction — not a note-for-note match, but the
+  same DNA at a fraction of the price
 gtin: "6291107459257"
 exclude_from_feed: false
 ---
