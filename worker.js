@@ -845,7 +845,7 @@ const PRODUCTS = [
     "price": "€33.50",
     "brand": "Gulf Orchid",
     "gender": "Unisex",
-    "stock": "in_stock",
+    "stock": "sold_out",
     "accords": [
       "citrus",
       "woody",
@@ -865,8 +865,8 @@ const PRODUCTS = [
     "projection": "Moderate",
     "best_for": "Daytime wear, spring/summer, casual occasions",
     "inspired_by": "Kayali Yum Pistachio Gelato",
-    "summary": "A playful, gourmand oriental from Gulf Orchid — warm pistachio and creamy sweetness wrapped in soft woods and musk. Unique, comforting, and surprisingly addictive.",
-    "ysp_thoughts": "|"
+    "summary": "A playful, gourmand oriental from Gulf Orchid — warm",
+    "ysp_thoughts": "<p>This one genuinely surprised us. Pistachio as a fragrance note sounds like a gimmick until you actually smell it — and then it just makes sense.</p>"
   },
   {
     "name": "Gulf Orchid Mango Ice Eau de Parfum 100ml",
