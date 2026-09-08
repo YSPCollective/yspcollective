@@ -8,13 +8,19 @@ gender: Unisex
 size: 100ml
 concentration: Extrait de Parfum
 badge: Premium
-custom_badge: ""
 stock_status: in_stock
-stock_quantity: 4
 featured: true
 published: true
 date_added: 2026-06-02
 best_for: Daytime wear, spring/summer, casual occasions
+season:
+  - Spring
+  - Summer
+blind_buy_rating: Know Your Notes
+blind_buy_note: An exquisite year-round tropical masterpiece, this complex,
+  high-performing blind buy blends a sparkling opening of juicy mango, tangy
+  rhubarb, and fresh pineapple with a luxury oceanic breeze and a rich, creamy
+  base of warm sandalwood and ambergris.
 char_sweet: 3
 char_fresh: 4
 char_masculine: 3
@@ -36,15 +42,25 @@ gallery:
   - /images/uploads/swiss-arabian-soul-of-bali-2.jpeg
   - /images/uploads/swiss-arabian-soul-of-bali-3.jpeg
   - /images/uploads/swiss-arabian-soul-of-bali-4.jpeg
-description_short: A lush, tropical escape bottled in an extrait. Soul of Bali blends exotic florals with warm, creamy woods — an escapist fragrance that's rich enough to wear as a signature scent.
-description_full: |
-  <p>Swiss Arabian Soul of Bali Extrait de Parfum is an evocative journey into tropical warmth — think frangipani, ylang-ylang, and jasmine over a base of sandalwood, vanilla, and soft musks.</p>
+description_short: A lush, tropical escape bottled in an extrait. Soul of Bali
+  blends exotic florals with warm, creamy woods — an escapist fragrance that's
+  rich enough to wear as a signature scent.
+description_full: >
+  <p>Swiss Arabian Soul of Bali Extrait de Parfum is an evocative journey into
+  tropical warmth — think frangipani, ylang-ylang, and jasmine over a base of
+  sandalwood, vanilla, and soft musks.</p>
+
   <p>As an extrait concentration, the fragrance sits closer to the skin and unfolds slowly over time, revealing new layers throughout the day.</p>
+
   <p>The opening is bright and floral with a holiday-like freshness; the dry-down is where it becomes truly special — creamy, woody, and deeply comforting.</p>
+
   <p>Longevity is exceptional, often reaching 12+ hours, with intimate projection that makes it feel personal rather than overpowering. A year-round wear, but particularly magnetic in spring and summer.</p>
-ysp_thoughts: |
-  <p>The extrait concentration is the key selling point here — this isn't a standard EDP dressed up in fancier packaging.</p>
+ysp_thoughts: >
+  <p>The extrait concentration is the key selling point here — this isn't a
+  standard EDP dressed up in fancier packaging.</p>
+
   <p>The depth and staying power are genuinely superior, and customers notice that. Soul of Bali sits in a sweet spot: approachable enough for fragrance newcomers, complex enough to satisfy enthusiasts.</p>
+
   <p>It's a strong choice for anyone who wants something that feels premium without the three-figure niche price tag. Good for gifting too — the tropical theme travels well emotionally.</p>
 gtin: "6295124048494"
 accords:
@@ -58,6 +74,8 @@ accords:
   - amber
   - citrus
   - tropical
+custom_badge: ""
+stock_quantity: 4
 fragrance_family: Floral Woody Oriental
 base_notes: Sandalwood, Musk, Cypriol
 ---
