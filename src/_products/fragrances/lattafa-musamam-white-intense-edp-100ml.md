@@ -15,6 +15,15 @@ published: true
 date_added: 2026-06-09
 fragrance_family: Oriental Floral
 best_for: Evening, Date night, Autumn, Winter, Year-round
+season:
+  - Spring
+  - Summer
+  - Autumn
+  - Winter
+blind_buy_rating: Know Your Notes
+blind_buy_note: The ultimate luxury vacation in a bottle, this stunning spring
+  and summer release blends zesty bergamot and fresh orange with a creamy, solar
+  heart of silky coconut, exotic ylang-ylang, and warm, soothing sandalwood.
 char_sweet: 3
 char_fresh: 3
 char_masculine: 2
