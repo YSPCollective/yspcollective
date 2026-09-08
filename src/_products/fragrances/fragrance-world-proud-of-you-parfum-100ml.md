@@ -1,5 +1,9 @@
 ---
+name: Fragrance World Proud of You Parfum 100ml
+slug: fragrance-world-proud-of-you-parfum-100ml
+price: "24.50"
 rrp: ""
+brand: Fragrance World
 gender: Men
 size: 100ml
 concentration: Parfum
@@ -13,11 +17,20 @@ published: true
 date_added: 2026-08-07
 fragrance_family: Oriental Spicy Sweet
 best_for: Evening, Autumn/Winter, Date night
+season:
+  - Autumn
+  - Winter
+blind_buy_rating: Know Your Notes
+blind_buy_note: A rich autumn and winter powerhouse, this captivating scent
+  relies on a dense, cozy blend of caramelized chestnut, smoky vanilla, and
+  aromatic sage. Best for those who love heavy, warm gourmand
+char_sweet: 4
 char_fresh: 2
 char_masculine: 4
 char_unique: 3
 char_versatile: 3
 top_notes: Pink Pepper, Mandarin
+heart_notes: Lavender, Cardamom, Sage
 base_notes: Vanilla, Leather, Chestnut
 accords_text: sweet, spicy, vanilla, leather, aromatic, warm
 longevity: 6-8 hours
@@ -45,12 +58,6 @@ inspired_by_name: Emporio Armani Stronger With You Absolutely
 inspired_by_note: Carries the same warm, sweet chestnut-vanilla signature as
   Armani's Stronger With You Absolutely.
 ebay_url: ""
-name: Fragrance World Proud of You Parfum 100ml
-slug: fragrance-world-proud-of-you-parfum-100ml
-price: "24.50"
-brand: Fragrance World
-char_sweet: 4
-heart_notes: Lavender, Cardamom, Sage
 origin: UAE
 gtin: "6298042002197"
 exclude_from_feed: true
