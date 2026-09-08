@@ -1618,8 +1618,8 @@ const PRODUCTS = [
     "projection": "Moderate - Strong",
     "best_for": "Evening, Date night, Autumn/Winter",
     "inspired_by": "Xerjoff XJ 1861 Naxos",
-    "summary": "A rich, warm oriental opening of lavender, honey and cinnamon settling into a deeply sensual base of tobacco, vanilla and tonka bean. Sophisticated, long-lasting, and genuinely hard to put down.",
-    "ysp_thoughts": "|"
+    "summary": "A rich, warm oriental opening of lavender, honey and cinnamon",
+    "ysp_thoughts": "<p>Xerjoff Naxos is a cult fragrance — honey, lavender and tobacco in a composition that fragrance enthusiasts have been obsessing over for years.</p>"
   },
   {
     "name": "Rayhaan Jungle Vibe Eau de Parfum 100ml",
