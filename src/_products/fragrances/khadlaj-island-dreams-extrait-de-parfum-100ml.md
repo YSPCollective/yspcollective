@@ -15,6 +15,14 @@ published: true
 date_added: 2026-06-05
 fragrance_family: Citrus Aromatic
 best_for: Spring, Summer, Daytime, Office, Casual
+season:
+  - Spring
+  - Summer
+blind_buy_rating: Universal Crowd-Pleaser
+blind_buy_note: A flawless summer crowd-pleaser and refreshing blind buy, this
+  vibrant tropical masterpiece combines a sparkling burst of zesty bergamot,
+  fizzy ginger, and juicy grapefruit over a clean, airy cloud of modern ambroxan
+  and soft musk.
 char_sweet: 1
 char_fresh: 5
 char_masculine: 3
