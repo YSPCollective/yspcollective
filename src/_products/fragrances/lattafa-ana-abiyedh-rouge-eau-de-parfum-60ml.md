@@ -58,6 +58,28 @@ gtin: "6291107454412"
 exclude_from_feed: false
 pt:
   inspired_by_note_pt: 'Partilha o mesmo ADN quente de âmbar, açafrão e madeiras, mais doce e mais frutado e com projeção excelente'
+  name_pt: Lattafa Ana Abiyedh Rouge Eau de Parfum 60ml
+  description_short_pt: 'Uma composição quente, doce e ligeiramente salgada de pera, caramelo e âmbar cinzento, um dos perfumes mais elogiados da gama Lattafa. Ruidoso, duradouro e genuinamente viciante.'
+  description_full_pt: |-
+    <p>O Ana Abiyedh Rouge abre com uma explosão sumarenta e ligeiramente ácida de pera nashi, kumquat e bergamota, antes de assentar rapidamente no seu verdadeiro carácter: caramelo quente e gerânio suave no coração, sustentados por uma base profunda, doce e salgada de âmbar cinzento, musgo de carvalho e almíscar.</p>
+    <p>É o tipo de perfume que se anuncia. A projeção é significativa e a duração ultrapassa de forma consistente as 8 horas na pele.</p>
+    <p>É doce mas ancorado, e aquela nota distinta de âmbar cinzento salgado impede-o de cair no enjoativo. Pouco produto rende muito.</p>
+  ysp_thoughts_pt: |-
+    <p>O Ana Abiyedh Rouge fica na mesma família quente de âmbar e açafrão do Baccarat Rouge 540 da Maison Francis Kurkdjian, um dos perfumes mais reconhecíveis e adorados da última década, que custa cerca de 380 €.</p>
+    <p>O Rouge partilha esse mesmo ADN: o calor doce, a profundidade salgada e amadeirada, a intimidade rente à pele. Não é idêntico, porque aposta mais no doce e no frutado, mas o parecer de família é inconfundível, e as pessoas relatam consistentemente que lhes perguntam o que trazem.</p>
+    <p>As críticas dividem-se quanto a ser uma correspondência próxima ou uma coisa por si só, e achamos que essa é a forma mais honesta de o dizer: é inspirado nesse mundo, mas tem personalidade própria.</p>
+    <p>De uma forma ou de outra, tem sido um dos artigos mais constantes da gama Lattafa há anos e, a este preço, o risco de o experimentar é basicamente nulo.</p>
 es:
   inspired_by_note_es: 'Comparte el mismo ADN cálido de ámbar, azafrán y maderas, más dulce y más afrutado y con una proyección excelente'
+  name_es: Lattafa Ana Abiyedh Rouge Eau de Parfum 60ml
+  description_short_es: 'Una composición cálida, dulce y ligeramente salada de pera, caramelo y ámbar gris, uno de los perfumes más elogiados de la gama Lattafa. Ruidoso, duradero y genuinamente adictivo.'
+  description_full_es: |-
+    <p>Ana Abiyedh Rouge abre con una explosión jugosa y algo ácida de pera nashi, kumquat y bergamota, antes de asentarse enseguida en su verdadero carácter: caramelo cálido y geranio suave en el corazón, sostenidos por un fondo profundo, dulce y salado de ámbar gris, musgo de roble y almizcle.</p>
+    <p>Es el tipo de perfume que se anuncia. La proyección es significativa y la duración supera de forma constante las 8 horas en piel.</p>
+    <p>Es dulce pero anclado, y esa nota distintiva de ámbar gris salado evita que caiga en lo empalagoso. Con poca cantidad basta.</p>
+  ysp_thoughts_es: |-
+    <p>Ana Abiyedh Rouge se sitúa en la misma familia cálida de ámbar y azafrán que el Baccarat Rouge 540 de Maison Francis Kurkdjian, uno de los perfumes más reconocibles y queridos de la última década, que cuesta unos 380 €.</p>
+    <p>Rouge comparte ese mismo ADN: la calidez dulce, la profundidad salada y amaderada, la intimidad pegada a la piel. No es idéntico, porque apuesta más por lo dulce y lo afrutado, pero el parecido de familia es inconfundible, y la gente cuenta de forma constante que le preguntan qué lleva.</p>
+    <p>Las reseñas se dividen sobre si es una coincidencia cercana o una cosa por sí misma, y creemos que esa es la forma más honesta de decirlo: está inspirado en ese mundo, pero tiene personalidad propia.</p>
+    <p>De una forma u otra, lleva años siendo uno de los artículos más constantes de la gama Lattafa y, a este precio, el riesgo de probarlo es básicamente nulo.</p>
 ---

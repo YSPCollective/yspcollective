@@ -61,4 +61,26 @@ accords_text: citrus, coconut, vanilla, sweet, ozonic, aquatic, caramel, fruity,
 description_short: A sun-drenched, tropical gourmand from Paris Corner — creamy
   coconut and warm lagoon vibes bottled into an EDP that feels like a holiday
   you don't want to end.
+pt:
+  name_pt: Ministry of Gourmand Coconut Lagoon 100ml
+  description_short_pt: 'Um gourmand tropical cheio de sol da Paris Corner, com coco cremoso e um ambiente quente de lagoa engarrafados num EDP que parece umas férias que não queremos que acabem.'
+  description_full_pt: |-
+    <p>O Ministry of Gourmand Coconut Lagoon abre com uma explosão tropical luminosa de coco e frutos exóticos que nos transporta de imediato para um sítio quente e sem pressas.</p>
+    <p>O coração desenvolve um carácter mais suave e mais cremoso, com flor de tiaré e frangipani a acrescentar um calor floral que o impede de se ler como puramente comestível. A base de baunilha, sândalo e almíscares suaves ancora tudo lindamente, dando ao perfume um calor de pele que o faz sentir genuinamente íntimo.</p>
+    <p>A composição no seu conjunto caminha entre o gourmand e o floral tropical com verdadeira perícia: doce o suficiente para ser indulgente, fresco o suficiente para se usar no calor. A duração fica entre as 7 e as 9 horas, com um rasto suave e envolvente.</p>
+    <p>Um encaixe natural para o verão, para a praia e para quem quer que o seu perfume seja uma fuga.</p>
+  ysp_thoughts_pt: |-
+    <p>A Ministry of Gourmand faz exatamente aquilo que o nome sugere. É a sua especialidade, e nota-se. O Coconut Lagoon é o tipo de perfume que nos põe de bom humor antes sequer de sairmos de casa.</p>
+    <p>Escolhemo-lo porque cumpre um objetivo muito específico que poucos perfumes cumprem bem: genuinamente tropical sem cheirar a protetor solar, genuinamente doce sem ser enjoativo. É alegre, e às vezes é isso mesmo que um perfume deve ser.</p>
+es:
+  name_es: Ministry of Gourmand Coconut Lagoon 100ml
+  description_short_es: 'Un gourmand tropical lleno de sol de Paris Corner, con coco cremoso y un ambiente cálido de laguna embotellados en un EDP que parece unas vacaciones que no quieres que acaben.'
+  description_full_es: |-
+    <p>Ministry of Gourmand Coconut Lagoon abre con una explosión tropical luminosa de coco y frutas exóticas que te transporta de inmediato a un sitio cálido y sin prisas.</p>
+    <p>El corazón desarrolla un carácter más suave y más cremoso, con flor de tiaré y frangipani añadiendo una calidez floral que evita que se lea como puramente comestible. El fondo de vainilla, sándalo y almizcles suaves lo ancla todo maravillosamente, dando al perfume una calidez de piel que lo hace sentir genuinamente íntimo.</p>
+    <p>La composición en su conjunto camina entre el gourmand y el floral tropical con verdadera pericia: dulce para resultar goloso, fresco para llevarse en el calor. La duración queda entre las 7 y las 9 horas, con una estela suave y envolvente.</p>
+    <p>Un encaje natural para el verano, para la playa y para quien quiera que su perfume sea una escapada.</p>
+  ysp_thoughts_es: |-
+    <p>Ministry of Gourmand hace exactamente lo que el nombre sugiere. Es su especialidad, y se nota. Coconut Lagoon es el tipo de perfume que te pone de buen humor antes incluso de salir de casa.</p>
+    <p>Lo elegimos porque cumple un objetivo muy concreto que pocos perfumes cumplen bien: genuinamente tropical sin oler a protector solar, genuinamente dulce sin ser empalagoso. Es alegre, y a veces es justo eso lo que un perfume debe ser.</p>
 ---

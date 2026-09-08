@@ -75,6 +75,26 @@ description_short: "The finest concentration of one of fragrance's great value
 inspired_by_name: Creed Aventus
 pt:
   inspired_by_note_pt: 'O mesmo ADN de bétula fumada, ananás e musgo de carvalho, uma das comparações mais próximas de toda a perfumaria'
+  name_pt: Armaf Club de Nuit Intense 150ml
+  description_short_pt: 'A melhor concentração de uma das grandes histórias de relação qualidade-preço da perfumaria. O Parfum de 150ml pega no lendário perfil de bétula fumada e groselha preta do Club de Nuit Intense Man e refina-o: mais suave, mais terroso e mais matizado do que o EDT ou o EDP, com duração excecional. Um masculino ousado e confiante que supera consistentemente o seu preço.'
+  description_full_pt: |-
+    <p>O Club de Nuit Intense Man dispensa apresentações, porque tem sido um dos perfumes masculinos mais discutidos da última década. A concentração Parfum em 150ml é a melhor versão que a Armaf produziu deste ADN.</p>
+    <p>A abertura chega com a explosão característica de maçã, ananás e bergamota afiadas com groselha preta. Viva e centrada nos cítricos, com um toque de limão. A abertura é mais ousada do que se esperaria de um Parfum, mas passa depressa para o coração, que é onde esta concentração se distingue. A bétula, a nota fumada e distinta que está na alma deste perfume, chega com mais profundidade e menos aresta do que no EDT, e fica ao lado da rosa e do jasmim de uma forma que parece genuinamente refinada em vez de simplesmente poderosa. A secagem em patchouli, almíscar e baunilha é quente, terrosa e viciante: duradoura, íntima e confiante.</p>
+    <p>Vários críticos que tiveram todas as concentrações classificam o Parfum como a versão mais completa, mais suave do que o EDT e com mais carácter do que o EDP. A 150ml, é também um valor excecional por mililitro. A duração fica com fiabilidade entre as 10 e as 14 horas.</p>
+  ysp_thoughts_pt: |-
+    <p>O Creed Aventus é um ícone genuíno, com bétula fumada, groselha preta, ananás e aquela base quente que nos acompanha o dia todo. Também custa mais de 300 € por 100ml e teve problemas de consistência bem documentados ao longo dos anos.</p>
+    <p>O Club de Nuit Intense Man tem sido a resposta da comunidade da perfumaria a isso há quase uma década. A concentração Parfum em 150ml é a versão a levar: os críticos que têm o Aventus e todas as concentrações do CDNIM apontam consistentemente esta como a mais satisfatória para o dia a dia. O patchouli na base acrescenta uma qualidade terrosa e uma suavidade que faltam às outras concentrações.</p>
+    <p>Se anda a usar o EDP de 105ml, o salto para o Parfum nota-se de imediato. Se está a chegar agora a este perfume, comece por aqui.</p>
 es:
   inspired_by_note_es: 'El mismo ADN de abedul ahumado, piña y musgo de roble, una de las comparaciones más cercanas de toda la perfumería'
+  name_es: Armaf Club de Nuit Intense 150ml
+  description_short_es: 'La mejor concentración de una de las grandes historias de relación calidad-precio de la perfumería. El Parfum de 150ml toma el legendario perfil de abedul ahumado y grosella negra del Club de Nuit Intense Man y lo refina: más suave, más terroso y más matizado que el EDT o el EDP, con una duración excepcional. Un masculino atrevido y seguro que supera consistentemente su precio.'
+  description_full_es: |-
+    <p>Club de Nuit Intense Man no necesita presentación, porque ha sido uno de los perfumes masculinos más discutidos de la última década. La concentración Parfum en 150ml es la mejor versión que Armaf ha producido de este ADN.</p>
+    <p>La salida llega con la explosión característica de manzana, piña y bergamota afiladas con grosella negra. Viva y centrada en los cítricos, con un toque de limón. La salida es más atrevida de lo que cabría esperar de un Parfum, pero pasa rápido al corazón, que es donde esta concentración se distingue. El abedul, la nota ahumada y distintiva que está en el alma de este perfume, llega con más profundidad y menos filo que en el EDT, y se sitúa junto a la rosa y el jazmín de una forma que resulta genuinamente refinada en lugar de simplemente potente. La bajada en pachulí, almizcle y vainilla es cálida, terrosa y adictiva: duradera, íntima y segura.</p>
+    <p>Varios reseñadores que han tenido todas las concentraciones clasifican el Parfum como la versión más completa, más suave que el EDT y con más carácter que el EDP. A 150ml, es también un valor excepcional por mililitro. La duración queda con fiabilidad entre las 10 y las 14 horas.</p>
+  ysp_thoughts_es: |-
+    <p>Creed Aventus es un icono genuino, con abedul ahumado, grosella negra, piña y ese fondo cálido que te acompaña todo el día. También cuesta más de 300 € por 100ml y ha tenido problemas de consistencia bien documentados a lo largo de los años.</p>
+    <p>Club de Nuit Intense Man ha sido la respuesta de la comunidad de la perfumería a eso desde hace casi una década. La concentración Parfum en 150ml es la versión que hay que llevarse: los reseñadores que tienen Aventus y todas las concentraciones del CDNIM señalan consistentemente esta como la más satisfactoria para el día a día. El pachulí del fondo añade una cualidad terrosa y una suavidad que les faltan a las otras concentraciones.</p>
+    <p>Si llevas el EDP de 105ml, el salto al Parfum se nota de inmediato. Si llegas ahora a este perfume, empieza por aquí.</p>
 ---

@@ -70,7 +70,29 @@ exclude_from_feed: false
 pt:
   blind_buy_note_pt: 'Café torrado, amêndoa e cacau, na versão que agrada a toda a gente. Compra segura para quem gosta da família do Good Girl.'
   inspired_by_note_pt: 'A mesma pirâmide olfativa icónica, com abertura de amêndoa e café, coração de tuberosa e jasmim e secagem de tonka e cacau, por uma fração do preço.'
+  name_pt: Fragrance World Classy Chic Girl Eau de Parfum 90ml
+  description_short_pt: 'O perfume de duplo carácter que o Good Girl da Carolina Herrera tornou famoso, reimaginado pela Fragrance World a um preço acessível. Amêndoa e café sobre um coração exuberante de tuberosa e jasmim, com uma secagem viciante de tonka, cacau e praliné.'
+  description_full_pt: |-
+    <p>O Classy Chic Girl está construído à volta de uma das pirâmides olfativas mais reconhecíveis da perfumaria moderna, o mesmo ADN que fez do Good Girl da Carolina Herrera um êxito global. Se adora esse perfume mas não o preço, é esta a conversa que andava à espera de ter.</p>
+    <p>A abertura é confiante e distinta: amêndoa amarga e café torrado atravessam bergamota luminosa e limão, criando aquele contraste imediatamente reconhecível entre escuridão arrojada e frescura cítrica. Não cheira a barato, cheira a intencional.</p>
+    <p>É no coração que ganha a sua reputação. Tuberosa, jasmim Sambac, flor de laranjeira e rosa criam um núcleo floral luminoso e ligeiramente inebriante, feminino sem ser delicado, opulento sem ser pesado.</p>
+    <p>Depois a base assume o comando, e é aí que o Classy Chic Girl vive. Fava tonka, cacau, baunilha, praliné e âmbar assentam num rasto quente e viciante que fica rente à pele e melhora a cada hora. O almíscar, a canela e o patchouli acrescentam profundidade sem excesso de doce.</p>
+    <p>Uma escolha de destaque para a noite, para o outono, ou para quem quer cheirar a caro sem pagar preços de designer.</p>
+  ysp_thoughts_pt: |-
+    <p>O Classy Chic Girl fica num dos nossos pontos preferidos em relação qualidade-preço: uma pirâmide olfativa que a comunidade da perfumaria conhece e adora, a um preço que torna a decisão fácil. O ADN do Good Girl, com tuberosa, tonka e cacau, está bem presente.</p>
+    <p>Recomendamo-lo a quem procura um feminino confiante e pronto para a noite, que não desapareça ao fim de uma hora. O design do frasco é limpo e apresentável, e serve perfeitamente para oferecer.</p>
 es:
   blind_buy_note_es: 'Café tostado, almendra y cacao, en la versión que gusta a todo el mundo. Compra segura para quien disfrute de la familia de Good Girl.'
   inspired_by_note_es: 'La misma pirámide olfativa icónica, con salida de almendra y café, corazón de nardo y jazmín y fondo de tonka y cacao, por una fracción del precio.'
+  name_es: Fragrance World Classy Chic Girl Eau de Parfum 90ml
+  description_short_es: 'El perfume de doble carácter que hizo famoso el Good Girl de Carolina Herrera, reimaginado por Fragrance World a un precio accesible. Almendra y café sobre un corazón exuberante de nardo y jazmín, con una bajada adictiva de tonka, cacao y praliné.'
+  description_full_es: |-
+    <p>Classy Chic Girl está construido en torno a una de las pirámides olfativas más reconocibles de la perfumería moderna, el mismo ADN que convirtió al Good Girl de Carolina Herrera en un éxito global. Si adoras ese perfume pero no su precio, esta es la conversación que estabas esperando tener.</p>
+    <p>La salida es segura y distintiva: almendra amarga y café tostado atraviesan bergamota luminosa y limón, creando ese contraste inmediatamente reconocible entre oscuridad audaz y frescor cítrico. No huele a barato, huele a intencionado.</p>
+    <p>Es en el corazón donde se gana su reputación. Nardo, jazmín Sambac, azahar y rosa crean un núcleo floral luminoso y ligeramente embriagador, femenino sin ser delicado, opulento sin ser pesado.</p>
+    <p>Después el fondo toma el mando, y es ahí donde vive Classy Chic Girl. Haba tonka, cacao, vainilla, praliné y ámbar se asientan en una estela cálida y adictiva que se queda pegada a la piel y mejora con cada hora. El almizcle, la canela y el pachulí añaden profundidad sin exceso de dulzor.</p>
+    <p>Una elección destacada para la noche, para el otoño, o para quien quiera oler a caro sin pagar precios de diseñador.</p>
+  ysp_thoughts_es: |-
+    <p>Classy Chic Girl se sitúa en uno de nuestros puntos preferidos de relación calidad-precio: una pirámide olfativa que la comunidad de la perfumería conoce y adora, a un precio que hace fácil la decisión. El ADN de Good Girl, con nardo, tonka y cacao, está bien presente.</p>
+    <p>Lo recomendamos a quien busque un femenino seguro y listo para la noche, que no desaparezca al cabo de una hora. El diseño del frasco es limpio y presentable, y sirve perfectamente para regalar.</p>
 ---

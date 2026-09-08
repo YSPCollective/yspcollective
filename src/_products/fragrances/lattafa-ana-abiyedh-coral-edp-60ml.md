@@ -67,6 +67,28 @@ gtin: "6290362341826"
 exclude_from_feed: false
 pt:
   inspired_by_note_pt: 'O Lattafa Coral entrega uma versão mais doce e densa de melancia e pêssego acaramelados por uma fração do custo, o que faz dele a alternativa acessível e de grande duração ao lado mais arejado e solar do Wavechild.'
+  name_pt: Lattafa Ana Abiyedh Coral EDP 60ml
+  description_short_pt: 'Um perfume de verão alegre e cheio de sol, que abre com melancia sumarenta, pêssego e laranja, evolui para um coração tropical cremoso de coco e flores brancas e termina suavemente com baunilha e âmbar. O Ana Abiyedh Coral é sol engarrafado.'
+  description_full_pt: |-
+    <p>O Ana Abiyedh Coral abre com uma onda de melancia madura, pêssego e laranja, genuinamente sumarenta em vez de sintética, com uma frescura que levanta logo o ânimo. A melancia mantém-se presente do princípio ao fim e é claramente a estrela: luminosa, doce e assumidamente divertida.</p>
+    <p>À medida que se desenvolve, o coco chega ao coração, não o de protetor solar, mas mais leve e mais leitoso, como água de coco. Os florais brancos acrescentam uma dimensão suave e apolvilhada sem tomar conta do conjunto, o que mantém a composição fácil em vez de pesada. A secagem traz baunilha e âmbar suaves que aquecem tudo ligeiramente sem perder o carácter tropical.</p>
+    <p>O desempenho fica confortavelmente nas 6 a 8 horas na pele, e mais na roupa. A projeção é simpática em vez de assertiva, com elogios de perto em vez de encher uma sala, o que é exatamente o correto para este perfil. Os utilizadores notam consistentemente que recolhe comentários sem ser óbvio nem esmagador.</p>
+    <p>É um perfume descontraído e de bem-estar, com complexidade suficiente para se manter interessante ao longo de um dia inteiro.</p>
+  ysp_thoughts_pt: |-
+    <p>O Ana Abiyedh original já é um dos perfumes acessíveis mais adorados da linha Lattafa. O Coral pega no mesmo espírito acessível e vai a fundo no verão: centrado na melancia, tropical e despreocupado.</p>
+    <p>A comunidade da perfumaria comparou-o ao Donna Born in Roma Coral Fantasy e apontou-o como uma alternativa fácil ao ADN do Wavechild da Room 1015, o que diz bem que joga muito acima do seu escalão de preço.</p>
+    <p>Neste tamanho e a este preço, é o tipo de frasco que se leva para férias de praia e fins de semana quentes sem hesitação nenhuma. Se quer algo que o faça sentir num sítio quente, o Coral entrega isso sem pedir muito em troca.</p>
 es:
   inspired_by_note_es: 'Lattafa Coral entrega una versión más dulce y densa de sandía y melocotón acaramelados por una fracción del coste, lo que lo convierte en la alternativa asequible y de gran duración al lado más aireado y solar de Wavechild.'
+  name_es: Lattafa Ana Abiyedh Coral EDP 60ml
+  description_short_es: 'Un perfume de verano alegre y lleno de sol, que abre con sandía jugosa, melocotón y naranja, evoluciona hacia un corazón tropical cremoso de coco y flores blancas y termina suavemente con vainilla y ámbar. Ana Abiyedh Coral es sol embotellado.'
+  description_full_es: |-
+    <p>Ana Abiyedh Coral abre con una ola de sandía madura, melocotón y naranja, genuinamente jugosa en lugar de sintética, con un frescor que levanta el ánimo al instante. La sandía se mantiene presente de principio a fin y es claramente la estrella: luminosa, dulce y abiertamente divertida.</p>
+    <p>A medida que se desarrolla, el coco llega al corazón, no el de protector solar, sino más ligero y más lechoso, como agua de coco. Los florales blancos añaden una dimensión suave y empolvada sin adueñarse del conjunto, lo que mantiene la composición fácil en lugar de pesada. La bajada trae vainilla y ámbar suaves que templan todo ligeramente sin perder el carácter tropical.</p>
+    <p>El rendimiento queda cómodamente en las 6 a 8 horas en piel, y más en la ropa. La proyección es amable en lugar de rotunda, con elogios de cerca en lugar de llenar una sala, que es exactamente lo correcto para este perfil. Los usuarios apuntan de forma constante que recibe comentarios sin ser obvio ni abrumador.</p>
+    <p>Es un perfume relajado y de bienestar, con complejidad suficiente para mantenerse interesante a lo largo de un día entero.</p>
+  ysp_thoughts_es: |-
+    <p>El Ana Abiyedh original ya es uno de los perfumes asequibles más queridos de la línea Lattafa. Coral toma ese mismo espíritu accesible y se va de lleno al verano: centrado en la sandía, tropical y despreocupado.</p>
+    <p>La comunidad de la perfumería lo ha comparado con Donna Born in Roma Coral Fantasy y lo ha señalado como una alternativa fácil al ADN del Wavechild de Room 1015, lo que dice bien a las claras que juega muy por encima de su rango de precio.</p>
+    <p>En este tamaño y a este precio, es el tipo de frasco que te llevas a las vacaciones de playa y a los fines de semana cálidos sin ninguna duda. Si quieres algo que te haga sentir en un sitio cálido, Coral lo entrega sin pedir mucho a cambio.</p>
 ---

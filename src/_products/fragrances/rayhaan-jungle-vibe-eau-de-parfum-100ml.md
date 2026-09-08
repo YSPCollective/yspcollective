@@ -68,7 +68,27 @@ exclude_from_feed: false
 pt:
   blind_buy_note_pt: 'Toranja e folha de figueira verde sobre notas aquáticas de chuva e sândalo. Verde em vez de doce, por isso experimente primeiro se isso lhe for novo.'
   inspired_by_note_pt: 'O Rayhaan Jungle Vibe capta o ADN ultra luxuoso do Santal Greenery de Dries Van Noten, que custa cerca de 350 dólares, juntando uma explosão nítida de toranja e notas verdes molhadas de chuva a um final lindamente cremoso de figo e sândalo suave.'
+  name_pt: Rayhaan Jungle Vibe Eau de Parfum 100ml
+  description_short_pt: Um fresco vibrante e inspirado na natureza da Rayhaan. Bergamota e toranja abrem com energia cítrica limpa antes de o figo e a folha de violeta trazerem um coração verde e ligeiramente cremoso. O sândalo e o almíscar branco dão à base um final suave e rente à pele.
+  description_full_pt: |-
+    <p>O Jungle Vibe é um fresco masculino feito para se usar o ano todo, especialmente forte na primavera e no verão, quando se quer algo limpo, verde e moderno sem esforço.</p>
+    <p>A abertura é luminosa e direta: bergamota e toranja entram de imediato com energia cítrica nítida, o tipo de abertura que nos acorda e que parece genuinamente natural em vez de sintética.</p>
+    <p>O coração é o que distingue o Jungle Vibe da maioria da sua categoria. O figo cremoso acrescenta um calor mediterrânico suave e ligeiramente leitoso, enquanto a folha de violeta introduz uma qualidade verde e fresca, nem afiada nem herbácea, mas fria e um pouco húmida, como entrar na sombra. Juntos criam uma nota de coração com carácter a sério, sem excesso de complexidade.</p>
+    <p>A base mantém tudo limpo e usável: o sândalo dá um alicerce amadeirado suave e o almíscar branco prolonga a duração com um final seco e de pele. O resultado é um perfume que se mantém presente sem exigir atenção, fácil de usar em qualquer lado e adequado a qualquer pessoa.</p>
+  ysp_thoughts_pt: |-
+    <p>O Jungle Vibe impressionou-nos por ser tão fácil de usar, limpo e fresco mas com carácter suficiente no coração de figo e folha de violeta para não parecer genérico. É o tipo de perfume de todos os dias que recolhe elogios discretos em vez de ruidosos.</p>
+    <p>Boa duração para um perfume fresco, e a base de sândalo impede-o de ficar plano. Forte relação qualidade-preço para o tempo quente.</p>
 es:
   blind_buy_note_es: 'Pomelo y hoja de higuera verde sobre notas acuáticas de lluvia y sándalo. Verde en lugar de dulce, así que prueba antes si eso te resulta nuevo.'
   inspired_by_note_es: 'Rayhaan Jungle Vibe capta el ADN ultra lujoso del Santal Greenery de Dries Van Noten, que cuesta unos 350 dólares, uniendo una explosión nítida de pomelo y notas verdes mojadas de lluvia a un final bellamente cremoso de higo y sándalo suave.'
+  name_es: Rayhaan Jungle Vibe Eau de Parfum 100ml
+  description_short_es: Un fresco vibrante e inspirado en la naturaleza de Rayhaan. Bergamota y pomelo abren con energía cítrica limpia antes de que el higo y la hoja de violeta traigan un corazón verde y ligeramente cremoso. El sándalo y el almizcle blanco dan al fondo un final suave y pegado a la piel.
+  description_full_es: |-
+    <p>Jungle Vibe es un fresco masculino hecho para llevarse todo el año, especialmente fuerte en primavera y verano, cuando quieres algo limpio, verde y moderno sin esfuerzo.</p>
+    <p>La salida es luminosa y directa: bergamota y pomelo entran de inmediato con energía cítrica nítida, el tipo de salida que te despierta y que parece genuinamente natural en lugar de sintética.</p>
+    <p>El corazón es lo que distingue a Jungle Vibe de la mayoría de su categoría. El higo cremoso añade una calidez mediterránea suave y algo lechosa, mientras que la hoja de violeta introduce una cualidad verde y fresca, ni afilada ni herbácea, sino fría y un poco húmeda, como entrar en la sombra. Juntos crean una nota de corazón con carácter de verdad, sin exceso de complejidad.</p>
+    <p>El fondo mantiene todo limpio y llevable: el sándalo da una base amaderada suave y el almizcle blanco prolonga la duración con un final seco y de piel. El resultado es un perfume que se mantiene presente sin exigir atención, fácil de llevar en cualquier sitio y apropiado para cualquiera.</p>
+  ysp_thoughts_es: |-
+    <p>Jungle Vibe nos impresionó por lo fácil que es de llevar, limpio y fresco pero con suficiente carácter en el corazón de higo y hoja de violeta como para no parecer genérico. Es el tipo de perfume de diario que recibe elogios discretos en lugar de ruidosos.</p>
+    <p>Buena duración para un perfume fresco, y el fondo de sándalo evita que se quede plano. Fuerte relación calidad-precio para el tiempo cálido.</p>
 ---

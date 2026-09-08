@@ -65,7 +65,29 @@ exclude_from_feed: false
 pt:
   blind_buy_note_pt: 'Noz-moscada e madeiras frescas sobre patchouli, cacau escuro e baunilha. Rico e de fim de noite, por isso melhor se já gosta de amadeirados gourmand.'
   inspired_by_note_pt: 'Partilha a mesma espinha quente de patchouli e âmbar cinzento, empurrada para uma direção gourmand mais escura de café e cacau. Não é uma correspondência nota a nota, mas é o mesmo ADN por uma fração do preço'
+  name_pt: Maison Alhambra Kismet for Men EDP 100ml
+  description_short_pt: 'Um gourmand rico e escuro de noz-moscada e especiaria amadeirada que abre para café, cacau e patchouli, e assenta numa base quente de baunilha e vetiver. Sofisticado, masculino e profundamente viciante.'
+  description_full_pt: |-
+    <p>O Kismet abre com uma explosão quente e especiada de noz-moscada e notas amadeiradas, imediatamente escura e intrigante.</p>
+    <p>É no coração que ganha a sua reputação: café e cacau ficam ao lado de patchouli e sândalo, criando uma profundidade gourmand rica que parece genuinamente luxuosa sem cair no doce.</p>
+    <p>A secagem junta baunilha e vetiver num final suave e terroso que ancora lindamente o perfume e permanece durante horas. É uma composição complexa e em camadas que recompensa a paciência: dê-lhe 20 minutos e revela-se por completo.</p>
+  ysp_thoughts_pt: |-
+    <p>O Tuxedo da YSL, da linha Vestiaire des Parfums, está construído à volta de um acorde refinado de patchouli, âmbar cinzento e rosa: sofisticado, difícil de encontrar fora das boutiques YSL e com um preço bem acima dos 150 €.</p>
+    <p>O Kismet não é uma correspondência nota a nota, mas partilha aquela mesma espinha quente e terrosa de patchouli e empurra-a numa direção mais escura e mais gourmand. O café e o cacau acrescentam uma profundidade rica que o original não tem, enquanto o vetiver e a baunilha mantêm a base ancorada em vez de doce.</p>
+    <p>Para quem gosta do ambiente do Tuxedo mas quer algo mais quente, mais escuro e muito mais acessível para o dia a dia, o Kismet é uma alternativa genuinamente sólida.</p>
+    <p>O desempenho é consistentemente bom, à volta das 8 a 10 horas, com uma projeção moderada que se aproxima da pele depois da primeira hora. Pelo preço, é um dos frascos mais recompensadores da gama Maison Alhambra.</p>
 es:
   blind_buy_note_es: 'Nuez moscada y maderas frescas sobre pachulí, cacao oscuro y vainilla. Rico y de después de anochecer, así que mejor si ya te gustan los amaderados gourmand.'
   inspired_by_note_es: 'Comparte la misma columna cálida de pachulí y ámbar gris, llevada hacia una dirección gourmand más oscura de café y cacao. No es una coincidencia nota a nota, pero es el mismo ADN por una fracción del precio'
+  name_es: Maison Alhambra Kismet for Men EDP 100ml
+  description_short_es: 'Un gourmand rico y oscuro de nuez moscada y especia amaderada que abre hacia café, cacao y pachulí, y se asienta en un fondo cálido de vainilla y vetiver. Sofisticado, masculino y profundamente adictivo.'
+  description_full_es: |-
+    <p>Kismet abre con una explosión cálida y especiada de nuez moscada y notas amaderadas, oscura e intrigante de inmediato.</p>
+    <p>Es en el corazón donde se gana su reputación: café y cacao se sitúan junto a pachulí y sándalo, creando una profundidad gourmand rica que resulta genuinamente lujosa sin caer en lo dulce.</p>
+    <p>La bajada une vainilla y vetiver en un final suave y terroso que ancla maravillosamente el perfume y permanece durante horas. Es una composición compleja y en capas que recompensa la paciencia: dale 20 minutos y se revela por completo.</p>
+  ysp_thoughts_es: |-
+    <p>El Tuxedo de YSL, de la línea Vestiaire des Parfums, está construido en torno a un acorde refinado de pachulí, ámbar gris y rosa: sofisticado, difícil de encontrar fuera de las boutiques YSL y con un precio bastante por encima de los 150 €.</p>
+    <p>Kismet no es una coincidencia nota a nota, pero comparte esa misma columna cálida y terrosa de pachulí y la empuja en una dirección más oscura y más gourmand. El café y el cacao añaden una profundidad rica que el original no tiene, mientras que el vetiver y la vainilla mantienen el fondo anclado en lugar de dulce.</p>
+    <p>Para quien le gusta el ambiente del Tuxedo pero quiere algo más cálido, más oscuro y mucho más asequible para el día a día, Kismet es una alternativa genuinamente sólida.</p>
+    <p>El rendimiento es constantemente bueno, en torno a las 8 a 10 horas, con una proyección moderada que se acerca a la piel después de la primera hora. Por lo que cuesta, es uno de los frascos más gratificantes de la gama Maison Alhambra.</p>
 ---
