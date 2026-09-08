@@ -8,13 +8,21 @@ size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: New
 stock_status: in_stock
-stock_quantity: 5
+stock_quantity: 2
 expected_date: June 2026
 featured: false
 published: true
 date_added: 2026-06-17
 fragrance_family: Green Woody Fresh
 best_for: Daily, Warm Weather, Office, Casual
+season:
+  - Spring
+  - Summer
+blind_buy_rating: Know Your Notes
+blind_buy_note: A breathtakingly unique escape for warm weather, this
+  captivating blind buy opens with a crisp wave of zesty grapefruit and green
+  fig leaf before evolving into a luxurious, ultra-creamy base of rain-soaked
+  aquatic notes and smooth sandalwood.
 char_sweet: 1
 char_fresh: 5
 char_masculine: 4
