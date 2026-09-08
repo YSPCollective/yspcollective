@@ -15,6 +15,15 @@ published: true
 date_added: 2026-06-17
 fragrance_family: Aromatic Woody
 best_for: Office, Evening, Special Occasions
+season:
+  - Spring
+  - Autumn
+  - Winter
+blind_buy_rating: Universal Crowd-Pleaser
+blind_buy_note: A flawlessly sophisticated crowd-pleaser, this magnetic blind
+  buy opens with a crisp burst of zesty bergamot and fresh lavender before
+  melting into a luxurious, highly addictive heart of smoky incense, smooth
+  amber, and rich velvet suede
 char_sweet: 1
 char_fresh: 2
 char_masculine: 5
