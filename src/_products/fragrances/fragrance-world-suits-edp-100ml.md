@@ -1,5 +1,9 @@
 ---
+name: Fragrance World Suits Eau de Parfum 100ml
+slug: fragrance-world-suits-edp-100ml
+price: "19.70"
 rrp: ""
+brand: Fragrance World
 gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
@@ -13,11 +17,22 @@ published: true
 date_added: 2026-08-07
 fragrance_family: Woody Spicy Floral
 best_for: Office, Smart-casual, Year-round
+season:
+  - Spring
+  - Autumn
+  - Summer
+  - Winter
+blind_buy_rating: Know Your Notes
+blind_buy_note: An elite autumn and winter masterpiece, this sophisticated blind
+  buy captures pure luxury, balancing crisp violet leaf and sharp black pepper
+  over a rich base of earthy patchouli and smooth bourbon vanilla.
+char_sweet: 3
 char_fresh: 3
 char_masculine: 3
 char_unique: 3
 char_versatile: 4
 top_notes: Violet Leaf, Coriander, Bergamot
+heart_notes: Rose, Black Pepper, Lily-of-the-Valley
 base_notes: Patchouli, Ambergris, Bourbon Vanilla
 accords_text: woody, spicy, floral, powdery, amber, vanilla
 longevity: 4-5 hours
@@ -52,12 +67,6 @@ inspired_by_name: YSL Tuxedo
 inspired_by_note: Reviewers call it a 95% match - a touch fresher on top, with
   more amber and vanilla in the dry-down.
 ebay_url: ""
-name: Fragrance World Suits Eau de Parfum 100ml
-slug: fragrance-world-suits-edp-100ml
-price: "19.70"
-brand: Fragrance World
-char_sweet: 3
-heart_notes: Rose, Black Pepper, Lily-of-the-Valley
 origin: UAE
 gtin: "6290360373393"
 exclude_from_feed: false
