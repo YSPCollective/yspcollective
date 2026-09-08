@@ -1,5 +1,9 @@
 ---
+name: Zimaya Mazaaj Infused Eau de Parfum 100ml
+slug: zimaya-mazaaj-infused-edp-100ml
+price: "25"
 rrp: ""
+brand: Zimaya
 gender: Men
 size: 100ml
 concentration: Eau de Parfum (EDP)
@@ -13,11 +17,21 @@ published: true
 date_added: 2026-08-07
 fragrance_family: Fresh Spicy Woody
 best_for: Daytime, Spring/Summer, Casual wear
+season:
+  - Spring
+  - Summer
+blind_buy_rating: Universal Crowd-Pleaser
+blind_buy_note: A flawless crowd-pleaser and crisp summer blind buy, this viral
+  sensation explodes with sparkling citron and zesty bergamot before evolving
+  into an ultra-clean, sophisticated heart of fresh ginger, elegant neroli, and
+  modern ambroxan.
+char_sweet: 2
 char_fresh: 4
 char_masculine: 4
 char_unique: 3
 char_versatile: 4
 top_notes: Citron, Orange, Bergamot
+heart_notes: Neroli, Ginger
 base_notes: Ambroxan, Olibanum, Wood
 accords_text: citrus, spicy, woody, fresh, ambroxan
 longevity: 4-6 hours (reports vary)
@@ -53,12 +67,6 @@ inspired_by_name: Louis Vuitton Imagination
 inspired_by_note: Same fresh citrus-ambroxan DNA as Imagination, at a fraction
   of the price — the cheapest well-known Imagination dupe
 ebay_url: ""
-name: Zimaya Mazaaj Infused Eau de Parfum 100ml
-slug: zimaya-mazaaj-infused-edp-100ml
-price: "25"
-brand: Zimaya
-char_sweet: 2
-heart_notes: Neroli, Ginger
 origin: UAE
 gtin: "6290171074731"
 exclude_from_feed: false
