@@ -1,5 +1,9 @@
 ---
+name: Lattafa Yara Elixir Eau de Parfum 100ml
+slug: lattafa-yara-elixir-edp-100ml
+price: "26.50"
 rrp: ""
+brand: Lattafa
 gender: Women
 size: 100ml
 concentration: Eau de Parfum (EDP)
@@ -13,11 +17,21 @@ published: true
 date_added: 2026-08-07
 fragrance_family: Oriental Vanilla / Gourmand
 best_for: Evening, Date night, Autumn/Winter
+season:
+  - Autumn
+  - Winter
+blind_buy_rating: Universal Crowd-Pleaser
+blind_buy_note: An addictive crowd-pleaser and seductive blind buy, this viral
+  autumn and winter masterpiece opens with a mouth-watering burst of strawberry
+  s'mores and rich black currant before melting into a luxurious bed of gooey
+  caramel, warm vanilla, and velvety musk.
+char_sweet: 5
 char_fresh: 1
 char_masculine: 1
 char_unique: 2
 char_versatile: 3
 top_notes: Strawberry S'mores, Black Currant
+heart_notes: Jasmine, Orange Blossom
 base_notes: Vanilla, Caramel, Amber, Musk
 accords_text: gourmand, vanilla, caramel, fruity, sweet, amber
 longevity: 6-8 hours
@@ -53,12 +67,6 @@ amazon_url: ""
 inspired_by_name: ""
 inspired_by_note: ""
 ebay_url: ""
-name: Lattafa Yara Elixir Eau de Parfum 100ml
-slug: lattafa-yara-elixir-edp-100ml
-price: "26.50"
-brand: Lattafa
-char_sweet: 5
-heart_notes: Jasmine, Orange Blossom
 origin: UAE
 gtin: "6290362346531"
 exclude_from_feed: false
