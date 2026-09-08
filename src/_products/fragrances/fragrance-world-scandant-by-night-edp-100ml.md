@@ -1,23 +1,37 @@
 ---
+name: Fragrance World Scandant by Night Eau de Parfum 100ml
+slug: fragrance-world-scandant-by-night-edp-100ml
+price: "19.90"
 rrp: ""
+brand: Fragrance World
 gender: Women
 size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Curated
 custom_badge: ""
 stock_status: in_stock
-stock_quantity: 12
+stock_quantity: 7
 expected_date: ""
 featured: true
 published: true
 date_added: 2026-08-07
 fragrance_family: Fruity Floral Oriental
 best_for: Evening, Date night, Cooler seasons, Special occasions
+season:
+  - Autumn
+  - Winter
+blind_buy_rating: Know Your Notes
+blind_buy_note: An intoxicating autumn and winter indulgence, this seductive
+  evening blend is crafted specifically for lovers of heavy gourmands, wrapping
+  thick golden honey and sweet cherry around a rich bed of creamy white florals
+  and warm vanilla
+char_sweet: 4
 char_fresh: 2
 char_masculine: 1
 char_unique: 3
 char_versatile: 3
 top_notes: Honey, Bitter Orange, Citruses
+heart_notes: Cherry, Tuberose, Orange Blossom, Pear, Himalayan Nard (Jatamansi)
 base_notes: Tonka Bean, Vanilla, Patchouli, Sandalwood, Amberwood, White Musk
 accords_text: honey, fruity, floral, sweet, tuberose, amber, musk
 longevity: 6-8 hours
@@ -51,12 +65,6 @@ inspired_by_name: Jean Paul Gaultier Scandal by Night
 inspired_by_note: Same honeyed, tuberose-laced gourmand character as JPG's
   Scandal by Night flanker.
 ebay_url: ""
-name: Fragrance World Scandant by Night Eau de Parfum 100ml
-slug: fragrance-world-scandant-by-night-edp-100ml
-price: "19.90"
-brand: Fragrance World
-char_sweet: 4
-heart_notes: Cherry, Tuberose, Orange Blossom, Pear, Himalayan Nard (Jatamansi)
 origin: UAE
 gtin: "6291108322178"
 exclude_from_feed: true
