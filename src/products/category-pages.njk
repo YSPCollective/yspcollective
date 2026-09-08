@@ -241,6 +241,12 @@ eleventyComputed:
   .cat-stock-flag.flag-last { background: rgba(140, 50, 30, 0.85); }
 
   .cat-product-rating { display: flex; align-items: center; gap: 0.35rem; margin-top: 0.3rem; }
+  .cat-season-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.45rem; }
+  .cat-season-tag {
+    padding: 0.2rem 0.5rem;
+    border: 1px solid var(--sand); background: var(--cream);
+    font-size: 0.62rem; letter-spacing: 0.05em; color: var(--grey);
+  }
   .rating-stars { font-size: 0.72rem; color: #c8a96e; letter-spacing: 0.02em; }
   .rating-count { font-size: 0.65rem; color: var(--grey-light); }
 
@@ -324,7 +330,7 @@ eleventyComputed:
     <div id="cat-no-results" class="cat-no-results" style="display:none">No products found — try a different search or clear the filters.</div>
     {% if catProducts.length %}
       {% for p in catProducts %}
-      <a href="/products/{{ p.slug }}.html" class="cat-product-card" data-price="{{ p.price }}" data-name="{{ p.name }}" data-brand="{{ p.brand }}" data-accords="{{ p.accords | join(',') if p.accords else '' }}" data-scent-family="{{ p.fragrance_family | lower if p.fragrance_family else '' }}" data-stock="{{ p.stock_status }}">
+      <a href="/products/{{ p.slug }}.html" class="cat-product-card" data-price="{{ p.price }}" data-name="{{ p.name }}" data-brand="{{ p.brand }}" data-accords="{{ p.accords | join(',') if p.accords else '' }}" data-scent-family="{{ p.fragrance_family | lower if p.fragrance_family else '' }}" data-season="{{ p.seasons | join(',') if p.seasons else '' }}" data-stock="{{ p.stock_status }}">
         <div class="cat-product-img{{ ' is-sold-out' if p.stock_status === 'sold_out' else '' }}">
           <img src="{{ p.image_main }}" alt="{{ p.name }}" loading="lazy">
           {% set b = p.custom_badge or p.badge %}
@@ -340,6 +346,11 @@ eleventyComputed:
         <div class="cat-product-name">{{ p.name }}</div>
         <div class="cat-product-price">€{{ p.price }}</div>
         {% if p.avg_rating %}<div class="cat-product-rating"><span class="rating-stars">★ {{ p.avg_rating }}</span><span class="rating-count">({{ p.review_count }})</span></div>{% endif %}
+        {% if p.seasons and p.seasons.length %}
+        <div class="cat-season-tags">
+          {% for season in p.seasons %}<span class="cat-season-tag">{{ season | seasonLabel }}</span>{% endfor %}
+        </div>
+        {% endif %}
       </a>
       {% endfor %}
     {% else %}

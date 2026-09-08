@@ -93,6 +93,12 @@ canonical: "https://yspcollective.com/"
   .product-card-name { font-family: var(--serif); font-size: 0.95rem; font-weight: 400; line-height: 1.3; margin-bottom: 0.3rem; }
   .product-card-price { font-size: 0.88rem; font-weight: 400; color: var(--accent); }
   .product-card-rrp { font-size: 0.72rem; color: var(--grey-light); text-decoration: line-through; margin-left: 0.4rem; }
+  .product-card-seasons { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.45rem; }
+  .product-card-season {
+    padding: 0.18rem 0.45rem;
+    border: 1px solid var(--sand); background: var(--cream);
+    font-size: 0.6rem; letter-spacing: 0.05em; color: var(--grey);
+  }
   .featured-link { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); text-decoration: none; }
   .featured-link:hover { opacity: 0.7; }
 
@@ -334,6 +340,12 @@ canonical: "https://yspcollective.com/"
         €{{ product.data.price }}
         {% if product.data.rrp %}<span class="product-card-rrp">€{{ product.data.rrp }}</span>{% endif %}
       </div>
+      {% set cardSeasons = product.data | parseSeasons %}
+      {% if cardSeasons.length %}
+      <div class="product-card-seasons">
+        {% for season in cardSeasons %}<span class="product-card-season">{{ season | seasonLabel }}</span>{% endfor %}
+      </div>
+      {% endif %}
     </a>
     {% endfor %}
   </div>

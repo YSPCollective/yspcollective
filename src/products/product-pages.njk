@@ -101,6 +101,44 @@ eleventyComputed:
     font-size: 0.58rem; font-weight: 500; opacity: 0.6; flex-shrink: 0;
   }
 
+  /* ── Blind buy rating (informative, never a warning) ── */
+  .blind-buy { margin-bottom: 2rem; padding-top: 1.2rem; border-top: 1px solid var(--sand); }
+  .blind-buy-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey); margin-bottom: 0.6rem; }
+  .blind-buy-row { display: flex; align-items: center; flex-wrap: wrap; gap: 0.6rem; }
+  .blind-buy-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.32rem 0.8rem;
+    border: 1px solid var(--sand); background: var(--cream);
+    font-size: 0.72rem; letter-spacing: 0.06em; color: var(--grey);
+  }
+  .blind-buy-badge::before {
+    content: ''; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--grey-light); flex-shrink: 0;
+  }
+  .blind-buy-badge.bb-universal { color: #5f7d5f; border-color: rgba(95,125,95,0.35); background: rgba(95,125,95,0.06); }
+  .blind-buy-badge.bb-universal::before { background: #6a8a6a; }
+  .blind-buy-badge.bb-know { color: var(--accent); border-color: rgba(156,123,86,0.35); background: rgba(156,123,86,0.06); }
+  .blind-buy-badge.bb-know::before { background: var(--accent); }
+  .blind-buy-badge.bb-niche { color: #6a5f7a; border-color: rgba(106,95,122,0.35); background: rgba(106,95,122,0.06); }
+  .blind-buy-badge.bb-niche::before { background: #6a5f7a; }
+  .blind-buy-explain {
+    font-size: 0.68rem; letter-spacing: 0.08em; color: var(--grey-light);
+    text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s;
+  }
+  .blind-buy-explain:hover { color: var(--accent); }
+  .blind-buy-note { font-size: 0.8rem; line-height: 1.7; color: var(--grey); margin-top: 0.6rem; font-style: italic; }
+
+  /* ── Season tags (shares the blind buy badge language) ── */
+  .season-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: -1rem 0 1.8rem; }
+  .season-tag {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    padding: 0.26rem 0.7rem;
+    border: 1px solid var(--sand); background: var(--cream);
+    font-size: 0.68rem; letter-spacing: 0.06em; color: var(--grey);
+    text-decoration: none; transition: border-color 0.2s, color 0.2s;
+  }
+  .season-tag:hover { border-color: var(--accent); color: var(--accent); }
+
   /* ── Inspired-by comparison ── */
   .inspired-by {
     display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.4rem;
@@ -441,6 +479,14 @@ eleventyComputed:
     <div class="product-meta">
       {% if isFragrance %}{{ product.gender }} · Fragrance{% else %}{{ product.category }}{% endif %}
     </div>
+    {% set productSeasons = product | parseSeasons %}
+    {% if isFragrance and productSeasons.length %}
+    <div class="season-tags">
+      {% for season in productSeasons %}
+      <a class="season-tag" href="/fragrances/by-season.html#{{ season }}">{{ season | seasonLabel }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
     <!-- Inline aggregate rating (populated by JS after reviews load) -->
     <div id="pdp-inline-rating" style="display:none;margin-bottom:1.2rem;">
       <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
@@ -571,6 +617,17 @@ eleventyComputed:
         {% endfor %}
       </div>
       <a href="/fragrance-notes.html" style="display:inline-block;margin-top:0.7rem;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);text-decoration:none;opacity:0.8;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">What do these mean? Explore all notes →</a>
+    </div>
+    {% endif %}
+
+    {% if product.blind_buy_rating %}
+    <div class="blind-buy">
+      <div class="blind-buy-label">Blind Buy Rating</div>
+      <div class="blind-buy-row">
+        <span class="blind-buy-badge {{ product.blind_buy_rating | blindBuyClass }}">{{ product.blind_buy_rating }}</span>
+        <a class="blind-buy-explain" href="/_posts/what-does-blind-buy-safe-mean/">What does this mean?</a>
+      </div>
+      {% if product.blind_buy_note %}<div class="blind-buy-note">{{ product.blind_buy_note }}</div>{% endif %}
     </div>
     {% endif %}
     {% endif %}

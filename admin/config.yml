@@ -100,6 +100,22 @@ collections:
       # ── 4. FRAGRANCE PROFILE ──────────────────────────────────────
       - { label: "Fragrance Family", name: "fragrance_family", widget: "string", hint: "e.g. Oriental Vanilla / Amber Floral" }
       - { label: "Best For", name: "best_for", widget: "string", required: false, hint: "Use | to split positive and negative: 'Evening wear, winter | Hot days, summer'" }
+      - label: "Season"
+        name: "season"
+        widget: "select"
+        multiple: true
+        required: false
+        options: ["Spring", "Summer", "Autumn", "Winter"]
+        hint: "Pick every season this suits — shown as a badge and used by the Shop by Season page"
+
+      # ── 4a. BLIND BUY RATING ──────────────────────────────────────
+      - label: "Blind Buy Rating"
+        name: "blind_buy_rating"
+        widget: "select"
+        required: false
+        options: ["Universal Crowd-Pleaser", "Know Your Notes", "Niche & Specific"]
+        hint: "How safe this is to buy unsniffed — not a quality score"
+      - { label: "Blind Buy Note", name: "blind_buy_note", widget: "string", required: false, hint: "One line, e.g. 'Loves gourmand vanilla? Safe buy.'" }
 
       # ── 4b. FRAGRANCE CHARACTER (1–5) ─────────────────────────────
       - { label: "Character — Sweet (1–5)", name: "char_sweet", widget: "number", min: 1, max: 5, step: 1, required: false, hint: "1 = barely sweet, 5 = very sweet" }

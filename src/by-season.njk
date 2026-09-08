@@ -1,0 +1,256 @@
+---
+layout: base.njk
+permalink: fragrances/by-season.html
+title: "Fragrances by Season — Spring, Summer, Autumn & Winter | YSP Collective"
+description: "Browse our Arabian and niche fragrance edit by season. Fresh spring florals, bright summer scents, warm autumn spice and rich winter oud — curated from Portugal for Europe."
+canonical: "https://yspcollective.com/fragrances/by-season.html"
+---
+
+{% block head_extra %}
+<style>
+  .season-hero {
+    padding: calc(var(--nav-height, 80px) + 4rem) 3.5rem 4rem;
+    background: var(--black);
+    position: relative; overflow: hidden;
+  }
+  .season-hero::after {
+    content: ''; position: absolute; top: 0; right: 0;
+    width: 1px; height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(200,168,122,0.25), transparent);
+  }
+  .season-hero-eyebrow {
+    font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--accent-light, #c8a87a); margin-bottom: 1rem;
+  }
+  .season-hero-title {
+    font-family: var(--serif); font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 300; color: var(--white); line-height: 1.1;
+    margin-bottom: 1rem; letter-spacing: -0.01em;
+  }
+  .season-hero-title em { font-style: italic; color: var(--accent-light, #c8a87a); }
+  .season-hero-desc {
+    font-size: 0.95rem; color: rgba(255,255,255,0.45); max-width: 560px; line-height: 1.8;
+  }
+
+  .season-main { padding: 4rem 3.5rem 6rem; max-width: 1400px; margin: 0 auto; }
+
+  /* ── Season tabs (same interaction pattern as the accord chips) ── */
+  .season-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  .filter-tab {
+    padding: 0.45rem 1.1rem;
+    border: 1px solid var(--sand); background: transparent;
+    font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--grey);
+    cursor: pointer; transition: all 0.2s;
+  }
+  .filter-tab:hover { border-color: var(--accent); color: var(--accent); }
+  .filter-tab.active { background: var(--black); border-color: var(--black); color: var(--white); }
+  .filter-tab-count { opacity: 0.55; margin-left: 0.35rem; }
+
+  /* ── Per-season intro copy ── */
+  .season-intro {
+    display: none;
+    max-width: 720px;
+    margin-bottom: 2.5rem; padding-bottom: 2rem;
+    border-bottom: 1px solid var(--sand);
+  }
+  .season-intro.active { display: block; }
+  .season-intro-title {
+    font-family: var(--serif); font-size: 1.5rem; font-weight: 300;
+    margin-bottom: 0.6rem;
+  }
+  .season-intro p { font-size: 0.92rem; line-height: 1.85; color: var(--grey); }
+
+  .season-count { font-size: 0.78rem; color: var(--grey); letter-spacing: 0.05em; margin-bottom: 1.8rem; }
+
+  .season-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.8rem; }
+
+  .season-card { text-decoration: none; color: inherit; display: block; transition: transform 0.3s; }
+  .season-card:hover { transform: translateY(-4px); }
+  .season-card-img {
+    aspect-ratio: 3/4; background: var(--cream);
+    overflow: hidden; position: relative; margin-bottom: 1rem;
+  }
+  .season-card-img img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: contain; padding: 0.5rem; transition: transform 0.5s;
+  }
+  .season-card:hover .season-card-img img { transform: scale(1.04); }
+  .season-card-img.is-sold-out img { filter: grayscale(0.9); opacity: 0.45; }
+  .season-card-badge {
+    position: absolute; top: 0.7rem; left: 0.7rem;
+    font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.25rem 0.6rem; background: var(--accent); color: var(--white); z-index: 1;
+  }
+  .season-card-badge.badge-bestseller { background: #c09a8a; }
+  .season-card-badge.badge-popular { background: var(--grey); }
+  .season-card-badge.badge-trending { background: #c47040; }
+  .season-card-badge.badge-viral { background: #7a52a8; }
+  .season-card-badge.badge-curated { background: var(--black); }
+  .season-card-badge.badge-new { background: #6a9a6a; }
+  .season-card-badge.badge-premium { background: #7a6a5a; }
+  .season-card-badge.badge-limited { background: var(--black); }
+  .season-card-badge.badge-soldout { background: var(--black); }
+  .season-card-meta {
+    font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--grey-light); margin-bottom: 0.3rem;
+  }
+  .season-card-name {
+    font-family: var(--serif); font-size: 1.1rem; font-weight: 400;
+    line-height: 1.3; margin-bottom: 0.3rem;
+  }
+  .season-card-price { font-size: 0.95rem; color: var(--accent); }
+
+  /* Season badges on the card — same language as the PDP badges */
+  .season-card-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.5rem; }
+  .season-card-tag {
+    padding: 0.2rem 0.5rem;
+    border: 1px solid var(--sand); background: var(--cream);
+    font-size: 0.62rem; letter-spacing: 0.05em; color: var(--grey);
+  }
+
+  .season-empty {
+    grid-column: 1 / -1; text-align: center; padding: 4rem 2rem;
+    border: 1px solid var(--sand); color: var(--grey); font-size: 0.9rem; line-height: 1.8;
+  }
+
+  @media (max-width: 1024px) { .season-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 768px) {
+    .season-hero { padding: calc(var(--nav-height, 80px) + 2.5rem) 1.5rem 3rem; }
+    .season-main { padding: 2.5rem 1.5rem 4rem; }
+    .season-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  }
+</style>
+{% endblock %}
+
+{% set fragranceProducts = [] %}
+{% for p in collections.allProducts %}
+  {% if p.type === 'fragrance' %}{% set fragranceProducts = (fragranceProducts.push(p), fragranceProducts) %}{% endif %}
+{% endfor %}
+
+{% set seasonMeta = [
+  { key: "spring", label: "🌱 Spring", title: "Spring fragrances",
+    intro: "Spring wants lift. Think soft florals, green stems, powdery musks and light citrus openings — scents that feel like fresh air rather than a statement. This is the season for the lighter end of the Arabian shelf: rosewater, orange blossom and clean amber, worn a little closer to the skin." },
+  { key: "summer", label: "☀️ Summer", title: "Summer fragrances",
+    intro: "Heat amplifies everything, so summer rewards brightness and restraint. Aquatics, sharp citrus, coconut, mint and airy fruit hold up in the sun where heavy resins turn cloying. Look for eau de parfums with a fresh top and a light musky base — and spray a touch less than you would in December." },
+  { key: "autumn", label: "🍂 Autumn", title: "Autumn fragrances",
+    intro: "Autumn is where Arabian perfumery starts to come into its own. Warm spice, tobacco, tonka, dried fruit and soft woods sit perfectly against cooler air — rich enough to feel substantial, still light enough for daytime. If you own one bottle for the transition months, make it a spiced amber." },
+  { key: "winter", label: "❄️ Winter", title: "Winter fragrances",
+    intro: "Cold air holds fragrance close and rewards depth. This is oud season: resins, smoke, leather, dense vanilla and extrait concentrations that project for hours. The boldest bottles we carry belong here — worn in a coat, in the evening, when there's room for a scent with real presence." }
+] %}
+
+<header class="season-hero">
+  <p class="season-hero-eyebrow">Shop by Season</p>
+  <h1 class="season-hero-title">Fragrances for <em>every season</em></h1>
+  <p class="season-hero-desc">The right scent shifts with the weather. Browse our Arabian and niche edit by the time of year it wears best — from light spring florals to deep winter oud.</p>
+</header>
+
+<div class="season-main">
+  <div class="season-tabs" id="season-tabs">
+    <button class="filter-tab" data-season="all">All<span class="filter-tab-count">{{ fragranceProducts.length }}</span></button>
+    {% for s in seasonMeta %}
+      {% set inSeason = fragranceProducts | selectBySeason(s.key) %}
+      <button class="filter-tab" data-season="{{ s.key }}">{{ s.label }}<span class="filter-tab-count">{{ inSeason.length }}</span></button>
+    {% endfor %}
+  </div>
+
+  {% for s in seasonMeta %}
+  <div class="season-intro" data-season-intro="{{ s.key }}">
+    <h2 class="season-intro-title">{{ s.title }}</h2>
+    <p>{{ s.intro }}</p>
+  </div>
+  {% endfor %}
+  <div class="season-intro" data-season-intro="all">
+    <h2 class="season-intro-title">Every fragrance, every season</h2>
+    <p>The complete YSP Collective fragrance edit. Pick a season above to narrow it down — or browse the lot and let the notes decide for you.</p>
+  </div>
+
+  <div class="season-count" id="season-count">{{ fragranceProducts.length }} fragrances</div>
+
+  <div class="season-grid" id="season-grid">
+    {% for p in fragranceProducts %}
+    <a href="/products/{{ p.slug }}.html" class="season-card" data-season="{{ p.seasons | join(',') }}">
+      <div class="season-card-img{{ ' is-sold-out' if p.stock_status === 'sold_out' else '' }}">
+        <img src="{{ p.image_main }}" alt="{{ p.name }}" loading="lazy">
+        {% set b = p.custom_badge or p.badge %}
+        {% if p.stock_status === 'sold_out' %}
+          <span class="season-card-badge badge-soldout">Sold Out</span>
+        {% elif b %}
+          <span class="season-card-badge {{ b | badgeClass }}">{{ b }}</span>
+        {% endif %}
+      </div>
+      <div class="season-card-meta">{{ p.brand }} · {{ p.concentration }}</div>
+      <div class="season-card-name">{{ p.name }}</div>
+      <div class="season-card-price">€{{ p.price }}</div>
+      {% if p.seasons.length %}
+      <div class="season-card-tags">
+        {% for season in p.seasons %}<span class="season-card-tag">{{ season | seasonLabel }}</span>{% endfor %}
+      </div>
+      {% endif %}
+    </a>
+    {% endfor %}
+    <div class="season-empty" id="season-empty" style="display:none">
+      Nothing tagged for this season yet.<br>
+      We're working through the catalogue — try another season, or <a href="/fragrances/all.html" style="color:var(--accent)">browse all fragrances</a>.
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var SEASONS = ['spring', 'summer', 'autumn', 'winter'];
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('#season-tabs .filter-tab'));
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.season-card'));
+    var intros = Array.prototype.slice.call(document.querySelectorAll('.season-intro'));
+    var countEl = document.getElementById('season-count');
+    var emptyEl = document.getElementById('season-empty');
+    if (!tabs.length) return;
+
+    // Northern-hemisphere season for today's date
+    function currentSeason() {
+      var m = new Date().getMonth(); // 0 = January
+      if (m >= 2 && m <= 4) return 'spring';   // Mar–May
+      if (m >= 5 && m <= 7) return 'summer';   // Jun–Aug
+      if (m >= 8 && m <= 10) return 'autumn';  // Sep–Nov
+      return 'winter';                          // Dec–Feb
+    }
+
+    function apply(season) {
+      var shown = 0;
+
+      cards.forEach(function(card) {
+        var list = (card.dataset.season || '').split(',').filter(Boolean);
+        var visible = season === 'all' || list.indexOf(season) !== -1;
+        card.style.display = visible ? '' : 'none';
+        if (visible) shown++;
+      });
+
+      tabs.forEach(function(t) { t.classList.toggle('active', t.dataset.season === season); });
+      intros.forEach(function(i) { i.classList.toggle('active', i.dataset.seasonIntro === season); });
+
+      if (countEl) countEl.textContent = shown + ' fragrance' + (shown !== 1 ? 's' : '');
+      if (emptyEl) emptyEl.style.display = shown === 0 ? 'block' : 'none';
+    }
+
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        var season = tab.dataset.season;
+        apply(season);
+        if (history.replaceState) {
+          history.replaceState(null, '', season === 'all' ? location.pathname : '#' + season);
+        }
+      });
+    });
+
+    // Deep link (#summer from a product page) wins, otherwise today's season.
+    var hash = (location.hash || '').replace('#', '').toLowerCase();
+    var initial = SEASONS.indexOf(hash) !== -1 ? hash : currentSeason();
+
+    // If nothing is tagged for the default season yet, fall back to All so the
+    // page never opens on an empty grid.
+    var hasAny = cards.some(function(card) {
+      return (card.dataset.season || '').split(',').indexOf(initial) !== -1;
+    });
+    apply(hasAny ? initial : 'all');
+  })();
+</script>

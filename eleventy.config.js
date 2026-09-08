@@ -34,6 +34,7 @@ module.exports = function(eleventyConfig) {
     'skin_type','key_ingredients','free_from','spf_rating','amazon_url','published',
     'stock_status','expected_date','featured','avg_rating','review_count',
     'inspired_by_name','inspired_by_note',
+    'blind_buy_rating','blind_buy_note','season',
     'char_sweet','char_fresh','char_masculine','char_unique','char_versatile',
     'gtin','exclude_from_feed','google_product_category',
     'pt','es'
@@ -44,6 +45,7 @@ module.exports = function(eleventyConfig) {
     PRODUCT_FIELDS.forEach(f => { if (item.data[f] !== undefined) d[f] = item.data[f]; });
     d.url = `/products/${item.data.slug}.html`;
     d.accords = parseAccords(item.data);
+    d.seasons = parseSeasons(item.data);
     return d;
   }
 
@@ -55,6 +57,23 @@ module.exports = function(eleventyConfig) {
       return data.accords.map(a => (typeof a === 'object' ? a.accord : a)).filter(Boolean);
     }
     return [];
+  }
+
+  const SEASONS = ['spring','summer','autumn','winter'];
+  const SEASON_EMOJI = { spring: '🌱', summer: '☀️', autumn: '🍂', winter: '❄️' };
+
+  // Season is a multi-select in the CMS (array), but may also arrive as a
+  // comma-separated string from hand-written frontmatter. Returns lowercased,
+  // known seasons only.
+  function parseSeasons(data) {
+    if (!data) return [];
+    const raw = data.season;
+    let list = [];
+    if (Array.isArray(raw)) list = raw;
+    else if (typeof raw === 'string') list = raw.split(',');
+    return list
+      .map(s => String(s).trim().toLowerCase())
+      .filter(s => SEASONS.includes(s));
   }
 
   // Collections
@@ -217,6 +236,35 @@ module.exports = function(eleventyConfig) {
 // Filter products by brand name
   eleventyConfig.addFilter("selectByBrand", function(allProducts, brandName) {
     return allProducts.filter(p => p.brand === brandName);
+  });
+
+  // Filter products by season — mirrors selectByBrand above
+  eleventyConfig.addFilter("selectBySeason", function(allProducts, seasonName) {
+    const target = (seasonName || '').toLowerCase();
+    return allProducts.filter(p => parseSeasons(p).includes(target));
+  });
+
+  // Normalised, lowercased season list for a product
+  eleventyConfig.addFilter("parseSeasons", function(data) {
+    return parseSeasons(data);
+  });
+
+  // "summer" → "☀️ Summer" for the season badges
+  eleventyConfig.addFilter("seasonLabel", function(season) {
+    const s = String(season || '').trim().toLowerCase();
+    if (!s) return '';
+    const emoji = SEASON_EMOJI[s];
+    return (emoji ? emoji + ' ' : '') + s.charAt(0).toUpperCase() + s.slice(1);
+  });
+
+  // Blind buy rating → modifier class, same pattern as badgeClass
+  eleventyConfig.addFilter("blindBuyClass", function(rating) {
+    if (!rating) return '';
+    const r = rating.toLowerCase();
+    if (r.indexOf('universal') === 0) return 'bb-universal';
+    if (r.indexOf('know') === 0) return 'bb-know';
+    if (r.indexOf('niche') === 0) return 'bb-niche';
+    return '';
   });
 
   return {
