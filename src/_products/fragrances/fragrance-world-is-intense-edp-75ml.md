@@ -1,5 +1,9 @@
 ---
+name: Fragrance World iS Intense Eau de Parfum 75ml
+slug: fragrance-world-is-intense-edp-75ml
+price: "19.50"
 rrp: ""
+brand: Fragrance World
 gender: Women
 size: 75ml
 concentration: Eau de Parfum (EDP)
@@ -13,11 +17,21 @@ published: true
 date_added: 2026-08-07
 fragrance_family: Oriental Floral Fruity
 best_for: Evening, Date night, Autumn/Winter
+season:
+  - Autumn
+  - Winter
+blind_buy_rating: Universal Crowd-Pleaser
+blind_buy_note: A universal crowd-pleaser with an elegant edge, this captivating
+  blind buy opens with a rich burst of sweet black currant liqueur before
+  settling into a warm, sophisticated bed of velvety vanilla and smooth
+  patchouli
+char_sweet: 4
 char_fresh: 3
 char_masculine: 2
 char_unique: 3
 char_versatile: 3
 top_notes: Black Currant, Bergamot, Mandarin
+heart_notes: Artemisia, Osmanthus, May Rose, Neroli
 base_notes: Vanilla, Patchouli, Ambroxan
 accords_text: floral, fruity, sweet, vanilla, woody, amber
 longevity: 6-8 hours
@@ -48,12 +62,6 @@ amazon_url: ""
 inspired_by_name: Giorgio Armani Sì Intense
 inspired_by_note: Same blackcurrant-rose-vanilla structure as Armani's Sì Intense.
 ebay_url: ""
-name: Fragrance World iS Intense Eau de Parfum 75ml
-slug: fragrance-world-is-intense-edp-75ml
-price: "19.50"
-brand: Fragrance World
-char_sweet: 4
-heart_notes: Artemisia, Osmanthus, May Rose, Neroli
 origin: UAE
 gtin: "6290360379609"
 exclude_from_feed: true
