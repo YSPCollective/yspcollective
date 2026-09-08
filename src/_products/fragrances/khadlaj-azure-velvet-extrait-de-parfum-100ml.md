@@ -15,6 +15,16 @@ published: true
 date_added: 2026-06-17
 fragrance_family: Aromatic Woody
 best_for: Daily, Office, All Seasons
+season:
+  - Spring
+  - Summer
+  - Autumn
+  - Winter
+blind_buy_rating: Universal Crowd-Pleaser
+blind_buy_note: A flawless crowd-pleaser and magnetic blind buy, this versatile
+  masterpiece opens with a refreshing burst of zesty bergamot, calming lavender,
+  and crisp mint before settling into a sophisticated base of juicy orchard
+  fruits, warm woods, and smooth, subtle incense.
 char_sweet: 2
 char_fresh: 3
 char_masculine: 3
