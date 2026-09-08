@@ -807,7 +807,7 @@ const PRODUCTS = [
     "best_for": "Evening, Autumn, Winter, Cold Weather",
     "inspired_by": "Parfums de Marly Althaïr",
     "summary": "One of the fragrance community's most talked-about value",
-    "ysp_thoughts": "<p>Liquid Brun is one of the easiest recommends in our catalogue for autumn/winter. The vanilla here is genuinely quality — not sharp or synthetic — and the ambroxan base gives it that addictive skin-scent quality that the best fragrances share.</p>"
+    "ysp_thoughts": "<p>Liquid Brun is one of the easiest recommends in our catalogue for autumn/winter. The vanilla here is genuinely quality, not sharp or synthetic and the ambroxan base gives it that addictive skin-scent quality that the best fragrances share.</p>"
   },
   {
     "name": "French Avenue Spectre Ghost Eau de Parfum 80ml",
