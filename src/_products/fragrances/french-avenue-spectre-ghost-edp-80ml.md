@@ -1,9 +1,13 @@
 ---
+name: French Avenue Spectre Ghost Eau de Parfum 80ml
+slug: french-avenue-spectre-ghost-edp-80ml
+price: "39.90"
 rrp: ""
+brand: French Avenue
 gender: Men
 size: 80ml
 concentration: Eau de Parfum (EDP)
-badge: Bestseller
+badge: Premium
 custom_badge: ""
 stock_status: in_stock
 stock_quantity: 6
@@ -13,11 +17,22 @@ published: true
 date_added: 2026-08-07
 fragrance_family: Woody Aromatic Spicy
 best_for: Office, Casual, Close-wear/personal scent
+season:
+  - Spring
+  - Autumn
+  - Winter
+blind_buy_rating: Universal Crowd-Pleaser
+blind_buy_note: A universal crowd-pleaser for any cozy day or night out, this
+  mouth-watering blind buy blends sharp ginger and bright bergamot with a
+  luxurious heart of creamy bourbon vanilla, rich black currant, and smooth
+  cedar.
+char_sweet: 3
 char_fresh: 3
 char_masculine: 4
 char_unique: 3
 char_versatile: 4
 top_notes: Ginger, Cardamom, Bergamot
+heart_notes: Pink Pepper, Blackcurrant, Rose
 base_notes: Vanilla, Cedarwood, Patchouli
 accords_text: woody, spicy, aromatic, vanilla, amber, musk
 longevity: 5-7 hours
@@ -54,12 +69,6 @@ inspired_by_note: Spectre Ghost delivers the same rich ginger, warm spice, and
   creamy vanilla signature of Nishane Ani, but skips the original's sharp green
   opening for a smoother, softer initial spray.
 ebay_url: ""
-name: French Avenue Spectre Ghost Eau de Parfum 80ml
-slug: french-avenue-spectre-ghost-edp-80ml
-price: "39.90"
-brand: French Avenue
-char_sweet: 3
-heart_notes: Pink Pepper, Blackcurrant, Rose
 origin: UAE
 gtin: "6290360372723"
 exclude_from_feed: false
