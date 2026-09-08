@@ -189,10 +189,10 @@ module.exports = function(eleventyConfig) {
       if (data.name) rows.push({key:'det_name',label:'Product Name',value:data.name});
       if (data.concentration) rows.push({key:'pdp_concentration',label:'Concentration',value:data.concentration});
       if (data.size) rows.push({key:'pdp_size',label:'Size',value:data.size});
-      if (data.fragrance_family) rows.push({key:'det_family',label:'Fragrance Family',value:data.fragrance_family});
-      if (data.top_notes) rows.push({key:'pdp_notes_top',label:'Top Notes',value:data.top_notes});
-      if (data.heart_notes) rows.push({key:'pdp_notes_heart',label:'Heart Notes',value:data.heart_notes});
-      if (data.base_notes) rows.push({key:'pdp_notes_base',label:'Base Notes',value:data.base_notes});
+      if (data.fragrance_family) rows.push({key:'det_family',label:'Fragrance Family',value:data.fragrance_family,family:true});
+      if (data.top_notes) rows.push({key:'pdp_notes_top',label:'Top Notes',value:data.top_notes,notes:true});
+      if (data.heart_notes) rows.push({key:'pdp_notes_heart',label:'Heart Notes',value:data.heart_notes,notes:true});
+      if (data.base_notes) rows.push({key:'pdp_notes_base',label:'Base Notes',value:data.base_notes,notes:true});
       if (data.longevity) rows.push({key:'pdp_longevity',label:'Longevity',value:data.longevity,perf:true});
       if (data.projection) rows.push({key:'pdp_projection',label:'Projection',value:data.projection,perf:true});
       if (data.best_for) rows.push({key:'det_best_for',label:'Best For',value:data.best_for});

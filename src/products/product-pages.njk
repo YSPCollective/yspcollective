@@ -445,21 +445,21 @@ eleventyComputed:
       {% if product.top_notes %}
       <div class="pyr-tier">
         <div class="pyr-tier-label" data-i18n="pdp_notes_top">Top notes</div>
-        <div class="pyr-notes">{% set topList = product.top_notes.split(',') %}{% for note in topList %}<span class="pyr-note top-note">{{ note | trim }}</span>{% endfor %}</div>
+        <div class="pyr-notes">{% set topList = product.top_notes.split(',') %}{% for note in topList %}<span class="pyr-note top-note" data-note="{{ note | trim }}">{{ note | trim }}</span>{% endfor %}</div>
       </div>
       <div class="pyr-connector"></div>
       {% endif %}
       {% if product.heart_notes %}
       <div class="pyr-tier">
         <div class="pyr-tier-label" data-i18n="pdp_notes_heart">Heart notes</div>
-        <div class="pyr-notes">{% set heartList = product.heart_notes.split(',') %}{% for note in heartList %}<span class="pyr-note heart-note">{{ note | trim }}</span>{% endfor %}</div>
+        <div class="pyr-notes">{% set heartList = product.heart_notes.split(',') %}{% for note in heartList %}<span class="pyr-note heart-note" data-note="{{ note | trim }}">{{ note | trim }}</span>{% endfor %}</div>
       </div>
       <div class="pyr-connector"></div>
       {% endif %}
       {% if product.base_notes %}
       <div class="pyr-tier">
         <div class="pyr-tier-label" data-i18n="pdp_notes_base">Base notes</div>
-        <div class="pyr-notes">{% set baseList = product.base_notes.split(',') %}{% for note in baseList %}<span class="pyr-note base-note">{{ note | trim }}</span>{% endfor %}</div>
+        <div class="pyr-notes">{% set baseList = product.base_notes.split(',') %}{% for note in baseList %}<span class="pyr-note base-note" data-note="{{ note | trim }}">{{ note | trim }}</span>{% endfor %}</div>
       </div>
       {% endif %}
     </div>
@@ -563,21 +563,21 @@ eleventyComputed:
       {% if product.top_notes %}
       <div class="pyr-tier">
         <div class="pyr-tier-label" data-i18n="pdp_notes_top">Top notes</div>
-        <div class="pyr-notes">{% set topListM = product.top_notes.split(',') %}{% for note in topListM %}<span class="pyr-note top-note">{{ note | trim }}</span>{% endfor %}</div>
+        <div class="pyr-notes">{% set topListM = product.top_notes.split(',') %}{% for note in topListM %}<span class="pyr-note top-note" data-note="{{ note | trim }}">{{ note | trim }}</span>{% endfor %}</div>
       </div>
       <div class="pyr-connector"></div>
       {% endif %}
       {% if product.heart_notes %}
       <div class="pyr-tier">
         <div class="pyr-tier-label" data-i18n="pdp_notes_heart">Heart notes</div>
-        <div class="pyr-notes">{% set heartListM = product.heart_notes.split(',') %}{% for note in heartListM %}<span class="pyr-note heart-note">{{ note | trim }}</span>{% endfor %}</div>
+        <div class="pyr-notes">{% set heartListM = product.heart_notes.split(',') %}{% for note in heartListM %}<span class="pyr-note heart-note" data-note="{{ note | trim }}">{{ note | trim }}</span>{% endfor %}</div>
       </div>
       <div class="pyr-connector"></div>
       {% endif %}
       {% if product.base_notes %}
       <div class="pyr-tier">
         <div class="pyr-tier-label" data-i18n="pdp_notes_base">Base notes</div>
-        <div class="pyr-notes">{% set baseListM = product.base_notes.split(',') %}{% for note in baseListM %}<span class="pyr-note base-note">{{ note | trim }}</span>{% endfor %}</div>
+        <div class="pyr-notes">{% set baseListM = product.base_notes.split(',') %}{% for note in baseListM %}<span class="pyr-note base-note" data-note="{{ note | trim }}">{{ note | trim }}</span>{% endfor %}</div>
       </div>
       {% endif %}
     </div>
@@ -610,7 +610,7 @@ eleventyComputed:
           {% if key == "cedar" %}{% set key = "cedarwood" %}{% endif %}
           {% if key == "patchoulli" %}{% set key = "patchouli" %}{% endif %}
           <span class="accord-tag" onclick="openNoteDrawer('{{ key }}')">
-            {{ accordTrimmed }} <span class="accord-q">?</span>
+            <span class="accord-name" data-accord="{{ accordTrimmed }}">{{ accordTrimmed }}</span> <span class="accord-q">?</span>
           </span>
         {% endfor %}
       </div>
@@ -1007,6 +1007,8 @@ eleventyComputed:
       const label = (row.key && t[row.key]) || row.label;
       let value = row.value;
       if (row.perf) value = translatePerf(value, lang);
+      else if (row.notes && window.YSP_SCENT) value = window.YSP_SCENT.noteList(value, lang);
+      else if (row.family && window.YSP_SCENT) value = window.YSP_SCENT.family(value, lang);
       else if (row.vkey && t[row.vkey]) value = t[row.vkey];
       const tr = document.createElement('tr');
       const tdL = document.createElement('td');
@@ -1024,9 +1026,20 @@ eleventyComputed:
     });
   }
 
+  function applyScentTerms(lang) {
+    if (!window.YSP_SCENT) return;
+    document.querySelectorAll('[data-note]').forEach(function (el) {
+      el.textContent = window.YSP_SCENT.note(el.getAttribute('data-note'), lang);
+    });
+    document.querySelectorAll('[data-accord]').forEach(function (el) {
+      el.textContent = window.YSP_SCENT.accord(el.getAttribute('data-accord'), lang);
+    });
+  }
+
   function applyProductChrome(lang) {
     renderDetails(lang);
     applyPerfBars(lang);
+    applyScentTerms(lang);
   }
 
   applyProductChrome(currentLang());
