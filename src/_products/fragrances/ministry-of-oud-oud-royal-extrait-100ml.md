@@ -1,5 +1,9 @@
 ---
+name: Ministry of Oud Oud Royal Extrait de Parfum 100ml
+slug: ministry-of-oud-oud-royal-extrait-100ml
+price: "27"
 rrp: ""
+brand: Ministry of Oud
 gender: Unisex
 size: 100ml
 concentration: Extrait de Parfum
@@ -13,11 +17,22 @@ published: true
 date_added: 2026-08-07
 fragrance_family: Oriental Fougère Woody
 best_for: Evening, Autumn/Winter, Special occasions
+season:
+  - Spring
+  - Autumn
+  - Winter
+blind_buy_rating: Know Your Notes
+blind_buy_note: An elite autumn and winter masterpiece for true connoisseurs,
+  this regal blind buy blends a sharp burst of spicy lemon and red berries with
+  an opulent heart of green galbanum, dry cedarwood, and a smooth, sophisticated
+  bed of majestic Indian oud.
+char_sweet: 2
 char_fresh: 3
 char_masculine: 4
 char_unique: 4
 char_versatile: 3
 top_notes: Lemon, Pink Berry, Bergamot
+heart_notes: Cedar, Galbanum, Angelica Root
 base_notes: Oud, Sandalwood, Tonkin Musk
 accords_text: woody, oud, aromatic, spicy, green, musk
 longevity: 7-9 hours
@@ -45,12 +60,6 @@ inspired_by_name: Creed Royal Oud
 inspired_by_note: Widely regarded as one of the closest affordable takes on
   Creed's Royal Oud, with a drier, more cedar-forward finish.
 ebay_url: ""
-name: Ministry of Oud Oud Royal Extrait de Parfum 100ml
-slug: ministry-of-oud-oud-royal-extrait-100ml
-price: "27"
-brand: Ministry of Oud
-char_sweet: 2
-heart_notes: Cedar, Galbanum, Angelica Root
 origin: UAE
 gtin: "6294650987253"
 exclude_from_feed: false
