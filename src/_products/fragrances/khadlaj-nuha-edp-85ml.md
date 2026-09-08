@@ -1,5 +1,9 @@
 ---
+name: Khadlaj Nuha Eau de Parfum 85ml
+slug: khadlaj-nuha-edp-85ml
+price: "19.95"
 rrp: ""
+brand: Khadlaj
 gender: Women
 size: 85ml
 concentration: Eau de Parfum (EDP)
@@ -13,11 +17,23 @@ published: true
 date_added: 2026-08-07
 fragrance_family: Fruity Floral Sweet
 best_for: Daytime, Spring/Summer, Everyday wear
+season:
+  - Spring
+  - Summer
+  - Autumn
+  - Winter
+blind_buy_rating: Know Your Notes
+blind_buy_note: A luxurious cream dream for gourmand lovers, this unique autumn,
+  winter, and spring standout blends a smooth explosion of lactonic coconut milk
+  and crisp apple with velvety vanilla, powdery heliotrope, and warm cashmere
+  wood.
+char_sweet: 4
 char_fresh: 3
 char_masculine: 1
 char_unique: 2
 char_versatile: 4
 top_notes: Coconut, Apple
+heart_notes: Heliotrope, Jasmine, Rose
 base_notes: Vanilla, Cashmeran, Sandalwood
 accords_text: fruity, floral, sweet, coconut, creamy, musk
 longevity: 3-5 hours (soft, close to skin)
@@ -50,12 +66,6 @@ amazon_url: ""
 inspired_by_name: ""
 inspired_by_note: ""
 ebay_url: ""
-name: Khadlaj Nuha Eau de Parfum 85ml
-slug: khadlaj-nuha-edp-85ml
-price: "19.95"
-brand: Khadlaj
-char_sweet: 4
-heart_notes: Heliotrope, Jasmine, Rose
 origin: UAE
 gtin: "6291107976150"
 exclude_from_feed: false
