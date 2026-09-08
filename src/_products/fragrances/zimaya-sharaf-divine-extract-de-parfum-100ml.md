@@ -15,6 +15,15 @@ published: true
 date_added: 2026-05-30
 fragrance_family: Floral Woody Oriental Spicy
 best_for: Evening wear, date night, cooler seasons, formal occasions
+season:
+  - Spring
+  - Autumn
+  - Winter
+blind_buy_rating: Know Your Notes
+blind_buy_note: An absolute dream for luxury winter gourmand lovers—this
+  intoxicating blind buy opens with a juicy burst of raspberry liqueur and warm
+  cinnamon before melting into a decadent heart of caramel-baked apples, rich
+  cognac, and creamy vanilla.
 char_sweet: 4
 char_fresh: 2
 char_masculine: 3
