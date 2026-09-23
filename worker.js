@@ -787,7 +787,7 @@ const PRODUCTS = [
     "price": "€37.90",
     "brand": "French Avenue",
     "gender": "Unisex",
-    "stock": "in_stock",
+    "stock": "sold_out",
     "accords": [
       "vanilla",
       "woody",
