@@ -1197,7 +1197,7 @@ const PRODUCTS = [
     "price": "€39.50",
     "brand": "Lattafa",
     "gender": "Unisex",
-    "stock": "low_stock",
+    "stock": "last_one",
     "accords": [
       "coconut",
       "spicy",
