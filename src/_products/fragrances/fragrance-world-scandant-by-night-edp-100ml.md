@@ -8,8 +8,8 @@ size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Curated
 custom_badge: ""
-stock_status: in_stock
-stock_quantity: 3
+stock_status: last_one
+stock_quantity: 1
 expected_date: ""
 featured: true
 published: true
