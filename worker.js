@@ -728,7 +728,7 @@ const PRODUCTS = [
     "price": "€19.90",
     "brand": "Fragrance World",
     "gender": "Women",
-    "stock": "in_stock",
+    "stock": "last_one",
     "accords": [
       "honey",
       "fruity",
