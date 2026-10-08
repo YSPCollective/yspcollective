@@ -10,6 +10,14 @@ on:
     paths-ignore:
       - 'worker.js'
 
+# Stock edits in the CMS can land seconds apart. Run one deploy at a time (and
+# queue, not cancel, so every edit's stock still gets synced) — otherwise the
+# "Commit rebuilt catalogue" push is rejected as non-fast-forward by the commit
+# that landed while this run was building (run #236 failed this way).
+concurrency:
+  group: deploy-worker
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -55,7 +63,17 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add worker.js
           git commit -m "Rebuild bot catalogue"
-          git push
+          # main may have moved on while this run was building. Rebase onto it;
+          # if that fails, give up quietly — the run triggered by the newer
+          # commit rebuilds the catalogue from the latest products anyway.
+          for i in 1 2 3; do
+            if git pull --rebase origin main && git push; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep 3
+          done
+          echo "::warning::Could not push rebuilt catalogue; a later run will ship it."
 
       - name: Sync stock from CMS to Worker
         env:
