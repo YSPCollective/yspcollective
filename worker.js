@@ -1947,6 +1947,7 @@ export default {
     if (url.pathname === "/profile" && method === "GET") return handleProfileGet(request, env);
     if (url.pathname === "/favourites/toggle" && method === "POST") return handleFavouriteToggle(request, env);
     if (url.pathname === "/favourites" && method === "GET") return handleFavouritesGet(request, env);
+    if (url.pathname === "/order/confirmation" && method === "GET") return handleOrderConfirmation(url, env);
     if (url.pathname === "/checkout" && method === "POST") return handleCheckout(request, env);
     if (url.pathname === "/sync-product" && method === "POST") return handleSyncProduct(request, env);
     if (url.pathname === "/stripe-webhook" && method === "POST") return handleStripeWebhook(request, env);
@@ -2716,6 +2717,27 @@ async function handleChat(request, env) {
 }
 
 // ─── STOCK ────────────────────────────────────────────────────────────────────
+
+// ─── ORDER CONFIRMATION LOOKUP (for Google Customer Reviews opt-in) ──────────
+async function handleOrderConfirmation(url, env) {
+  const sessionId = url.searchParams.get("session_id") || "";
+  if (!/^cs_[A-Za-z0-9_]+$/.test(sessionId)) return json({ error: "Invalid session" }, 400);
+  try {
+    const res = await fetch(`https://api.stripe.com/v1/checkout/sessions/${sessionId}`, {
+      headers: { Authorization: `Bearer ${env.STRIPE_SECRET_KEY}` }
+    });
+    if (!res.ok) return json({ error: "Not found" }, 404);
+    const session = await res.json();
+    if (session.payment_status !== "paid") return json({ error: "Not paid" }, 402);
+    return json({
+      orderId: session.id,
+      email: session.customer_details?.email || "",
+      country: session.shipping_details?.address?.country || session.customer_details?.address?.country || ""
+    });
+  } catch (err) {
+    return json({ error: "Lookup failed" }, 500);
+  }
+}
 
 async function handleGetStock(url, env) {
   const slug = url.pathname.slice("/stock/".length);
