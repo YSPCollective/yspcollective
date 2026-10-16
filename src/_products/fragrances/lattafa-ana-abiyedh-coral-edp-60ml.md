@@ -7,9 +7,9 @@ gender: Unisex
 size: 60ml
 concentration: Eau de Parfum (EDP)
 badge: New
-stock_status: coming_soon
-stock_quantity: 0
-expected_date: ""
+stock_status: on_order
+stock_quantity: 15
+expected_date: October 2026
 featured: false
 published: true
 date_added: 2026-06-05
