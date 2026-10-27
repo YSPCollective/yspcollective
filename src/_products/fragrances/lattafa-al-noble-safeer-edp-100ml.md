@@ -7,13 +7,13 @@ brand: Lattafa
 gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
-badge: ""
+badge: Curated
 custom_badge: ""
 stock_status: on_order
 stock_quantity: 10
-expected_date: October 2026
+expected_date: November 2026
 featured: false
-published: false
+published: true
 date_added: 2026-10-16
 fragrance_family: Aromatic Green Woody
 best_for: Daytime, Spring/Summer, Casual wear
