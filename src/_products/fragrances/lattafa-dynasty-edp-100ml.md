@@ -1,7 +1,7 @@
 ---
 name: Lattafa Dynasty Eau de Parfum 100ml
 slug: lattafa-dynasty-edp-100ml
-price: ""
+price: "27.50"
 rrp: ""
 brand: Lattafa
 gender: Unisex
@@ -22,7 +22,8 @@ season:
   - Winter
   - Spring
 blind_buy_rating: Know Your Notes
-blind_buy_note: "Bergamot, ginger and raspberry over rooibos tea, suede and cedar. Warm, spicy and a little unusual."
+blind_buy_note: Bergamot, ginger and raspberry over rooibos tea, suede and
+  cedar. Warm, spicy and a little unusual.
 char_sweet: 2
 char_fresh: 2
 char_masculine: 4
@@ -34,24 +35,31 @@ base_notes: Cedarwood, Cashmeran, Amberwood
 accords_text: woody, spicy, aromatic, suede, tea, fruity
 longevity: 6-8 hours
 projection: Moderate
-origin: UAE
 launched: ""
 vegan: false
-image_main: ""
-gallery: []
-description_short: "A woody, spicy aromatic with bergamot, ginger and raspberry, a rooibos tea and suede heart, and a base of cedarwood, cashmeran and amberwood."
+image_main: /images/uploads/lattafa-dinasty-2.webp
+gallery:
+  - /images/uploads/lattafa-dinasty.webp
+description_short: A woody, spicy aromatic with bergamot, ginger and raspberry,
+  a rooibos tea and suede heart, and a base of cedarwood, cashmeran and
+  amberwood.
 description_full: >-
-  Dynasty opens with bergamot, ginger, clary sage and nutmeg, with a touch of raspberry for juiciness. The heart pairs rooibos tea with soft suede, before cedarwood, cashmeran and amberwood give it a warm, smooth, woody base.
+  Dynasty opens with bergamot, ginger, clary sage and nutmeg, with a touch of
+  raspberry for juiciness. The heart pairs rooibos tea with soft suede, before
+  cedarwood, cashmeran and amberwood give it a warm, smooth, woody base.
 
   It is a modern, slightly offbeat scent that feels smart and a little cosy, suited to cooler weather.
 ysp_thoughts: >-
-  Tea and suede is not a common pairing at this price, and it has won a lot of fans. Reviewers regularly say it smells more expensive than it is, with the rooibos tea up front and a smooth woody base.
+  Tea and suede is not a common pairing at this price, and it has won a lot of
+  fans. Reviewers regularly say it smells more expensive than it is, with the
+  rooibos tea up front and a smooth woody base.
 
   We'll be upfront: a few people find the smoky, slightly metallic side shows up as the tea fades, and wear time varies. Several suggest giving a new bottle a couple of weeks to settle before judging it. One for anyone who wants something a bit different.
+amazon_url: ""
 inspired_by_name: ""
 inspired_by_note: ""
-amazon_url: ""
 ebay_url: ""
+origin: UAE
 gtin: "6290360598857"
 exclude_from_feed: true
 ---
