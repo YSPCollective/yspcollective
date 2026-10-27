@@ -1,7 +1,7 @@
 ---
 name: Lattafa Asad Elixir Eau de Parfum 100ml
 slug: lattafa-asad-elixir-edp-100ml
-price: ""
+price: "27.95"
 rrp: ""
 brand: Lattafa
 gender: Men
@@ -21,7 +21,8 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Know Your Notes
-blind_buy_note: "Pink pepper, saffron and grapefruit over tobacco, vanilla and patchouli. Warm, spicy and smoky."
+blind_buy_note: Pink pepper, saffron and grapefruit over tobacco, vanilla and
+  patchouli. Warm, spicy and smoky.
 char_sweet: 3
 char_fresh: 2
 char_masculine: 5
@@ -33,22 +34,27 @@ base_notes: Patchouli, Olibanum, Cashmeran, Amber
 accords_text: warm spicy, tobacco, woody, vanilla, amber, smoky
 longevity: 7-9 hours
 projection: Moderate to Strong
-origin: UAE
 launched: ""
 vegan: false
-image_main: ""
+image_main: /images/uploads/lattafa-asad-elxir.png
 gallery: []
-description_short: "A warm, spicy-woody scent with pink pepper, saffron and grapefruit, a tobacco and vanilla heart, and a base of patchouli, olibanum and amber."
+description_short: A warm, spicy-woody scent with pink pepper, saffron and
+  grapefruit, a tobacco and vanilla heart, and a base of patchouli, olibanum and
+  amber.
 description_full: >-
-  Asad Elixir opens with pink pepper, saffron and grapefruit, a spicy citrus start with some bite. Tobacco, cedarwood and vanilla form a smoky, creamy heart, before patchouli, olibanum, cashmeran and amber add depth and warmth.
+  Asad Elixir opens with pink pepper, saffron and grapefruit, a spicy citrus
+  start with some bite. Tobacco, cedarwood and vanilla form a smoky, creamy
+  heart, before patchouli, olibanum, cashmeran and amber add depth and warmth.
 
   It is a bold, masculine scent for cooler evenings, with more richness than the original Asad.
-ysp_thoughts: >-
-  This is the Elixir, which is smoother and warmer than the original Asad, so do not expect the same profile. A good pick for fans of tobacco and spice.
+ysp_thoughts: This is the Elixir, which is smoother and warmer than the original
+  Asad, so do not expect the same profile. A good pick for fans of tobacco and
+  spice.
+amazon_url: ""
 inspired_by_name: ""
 inspired_by_note: ""
-amazon_url: ""
 ebay_url: ""
+origin: UAE
 gtin: "6290362346548"
 exclude_from_feed: true
 ---
