@@ -20,9 +20,8 @@ best_for: Evening wear, Autumn/Winter, Date night
 season:
   - Autumn
   - Winter
-blind_buy_rating: Know Your Notes
-blind_buy_note: Pink pepper, saffron and grapefruit over tobacco, vanilla and
-  patchouli. Warm, spicy and smoky.
+blind_buy_rating: Universal Crowd-Pleaser
+blind_buy_note: "Pink pepper and saffron over tobacco, vanilla and amber. A smooth, warm crowd favourite."
 char_sweet: 3
 char_fresh: 2
 char_masculine: 5
@@ -47,7 +46,10 @@ description_full: >-
   heart, before patchouli, olibanum, cashmeran and amber add depth and warmth.
 
   It is a bold, masculine scent for cooler evenings, with more richness than the original Asad.
-ysp_thoughts: This is the Elixir, which is smoother and warmer than the original
+ysp_thoughts: >-
+  Rated around 4.4 out of 5 by more than 2,800 people on Fragrantica, a clear favourite in the Asad line.
+
+  This is the Elixir, which is smoother and warmer than the original
   Asad, so do not expect the same profile. A good pick for fans of tobacco and
   spice.
 amazon_url: ""

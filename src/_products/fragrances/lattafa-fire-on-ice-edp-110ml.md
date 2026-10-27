@@ -44,6 +44,8 @@ description_full: >-
 
   It is a rich, characterful scent for colder weather, in a generous 110ml bottle.
 ysp_thoughts: >-
+  Rated around 4.3 out of 5 by more than 800 people on Fragrantica, which is a strong showing for a 2025 release.
+
   Reviewers consistently describe this as boozy and raspberry-forward, and many compare it to the Kilian Angels' Share mood at a fraction of the cost. The cognac and berry opening is the main draw, with a rose, caramel and woody base underneath.
 
   We'll be upfront: longevity reports are split, with some wearers getting all day and others a few hours, and a few find the dry-down turns woodier on skin. A sweet, warm choice for autumn and winter.

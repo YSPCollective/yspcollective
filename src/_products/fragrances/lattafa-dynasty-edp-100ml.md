@@ -50,6 +50,8 @@ description_full: >-
 
   It is a modern, slightly offbeat scent that feels smart and a little cosy, suited to cooler weather.
 ysp_thoughts: >-
+  Rated around 4.2 out of 5 by more than 2,800 people on Fragrantica, though the tea note is distinctive, so it is worth knowing you like it.
+
   Tea and suede is not a common pairing at this price, and it has won a lot of
   fans. Reviewers regularly say it smells more expensive than it is, with the
   rooibos tea up front and a smooth woody base.

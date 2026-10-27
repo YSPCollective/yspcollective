@@ -20,8 +20,8 @@ best_for: Evening wear, Autumn/Winter, Date night
 season:
   - Autumn
   - Winter
-blind_buy_rating: Know Your Notes
-blind_buy_note: "Cardamom, cinnamon and ginger over praline, coffee and vanilla. Warm, sweet and cosy, so best if you like gourmands."
+blind_buy_rating: Universal Crowd-Pleaser
+blind_buy_note: "Cinnamon, praline and coffee over vanilla. A hugely popular gourmand that most people enjoy."
 char_sweet: 5
 char_fresh: 1
 char_masculine: 2
@@ -44,6 +44,8 @@ description_full: >-
 
   It is the coffee-led sibling of Khamrah, ideal for cold weather and evenings.
 ysp_thoughts: >-
+  Rated around 4.3 out of 5 by almost 17,000 people on Fragrantica, so this is one of the most popular Lattafa fragrances there is.
+
   A big, warm gourmand that has built a strong following. It is very sweet and projects well, so a couple of sprays is plenty. Best in autumn and winter.
 inspired_by_name: ""
 inspired_by_note: ""

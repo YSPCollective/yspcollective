@@ -45,6 +45,8 @@ description_full: >-
 
   It reads as confident and smart, a good fit for cooler days and evenings.
 ysp_thoughts: >-
+  Rated around 4.4 out of 5 by more than 1,800 people on Fragrantica, though the dry tobacco and lavender style is not for everyone.
+
   Tobacco and leather over lavender is a distinctive combination, so it suits people who like their scents dry and aromatic rather than sweet. Some reviewers compare it to Xerjoff Erba Pura territory, though it is a very different, more aromatic style.
 inspired_by_name: ""
 inspired_by_note: ""

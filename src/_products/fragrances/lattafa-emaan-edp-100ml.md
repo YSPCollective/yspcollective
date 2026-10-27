@@ -49,7 +49,10 @@ description_full: >-
   over a base of patchouli, vanilla, white musk and cedarwood.
 
   It has a polished, slightly classic feel, with enough warmth to work in cooler weather.
-ysp_thoughts: Tuberose is the star here, so it suits people who already enjoy
+ysp_thoughts: >-
+  Rated around 4.1 out of 5 by more than 500 people on Fragrantica.
+
+  Tuberose is the star here, so it suits people who already enjoy
   white florals. If that is you, it is a refined, good value option that works
   well for evenings.
 amazon_url: ""

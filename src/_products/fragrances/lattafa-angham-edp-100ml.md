@@ -21,8 +21,7 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Universal Crowd-Pleaser
-blind_buy_note: Mandarin, ginger and pink pepper over lavender, praline and
-  cacao. Sweet and spicy with a vanilla base.
+blind_buy_note: "Mandarin, praline and cacao over vanilla. Sweet, warm and widely loved, so a reliable pick."
 char_sweet: 4
 char_fresh: 2
 char_masculine: 2
@@ -47,7 +46,10 @@ description_full: >-
   musk bring a smooth, warm finish.
 
   It is cosy and sweet without being cloying, and a good fit for cooler evenings.
-ysp_thoughts: A comforting, sweet scent for people who enjoy chocolate and
+ysp_thoughts: >-
+  Rated around 4.4 out of 5 by more than 6,000 people on Fragrantica, which makes it one of the best-loved sweet Lattafa releases.
+
+  A comforting, sweet scent for people who enjoy chocolate and
   praline notes. Do not confuse it with Angham Second Song, which is a separate,
   different fragrance.
 amazon_url: ""

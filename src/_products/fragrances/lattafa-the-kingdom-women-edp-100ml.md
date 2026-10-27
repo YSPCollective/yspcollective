@@ -46,6 +46,8 @@ description_full: >-
 
   It is pretty and approachable without being heavy, a good everyday option through most of the year.
 ysp_thoughts: >-
+  Rated around 4 out of 5 by more than 1,100 people on Fragrantica.
+
   A sweet fruity-floral that is easy to like and easy to gift. If you enjoy gourmand touches in your florals, this is a comfortable pick at a friendly price.
 inspired_by_name: ""
 inspired_by_note: ""
