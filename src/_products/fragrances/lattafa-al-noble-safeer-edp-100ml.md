@@ -50,6 +50,6 @@ inspired_by_name: ""
 inspired_by_note: ""
 amazon_url: ""
 ebay_url: ""
-gtin: ""
+gtin: "6291108738009"
 exclude_from_feed: true
 ---
