@@ -1,7 +1,7 @@
 ---
 name: Lattafa Emaan Eau de Parfum 100ml
 slug: lattafa-emaan-edp-100ml
-price: ""
+price: "27.90"
 rrp: ""
 brand: Lattafa
 gender: Unisex
@@ -22,7 +22,8 @@ season:
   - Winter
   - Spring
 blind_buy_rating: Know Your Notes
-blind_buy_note: "Bergamot and blackcurrant over tuberose, patchouli and vanilla. A floral chypre with a creamy white floral heart."
+blind_buy_note: Bergamot and blackcurrant over tuberose, patchouli and vanilla.
+  A floral chypre with a creamy white floral heart.
 char_sweet: 3
 char_fresh: 3
 char_masculine: 2
@@ -34,22 +35,28 @@ base_notes: Patchouli, Vanilla, White Musk, Cedarwood
 accords_text: floral, white floral, fruity, patchouli, vanilla, woody
 longevity: 6-8 hours
 projection: Moderate
-origin: UAE
 launched: ""
 vegan: false
-image_main: ""
-gallery: []
-description_short: "A floral chypre opening with bergamot, blackcurrant and orange blossom, with a jasmine and tuberose heart over patchouli, vanilla and cedarwood."
+image_main: /images/uploads/emaan__2.webp
+gallery:
+  - /images/uploads/emaan___250325.webp
+description_short: A floral chypre opening with bergamot, blackcurrant and
+  orange blossom, with a jasmine and tuberose heart over patchouli, vanilla and
+  cedarwood.
 description_full: >-
-  Emaan opens bright with bergamot, blackcurrant and orange blossom. The heart is a rich white floral blend of jasmine, marigold and tuberose, which sits over a base of patchouli, vanilla, white musk and cedarwood.
+  Emaan opens bright with bergamot, blackcurrant and orange blossom. The heart
+  is a rich white floral blend of jasmine, marigold and tuberose, which sits
+  over a base of patchouli, vanilla, white musk and cedarwood.
 
   It has a polished, slightly classic feel, with enough warmth to work in cooler weather.
-ysp_thoughts: >-
-  Tuberose is the star here, so it suits people who already enjoy white florals. If that is you, it is a refined, good value option that works well for evenings.
+ysp_thoughts: Tuberose is the star here, so it suits people who already enjoy
+  white florals. If that is you, it is a refined, good value option that works
+  well for evenings.
+amazon_url: ""
 inspired_by_name: ""
 inspired_by_note: ""
-amazon_url: ""
 ebay_url: ""
+origin: UAE
 gtin: "6291108738498"
 exclude_from_feed: true
 ---
