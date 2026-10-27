@@ -7,13 +7,13 @@ brand: Lattafa
 gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
-badge: ""
+badge: Curated
 custom_badge: ""
 stock_status: on_order
 stock_quantity: 6
 expected_date: November 2026
 featured: false
-published: false
+published: true
 date_added: 2026-10-27
 fragrance_family: Woody Spicy Aromatic
 best_for: Evening wear, Autumn/Winter, Smart-casual
@@ -35,7 +35,7 @@ base_notes: Cedarwood, Cashmeran, Amberwood
 accords_text: woody, spicy, aromatic, suede, tea, fruity
 longevity: 6-8 hours
 projection: Moderate
-launched: ""
+launched: "2025"
 vegan: false
 image_main: /images/uploads/lattafa-dinasty-2.webp
 gallery:
@@ -50,11 +50,10 @@ description_full: >-
 
   It is a modern, slightly offbeat scent that feels smart and a little cosy, suited to cooler weather.
 ysp_thoughts: >-
-  Rated around 4.2 out of 5 by more than 2,800 people on Fragrantica, though the tea note is distinctive, so it is worth knowing you like it.
+  Rated around 4.2 out of 5 by more than 2,800 people on Fragrantica, though the
+  tea note is distinctive, so it is worth knowing you like it.
 
-  Tea and suede is not a common pairing at this price, and it has won a lot of
-  fans. Reviewers regularly say it smells more expensive than it is, with the
-  rooibos tea up front and a smooth woody base.
+  Tea and suede is not a common pairing at this price, and it has won a lot of fans. Reviewers regularly say it smells more expensive than it is, with the rooibos tea up front and a smooth woody base.
 
   We'll be upfront: a few people find the smoky, slightly metallic side shows up as the tea fades, and wear time varies. Several suggest giving a new bottle a couple of weeks to settle before judging it. One for anyone who wants something a bit different.
 amazon_url: ""
