@@ -45,7 +45,9 @@ description_full: >-
 
   It is a modern, slightly offbeat scent that feels smart and a little cosy, suited to cooler weather.
 ysp_thoughts: >-
-  Tea and suede is not a common pairing at this price, so it is one for people who like something a bit different. Listings vary slightly on the notes, so we will confirm once it has landed.
+  Tea and suede is not a common pairing at this price, and it has won a lot of fans. Reviewers regularly say it smells more expensive than it is, with the rooibos tea up front and a smooth woody base.
+
+  We'll be upfront: a few people find the smoky, slightly metallic side shows up as the tea fades, and wear time varies. Several suggest giving a new bottle a couple of weeks to settle before judging it. One for anyone who wants something a bit different.
 inspired_by_name: ""
 inspired_by_note: ""
 amazon_url: ""

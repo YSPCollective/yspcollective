@@ -45,7 +45,9 @@ description_full: >-
 
   It sits alongside the original Qaed Al Fursan as a spicier, warmer take on the line.
 ysp_thoughts: >-
-  Not to be confused with the original Qaed Al Fursan, which is fruity and fresh. This Untamed version is warmer and spicier, and suits cooler weather. Retailers list slightly different note pyramids, so we will confirm once stock has landed.
+  Not to be confused with the original Qaed Al Fursan, which is fruity and fresh. This Untamed version is warmer and spicier, with cinnamon, nutmeg and cardamom over lavender and amber.
+
+  Reviewers tend to call it a more mature, polished take on the sweet-spicy "Eros style" scent, and a lot of people rate it for the price. Longevity reports vary from around four to five hours up to much longer, so it is best treated as a good cool-weather option rather than a beast.
 inspired_by_name: ""
 inspired_by_note: ""
 amazon_url: ""

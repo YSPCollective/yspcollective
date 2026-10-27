@@ -44,7 +44,9 @@ description_full: >-
 
   It is a rich, characterful scent for colder weather, in a generous 110ml bottle.
 ysp_thoughts: >-
-  A newer release that suits people who like sweet, warm scents with a bit of edge. The cognac and berry opening is the main draw. We will add our own wear notes once it has landed.
+  Reviewers consistently describe this as boozy and raspberry-forward, and many compare it to the Kilian Angels' Share mood at a fraction of the cost. The cognac and berry opening is the main draw, with a rose, caramel and woody base underneath.
+
+  We'll be upfront: longevity reports are split, with some wearers getting all day and others a few hours, and a few find the dry-down turns woodier on skin. A sweet, warm choice for autumn and winter.
 inspired_by_name: ""
 inspired_by_note: ""
 amazon_url: ""

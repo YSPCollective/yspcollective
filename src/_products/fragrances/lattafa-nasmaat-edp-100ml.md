@@ -45,7 +45,9 @@ description_full: >-
 
   It is a friendly, approachable fragrance that suits everyday wear, particularly in milder weather.
 ysp_thoughts: >-
-  Retailers list two different note pyramids for this one, so we will confirm the exact notes once the stock has landed. Either way, it is positioned as an easy, pleasant everyday scent from Lattafa.
+  We'll be upfront: this one divides opinion. The opening is the star, a juicy blackcurrant, apricot and pineapple that most reviewers find bright and genuinely fruity, and plenty report it lasting well. A few find the floral dry-down a touch synthetic, so it suits people who like a sweet, modern fruity-floral rather than a natural one.
+
+  It is a fun, easy everyday spray, and a good pick if you like Lattafa's sweeter side.
 inspired_by_name: ""
 inspired_by_note: ""
 amazon_url: ""

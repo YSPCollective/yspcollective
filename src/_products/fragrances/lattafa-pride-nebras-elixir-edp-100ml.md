@@ -45,7 +45,9 @@ description_full: >-
 
   It is a dessert-style scent with a clean finish, best suited to cooler days and evenings.
 ysp_thoughts: >-
-  This is a true sugar-lover's scent, so if you prefer fresh or woody fragrances it will not be for you. If you like sweet and creamy, it is a fun, comforting wear. Some listings show a different note set, so we will confirm once it has landed.
+  This is a true sugar-lover's scent. Milk candy and whipped cream lead into a soft vanilla base, and reviewers compare it to a more refined, grown-up version of Lattafa's Eclaire.
+
+  We'll be upfront: some find projection modest, and a couple mention a sharp opening that settles after a few days. If you prefer fresh or woody fragrances it will not be for you, but for creamy gourmand fans it is a comforting, wearable pick.
 inspired_by_name: ""
 inspired_by_note: ""
 amazon_url: ""

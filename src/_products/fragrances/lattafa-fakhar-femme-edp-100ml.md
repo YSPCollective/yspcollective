@@ -45,7 +45,9 @@ description_full: >-
 
   It is elegant and approachable, a good all-rounder for daytime and occasions.
 ysp_thoughts: >-
-  A pretty, polished white floral that makes a very giftable bottle. Retailers list slightly different base notes, so we will confirm once stock has landed.
+  A pretty, polished white floral that makes a very giftable bottle. Reviewers often compare its sweet tuberose and lily style to Givenchy L'Interdit.
+
+  We'll be upfront: opinions on longevity are mixed, and a few find the tuberose a little sharp as it settles. If you love white florals, though, it is an easy, feminine pick that works for daytime and occasions.
 inspired_by_name: ""
 inspired_by_note: ""
 amazon_url: ""
