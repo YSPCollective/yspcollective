@@ -1,7 +1,7 @@
 ---
 name: Lattafa Nasmaat Eau de Parfum 100ml
 slug: lattafa-nasmaat-edp-100ml
-price: ""
+price: "23"
 rrp: ""
 brand: Lattafa
 gender: Unisex
@@ -22,7 +22,8 @@ season:
   - Summer
   - Autumn
 blind_buy_rating: Know Your Notes
-blind_buy_note: "Blackcurrant, pineapple and apricot over caramel, vanilla and sandalwood. Sweet and fruity, so best if you enjoy gourmand scents."
+blind_buy_note: Blackcurrant, pineapple and apricot over caramel, vanilla and
+  sandalwood. Sweet and fruity, so best if you enjoy gourmand scents.
 char_sweet: 4
 char_fresh: 3
 char_masculine: 2
@@ -34,24 +35,34 @@ base_notes: Caramel, Vanilla, Sandalwood, Cashmeran
 accords_text: fruity, sweet, floral, caramel, vanilla, woody
 longevity: 5-7 hours
 projection: Moderate
-origin: UAE
 launched: ""
 vegan: false
-image_main: ""
-gallery: []
-description_short: "A sweet, fruity-floral unisex scent with blackcurrant, pineapple and apricot, a soft white floral heart, and a smooth caramel-vanilla base."
+image_main: /images/uploads/lattafa-nasmaat.png
+gallery:
+  - /images/uploads/lattafa-nasmaat-2.png
+description_short: A sweet, fruity-floral unisex scent with blackcurrant,
+  pineapple and apricot, a soft white floral heart, and a smooth caramel-vanilla
+  base.
 description_full: >-
-  Nasmaat opens with juicy blackcurrant, pineapple and apricot, sweet and bright rather than sharp. Magnolia, orange blossom, rose and jasmine soften the middle, before caramel, vanilla, sandalwood and cashmeran bring a creamy, warm finish.
+  Nasmaat opens with juicy blackcurrant, pineapple and apricot, sweet and bright
+  rather than sharp. Magnolia, orange blossom, rose and jasmine soften the
+  middle, before caramel, vanilla, sandalwood and cashmeran bring a creamy, warm
+  finish.
 
   It is a friendly, approachable fragrance that suits everyday wear, particularly in milder weather.
 ysp_thoughts: >-
-  We'll be upfront: this one divides opinion. The opening is the star, a juicy blackcurrant, apricot and pineapple that most reviewers find bright and genuinely fruity, and plenty report it lasting well. A few find the floral dry-down a touch synthetic, so it suits people who like a sweet, modern fruity-floral rather than a natural one.
+  We'll be upfront: this one divides opinion. The opening is the star, a juicy
+  blackcurrant, apricot and pineapple that most reviewers find bright and
+  genuinely fruity, and plenty report it lasting well. A few find the floral
+  dry-down a touch synthetic, so it suits people who like a sweet, modern
+  fruity-floral rather than a natural one.
 
   It is a fun, easy everyday spray, and a good pick if you like Lattafa's sweeter side.
+amazon_url: ""
 inspired_by_name: ""
 inspired_by_note: ""
-amazon_url: ""
 ebay_url: ""
+origin: UAE
 gtin: "6290360598871"
 exclude_from_feed: true
 ---
