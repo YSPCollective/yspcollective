@@ -6,7 +6,7 @@ brand: Lattafa
 gender: Unisex
 size: 60ml
 concentration: Eau de Parfum (EDP)
-badge: New
+badge: Bestseller
 stock_status: on_order
 stock_quantity: 15
 expected_date: October 2026
