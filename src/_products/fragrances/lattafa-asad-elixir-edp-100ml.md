@@ -7,13 +7,13 @@ brand: Lattafa
 gender: Men
 size: 100ml
 concentration: Eau de Parfum (EDP)
-badge: ""
+badge: Popular
 custom_badge: ""
 stock_status: on_order
 stock_quantity: 6
 expected_date: November 2026
 featured: false
-published: false
+published: true
 date_added: 2026-10-27
 fragrance_family: Woody Spicy Tobacco
 best_for: Evening wear, Autumn/Winter, Date night
@@ -21,7 +21,8 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Universal Crowd-Pleaser
-blind_buy_note: "Pink pepper and saffron over tobacco, vanilla and amber. A smooth, warm crowd favourite."
+blind_buy_note: Pink pepper and saffron over tobacco, vanilla and amber. A
+  smooth, warm crowd favourite.
 char_sweet: 3
 char_fresh: 2
 char_masculine: 5
@@ -33,7 +34,7 @@ base_notes: Patchouli, Olibanum, Cashmeran, Amber
 accords_text: warm spicy, tobacco, woody, vanilla, amber, smoky
 longevity: 7-9 hours
 projection: Moderate to Strong
-launched: ""
+launched: "2025"
 vegan: false
 image_main: /images/uploads/lattafa-asad-elxir.png
 gallery: []
@@ -47,14 +48,13 @@ description_full: >-
 
   It is a bold, masculine scent for cooler evenings, with more richness than the original Asad.
 ysp_thoughts: >-
-  Rated around 4.4 out of 5 by more than 2,800 people on Fragrantica, a clear favourite in the Asad line.
+  Rated around 4.4 out of 5 by more than 2,800 people on Fragrantica, a clear
+  favourite in the Asad line.
 
-  This is the Elixir, which is smoother and warmer than the original
-  Asad, so do not expect the same profile. A good pick for fans of tobacco and
-  spice.
+  This is the Elixir, which is smoother and warmer than the original Asad, so do not expect the same profile. A good pick for fans of tobacco and spice.
 amazon_url: ""
-inspired_by_name: "Dior Sauvage Elixir"
-inspired_by_note: "Same spicy, ambery woody DNA, with a warmer, tobacco-leaning drydown."
+inspired_by_name: Dior Sauvage Elixir
+inspired_by_note: Same spicy, ambery woody DNA, with a warmer, tobacco-leaning drydown.
 ebay_url: ""
 origin: UAE
 gtin: "6290362346548"
