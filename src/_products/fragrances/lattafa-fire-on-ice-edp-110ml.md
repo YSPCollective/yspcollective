@@ -56,8 +56,8 @@ ysp_thoughts: >-
 
   We'll be upfront: longevity reports are split, with some wearers getting all day and others a few hours, and a few find the dry-down turns woodier on skin. A sweet, warm choice for autumn and winter.
 amazon_url: ""
-inspired_by_name: ""
-inspired_by_note: ""
+inspired_by_name: "Kilian Angels' Share"
+inspired_by_note: "Same cognac, cinnamon and warm woody DNA, with a sharper black raspberry opening."
 ebay_url: ""
 origin: UAE
 gtin: "6290360598901"

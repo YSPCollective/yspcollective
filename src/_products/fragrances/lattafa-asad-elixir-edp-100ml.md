@@ -53,8 +53,8 @@ ysp_thoughts: >-
   Asad, so do not expect the same profile. A good pick for fans of tobacco and
   spice.
 amazon_url: ""
-inspired_by_name: ""
-inspired_by_note: ""
+inspired_by_name: "Dior Sauvage Elixir"
+inspired_by_note: "Same spicy, ambery woody DNA, with a warmer, tobacco-leaning drydown."
 ebay_url: ""
 origin: UAE
 gtin: "6290362346548"

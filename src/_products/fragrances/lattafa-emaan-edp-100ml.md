@@ -56,8 +56,8 @@ ysp_thoughts: >-
   white florals. If that is you, it is a refined, good value option that works
   well for evenings.
 amazon_url: ""
-inspired_by_name: ""
-inspired_by_note: ""
+inspired_by_name: "Giorgio Armani My Way"
+inspired_by_note: "Same bright bergamot and orange blossom opening over a soft white floral and musky vanilla base."
 ebay_url: ""
 origin: UAE
 gtin: "6291108738498"

@@ -53,8 +53,8 @@ ysp_thoughts: >-
 
   A comforting, sweet scent for people who enjoy chocolate and praline notes. Do not confuse it with Angham Second Song, which is a separate, different fragrance.
 amazon_url: ""
-inspired_by_name: ""
-inspired_by_note: ""
+inspired_by_name: "Burberry Goddess"
+inspired_by_note: "Same rich vanilla, lavender and cacao gourmand character at a fraction of the price."
 ebay_url: ""
 origin: UAE
 gtin: "6290360598338"

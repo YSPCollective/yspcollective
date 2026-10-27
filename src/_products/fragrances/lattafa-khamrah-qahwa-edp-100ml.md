@@ -53,8 +53,8 @@ ysp_thoughts: >-
 
   A big, warm gourmand that has built a strong following. It is very sweet and projects well, so a couple of sprays is plenty. Best in autumn and winter.
 amazon_url: ""
-inspired_by_name: ""
-inspired_by_note: ""
+inspired_by_name: "Kilian Angels' Share"
+inspired_by_note: "The same boozy, spiced-vanilla gourmand style, with a dark coffee twist."
 ebay_url: ""
 origin: UAE
 gtin: "6290360593661"

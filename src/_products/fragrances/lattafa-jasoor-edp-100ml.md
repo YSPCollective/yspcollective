@@ -54,8 +54,8 @@ ysp_thoughts: >-
 
   Tobacco and leather over lavender is a distinctive combination, so it suits people who like their scents dry and aromatic rather than sweet. Some reviewers compare it to Xerjoff Erba Pura territory, though it is a very different, more aromatic style.
 amazon_url: ""
-inspired_by_name: ""
-inspired_by_note: ""
+inspired_by_name: "Valentino Uomo Born In Roma Coral Fantasy"
+inspired_by_note: "Same red apple, lavender and tobacco opening, with a drier, more mature feel and strong longevity."
 ebay_url: ""
 origin: UAE
 gtin: "6290360591513"

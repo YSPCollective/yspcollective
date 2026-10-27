@@ -55,8 +55,8 @@ ysp_thoughts: >-
 
   We'll be upfront: opinions on longevity are mixed, and a few find the tuberose a little sharp as it settles. If you love white florals, though, it is an easy, feminine pick that works for daytime and occasions.
 amazon_url: ""
-inspired_by_name: ""
-inspired_by_note: ""
+inspired_by_name: "Givenchy L'Interdit"
+inspired_by_note: "Same elegant white floral character of tuberose and jasmine at a fraction of the price."
 ebay_url: ""
 origin: UAE
 gtin: "6291107456041"

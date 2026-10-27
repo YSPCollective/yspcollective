@@ -56,8 +56,8 @@ ysp_thoughts: >-
 
   Reviewers tend to call it a more mature, polished take on the sweet-spicy "Eros style" scent, and a lot of people rate it for the price. Longevity reports vary from around four to five hours up to much longer, so it is best treated as a good cool-weather option rather than a beast.
 amazon_url: ""
-inspired_by_name: ""
-inspired_by_note: ""
+inspired_by_name: "Versace Eros Najim"
+inspired_by_note: "Same orange, cinnamon and caramel-amber warmth, a close match at a fraction of the price."
 ebay_url: ""
 origin: UAE
 gtin: "6290362340645"

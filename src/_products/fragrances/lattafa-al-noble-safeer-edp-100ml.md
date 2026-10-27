@@ -55,8 +55,8 @@ ysp_thoughts: This one is for people who like their fragrances green and a
   have never worn an artemisia-led scent, it is worth reading the notes before
   you buy. If you like it, it is an easy, versatile wear for daytime.
 amazon_url: ""
-inspired_by_name: ""
-inspired_by_note: ""
+inspired_by_name: "Initio Oud for Happiness"
+inspired_by_note: "A similar herbal, resinous woody style, bolder and less delicate."
 ebay_url: ""
 origin: UAE
 gtin: "6291108738009"
