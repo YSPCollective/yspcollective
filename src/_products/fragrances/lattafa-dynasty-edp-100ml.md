@@ -43,20 +43,16 @@ gallery:
 description_short: A woody, spicy aromatic with bergamot, ginger and raspberry,
   a rooibos tea and suede heart, and a base of cedarwood, cashmeran and
   amberwood.
-description_full: >-
-  Dynasty opens with bergamot, ginger, clary sage and nutmeg, with a touch of
-  raspberry for juiciness. The heart pairs rooibos tea with soft suede, before
-  cedarwood, cashmeran and amberwood give it a warm, smooth, woody base.
+description_full: |-
+  <p>Dynasty opens with bergamot, ginger, clary sage and nutmeg, with a touch of raspberry for juiciness. It's lively without being sharp.</p>
 
-  It is a modern, slightly offbeat scent that feels smart and a little cosy, suited to cooler weather.
-ysp_thoughts: >-
-  Rated around 4.2 out of 5 by more than 2,800 people on Fragrantica, though the tea note is distinctive, so it is worth knowing you like it.
+  <p>The heart is the interesting part: rooibos tea paired with soft suede. Then cedarwood, cashmeran and amberwood give it a warm, smooth, woody base.</p>
 
-  Tea and suede is not a common pairing at this price, and it has won a lot of
-  fans. Reviewers regularly say it smells more expensive than it is, with the
-  rooibos tea up front and a smooth woody base.
+  <p>It's modern and a little offbeat, smart and cosy at the same time, and best in cooler weather.</p>
+ysp_thoughts: |-
+  <p>Tea and suede isn't a common pairing at this price, and it has won Dynasty a lot of fans, around 4.2 out of 5 from more than 2,800 people on Fragrantica. It smells more expensive than it is, with the rooibos up front and that smooth woody base underneath.</p>
 
-  We'll be upfront: a few people find the smoky, slightly metallic side shows up as the tea fades, and wear time varies. Several suggest giving a new bottle a couple of weeks to settle before judging it. One for anyone who wants something a bit different.
+  <p>We'll be upfront, though: the tea note is distinctive, so it's worth knowing you like it first. As the tea fades it can turn a little smoky and slightly metallic, and wear time varies. Give a new bottle a couple of weeks to settle before you judge it. One for anyone who wants something a bit different.</p>
 amazon_url: ""
 inspired_by_name: ""
 inspired_by_note: ""

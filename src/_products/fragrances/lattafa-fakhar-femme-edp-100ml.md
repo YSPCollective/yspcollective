@@ -42,18 +42,16 @@ gallery:
   - /images/uploads/lattafafakharwoman1.webp
 description_short: A bright, feminine white floral with pomegranate and lily, a
   tuberose, jasmine and gardenia heart, and a soft vanilla and musk base.
-description_full: >-
-  Fakhar Femme opens with pomegranate, lily and a sparkle of aldehydes. The
-  heart is a lush white floral bouquet of tuberose, jasmine, gardenia,
-  ylang-ylang and peony, before vanilla, ambroxan, white musk and sandalwood
-  bring a soft, clean finish.
+description_full: |-
+  <p>Fakhar Femme opens with pomegranate, lily and a sparkle of aldehydes, bright and clean from the first spray.</p>
 
-  It is elegant and approachable, a good all-rounder for daytime and occasions.
-ysp_thoughts: >-
-  A pretty, polished white floral that makes a very giftable bottle. Reviewers
-  often compare its sweet tuberose and lily style to Givenchy L'Interdit.
+  <p>The heart is a lush white floral bouquet of tuberose, jasmine, gardenia, ylang-ylang and peony. Vanilla, ambroxan, white musk and sandalwood then bring a soft, clean finish.</p>
 
-  We'll be upfront: opinions on longevity are mixed, and a few find the tuberose a little sharp as it settles. If you love white florals, though, it is an easy, feminine pick that works for daytime and occasions.
+  <p>Elegant and approachable, a good all-rounder for daytime and for occasions.</p>
+ysp_thoughts: |-
+  <p>A pretty, polished white floral and a very giftable bottle. The sweet tuberose and lily style is often likened to Givenchy L'Interdit, which is lovely company to keep at this price.</p>
+
+  <p>We'll be upfront: opinions on longevity are mixed, and a few people find the tuberose a little sharp as it settles. If you love white florals, though, it's an easy, feminine pick for daytime and occasions.</p>
 amazon_url: ""
 inspired_by_name: "Givenchy L'Interdit"
 inspired_by_note: "Same elegant white floral character of tuberose and jasmine at a fraction of the price."

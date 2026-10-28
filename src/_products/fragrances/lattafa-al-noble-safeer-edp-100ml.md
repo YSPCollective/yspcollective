@@ -43,17 +43,16 @@ gallery:
 description_short: A green, herbal unisex scent opening with bergamot and
   artemisia, over a dry, resinous base of guaiac wood, patchouli and
   frankincense. Fresh, earthy and easy to wear.
-description_full: >-
-  Al Noble Safeer opens with crisp bergamot and bitter, herbal artemisia
-  (wormwood), giving it a green, slightly aromatic character from the first
-  spray. Herbs and spices form the heart, before guaiac wood, patchouli,
-  labdanum and frankincense bring a dry, earthy, resinous finish.
+description_full: |-
+  <p>Al Noble Safeer opens crisp and green. Bergamot sits alongside bitter, herbal artemisia (wormwood), which gives it an aromatic, slightly medicinal edge from the very first spray.</p>
 
-  It sits on the fresher, more natural side of the Lattafa range, a good choice for warm days or anyone who prefers herbal and woody scents over sweet ones.
-ysp_thoughts: This one is for people who like their fragrances green and a
-  little dry rather than sweet. The herbal opening can divide opinion, so if you
-  have never worn an artemisia-led scent, it is worth reading the notes before
-  you buy. If you like it, it is an easy, versatile wear for daytime.
+  <p>Herbs and spices carry the heart, then the base dries down into guaiac wood, patchouli, labdanum and frankincense. It ends up dry, earthy and resinous rather than sweet.</p>
+
+  <p>It sits on the fresher, more natural side of the Lattafa range. A good one for warm days, or for anyone who would pick herbal and woody over sugary every time.</p>
+ysp_thoughts: |-
+  <p>This is one for the people who find most of the Lattafa range a bit too sweet. It is green, a little dry and properly herbal, which makes it a refreshing change on our shelves.</p>
+
+  <p>We'll be straight with you: the artemisia opening can divide people. If you have never worn a wormwood-led scent, have a read of the notes before you buy. If it clicks, it's an easy, versatile daytime wear that doesn't try too hard.</p>
 amazon_url: ""
 inspired_by_name: "Initio Oud for Happiness"
 inspired_by_note: "A similar herbal, resinous woody style, bolder and less delicate."

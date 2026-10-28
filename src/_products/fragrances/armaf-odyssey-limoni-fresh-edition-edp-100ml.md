@@ -47,15 +47,10 @@ description_full: >-
 
 
   The base settles into amber, musk and an unusual blue tea note that adds a faintly sweet, slightly salty depth. It's a genuinely energising, warm- weather composition that leans harder into "fresh" than most of the Odyssey range.
-ysp_thoughts: >-
-  The fragrance community has been vocal about this one - it's widely discussed
-  as Armaf's own twist on Louis Vuitton's Afternoon Swim, sharing that same
-  bright citrus-into-marine progression that made the LV original a cult
-  favourite. Reviewers note the floral-salty middle keeps it interesting rather
-  than one-note.
+ysp_thoughts: |-
+  <p>This one has the fragrance community talking. It's widely seen as Armaf's own twist on Louis Vuitton's Afternoon Swim, with the same bright citrus-into-marine progression that made the LV original a cult favourite. The floral, salty middle is what keeps it interesting rather than one-note.</p>
 
-
-  We already carry Odyssey Mandarin Sky and it's been one of our steadiest sellers, so a fresher, more citrus-forward sibling felt like a natural addition for the warmer months.
+  <p>We already carry Odyssey Mandarin Sky and it's been one of our steadiest sellers, so a fresher, more citrus-forward sibling felt like a natural addition for the warmer months.</p>
 amazon_url: ""
 inspired_by_name: Louis Vuitton Afternoon Swim
 inspired_by_note: Same bright citrus-into-marine progression as the LV cult
@@ -82,15 +77,10 @@ pt:
 
 
     A base assenta em âmbar, almíscar e uma invulgar nota de chá azul que acrescenta uma profundidade levemente doce e ligeiramente salgada. É uma composição genuinamente energizante para tempo quente, que aposta mais no fresco do que a maior parte da gama Odyssey.
-  ysp_thoughts_pt: >-
-    A comunidade da perfumaria tem falado muito deste. É amplamente discutido
-    como a versão da Armaf para o Afternoon Swim da Louis Vuitton, partilhando a
-    mesma progressão luminosa de cítricos para notas marinhas que fez do
-    original da LV um objeto de culto. Os críticos notam que o meio floral e
-    salgado o mantém interessante em vez de monótono.
+  ysp_thoughts_pt: |-
+    <p>Este tem dado que falar na comunidade da perfumaria. É amplamente visto como a versão da Armaf para o Afternoon Swim da Louis Vuitton, com a mesma progressão luminosa de cítricos para notas marinhas que fez do original da LV um objeto de culto. É o meio floral e salgado que o mantém interessante em vez de monótono.</p>
 
-
-    Já temos o Odyssey Mandarin Sky, que tem sido um dos nossos artigos mais constantes, por isso um irmão mais fresco e mais centrado nos cítricos pareceu-nos uma adição natural para os meses quentes.
+    <p>Já temos o Odyssey Mandarin Sky, que tem sido um dos nossos artigos mais constantes, por isso um irmão mais fresco e mais centrado nos cítricos pareceu-nos uma adição natural para os meses quentes.</p>
 ebay_url: ""
 brand: Armaf
 char_sweet: 2
@@ -116,14 +106,8 @@ es:
 
 
     El fondo se asienta en ámbar, almizcle y una inusual nota de té azul que añade una profundidad levemente dulce y algo salada. Es una composición genuinamente energizante para tiempo cálido, que apuesta más por lo fresco que la mayor parte de la gama Odyssey.
-  ysp_thoughts_es: >-
-    La comunidad de la perfumería ha hablado mucho de este. Se discute
-    ampliamente como la versión de Armaf del Afternoon Swim de Louis Vuitton,
-    compartiendo la misma progresión luminosa de cítricos hacia notas marinas
-    que convirtió al original de LV en un objeto de culto. Los reseñadores
-    apuntan que el centro floral y salado lo mantiene interesante en lugar de
-    monótono.
+  ysp_thoughts_es: |-
+    <p>Este está dando mucho de qué hablar en la comunidad de la perfumería. Se ve ampliamente como la versión de Armaf del Afternoon Swim de Louis Vuitton, con la misma progresión luminosa de cítricos hacia notas marinas que convirtió al original de LV en un objeto de culto. Es el centro floral y salado el que lo mantiene interesante en lugar de monótono.</p>
 
-
-    Ya tenemos el Odyssey Mandarin Sky, que ha sido uno de nuestros artículos más constantes, así que un hermano más fresco y más centrado en los cítricos nos pareció una incorporación natural para los meses cálidos.
+    <p>Ya tenemos el Odyssey Mandarin Sky, que ha sido uno de nuestros artículos más constantes, así que un hermano más fresco y más centrado en los cítricos nos pareció una incorporación natural para los meses cálidos.</p>
 ---

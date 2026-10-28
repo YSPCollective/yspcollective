@@ -40,18 +40,16 @@ gallery: []
 description_short: A warm, spicy-woody scent with pink pepper, saffron and
   grapefruit, a tobacco and vanilla heart, and a base of patchouli, olibanum and
   amber.
-description_full: >-
-  Asad Elixir opens with pink pepper, saffron and grapefruit, a spicy citrus
-  start with some bite. Tobacco, cedarwood and vanilla form a smoky, creamy
-  heart, before patchouli, olibanum, cashmeran and amber add depth and warmth.
+description_full: |-
+  <p>Asad Elixir opens with pink pepper, saffron and grapefruit: a spicy citrus start with some real bite to it.</p>
 
-  It is a bold, masculine scent for cooler evenings, with more richness than the original Asad.
-ysp_thoughts: >-
-  Rated around 4.4 out of 5 by more than 2,800 people on Fragrantica, a clear favourite in the Asad line.
+  <p>The heart turns smoky and creamy, with tobacco, cedarwood and vanilla. Then patchouli, olibanum, cashmeran and amber add depth and warmth underneath.</p>
 
-  This is the Elixir, which is smoother and warmer than the original
-  Asad, so do not expect the same profile. A good pick for fans of tobacco and
-  spice.
+  <p>It's a bold, masculine scent for cooler evenings, with noticeably more richness than the original Asad.</p>
+ysp_thoughts: |-
+  <p>The Elixir is the smoother, warmer side of the Asad line, so don't expect the same profile as the original. It has a clear following too, at around 4.4 out of 5 from more than 2,800 people on Fragrantica.</p>
+
+  <p>We'd point it at anyone who likes tobacco and spice with a bit of cosy sweetness. It's the one we'd reach for on a cold night out.</p>
 amazon_url: ""
 inspired_by_name: "Dior Sauvage Elixir"
 inspired_by_note: "Same spicy, ambery woody DNA, with a warmer, tobacco-leaning drydown."

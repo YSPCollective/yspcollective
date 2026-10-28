@@ -42,19 +42,16 @@ gallery:
 description_short: A warm, boozy gourmand with cognac, cinnamon and black
   raspberry, a rose and caramel heart, and a base of myrrh, oakmoss, cedarwood
   and ambroxan.
-description_full: >-
-  Fire on Ice opens with cognac, cinnamon and dark raspberry, sweet and a little
-  boozy. Rose petals and caramel form the heart, before myrrh, oakmoss,
-  cedarwood and ambroxan add depth and a dry woody finish.
+description_full: |-
+  <p>Fire on Ice opens with cognac, cinnamon and dark raspberry: sweet, a little boozy and instantly warming.</p>
 
-  It is a rich, characterful scent for colder weather, in a generous 110ml bottle.
-ysp_thoughts: >-
-  Rated around 4.3 out of 5 by more than 800 people on Fragrantica, which is a
-  strong showing for a 2025 release.
+  <p>Rose petals and caramel form the heart. Then myrrh, oakmoss, cedarwood and ambroxan add depth and a dry woody finish, so it never stays purely sugary.</p>
 
-  Reviewers consistently describe this as boozy and raspberry-forward, and many compare it to the Kilian Angels' Share mood at a fraction of the cost. The cognac and berry opening is the main draw, with a rose, caramel and woody base underneath.
+  <p>A rich, characterful scent for colder weather, and the 110ml bottle is generous.</p>
+ysp_thoughts: |-
+  <p>The cognac and berry opening is the big draw here. It's boozy and raspberry-forward, and it's often held up next to Kilian's Angels' Share for mood, at a fraction of the cost. It holds a strong 4.3 out of 5 from more than 800 people on Fragrantica, which is impressive for a 2025 release.</p>
 
-  We'll be upfront: longevity reports are split, with some wearers getting all day and others a few hours, and a few find the dry-down turns woodier on skin. A sweet, warm choice for autumn and winter.
+  <p>We'll be upfront: longevity is split, with some people getting all day and others a few hours, and a few find the dry-down turns woodier on skin. If sweet and warm is your thing for autumn and winter, it's well worth a go.</p>
 amazon_url: ""
 inspired_by_name: "Kilian Angels' Share"
 inspired_by_note: "Same cognac, cinnamon and warm woody DNA, with a sharper black raspberry opening."

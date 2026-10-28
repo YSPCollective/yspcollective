@@ -42,56 +42,45 @@ gallery: []
 description_short: A sharp, sophisticated woody-spicy fragrance opening with
   violet leaf and bergamot, a peppery rose heart, and a warm patchouli-
   ambergris-vanilla base. Sharp-dressed and versatile.
-description_full: >-
-  Suits opens crisp and confident — violet leaf and coriander over bright
-  bergamot — before rose and black pepper add a warm, slightly spicy heart,
-  softened by lily-of-the-valley. The base is where it earns its "smart"
-  character: patchouli and ambergris deepen into a rounded, slightly sweet
-  finish from bourbon vanilla.
+description_full: |-
+  <p>Suits opens crisp and confident, with violet leaf and coriander over bright bergamot, before rose and black pepper add a warm, slightly spicy heart, softened by lily-of-the-valley. The base is where it earns its "smart" character: patchouli and ambergris deepen into a rounded, slightly sweet finish from bourbon vanilla.</p>
 
+  <p>It reads as polished rather than loud, a fragrance built for the office or a smart-casual evening rather than a big statement piece. We think it's one of the more accurate, wearable interpretations in its category.</p>
+ysp_thoughts: |-
+  <p>This one is widely seen as Fragrance World's take on YSL's Tuxedo. The resemblance gets put at around 95%, with Suits landing slightly fresher on top and a touch more amber and vanilla in the dry-down. Longevity sits around 4-5 hours, which is about right for an EDP in this style, so we won't oversell it there.</p>
 
-  It reads as polished rather than loud — a fragrance built for the office or a smart-casual evening rather than a big statement piece. Reviewers consistently note it as one of the more accurate, wearable interpretations in its category.
-ysp_thoughts: >-
-  This one is widely discussed as Fragrance World's take on YSL's Tuxedo —
-  reviewers put the resemblance at around 95%, with Suits landing slightly
-  fresher on top and a touch more amber and vanilla in the dry-down. Longevity
-  reports sit around 4-5 hours, which tracks with typical EDP performance in
-  this style.
-
-
-  A tidy, versatile addition to the range for anyone after a polished everyday scent without the price tag of the original.
+  <p>A tidy, versatile addition to the range for anyone after a polished everyday scent without the price tag of the original.</p>
 amazon_url: ""
 inspired_by_name: YSL Tuxedo
-inspired_by_note: Reviewers call it a 95% match - a touch fresher on top, with
-  more amber and vanilla in the dry-down.
+inspired_by_note: "Around a 95% match: a touch fresher on top, with more amber and vanilla in the dry-down."
 ebay_url: ""
 origin: UAE
 gtin: "6290360373393"
 exclude_from_feed: false
 pt:
   blind_buy_note_pt: 'Folha de violeta e pimenta preta sobre patchouli e baunilha bourbon. Elegante em vez de ruidoso, e usável quase todo o ano se gosta de amadeirados apolvilhados.'
-  inspired_by_note_pt: 'Os críticos falam de uma correspondência de 95%, um pouco mais fresca no topo e com mais âmbar e baunilha na secagem.'
+  inspired_by_note_pt: "Cerca de 95% de correspondência, um pouco mais fresco no topo e com mais âmbar e baunilha na secagem."
   name_pt: Fragrance World Suits Eau de Parfum 100ml
   description_short_pt: 'Um perfume amadeirado e especiado, afiado e sofisticado, que abre com folha de violeta e bergamota, tem um coração de rosa apimentada e uma base quente de patchouli, âmbar cinzento e baunilha. Bem vestido e versátil.'
   description_full_pt: |-
-    O Suits abre nítido e confiante, com folha de violeta e coentro sobre bergamota luminosa, antes de a rosa e a pimenta preta acrescentarem um coração quente e ligeiramente especiado, suavizado pelo lírio-do-vale. É na base que ganha o seu carácter elegante: o patchouli e o âmbar cinzento aprofundam-se num final arredondado e ligeiramente doce, dado pela baunilha bourbon.
+    <p>O Suits abre nítido e confiante, com folha de violeta e coentro sobre bergamota luminosa, antes de a rosa e a pimenta preta acrescentarem um coração quente e ligeiramente especiado, suavizado pelo lírio-do-vale. É na base que ganha o seu carácter elegante: o patchouli e o âmbar cinzento aprofundam-se num final arredondado e ligeiramente doce, dado pela baunilha bourbon.</p>
 
-    Lê-se como polido em vez de ruidoso, um perfume feito para o escritório ou para uma noite smart casual, e não uma grande peça de afirmação. Os críticos apontam-no consistentemente como uma das interpretações mais fiéis e usáveis da sua categoria.
+    <p>Lê-se como polido em vez de ruidoso, um perfume feito para o escritório ou para uma noite smart casual, e não uma grande peça de afirmação. Na nossa opinião, é uma das interpretações mais fiéis e usáveis da sua categoria.</p>
   ysp_thoughts_pt: |-
-    Este é amplamente discutido como a versão da Fragrance World para o Tuxedo da YSL. Os críticos colocam a semelhança à volta dos 95%, com o Suits a ficar ligeiramente mais fresco no topo e com um pouco mais de âmbar e baunilha na secagem. Os relatos de duração ficam nas 4 a 5 horas, o que bate certo com o desempenho típico de um EDP neste estilo.
+    <p>Este é amplamente visto como a versão da Fragrance World para o Tuxedo da YSL. A semelhança é colocada à volta dos 95%, com o Suits a ficar ligeiramente mais fresco no topo e com um pouco mais de âmbar e baunilha na secagem. A duração ronda as 4 a 5 horas, o que bate certo com um EDP deste estilo, por isso não vamos exagerar nesse ponto.</p>
 
-    Uma adição arrumada e versátil à gama, para quem procura um perfume diário polido sem a etiqueta de preço do original.
+    <p>Uma adição arrumada e versátil à gama, para quem procura um perfume diário polido sem a etiqueta de preço do original.</p>
 es:
   blind_buy_note_es: 'Hoja de violeta y pimienta negra sobre pachulí y vainilla bourbon. Elegante en lugar de ruidoso, y llevable casi todo el año si te gustan los amaderados empolvados.'
-  inspired_by_note_es: 'Los reseñadores hablan de una coincidencia del 95%, algo más fresca en la salida y con más ámbar y vainilla en el fondo.'
+  inspired_by_note_es: "Alrededor de un 95% de coincidencia, algo más fresco en la salida y con más ámbar y vainilla en el fondo."
   name_es: Fragrance World Suits Eau de Parfum 100ml
   description_short_es: 'Un perfume amaderado y especiado, afilado y sofisticado, que abre con hoja de violeta y bergamota, despliega un corazón de rosa apimentada y un fondo cálido de pachulí, ámbar gris y vainilla. Bien vestido y versátil.'
   description_full_es: |-
-    Suits abre nítido y seguro, con hoja de violeta y cilantro sobre bergamota luminosa, antes de que la rosa y la pimienta negra añadan un corazón cálido y ligeramente especiado, suavizado por el muguete. Es en el fondo donde gana su carácter elegante: el pachulí y el ámbar gris se profundizan en un final redondeado y algo dulce, aportado por la vainilla bourbon.
+    <p>Suits abre nítido y seguro, con hoja de violeta y cilantro sobre bergamota luminosa, antes de que la rosa y la pimienta negra añadan un corazón cálido y ligeramente especiado, suavizado por el muguete. Es en el fondo donde gana su carácter elegante: el pachulí y el ámbar gris se profundizan en un final redondeado y algo dulce, aportado por la vainilla bourbon.</p>
 
-    Se lee como pulido en lugar de ruidoso, un perfume hecho para la oficina o para una noche smart casual, y no una gran pieza de afirmación. Los reseñadores lo señalan de forma constante como una de las interpretaciones más fieles y llevables de su categoría.
+    <p>Se lee como pulido en lugar de ruidoso, un perfume hecho para la oficina o para una noche smart casual, y no una gran pieza de afirmación. Para nosotros, es una de las interpretaciones más fieles y llevables de su categoría.</p>
   ysp_thoughts_es: |-
-    Este se discute ampliamente como la versión de Fragrance World del Tuxedo de YSL. Los reseñadores sitúan el parecido en torno al 95%, con Suits algo más fresco en la salida y con un poco más de ámbar y vainilla en el fondo. Los informes de duración quedan en las 4 a 5 horas, lo que encaja con el rendimiento típico de un EDP de este estilo.
+    <p>Este se ve ampliamente como la versión de Fragrance World del Tuxedo de YSL. El parecido se sitúa en torno al 95%, con Suits algo más fresco en la salida y con un poco más de ámbar y vainilla en el fondo. La duración ronda las 4 a 5 horas, lo que encaja con un EDP de este estilo, así que no vamos a exagerar en ese punto.</p>
 
-    Una incorporación ordenada y versátil a la gama, para quien busca un perfume diario pulido sin la etiqueta de precio del original.
+    <p>Una incorporación ordenada y versátil a la gama, para quien busca un perfume diario pulido sin la etiqueta de precio del original.</p>
 ---

@@ -45,15 +45,10 @@ description_full: Elixir opens with a cool, refreshing burst of mint and
   quality to the heart. It closes on a rich, creamy base of vanilla and tonka
   bean — sweet without being cloying, and noticeably more restrained than some
   of the very sweet gourmands in this category.
-ysp_thoughts: >-
-  Reviewers repeatedly point to Jean Paul Gaultier's Le Male Elixir as the
-  reference point here, with several noting Rayhaan's version actually refines
-  on the original — dialling back the sticky maple-syrup top note for a more
-  balanced, easier-to-wear result. Longevity reports are mixed, so we won't
-  oversell it on that front.
+ysp_thoughts: |-
+  <p>Jean Paul Gaultier's Le Male Elixir is the obvious reference point here, and we think Rayhaan's version actually refines on the original, dialling back the sticky maple-syrup top note for a more balanced, easier-to-wear result. Longevity is mixed, so we won't oversell it on that front.</p>
 
-
-  It's a genuinely well-regarded gourmand for the price, and a nice unisex option to round out the range.
+  <p>It's a genuinely well-regarded gourmand for the price, and a nice unisex option to round out the range.</p>
 amazon_url: ""
 inspired_by_name: Jean Paul Gaultier Le Male Elixir
 inspired_by_note: Same warm vanilla-tonka backbone, with the syrupy top note
@@ -69,9 +64,9 @@ pt:
   description_short_pt: 'Um perfume aromático quente e doce, que abre com hortelã e bergamota, se suaviza com benjoim e alfazema e termina numa base rica de baunilha e tonka. Equilibrado e fácil de usar.'
   description_full_pt: 'O Elixir abre com uma explosão fresca e revigorante de hortelã e bergamota, antes de o benjoim e a alfazema trazerem calor e uma qualidade aromática e calmante ao coração. Fecha numa base rica e cremosa de baunilha e fava tonka, doce sem ser enjoativa e visivelmente mais contida do que alguns dos gourmands muito doces desta categoria.'
   ysp_thoughts_pt: |-
-    Os críticos apontam repetidamente o Le Male Elixir da Jean Paul Gaultier como referência, e vários notam que a versão da Rayhaan até refina o original, contendo a nota de topo pegajosa de xarope de ácer para um resultado mais equilibrado e mais fácil de usar. Os relatos sobre duração são mistos, por isso não o vamos vender em excesso nesse ponto.
+    <p>O Le Male Elixir da Jean Paul Gaultier é a referência óbvia aqui, e achamos que a versão da Rayhaan até refina o original, contendo a nota de topo pegajosa de xarope de ácer para um resultado mais equilibrado e mais fácil de usar. A duração é mista, por isso não o vamos vender em excesso nesse ponto.</p>
 
-    É um gourmand genuinamente bem considerado para o preço, e uma boa opção unissexo para completar a gama.
+    <p>É um gourmand genuinamente bem considerado para o preço, e uma boa opção unissexo para completar a gama.</p>
 es:
   blind_buy_note_es: 'Menta y lavanda sobre miel, tabaco y vainilla bourbon. Dulce y bastante ruidoso, y en su mejor momento en una noche fuera.'
   inspired_by_note_es: 'La misma columna cálida de vainilla y tonka, con la nota de salida almibarada contenida para un uso diario más equilibrado.'
@@ -79,7 +74,7 @@ es:
   description_short_es: 'Un perfume aromático cálido y dulce, que abre con menta y bergamota, se suaviza con benjuí y lavanda y termina en un fondo rico de vainilla y tonka. Equilibrado y fácil de llevar.'
   description_full_es: 'Elixir abre con una explosión fresca y vigorizante de menta y bergamota, antes de que el benjuí y la lavanda aporten calidez y una cualidad aromática y calmante al corazón. Cierra en un fondo rico y cremoso de vainilla y haba tonka, dulce sin ser empalagoso y notablemente más contenido que algunos de los gourmand muy dulces de esta categoría.'
   ysp_thoughts_es: |-
-    Los reseñadores señalan repetidamente el Le Male Elixir de Jean Paul Gaultier como referencia, y varios apuntan que la versión de Rayhaan incluso refina el original, conteniendo la nota de salida pegajosa de sirope de arce para un resultado más equilibrado y más fácil de llevar. Los informes sobre la duración son dispares, así que no lo vamos a vender de más en ese punto.
+    <p>El Le Male Elixir de Jean Paul Gaultier es la referencia obvia aquí, y creemos que la versión de Rayhaan incluso refina el original, conteniendo la nota de salida pegajosa de sirope de arce para un resultado más equilibrado y más fácil de llevar. La duración es dispar, así que no lo vamos a vender de más en ese punto.</p>
 
-    Es un gourmand genuinamente bien valorado para lo que cuesta, y una buena opción unisex para completar la gama.
+    <p>Es un gourmand genuinamente bien valorado para lo que cuesta, y una buena opción unisex para completar la gama.</p>
 ---

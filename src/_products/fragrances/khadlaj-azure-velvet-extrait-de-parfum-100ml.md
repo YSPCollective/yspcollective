@@ -53,7 +53,7 @@ description_full: >-
 
   <p>The extrait base is where the real quality shows. Woody notes, soft powder and a hint of incense settle into a rich, lasting dry-down that carries for 7–10 hours and projects confidently without being loud. As an extrait de parfum, the concentration gives it a depth and complexity that distinguishes it from cheaper alternatives in this space.</p>
 
-  <p>Fragrantica reviewers have called it the best Layton dupe on the market. Wearers of Layton have said they prefer it. Either way, it's exceptional value.</p>
+  <p>It's been called the best Layton dupe on the market, and some Layton wearers say they prefer it. Either way, it's exceptional value.</p>
 ysp_thoughts: >
   <p>Azure Velvet is one of the most impressive value propositions in our entire
   catalogue. Layton by Parfums de Marly has a near-cult following in the
@@ -77,7 +77,7 @@ pt:
     <p>A abertura é apelativa desde logo: bergamota, alfazema e um toque limpo de hortelã criam uma introdução fresca e revigorante que parece polida em vez de desportiva. A hortelã aqui é leve e natural, e dá ao Azure Velvet uma qualidade ligeiramente mais fria e arejada do que o Layton original, coisa que alguns utilizadores até preferem.</p>
     <p>O coração desenvolve-se lindamente. As notas florais e frutadas emergem com uma qualidade suave, quase aveludada, complementadas pelo carácter fresco que impede o perfume de parecer pesado a meio do uso. É nesta fase que o Azure Velvet mais se aproxima do calor e do doce suave do Layton, sem cair no território gourmand.</p>
     <p>É na base extrait que a verdadeira qualidade se nota. Notas amadeiradas, um pó suave e um toque de incenso assentam numa secagem rica e duradoura que se prolonga por 7 a 10 horas e projeta com confiança sem ser ruidosa. Sendo um extrait de parfum, a concentração dá-lhe uma profundidade e uma complexidade que o distinguem das alternativas mais baratas deste espaço.</p>
-    <p>Os críticos da Fragrantica chamaram-lhe a melhor alternativa ao Layton no mercado. Utilizadores do Layton dizem que preferem este. De uma forma ou de outra, é um valor excecional.</p>
+    <p>Já foi chamado a melhor alternativa ao Layton no mercado, e alguns utilizadores do Layton dizem que preferem este. De uma forma ou de outra, é um valor excecional.</p>
   ysp_thoughts_pt: |-
     <p>O Azure Velvet é uma das propostas de relação qualidade-preço mais impressionantes de todo o nosso catálogo. O Layton da Parfums de Marly tem um seguimento quase de culto na comunidade da perfumaria, e aparece rotineiramente entre os melhores amadeirados aromáticos da era moderna.</p>
     <p>O Azure Velvet não se limita a aproximar-se: membros da comunidade da Fragrantica com os dois frascos preferem frequentemente o da Khadlaj. A concentração extrait é aqui um diferenciador genuíno, porque a profundidade, a projeção e a duração que se obtêm são excecionais para o preço. Recomendamo-lo a qualquer pessoa, conheça ou não o original.</p>
@@ -91,7 +91,7 @@ es:
     <p>La salida es atractiva desde el principio: bergamota, lavanda y un toque limpio de menta crean una introducción fresca y vigorizante que resulta pulida en lugar de deportiva. La menta aquí es ligera y natural, y da a Azure Velvet una cualidad algo más fría y aireada que el Layton original, algo que algunos usuarios incluso prefieren.</p>
     <p>El corazón se desarrolla maravillosamente. Las notas florales y afrutadas emergen con una cualidad suave, casi aterciopelada, complementadas por el carácter fresco que evita que el perfume resulte pesado a mitad de uso. Es en esta fase donde Azure Velvet más se acerca a la calidez y al dulzor suave de Layton, sin caer en territorio gourmand.</p>
     <p>Es en el fondo extrait donde se nota la verdadera calidad. Notas amaderadas, un polvo suave y un toque de incienso se asientan en una bajada rica y duradera que se prolonga durante 7 a 10 horas y proyecta con seguridad sin ser ruidosa. Al ser un extrait de parfum, la concentración le da una profundidad y una complejidad que lo distinguen de las alternativas más baratas de este espacio.</p>
-    <p>Los reseñadores de Fragrantica lo han llamado la mejor alternativa a Layton del mercado. Usuarios de Layton dicen que prefieren este. De una forma u otra, es un valor excepcional.</p>
+    <p>Se le ha llamado la mejor alternativa a Layton del mercado, y algunos usuarios de Layton dicen que prefieren este. De una forma u otra, es un valor excepcional.</p>
   ysp_thoughts_es: |-
     <p>Azure Velvet es una de las propuestas de relación calidad-precio más impresionantes de todo nuestro catálogo. El Layton de Parfums de Marly tiene un seguimiento casi de culto en la comunidad de la perfumería, y aparece habitualmente entre los mejores amaderados aromáticos de la era moderna.</p>
     <p>Azure Velvet no se limita a acercarse: miembros de la comunidad de Fragrantica que tienen los dos frascos prefieren con frecuencia el de Khadlaj. La concentración extrait es aquí un diferenciador genuino, porque la profundidad, la proyección y la duración que se obtienen son excepcionales para lo que cuesta. Lo recomendamos a cualquiera, conozca o no el original.</p>

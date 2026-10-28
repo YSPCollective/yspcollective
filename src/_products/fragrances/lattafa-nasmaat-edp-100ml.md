@@ -43,21 +43,16 @@ gallery:
 description_short: A sweet, fruity-floral unisex scent with blackcurrant,
   pineapple and apricot, a soft white floral heart, and a smooth caramel-vanilla
   base.
-description_full: >-
-  Nasmaat opens with juicy blackcurrant, pineapple and apricot, sweet and bright
-  rather than sharp. Magnolia, orange blossom, rose and jasmine soften the
-  middle, before caramel, vanilla, sandalwood and cashmeran bring a creamy, warm
-  finish.
+description_full: |-
+  <p>Nasmaat opens with juicy blackcurrant, pineapple and apricot, sweet and bright rather than sharp.</p>
 
-  It is a friendly, approachable fragrance that suits everyday wear, particularly in milder weather.
-ysp_thoughts: >-
-  We'll be upfront: this one divides opinion. The opening is the star, a juicy
-  blackcurrant, apricot and pineapple that most reviewers find bright and
-  genuinely fruity, and plenty report it lasting well. A few find the floral
-  dry-down a touch synthetic, so it suits people who like a sweet, modern
-  fruity-floral rather than a natural one.
+  <p>Magnolia, orange blossom, rose and jasmine soften the middle, then caramel, vanilla, sandalwood and cashmeran bring a creamy, warm finish.</p>
 
-  It is a fun, easy everyday spray, and a good pick if you like Lattafa's sweeter side.
+  <p>A friendly, approachable fragrance that suits everyday wear, particularly in milder weather.</p>
+ysp_thoughts: |-
+  <p>We'll be upfront: this one divides opinion. The opening is the star, with juicy blackcurrant, apricot and pineapple that is bright and properly fruity, and plenty of people find it lasts well. A few find the floral dry-down a touch synthetic, so it suits anyone who likes a sweet, modern fruity-floral rather than a natural one.</p>
+
+  <p>It's a fun, easy everyday spray, and a good pick if you like Lattafa's sweeter side.</p>
 amazon_url: ""
 inspired_by_name: ""
 inspired_by_note: ""

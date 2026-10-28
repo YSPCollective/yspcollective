@@ -43,22 +43,14 @@ gallery:
 description_short: A soft, fruity-floral scent opening with coconut and apple,
   warmed by heliotrope, jasmine and rose, and settling into a smooth
   vanilla-sandalwood base. A light, pretty everyday fragrance.
-description_full: >-
-  Nuha opens with a pink-tinged coconut and apple accord — sweet and
-  approachable rather than tropical or heavy. Heliotrope, jasmine and rose build
-  a soft floral heart, before vanilla, cashmeran and sandalwood bring it to a
-  smooth, creamy close.
+description_full: |-
+  <p>Nuha opens with a pink-tinged coconut and apple accord, sweet and approachable rather than tropical or heavy. Heliotrope, jasmine and rose build a soft floral heart, before vanilla, cashmeran and sandalwood bring it to a smooth, creamy close.</p>
 
+  <p>It's a gentle, close-to-skin fragrance rather than a big projection statement. We'd call it cute, feminine and easy to wear day to day, particularly in warmer months.</p>
+ysp_thoughts: |-
+  <p>We'll be upfront: longevity is mixed, and it stays fairly close to the skin without running especially long. What we like is the character itself, a soft, strawberry-coconut-milk kind of prettiness that reads as younger and playful rather than serious.</p>
 
-  It's a gentle, close-to-skin fragrance rather than a big projection statement. Reviewers describe it as cute, feminine and easy to wear day to day, particularly in warmer months.
-ysp_thoughts: >-
-  We'll be upfront: reviews on longevity are mixed, with several wearers noting
-  it stays fairly close to the skin and doesn't run especially long. What people
-  do consistently like is the character itself — a soft, strawberry-coconut-milk
-  kind of prettiness that reads as younger and playful rather than serious.
-
-
-  We're bringing it in as a lighter, easy option to round out the Khadlaj range alongside Island Dreams and Cloud Candy.
+  <p>We're bringing it in as a lighter, easy option to round out the Khadlaj range alongside Island Dreams and Cloud Candy.</p>
 amazon_url: ""
 inspired_by_name: ""
 inspired_by_note: ""
@@ -71,23 +63,23 @@ pt:
   name_pt: Khadlaj Nuha Eau de Parfum 85ml
   description_short_pt: 'Um perfume suave, frutado e floral, que abre com coco e maçã, aquece com heliotrópio, jasmim e rosa e assenta numa base suave de baunilha e sândalo. Um perfume leve e bonito para todos os dias.'
   description_full_pt: |-
-    O Nuha abre com um acorde rosado de coco e maçã, doce e acessível em vez de tropical ou pesado. O heliotrópio, o jasmim e a rosa constroem um coração floral suave, antes de a baunilha, o cashmeran e o sândalo o levarem a um fecho suave e cremoso.
+    <p>O Nuha abre com um acorde rosado de coco e maçã, doce e acessível em vez de tropical ou pesado. O heliotrópio, o jasmim e a rosa constroem um coração floral suave, antes de a baunilha, o cashmeran e o sândalo o levarem a um fecho suave e cremoso.</p>
 
-    É um perfume delicado e rente à pele, e não uma afirmação de grande projeção. Os críticos descrevem-no como bonito, feminino e fácil de usar no dia a dia, sobretudo nos meses mais quentes.
+    <p>É um perfume delicado e rente à pele, e não uma afirmação de grande projeção. Diríamos que é bonito, feminino e fácil de usar no dia a dia, sobretudo nos meses mais quentes.</p>
   ysp_thoughts_pt: |-
-    Vamos ser diretos: as críticas quanto à duração são mistas, e vários utilizadores notam que fica bastante rente à pele e não dura especialmente. O que as pessoas gostam de forma consistente é do carácter em si, uma beleza suave, de morango com leite de coco, que se lê como mais jovem e divertida em vez de séria.
+    <p>Vamos ser diretos: a duração é mista, e fica bastante rente à pele sem durar especialmente. O que nos agrada é o carácter em si, uma beleza suave, de morango com leite de coco, que se lê como mais jovem e divertida em vez de séria.</p>
 
-    Trazemo-lo como uma opção mais leve e fácil para completar a gama Khadlaj, ao lado do Island Dreams e do Cloud Candy.
+    <p>Trazemo-lo como uma opção mais leve e fácil para completar a gama Khadlaj, ao lado do Island Dreams e do Cloud Candy.</p>
 es:
   blind_buy_note_es: 'Leche de coco y manzana crujiente sobre vainilla y madera de cachemira. Cremoso y distintivo, así que conviene confirmar que te llevas bien con los perfumes lactónicos.'
   name_es: Khadlaj Nuha Eau de Parfum 85ml
   description_short_es: 'Un perfume suave, frutal y floral, que abre con coco y manzana, se templa con heliotropo, jazmín y rosa y se asienta en un fondo suave de vainilla y sándalo. Un perfume ligero y bonito para el día a día.'
   description_full_es: |-
-    Nuha abre con un acorde rosado de coco y manzana, dulce y accesible en lugar de tropical o pesado. El heliotropo, el jazmín y la rosa construyen un corazón floral suave, antes de que la vainilla, el cashmeran y el sándalo lo lleven a un cierre suave y cremoso.
+    <p>Nuha abre con un acorde rosado de coco y manzana, dulce y accesible en lugar de tropical o pesado. El heliotropo, el jazmín y la rosa construyen un corazón floral suave, antes de que la vainilla, el cashmeran y el sándalo lo lleven a un cierre suave y cremoso.</p>
 
-    Es un perfume delicado y pegado a la piel, y no una afirmación de gran proyección. Los reseñadores lo describen como bonito, femenino y fácil de llevar en el día a día, sobre todo en los meses cálidos.
+    <p>Es un perfume delicado y pegado a la piel, y no una afirmación de gran proyección. Diríamos que es bonito, femenino y fácil de llevar en el día a día, sobre todo en los meses cálidos.</p>
   ysp_thoughts_es: |-
-    Vamos a ser directos: las reseñas sobre la duración son dispares, y varios usuarios apuntan que se queda bastante pegado a la piel y no dura especialmente. Lo que a la gente le gusta de forma constante es el carácter en sí, una belleza suave, de fresa con leche de coco, que se lee como más joven y desenfadada en lugar de seria.
+    <p>Vamos a ser directos: la duración es dispar, y se queda bastante pegado a la piel sin durar especialmente. Lo que nos gusta es el carácter en sí, una belleza suave, de fresa con leche de coco, que se lee como más joven y desenfadada en lugar de seria.</p>
 
-    Lo traemos como una opción más ligera y fácil para completar la gama Khadlaj, junto a Island Dreams y Cloud Candy.
+    <p>Lo traemos como una opción más ligera y fácil para completar la gama Khadlaj, junto a Island Dreams y Cloud Candy.</p>
 ---

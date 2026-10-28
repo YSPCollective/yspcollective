@@ -42,17 +42,16 @@ gallery:
   - /images/uploads/jasoor.webp
 description_short: An aromatic spicy unisex fragrance with bergamot, cardamom
   and lavender over a dry base of tobacco, leather, vetiver and tonka.
-description_full: >-
-  Jasoor opens with bergamot, cardamom and a touch of apple, quickly moving into
-  an aromatic heart of lavender, geranium and tobacco. Patchouli, leather,
-  vetiver and tonka bean give it a dry, slightly smoky base.
+description_full: |-
+  <p>Jasoor opens with bergamot, cardamom and a touch of apple, then moves quickly into an aromatic heart of lavender, geranium and tobacco.</p>
 
-  It reads as confident and smart, a good fit for cooler days and evenings.
-ysp_thoughts: >-
-  Rated around 4.4 out of 5 by more than 1,800 people on Fragrantica, though the
-  dry tobacco and lavender style is not for everyone.
+  <p>The base is dry and slightly smoky: patchouli, leather, vetiver and tonka bean.</p>
 
-  Tobacco and leather over lavender is a distinctive combination, so it suits people who like their scents dry and aromatic rather than sweet. Some reviewers compare it to Xerjoff Erba Pura territory, though it is a very different, more aromatic style.
+  <p>It reads as confident and smart, a good fit for cooler days and evenings.</p>
+ysp_thoughts: |-
+  <p>Tobacco and leather over lavender is a distinctive combination, and it suits people who like their fragrances dry and aromatic rather than sweet. It sits at around 4.4 out of 5 from more than 1,800 people on Fragrantica. It gets mentioned in the same breath as Xerjoff Erba Pura, but it's a very different, more aromatic style, so don't expect a copy.</p>
+
+  <p>Honest heads up: the dry tobacco and lavender style isn't for everyone. If it is for you, it's a real step away from the usual sweet stuff.</p>
 amazon_url: ""
 inspired_by_name: "Valentino Uomo Born In Roma Coral Fantasy"
 inspired_by_note: "Same red apple, lavender and tobacco opening, with a drier, more mature feel and strong longevity."

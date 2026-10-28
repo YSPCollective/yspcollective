@@ -40,14 +40,16 @@ vegan: false
 image_main: ""
 gallery: []
 description_short: "A smooth, woody-aromatic unisex scent with saffron, lavender and mandarin over cedar, amberwood and frankincense."
-description_full: >-
-  Musamam opens with saffron, lavender and bright Italian mandarin. The heart is dry and woody, built on Virginia cedar, amberwood and geranium, before frankincense, akigalawood and cistus bring a resinous, slightly ambery finish.
+description_full: |-
+  <p>Musamam opens with saffron, lavender and bright Italian mandarin, fresh with a touch of luxury.</p>
 
-  It is a clean, polished scent that reads as smart rather than sweet, and works well from the office to the evening.
-ysp_thoughts: >-
-  Not to be confused with Musamam White Intense, which we already stock. This is the original, a drier and more woody take. A good pick if you want something refined that is easy to wear in cooler weather.
-inspired_by_name: ""
-inspired_by_note: ""
+  <p>The heart is dry and woody, built on Virginia cedar, amberwood and geranium. Frankincense, akigalawood and cistus then bring a resinous, slightly ambery finish.</p>
+
+  <p>A clean, polished scent that reads as smart rather than sweet, and works from the office to the evening.</p>
+ysp_thoughts: |-
+  <p>Not to be confused with Musamam White Intense, which we already stock. This is the original, and it's a drier, more woody take.</p>
+
+  <p>It's a good pick if you want something refined that's easy to wear in cooler weather.</p>
 amazon_url: ""
 ebay_url: ""
 gtin: "6291108737323"

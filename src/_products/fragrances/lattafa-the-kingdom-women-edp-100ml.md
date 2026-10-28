@@ -44,17 +44,16 @@ gallery:
 description_short: A sweet, feminine fragrance opening with blackcurrant, peony
   and pear, softened by jasmine, praline and tonka, and finishing on vanilla,
   sandalwood and musk.
-description_full: >-
-  The Kingdom Women opens fresh and fruity, with juicy blackcurrant and pear
-  alongside a soft peony. Jasmine, praline and tonka bean add a gentle, nutty
-  sweetness at the heart, before vanilla, sandalwood, amber and musk give it a
-  warm, creamy base.
+description_full: |-
+  <p>The Kingdom Women opens fresh and fruity, with juicy blackcurrant and pear alongside a soft peony.</p>
 
-  It is pretty and approachable without being heavy, a good everyday option through most of the year.
-ysp_thoughts: >-
-  Rated around 4 out of 5 by more than 1,100 people on Fragrantica.
+  <p>Jasmine, praline and tonka bean add a gentle, nutty sweetness at the heart. Vanilla, sandalwood, amber and musk then give it a warm, creamy base.</p>
 
-  A sweet fruity-floral that is easy to like and easy to gift. If you enjoy gourmand touches in your florals, this is a comfortable pick at a friendly price.
+  <p>Pretty and approachable without being heavy, a good everyday option through most of the year.</p>
+ysp_thoughts: |-
+  <p>A sweet fruity-floral that is easy to like and easy to gift. It sits at around 4 out of 5 from more than 1,100 people on Fragrantica.</p>
+
+  <p>If you enjoy gourmand touches in your florals, we think it's a comfortable pick at a friendly price.</p>
 amazon_url: ""
 inspired_by_name: ""
 inspired_by_note: ""

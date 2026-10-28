@@ -43,18 +43,16 @@ gallery:
 description_short: A floral chypre opening with bergamot, blackcurrant and
   orange blossom, with a jasmine and tuberose heart over patchouli, vanilla and
   cedarwood.
-description_full: >-
-  Emaan opens bright with bergamot, blackcurrant and orange blossom. The heart
-  is a rich white floral blend of jasmine, marigold and tuberose, which sits
-  over a base of patchouli, vanilla, white musk and cedarwood.
+description_full: |-
+  <p>Emaan opens bright with bergamot, blackcurrant and orange blossom, polished and fresh before the florals take over.</p>
 
-  It has a polished, slightly classic feel, with enough warmth to work in cooler weather.
-ysp_thoughts: >-
-  Rated around 4.1 out of 5 by more than 500 people on Fragrantica.
+  <p>The heart is a rich white floral blend of jasmine, marigold and tuberose, sitting over a base of patchouli, vanilla, white musk and cedarwood.</p>
 
-  Tuberose is the star here, so it suits people who already enjoy
-  white florals. If that is you, it is a refined, good value option that works
-  well for evenings.
+  <p>It has a polished, slightly classic feel, with enough warmth to work in cooler weather.</p>
+ysp_thoughts: |-
+  <p>Tuberose is the star here, so this one is for people who already love a white floral. Around 4.1 out of 5 from more than 500 people on Fragrantica says it's doing something right.</p>
+
+  <p>If that's you, we think it's a refined, good value pick, and it's especially nice for evenings.</p>
 amazon_url: ""
 inspired_by_name: "Giorgio Armani My Way"
 inspired_by_note: "Same bright bergamot and orange blossom opening over a soft white floral and musky vanilla base."

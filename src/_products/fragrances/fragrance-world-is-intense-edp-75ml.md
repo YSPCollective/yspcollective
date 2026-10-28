@@ -44,15 +44,10 @@ description_full: "iS Intense opens with a vibrant black currant and mandarin
   properly floral: May rose and neroli, given depth by artemisia and osmanthus,
   build into a rich, slightly fruity bouquet. The base settles into vanilla,
   patchouli and ambroxan for a warm, sensual finish with genuine staying power."
-ysp_thoughts: >-
-  This is a well-established dupe of Giorgio Armani's Sì Intense — the
-  blackcurrant-rose-vanilla structure is unmistakably the same DNA, and it's
-  been around since 2021, so it's had plenty of time to build a track record
-  rather than being an untested new release. Reviewers rate the performance well
-  for the price point.
+ysp_thoughts: |-
+  <p>This is a well-established dupe of Giorgio Armani's Sì Intense. The blackcurrant-rose-vanilla structure is unmistakably the same DNA, and it's been around since 2021, so it's had plenty of time to build a track record rather than being an untested new release. It holds up well for the price, too.</p>
 
-
-  A solid, evening-leaning oriental to add alongside our other women's fragrances.
+  <p>A solid, evening-leaning oriental to sit alongside our other women's fragrances.</p>
 amazon_url: ""
 inspired_by_name: Giorgio Armani Sì Intense
 inspired_by_note: Same blackcurrant-rose-vanilla structure as Armani's Sì Intense.
@@ -72,15 +67,10 @@ pt:
     pela artemísia e pelo osmanto, constroem um ramo rico e ligeiramente
     frutado. A base assenta em baunilha, patchouli e ambroxan, para um final
     quente e sensual com resistência genuína."
-  ysp_thoughts_pt: >-
-    Esta é uma alternativa bem estabelecida ao Sì Intense da Giorgio Armani. A
-    estrutura de groselha preta, rosa e baunilha é inconfundivelmente o mesmo
-    ADN, e existe desde 2021, por isso teve tempo mais do que suficiente para
-    construir um historial em vez de ser um lançamento por testar. Os críticos
-    avaliam bem o desempenho para o preço.
+  ysp_thoughts_pt: |-
+    <p>Esta é uma alternativa bem estabelecida ao Sì Intense da Giorgio Armani. A estrutura de groselha preta, rosa e baunilha é inconfundivelmente o mesmo ADN, e existe desde 2021, por isso teve tempo mais do que suficiente para construir um historial em vez de ser um lançamento por testar. Também se porta bem para o preço.</p>
 
-
-    Um oriental sólido, de tendência noturna, para juntar aos nossos outros perfumes femininos.
+    <p>Um oriental sólido, de tendência noturna, para juntar aos nossos outros perfumes femininos.</p>
 ebay_url: ""
 brand: Fragrance World
 char_sweet: 4
@@ -101,13 +91,8 @@ es:
     aportada por la artemisa y el osmanto, construyen un ramo rico y ligeramente
     afrutado. El fondo se asienta en vainilla, pachulí y ambroxan, para un final
     cálido y sensual con resistencia genuina."
-  ysp_thoughts_es: >-
-    Es una alternativa bien asentada al Sì Intense de Giorgio Armani. La
-    estructura de grosella negra, rosa y vainilla es inconfundiblemente el mismo
-    ADN, y existe desde 2021, así que ha tenido tiempo de sobra para construir
-    un historial en lugar de ser un lanzamiento sin probar. Los reseñadores
-    valoran bien el rendimiento para lo que cuesta.
+  ysp_thoughts_es: |-
+    <p>Es una alternativa bien asentada al Sì Intense de Giorgio Armani. La estructura de grosella negra, rosa y vainilla es inconfundiblemente el mismo ADN, y existe desde 2021, así que ha tenido tiempo de sobra para construir un historial en lugar de ser un lanzamiento sin probar. También rinde bien para lo que cuesta.</p>
 
-
-    Un oriental sólido, de tendencia nocturna, para sumar a nuestros otros perfumes femeninos.
+    <p>Un oriental sólido, de tendencia nocturna, para sumar a nuestros otros perfumes femeninos.</p>
 ---
