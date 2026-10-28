@@ -11,9 +11,9 @@ badge: ""
 custom_badge: ""
 stock_status: on_order
 stock_quantity: 8
-expected_date: October 2026
+expected_date: November 2026
 featured: false
-published: false
+published: true
 date_added: 2026-10-16
 fragrance_family: Oriental Gourmand
 best_for: Evening wear, Autumn/Winter, Date night
@@ -42,14 +42,15 @@ gallery:
 description_short: A warm, sweet oriental gourmand with cinnamon, rose and
   saffron, a caramel and patchouli heart, and a deep vanilla, amber and ambroxan
   base.
-description_full: |-
-  <p>Sheikh Al Shuyukh Supreme opens with cinnamon, saffron and rose, a spicy, slightly floral start.</p>
+description_full: >-
+  Sheikh Al Shuyukh Supreme opens with cinnamon, saffron and rose, a spicy,
+  slightly floral start. Caramel and patchouli form a sweet, earthy heart,
+  before vanilla, amber, woody notes and ambroxan bring a long, warm dry-down.
 
-  <p>Caramel and patchouli form a sweet, earthy heart, then vanilla, amber, woody notes and ambroxan bring a long, warm dry-down.</p>
-
-  <p>It's a rich, cosy scent made for cold weather and evenings.</p>
-ysp_thoughts: |-
-  <p>A big, warm gourmand that suits autumn and winter best. If you like your fragrances sweet, spicy and amber-heavy, this is one we'd happily point you to at this price.</p>
+  It is a rich, cosy scent made for cold weather and evenings.
+ysp_thoughts: A big, warm gourmand that suits autumn and winter best. If you
+  like sweet, spicy and amber-heavy fragrances, it is well worth a look at this
+  price.
 amazon_url: ""
 inspired_by_name: ""
 inspired_by_note: ""
