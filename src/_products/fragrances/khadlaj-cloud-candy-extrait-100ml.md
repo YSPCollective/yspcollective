@@ -41,22 +41,14 @@ gallery:
 description_short: A creamy, candy-sweet gourmand — strawberry, green tangerine
   and freesia opening into a marshmallow-coconut-whipped cream heart, finished
   with white musk, vanilla and raspberry. Sweet, fun and instantly recognisable.
-description_full: >-
-  Cloud Candy opens like a strawberry milk with a fizz of green tangerine and a
-  soft floral edge from freesia. Within minutes it develops into the fragrance's
-  signature accord: a fluffy, marshmallow-coconut-whipped cream blend that
-  smells genuinely edible without tipping into artificial or cloying territory.
+description_full: |-
+  <p>Cloud Candy opens like a strawberry milk with a fizz of green tangerine and a soft floral edge from freesia. Within minutes it develops into the fragrance's signature accord: a fluffy, marshmallow-coconut-whipped cream blend that smells genuinely edible without tipping into artificial or cloying territory.</p>
 
+  <p>The base rounds things out with white musk, vanilla, sugar and raspberry, with ambroxan adding just enough depth to stop it feeling flat. It's a fun, unapologetically sweet fragrance, and the opening reminds us of a Campino strawberry cream sweet.</p>
+ysp_thoughts: |-
+  <p>This is squarely in the sweet-gourmand lane that's exploded in popularity over the last couple of years, and the closest comparison is Dolce & Gabbana's Devotion: the same creamy, strawberry-musk signature, at a completely different price point.</p>
 
-  The base rounds things out with white musk, vanilla, sugar and raspberry, with ambroxan adding just enough depth to stop it feeling flat. It's a fun, unapologetically sweet fragrance, reviewers frequently describe the opening as reminiscent of a Campino strawberry cream sweet.
-ysp_thoughts: >-
-  This is squarely in the sweet-gourmand lane that's exploded in popularity over
-  the last couple of years, and reviewers have repeatedly pointed to Dolce &
-  Gabbana's Devotion as the closest comparison - the same creamy,
-  strawberry-musk signature, at a completely different price point.
-
-
-  It's a crowd-pleaser rather than a sophisticated statement piece, and that's exactly the gap it fills well.
+  <p>It's a crowd-pleaser rather than a sophisticated statement piece, and that's exactly the gap it fills well.</p>
 amazon_url: ""
 inspired_by_name: " Kayali Yum Boujee Marshmallow | 81"
 inspired_by_note: A sophisticated alternative to Kayali Yum Boujee Marshmallow |
@@ -72,24 +64,24 @@ pt:
   name_pt: Khadlaj Cloud Candy Extrait de Parfum 100ml
   description_short_pt: 'Um gourmand cremoso e adocicado, com morango, tangerina verde e frésia a abrir para um coração de marshmallow, coco e chantilly, e um final de almíscar branco, baunilha e framboesa. Doce, divertido e reconhecível de imediato.'
   description_full_pt: |-
-    O Cloud Candy abre como um batido de morango, com uma efervescência de tangerina verde e um toque floral suave da frésia. Em poucos minutos desenvolve-se no acorde de assinatura do perfume: uma mistura fofa de marshmallow, coco e chantilly que cheira genuinamente a comestível sem cair no artificial nem no enjoativo.
+    <p>O Cloud Candy abre como um batido de morango, com uma efervescência de tangerina verde e um toque floral suave da frésia. Em poucos minutos desenvolve-se no acorde de assinatura do perfume: uma mistura fofa de marshmallow, coco e chantilly que cheira genuinamente a comestível sem cair no artificial nem no enjoativo.</p>
 
-    A base arredonda o conjunto com almíscar branco, baunilha, açúcar e framboesa, com o ambroxan a dar profundidade suficiente para não parecer plano. É um perfume divertido e assumidamente doce, e os críticos descrevem frequentemente a abertura como um rebuçado de morango e natas.
+    <p>A base arredonda o conjunto com almíscar branco, baunilha, açúcar e framboesa, com o ambroxan a dar profundidade suficiente para não parecer plano. É um perfume divertido e assumidamente doce, e a abertura faz-nos lembrar um rebuçado de morango e natas.</p>
   ysp_thoughts_pt: |-
-    Isto está bem no carril do gourmand doce que explodiu em popularidade nos últimos anos, e os críticos apontaram repetidamente o Devotion da Dolce & Gabbana como a comparação mais próxima, com a mesma assinatura cremosa de morango e almíscar, num patamar de preço completamente diferente.
+    <p>Isto está bem no carril do gourmand doce que explodiu em popularidade nos últimos anos, e a comparação mais próxima é o Devotion da Dolce & Gabbana: a mesma assinatura cremosa de morango e almíscar, num patamar de preço completamente diferente.</p>
 
-    É um perfume que agrada a todos e não uma peça sofisticada de afirmação, e é exatamente essa a lacuna que preenche bem.
+    <p>É um perfume que agrada a todos e não uma peça sofisticada de afirmação, e é exatamente essa a lacuna que preenche bem.</p>
 es:
   blind_buy_note_es: 'Malvavisco, nata montada y fresa, y muy dulce de verdad. Compra segura si adoras los perfumes de postre, demasiado si no.'
   inspired_by_note_es: 'Una alternativa sofisticada al Kayali Yum Boujee Marshmallow 81, Khadlaj Cloud Candy envuelve la piel en una mezcla exquisita de malvavisco rosa esponjoso, fresa madurada al sol y crema de vainilla batida.'
   name_es: Khadlaj Cloud Candy Extrait de Parfum 100ml
   description_short_es: 'Un gourmand cremoso y goloso, con fresa, mandarina verde y fresia que abren hacia un corazón de malvavisco, coco y nata montada, y un final de almizcle blanco, vainilla y frambuesa. Dulce, divertido y reconocible al instante.'
   description_full_es: |-
-    Cloud Candy abre como un batido de fresa, con una efervescencia de mandarina verde y un toque floral suave de la fresia. En pocos minutos se desarrolla en el acorde de firma del perfume: una mezcla esponjosa de malvavisco, coco y nata montada que huele genuinamente comestible sin caer en lo artificial ni en lo empalagoso.
+    <p>Cloud Candy abre como un batido de fresa, con una efervescencia de mandarina verde y un toque floral suave de la fresia. En pocos minutos se desarrolla en el acorde de firma del perfume: una mezcla esponjosa de malvavisco, coco y nata montada que huele genuinamente comestible sin caer en lo artificial ni en lo empalagoso.</p>
 
-    El fondo redondea el conjunto con almizcle blanco, vainilla, azúcar y frambuesa, con el ambroxan aportando la profundidad justa para que no resulte plano. Es un perfume divertido y abiertamente dulce, y los reseñadores describen a menudo la salida como un caramelo de fresa y nata.
+    <p>El fondo redondea el conjunto con almizcle blanco, vainilla, azúcar y frambuesa, con el ambroxan aportando la profundidad justa para que no resulte plano. Es un perfume divertido y abiertamente dulce, y la salida nos recuerda a un caramelo de fresa y nata.</p>
   ysp_thoughts_es: |-
-    Está de lleno en el carril del gourmand dulce que ha explotado en popularidad en los últimos años, y los reseñadores han señalado repetidamente el Devotion de Dolce & Gabbana como la comparación más cercana, con la misma firma cremosa de fresa y almizcle, en un nivel de precio completamente distinto.
+    <p>Está de lleno en el carril del gourmand dulce que ha explotado en popularidad en los últimos años, y la comparación más cercana es el Devotion de Dolce & Gabbana: la misma firma cremosa de fresa y almizcle, en un nivel de precio completamente distinto.</p>
 
-    Es un perfume que gusta a todos y no una pieza sofisticada de afirmación, y ese es exactamente el hueco que llena bien.
+    <p>Es un perfume que gusta a todos y no una pieza sofisticada de afirmación, y ese es exactamente el hueco que llena bien.</p>
 ---

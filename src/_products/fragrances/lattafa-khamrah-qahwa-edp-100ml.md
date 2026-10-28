@@ -41,17 +41,16 @@ gallery:
   - /images/uploads/khamrah-qahwa-2.webp
 description_short: A warm, sweet gourmand with cardamom, ginger and cinnamon, a
   praline heart, and a rich base of coffee, tonka bean, benzoin and vanilla.
-description_full: >-
-  Khamrah Qahwa opens with warm cardamom, ginger and cinnamon. The heart is
-  sweet and nutty with praline, white flowers and candied fruits, before coffee,
-  tonka bean, benzoin, vanilla and musk create a long, rich, cosy dry-down.
+description_full: |-
+  <p>Khamrah Qahwa opens with warm cardamom, ginger and cinnamon, spicy and inviting straight away.</p>
 
-  It is the coffee-led sibling of Khamrah, ideal for cold weather and evenings.
-ysp_thoughts: >-
-  Rated around 4.3 out of 5 by almost 17,000 people on Fragrantica, so this is
-  one of the most popular Lattafa fragrances there is.
+  <p>The heart is sweet and nutty, with praline, white flowers and candied fruits. Coffee, tonka bean, benzoin, vanilla and musk then create a long, rich, cosy dry-down.</p>
 
-  A big, warm gourmand that has built a strong following. It is very sweet and projects well, so a couple of sprays is plenty. Best in autumn and winter.
+  <p>This is the coffee-led sibling of Khamrah, and it's made for cold weather and evenings.</p>
+ysp_thoughts: |-
+  <p>With around 4.3 out of 5 from almost 17,000 people on Fragrantica, this is one of the most popular Lattafa fragrances there is, and it's easy to see why. It's a big, warm gourmand with a loyal following.</p>
+
+  <p>A quick tip from us: it's very sweet and it projects well, so a couple of sprays is plenty. Best in autumn and winter.</p>
 amazon_url: ""
 inspired_by_name: "Kilian Angels' Share"
 inspired_by_note: "The same boozy, spiced-vanilla gourmand style, with a dark coffee twist."

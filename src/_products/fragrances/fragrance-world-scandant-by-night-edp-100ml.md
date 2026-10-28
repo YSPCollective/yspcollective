@@ -38,16 +38,10 @@ gallery:
 description_short: A seductive, honeyed fruity-floral opening with bitter orange
   and citrus, a cherry-tuberose heart, and a warm tonka-vanilla- patchouli base.
   Bold, strong-projecting evening wear.
-description_full: >-
-  Scandant by Night opens with a distinctive honey and bitter orange accord,
-  lifted by citrus — sweet and a little tart at once. The heart is where it gets
-  interesting: cherry, tuberose, orange blossom and pear build a lush,
-  fruity-floral bouquet, given an unusual green-earthy edge by Himalayan nard.
-  It closes on a warm, sensual base of tonka bean, vanilla, patchouli,
-  sandalwood, amberwood and white musk.
+description_full: |-
+  <p>Scandant by Night opens with a distinctive honey and bitter orange accord, lifted by citrus: sweet and a little tart at once. The heart is where it gets interesting: cherry, tuberose, orange blossom and pear build a lush, fruity-floral bouquet, given an unusual green-earthy edge by Himalayan nard. It closes on a warm, sensual base of tonka bean, vanilla, patchouli, sandalwood, amberwood and white musk.</p>
 
-
-  This is a strong, confident fragrance built for evening wear — reviewers describe it as ideal for date nights and cooler-season special occasions rather than everyday daytime use.
+  <p>This is a strong, confident fragrance built for evening wear. Think date nights and cooler-season special occasions rather than everyday daytime use.</p>
 ysp_thoughts: >-
   The name is a pretty direct nod to Jean Paul Gaultier's Scandal by Night, and
   the honeyed-tuberose gourmand character backs that up — it sits in the same
@@ -70,16 +64,10 @@ pt:
   description_short_pt: Uma abertura sedutora, amelada e frutada-floral, com
     laranja amarga e cítricos, um coração de cereja e tuberosa e uma base quente
     de tonka, baunilha e patchouli. Uso noturno ousado e de forte projeção.
-  description_full_pt: >-
-    O Scandant by Night abre com um acorde distinto de mel e laranja amarga,
-    elevado por cítricos, doce e ligeiramente ácido ao mesmo tempo. É no coração
-    que fica interessante: cereja, tuberosa, flor de laranjeira e pera constroem
-    um ramo exuberante, frutado e floral, com um toque verde e terroso invulgar
-    dado pelo nardo dos Himalaias. Fecha numa base quente e sensual de fava
-    tonka, baunilha, patchouli, sândalo, amberwood e almíscar branco.
+  description_full_pt: |-
+    <p>O Scandant by Night abre com um acorde distinto de mel e laranja amarga, elevado por cítricos, doce e ligeiramente ácido ao mesmo tempo. É no coração que fica interessante: cereja, tuberosa, flor de laranjeira e pera constroem um ramo exuberante, frutado e floral, com um toque verde e terroso invulgar dado pelo nardo dos Himalaias. Fecha numa base quente e sensual de fava tonka, baunilha, patchouli, sândalo, amberwood e almíscar branco.</p>
 
-
-    É um perfume forte e confiante, feito para a noite. Os críticos descrevem-no como ideal para encontros e para ocasiões especiais das estações mais frias, em vez do uso diurno do dia a dia.
+    <p>É um perfume forte e confiante, feito para a noite. Pense em encontros e em ocasiões especiais das estações mais frias, em vez do uso diurno do dia a dia.</p>
   ysp_thoughts_pt: >-
     O nome é um aceno bastante direto ao Scandal by Night da Jean Paul Gaultier,
     e o carácter gourmand de mel e tuberosa confirma-o, porque fica no mesmo
@@ -101,16 +89,10 @@ es:
   description_short_es: Una salida seductora, amielada y frutal-floral, con
     naranja amarga y cítricos, un corazón de cereza y nardo y un fondo cálido de
     tonka, vainilla y pachulí. Uso de noche atrevido y de fuerte proyección.
-  description_full_es: >-
-    Scandant by Night abre con un acorde distintivo de miel y naranja amarga,
-    realzado por cítricos, dulce y algo ácido a la vez. Es en el corazón donde
-    se pone interesante: cereza, nardo, azahar y pera construyen un ramo
-    exuberante, afrutado y floral, con un toque verde y terroso poco habitual
-    aportado por el nardo del Himalaya. Cierra en un fondo cálido y sensual de
-    haba tonka, vainilla, pachulí, sándalo, amberwood y almizcle blanco.
+  description_full_es: |-
+    <p>Scandant by Night abre con un acorde distintivo de miel y naranja amarga, realzado por cítricos, dulce y algo ácido a la vez. Es en el corazón donde se pone interesante: cereza, nardo, azahar y pera construyen un ramo exuberante, afrutado y floral, con un toque verde y terroso poco habitual aportado por el nardo del Himalaya. Cierra en un fondo cálido y sensual de haba tonka, vainilla, pachulí, sándalo, amberwood y almizcle blanco.</p>
 
-
-    Es un perfume fuerte y seguro, hecho para la noche. Los reseñadores lo describen como ideal para citas y para ocasiones especiales de las estaciones más frías, más que para el uso diurno del día a día.
+    <p>Es un perfume fuerte y seguro, hecho para la noche. Piensa en citas y en ocasiones especiales de las estaciones más frías, más que en el uso diurno del día a día.</p>
   ysp_thoughts_es: >-
     El nombre es un guiño bastante directo al Scandal by Night de Jean Paul
     Gaultier, y el carácter gourmand de miel y nardo lo confirma, porque se

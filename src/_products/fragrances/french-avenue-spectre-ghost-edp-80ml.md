@@ -51,15 +51,10 @@ description_full: >-
 
 
   True to its name, this is a "ghost" of a fragrance - it lives close to the skin rather than filling a room. It rewards people who like a personal scent that only becomes noticeable up close, rather than something built to project across a space.
-ysp_thoughts: >-
-  We want to set the right expectation on this one: reviewers are honest that
-  it's a subtle, close-to-skin fragrance rather than a big-projection scent —
-  some describe needing to be within a couple of inches to really pick it up.
-  Reviewers also generally agree the dry-down (vanilla, cedar, patchouli) is
-  genuinely well done and worth wearing for.
+ysp_thoughts: |-
+  <p>We want to set the right expectation on this one: it's a subtle, close-to-skin fragrance rather than a big-projection scent. You may need to be within a couple of inches to really pick it up. The dry-down (vanilla, cedar, patchouli) is genuinely well done and worth wearing it for.</p>
 
-
-  It's an easy recommendation for anyone who prefers a personal, low-key daily scent over something loud.
+  <p>It's an easy recommendation for anyone who prefers a personal, low-key daily scent over something loud.</p>
 amazon_url: ""
 inspired_by_name: "Nishane Ani "
 inspired_by_note: Spectre Ghost delivers the same rich ginger, warm spice, and
@@ -79,9 +74,9 @@ pt:
 
     Fiel ao nome, este é um perfume fantasma. Vive rente à pele em vez de encher uma sala. Recompensa quem gosta de um perfume pessoal, que só se nota de perto, em vez de algo construído para projetar por todo o espaço.
   ysp_thoughts_pt: |-
-    Queremos criar a expectativa certa sobre este: os críticos são honestos e dizem que é um perfume discreto e rente à pele, e não um perfume de grande projeção. Há quem descreva ser preciso estar a poucos centímetros para o apanhar bem. Os críticos também concordam, de forma geral, que a secagem de baunilha, cedro e patchouli está genuinamente bem feita e justifica o uso.
+    <p>Queremos criar a expectativa certa sobre este: é um perfume discreto e rente à pele, e não um perfume de grande projeção. Pode ser preciso estar a poucos centímetros para o apanhar bem. A secagem de baunilha, cedro e patchouli está genuinamente bem feita e justifica o uso.</p>
 
-    É uma recomendação fácil para quem prefere um perfume diário pessoal e discreto a algo ruidoso.
+    <p>É uma recomendação fácil para quem prefere um perfume diário pessoal e discreto a algo ruidoso.</p>
 es:
   blind_buy_note_es: Jengibre intenso y bergamota sobre vainilla cremosa y cedro. Fácil de llevar casi todo el año y difícil de errar.
   inspired_by_note_es: 'Spectre Ghost trae la misma firma de jengibre rico, especias cálidas y vainilla cremosa del Ani de Nishane, pero prescinde de la salida verde y afilada del original a favor de un primer vaporizado más suave.'
@@ -92,7 +87,7 @@ es:
 
     Fiel a su nombre, este es un perfume fantasma. Vive pegado a la piel en lugar de llenar una sala. Recompensa a quien disfruta de un perfume personal, que solo se nota de cerca, en lugar de algo construido para proyectar por todo el espacio.
   ysp_thoughts_es: |-
-    Queremos crear la expectativa correcta sobre este: los reseñadores son honestos y dicen que es un perfume discreto y pegado a la piel, y no uno de gran proyección. Hay quien describe que hay que estar a pocos centímetros para captarlo bien. Los reseñadores también coinciden, en general, en que el fondo de vainilla, cedro y pachulí está genuinamente bien hecho y justifica llevarlo.
+    <p>Queremos crear la expectativa correcta sobre este: es un perfume discreto y pegado a la piel, y no uno de gran proyección. Puede que haga falta estar a pocos centímetros para captarlo bien. El fondo de vainilla, cedro y pachulí está genuinamente bien hecho y justifica llevarlo.</p>
 
-    Es una recomendación fácil para quien prefiere un perfume diario personal y discreto antes que algo ruidoso.
+    <p>Es una recomendación fácil para quien prefiere un perfume diario personal y discreto antes que algo ruidoso.</p>
 ---

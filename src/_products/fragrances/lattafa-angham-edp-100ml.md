@@ -41,17 +41,16 @@ gallery:
   - /images/uploads/lattaf-angham-.png
 description_short: A sweet, spicy gourmand with mandarin, ginger and pink
   pepper, a lavender, praline and cacao heart, and a soft vanilla-amber base.
-description_full: >-
-  Angham opens with bright mandarin and ginger, lifted by pink pepper. The heart
-  is a gourmand blend of lavender, praline and cacao, before vanilla, amber and
-  musk bring a smooth, warm finish.
+description_full: |-
+  <p>Angham opens bright and a little zesty, with mandarin and ginger lifted by pink pepper. It's a sunny start that quickly warms up.</p>
 
-  It is cosy and sweet without being cloying, and a good fit for cooler evenings.
-ysp_thoughts: >-
-  Rated around 4.4 out of 5 by more than 6,000 people on Fragrantica, which
-  makes it one of the best-loved sweet Lattafa releases.
+  <p>The heart is where the gourmand side arrives: lavender, praline and cacao blend into something soft, nutty and chocolatey. Then vanilla, amber and musk bring a smooth, warm finish.</p>
 
-  A comforting, sweet scent for people who enjoy chocolate and praline notes. Do not confuse it with Angham Second Song, which is a separate, different fragrance.
+  <p>It's cosy and sweet without tipping into cloying, which makes it a natural fit for cooler evenings.</p>
+ysp_thoughts: |-
+  <p>Angham is one of the best-loved sweet Lattafas around, sitting at about 4.4 out of 5 from more than 6,000 people on Fragrantica. That kind of consistency is rare.</p>
+
+  <p>It's a comforting one for anyone who enjoys chocolate and praline notes, and we think it's an easy yes for autumn and winter. One thing to watch: don't mix it up with Angham Second Song, which is a completely separate fragrance.</p>
 amazon_url: ""
 inspired_by_name: "Burberry Goddess"
 inspired_by_note: "Same rich vanilla, lavender and cacao gourmand character at a fraction of the price."

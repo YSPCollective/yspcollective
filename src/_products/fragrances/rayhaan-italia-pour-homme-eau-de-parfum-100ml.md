@@ -54,7 +54,7 @@ ysp_thoughts: >
 
   <p>It also retails at around €280. Italia by Rayhaan takes the same DNA and makes it more accessible without losing what makes it special.</p>
 
-  <p>In fact, several reviewers who own the original Naxos consider Italia the better daily wear — it has the same character but softer, more balanced, and arguably more wearable.</p>
+  <p>In fact, we'd argue Italia is the better daily wear — it has the same character but softer, more balanced, and arguably more wearable.</p>
 
   <p>The longevity is exceptional, with multiple reports of 12+ hours on skin. If you've been curious about Naxos but not ready to spend €280, this is exactly where to start.</p>
 inspired_by_name: Xerjoff XJ 1861 Naxos
@@ -74,7 +74,7 @@ pt:
   ysp_thoughts_pt: |-
     <p>O Xerjoff Naxos é um perfume de culto, com mel, alfazema e tabaco numa composição que os entusiastas seguem obsessivamente há anos.</p>
     <p>Também custa cerca de 280 €. O Italia da Rayhaan pega no mesmo ADN e torna-o mais acessível sem perder aquilo que o torna especial.</p>
-    <p>Na verdade, vários críticos que têm o Naxos original consideram o Italia a melhor opção para o dia a dia, porque tem o mesmo carácter mas mais suave, mais equilibrado e possivelmente mais usável.</p>
+    <p>Na verdade, defendemos que o Italia é a melhor opção para o dia a dia, porque tem o mesmo carácter mas mais suave, mais equilibrado e possivelmente mais usável.</p>
     <p>A duração é excecional, com vários relatos de mais de 12 horas na pele. Se tem curiosidade sobre o Naxos mas não está pronto para gastar 280 €, é exatamente aqui que se começa.</p>
 es:
   blind_buy_note_es: 'Lavanda mediterránea y bergamota evolucionando hacia miel dorada, canela y hoja de tabaco. Rico y adulto, y un perfume para quien disfrute de la miel y el tabaco.'
@@ -88,6 +88,6 @@ es:
   ysp_thoughts_es: |-
     <p>Xerjoff Naxos es un perfume de culto, con miel, lavanda y tabaco en una composición que los entusiastas siguen obsesivamente desde hace años.</p>
     <p>También cuesta unos 280 €. Italia de Rayhaan toma el mismo ADN y lo hace más accesible sin perder lo que lo hace especial.</p>
-    <p>De hecho, varios reseñadores que tienen el Naxos original consideran que Italia funciona mejor para el día a día, porque tiene el mismo carácter pero más suave, más equilibrado y posiblemente más llevable.</p>
+    <p>De hecho, defendemos que Italia funciona mejor para el día a día, porque tiene el mismo carácter pero más suave, más equilibrado y posiblemente más llevable.</p>
     <p>La duración es excepcional, con varios informes de más de 12 horas en piel. Si sientes curiosidad por Naxos pero no estás listo para gastar 280 €, es exactamente aquí donde se empieza.</p>
 ---

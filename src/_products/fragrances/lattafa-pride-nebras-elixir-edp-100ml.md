@@ -42,18 +42,16 @@ gallery:
   - /images/uploads/nebras-elixir___250918.webp
 description_short: A very sweet, creamy gourmand with milk candy and whipped
   cream, a sugar cane and heliotrope heart, and a soft vanilla and musk base.
-description_full: >-
-  Nebras Elixir opens with milk candy and whipped cream, sweet and playful from
-  the first spray. Sugar cane and powdery heliotrope sit at the heart, before
-  vanilla, musk and ambroxan give it a smooth, soft dry-down.
+description_full: |-
+  <p>Nebras Elixir opens with milk candy and whipped cream, sweet and playful from the first spray.</p>
 
-  It is a dessert-style scent with a clean finish, best suited to cooler days and evenings.
-ysp_thoughts: >-
-  Rated around 4.1 out of 5 by more than 1,100 people on Fragrantica.
+  <p>Sugar cane and powdery heliotrope sit at the heart, then vanilla, musk and ambroxan give it a smooth, soft dry-down.</p>
 
-  This is a true sugar-lover's scent. Milk candy and whipped cream lead into a soft vanilla base, and reviewers compare it to a more refined, grown-up version of Lattafa's Eclaire.
+  <p>A dessert-style scent with a clean finish, best suited to cooler days and evenings.</p>
+ysp_thoughts: |-
+  <p>This is a true sugar-lover's scent, with milk candy and whipped cream leading into a soft vanilla base. Think of it as a more refined, grown-up version of Lattafa's Eclaire. It sits at around 4.1 out of 5 from more than 1,100 people on Fragrantica.</p>
 
-  We'll be upfront: some find projection modest, and a couple mention a sharp opening that settles after a few days. If you prefer fresh or woody fragrances it will not be for you, but for creamy gourmand fans it is a comforting, wearable pick.
+  <p>We'll be upfront: projection is modest for some, and a couple of people mention a sharp opening that settles after a few days. If you prefer fresh or woody fragrances it won't be for you, but if you love a creamy gourmand it's a comforting, wearable pick.</p>
 amazon_url: ""
 inspired_by_name: ""
 inspired_by_note: ""

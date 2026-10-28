@@ -60,14 +60,13 @@ description_full: >
   dimension that keeps the whole thing feeling sophisticated rather than
   sweet.</p>
 
-  <p>The dry-down lands on warm sandalwood and benzoin — soft, slightly resinous, skin-close. The overall effect has been described as "a luxury spa wrapped in expensive fabric": clean and sensual at once. Multiple reviews from collectors with extensive libraries rate this as one of the standout Lattafa releases. Performance is solid at 6–10 hours on skin.</p>
+  <p>The dry-down lands on warm sandalwood and benzoin — soft, slightly resinous, skin-close. The overall effect has been described as "a luxury spa wrapped in expensive fabric": clean and sensual at once. In our book it's one of the standout Lattafa releases. Performance is solid at 6–10 hours on skin.</p>
 ysp_thoughts: >
   <p>Musamam White Intense blew up on fragrance communities in 2023–2024 for
   good reason. The combination of creamy spiced coconut, ylang ylang and
   ambroxan is genuinely compelling — it sits in the territory of BDK's Gris
   Charnel, a fragrance that costs over €175 and has earned serious niche
-  credibility. Several reviewers who own both consider Musamam their go-to daily
-  wear alternative. The snake bottle photos made it famous on social media, but
+  credibility. We'd happily reach for Musamam as the go-to daily wear alternative. The snake bottle photos made it famous on social media, but
   the fragrance would have found its audience anyway. At 100ml for this price,
   it's exceptional value for something this distinctive. If you want an oriental
   that feels expensive and gets noticed, this is the most direct route.</p>
@@ -100,13 +99,12 @@ pt:
     suave, quase aquática e floral, que mantém o conjunto sofisticado em vez de
     doce.</p>
 
-    <p>A secagem assenta em sândalo quente e benjoim, suave, ligeiramente resinosa e rente à pele. O efeito geral já foi descrito como um spa de luxo envolvido em tecido caro: limpo e sensual ao mesmo tempo. Várias críticas de colecionadores com bibliotecas extensas classificam-no como um dos lançamentos de destaque da Lattafa. O desempenho é sólido, entre 6 e 10 horas na pele.</p>
+    <p>A secagem assenta em sândalo quente e benjoim, suave, ligeiramente resinosa e rente à pele. O efeito geral já foi descrito como um spa de luxo envolvido em tecido caro: limpo e sensual ao mesmo tempo. Na nossa opinião, é um dos lançamentos de destaque da Lattafa. O desempenho é sólido, entre 6 e 10 horas na pele.</p>
   ysp_thoughts_pt: <p>O Musamam White Intense explodiu nas comunidades de
     perfumaria em 2023 e 2024 por boas razões. A combinação de coco especiado e
     cremoso, ylang-ylang e ambroxan é genuinamente cativante e fica no
     território do Gris Charnel da BDK, um perfume que custa mais de 175 € e que
-    ganhou credibilidade a sério no nicho. Vários críticos que têm ambos
-    consideram o Musamam a sua alternativa preferida para o dia a dia. As
+    ganhou credibilidade a sério no nicho. Para o dia a dia, o Musamam é a alternativa a que recorreríamos sem hesitar. As
     fotografias do frasco de serpente tornaram-no famoso nas redes sociais, mas
     o perfume teria encontrado o seu público de qualquer forma. A 100ml por este
     preço, é um valor excecional para algo tão distinto. Se quer um oriental que
@@ -134,14 +132,12 @@ es:
     sin ser autoritario. El mahonial añade una dimensión suave, casi acuática y
     floral, que mantiene el conjunto sofisticado en lugar de dulce.</p>
 
-    <p>La bajada se asienta en sándalo cálido y benjuí, suave, ligeramente resinosa y pegada a la piel. El efecto general se ha descrito como un spa de lujo envuelto en tejido caro: limpio y sensual a la vez. Varias reseñas de coleccionistas con bibliotecas extensas lo clasifican como uno de los lanzamientos destacados de Lattafa. El rendimiento es sólido, entre 6 y 10 horas en piel.</p>
+    <p>La bajada se asienta en sándalo cálido y benjuí, suave, ligeramente resinosa y pegada a la piel. El efecto general se ha descrito como un spa de lujo envuelto en tejido caro: limpio y sensual a la vez. En nuestra opinión, es uno de los lanzamientos destacados de Lattafa. El rendimiento es sólido, entre 6 y 10 horas en piel.</p>
   ysp_thoughts_es: <p>Musamam White Intense explotó en las comunidades de
     perfumería en 2023 y 2024 por buenas razones. La combinación de coco
     especiado y cremoso, ylang-ylang y ambroxan es genuinamente cautivadora y se
     sitúa en el territorio del Gris Charnel de BDK, un perfume que cuesta más de
-    175 € y que se ha ganado credibilidad de verdad en el nicho. Varios
-    reseñadores que tienen ambos consideran Musamam su alternativa preferida
-    para el día a día. Las fotos del frasco de serpiente lo hicieron famoso en
+    175 € y que se ha ganado credibilidad de verdad en el nicho. Para el día a día, Musamam es la alternativa a la que recurriríamos sin dudar. Las fotos del frasco de serpiente lo hicieron famoso en
     redes sociales, pero el perfume habría encontrado su público de todos modos.
     A 100ml por este precio, es un valor excepcional para algo tan distintivo.
     Si quieres un oriental que parezca caro y que se note, este es el camino más
