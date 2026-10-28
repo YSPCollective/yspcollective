@@ -82,6 +82,7 @@ canonical: "https://yspcollective.com/fragrances/by-season.html"
     font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase;
     padding: 0.25rem 0.6rem; background: var(--accent); color: var(--white); z-index: 1;
   }
+  .season-card-arriving { position: absolute; bottom: 0.6rem; left: 0.6rem; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.2rem 0.5rem; background: rgba(255, 255, 255, 0.9); color: var(--black); z-index: 1; }
   .season-card-badge.badge-bestseller { background: #c09a8a; }
   .season-card-badge.badge-popular { background: var(--grey); }
   .season-card-badge.badge-trending { background: #c47040; }
@@ -178,6 +179,7 @@ canonical: "https://yspcollective.com/fragrances/by-season.html"
         {% elif b %}
           <span class="season-card-badge {{ b | badgeClass }}">{{ b }}</span>
         {% endif %}
+        {% if p.stock_status === 'on_order' %}<span class="season-card-arriving">{{ 'Arriving ' + p.expected_date if p.expected_date else 'Arriving soon' }}</span>{% endif %}
       </div>
       <div class="season-card-meta">{{ p.brand }} · {{ p.concentration }}</div>
       <div class="season-card-name">{{ p.name }}</div>

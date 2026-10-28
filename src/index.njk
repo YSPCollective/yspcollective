@@ -84,6 +84,7 @@ canonical: "https://yspcollective.com/"
   .product-card-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 0.5rem; transition: transform 0.6s ease; }
   .product-card:hover .product-card-image img { transform: scale(1.04); }
   .product-badge { position: absolute; top: 0.6rem; left: 0.6rem; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.2rem 0.5rem; background: var(--accent); color: var(--white); font-weight: 400; z-index: 1; }
+  .product-arriving { position: absolute; bottom: 0.6rem; left: 0.6rem; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.2rem 0.5rem; background: rgba(255, 255, 255, 0.9); color: var(--black); z-index: 1; }
   .product-badge.badge-bestseller { background: #c09a8a; }
   .product-badge.badge-popular { background: var(--grey); }
   .product-badge.badge-curated { background: var(--black); }
@@ -326,6 +327,7 @@ canonical: "https://yspcollective.com/"
         {% elif badgeText %}
         <span class="product-badge {{ badgeText | badgeClass }}">{{ badgeText }}</span>
         {% endif %}
+        {% if product.data.stock_status === 'on_order' %}<span class="product-arriving">{{ 'Arriving ' + product.data.expected_date if product.data.expected_date else 'Arriving soon' }}</span>{% endif %}
         <button class="btn-favourite"
           data-fav-slug="{{ product.data.slug }}"
           data-fav-name="{{ product.data.name }}"

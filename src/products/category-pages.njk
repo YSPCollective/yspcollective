@@ -239,6 +239,7 @@ eleventyComputed:
     z-index: 1;
   }
   .cat-stock-flag.flag-last { background: rgba(140, 50, 30, 0.85); }
+  .cat-stock-flag.flag-arriving { background: rgba(255, 255, 255, 0.9); color: var(--black); }
 
   .cat-product-rating { display: flex; align-items: center; gap: 0.35rem; margin-top: 0.3rem; }
   .cat-season-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.45rem; }
@@ -340,7 +341,8 @@ eleventyComputed:
             <span class="cat-product-badge {{ b | badgeClass }}">{{ b }}</span>
           {% endif %}
           {% if p.stock_status === 'low_stock' %}<span class="cat-stock-flag">Low Stock</span>
-          {% elif p.stock_status === 'last_one' %}<span class="cat-stock-flag flag-last">Last One</span>{% endif %}
+          {% elif p.stock_status === 'last_one' %}<span class="cat-stock-flag flag-last">Last One</span>
+          {% elif p.stock_status === 'on_order' %}<span class="cat-stock-flag flag-arriving">{{ 'Arriving ' + p.expected_date if p.expected_date else 'Arriving soon' }}</span>{% endif %}
         </div>
         <div class="cat-product-meta">{{ p.brand }} · {{ p.concentration or p.category }}</div>
         <div class="cat-product-name">{{ p.name }}</div>
