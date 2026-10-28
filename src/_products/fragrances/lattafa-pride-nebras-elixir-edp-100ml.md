@@ -7,13 +7,13 @@ brand: Lattafa
 gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
-badge: ""
+badge: Curated
 custom_badge: ""
 stock_status: on_order
 stock_quantity: 6
 expected_date: November 2026
 featured: false
-published: false
+published: true
 date_added: 2026-10-27
 fragrance_family: Oriental Vanilla Gourmand
 best_for: Daytime, Date night, Autumn/Winter
@@ -35,7 +35,7 @@ base_notes: Vanilla, Musk, Ambroxan
 accords_text: sweet, creamy, vanilla, gourmand, powdery, musk
 longevity: 6-8 hours
 projection: Moderate
-launched: ""
+launched: "2025"
 vegan: false
 image_main: /images/uploads/nebras-elixir___2.webp
 gallery:
