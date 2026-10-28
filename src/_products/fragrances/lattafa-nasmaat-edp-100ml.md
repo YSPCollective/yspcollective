@@ -11,9 +11,9 @@ badge: ""
 custom_badge: ""
 stock_status: on_order
 stock_quantity: 11
-expected_date: October 2026
+expected_date: November 2026
 featured: false
-published: false
+published: true
 date_added: 2026-10-16
 fragrance_family: Fruity Floral Gourmand
 best_for: Daytime, Spring/Summer, Casual wear
@@ -35,7 +35,7 @@ base_notes: Caramel, Vanilla, Sandalwood, Cashmeran
 accords_text: fruity, sweet, floral, caramel, vanilla, woody
 longevity: 5-7 hours
 projection: Moderate
-launched: ""
+launched: "2025"
 vegan: false
 image_main: /images/uploads/lattafa-nasmaat.png
 gallery:
@@ -51,11 +51,10 @@ description_full: >-
 
   It is a friendly, approachable fragrance that suits everyday wear, particularly in milder weather.
 ysp_thoughts: >-
-  We'll be upfront: this one divides opinion. The opening is the star, a juicy
-  blackcurrant, apricot and pineapple that most reviewers find bright and
-  genuinely fruity, and plenty report it lasting well. A few find the floral
-  dry-down a touch synthetic, so it suits people who like a sweet, modern
-  fruity-floral rather than a natural one.
+  The opening is the star, a juicy blackcurrant, apricot and pineapple that most
+  reviewers find bright and genuinely fruity, and plenty report it lasting well.
+  A few find the floral dry-down a touch synthetic, so it suits people who like
+  a sweet, modern fruity-floral rather than a natural one.
 
   It is a fun, easy everyday spray, and a good pick if you like Lattafa's sweeter side.
 amazon_url: ""
