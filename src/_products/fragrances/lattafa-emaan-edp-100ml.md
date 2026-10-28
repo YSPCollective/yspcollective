@@ -7,13 +7,13 @@ brand: Lattafa
 gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
-badge: ""
+badge: Curated
 custom_badge: ""
 stock_status: on_order
 stock_quantity: 10
 expected_date: October 2026
 featured: false
-published: false
+published: true
 date_added: 2026-10-16
 fragrance_family: Floral Chypre
 best_for: Evening wear, Autumn/Winter, Special occasions
@@ -35,7 +35,7 @@ base_notes: Patchouli, Vanilla, White Musk, Cedarwood
 accords_text: floral, white floral, fruity, patchouli, vanilla, woody
 longevity: 6-8 hours
 projection: Moderate
-launched: ""
+launched: "2022"
 vegan: false
 image_main: /images/uploads/emaan__2.webp
 gallery:
@@ -54,8 +54,9 @@ ysp_thoughts: |-
 
   <p>If that's you, we think it's a refined, good value pick, and it's especially nice for evenings.</p>
 amazon_url: ""
-inspired_by_name: "Giorgio Armani My Way"
-inspired_by_note: "Same bright bergamot and orange blossom opening over a soft white floral and musky vanilla base."
+inspired_by_name: Giorgio Armani My Way
+inspired_by_note: Same bright bergamot and orange blossom opening over a soft
+  white floral and musky vanilla base.
 ebay_url: ""
 origin: UAE
 gtin: "6291108738498"

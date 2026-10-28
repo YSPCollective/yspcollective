@@ -11,9 +11,9 @@ badge: ""
 custom_badge: ""
 stock_status: on_order
 stock_quantity: 11
-expected_date: October 2026
+expected_date: November 2026
 featured: false
-published: false
+published: true
 date_added: 2026-10-16
 fragrance_family: Fruity Floral Gourmand
 best_for: Daytime, Spring/Summer, Casual wear
@@ -35,7 +35,7 @@ base_notes: Caramel, Vanilla, Sandalwood, Cashmeran
 accords_text: fruity, sweet, floral, caramel, vanilla, woody
 longevity: 5-7 hours
 projection: Moderate
-launched: ""
+launched: "2025"
 vegan: false
 image_main: /images/uploads/lattafa-nasmaat.png
 gallery:

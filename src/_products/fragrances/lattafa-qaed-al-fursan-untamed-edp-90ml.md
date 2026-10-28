@@ -7,13 +7,13 @@ brand: Lattafa
 gender: Unisex
 size: 90ml
 concentration: Eau de Parfum (EDP)
-badge: ""
+badge: Popular
 custom_badge: ""
 stock_status: on_order
 stock_quantity: 10
-expected_date: October 2026
+expected_date: November 2026
 featured: false
-published: false
+published: true
 date_added: 2026-10-16
 fragrance_family: Aromatic Spicy Woody
 best_for: Evening wear, Autumn/Winter, Date night
@@ -35,7 +35,7 @@ base_notes: Cedarwood, Olibanum, Vetiver, Labdanum, Amber
 accords_text: warm spicy, aromatic, woody, amber, lavender, caramel
 longevity: 6-8 hours
 projection: Moderate to Strong
-launched: ""
+launched: "2025"
 vegan: false
 image_main: /images/uploads/qaed-al-fursan-untamed-perfume-90ml-edp-lattafa-1.webp
 gallery:
@@ -53,8 +53,9 @@ ysp_thoughts: |-
 
   <p>We see it as a more mature, polished take on the sweet-spicy "Eros style" scent, and a lot of people rate it for the price. Longevity varies a lot from person to person, from four or five hours up to much longer, so think of it as a good cool-weather option rather than a beast.</p>
 amazon_url: ""
-inspired_by_name: "Versace Eros Najim"
-inspired_by_note: "Same orange, cinnamon and caramel-amber warmth, a close match at a fraction of the price."
+inspired_by_name: Versace Eros Najim
+inspired_by_note: Same orange, cinnamon and caramel-amber warmth, a close match
+  at a fraction of the price.
 ebay_url: ""
 origin: UAE
 gtin: "6290362340645"

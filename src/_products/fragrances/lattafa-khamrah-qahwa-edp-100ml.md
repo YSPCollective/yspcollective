@@ -7,13 +7,13 @@ brand: Lattafa
 gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
-badge: ""
+badge: Viral
 custom_badge: ""
 stock_status: on_order
 stock_quantity: 6
 expected_date: November 2026
 featured: false
-published: false
+published: true
 date_added: 2026-10-27
 fragrance_family: Oriental Gourmand Coffee
 best_for: Evening wear, Autumn/Winter, Date night
@@ -34,7 +34,7 @@ base_notes: Coffee, Tonka Bean, Benzoin, Vanilla, Musk
 accords_text: coffee, sweet, warm spicy, vanilla, praline, amber
 longevity: 8-10 hours
 projection: Strong
-launched: ""
+launched: "2023"
 vegan: false
 image_main: /images/uploads/khamrah-qahwa.webp
 gallery:
@@ -52,8 +52,8 @@ ysp_thoughts: |-
 
   <p>A quick tip from us: it's very sweet and it projects well, so a couple of sprays is plenty. Best in autumn and winter.</p>
 amazon_url: ""
-inspired_by_name: "Kilian Angels' Share"
-inspired_by_note: "The same boozy, spiced-vanilla gourmand style, with a dark coffee twist."
+inspired_by_name: Kilian Angels' Share
+inspired_by_note: The same boozy, spiced-vanilla gourmand style, with a dark coffee twist.
 ebay_url: ""
 origin: UAE
 gtin: "6290360593661"

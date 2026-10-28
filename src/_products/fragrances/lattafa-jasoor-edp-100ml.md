@@ -11,9 +11,9 @@ badge: ""
 custom_badge: ""
 stock_status: on_order
 stock_quantity: 8
-expected_date: October 2026
+expected_date: November 2026
 featured: false
-published: false
+published: true
 date_added: 2026-10-16
 fragrance_family: Aromatic Spicy Leather
 best_for: Evening wear, Autumn/Winter, Smart-casual
@@ -35,7 +35,7 @@ base_notes: Patchouli, Leather, Vetiver, Tonka Bean
 accords_text: aromatic, spicy, lavender, tobacco, leather, woody
 longevity: 6-8 hours
 projection: Moderate
-launched: ""
+launched: "2023"
 vegan: false
 image_main: /images/uploads/jasoor___2.webp
 gallery:
@@ -53,8 +53,9 @@ ysp_thoughts: |-
 
   <p>Honest heads up: the dry tobacco and lavender style isn't for everyone. If it is for you, it's a real step away from the usual sweet stuff.</p>
 amazon_url: ""
-inspired_by_name: "Valentino Uomo Born In Roma Coral Fantasy"
-inspired_by_note: "Same red apple, lavender and tobacco opening, with a drier, more mature feel and strong longevity."
+inspired_by_name: Valentino Uomo Born In Roma Coral Fantasy
+inspired_by_note: Same red apple, lavender and tobacco opening, with a drier,
+  more mature feel and strong longevity.
 ebay_url: ""
 origin: UAE
 gtin: "6290360591513"

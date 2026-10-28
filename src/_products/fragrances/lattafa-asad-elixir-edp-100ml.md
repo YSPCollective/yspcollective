@@ -7,13 +7,13 @@ brand: Lattafa
 gender: Men
 size: 100ml
 concentration: Eau de Parfum (EDP)
-badge: ""
+badge: Popular
 custom_badge: ""
 stock_status: on_order
 stock_quantity: 6
 expected_date: November 2026
 featured: false
-published: false
+published: true
 date_added: 2026-10-27
 fragrance_family: Woody Spicy Tobacco
 best_for: Evening wear, Autumn/Winter, Date night
@@ -21,7 +21,8 @@ season:
   - Autumn
   - Winter
 blind_buy_rating: Universal Crowd-Pleaser
-blind_buy_note: "Pink pepper and saffron over tobacco, vanilla and amber. A smooth, warm crowd favourite."
+blind_buy_note: Pink pepper and saffron over tobacco, vanilla and amber. A
+  smooth, warm crowd favourite.
 char_sweet: 3
 char_fresh: 2
 char_masculine: 5
@@ -33,7 +34,7 @@ base_notes: Patchouli, Olibanum, Cashmeran, Amber
 accords_text: warm spicy, tobacco, woody, vanilla, amber, smoky
 longevity: 7-9 hours
 projection: Moderate to Strong
-launched: ""
+launched: "2025"
 vegan: false
 image_main: /images/uploads/lattafa-asad-elxir.png
 gallery: []
@@ -51,8 +52,8 @@ ysp_thoughts: |-
 
   <p>We'd point it at anyone who likes tobacco and spice with a bit of cosy sweetness. It's the one we'd reach for on a cold night out.</p>
 amazon_url: ""
-inspired_by_name: "Dior Sauvage Elixir"
-inspired_by_note: "Same spicy, ambery woody DNA, with a warmer, tobacco-leaning drydown."
+inspired_by_name: Dior Sauvage Elixir
+inspired_by_note: Same spicy, ambery woody DNA, with a warmer, tobacco-leaning drydown.
 ebay_url: ""
 origin: UAE
 gtin: "6290362346548"

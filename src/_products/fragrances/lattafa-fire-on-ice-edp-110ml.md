@@ -7,13 +7,13 @@ brand: Lattafa
 gender: Unisex
 size: 110ml
 concentration: Eau de Parfum (EDP)
-badge: ""
+badge: Popular
 custom_badge: ""
 stock_status: on_order
 stock_quantity: 8
-expected_date: October 2026
+expected_date: November 2026
 featured: false
-published: false
+published: true
 date_added: 2026-10-16
 fragrance_family: Oriental Gourmand
 best_for: Evening wear, Autumn/Winter, Date night
@@ -34,7 +34,7 @@ base_notes: Myrrh, Oakmoss, Cedarwood, Ambroxan
 accords_text: boozy, sweet, warm spicy, caramel, rose, woody
 longevity: 6-8 hours
 projection: Moderate to Strong
-launched: ""
+launched: "2025"
 vegan: false
 image_main: /images/uploads/fire-on-ice_.webp
 gallery:
@@ -53,8 +53,9 @@ ysp_thoughts: |-
 
   <p>We'll be upfront: longevity is split, with some people getting all day and others a few hours, and a few find the dry-down turns woodier on skin. If sweet and warm is your thing for autumn and winter, it's well worth a go.</p>
 amazon_url: ""
-inspired_by_name: "Kilian Angels' Share"
-inspired_by_note: "Same cognac, cinnamon and warm woody DNA, with a sharper black raspberry opening."
+inspired_by_name: Kilian Angels' Share
+inspired_by_note: Same cognac, cinnamon and warm woody DNA, with a sharper black
+  raspberry opening.
 ebay_url: ""
 origin: UAE
 gtin: "6290360598901"
