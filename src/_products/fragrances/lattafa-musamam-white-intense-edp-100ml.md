@@ -7,8 +7,8 @@ gender: Unisex
 size: 100ml
 concentration: Eau de Parfum (EDP)
 badge: Popular
-stock_status: last_one
-stock_quantity: 1
+stock_status: sold_out
+stock_quantity: 0
 expected_date: ""
 featured: false
 published: true
@@ -66,10 +66,11 @@ ysp_thoughts: >
   good reason. The combination of creamy spiced coconut, ylang ylang and
   ambroxan is genuinely compelling — it sits in the territory of BDK's Gris
   Charnel, a fragrance that costs over €175 and has earned serious niche
-  credibility. We'd happily reach for Musamam as the go-to daily wear alternative. The snake bottle photos made it famous on social media, but
-  the fragrance would have found its audience anyway. At 100ml for this price,
-  it's exceptional value for something this distinctive. If you want an oriental
-  that feels expensive and gets noticed, this is the most direct route.</p>
+  credibility. We'd happily reach for Musamam as the go-to daily wear
+  alternative. The snake bottle photos made it famous on social media, but the
+  fragrance would have found its audience anyway. At 100ml for this price, it's
+  exceptional value for something this distinctive. If you want an oriental that
+  feels expensive and gets noticed, this is the most direct route.</p>
 inspired_by_name: BDK Parfums Gris Charnel
 inspired_by_note: That same creamy, spiced-coconut warmth — richer in the base,
   more assertive projection.
@@ -104,11 +105,12 @@ pt:
     perfumaria em 2023 e 2024 por boas razões. A combinação de coco especiado e
     cremoso, ylang-ylang e ambroxan é genuinamente cativante e fica no
     território do Gris Charnel da BDK, um perfume que custa mais de 175 € e que
-    ganhou credibilidade a sério no nicho. Para o dia a dia, o Musamam é a alternativa a que recorreríamos sem hesitar. As
-    fotografias do frasco de serpente tornaram-no famoso nas redes sociais, mas
-    o perfume teria encontrado o seu público de qualquer forma. A 100ml por este
-    preço, é um valor excecional para algo tão distinto. Se quer um oriental que
-    pareça caro e que se note, este é o caminho mais direto.</p>
+    ganhou credibilidade a sério no nicho. Para o dia a dia, o Musamam é a
+    alternativa a que recorreríamos sem hesitar. As fotografias do frasco de
+    serpente tornaram-no famoso nas redes sociais, mas o perfume teria
+    encontrado o seu público de qualquer forma. A 100ml por este preço, é um
+    valor excecional para algo tão distinto. Se quer um oriental que pareça caro
+    e que se note, este é o caminho mais direto.</p>
 es:
   blind_buy_note_es: Bergamota y naranja sobre coco cremoso, ylang-ylang y
     sándalo. Cálido y solar en lugar de fresco, así que confirma que te gusta el
@@ -137,9 +139,10 @@ es:
     perfumería en 2023 y 2024 por buenas razones. La combinación de coco
     especiado y cremoso, ylang-ylang y ambroxan es genuinamente cautivadora y se
     sitúa en el territorio del Gris Charnel de BDK, un perfume que cuesta más de
-    175 € y que se ha ganado credibilidad de verdad en el nicho. Para el día a día, Musamam es la alternativa a la que recurriríamos sin dudar. Las fotos del frasco de serpiente lo hicieron famoso en
-    redes sociales, pero el perfume habría encontrado su público de todos modos.
-    A 100ml por este precio, es un valor excepcional para algo tan distintivo.
-    Si quieres un oriental que parezca caro y que se note, este es el camino más
-    directo.</p>
+    175 € y que se ha ganado credibilidad de verdad en el nicho. Para el día a
+    día, Musamam es la alternativa a la que recurriríamos sin dudar. Las fotos
+    del frasco de serpiente lo hicieron famoso en redes sociales, pero el
+    perfume habría encontrado su público de todos modos. A 100ml por este
+    precio, es un valor excepcional para algo tan distintivo. Si quieres un
+    oriental que parezca caro y que se note, este es el camino más directo.</p>
 ---
