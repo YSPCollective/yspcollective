@@ -10,7 +10,7 @@ badge: Popular
 stock_status: sold_out
 stock_quantity: 0
 expected_date: ""
-featured: true
+featured: false
 published: true
 date_added: 2026-06-17
 fragrance_family: Woody Vanilla Gourmand
